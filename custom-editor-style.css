@@ -1,0 +1,17 @@
+body#tinymce.wp-editor { 
+    font-family: 'Work Sans', sans-serif;
+    margin: 10px; 
+}
+
+.btn {
+	min-width: 143px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: calc(1rem + ((1vw - 3.2px) * 0.5));
+	letter-spacing: -0.59px;
+	font-weight: 600;
+	padding: 10px 22px!important;
+	display: table;
+	background-color: #1D54DD!important;
+}

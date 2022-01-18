@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 375.1 152.3" style="enable-background:new 0 0 375.1 152.3;" xml:space="preserve">
+<style type="text/css">
+  .blue-shapes-circle{fill: #FFF; opacity: .3; transition: all ease .5s;}
+  .blue-shapes-square{fill: #FFF; opacity: .3; transition: all ease .5s;}
+  .blue-shapes-triangle{fill: #FFF; opacity: .3; transition: all ease .5s;}
+</style>
+<rect x="33.5" y="39.4" class="blue-shapes-square" width="73.4" height="73.4"/>
+<circle class="blue-shapes-circle" cx="186.2" cy="76.1" r="38.1"/>
+<polygon class="blue-shapes-triangle" points="297.7,38.1 319.6,76.1 341.6,114.2 297.7,114.2 253.7,114.2 275.7,76.1 "/>
+</svg>
