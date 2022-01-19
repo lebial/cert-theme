@@ -1,6 +1,10 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './**/*.php',
+    './templates/**/*.php',
+    './components/**/*.php'
+  ],
+  darkmode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {

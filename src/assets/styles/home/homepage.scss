@@ -1,0 +1,266 @@
+@import '../variables';
+
+.slick {
+  &-next {
+    &::before {
+      content: '\203A';
+      font-size: 100px;
+      color: lightgray;
+    }
+  }
+  &-prev {
+    &::before {
+      content: '\2039';
+      font-size: 100px;
+      color: lightgray;
+      margin-right: 15px;
+    }
+  }
+}
+
+.schedule-demo__form {
+  & form {
+    margin-top: 0 !important;
+    & h3 {
+      font-family: 'Work Sans', sans-serif !important;
+      text-align: center;
+      font-size: 1.3rem !important;
+      margin-bottom: 20px !important;
+      @media #{$desktopLG} {
+        font-size: 1.6rem !important;
+      }
+    }
+    & label {
+      font-family: 'Work Sans', sans-serif !important;
+      color: #6e6e6e !important;
+      font-weight: bold !important;
+      font-size: 0.8rem !important;
+      
+      & + input {
+        border-bottom: 1.5px solid #6e6e6e !important;
+        padding: 0!important;
+        @media #{$desktopLG} {
+          font-size: 1.1rem !important;
+        }
+      }
+      & + select {
+        border: none !important;
+        border-bottom: 1.5px solid #6e6e6e !important;
+        padding: 0 !important;
+        color: #6e6e6e !important;
+        font-size: .7rem !important;
+      }
+    }
+    & input[type="checkbox"] {
+      border: 2px solid #6e6e6e !important;
+      height: 20px !important;
+      width: 20px !important;
+      padding: 0 !important;
+      margin-bottom: 5px !important;
+      transition: all ease .2s;
+      &:checked {
+        background-color: #1F5EDB;
+      }
+    }
+    & p {
+      font-size: 0.7rem;
+      margin-top: -10px;
+      @media #{$desktopLG} {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+}
+
+.custom-shadow {
+  box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.75);
+}
+
+.partner__group__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  & .partner__item {
+    margin-top: 2.3rem;
+  }
+
+  @media #{$tablet} {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    & .partner__item {
+      flex: 0 0 25%;
+    }
+
+  }
+}
+
+// Custom Animations
+
+.full-window {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.absolute-center {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[data-aos='change-red'] {
+  transition-property: color;
+
+  &.aos-animate {
+    color: $color-red;
+  }
+}
+
+[data-aos='grow-angle-line'] {
+  transition-property: transform;
+  &.aos-animate {
+    transform: rotate(-58deg) scale(1);
+  }
+}
+
+[data-aos='grow-vertical-line'] {
+  transition-property: transform;
+  &.aos-animate {
+    transform: scale(1);
+  }
+}
+
+[data-aos='change-bg-red'] {
+  transition-property: background-color;
+  &.aos-animate {
+    background-color: $color-red;
+  }
+}
+
+.sec-transition {
+  transition: all ease .5s;
+}
+
+.second-slide-animation {
+  & .text-red-animate {
+    color: $color-red;
+  }
+  & .fade-in-animate {
+    opacity: 1;
+  }
+}
+
+.shapes-container {
+  transition: all ease .5s;
+  &.highlight {
+    &-circle {
+      & circle {
+        opacity: 1;
+      }
+    }
+    &-triangle {
+      & polygon {
+        opacity: 1;
+      }
+    }
+
+    &-square {
+      & rect {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
+.face-line {
+  width: 150px;
+  height: 5px;
+  top: 40%;
+  left: -40px;
+  transform: rotate(-58deg) scale(0);
+  transform-origin: right;
+  transform-style: preserve-3d;
+  transition: transform 1s linear;
+}
+
+.vertical-line {
+  position: absolute;
+  width: 5px;
+  height: 120vh;
+  transform-origin: top;
+  transform-style: preserve-3d;
+  transition: transform 1s linear;
+  top: 12px;
+  left: 29px;
+  transform: scale(0);
+}
+
+
+.check-mark-icon {
+  top: -130px;
+  right: -290%;
+}
+
+.bars-icon {
+  top: 6px;
+  right: -385%;
+}
+
+.pie-chart-icon {
+  top: 150px;
+  left: 211%;
+}
+
+.doc-icon {
+  top: 135px;
+  right: -18px;
+}
+
+.last-slide {
+  margin-bottom: 22%;
+}
+.last-circle {
+  left: -1.8rem;
+}
+
+.doc-dots {
+  width: 100px;
+  top: 96px;
+  left: -9px;
+  transform: rotate(90deg);
+}
+
+.check-dots {
+  width: 120px;
+  top: -67px;
+  transform: rotate(-42deg);
+  left: 46px;
+}
+
+.pie-dots {
+  width: 150px;
+  top: 89px;
+  left: 42px;
+  transform: rotate(45deg);
+}
+
+.computer__phone__image {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.parallax {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: -26% 30%; 
+  background-repeat: no-repeat;
+  background-size: 141%;
+}

@@ -120,6 +120,7 @@
                   class="vertical-line bg-primary flex flex-col justify-end"
                 >
                   <div class="relative rounded-full w-16 h-16 bg-primary top-16 last-circle ">
+                    <div data-aos="fade-in" data-aos-delay="500">
                       <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/doc.svg" class="doc-icon absolute style-svg opacity-100 w-28" alt="">
                       <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/check-mark.svg" class="check-mark-icon absolute style-svg opacity-100 w- w-28" alt="">
                       <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/pie-chart.svg" class="pie-chart-icon absolute style-svg opacity-100 w-28" alt="">
@@ -127,8 +128,8 @@
                       <div class="absolute font-bold text-white text-4xl doc-dots">. . . .</div>
                       <div class="absolute font-bold text-white text-4xl check-dots">. . . . .</div>
                       <div class="absolute font-bold text-white text-4xl pie-dots">. . . . . . .</div>
+                    </div>
                   </div>
-                  
                 </div>
               </div>
                   <div class=" rounded-full w-16 h-16 bg-white mr-8"></div>
@@ -151,7 +152,7 @@
           data?
         </h3>
         <p>Find the perfect solution for you:</p>
-        <div class="flex w-full mt-8">
+        <div class="flex w-full mt-8" data-aos="fade-in">
           <div class="flex-1 flex mr-2">
             <a
               class="p-2 w-full bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"

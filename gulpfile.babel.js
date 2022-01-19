@@ -9,8 +9,9 @@ import webpack from 'webpack-stream';
 import named from 'vinyl-named';
 import browserSync from 'browser-sync';
 import zip from 'gulp-zip';
-import replace from 'gulp-replace';
 import info from './package.json';
+import postcss from 'gulp-postcss';
+import tailwindcss from 'tailwindcss';
 
 const server = browserSync.create();
 const sass = require('gulp-sass')(require('sass'));
@@ -19,7 +20,7 @@ const PRODUCTION = yargs.argv.prod;
 
 const paths = {
   styles: {
-    src: ['src/assets/scss/bundle.scss', 'src/assets/scss/admin.scss'],
+    src: ['src/assets/styles/bundle.scss', 'src/assets/styles/admin.scss'],
     dest: 'dist/assets/css'
   },
   images: {
@@ -58,6 +59,10 @@ export const styles = (cb) => {
   return gulp.src(paths.styles.src)
     .pipe(gulpif(!PRODUCTION, sourceMaps.init()))
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      tailwindcss('./tailwind.config.js'),
+      require('autoprefixer')
+    ]))
     .pipe(gulpif(PRODUCTION, cleanCss({compatibility: 'ie8'})))
     .pipe(gulpif(!PRODUCTION, sourceMaps.write()))
     .pipe(gulp.dest(paths.styles.dest))
@@ -103,7 +108,7 @@ export const scripts = () => gulp.src(paths.scripts.src)
   .pipe(gulp.dest(paths.scripts.dest));
 
 export const watch = (cb) => {
-  gulp.watch('src/assets/scss/**/*.scss', styles);
+  gulp.watch('src/assets/styles/**/*.scss', styles);
   gulp.watch('src/assets/js/**/*.js', gulp.series(scripts, reload));
   gulp.watch('**/*.php', reload);
   gulp.watch(paths.images.src, gulp.series(images, reload));
@@ -111,7 +116,6 @@ export const watch = (cb) => {
 }
 
 export const compress = () => gulp.src(paths.package.src)
-  .pipe(replace('_themename', info.name))
   .pipe(zip(`${info.name}.zip`))
   .pipe(gulp.dest(paths.package.dest));
 
