@@ -144,6 +144,22 @@
   }
 }
 
+.ordered__dots {
+  position: absolute;
+  top: 1%;
+  animation: down_movement 20s linear infinite;
+}
+.unordered__dots {
+  height: 50vh;
+  animation: down_movement 20s linear infinite;
+}
+
+@keyframes down_movement {
+  to {
+    background-position: 0 110vh;
+  }
+}
+
 .sec-transition {
   transition: all ease .5s;
 }
@@ -263,4 +279,40 @@
   background-position: -26% 30%; 
   background-repeat: no-repeat;
   background-size: 141%;
+}
+
+.moving__dots {
+
+  &__animation {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: -100%;
+      bottom: 0;
+      background-image: radial-gradient(#1f5edb 17%, transparent 17%), radial-gradient(#1f5edb 17%, transparent 17%);
+      background-size: 38px 43px;
+      background-position: 0px -30%, 10% 72%;
+      animation: change 20s linear infinite;
+    }
+    &::after {
+      position:absolute;
+      content: "";
+      top: 0;
+      left:0 ;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(255,255,255,0.6899802157191002) 0%, rgba(255,255,255,0) 100%);
+    }
+  }
+  
+}
+
+@keyframes change {
+  to {
+    transform: translateX(-50%);
+  }
 }

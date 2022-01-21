@@ -110,7 +110,7 @@ export const scripts = () => gulp.src(paths.scripts.src)
 export const watch = (cb) => {
   gulp.watch('src/assets/styles/**/*.scss', styles);
   gulp.watch('src/assets/js/**/*.js', gulp.series(scripts, reload));
-  gulp.watch('**/*.php', reload);
+  gulp.watch('**/*.php', gulp.series(reload, styles));
   gulp.watch(paths.images.src, gulp.series(images, reload));
   gulp.watch(paths.other.src, gulp.series(copy, reload));
 }
