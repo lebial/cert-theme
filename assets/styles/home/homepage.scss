@@ -264,3 +264,10 @@
   background-repeat: no-repeat;
   background-size: 141%;
 }
+
+.moving__dots {
+  background-image: radial-gradient('#1f5edb' 10%, tansparent 10%),
+  radial-gradient('#1f5edb' 10%, tansparent 10%);
+  background-size: 60px 60px;
+  background-position: 0 0, 50px 50px;
+}

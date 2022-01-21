@@ -2,7 +2,8 @@ module.exports = {
   content: [
     './**/*.php',
     './templates/**/*.php',
-    './components/**/*.php'
+    './components/**/*.php',
+    './components/animation/**/*',
   ],
   darkmode: false, // or 'media' or 'class'
   theme: {

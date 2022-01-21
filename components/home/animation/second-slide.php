@@ -80,21 +80,25 @@
     <div class="full-window flex-1 last-slide">
       <div class="w-1/2 h-full ml-auto relative">
         <div class="mx-auto w-28 flex flex-col items-center">
-          <div class="absolute -top-60" data-animation="transform: {0: translate(0,0), 15vh: translate(0,30%) }">
-            <img
+          <!-- <div class="absolute -top-60 bg-blue-700" data-animation="transform: {0: translate(0,0), 15vh: translate(0,30%) }"> -->
+          <div class="unordered__dots absolute w-24 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)">
+            <!-- <img
               src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg"
               class="style-svg w-32"
               alt=""
-            >
+            > -->
           </div>
           
           <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/cert-logo-round.svg" class="style-svg opacity-100 z-10 w-40" alt="">
-          <div data-animation="transform: {-80vh: translate(0, -10%), 0: translate(0, 8%) }">
+          <!-- <div data-animation="transform: {-80vh: translate(0, -10%), 0: translate(0, 8%) }"> -->
+          <div class=" invisible">
             <img
               src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg"
               class="style-svg w-24"
               alt=""
             >
+          </div>
+          <div class="ordered__dots h-screen w-24" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg)">
           </div>
           <div class="relative mt-14 flex flex-col items-center ">
             <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/face-plus.svg" class="style-svg opacity-100 z-10 w-40" alt="">
@@ -181,8 +185,10 @@
       </div>
       <div class="absolute bottom-0 w-screen">
         <div class="relative w-full">
-          <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/dots-separator.svg" class="style-svg" alt="">
-          <img class="computer__phone__image absolute w-72 top-0 " src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/computer-phone.svg" class="style-svg" alt="">
+          <div class="moving__dots w-full">
+            <div class="moving__dots__animation w-full h-16"></div>
+          </div>
+          <img class="computer__phone__image absolute w-72 -top-9" src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/computer-phone.svg" class="style-svg" alt="">
         </div>
       </div>
     </div>
