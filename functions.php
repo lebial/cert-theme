@@ -271,7 +271,7 @@ function custom_get_gallery_image_as_svg($field) {
     $logos = get_field($field);
     foreach($logos as $logo_src) {
         echo '<div class="partner__item flex justify-center items-center mt-4">';
-          echo '<img class="style-svg w-40 mr-6" src="'.$logo_src.'" />';
+          echo '<img class="style-svg w-4/5 md:w-40 md:mr-6" src="'.$logo_src.'" />';
         echo '</div>';
     }
 }

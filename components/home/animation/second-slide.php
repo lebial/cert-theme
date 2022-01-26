@@ -6,7 +6,7 @@
   <div class=" w-screen bg-blue-700 flex flex-col">
     <div class="relative w-screen" data-sticky="from: 0, duration: 400vh">
 
-      <div class="w-1/2 mr-auto h-full flex flex-col items-center">
+      <div class=" w-4/5 lg:w-1/2 mr-auto h-full flex flex-col items-center">
         <div class="w-40 pt-32 mb-14 shapes-container" style="margin-right: 24%;" data-classes="1vh: {add: highlight-square}, 
         100vh: {add: highlight-circle, remove: highlight-square}, 
         200vh: {add: highlight-triangle, remove: highlight-circle}
@@ -16,7 +16,7 @@
       </div>
 
       <div
-        class="absolute w-1/2 mr-auto h-full flex flex-col items-center"
+        class="absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
         data-animation="opacity: {0: 1, 50vh: 0}, transform: {0: translate(0,0), 50vh: translate(0, -20%)}"
       >
         <div class="absolute-centerw-full h-full">
@@ -38,7 +38,7 @@
       </div>
 
       <div
-        class="absolute w-1/2 mr-auto h-full flex flex-col items-center"
+        class="absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
         data-animation="opacity: {0: 0, 70vh: 1, 170vh: 0}, transform: {70vh: translate(0,0), 170vh: translate(0, -20%)}"
       >
         <div class="absolute-centerw-full h-full">
@@ -58,14 +58,14 @@
       </div>
 
       <div
-        class="absolute w-1/2 mr-auto h-full flex flex-col items-center"
+        class="absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
         data-animation="opacity: {178vh: 0, 188vh: 1}"
       >
         <div class="absolute-centerw-full h-full">
           <h3 class="text-white text-5xl">
             Measure <br>
             results.
-          <p class="text-white">
+          <p class="text-white mt-6">
             Evaluate the performance of your <br>
             programs to improve your benefit <br>
             offerings, design high-performance <br>
@@ -77,8 +77,8 @@
       </div>
 
     </div>
-    <div class="full-window flex-1 last-slide">
-      <div class="w-1/2 h-full ml-auto relative">
+    <div class="full-window flex-1 last-slide relative">
+      <div class=" hidden xl:block w-1/2 h-full ml-auto "> 
         <div class="mx-auto w-28 flex flex-col items-center">
           <!-- <div class="absolute -top-60 bg-blue-700" data-animation="transform: {0: translate(0,0), 15vh: translate(0,30%) }"> -->
           <div class="unordered__dots absolute w-24 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)">
@@ -150,14 +150,13 @@
 
     <div class="full-window flex-1 bg-white opacity-100 z-10 pb-10">
       <div class="absolute-center ">
-        <h3 class="text-6xl font-bold">
+        <h3 class=" text-5xl lg:text-6xl font-bold">
           Are you ready to see <br>
           the <span data-aos="change-red">future</span> through <br>
           data?
         </h3>
-        <p>Find the perfect solution for you:</p>
-        <div class="flex w-full mt-8" data-aos="fade-in">
-          <div class="flex-1 flex mr-2">
+        <div class="flex flex-col lg:flex-row w-full mt-8" data-aos="fade-in">
+          <div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">
             <a
               class="p-2 w-full bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
               href="<?php echo $base_url?>/solutions/health-plans-bms"
@@ -165,9 +164,9 @@
               Health Plans
             </a>
           </div>
-          <div class="flex-1 flex">
+          <div class="flex-1 flex mb-5 lg:mb-0">
             <a
-              class="p-2 w-full mx-1 bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+              class="p-2 w-full mx-0 lg:mx-1 bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
               href="<?php echo $base_url?>/solutions/employers"
             >
               Employers
@@ -175,7 +174,7 @@
           </div>
           <div class="flex-1 flex">
             <a
-              class="p-2 w-full ml-2 bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+              class="p-2 w-full ml-0 lg:ml-2 bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
               href="<?php echo $base_url?>/solutions/providers"
             >
               Providers
