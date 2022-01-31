@@ -152,8 +152,11 @@
   animation: down_movement 20s linear infinite;
 }
 .unordered__dots {
-  height: 50vh;
+  height: 13%;
   animation: down_movement 20s linear infinite;
+  @media #{$firstHeight} {
+    height: 8%;
+  }
 }
 
 @keyframes down_movement {

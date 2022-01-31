@@ -4,7 +4,7 @@
 
 <div>
   <div class=" w-screen bg-blue-700 flex flex-col">
-    <div class="relative w-screen" data-sticky="from: 0, duration: 400vh">
+    <div class="w-screen" data-sticky="from: 0, duration: 400vh">
 
       <div class=" w-4/5 lg:w-1/2 mr-auto h-full flex flex-col items-center">
         <div class="w-40 pt-32 mb-14 shapes-container" style="margin-right: 24%;" data-classes="1vh: {add: highlight-square}, 
