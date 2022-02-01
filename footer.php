@@ -15,11 +15,11 @@
 	<div class="first-row w-full flex flex-col md:flex-row">
 		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-12 md:mb-0">
 			<div class="flex flex-col items-start w-2/4">
-				<span class="text-white">
-					<p class="font-bold text-white text-2xl">let's chat<?php echo get_field('chat_title', 'options'); ?></p>
+				<span class="hidden lg:block text-white">
+					<p class="font-bold text-white text-xl">let's chat<?php echo get_field('chat_title', 'options'); ?></p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. <?php echo get_field('chat_description', 'options'); ?></p>
+				<p class="hidden lg:block text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. <?php echo get_field('chat_description', 'options'); ?></p>
 				<a
 					class="border border-white border-solid rounded-md p-3 transition-all hover:bg-white hover:text-black mt-6"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
@@ -28,36 +28,56 @@
 				</a>
 			</div>
 		</div>
-		<div class="footer__links w-full md:w-8/12 flex flex-col md:flex-row items-center md:justify-evenly ">
+		<div class="footer__links w-full flex flex-col md:flex-row md:justify-evenly ">
 			<!-- <?php render_link_groups(); ?> -->
-			<div class="footer__links__group">
-				<a class="footer__link" href="#">test</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
+			<div class="footer__links">
+				<button class="footer__links__toggle block md:hidden">Solutions</button>
+				<div class="dropdown__body hidden md:block">
+					<div class="footer__links__group">
+						<a class="footer__link" href="#">Solutions</a>
+						<a class="footer__link" href="#">Health Plans & PBMs</a>
+						<a class="footer__link" href="#">Employers</a>
+						<a class="footer__link" href="#">Providers</a>
+					</div>
+				</div>
 			</div>
-			<div class="footer__links__group">
-				<a class="footer__link" href="#">test</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
+
+			<div class="footer__links">
+				<button class="footer__links__toggle block md:hidden">Platform</button>
+				<div class="dropdown__body hidden md:block">
+					<div class="footer__links__group">
+						<a class="footer__link" href="#">Platform</a>
+						<a class="footer__link" href="#">Opportunity Framework</a>
+						<a class="footer__link" href="#">Nucleus Analytics Platform</a>
+						<a class="footer__link" href="#">Accelerator Data Platform</a>
+						<a class="footer__link" href="#">Asoption & Deployment</a>
+						<a class="footer__link" href="#">Data Security & Validation</a>
+					</div>
+				</div>
 			</div>
-			<div class="footer__links__group">
-				<a class="footer__link" href="#">test</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
+
+			<div class="footer__links">
+				<button class="footer__links__toggle block md:hidden">News & Insights</button>
+				<div class="dropdown__body hidden md:block">
+					<div class="footer__links__group">
+						<a class="footer__link" href="#">News & Insights</a>
+						<a class="footer__link" href="#">Blog</a>
+					</div>
+				</div>
 			</div>
-			<div class="footer__links__group">
-				<a class="footer__link" href="#">test</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
-				<a class="footer__link" href="#">test child</a>
+
+			<div class="footer__links">
+				<button class="footer__links__toggle block md:hidden">About Us</button>
+				<div class="dropdown__body hidden md:block">
+					<div class="footer__links__group">
+						<a class="footer__link" href="#">About Us</a>
+						<a class="footer__link" href="#">Our Story</a>
+						<a class="footer__link" href="#">Management & Leadership</a>
+						<a class="footer__link" href="#">Careers</a>
+					</div>
+				</div>
 			</div>
+
 		</div>
 	</div>
 	

@@ -4,7 +4,7 @@
 function add_styles_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'srcScripts', get_template_directory_uri() . '/lib/js/bundleOld.js', array(), filemtime( get_stylesheet_directory() . '/dist/assets/js/bundle.js' ), '1.0.0', true);
-	wp_enqueue_script( 'srcScripts', get_template_directory_uri() . '/dist/assets/js/bundle.js', array(), filemtime( get_stylesheet_directory() . '/dist/assets/js/bundle.js' ), '1.0.0', true);
+	wp_enqueue_script( 'srcScriptsNew', get_template_directory_uri() . '/dist/assets/js/bundle.js', array(), filemtime( get_stylesheet_directory() . '/dist/assets/js/bundle.js' ), '1.0.0', true);
 	wp_enqueue_style( 'srcStyles', get_template_directory_uri() . '/dist/assets/css/bundle.css', array(), filemtime( get_stylesheet_directory() . '/dist/assets/css/bundle.css'));
 	wp_enqueue_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Work+Sans:400,500,600');
 	// wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
@@ -271,7 +271,7 @@ function custom_get_gallery_image_as_svg($field) {
     $logos = get_field($field);
     foreach($logos as $logo_src) {
         echo '<div class="partner__item flex justify-center items-center mt-4">';
-          echo '<img class="style-svg w-40 mr-6" src="'.$logo_src.'" />';
+          echo '<img class="style-svg w-4/5 md:w-40 md:mr-6" src="'.$logo_src.'" />';
         echo '</div>';
     }
 }

@@ -79,17 +79,19 @@
 }
 
 .partner__group__container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 30px;
   & .partner__item {
     margin-top: 2.3rem;
   }
 
   @media #{$tablet} {
+    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    padding: 0;
 
     & .partner__item {
       flex: 0 0 25%;
@@ -146,12 +148,17 @@
 
 .ordered__dots {
   position: absolute;
-  top: 1%;
+  height: 80vh;
+  left: 50%;
+  transform: translateX(-50%);
   animation: down_movement 20s linear infinite;
 }
 .unordered__dots {
-  height: 50vh;
+  height: 55vh;
   animation: down_movement 20s linear infinite;
+  @media #{$firstHeight} {
+    height: 55vh;
+  }
 }
 
 @keyframes down_movement {
@@ -170,6 +177,25 @@
   }
   & .fade-in-animate {
     opacity: 1;
+  }
+}
+
+.animation__content {
+  & div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+  }
+}
+
+.animation {
+  &--first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -197,9 +223,9 @@
 }
 
 .face-line {
-  width: 150px;
+  width: 58%;
   height: 5px;
-  top: 40%;
+  top: 50%;
   left: -40px;
   transform: rotate(-58deg) scale(0);
   transform-origin: right;
