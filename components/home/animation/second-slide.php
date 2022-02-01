@@ -4,7 +4,7 @@
 
 <div>
   <div class=" w-screen bg-blue-700 flex flex-col">
-    <div class="w-screen" data-sticky="from: 0, duration: 400vh">
+    <div class="relative w-screen" data-sticky="from: 0, duration: 400vh">
 
       <div class=" w-4/5 lg:w-1/2 mr-auto h-full flex flex-col items-center">
         <div class="w-40 pt-32 mb-14 shapes-container" style="margin-right: 24%;" data-classes="1vh: {add: highlight-square}, 
@@ -16,92 +16,86 @@
       </div>
 
       <div
-        class="absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
+        class="animation__content absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
         data-animation="opacity: {0: 1, 50vh: 0}, transform: {0: translate(0,0), 50vh: translate(0, -20%)}"
       >
-        <div class="absolute-centerw-full h-full">
+        <div class="absolute-center w-full h-full">
           <h3 class="text-white text-5xl">Organize
-            <br>
             and connect
-            <br>
             your data.</h3>
           <p class="text-white">
             Access easy-to-understand,
-            <br>
             AI-powered reporting to predict
-            <br>
             and link modifiable outcomes to 
-            <br>
             financial value.
           </p>
         </div>
       </div>
 
       <div
-        class="absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
+        class="animation__content absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
         data-animation="opacity: {0: 0, 70vh: 1, 170vh: 0}, transform: {70vh: translate(0,0), 170vh: translate(0, -20%)}"
       >
         <div class="absolute-centerw-full h-full">
           <h3 class="text-white text-5xl">
-            Design care <br>
-            delivery <br>
+            Design care 
+            delivery 
             strategies.
           </h3>
           <p class="text-white">
-            Member-level risk profiles drive <br>
-            more effective outreach and <br>
-            care strategies, so you can <br>
-            match the right member to the <br>
+            Member-level risk profiles drive 
+            more effective outreach and 
+            care strategies, so you can 
+            match the right member to the 
             right program at the right time.
           </p>
         </div>
       </div>
 
       <div
-        class="absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
+        class="animation__content absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
         data-animation="opacity: {178vh: 0, 188vh: 1}"
       >
         <div class="absolute-centerw-full h-full">
           <h3 class="text-white text-5xl">
-            Measure <br>
+            Measure 
             results.
           <p class="text-white mt-6">
-            Evaluate the performance of your <br>
-            programs to improve your benefit <br>
-            offerings, design high-performance <br>
-            networks, and incentivize your <br>
-            health partners to focus on value as <br>
+            Evaluate the performance of your 
+            programs to improve your benefit 
+            offerings, design high-performance 
+            networks, and incentivize your 
+            health partners to focus on value as 
             opposed to fee-for-service.
           </p>
         </div>
       </div>
 
     </div>
+
+
+
     <div class="full-window flex-1 last-slide relative">
-      <div class=" hidden xl:block w-1/2 h-full ml-auto "> 
+      <div class=" hidden lg:block w-1/2 h-full ml-auto "> 
         <div class="mx-auto w-28 flex flex-col items-center">
           <!-- <div class="absolute -top-60 bg-blue-700" data-animation="transform: {0: translate(0,0), 15vh: translate(0,30%) }"> -->
-          <div class="unordered__dots absolute w-24 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)">
-            <!-- <img
-              src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg"
-              class="style-svg w-32"
-              alt=""
-            > -->
+        <div class="animation--first">
+          <div class="unordered__dots absolute w-24 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)"></div>
+          <div class="relative">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/cert-logo-round.svg" id="cert-round" class="style-svg opacity-100 z-10 w-40" alt="">
+            <div class="ordered__dots w-24" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg)"></div>
           </div>
-          
-          <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/cert-logo-round.svg" class="style-svg opacity-100 z-10 w-40" alt="">
           <!-- <div data-animation="transform: {-80vh: translate(0, -10%), 0: translate(0, 8%) }"> -->
-          <div class=" invisible">
+          <!-- <div class=" invisible">
             <img
               src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg"
               class="style-svg w-24"
               alt=""
             >
-          </div>
-          <div class="ordered__dots h-screen w-24" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg)">
-          </div>
-          <div class="relative mt-14 flex flex-col items-center ">
-            <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/face-plus.svg" class="style-svg opacity-100 z-10 w-40" alt="">
+          </div> -->
+        </div>
+          <div class="relative h-screen mt-14 flex flex-col items-center justify-center">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/face-plus.svg" id="face-plus" class="style-svg opacity-100 mt-9 z-10 min-w-40 w-4/5" alt="">
 
             <!-- angle line animation -->
             <div
