@@ -12,7 +12,7 @@
 			<?php get_template_part('components/home/home-animation') ?>
 			<?php get_template_part('components/home/insights') ?>
 			<?php get_template_part('components/home/schedule-form') ?>
-			<?php get_template_part('components/home/members') ?>
+			<!-- <?php get_template_part('components/home/members') ?> -->
 		</div>
 	</div>
 	<!-- end .c-page -->

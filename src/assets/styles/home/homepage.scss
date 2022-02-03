@@ -154,11 +154,8 @@
   animation: down_movement 20s linear infinite;
 }
 .unordered__dots {
-  height: 55vh;
+  height: 60vh;
   animation: down_movement 20s linear infinite;
-  @media #{$firstHeight} {
-    height: 55vh;
-  }
 }
 
 @keyframes down_movement {
@@ -200,6 +197,7 @@
 }
 
 .shapes-container {
+  margin-left: 25%;
   transition: all ease .5s;
   &.highlight {
     &-circle {
