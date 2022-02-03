@@ -55,7 +55,7 @@
 
       <div
         class="animation__content absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
-        data-animation="opacity: {178vh: 0, 210vh: 1}, transform: {178vh: translate(0,0), 210vh: translate(0, -20%)}"
+        data-animation="opacity: {140vh: 0, 210vh: 1}, transform: {178vh: translate(0,0), 210vh: translate(0, -20%)}"
       >
         <div class="absolute-centerw-full h-full">
           <h3 class="text-white text-5xl">

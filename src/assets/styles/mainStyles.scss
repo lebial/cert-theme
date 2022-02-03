@@ -722,8 +722,8 @@ header {
 				@media #{$desktopMD} {
 					margin-bottom: 0;
 					text-align: center;
-					margin-left: 15px;
-					margin-right: 15px;
+					margin-left: 10px;
+					margin-right: 10px;
 					font-weight: 500;
 					
 					&:last-of-type {
@@ -732,15 +732,15 @@ header {
 				}
 				
 				@media #{$desktopLG} {
-					margin-left: 24px;
-					margin-right: 24px;
+					margin-left: 20px;
+					margin-right: 20px;
 				}
 				
 				a {
 					color: $color-grey;
 					text-decoration: none;
 					padding: 0 32px;
-					font-size: 0.8rem;
+					font-size: 1rem;
 					
 					@media #{$desktopMD} {
 						padding: 0;
@@ -806,7 +806,7 @@ header {
 					
 					li {
 						padding: 5px 0;
-						font-size: 0.9rem;
+						font-size: 1.1rem;
 						
 						&.anchor {
 							padding: 6px;
@@ -828,7 +828,7 @@ header {
 						}
 						
 						a {
-							font-size: 0.8rem;
+							font-size: 0.9rem;
 							
 							@media #{$desktopLG} {
 								font-size: 1.2rem;

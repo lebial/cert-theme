@@ -1,6 +1,48 @@
 <?php
+
   function render_link_groups() {
-		$link_groups = get_field('footer_link_groups', 'options');
+
+		$data_mock = array(
+			array(
+				'button_text' => 'Solutions',
+				'links' => array(
+					array('href' => '#', 'text' => 'Solutions'),
+					array('href' => '#', 'text' => 'Health Plans & PBMs'),
+					array('href' => '#', 'text' => 'Employers'),
+					array('href' => '#', 'text' => 'Providers'),
+				),
+			),
+			array(
+				'button_text' => 'Platform',
+				'links' => array(
+					array('href' => '#', 'text' => 'Platform'),
+					array('href' => '#', 'text' => 'Opportunity Framework'),
+					array('href' => '#', 'text' => 'Nucleus Analytics Platform'),
+					array('href' => '#', 'text' => 'Accelerator Data Platform'),
+					array('href' => '#', 'text' => 'Adoption & Deployment'),
+					array('href' => '#', 'text' => 'Data Security & Validation'),
+				),
+			),
+			array(
+				'button_text' => 'News & Insights',
+				'links' => array(
+					array('href' => '#', 'text' => 'News & Insights'),
+					array('href' => '#', 'text' => 'Blog'),
+				),
+			),
+			array(
+				'button_text' => 'About Us',
+				'links' => array(
+					array('href' => '#', 'text' => 'About Us'),
+					array('href' => '#', 'text' => 'Our Story'),
+					array('href' => '#', 'text' => 'Management & Leadership'),
+					array('href' => '#', 'text' => 'Careers'),
+				),
+			)
+		);
+
+		$link_groups = get_field('footer_link_groups', 'options') ? get_field('footer_link_groups', 'options') : $data_mock;
+
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
 			  echo '<button class="footer__links__toggle block md:hidden">'.$link_group['button_text'].'</button>';
@@ -14,6 +56,7 @@
 			echo '</div>';
 		};
 	};
+
 ?>
 
 <footer class="clearfix text-white px-10 md:px-32 w-screen">			
@@ -21,10 +64,10 @@
 		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-12 md:mb-0">
 			<div class="flex flex-col items-start w-2/4">
 				<span class="hidden lg:block text-white">
-					<p class="font-bold text-white text-xl">let's chat<?php echo get_field('chat_title', 'options'); ?></p>
+					<p class="font-bold text-white text-xl"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="hidden lg:block text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. <?php echo get_field('chat_description', 'options'); ?></p>
+				<p class="hidden lg:block text-white text-lg"> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'; ?></p>
 				<a
 					class="border border-white border-solid rounded-md p-3 transition-all hover:bg-white hover:text-black mt-6"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
@@ -33,55 +76,7 @@
 			</div>
 		</div>
 		<div class="footer__links w-full flex flex-col md:flex-row md:justify-evenly ">
-			<!-- <?php render_link_groups(); ?> -->
-			<div class="footer__links">
-				<button class="footer__links__toggle block md:hidden">Solutions</button>
-				<div class="dropdown__body hidden md:block">
-					<div class="footer__links__group">
-						<a class="footer__link" href="#">Solutions</a>
-						<a class="footer__link" href="#">Health Plans & PBMs</a>
-						<a class="footer__link" href="#">Employers</a>
-						<a class="footer__link" href="#">Providers</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="footer__links">
-				<button class="footer__links__toggle block md:hidden">Platform</button>
-				<div class="dropdown__body hidden md:block">
-					<div class="footer__links__group">
-						<a class="footer__link" href="#">Platform</a>
-						<a class="footer__link" href="#">Opportunity Framework</a>
-						<a class="footer__link" href="#">Nucleus Analytics Platform</a>
-						<a class="footer__link" href="#">Accelerator Data Platform</a>
-						<a class="footer__link" href="#">Asoption & Deployment</a>
-						<a class="footer__link" href="#">Data Security & Validation</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="footer__links">
-				<button class="footer__links__toggle block md:hidden">News & Insights</button>
-				<div class="dropdown__body hidden md:block">
-					<div class="footer__links__group">
-						<a class="footer__link" href="#">News & Insights</a>
-						<a class="footer__link" href="#">Blog</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="footer__links">
-				<button class="footer__links__toggle block md:hidden">About Us</button>
-				<div class="dropdown__body hidden md:block">
-					<div class="footer__links__group">
-						<a class="footer__link" href="#">About Us</a>
-						<a class="footer__link" href="#">Our Story</a>
-						<a class="footer__link" href="#">Management & Leadership</a>
-						<a class="footer__link" href="#">Careers</a>
-					</div>
-				</div>
-			</div>
-
+			<?php render_link_groups(); ?>
 		</div>
 	</div>
 	
@@ -91,8 +86,7 @@
 
 	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-32 pt-6">
 		<div class="address__container">
-			<p><?php echo get_field('address', 'options')?></p>
-			9200 Shelbyville Road, Suite 700 <br> Louseville, KY 40222
+			<p class="text-white"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louseville, KY 40222'?></p>
 		</div>
 		<div class="corp__info flex flex-col md:flex-row mt-9 md:mt-0">
 			<div>
