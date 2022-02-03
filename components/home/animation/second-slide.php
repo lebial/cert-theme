@@ -6,9 +6,10 @@
   <div class=" w-screen bg-blue-700 flex flex-col">
     <div class="relative w-screen" data-sticky="from: 0, duration: 400vh">
 
-      <div class=" w-4/5 lg:w-1/2 mr-auto h-full flex flex-col items-center">
+      <!-- <div class=" w-4/5 lg:w-1/2 mr-auto h-full flex flex-col"> -->
+      <div class="w-1/2 mr-auto h-full flex flex-col">
         <div class="w-40 pt-32 mb-14 shapes-container" style="margin-right: 24%;" data-classes="1vh: {add: highlight-square}, 
-        100vh: {add: highlight-circle, remove: highlight-square}, 
+        90vh: {add: highlight-circle, remove: highlight-square}, 
         200vh: {add: highlight-triangle, remove: highlight-circle}
         ">
           <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/blue-shapes.svg" class="style-svg" alt="">
@@ -34,7 +35,7 @@
 
       <div
         class="animation__content absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
-        data-animation="opacity: {0: 0, 70vh: 1, 170vh: 0}, transform: {70vh: translate(0,0), 170vh: translate(0, -20%)}"
+        data-animation="opacity: {0: 0, 80vh: 1, 180vh: 0}, transform: {70vh: translate(0,0), 170vh: translate(0, -20%)}"
       >
         <div class="absolute-centerw-full h-full">
           <h3 class="text-white text-5xl">
@@ -54,7 +55,7 @@
 
       <div
         class="animation__content absolute w-full lg:w-1/2 mr-auto h-full flex flex-col items-center"
-        data-animation="opacity: {178vh: 0, 188vh: 1}"
+        data-animation="opacity: {178vh: 0, 210vh: 1}, transform: {178vh: translate(0,0), 210vh: translate(0, -20%)}"
       >
         <div class="absolute-centerw-full h-full">
           <h3 class="text-white text-5xl">
@@ -80,7 +81,7 @@
         <div class="mx-auto w-28 flex flex-col items-center">
           <!-- <div class="absolute -top-60 bg-blue-700" data-animation="transform: {0: translate(0,0), 15vh: translate(0,30%) }"> -->
         <div class="animation--first">
-          <div class="unordered__dots absolute w-24 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)"></div>
+          <div class="unordered__dots absolute w-36 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)"></div>
           <div class="relative">
             <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/cert-logo-round.svg" id="cert-round" class="style-svg opacity-100 z-10 w-40" alt="">
             <div class="ordered__dots w-24" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg)"></div>

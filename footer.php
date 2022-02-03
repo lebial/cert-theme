@@ -1,11 +1,16 @@
 <?php
   function render_link_groups() {
 		$link_groups = get_field('footer_link_groups', 'options');
-		foreach($link_groups as $links) {
-			echo '<div class="footer__link__group">';
-				foreach($links as $link){
-					echo '<a href="'.$link['href'].'" class="footer__link">'.$link['text'].'</a>';
-				}
+		foreach($link_groups as $link_group) {
+			echo '<div class="footer__links">';
+			  echo '<button class="footer__links__toggle block md:hidden">'.$link_group['button_text'].'</button>';
+				echo '<div class="dropdown__body hidden md:block">';
+					echo '<div class="footer__links__group">';
+						foreach($link_group['links'] as $link){
+							echo '<a href="'.$link['href'].'" class="footer__link">'.$link['text'].'</a>';
+						}
+					echo '</div>';
+				echo '</div>';
 			echo '</div>';
 		};
 	};
@@ -23,8 +28,7 @@
 				<a
 					class="border border-white border-solid rounded-md p-3 transition-all hover:bg-white hover:text-black mt-6"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
-						<?php echo get_field('contact_text', 'options');?>
-						Contact Us
+						<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us';?>
 				</a>
 			</div>
 		</div>
