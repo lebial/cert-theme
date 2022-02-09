@@ -1,4 +1,5 @@
 <?php get_header();
+	$slug = get_page_by_path('news-insights');
 
 	$slant = array(' left', ' right'); 
 	
@@ -6,11 +7,11 @@
 	
 	<div class="c-page c-page-articles">
 
-		<div class="page-header <?php the_field('background_type', 714); echo $slant[$rand]; ?>">
+		<div class="page-header <?php the_field('background_type', $slug->ID); echo $slant[$rand]; ?>">
 			
-			<?php if(get_field('background_type', 714) == 'image'): 
+			<?php if(get_field('background_type', $slug->ID) == 'image'): 
 				
-				$image = get_field('background_image', 714);	?>
+				$image = get_field('background_image', $slug->ID);	?>
 			
 				<div class="image">
 					
@@ -25,32 +26,31 @@
 			<div class="contain">
 				
 				<div class="box <?php if(get_field('background_type', 20) == 'solid') { echo get_field('text_background_color', 20); } ?>">
-				
-					<?php if(get_field('headline')): ?>
+					<?php if(get_field('headline', $slug->ID)): ?>
 					
 						<h1>
 							
-						   <?php the_field('headline'); ?>
+						   <?php the_field('headline', $slug->ID); ?>
 							
 						</h1>
 					
 					<?php endif; ?>
 					
-					<?php if(get_field('header_text')): ?>
+					<?php if(get_field('header_text', $slug->ID)): ?>
 					
 						<div class="text">
 							
-							<?php the_field('header_text'); ?>
+							<?php the_field('header_text', $slug->ID); ?>
 							
 						</div>
 						
 					<?php endif; ?>
 					
-					<?php if(get_field('button')):
+					<?php if(get_field('button', $slug->ID)):
 					
-						$button = get_field('button');	?>
+						$button = get_field('button', $slug->ID);	?>
 						
-						<a class="btn <?php the_field('text_background_color'); ?>" href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>" title="<?php echo $button['title']; ?>"><?php echo $button['title']; ?></a>
+						<a class="btn <?php the_field('text_background_color', $slug->ID); ?>" href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>" title="<?php echo $button['title']; ?>"><?php echo $button['title']; ?></a>
 					
 					<?php endif; ?>
 					

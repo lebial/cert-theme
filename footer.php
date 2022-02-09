@@ -31,11 +31,16 @@
 				),
 			),
 			array(
-				'button_text' => 'About Us',
+				'button_text' => 'Who We Are',
 				'links' => array(
-					array('href' => '#', 'text' => 'About Us'),
+					array('href' => '#', 'text' => 'Who We Are'),
 					array('href' => '#', 'text' => 'Our Story'),
 					array('href' => '#', 'text' => 'Management & Leadership'),
+				),
+			),
+			array(
+				'button_text' => 'Careers',
+				'links' => array(
 					array('href' => '#', 'text' => 'Careers'),
 				),
 			)
