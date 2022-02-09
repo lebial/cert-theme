@@ -154,7 +154,7 @@
           <div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">
             <a
               class="p-2 w-full bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
-              href="<?php echo $base_url?>/solutions/health-plans-bms"
+              href="<?php echo $base_url?>/solutions/health-plans-pbms"
             >
               Health Plans
             </a>

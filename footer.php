@@ -41,12 +41,12 @@
 			)
 		);
 
-		$link_groups = get_field('footer_link_groups', 'options') ? get_field('footer_link_groups', 'options') : $data_mock;
+		$link_groups = get_field('footer_link_groups', 'option') ? get_field('footer_link_groups', 'options') : $data_mock;
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
 			  echo '<button class="footer__links__toggle block md:hidden">'.$link_group['button_text'].'</button>';
-				echo '<div class="dropdown__body hidden md:block">';
+				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group">';
 						foreach($link_group['links'] as $link){
 							echo '<a href="'.$link['href'].'" class="footer__link">'.$link['text'].'</a>';
@@ -59,17 +59,17 @@
 
 ?>
 
-<footer class="clearfix text-white px-10 md:px-32 w-screen">			
+<footer class="clearfix text-white px-10 md:px-32 w-screen mt-10">			
 	<div class="first-row w-full flex flex-col md:flex-row">
 		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-12 md:mb-0">
-			<div class="flex flex-col items-start w-2/4">
-				<span class="hidden lg:block text-white">
-					<p class="font-bold text-white text-xl"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
+			<div class="flex flex-col items-center lg:items-start w-10/12">
+				<span class="footer__responsive__hidden text-white">
+					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="hidden lg:block text-white text-lg"> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'; ?></p>
+				<p class="footer__responsive__hidden text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'; ?></p>
 				<a
-					class="border border-white border-solid rounded-md p-3 transition-all hover:bg-white hover:text-black mt-6"
+					class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-6"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
 						<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us';?>
 				</a>

@@ -1,4 +1,8 @@
 module.exports = {
+  prefix: function (selector){
+    if (selector === '.hidden') return 'tw-';
+    return '';
+  },
   content: [
     './**/*.php',
     './templates/**/*.php',
