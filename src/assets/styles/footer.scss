@@ -17,12 +17,14 @@
       color: white;
       transition: all .3s ease;
     }
-  &.arrow--rotate {
-    &::after {
-      transform: rotate(90deg);
+    &.arrow--rotate {
+      &::after {
+        transform: rotate(90deg);
+      }
     }
   }
-  }
+  
+
   &__group {
     margin-right: 30px;
     display: flex;
@@ -41,5 +43,21 @@
         font-weight: bold;
       }
     }
+  }
+}
+.footer__responsive__hidden{
+  display: none;
+  @media #{$tablet} {
+    display: block;
+  }
+}
+
+footer {
+  margin-top: 60px;
+  @media #{$desktopSM} {
+    margin-top: 94px;
+  }
+  @media #{$desktopMD} {
+    margin-top: 125px;
   }
 }
