@@ -59,7 +59,7 @@
 
 ?>
 
-<footer class="clearfix text-white px-10 md:px-32 w-screen mt-10">			
+<footer class="clearfix text-white px-10 md:px-32 w-screen">			
 	<div class="first-row w-full flex flex-col md:flex-row">
 		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-12 md:mb-0">
 			<div class="flex flex-col items-center lg:items-start w-10/12">
