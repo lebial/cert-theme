@@ -718,6 +718,8 @@ header {
 			& > li {
 				margin-bottom: 30px;
 				position: relative;
+				display: flex;
+				align-items: center;
 				
 				@media #{$desktopMD} {
 					margin-bottom: 0;
