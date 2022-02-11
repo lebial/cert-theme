@@ -5,14 +5,14 @@ function render_cards() {
   foreach($card_data as $card) {
     $post = get_post($card['post_id']);
     echo '<div class="h-full ml-1" >';
-      echo '<div class="rounded-md custom-shadow flex flex-col items-center my-4 mx-2.5 text-black p-8" style="height: 98%;">';
+      echo '<a class="insights__card rounded-md custom-shadow flex flex-col items-center my-4 mx-2.5 text-black p-8" style="height: 98%;" href="'.get_permalink($post).'">';
         echo '<img class="w-16 h-16 my-2" src="'.$card['icon'].'"/>';
         echo '<h2 class="mx-auto pt-6 font-bold text-xl 2xl:text-2xl" >'.$post->post_title.'</h2>';
-        echo '<a class="mb-4 mt-auto transition-all hover:text-blue-600" href="'.get_permalink($post).'">
+        echo '<p class="mb-4 mt-auto transition-all" href="'.get_permalink($post).'">
                 Learn More 
                 <span class="text-gray-500 hover:text-gray-500 text-lg font-bold">&rarr;</span>
-              </a>';
-      echo '</div>';
+              </p>';
+      echo '</a>';
     echo '</div>';
   };
 };
