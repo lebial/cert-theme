@@ -191,7 +191,6 @@
   & div {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 0 10%;
   }
@@ -207,7 +206,10 @@
 }
 
 .shapes-container {
-  margin-left: 25%;
+  margin-left: 17%;
+  @media (min-width: 1024px) {
+    margin-left: 8%;
+  }
   transition: all ease .5s;
   &.highlight {
     &-circle {
@@ -244,7 +246,7 @@
 .vertical-line {
   position: absolute;
   width: 5px;
-  height: 120vh;
+  height: 160vh;
   transform-origin: top;
   transform-style: preserve-3d;
   transition: transform 1s linear;
@@ -255,18 +257,20 @@
 
 
 .check-mark-icon {
-  top: -130px;
+  top: -160px;
   right: -290%;
 }
 
 .bars-icon {
-  top: 6px;
-  right: -385%;
+  top: -64px;
+  right: -472%;
+  width: 9rem;
 }
 
 .pie-chart-icon {
   top: 150px;
-  left: 211%;
+  left: 206%;
+  width: 10rem;
 }
 
 .doc-icon {
@@ -300,6 +304,13 @@
   top: 89px;
   left: 42px;
   transform: rotate(45deg);
+}
+
+.bars-dots {
+  width: 180px;
+  top: 7px;
+  left: 70px;
+  transform: rotate(0deg);
 }
 
 .computer__phone__image {
