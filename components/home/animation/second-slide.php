@@ -83,7 +83,7 @@
         <div class="animation--first">
           <div class="unordered__dots absolute w-36 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)"></div>
           <div class="relative">
-            <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/cert-logo-round.svg" id="cert-round" class="style-svg opacity-100 z-10 w-40" alt="">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/cert-logo-round.svg" id="cert-round" class="style-svg opacity-100 z-10 w-40 max-w-none" alt="">
             <div class="ordered__dots w-24" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg)"></div>
           </div>
           <!-- <div data-animation="transform: {-80vh: translate(0, -10%), 0: translate(0, 8%) }"> -->
