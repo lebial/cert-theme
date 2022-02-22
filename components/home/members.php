@@ -1,6 +1,7 @@
 <?php
   function render_members() {
     $images = get_field('members_images');
+    print_r($images);
     foreach($images as $image) {
       echo '<div class="w-48 h-32 flex items-center mx-6" >';
       echo '<img src="'.$image['src'].'" alt="'.$image['alt'].'" />';

@@ -4,6 +4,7 @@ module.exports = {
     './templates/**/*.php',
     './components/**/*.php',
     './components/animation/**/*',
+    './components/platform/**/*',
   ],
   darkmode: false, // or 'media' or 'class'
   theme: {
