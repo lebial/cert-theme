@@ -2839,12 +2839,23 @@ selectric .label {
 }
 
 .hero__content {
-  display: flex;
   height: 100%;
   width: 100%;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.video__overlay {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero__video__container {
+	height: 60%;
+	width: 75%;
 }
 
 .hero__headline {
@@ -2856,10 +2867,13 @@ selectric .label {
   border: none;
   background-color: transparent;
   transition: all ease .3s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .hero__button__svg {
-  margin-top: 50px;
+	width: 50%;
 }
 
 .hero__button__svg path {
@@ -2875,6 +2889,12 @@ selectric .label {
 
 .hero__button-modal:hover path{
   fill:#F4695B;
+}
+
+#homepageVideo, .video__overlay {
+	box-shadow: 1px 1px 25px 2px rgba(0,0,0,.55);
+	-webkit-box-shadow: 1px 1px 25px 2px rgba(0,0,0,.55);
+	-moz-box-shadow: 1px 1px 25px 2px rgba(0,0,0,.55);
 }
 
 #homepageHeroVideo {

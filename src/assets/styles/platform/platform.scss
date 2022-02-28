@@ -1,11 +1,67 @@
-#platforms {
-  & .platform-container {
-    & .platform__menu {
-      & .platform__submenu {
-        &__item {
-          
-        }
+
+.platform__submenu__item {
+  border-bottom: 2px solid gray;
+  &:last-of-type {
+    border-bottom: none;
+    margin-bottom: 8rem;
+  }
+}
+
+.platforms__content__body {
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  transition: all ease 0.3s;
+  & p {
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+  }
+}
+
+.platforms__arrow {
+  transition: all .3s ease;
+}
+
+//animations
+
+.platforms__option--open {
+  opacity: 1;
+  visibility: visible !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+.rotate__arrow {
+  transform: rotate(90deg);
+}
+
+.button__icon__container {
+  width: 80px;
+}
+
+//Proven solution section
+
+.solution {
+  &__content {
+    width: 70%;
+    margin: 0 auto;
+    height: 80%;
+    &__data {
+      display: flex;
+      align-items: center;
+      & h3 {
+        color: white;
+        width: 50%;
+        text-align: center;
+        padding-right: 1rem;
+        font-size: 1.8rem;
+      }
+      & p {
+        color: white;
+        width: 50%;
       }
     }
   }
 }
+
