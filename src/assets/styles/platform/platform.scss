@@ -1,3 +1,6 @@
+@import '../variables';
+
+$section_border: 20px solid black;  
 
 .platform__submenu__item {
   border-bottom: 2px solid gray;
@@ -42,7 +45,25 @@
 
 //Proven solution section
 
+.solutions__section {
+  border-top: $section_border;
+  border-bottom: $section_border;
+}
+
 .solution {
+  &__title {
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      width: 50%;
+      height: 2px;
+      background-color: $color-red;
+      left: 50%;
+      bottom: -25%;
+      transform: translateX(-50%);
+    }
+  }
   &__content {
     width: 70%;
     margin: 0 auto;
@@ -55,7 +76,7 @@
         width: 50%;
         text-align: center;
         padding-right: 1rem;
-        font-size: 1.8rem;
+        font-size: 2.5rem;
       }
       & p {
         color: white;
@@ -65,3 +86,96 @@
   }
 }
 
+// Quotes Section
+
+.quotes{
+  &__card {
+    border: solid $color-red 2px;
+    position: relative;
+  }
+}
+
+.dquote {
+  position: absolute;
+  height: 65px;
+  width: 103px;
+  background-color: white;
+  & span {
+    position: absolute;
+    font-size: 11rem;
+    color: $color-red;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+  }
+
+  &-top {
+    top: -8px; 
+    left: -6px;
+    & span {
+      top: -130%;
+    }
+  }
+  &-bottom {
+    bottom: -10px;
+    right: -11px;
+    & span {
+      top: -55px;
+      right: 32px;
+    }
+  }
+}
+
+// Data Slides
+
+.data__slides {
+  &__content {
+    min-height: 100vh;
+    border-top: $section_border;
+    border-bottom: $section_border;
+
+    &:last-of-type, &:first-of-type {
+      border-top: none;
+    }
+
+    &__description {
+      height: 40vh;
+      transition: all ease 0.4s;
+    }
+
+
+    &__button {
+      & button {
+        overflow: hidden;
+        transition: all ease 0.4s;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 50%;
+          height: 50%;
+          background-color: white;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 50%;
+          height: 50%;
+          background-color: $color-red;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+// platform deploy options section
+
+.platform__deploy__options {
+  min-height: 100vh;
+  
+}

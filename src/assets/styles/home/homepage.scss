@@ -18,6 +18,16 @@
   }
 }
 
+.bucket__slider {
+  & .slick-next {
+    top: 40%;
+  }
+  & .slick-prev {
+    left: -40px;
+    top: 40%;
+  }
+}
+
 .schedule-demo__form {
   & form {
     margin-top: 0 !important;

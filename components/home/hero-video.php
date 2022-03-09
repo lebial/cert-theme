@@ -13,7 +13,7 @@
       </svg>
     </button>
   </div>
-  <div class="hero__content hidden xl:flex">
+  <div class="hero__content hidden lg:flex">
     <div class="hero__content__data w-1/2 h-full flex flex-col justify-center items-center">
       <div class=" w-3/4">
         <h1 class="hero__headline text-5xl text-left 2xl:text-6xl">

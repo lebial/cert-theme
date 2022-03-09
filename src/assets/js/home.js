@@ -1,19 +1,37 @@
+import { waitForElement } from './utils/utils';
+
 jQuery(document).ready(function ($) {
 
   function setVideoHeight() {
-    const videoHeight = document.getElementById('homepageVideo').offsetHeight;
-    $('.video__overlay').css('height', `${videoHeight + 60}px`);
+    waitForElement('#homepageVideo').then(videoElement => {
+      const videoHeight = videoElement.offsetHeight;
+      $('.video__overlay').css('height', `${videoHeight + 5}px`);
+    })
   }
 
   function handlePlayClick() {
-    setVideoHeight();
-    $('#homeVideoButton').click(function() {
-      $('.video__overlay').toggle();
-      $('#homepageVideo').get(0).play();
+    waitForElement('#homeVideoButton').then(videoElement => {
+      $(videoElement).click(function() {
+        $('.video__overlay').toggle();
+        $('#homepageVideo').get(0).play();
+      });
     });
   }
 
-  $(window).resize(setVideoHeight);
+  function createBucketSlider() {
+    $('.bucket__slider').slick(
+      {
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    );
+  }
 
+  window.onload = setVideoHeight;
+
+  setVideoHeight();
   handlePlayClick();
+  $(window).resize(setVideoHeight);
+  createBucketSlider();
 });

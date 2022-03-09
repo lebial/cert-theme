@@ -146,10 +146,10 @@
 
     <div class="full-window flex-1 bg-white opacity-100 z-10 pb-10">
       <div class="absolute-center ">
-        <h3 class=" text-5xl lg:text-6xl font-bold">
-          Are you ready to see <br>
-          the <span data-aos="change-red">future</span> through <br>
-          data?
+        <h3 class=" text-5xl lg:text-6xl font-bold text-center">
+          Are you ready to see 
+          the <span data-aos="change-red">future</span> through
+          data? <br>
         </h3>
         <div class="flex flex-col lg:flex-row w-full mt-8" data-aos="fade-in">
           <div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">

@@ -14,7 +14,7 @@ function add_styles_scripts() {
 	wp_enqueue_script( 'greenSock', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array());
 	wp_enqueue_script( 'scrollMagic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js');
 	wp_enqueue_script( 'scrollMagicPlugin', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js');
-	wp_enqueue_script( 'mainJS', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), filemtime( get_stylesheet_directory() . '/assets/js/main.js' ));
+	// wp_enqueue_script( 'mainJS', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), filemtime( get_stylesheet_directory() . '/assets/js/main.js' ));
 
     wp_register_style('AOSStyles', "https://unpkg.com/aos@next/dist/aos.css");
     wp_enqueue_style('AOSStyles');

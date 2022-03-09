@@ -7,12 +7,13 @@
 		</div>
 		<div class="app__container">
 			<?php get_template_part('components/home/hero-video') ?>
-			<?php get_template_part('components/home/partner-group') ?>
+			<?php get_template_part('components/home/buckets') ?>
+			<?php // get_template_part('components/home/partner-group') ?>
 			<?php get_template_part('components/home/action-button-group') ?>
 			<?php get_template_part('components/home/home-animation') ?>
 			<?php get_template_part('components/home/insights') ?>
 			<?php get_template_part('components/home/schedule-form') ?>
-			<?php get_template_part('components/home/members') ?>
+			<?php // get_template_part('components/home/members') ?>
 		</div>
 	</div>
 	<!-- end .c-page -->

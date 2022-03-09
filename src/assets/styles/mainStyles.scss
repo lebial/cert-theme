@@ -719,9 +719,10 @@ header {
 				margin-bottom: 30px;
 				position: relative;
 				display: flex;
-				align-items: center;
+				flex-direction:column;
 				
 				@media #{$desktopMD} {
+				align-items: center;
 					margin-bottom: 0;
 					text-align: center;
 					margin-left: 10px;
@@ -763,6 +764,13 @@ header {
 			    right: 23px;
 			    transform: rotate(0deg);
 			    transition: transform 0.3s $animation-cb;
+					&__triangle {
+						width: 0; 
+						height: 0; 
+						border-top: 15px solid transparent;
+						border-bottom: 15px solid transparent;
+						border-left: 15px solid darkgray;
+					}
 			 			    
 			    @media #{$tablet} {
 				    right: 34px;
@@ -911,12 +919,18 @@ header {
 			}
 		}
 		& .demo-menu-button {
+			padding: 10px 10%;
+			text-align: center;
+			@media #{$desktopMD} {
+				padding: 0;
+			}
 			& a {
 				border: 2px solid $color-red;
 				background-color: $color-red;
 				color: white !important;
 				transition: all ease .3s;
-				padding: 10px !important;
+				
+
 				border-radius: 6px;
 				&:hover {
 					background-color: white;
@@ -2854,7 +2868,6 @@ selectric .label {
 }
 
 .hero__video__container {
-	height: 60%;
 	width: 75%;
 }
 
@@ -2949,4 +2962,7 @@ selectric .label {
 	& > div {
 		height: 100%;
 	}
+}
+.sfsi_widget {
+	z-index: 1;
 }

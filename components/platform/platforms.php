@@ -7,7 +7,7 @@
       echo '<div class="platform-container px-12">';
         echo '<div class="icon__container flex justify-center">';
         //add real image url through $platform['main_icon']
-          echo '<div class=" w-10/12 h-48 mb-5" >';
+          echo '<div class=" w-10/12 h-48 mb-10" >';
             echo '<img class="style-svg w-full" src="'.$platform_data['main_icon'].'" >';
           echo '</div>';
         echo '</div>';

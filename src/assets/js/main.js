@@ -23,7 +23,7 @@ jQuery(document).ready(function($){
 		}
 	})
 	
-	$('<span class="more"></span>').insertBefore( "li.menu-item-has-children > .sub-menu" );
+	$('<span class="more"><div class="more__triangle"></div></span>').insertBefore( "li.menu-item-has-children > .sub-menu" );
 	
 	$('.menu .more').on('click', function(){
 		
