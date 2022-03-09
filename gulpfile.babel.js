@@ -43,7 +43,7 @@ const paths = {
 
 export const serve = (cb) => {
   server.init({
-    proxy: "http://localhost/testsite/",
+    proxy: "http://localhost/web3.0/",
   });
   cb();
 }
