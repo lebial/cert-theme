@@ -1,6 +1,13 @@
 import getNavHeight from './utils/utils';
 
 jQuery(document).ready(function($) {
+
+  const sliderOptions = {
+      inifinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+  }
+
   function setHeroMarginTop() {
     const {navHeight} = getNavHeight();
     $('.platform-hero').css('margin-top', `${navHeight}px`);
@@ -17,11 +24,11 @@ jQuery(document).ready(function($) {
   };
 
   function createQuotesSlider() {
-    $('.quotes__slider').slick({
-      inifinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    });
+    $('.quotes__slider').slick(sliderOptions);
+  }
+
+  function createValidationSlider() {
+    $('.validation__slider').slick({...sliderOptions, dots: true});
   }
 
   function revealDataSlideContent() {
@@ -45,5 +52,6 @@ jQuery(document).ready(function($) {
     setHeroMarginTop();
     handleOptionColapse();
     revealDataSlideContent();
+    createValidationSlider();
   }
 });
