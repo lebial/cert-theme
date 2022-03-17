@@ -3,7 +3,7 @@
     <div class="quotes__card w-10/12 px-12 py-12 my-20">
       <div class="dquote dquote-top"><span>“</span></div>
       <div class="dquote dquote-bottom"><span>”</span></div>
-      <p>Certilytics' product set is built with modern tools and techniques, including open source software and tools.
+      <p class="text-lg">Certilytics' product set is built with modern tools and techniques, including open source software and tools.
         ...Its modern technology stack distinguishes it from other payer-oriented analytics vendors. In addition to technology, Certilytics offers implementation services, ongoing product maintenance and resourcebundle_localessupport,
         and data science-services.
       </p>
