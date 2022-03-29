@@ -18,7 +18,7 @@ function add_styles_scripts() {
 
     wp_register_style('AOSStyles', "https://unpkg.com/aos@next/dist/aos.css");
     wp_enqueue_style('AOSStyles');
-    // wp_enqueue_script('AOSJs', "https://unpkg.com/aos@next/dist/aos.js", array(), '1.0.0', true);
+    wp_enqueue_script('AOSJs', "https://unpkg.com/aos@next/dist/aos.js", array());
 }
 add_action( 'wp_enqueue_scripts', 'add_styles_scripts' );
 
