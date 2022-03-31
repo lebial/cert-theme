@@ -1,6 +1,6 @@
-<section class="quotes__section w-screen">
+<section class="quotes__section w-screen bg-gray-secondary">
   <div class="quotes__slider flex justify-center items-center h-full">
-    <div class="quotes__card w-10/12 px-12 py-12 my-20">
+    <div class="quotes__card px-12 py-12 my-20">
       <div class="dquote dquote-top"><span>“</span></div>
       <div class="dquote dquote-bottom"><span>”</span></div>
       <p class="text-lg">Certilytics' product set is built with modern tools and techniques, including open source software and tools.

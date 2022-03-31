@@ -1,8 +1,8 @@
-<section class="validation__security min-h-screen relative">
+<section class="validation__security min-h-screen relative py-8 flex flex-col">
   <img style="z-index: -2;" src="<?php the_field('validation_background') ?>" class="absolute top-0 left-0 h-full w-full object-cover" alt="">
   <div style="z-index: -1;" class="overlay__validation w-full h-full absolute top-0 left-0"></div>
   <div class="validation__security__container px-11">
-    <p class="text-white font-bold text-3xl mt-14">Validation & Security</p>
+    <p class="text-white font-bold text-3xl mt-14 lg:mx-auto lg:text-center" >Validation & Security</p>
     <div class="validation__slider mt-10">
       <p class="text-white pr-16 text-lg">
         <b>Data Security</b> is central to our mission at Certilytics. The Certilytics
@@ -27,7 +27,7 @@
       </p>
     </div>
   </div>
-  <div class="validation__hitrust__container w-full flex justify-center pb-10">
+  <div class="validation__hitrust__container w-full flex justify-center lg:justify-end pb-10 lg:pr-16 flex-1 items-end">
     <img src="<?php the_field('validation_hitrust_logo') ?>" class="mt-10" alt="HITRUST logo">
   </div>
 </section>

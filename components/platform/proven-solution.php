@@ -59,7 +59,7 @@ function renderDesktopSolutions($data) {
 }
 ?>
 <section class="block lg:hidden solutions__section w-screen min-h-screen bg-dark-blue-background mt-11">
-  <div class="solutions__section__container px-8">
+  <div class="solutions__section__container px-8 py-10">
     <?php renderSolutions($solutions_data) ?>
   </div>
 </section>

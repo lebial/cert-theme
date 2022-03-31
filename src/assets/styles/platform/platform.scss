@@ -1,5 +1,9 @@
 @import '../variables';
 $section_border: 20px solid black;
+@media (min-width: 1024px) {
+    $section_border: none !global;
+}
+
 .platform__submenu__item {
     border-bottom: 2px solid gray;
     &:last-of-type {
@@ -241,7 +245,7 @@ $dots_top: -6px;
     position: absolute;
     height: 60px;
     width: 103px;
-    background-color: white;
+    background-color: #f2f2f2;
     & span {
         position: absolute;
         font-size: 11rem;
@@ -311,19 +315,16 @@ $dots_top: -6px;
 }
 
 // platform deploy options section
-$deploy_border: 3px dotted white;
+$deploy_border: 3px dotted #9e9e9e;
 .platform__deploy__options {
     min-height: 100vh;
-    & .deploy__icon__header {
-        padding-bottom: 5rem;
-        border-bottom: $deploy_border;
-    }
+    & .deploy__icon__header {}
 }
 
 .deploy__data__content {
     padding-bottom: 15px;
     & .empty__data__block {
-        background: repeating-linear-gradient( 45deg, #011b3a, #011b3a 3px, #9e9e9e 3px, #9e9e9e 6px, )
+        background: repeating-linear-gradient( 45deg, white, white 3px, #9e9e9e 3px, #9e9e9e 6px, )
     }
     & .content__body {
         padding: 20px 0;
@@ -360,6 +361,13 @@ $deploy_border: 3px dotted white;
     & .slick {
         &-prev {
             display: none !important;
+            &::before {
+                content: '\203A';
+                position: absolute;
+                top: -470%;
+                right: -170%;
+                transform: rotate(180deg);
+            }
         }
         &-next {
             &::before {
@@ -367,6 +375,20 @@ $deploy_border: 3px dotted white;
                 position: absolute;
                 top: -500%;
                 left: -170%;
+            }
+        }
+        @media (min-width: 1024px) {
+            &-prev {
+                display: block !important;
+                &::before {
+                    top: -380%;
+                    right: -500%;
+                }
+            }
+            &-next {
+                &::before {
+                    left: -500%;
+                }
             }
         }
         &-dots {
@@ -379,17 +401,11 @@ $deploy_border: 3px dotted white;
             }
         }
     }
-    & .validation__hitrust__container {
-        & img {
-            padding: 5px;
-            border: solid 2px white;
-        }
-    }
+    & .validation__hitrust__container {}
 }
 
 // Contact Us Section
 .platform__contact__us {
-    background-color: #e9effb;
     border-top: $section_border;
 }
 
