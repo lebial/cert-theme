@@ -7,13 +7,12 @@ $color-red: #F4695B;
 $color-grey: #5E5E5E;
 $color-grey-background: #7c7c7d;
 $animation-cb: cubic-bezier(0.4, 0, 0.2, 1);
-
 $mobileMin: '(min-width:320px)';
 $mobileMax: '(max-width:320px)';
 $tablet: '(min-width:768px)';
 $desktopSM: '(min-width:960px)';
+$desktopBase: '(min-width: 1024px)';
 $desktopMD: '(min-width:1200px)';
 $desktopLG: '(min-width:1400px)';
 $desktopFull: '(min-width:1920px)';
-
 $firstHeight: '(min-height: 820px)';

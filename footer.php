@@ -16,11 +16,6 @@
 				'button_text' => 'Platform',
 				'links' => array(
 					array('href' => '#', 'text' => 'Platform'),
-					array('href' => '#', 'text' => 'Opportunity Framework'),
-					array('href' => '#', 'text' => 'Nucleus Analytics Platform'),
-					array('href' => '#', 'text' => 'Accelerator Data Platform'),
-					array('href' => '#', 'text' => 'Adoption & Deployment'),
-					array('href' => '#', 'text' => 'Data Security & Validation'),
 				),
 			),
 			array(

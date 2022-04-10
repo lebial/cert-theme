@@ -17,7 +17,7 @@
   <div class="action__quote__container w-7/12 lg:w-1/2 mx-auto h-full flex justify-center items-center flex-col">
     <div class="w-full lg:w-3/4">
     <p class="text-xl lg:text-3xl lg:font-bold text-center" data-aos="fade-up">Are you ready to see the future through data?</p>
-    <div class="action__quote__container w-full mx-auto mt-10 py-10 flex px-20 justify-center">
+    <div class="action__quote__container w-full mx-auto mt-10 py-10 flex lg:px-20 justify-center">
       <a href="#" class=" w-8/12 bg-primary text-white font-bold rounded-lg text-xl text-center py-3" data-aos="fade-up">Watch Demo</a>
     </div>
     </div>

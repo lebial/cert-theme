@@ -6,7 +6,7 @@
 <?php get_template_part('components/platform/hero-section') ?>
 <?php get_template_part('components/platform/platforms') ?>
 <?php get_template_part('components/platform/proven-solution') ?>
-<?php get_template_part('components/platform/data-slides') ?>
+<?php //get_template_part('components/platform/data-slides') ?>
 <?php get_template_part('components/platform/quotes') ?>
 <?php get_template_part('components/platform/platform_deploy_slide') ?>
 <?php get_template_part('components/platform/validation-security') ?>

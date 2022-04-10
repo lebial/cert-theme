@@ -7,7 +7,7 @@ $certilytics_env = get_field('certilytics_env_icon');
     <div class="data__slides__content w-full lg:w-9/12 mx-auto" data-aos="fade-up">
       <p class="data__slides__content__title font-bold text-4xl">Adoption & Deployment</p>
       <div class="data__slides__content__description overflow-hidden mt-14 relative ">
-        <div class="data__slide__overlay absolute bottom-0 left-0 w-full h-1/2 bg-white bg-opacity-60"></div>
+        <!-- <div class="data__slide__overlay absolute bottom-0 left-0 w-full h-1/2 bg-white bg-opacity-60"></div> -->
         <div class="data__slide__text">
           <p class="text-xl ">
             Change is hard. That's why our process is designed to take the burden off you and your team
@@ -15,13 +15,18 @@ $certilytics_env = get_field('certilytics_env_icon');
           </p>
           <p class="text-xl">
             We get our clients up and running in <b>90 days or less.</b>
-            Our implementation team is awesome (we don't mind bragging a bit) and works hand-in-hand with our data governance
+            Our implementation team is awesome (we don't mind bragging a bit) and works hand-in-hand with our data governance,
+            client engament, and product teams to give you unparalleled support as you get online with Certilytics.
+          </p>
+          <p class="text-xl">
+            We offer flexible deployment options, including Software as a Service (SaaS) and
+            a Platform license if you want to run our end-to-end platform on your infrastructure.
           </p>
         </div>
       </div>
-      <div class="data__slides__content__button flex justify-center mt-10">
+      <!-- <div class="data__slides__content__button flex justify-center mt-10">
         <button class=" border-none bg-primary relative w-16 h-16"></button>
-      </div>
+      </div> -->
     </div>
   </div>
 

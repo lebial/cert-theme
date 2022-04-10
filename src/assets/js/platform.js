@@ -41,7 +41,8 @@ jQuery(document).ready(function($) {
             const isOpen = parent.hasClass('.slide__open');
             const overlay = parent.find('.data__slide__overlay');
             const description = parent.find('.data__slides__content__description');
-            const textHeight = !isOpen ? '40vh' : `${parent.find('.data__slide__text').height()}px`;
+            // const textHeight = !isOpen ? '40vh' : `${parent.find('.data__slide__text').height()}px`;
+            const textHeight = `${parent.find('.data__slide__text').height()}px`;
             const buttonAnimation = !isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
 
             overlay.toggle();
