@@ -79,21 +79,12 @@
     <div class="full-window flex-1 last-slide relative">
       <div class=" hidden lg:block w-1/2 h-full ml-auto "> 
         <div class="mx-auto w-28 flex flex-col items-center">
-          <!-- <div class="absolute -top-60 bg-blue-700" data-animation="transform: {0: translate(0,0), 15vh: translate(0,30%) }"> -->
         <div class="animation--first">
-          <div class="unordered__dots absolute w-36 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg)"></div>
+          <div class="unordered__dots absolute w-36 -top-60" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/unordered.svg); width: 160px;"></div>
           <div class="relative">
             <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/cert-logo-round.svg" id="cert-round" class="style-svg opacity-100 z-10 w-40 max-w-none" alt="">
             <div class="ordered__dots w-24" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg)"></div>
           </div>
-          <!-- <div data-animation="transform: {-80vh: translate(0, -10%), 0: translate(0, 8%) }"> -->
-          <!-- <div class=" invisible">
-            <img
-              src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/ordered.svg"
-              class="style-svg w-24"
-              alt=""
-            >
-          </div> -->
         </div>
           <div class="relative h-screen mt-14 flex flex-col items-center justify-center">
             <img src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/face-plus.svg" id="face-plus" class="style-svg opacity-100 mt-9 z-10 min-w-40 w-4/5" alt="">

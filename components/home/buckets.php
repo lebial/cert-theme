@@ -7,7 +7,7 @@ function render_bucket_cards() {
     echo '<div class="bucket__card lg:mr-14 last-of-type:mr-0 mt-28" data-aos="fade-up" data-aos-delay="'.intval($idx) * 150 .'">';
       echo '<div class="bucket__card__icon w-full flex justify-center "><img class=" w-40 lg:w-28" src='.$bucket['bucket_icon'].'></div>';
       echo '<p class="mt-6 text-2xl font-bold text-center">'.$bucket['bucket_title'].'</p>';
-      echo '<p class="text-xl lg:text-sm">'.$bucket['bucket_description'].'</p>';
+      echo '<p class="text-xl lg:text-lg">'.$bucket['bucket_description'].'</p>';
     echo '</div>';
     $idx++;
   };

@@ -1,42 +1,46 @@
 <?php
+  function hide_button($count) {
+	  if ($count > 0 ) return '';
+	  return 'hidden';
+  }
 
   function render_link_groups() {
 
 		$data_mock = array(
 			array(
+				'button_link' => '#',
 				'button_text' => 'Solutions',
 				'links' => array(
-					array('href' => '#', 'text' => 'Solutions'),
 					array('href' => '#', 'text' => 'Health Plans & PBMs'),
 					array('href' => '#', 'text' => 'Employers'),
 					array('href' => '#', 'text' => 'Providers'),
 				),
 			),
 			array(
+				'button_link' => '#',
 				'button_text' => 'Platform',
 				'links' => array(
-					array('href' => '#', 'text' => 'Platform'),
 				),
 			),
 			array(
+				'button_link' => '#',
 				'button_text' => 'News & Insights',
 				'links' => array(
-					array('href' => '#', 'text' => 'News & Insights'),
 					array('href' => '#', 'text' => 'Blog'),
 				),
 			),
 			array(
 				'button_text' => 'Who We Are',
+				'button_link' => '#',
 				'links' => array(
-					array('href' => '#', 'text' => 'Who We Are'),
 					array('href' => '#', 'text' => 'Our Story'),
 					array('href' => '#', 'text' => 'Management & Leadership'),
 				),
 			),
 			array(
+				'button_link' => '#',
 				'button_text' => 'Careers',
 				'links' => array(
-					array('href' => '#', 'text' => 'Careers'),
 				),
 			)
 		);
@@ -45,7 +49,7 @@
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
-			  echo '<button class="footer__links__toggle block md:hidden">'.$link_group['button_text'].'</button>';
+			  echo '<div class="mb-4 flex justify-between block md:hidden"><a href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button class="footer__links__toggle block md:hidden '.hide_button(count($link_group['links'])).'"></button></div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group">';
 						foreach($link_group['links'] as $link){
@@ -86,7 +90,7 @@
 
 	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-32 pt-6">
 		<div class="address__container">
-			<p class="text-white"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louseville, KY 40222'?></p>
+			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louseville, KY 40222'?></p>
 		</div>
 		<div class="corp__info flex flex-col md:flex-row mt-9 md:mt-0">
 			<div>
