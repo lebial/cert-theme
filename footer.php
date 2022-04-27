@@ -1,4 +1,5 @@
 <?php
+  $base_url = get_site_url();
   function hide_button($count) {
 	  if ($count > 0 ) return '';
 	  return 'hidden';
@@ -26,21 +27,15 @@
 				'button_link' => '#',
 				'button_text' => 'News & Insights',
 				'links' => array(
-					array('href' => '#', 'text' => 'Blog'),
 				),
 			),
 			array(
-				'button_text' => 'Who We Are',
+				'button_text' => 'About Us',
 				'button_link' => '#',
 				'links' => array(
 					array('href' => '#', 'text' => 'Our Story'),
 					array('href' => '#', 'text' => 'Management & Leadership'),
-				),
-			),
-			array(
-				'button_link' => '#',
-				'button_text' => 'Careers',
-				'links' => array(
+					array('href' => '#', 'text' => 'Careers'),
 				),
 			)
 		);
@@ -49,11 +44,11 @@
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
-			  echo '<div class="mb-4 flex justify-between block md:hidden"><a href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button class="footer__links__toggle block md:hidden '.hide_button(count($link_group['links'])).'"></button></div>';
+				echo '<div class="mb-4 flex justify-between"><a href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block md:hidden"></button></div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group">';
 						foreach($link_group['links'] as $link){
-							echo '<a href="'.$link['href'].'" class="footer__link">'.$link['text'].'</a>';
+							echo '<a href="'.$link['href'].'" class="footer__link" name="footer-'.$link['text'].'">'.$link['text'].'</a>';
 						}
 					echo '</div>';
 				echo '</div>';
@@ -85,10 +80,31 @@
 	</div>
 	
 	<div class="second-row flex justify-center md:justify-end mt-5">
-		<?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+		<div class=" social__icons social__icons__clone hidden lg:flex mt-3">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
+				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
+			</a>
+			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
+				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
+			</a>
+			<a href="https://www.linkedin.com/shareArticle?url=<?php echo $base_url ?>">
+				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
+			</a>
+		</div>
+		<div class="flex social__icons mt-3  lg:hidden">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
+				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
+			</a>
+			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
+				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
+			</a>
+			<a href="https://www.linkedin.com/shareArticle?url=<?php echo $base_url ?>">
+				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
+			</a>
+		</div>
 	</div>
 
-	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-32 pt-6">
+	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-10 pt-6">
 		<div class="address__container">
 			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louseville, KY 40222'?></p>
 		</div>

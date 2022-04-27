@@ -19,7 +19,7 @@
         <h1 class="hero__headline text-5xl text-left 2xl:text-6xl">
           <?php the_field('headline') ?>
         </h1>
-        <h2 class="text-white text-xl  mt-8 font-normal leading-relaxed tracking-wide"><?php the_field('header_text') ?></h2>
+        <h2 class="text-white text-lg  mt-8 font-normal leading-relaxed tracking-wide"><?php the_field('header_text') ?></h2>
       </div>
     </div>
     <div class="hero__content__video w-1/2 h-full flex items-center justify-center">

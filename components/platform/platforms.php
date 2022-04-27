@@ -36,14 +36,14 @@
   function render_desktop_platforms($data) {
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
-    echo '<div class="platforms__container flex w-full">';
-      echo '<div class="w-1/2 bg-primary">';
+    echo '<div class="platforms__container flex w-full bg-dark-blue-background">';
+      echo '<div class="w-1/2 bg-dark-blue-background">';
       echo '<h2 class="visual-element-hide">'.$accelerator_data['title'].'</h2>';
         echo '<div class="platforms__icon__container w-full flex justify-center py-4">';
           echo '<img class="w-1/2" src="'.$accelerator_data['main_icon_desktop'].'" >';
         echo '</div>';
       echo '</div>';
-      echo '<div class="nucleus__content w-1/2 bg-secondary">';
+      echo '<div class="nucleus__content w-1/2">';
       echo '<h2 class="visual-element-hide">'.$nucleus_data['title'].'</h2>';
         echo '<div class="platforms__icon__container w-full flex justify-center py-4">';
           echo '<img class="w-1/2" src="'.$nucleus_data['main_icon_desktop'].'" >';
@@ -51,7 +51,7 @@
       echo '</div>';
     echo '</div>';
     echo '<div class="platforms__container w-full flex mb-28">';
-      echo '<div class="w-1/2 bg-primary flex justify-end relative">';
+      echo '<div class="w-1/2 flex justify-end relative">';
         echo '<div class="w-11/12 flex justify-evenly max-h-10 pt-1">';
           foreach($accelerator_data['buttons'] as $accelerator_button) {
             echo '<div class="platforms__icons--red platforms__icon__button rounded-full w-12 h-12 bg-white relative flex justify-center items-center" >';
@@ -63,7 +63,7 @@
           };
         echo '</div>';
       echo '</div>';
-      echo '<div class="w-1/2 bg-secondary flex justify-start relative">';
+      echo '<div class="w-1/2 flex justify-start relative">';
         echo '<div class="w-11/12 flex justify-evenly max-h-10 pt-1">';
           foreach($nucleus_data['buttons'] as $nucleus_button) {
             echo '<div class="platforms__icons--blue platforms__icon__button rounded-full w-12 h-12 bg-white relative flex justify-center items-center" >';
@@ -89,16 +89,16 @@
   <div class="w-full flex justify-center">
     <div id="platforms-slide" class=" w-9/12 flex items-center">
       <button class="platforms__button left" name="platformsPrev">
-        <img class="w-11/12" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="w-44" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
       <p class="platforms__slide__title font-bold mb-0 ml-10">Connect Data</p>
-      <div class="platforms__slide__icon px-5"><img class="w-full" src="" alt=""></div>
+      <div class="platforms__slide__icon px-5"><img class=" w-44" src="" alt=""></div>
       <p class="platforms__slide__description pr-10 text-base mb-0">
         all forms of data are mapped, standarized, cleansed, validated and enriched through our market-leading
         data platform, with vendor agnositc interfaces and existing connectors to hundreds of sources.
       </p>
       <button class="platforms__button right" name="platformsNext">
-        <img class="w-11/12" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="w-44" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
     </div>
   </div>
