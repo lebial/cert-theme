@@ -142,7 +142,7 @@
           the <span data-aos="change-red">future</span> through
           data? <br>
         </h3>
-        <div class="flex flex-col lg:flex-row w-full mt-8" data-aos="fade-in">
+        <div class="flex flex-col lg:flex-row w-full mt-8" data-aos="fade-in" data-aos-offset="-35">
           <div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">
             <a
               class="p-2 w-full bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"

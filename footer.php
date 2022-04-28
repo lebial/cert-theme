@@ -37,6 +37,12 @@
 					array('href' => '#', 'text' => 'Management & Leadership'),
 					array('href' => '#', 'text' => 'Careers'),
 				),
+			),
+			array(
+				'button_text' => 'Careers',
+				'button_link' => '#',
+				'links' => array(
+				),
 			)
 		);
 
@@ -44,7 +50,7 @@
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
-				echo '<div class="mb-4 flex justify-between"><a href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block md:hidden"></button></div>';
+				echo '<div class="mb-4 flex justify-between"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block md:hidden"></button></div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group">';
 						foreach($link_group['links'] as $link){
