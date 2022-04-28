@@ -4,7 +4,7 @@
     <h1 class="hero__headline text-4xl text-center 2xl:text-6xl">
       <?php the_field('headline') ?>
     </h1>
-    <h2 class="text-white text-xl 2xl:text-2xl mt-8 px-10 sm:px-32 font-normal leading-relaxed tracking-wide"><?php the_field('header_text') ?></h2>
+    <h2 class="text-white text-lg  mt-8 px-10 sm:px-32 font-normal leading-relaxed tracking-wide"><?php the_field('header_text') ?></h2>
     <button id="videoModalButton" class="hero__button-modal" type="button">
       <svg class="hero__button__svg h-32" style="width: 80%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve">
         <g>
@@ -19,7 +19,7 @@
         <h1 class="hero__headline text-5xl text-left 2xl:text-6xl">
           <?php the_field('headline') ?>
         </h1>
-        <h2 class="text-white text-lg 2xl:text-2xl mt-8 font-normal leading-relaxed tracking-wide"><?php the_field('header_text') ?></h2>
+        <h2 class="text-white text-lg  mt-8 font-normal leading-relaxed tracking-wide"><?php the_field('header_text') ?></h2>
       </div>
     </div>
     <div class="hero__content__video w-1/2 h-full flex items-center justify-center">

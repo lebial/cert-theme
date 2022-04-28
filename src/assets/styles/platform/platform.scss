@@ -1,5 +1,9 @@
 @import '../variables';
 $section_border: 20px solid black;
+@media (min-width: 1024px) {
+    $section_border: none !global;
+}
+
 .platform__submenu__item {
     border-bottom: 2px solid gray;
     &:last-of-type {
@@ -151,6 +155,14 @@ $section_border: 20px solid black;
 }
 
 //Proven solution section
+.solutions-parallax {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: 0% 30%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 $dots_top: -6px;
 .solutions__section {
     border-top: $section_border;
@@ -241,7 +253,7 @@ $dots_top: -6px;
     position: absolute;
     height: 60px;
     width: 103px;
-    background-color: white;
+    background-color: #f2f2f2;
     & span {
         position: absolute;
         font-size: 11rem;
@@ -278,7 +290,7 @@ $dots_top: -6px;
             border-top: none;
         }
         &__description {
-            height: 40vh;
+            height: 100%;
             transition: all ease 0.4s;
         }
         &__button {
@@ -311,19 +323,16 @@ $dots_top: -6px;
 }
 
 // platform deploy options section
-$deploy_border: 3px dotted white;
+$deploy_border: 3px dotted #9e9e9e;
 .platform__deploy__options {
     min-height: 100vh;
-    & .deploy__icon__header {
-        padding-bottom: 5rem;
-        border-bottom: $deploy_border;
-    }
+    & .deploy__icon__header {}
 }
 
 .deploy__data__content {
     padding-bottom: 15px;
     & .empty__data__block {
-        background: repeating-linear-gradient( 45deg, #011b3a, #011b3a 3px, #9e9e9e 3px, #9e9e9e 6px, )
+        background: repeating-linear-gradient( 45deg, white, white 3px, #9e9e9e 3px, #9e9e9e 6px, )
     }
     & .content__body {
         padding: 20px 0;
@@ -335,6 +344,7 @@ $deploy_border: 3px dotted white;
             padding-left: 10px;
         }
         & div {
+            padding: 0 10px;
             margin-bottom: 10px;
             margin-right: 15px;
             margin-left: 15px;
@@ -359,11 +369,19 @@ $deploy_border: 3px dotted white;
     border-top: $section_border;
     & .slick {
         &-prev {
+            z-index: 10;
             display: none !important;
+            &::before {
+                position: absolute;
+                top: -470%;
+                right: -170%;
+                transform: rotate(180deg);
+            }
         }
         &-next {
             &::before {
-                content: '\203A';
+                content: var(--rightArrowUrl);
+                display: none !important;
                 position: absolute;
                 top: -500%;
                 left: -170%;
@@ -379,17 +397,27 @@ $deploy_border: 3px dotted white;
             }
         }
     }
-    & .validation__hitrust__container {
-        & img {
-            padding: 5px;
-            border: solid 2px white;
+    & .slider-next {
+        right: 0%;
+        top: 50%;
+        z-index: 10;
+        transform: rotate(180deg);
+        @media #{$desktopBase} {
+            right: 10%;
+        }
+    }
+    & .slider-prev {
+        display: none;
+        top: 50%;
+        z-index: 10;
+        @media #{$desktopBase} {
+            display: block;
         }
     }
 }
 
 // Contact Us Section
 .platform__contact__us {
-    background-color: #e9effb;
     border-top: $section_border;
 }
 
@@ -448,6 +476,24 @@ $dot-color: #bdcff5;
     &-5 {
         top: 51%;
         right: -5%;
+    }
+    @media #{$desktopBase} {
+        &-2 {
+            top: 10%;
+            left: 50%;
+        }
+        &-3 {
+            top: 10%;
+        }
+        &-4 {
+            top: 45%;
+            right: 17%;
+            left: auto;
+        }
+        &-5 {
+            top: 30%;
+            right: -5%;
+        }
     }
 }
 

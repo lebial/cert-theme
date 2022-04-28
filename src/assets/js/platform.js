@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
 
     let platformsData = [];
     let currentIdx = 0;
+    let cycleTimer = null;
 
     function setHeroMarginTop() {
         const { navHeight } = getNavHeight();
@@ -37,17 +38,18 @@ jQuery(document).ready(function($) {
     function revealDataSlideContent() {
         $('.data__slides__content__button').click(function() {
             const parent = $(this).parent();
+            parent.toggleClass('.slide__open');
             const isOpen = parent.hasClass('.slide__open');
             const overlay = parent.find('.data__slide__overlay');
             const description = parent.find('.data__slides__content__description');
-            const textHeight = isOpen ? '40vh' : `${parent.find('.data__slide__text').height()}px`;
-            const buttonAnimation = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+            // const textHeight = !isOpen ? '40vh' : `${parent.find('.data__slide__text').height()}px`;
+            const textHeight = `${parent.find('.data__slide__text').height()}px`;
+            const buttonAnimation = !isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
 
             overlay.toggle();
             description.css('height', textHeight);
             parent.find('button').css('transform', buttonAnimation);
 
-            parent.toggleClass('.slide__open');
         });
     }
 
@@ -88,7 +90,7 @@ jQuery(document).ready(function($) {
             const idxToUse = currentIdx + step;
             setPlatformsSlideData(idxToUse);
             if (name === 'platformsPrev' && !currentIdx) $(this).hide();
-            if (name === 'platformsNext' && currentIdx + 1 === data.length) $(this).hide();
+            if (name === 'platformsNext' && currentIdx + 1 === platformsData.length) $(this).hide();
         });
     }
 
@@ -100,6 +102,34 @@ jQuery(document).ready(function($) {
         })
     }
 
+    function addArrowToSlider() {
+        $('.slider-prev').click(function() {
+            $('.validation__slider').slick('slickPrev');
+        });
+        $('.slider-next').click(function() {
+            $('.validation__slider').slick('slickNext');
+        });
+    }
+
+    function setCycle() {
+        if (currentIdx + 1 === platformsData.length) return setPlatformsSlideData(0);
+        return setPlatformsSlideData(currentIdx + 1);
+    }
+
+    function handleHoverStop(selector) {
+        $(selector).hover(function() {
+            clearInterval(cycleTimer);
+        }, function() {
+            cycleTimer = setInterval(setCycle, 5000);
+        });
+    }
+
+    function handleAutoCycle() {
+        cycleTimer = setInterval(setCycle, 5000);
+        handleHoverStop('.platforms__icon__button');
+        handleHoverStop('#platforms-slide');
+    };
+
     if (window.location.href.includes('platform')) {
         setHeroMarginTop();
         handleOptionColapse();
@@ -108,5 +138,7 @@ jQuery(document).ready(function($) {
         populatePlatformSlide();
         handleSlideCycle();
         handlePlatformClick();
+        addArrowToSlider();
+        handleAutoCycle();
     }
 });
