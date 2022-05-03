@@ -89,6 +89,7 @@ jQuery(document).ready(function($) {
             const step = name === 'platformsNext' ? 1 : -1;
             const idxToUse = currentIdx + step;
             setPlatformsSlideData(idxToUse);
+            clearInterval(cycleTimer);
             if (name === 'platformsPrev' && !currentIdx) $(this).hide();
             if (name === 'platformsNext' && currentIdx + 1 === platformsData.length) $(this).hide();
         });
@@ -99,6 +100,7 @@ jQuery(document).ready(function($) {
             const name = $(currentTarget.lastChild.firstChild).attr('name');
             const nextPlatform = platformsData.find(platform => platform.text === name);
             setPlatformsSlideData(nextPlatform.idx);
+            clearInterval(cycleTimer);
         })
     }
 
@@ -120,14 +122,12 @@ jQuery(document).ready(function($) {
         $(selector).hover(function() {
             clearInterval(cycleTimer);
         }, function() {
-            cycleTimer = setInterval(setCycle, 5000);
+            cycleTimer = setInterval(setCycle, 20000);
         });
     }
 
     function handleAutoCycle() {
-        cycleTimer = setInterval(setCycle, 5000);
-        handleHoverStop('.platforms__icon__button');
-        handleHoverStop('#platforms-slide');
+        cycleTimer = setInterval(setCycle, 20000);
     };
 
     if (window.location.href.includes('platform')) {
