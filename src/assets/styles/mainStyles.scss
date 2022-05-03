@@ -1862,6 +1862,7 @@ footer {
                 overflow: hidden;
                 position: relative;
                 img {
+                    width: 100%;
                     max-width: 443px;
                     margin-bottom: 22px;
                     @media #{$tablet} {
