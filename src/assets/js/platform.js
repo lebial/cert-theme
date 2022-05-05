@@ -141,7 +141,6 @@ jQuery(document).ready(function($) {
     }
 
     function calculateDecimals(idx) {
-        debugger;
         if (idx === 0) return 1 / 10;
         return idx / 10;
     }
@@ -156,7 +155,6 @@ jQuery(document).ready(function($) {
         const newEndNumber = hasDecimals(endNumber) ? endNumber * 10 : endNumber;
         if (idx <= newEndNumber) {
             const { multiplier, speed } = getAnimationMultiplier(endNumber);
-            debugger;
             element.textContent = hasDecimals(endNumber) ? calculateDecimals(idx) : idx;
             setTimeout(() => {
                 recursiveIncrease(calculateValue(multiplier, idx), endNumber, element);
