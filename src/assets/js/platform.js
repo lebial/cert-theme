@@ -130,6 +130,54 @@ jQuery(document).ready(function($) {
         cycleTimer = setInterval(setCycle, 20000);
     };
 
+    //proven solution number animation
+
+    function hasDecimals(number) {
+        return (number - Math.floor(number));
+    }
+
+    function calculateValue(number, idx) {
+        return number + idx;
+    }
+
+    function calculateDecimals(idx) {
+        debugger;
+        if (idx === 0) return 1 / 10;
+        return idx / 10;
+    }
+
+    function getAnimationMultiplier(endNumber) {
+        let multiplier = 1;
+        if (endNumber >= 200) multiplier = endNumber / 50;
+        return { multiplier, speed: 20 };
+    }
+
+    function recursiveIncrease(idx, endNumber, element) {
+        const newEndNumber = hasDecimals(endNumber) ? endNumber * 10 : endNumber;
+        if (idx <= newEndNumber) {
+            const { multiplier, speed } = getAnimationMultiplier(endNumber);
+            debugger;
+            element.textContent = hasDecimals(endNumber) ? calculateDecimals(idx) : idx;
+            setTimeout(() => {
+                recursiveIncrease(calculateValue(multiplier, idx), endNumber, element);
+            }, speed);
+        }
+    }
+
+    function animateNumberIncrease(el) {
+        const endNumber = +$(el).attr('data-number');
+        recursiveIncrease(0, endNumber, el);
+    }
+
+
+    function handleProvenNumbersIncreaseAnimation() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => (entry.isIntersecting) ? animateNumberIncrease(entry.target) : null)
+        });
+        const numberElements = document.querySelectorAll('.increase__number');
+        numberElements.forEach(element => observer.observe(element));
+    };
+
     if (window.location.href.includes('platform')) {
         setHeroMarginTop();
         handleOptionColapse();
@@ -140,5 +188,6 @@ jQuery(document).ready(function($) {
         handlePlatformClick();
         addArrowToSlider();
         handleAutoCycle();
+        handleProvenNumbersIncreaseAnimation();
     }
 });
