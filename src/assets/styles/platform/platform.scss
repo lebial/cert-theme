@@ -281,41 +281,26 @@ $dots_top: -6px;
 }
 
 // Quotes Section
-.quotes {
-    &__card {
-        border: solid $color-red 2px;
-        position: relative;
+.slider__section {
+    background: linear-gradient(#011b3a 50%, #FFFF 50%);
+}
+
+.slick-slide {
+    > div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @media (min-width: 1024px) {
+            width: 70%;
+        }
+        @media (min-width: 1536px) {
+            width: 50%;
+        }
     }
 }
 
-.dquote {
-    position: absolute;
-    height: 60px;
-    width: 103px;
-    background-color: #f2f2f2;
-    & span {
-        position: absolute;
-        font-size: 11rem;
-        color: $color-red;
-        font-weight: bold;
-        width: 60px;
-        height: 60px;
-    }
-    &-top {
-        top: -8px;
-        left: -6px;
-        & span {
-            top: -130%;
-        }
-    }
-    &-bottom {
-        bottom: -10px;
-        right: -11px;
-        & span {
-            top: -55px;
-            right: 32px;
-        }
-    }
+.slider__slide {
+    display: flex !important;
 }
 
 // Data Slides
