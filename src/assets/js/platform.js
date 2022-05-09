@@ -132,7 +132,6 @@ jQuery(document).ready(function($) {
 
     //proven solution animation 
     function removeLastLineAnimation() {
-        debugger;
         const lines = $('[data-aos="proven-anim"]');
         const lastLine = lines[lines.length - 1];
         $(lastLine).css('visibility', 'hidden');
