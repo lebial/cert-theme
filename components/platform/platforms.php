@@ -50,32 +50,6 @@
         echo '</div>';
       echo '</div>';
     echo '</div>';
-    // echo '<div class="platforms__container w-full flex mb-28">';
-    //   echo '<div class="w-1/2 flex justify-end relative">';
-    //     echo '<div class="w-11/12 flex justify-evenly max-h-10 pt-1">';
-    //       foreach($accelerator_data['buttons'] as $accelerator_button) {
-    //         echo '<div class="platforms__icons--red platforms__icon__button rounded-full w-12 h-12 bg-white relative flex justify-center items-center" >';
-    //           echo '<img src="'.$accelerator_button['icon_desktop'].'">';
-    //           echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
-    //             echo '<p class="text-base leading-tight" name="'.$accelerator_button['text'].'">'.$accelerator_button['text'].'</p>';
-    //           echo '</div>';
-    //         echo '</div>';
-    //       };
-    //     echo '</div>';
-    //   echo '</div>';
-    //   echo '<div class="w-1/2 flex justify-start relative">';
-    //     echo '<div class="w-11/12 flex justify-evenly max-h-10 pt-1">';
-    //       foreach($nucleus_data['buttons'] as $nucleus_button) {
-    //         echo '<div class="platforms__icons--blue platforms__icon__button rounded-full w-12 h-12 bg-white relative flex justify-center items-center" >';
-    //           echo '<img src="'.$nucleus_button['icon_desktop'].'">';
-    //           echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
-    //             echo '<p class="text-base leading-tight" name="'.$nucleus_button['text'].'">'.$nucleus_button['text'].'</p>';
-    //           echo '</div>';
-    //         echo '</div>';
-    //       };
-    //     echo '</div>';
-    //   echo '</div>';
-    // echo '</div>';
   };
 
   function redner_desktop_platform_options($data) {

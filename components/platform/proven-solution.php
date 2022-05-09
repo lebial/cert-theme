@@ -23,14 +23,14 @@ function renderDesktopSolutions($data) {
   foreach($data as $solution) {
     echo '<div class="first__slide w-full flex">';
       echo '<div class="w-1/2">';
-        echo '<div class="sticky top-1/4 w-10/12 ml-auto">';
+        echo '<div class="proven__solution__data sticky top-1/4 w-10/12 ml-auto">';
           echo '<div class="solutions__section__separator w-full flex mt-20" data-aos="fade-up">';
             echo '<div class="separator__dots w-2/12 relative"></div>';
             echo '<div class="separator__line w-10/12"></div>';
           echo '</div>';
           echo '<p class="text-white text-4xl mt-10">'.$solution['title'].'</p>';
           echo '<p class="text-white text-lg">'.$solution['description'].'</p>';
-          echo '<div data-aos="proven-anim" class=" mx-auto" style="width: 4%;">';
+          echo '<div data-aos="proven-anim" class="mx-auto" style="width: 4%;">';
             echo '<svg class="proven-solution-graph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.08 359.89">';
               echo '<g>';
                 echo '<polyline data-aos="proven-line" data-aos-duration="2500" data-aos-delay="500" points="14.86 13.23 14.86 18.21 14.86 30.63 14.86 167.49 5.66 179.94 5.66 292.31 14.86 303.5 14.86 336.88" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.24" />';
@@ -45,9 +45,9 @@ function renderDesktopSolutions($data) {
         echo '</div>';
         echo '<div></div>';
       echo '</div>';
-      echo '<div class="w-1/2">';
+      echo '<div class="w-1/2 flex flex-col justify-center">';
       foreach ($solution['solutions_data'] as $solution_data) {
-        echo '<div class="h-screen w-full">';
+        echo '<div class="mb-5 w-full">';
           echo '<div class="w-full h-full flex flex-col items-center justify-center">';
             echo '<p data-aos="fade-up" class="text-6xl text-primary font-bold mb-3" ><span class="increase__number "data-number="'.$solution_data['value_number'].' " >'.number_format($solution_data['value_number']).'</span>'.$solution_data['value'].'</p>';
             echo '<p data-aos="fade-up" class="text-white text-lg">'.$solution_data['value_description'].'</p>';
