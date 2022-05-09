@@ -280,6 +280,17 @@ $dots_top: -6px;
     }
 }
 
+.proven__solution__data {
+    transition: all ease .3s;
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+.show__proven__data {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 // Quotes Section
 .quotes {
     &__card {

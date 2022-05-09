@@ -130,7 +130,27 @@ jQuery(document).ready(function($) {
         cycleTimer = setInterval(setCycle, 20000);
     };
 
-    //proven solution number animation
+    //proven solution animation 
+    function removeLastLineAnimation() {
+        debugger;
+        const lines = $('[data-aos="proven-anim"]');
+        const lastLine = lines[lines.length - 1];
+        $(lastLine).css('visibility', 'hidden');
+    }
+
+    function observeSolutionsData() {
+        const options = {
+            threshold: 0.50,
+            rootMargin: '-45% 0px 0px 0px',
+        }
+        const sections = document.querySelectorAll('.proven__solution__data');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(({ target, isIntersecting }) => {
+                $(target).toggleClass('show__proven__data', isIntersecting);
+            })
+        }, options);
+        sections.forEach(section => observer.observe(section));
+    }
 
     function hasDecimals(number) {
         return (number - Math.floor(number));
@@ -170,7 +190,12 @@ jQuery(document).ready(function($) {
 
     function handleProvenNumbersIncreaseAnimation() {
         const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => (entry.isIntersecting) ? animateNumberIncrease(entry.target) : null)
+            entries.forEach(({ isIntersecting, target }) => {
+                if (isIntersecting) {
+                    animateNumberIncrease(target);
+                    observer.unobserve(target);
+                }
+            })
         });
         const numberElements = document.querySelectorAll('.increase__number');
         numberElements.forEach(element => observer.observe(element));
@@ -186,6 +211,8 @@ jQuery(document).ready(function($) {
         handlePlatformClick();
         addArrowToSlider();
         handleAutoCycle();
+        removeLastLineAnimation();
         handleProvenNumbersIncreaseAnimation();
+        observeSolutionsData();
     }
 });
