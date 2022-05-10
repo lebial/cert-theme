@@ -3,8 +3,8 @@
   <div style="z-index: -1;" class="overlay__validation w-full h-full absolute top-0 left-0"></div>
   <div class="validation__security__container px-11 relative">
     <p class="text-white font-bold text-3xl mt-14 lg:mx-auto lg:text-center xl:text-6xl" >Validation & Security</p>
-    <button type="button" class="slider-prev absolute h-24 w-28"><img class="style-svg h-full w-full" src="<?php the_field('validation_arrow')?>" alt="left arrow"></button>
-    <button type="button" class="slider-next absolute h-24 w-28"><img class="style-svg h-full w-full" src="<?php the_field('validation_arrow')?>" alt="right arrow"></button>
+    <button type="button" class="validation__slider-prev absolute h-24 w-28"><img class="style-svg h-full w-full" src="<?php the_field('validation_arrow')?>" alt="left arrow"></button>
+    <button type="button" class="validation__slider-next absolute h-24 w-28"><img class="style-svg h-full w-full" src="<?php the_field('validation_arrow')?>" alt="right arrow"></button>
     <div class="validation__slider mt-14">
       <p class="text-white pr-16 text-lg 2xl:text-4xl">
         <b>Data Security</b> is central to our mission at Certilytics. The Certilytics
