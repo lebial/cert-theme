@@ -109,12 +109,12 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function addArrowToSlider() {
-    $(".slider-prev").click(function () {
-      $(".validation__slider").slick("slickPrev");
+  function addArrowToSlider(slider) {
+    $(`${slider}-prev`).click(function () {
+      $(slider).slick("slickPrev");
     });
-    $(".slider-next").click(function () {
-      $(".validation__slider").slick("slickNext");
+    $(`${slider}-next`).click(function () {
+      $(slider).slick("slickNext");
     });
   }
 
@@ -139,7 +139,26 @@ jQuery(document).ready(function ($) {
     cycleTimer = setInterval(setCycle, 20000);
   }
 
-  //proven solution number animation
+  //proven solution animation
+  function removeLastLineAnimation() {
+    const lines = $('[data-aos="proven-anim"]');
+    const lastLine = lines[lines.length - 1];
+    $(lastLine).css("visibility", "hidden");
+  }
+
+  function observeSolutionsData() {
+    const options = {
+      threshold: 0.5,
+      rootMargin: "-45% 0px 0px 0px",
+    };
+    const sections = document.querySelectorAll(".proven__solution__data");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        $(target).toggleClass("show__proven__data", isIntersecting);
+      });
+    }, options);
+    sections.forEach((section) => observer.observe(section));
+  }
 
   function hasDecimals(number) {
     return number - Math.floor(number);
@@ -180,9 +199,12 @@ jQuery(document).ready(function ($) {
 
   function handleProvenNumbersIncreaseAnimation() {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) =>
-        entry.isIntersecting ? animateNumberIncrease(entry.target) : null
-      );
+      entries.forEach(({ isIntersecting, target }) => {
+        if (isIntersecting) {
+          animateNumberIncrease(target);
+          observer.unobserve(target);
+        }
+      });
     });
     const numberElements = document.querySelectorAll(".increase__number");
     numberElements.forEach((element) => observer.observe(element));
@@ -196,9 +218,12 @@ jQuery(document).ready(function ($) {
     populatePlatformSlide();
     handleSlideCycle();
     handlePlatformClick();
-    addArrowToSlider();
+    addArrowToSlider(".validation__slider");
+    addArrowToSlider(".quotes__slider");
     handleAutoCycle();
+    removeLastLineAnimation();
     handleProvenNumbersIncreaseAnimation();
+    observeSolutionsData();
     createQuotesSlider();
   }
 });

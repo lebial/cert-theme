@@ -293,7 +293,10 @@ $dots_top: -6px;
 
 // Quotes Section
 .slider__section {
-    background: linear-gradient(#011b3a 50%, #FFFF 50%);
+    background: transparent;
+    @media #{$desktopBase} {
+        background: linear-gradient(#011b3a 50%, #FFFF 50%);
+    }
 }
 
 .slick-slide {
@@ -301,10 +304,10 @@ $dots_top: -6px;
         width: 100%;
         display: flex;
         align-items: center;
-        @media (min-width: 1024px) {
+        @media #{$desktopBase} {
             width: 70%;
         }
-        @media (min-width: 1536px) {
+        @media #{$desktopLG} {
             width: 50%;
         }
     }
@@ -312,6 +315,23 @@ $dots_top: -6px;
 
 .slider__slide {
     display: flex !important;
+}
+
+.slider-container {
+    padding-inline: 1%;
+    @media #{$desktopBase} {
+        padding-inline: 15%;
+    }
+    & button {
+        & svg {
+            & path {
+                fill: black;
+                @media #{$desktopBase} {
+                    fill: white;
+                }
+            }
+        }
+    }
 }
 
 // Data Slides
