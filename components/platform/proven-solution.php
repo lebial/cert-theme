@@ -65,8 +65,8 @@ function renderDesktopSolutions($data) {
   </div>
 </section>
 
-<section class="solutions-parallax hidden lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11" style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw">
-  <div class="solutions__section__container px-8" >
+<section class="solutions-parallax hidden lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11" style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw">
+  <div class="solutions__section__container px-8">
     <?php renderDesktopSolutions($solutions_data) ?>
   </div>
 </section>
