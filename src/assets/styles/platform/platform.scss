@@ -295,12 +295,15 @@ $dots_top: -6px;
 .slider__relative {
     @media #{$desktopBase} {
         top: -14em;
+        margin-bottom: -14em;
     }
     @media #{$desktopLG} {
         top: -15em;
+        margin-bottom: -15em;
     }
     @media #{$desktopFull} {
         top: -16em;
+        margin-bottom: -16em;
     }
 }
 
