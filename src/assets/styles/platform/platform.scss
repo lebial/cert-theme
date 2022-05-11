@@ -292,7 +292,7 @@ $dots_top: -6px;
 }
 
 // Quotes Section
-.slider__section {
+.slider__relative {
     @media #{$desktopBase} {
         top: -14em;
     }
@@ -309,7 +309,7 @@ $dots_top: -6px;
 }
 
 .slick-slide {
-    > div {
+    >div {
         width: 100%;
         display: flex;
         align-items: center;
