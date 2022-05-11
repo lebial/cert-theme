@@ -293,10 +293,19 @@ $dots_top: -6px;
 
 // Quotes Section
 .slider__section {
-    background: transparent;
     @media #{$desktopBase} {
-        background: linear-gradient(#011b3a 50%, #FFFF 50%);
+        top: -14em;
     }
+    @media #{$desktopLG} {
+        top: -15em;
+    }
+    @media #{$desktopFull} {
+        top: -16em;
+    }
+}
+
+.slick-arrow {
+    display: none !important;
 }
 
 .slick-slide {
@@ -320,7 +329,10 @@ $dots_top: -6px;
 .slider-container {
     padding-inline: 1%;
     @media #{$desktopBase} {
-        padding-inline: 15%;
+        padding-inline: 5%;
+    }
+    @media #{$desktopLG} {
+        padding-inline: 18%;
     }
     & button {
         & svg {

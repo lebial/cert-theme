@@ -7,16 +7,16 @@
           echo '<img src="'.$quote['image'].'"/>';
         echo '</div>';
         echo '<div class="slider__slide__text px-8 pt-8 lg:pr-0 lg:pt-0 lg:pl-10">';
-          echo '<p class="slider__slide__text--paragraph text-black	font-bold text-2xl lg:text-3xl">'.$quote['description'].'</p>';
-          echo '<p class="slider__slide__text--legend text-black italic text-2xl lg:text-3xl">'.$quote['legend'].'</p>';
+          echo '<p class="slider__slide__text--paragraph text-black	font-bold text-2xl md:text-3xl">'.$quote['description'].'</p>';
+          echo '<p class="slider__slide__text--legend text-black italic text-2xl md:text-3xl">'.$quote['legend'].'</p>';
         echo '</div>';
       echo '</div>';
     }
   }
 ?>
 
-<section class="slider__section flex justify-center p-0 lg:pt-20 lg:pb-20">
-  <div class="relative w-full h-full">
+<section class="slider__section relative flex justify-center p-0">
+  <div class="w-full h-full">
     <div class="slider-container absolute w-full h-full md:pb-14 flex justify-between items-center z-10">
       <?php custom_slider_arrows("quotes__slider")?>
     </div>
