@@ -148,8 +148,9 @@ jQuery(document).ready(function($) {
 
     function observeSolutionsData() {
         const options = {
-            threshold: 0.5,
-            rootMargin: "-45% 0px 0px 0px",
+            // threshold: 0.5,
+            // rootMargin: "-45% 0px 0px 0px",
+
         };
         const sections = document.querySelectorAll(".proven__solution__data");
         const observer = new IntersectionObserver((entries) => {
@@ -228,9 +229,9 @@ jQuery(document).ready(function($) {
         addArrowToSlider(".validation__slider");
         addArrowToSlider(".quotes__slider");
         handleAutoCycle();
-        removeLastLineAnimation();
-        handleProvenNumbersIncreaseAnimation();
+        // removeLastLineAnimation();
         observeSolutionsData();
+        handleProvenNumbersIncreaseAnimation();
         createQuotesSlider();
         calculateOptionsGraphicHeight();
     }

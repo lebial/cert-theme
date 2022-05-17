@@ -208,24 +208,19 @@ $dots_top: -6px;
     border-bottom: $section_border;
     &__separator {
         & .separator__dots {
-            &::before {
-                content: '';
+            & .solution__dot {
                 width: 15px;
                 height: 15px;
                 border-radius: 50%;
-                top: $dots_top;
+                margin-right: 10px;
                 background-color: white;
-                position: absolute;
+                transition: all .4s, ease;
+                &:last-of-type {
+                    margin-right: 0;
+                }
             }
-            &::after {
-                content: '';
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
+            & .red-highlight {
                 background-color: $color-red;
-                position: absolute;
-                top: $dots_top;
-                left: 50%;
             }
         }
         & .separator__line {
@@ -242,6 +237,9 @@ $dots_top: -6px;
 
 // Proven solution desktop
 .proven-solution-graph {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     & polyline {
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
@@ -251,32 +249,42 @@ $dots_top: -6px;
     }
 }
 
-[data-aos='proven-anim'] {
+[data-proven-anim='proven-anim'] {
     & polyline {
         transition-property: stroke-dashoffset;
     }
     & circle {
         transition-property: opacity;
     }
-    &.aos-animate {
+    &.exec-animate {
         & polyline {
             stroke-dashoffset: 0;
         }
         & .proven-dot {
             &-red,
             &-4 {
-                opacity: 1
+                opacity: 1;
             }
             &-1 {
-                opacity: .26
+                opacity: 1;
             }
             &-2 {
-                opacity: .76
+                opacity: 1;
             }
             &-3 {
-                opacity: .9
+                opacity: 1;
             }
         }
+    }
+}
+
+.solution__number__slide {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    @media #{$desktopLG} {
+        top: 8%;
     }
 }
 
