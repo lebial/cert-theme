@@ -23,7 +23,7 @@ function render_bucket_cards() {
       <?php render_bucket_cards() ?>
     </div>
     <div class="arrows__container w-full absolute flex justify-between fill-black">
-      <?php custom_slider_arrows("bucket__slider")?>
+      <?php custom_slider_arrows("bucket__slider") ?>
     </div>
   </div>
 </section>
