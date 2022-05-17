@@ -18,11 +18,14 @@ function render_cards() {
 };
 
 ?>
-<div class="w-full h-full py-16 mt-14">
+<div class="w-full h-full relative py-16 mt-14">
   <div class="flex justify-center w-full mb-12">
     <h2 class="text-3xl 2xl:text-5xl font-bold" data-aos="fade-up"><?php echo get_field('insights_title') ?></h2>
   </div>
   <div class="insights-carousel w-10/12 mx-auto my-4" data-aos="fade-up"> 
     <?php render_cards() ?>
+  </div>
+  <div class="arrows__container w-full absolute flex justify-between fill-black">
+    <?php custom_slider_arrows("insights-carousel")?>
   </div>
 </div>
