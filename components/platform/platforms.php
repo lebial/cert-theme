@@ -52,7 +52,7 @@
     echo '</div>';
   };
 
-  function redner_desktop_platform_options($data) {
+  function render_desktop_platform_options($data) {
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
     echo '<div class="platforms__container w-full flex mb-32 relative">';
@@ -94,24 +94,24 @@
   <script id="platforms-data" type="application/json"><?php echo json_encode($platforms_data)?></script>
   <div class="platforms__data__container pt-2 w-full px-14 flex flex-col items-center pb-10" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
     <div class="w-full lg:w-8/12 " data-aos="fade-up">
-      <h1 class=" tracking-wide text-xl lg:text-3xl text-center text-white mt-5 font-normal"><?php the_field('head_line')?></h1>
+      <h1 class=" tracking-wide text-xl lg:text-3xl 2xl:text-6xl text-center text-white mt-5 font-normal"><?php the_field('head_line')?></h1>
     </div>
     <?php render_desktop_platforms($platforms_data) ?>
   </div>
-  <?php redner_desktop_platform_options($platforms_data) ?>
+  <?php render_desktop_platform_options($platforms_data) ?>
   <div class="w-full flex justify-center">
-    <div id="platforms-slide" class=" w-9/12 flex items-center">
+    <div id="platforms-slide" class=" w-9/12 flex items-center justify-center">
       <button class="platforms__button left" name="platformsPrev">
-        <img class="w-44" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
       <p class="platforms__slide__title font-bold mb-0 ml-10">Connect Data</p>
-      <div class="platforms__slide__icon px-5"><img class=" w-44" src="" alt=""></div>
+      <div class="platforms__slide__icon px-5"><img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="" alt=""></div>
       <p class="platforms__slide__description pr-10 text-base mb-0">
         all forms of data are mapped, standarized, cleansed, validated and enriched through our market-leading
         data platform, with vendor agnositc interfaces and existing connectors to hundreds of sources.
       </p>
       <button class="platforms__button right" name="platformsNext">
-        <img class="w-44" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
     </div>
   </div>

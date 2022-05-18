@@ -237,9 +237,6 @@ $dots_top: -6px;
 
 // Proven solution desktop
 .proven-solution-graph {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     & polyline {
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
