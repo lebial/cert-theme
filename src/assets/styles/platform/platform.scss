@@ -278,16 +278,6 @@ $dots_top: -6px;
     }
 }
 
-.solution__number__slide {
-    position: absolute;
-    top: 17%;
-    left: 50%;
-    transform: translateX(-50%);
-    @media #{$desktopLG} {
-        top: 8%;
-    }
-}
-
 .proven__solution__data {
     transition: all ease .3s;
     transform: translateY(10px);
