@@ -143,8 +143,11 @@ $section_border: 20px solid black;
 }
 
 .platforms__button {
-    &.left img {
+    &.right svg {
         transform: rotate(180deg);
+    }
+    & path {
+        fill: $color-grey;
     }
 }
 

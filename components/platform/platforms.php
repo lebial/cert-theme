@@ -102,7 +102,7 @@
   <div class="w-full flex justify-center">
     <div id="platforms-slide" class=" w-9/12 flex items-center justify-center">
       <button class="platforms__button left" name="platformsPrev">
-        <img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="style-svg w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
       <p class="platforms__slide__title font-bold mb-0 ml-10">Connect Data</p>
       <div class="platforms__slide__icon px-5"><img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="" alt=""></div>
@@ -111,7 +111,7 @@
         data platform, with vendor agnositc interfaces and existing connectors to hundreds of sources.
       </p>
       <button class="platforms__button right" name="platformsNext">
-        <img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="style-svg w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
     </div>
   </div>
