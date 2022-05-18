@@ -7,7 +7,7 @@ function render_bucket_cards() {
     echo '<div class="bucket__card lg:mr-14 last-of-type:mr-0 mt-28" data-aos="fade-up" data-aos-delay="'.intval($idx) * 150 .'">';
       echo '<div class="bucket__card__icon w-full flex justify-center "><img class=" w-40 lg:w-28" src='.$bucket['bucket_icon'].'></div>';
       echo '<p class="mt-6 text-2xl font-bold text-center">'.$bucket['bucket_title'].'</p>';
-      echo '<p class="text-xl lg:text-base leading-normal">'.$bucket['bucket_description'].'</p>';
+      echo '<p class="text-xl lg:text-base px-3.5 lg:px-0 leading-normal">'.$bucket['bucket_description'].'</p>';
     echo '</div>';
     $idx++;
   };
@@ -18,9 +18,12 @@ function render_bucket_cards() {
   <div class="hidden lg:flex flex-col lg:flex-row lg:justify-between" style="width: 95%">
     <?php render_bucket_cards() ?>
   </div>
-  <div class="w-full lg:hidden block ">
+  <div class="w-full relative lg:hidden block ">
     <div class="bucket__slider mx-14" style="height: 100%;">
       <?php render_bucket_cards() ?>
+    </div>
+    <div class="arrows__container w-full absolute flex justify-between fill-black">
+      <?php custom_slider_arrows("bucket__slider") ?>
     </div>
   </div>
 </section>
