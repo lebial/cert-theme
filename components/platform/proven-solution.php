@@ -33,8 +33,8 @@ function renderSolutions($data)
       <div class="w-full flex">
         <div class="w-1/2 flex justify-end">
           <div class="w-10/12">
-            <div class="solutions__section__separator w-full flex items-center justify-between" data-aos="fade-up">
-              <div class="separator__dots w-2/12 relative flex">
+            <div class="solutions__section__separator w-full flex items-center" data-aos="fade-up">
+              <div class="separator__dots w-2/12 relative flex mr-4">
                 <div class="solution__dot red-highlight" data-classes="130vh: {remove: red-highlight }"></div>
                 <div class="solution__dot" data-classes="130vh: { add: red-highlight }, 280vh: { remove: red-highlight } "></div>
                 <div class="solution__dot" data-classes="280vh: { add: red-highlight }, 430vh: { remove: red-highlight }"></div>
@@ -49,7 +49,7 @@ function renderSolutions($data)
       <div class="w-full slides__body relative">
 
         <!-- slide 1 -->
-        <div class="slide__container flex absolute top-0 left-0 w-full" data-animation="opacity: {0: 1, 20vh: 1, 130vh: 0}, transform: {0: translate(0,0), 20vh: translate(0,0), 130vh: translate(0, -20%)}">
+        <div class="slide__container flex absolute top-0 left-0 w-full pt-4" data-animation="opacity: {0: 1, 20vh: 1, 130vh: 0}, transform: {0: translate(0,0), 20vh: translate(0,0), 130vh: translate(0, -20%)}">
 
           <div class="w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-10/12">
@@ -87,7 +87,7 @@ function renderSolutions($data)
 
       <!-- slide 2 -->
         <div
-          class="slide__container flex absolute top-0 left-0 w-full invisible"
+          class="slide__container flex absolute top-0 left-0 w-full invisible pt-4"
           data-animation="opacity: {130vh: 0.4, 150vh: 1, 190vh: 1, 280vh: 0}, transform: {0: translate(0,0), 190vh: translate(0, 0), 280vh: translate(0, -20%)}"
           data-classes="130vh: {remove: invisible}"
           >
@@ -120,7 +120,7 @@ function renderSolutions($data)
 
       <!-- slide 3 -->
         <div
-          class="slide__container flex absolute top-0 left-0 w-full invisible"
+          class="slide__container flex absolute top-0 left-0 w-full invisible pt-4"
           data-animation="opacity: {280vh: 0.4, 290vh: 1, 330vh: 1, 430vh: 0}, transform: {0: translate(0,0), 330vh: translate(0, 0), 430vh: translate(0, -20%)}"
           data-classes="280vh: {remove: invisible}"
           >
@@ -154,7 +154,7 @@ function renderSolutions($data)
 
       <!-- slide 4 -->
         <div
-          class="slide__container flex absolute top-0 left-0 w-full invisible"
+          class="slide__container flex absolute top-0 left-0 w-full invisible pt-4"
           data-animation="opacity: {430vh: 0.4, 450vh: 1}"
           data-classes="430vh: {remove: invisible}"
           >

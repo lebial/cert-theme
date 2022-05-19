@@ -36,17 +36,17 @@
   function render_desktop_platforms($data) {
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
-    echo '<div class="platforms__container flex w-full ">';
+    echo '<div class="platforms__container flex w-full">';
       echo '<div class="w-1/2">';
       echo '<h2 class="visual-element-hide">'.$accelerator_data['title'].'</h2>';
-        echo '<div class="platforms__icon__container w-full flex justify-center py-4">';
-          echo '<img class="style-svg platforms__main__icon--red w-1/2" src="'.$accelerator_data['main_icon_desktop'].'" >';
+        echo '<div class="platforms__icon__container w-full flex justify-end py-4">';
+          echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="'.$accelerator_data['main_icon_desktop'].'" >';
         echo '</div>';
       echo '</div>';
       echo '<div class="nucleus__content w-1/2">';
       echo '<h2 class="visual-element-hide">'.$nucleus_data['title'].'</h2>';
-        echo '<div class="platforms__icon__container w-full flex justify-center py-4">';
-          echo '<img class="style-svg platforms__main__icon--blue w-1/2" src="'.$nucleus_data['main_icon_desktop'].'" >';
+        echo '<div class="platforms__icon__container w-full flex justify-start py-4">';
+          echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%] " src="'.$nucleus_data['main_icon_desktop'].'" >';
         echo '</div>';
       echo '</div>';
     echo '</div>';
@@ -56,29 +56,36 @@
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
     echo '<div class="platforms__container w-full flex mb-32 relative">';
-      echo '<div class="w-full absolute flex" style="top: -30px;">';
-        echo '<div class="w-1/2 flex justify-end relative">';
-          echo '<div class="w-11/12 flex justify-evenly max-h-10 pt-1">';
-            foreach($accelerator_data['buttons'] as $accelerator_button) {
-              echo '<div class="platforms__icons--red platforms__icon__button rounded-full p-1 w-14 h-14 bg-primary relative flex justify-center items-center" >';
-                echo '<img class="style-svg" src="'.$accelerator_button['icon_desktop'].'">';
-                echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
-                  echo '<p class="text-base leading-tight" name="'.$accelerator_button['text'].'">'.$accelerator_button['text'].'</p>';
+      echo '<div class="w-full absolute top-3">';
+        echo '<img class="style-svg platforms__down__arrow opacity-0 mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
+      echo '</div>';
+      echo '<div class="platforms__buttons__animated platform-slide-animate w-full absolute flex" style="top: -30px;" data-platform-anim="platforms-slide-in">';
+        echo '<div class="w-1/2 flex justify-end relative mr-[6%]">';
+          echo '<div class="w-11/12 flex justify-end max-h-10 pt-1">';
+            echo '<div class="w-10/12 h-full flex justify-between">';
+              foreach($accelerator_data['buttons'] as $accelerator_button) {
+                echo '<div class="platforms__icons--red platforms__icon__button rounded-full p-1 w-14 h-14 bg-primary relative flex justify-center items-center" >';
+                  echo '<img class="style-svg" src="'.$accelerator_button['icon_desktop'].'">';
+                  echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
+                    echo '<p class="text-base leading-tight" name="'.$accelerator_button['text'].'">'.$accelerator_button['text'].'</p>';
+                  echo '</div>';
                 echo '</div>';
-              echo '</div>';
-            };
+              };
+            echo '</div>';
           echo '</div>';
         echo '</div>';
         echo '<div class="w-1/2 flex justify-start relative">';
-          echo '<div class="w-11/12 flex justify-evenly max-h-10 pt-1">';
-            foreach($nucleus_data['buttons'] as $nucleus_button) {
-              echo '<div class="platforms__icons--blue platforms__icon__button rounded-full p-1 w-14 h-14 bg-secondary relative flex justify-center items-center" >';
-                echo '<img class="style-svg" src="'.$nucleus_button['icon_desktop'].'">';
-                echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
-                  echo '<p class="text-base leading-tight" name="'.$nucleus_button['text'].'">'.$nucleus_button['text'].'</p>';
+          echo '<div class="w-11/12 flex justify-start max-h-10 pt-1">';
+            echo '<div class="w-10/12 h-full flex justify-between">';
+              foreach($nucleus_data['buttons'] as $nucleus_button) {
+                echo '<div class="platforms__icons--blue platforms__icon__button rounded-full p-1 w-14 h-14 bg-secondary relative flex justify-center items-center" >';
+                  echo '<img class="style-svg" src="'.$nucleus_button['icon_desktop'].'">';
+                  echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
+                    echo '<p class="text-base leading-tight" name="'.$nucleus_button['text'].'">'.$nucleus_button['text'].'</p>';
+                  echo '</div>';
                 echo '</div>';
-              echo '</div>';
-            };
+              };
+            echo '</div>';
           echo '</div>';
         echo '</div>';
       echo '</div>';
@@ -92,21 +99,22 @@
 
 <section class="platforms w-screen hidden lg:block">
   <script id="platforms-data" type="application/json"><?php echo json_encode($platforms_data)?></script>
-  <div class="platforms__data__container pt-2 w-full px-14 flex flex-col items-center pb-10" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
-    <div class="w-full lg:w-8/12 " data-aos="fade-up">
-      <h1 class=" tracking-wide text-xl lg:text-3xl 2xl:text-6xl text-center text-white mt-5 font-normal"><?php the_field('head_line')?></h1>
+  <div class="platforms__data__container pt-2 w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-center pb-10" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
+    <div class="w-full mb-[2.5%]" data-aos="fade-up">
+      <h1 class=" tracking-wide text-xl lg:text-[3rem] 2xl:text-7xl text-center text-white font-normal"><?php the_field('head_line')?></h1>
     </div>
     <?php render_desktop_platforms($platforms_data) ?>
   </div>
   <?php render_desktop_platform_options($platforms_data) ?>
   <div class="w-full flex justify-center">
-    <div id="platforms-slide" class=" w-9/12 flex items-center justify-center">
+    <!-- <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-platform-anim="platforms-slide-in"> -->
+    <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-aos="fade-up">
       <button class="platforms__button left" name="platformsPrev">
         <img class="style-svg w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
-      <p class="platforms__slide__title font-bold mb-0 ml-10">Connect Data</p>
-      <div class="platforms__slide__icon px-5"><img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="" alt=""></div>
-      <p class="platforms__slide__description pr-10 text-base mb-0">
+      <p class="platforms__slide__title font-bold mb-0 flex-1 text-center">Connect Data</p>
+      <div class="platforms__slide__icon px-4"><img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="" alt=""></div>
+      <p class="platforms__slide__description text-base mb-0 w-[52%]">
         all forms of data are mapped, standarized, cleansed, validated and enriched through our market-leading
         data platform, with vendor agnositc interfaces and existing connectors to hundreds of sources.
       </p>
