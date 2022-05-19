@@ -494,9 +494,20 @@ $deploy_border: 3px dotted #9e9e9e;
 // Contact Us Section
 .action__quote__container__text {
     line-height: 3rem;
+    font-size: 2rem !important;
     @media #{$desktopBase} {
         line-height: 5rem;
+        font-size: 3rem !important;
     } 
+    @media #{$desktopLG} {
+        font-size: 4.5rem !important;
+    }
+}
+
+.action__quote__container__button {
+    @media #{$desktopLG} {
+        padding-inline: 8rem !important;
+    }
 }
 
 .contact__us__image__container {
