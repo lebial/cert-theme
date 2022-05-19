@@ -64,7 +64,7 @@
 
 ?>
 
-<footer class="clearfix text-white px-10 md:px-32 w-screen">			
+<footer class="clearfix text-white mt-0 px-10 py-10 md:px-16 w-screen">			
 	<div class="first-row w-full flex flex-col md:flex-row">
 		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-12 md:mb-0">
 			<div class="flex flex-col items-center lg:items-start w-10/12">
@@ -74,7 +74,7 @@
 				</span>
 				<p class="footer__responsive__hidden text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'; ?></p>
 				<a
-					class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-6"
+					class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
 						<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us';?>
 				</a>
@@ -85,7 +85,7 @@
 		</div>
 	</div>
 	
-	<div class="second-row flex justify-center md:justify-end mt-5">
+	<div class="second-row flex justify-center md:justify-end">
 		<div class=" social__icons social__icons__clone hidden lg:flex mt-3">
 			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
@@ -110,7 +110,7 @@
 		</div>
 	</div>
 
-	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-10 pt-6">
+	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
 		<div class="address__container">
 			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p>
 		</div>

@@ -485,8 +485,17 @@ $deploy_border: 3px dotted #9e9e9e;
 }
 
 // Contact Us Section
-.platform__contact__us {
-    border-top: $section_border;
+.action__quote__container__text {
+    line-height: 3rem;
+    @media #{$desktopBase} {
+        line-height: 5rem;
+    } 
+}
+
+.contact__us__image__container {
+    &__image {
+        object-fit: cover !important;
+    }
 }
 
 
