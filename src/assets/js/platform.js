@@ -1,4 +1,4 @@
-import getNavHeight from "./utils/utils";
+import getNavHeight, { createObserver } from "./utils/utils";
 
 jQuery(document).ready(function($) {
     const sliderOptions = {
@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
         $(".active__platform").removeClass("active__platform");
         $(`[name="${text}"]`).addClass("active__platform");
         currentIdx = idx;
-        hideArrows();
+        // hideArrows();
     }
 
     function populatePlatformSlide() {
@@ -89,12 +89,11 @@ jQuery(document).ready(function($) {
     function handleSlideCycle() {
         $(".platforms__button").click(({ currentTarget: { name } }) => {
             const step = name === "platformsNext" ? 1 : -1;
-            const idxToUse = currentIdx + step;
+            let idxToUse = currentIdx + step;
+            if (name === "platformsPrev" && !currentIdx) idxToUse = platformsData.length - 1;
+            if (name === "platformsNext" && currentIdx + 1 === platformsData.length) idxToUse = 0;
             setPlatformsSlideData(idxToUse);
             clearInterval(cycleTimer);
-            if (name === "platformsPrev" && !currentIdx) $(this).hide();
-            if (name === "platformsNext" && currentIdx + 1 === platformsData.length)
-                $(this).hide();
         });
     }
 
@@ -107,6 +106,26 @@ jQuery(document).ready(function($) {
             setPlatformsSlideData(nextPlatform.idx);
             clearInterval(cycleTimer);
         });
+    }
+
+    function handlePlatformScrollObserver() {
+        const options = {
+            rootMargin: "-55% 0px 0px 0px",
+        }
+        const platformButtons = document.querySelector('.platforms__buttons__animated');
+        // const platformsSlide = document.getElementById('platforms-slide');
+
+        const obsvElement = document.querySelector('.platforms__container');
+
+        const observer = createObserver(([entry]) => {
+            if (!entry.target.isIntersecting) {
+                $(platformButtons).toggleClass('platform-slide-animate');
+                $('.platforms__down__arrow').toggleClass('opacity-0');
+                // $(platformsSlide).toggleClass('platform-slide-animate');
+            }
+        }, options);
+
+        observer.observe(obsvElement);
     }
 
     function addArrowToSlider(slider) {
@@ -124,27 +143,12 @@ jQuery(document).ready(function($) {
         return setPlatformsSlideData(currentIdx + 1);
     }
 
-    function handleHoverStop(selector) {
-        $(selector).hover(
-            function() {
-                clearInterval(cycleTimer);
-            },
-            function() {
-                cycleTimer = setInterval(setCycle, 20000);
-            }
-        );
-    }
 
     function handleAutoCycle() {
         cycleTimer = setInterval(setCycle, 20000);
     }
 
     //proven solution animation
-    function removeLastLineAnimation() {
-        const lines = $('[data-aos="proven-anim"]');
-        const lastLine = lines[lines.length - 1];
-        $(lastLine).css("visibility", "hidden");
-    }
 
     function observeSolutionsData() {
         const options = {
@@ -234,5 +238,6 @@ jQuery(document).ready(function($) {
         handleProvenNumbersIncreaseAnimation();
         createQuotesSlider();
         calculateOptionsGraphicHeight();
+        handlePlatformScrollObserver();
     }
 });
