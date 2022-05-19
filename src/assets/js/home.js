@@ -9,25 +9,17 @@ jQuery(document).ready(function($) {
     }
 
     function handlePlayClick() {
-        waitForElement("#homeVideoButton").then((videoElement) => {
-            $(videoElement).click(function() {
-                $(".video__overlay").toggle();
-                $("#homepageVideo").get(0).play();
-            });
+        $('.hero__button-modal').click(function() {
+            $(".video__overlay").toggle();
+            $("#homepageVideo").get(0).play();
         });
     }
 
     function handleIosNativePlayerQuit() {
-        const vid = document.getElementById('homepageVideo');
-        console.log('working')
-        vid.addEventListener('webkitendfullscreen', function(e) {
-                $('.video__overlay').toggle();
-                console.log(e);
-            })
-            // $('#homepageVideo').get(0).addEventLIstener('webkitExitFullscreen', () => {
-            //     debugger;
-            //     $('.video__overlay').toggle();
-            // });
+        $('video').bind('webkitendfullscreen', function() {
+            $('#homepageHeroVideo')[0].webkitExitFullScreen();
+            $("#homepageVideoModal").hide();
+        });
     }
 
     function createBucketSlider() {
