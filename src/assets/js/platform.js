@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
     }
 
     function createValidationSlider() {
-        $(".validation__slider").slick({...sliderOptions, dots: true });
+        $(".validation__slider").slick({...sliderOptions, dots: false });
     }
 
     function revealDataSlideContent() {
@@ -137,6 +137,20 @@ jQuery(document).ready(function($) {
         });
     }
 
+    function changeValidationHeader() {
+        const words = ['Security', 'Validation', 'Governance'];
+        const element = $('.validation__headline');
+        $('.validation__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            element.removeClass('aos-animate');
+            element.removeClass('change-red');
+            element.text(words[nextSlide]);
+            setTimeout(() => {
+                element.addClass('change-red');
+            }, 500);
+        });
+    }
+
+
     function setCycle() {
         if (currentIdx + 1 === platformsData.length)
             return setPlatformsSlideData(0);
@@ -234,6 +248,7 @@ jQuery(document).ready(function($) {
         addArrowToSlider(".quotes__slider");
         handleAutoCycle();
         // removeLastLineAnimation();
+        changeValidationHeader();
         observeSolutionsData();
         handleProvenNumbersIncreaseAnimation();
         createQuotesSlider();
