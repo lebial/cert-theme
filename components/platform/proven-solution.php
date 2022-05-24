@@ -11,7 +11,6 @@ function renderSolutions($data)
     echo '<p class="text-white text-lg" data-aos="fade-up">' . $solution['description'] . '</p>';
     foreach ($solution['solutions_data'] as $solution_data) {
       echo '<div class="solutions__data" data-aos="fade-up">';
-      // echo '<p class="text-primary mb-2 mt-14 font-bold text-5xl text-center">' . $solution_data['value'] . '</p>';
       echo '<p data-aos="fade-up" class="text-primary mb-2 mt-14 font-bold text-5xl text-center"><span class="increase__number "data-number="'.$solution_data['value_number'].' " >'.number_format($solution_data['value_number']).'</span>'.$solution_data['value'].'</p>';
       echo '<p class="text-white text-center">' . $solution_data['value_description'] . '</p>';
       echo '</div>';
@@ -55,9 +54,9 @@ function renderSolutions($data)
             <div class="w-10/12">
               <p class="text-white text-[55px] mt-4">Massive Data</p>
               <p class="text-white text-lg"> 
-                Our platform was built with the latest open-source technologies to process 
-                big data at scale for some of the nation's largest healthcare organizations
-                and plan sponsors.
+                Our platform was built with the latest open-source technologies to process big data at scale for some
+                of the nation's largest healthcare organizations and plan sponsors. Consume, organize, validate and enrich all your
+                structured and unstructured data sources into a single source of truth to produce powerful analytic insights.
               </p>
             </div>
           </div>
@@ -96,7 +95,8 @@ function renderSolutions($data)
               <p class="text-white text-[55px] mt-4">High Throughput</p>
               <p class="text-white text-lg">
                 Industry-leading processing speeds enable our customers
-                to make smarter business decisions, faster.
+                to make smarter business decisions, faster. Our Accelerator Data Platform powers innovative and proprietary data enrichment,
+                clinical episode grouping, and risk stratification for billions of records daily.
               </p>
             </div>
           </div>
@@ -130,7 +130,8 @@ function renderSolutions($data)
               <p class="text-white text-lg">
                 Connect, organize, and add value to your data for a
                 comprehensive, forward-looking view of patient and
-                population health.
+                population health. We transform our clients data with our proprietary clinical episode grouper,
+                CORE Pathways, along with thousands of flags, clinical quality measures, and AI-powered predictive models.
               </p>
             </div>
           </div>
@@ -163,7 +164,8 @@ function renderSolutions($data)
               <p class="text-white text-[55px] mt-4">Faster Deployment</p>
               <p class="text-white text-lg">
                 Accelerate your access to market leading predictive analytics through our proven,
-                straightforward implementation process.
+                straightforward implementation process. Our data scientists, clinicians, actuaries, software developers,
+                and data engineers work hand-in-hand with our customers to get them up and running in 90 days or less.
               </p>
               <div
                 data-proven-anim="proven-anim"
