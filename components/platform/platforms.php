@@ -39,13 +39,15 @@
     echo '<div class="platforms__container flex w-full">';
       echo '<div class="w-1/2">';
       echo '<h2 class="visual-element-hide">'.$accelerator_data['title'].'</h2>';
-        echo '<div class="platforms__icon__container w-full flex justify-end py-4">';
+        // echo '<div class="platforms__icon__container w-full flex justify-end py-4">';
+        echo '<div class="platforms__icon__container w-full flex justify-end">';
           echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="'.$accelerator_data['main_icon_desktop'].'" >';
         echo '</div>';
       echo '</div>';
       echo '<div class="nucleus__content w-1/2">';
       echo '<h2 class="visual-element-hide">'.$nucleus_data['title'].'</h2>';
-        echo '<div class="platforms__icon__container w-full flex justify-start py-4">';
+        // echo '<div class="platforms__icon__container w-full flex justify-start py-4">';
+        echo '<div class="platforms__icon__container w-full flex justify-start">';
           echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%] " src="'.$nucleus_data['main_icon_desktop'].'" >';
         echo '</div>';
       echo '</div>';
@@ -99,9 +101,11 @@
 
 <section class="platforms w-screen hidden lg:block">
   <script id="platforms-data" type="application/json"><?php echo json_encode($platforms_data)?></script>
-  <div class="platforms__data__container pt-2 w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-center pb-10" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
-    <div class="w-full mb-[2.5%]" data-aos="fade-up">
-      <h1 class=" tracking-wide text-xl lg:text-[3rem] 2xl:text-7xl text-center text-white font-normal"><?php the_field('head_line')?></h1>
+  <!-- <div class="platforms__data__container pt-2 w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-center pb-10" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)"> -->
+  <div class="platforms__data__container w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-evenly" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
+    <!-- <div class="w-full mb-[2.5%]" data-aos="fade-up"> -->
+    <div class="w-full" data-aos="fade-up">
+      <h1 class=" tracking-wide text-xl lg:text-[3rem] 2xl:text-7xl text-center text-white font-normal leading-tight"><?php the_field('head_line')?></h1>
     </div>
     <?php render_desktop_platforms($platforms_data) ?>
   </div>
