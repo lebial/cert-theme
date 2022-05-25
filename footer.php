@@ -64,9 +64,9 @@
 
 ?>
 
-<footer class="clearfix text-white mt-0 px-10 py-10 md:px-16 w-screen">			
+<footer class="clearfix text-white mt-0 px-10 md:py-8 pt-0 pb-4 md:px-16 w-screen">			
 	<div class="first-row w-full flex flex-col md:flex-row">
-		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-12 md:mb-0">
+		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-6 md:mb-0">
 			<div class="flex flex-col items-center lg:items-start w-10/12">
 				<span class="footer__responsive__hidden text-white">
 					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
@@ -114,7 +114,7 @@
 		<div class="address__container">
 			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p>
 		</div>
-		<div class="corp__info flex flex-col md:flex-row mt-9 md:mt-0">
+		<div class="corp__info flex flex-col md:flex-row mt-4 lg:mt-9 md:mt-0">
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
