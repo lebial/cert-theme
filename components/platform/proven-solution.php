@@ -19,14 +19,14 @@ function renderSolutions($data)
 }
 
 ?>
-<section class="block lg:hidden solutions__section w-screen min-h-screen bg-dark-blue-background mt-11">
+<section class="hidden lg:hidden solutions__section w-screen min-h-screen bg-dark-blue-background mt-11">
   <div class="solutions__section__container px-8 py-10">
     <?php renderSolutions($solutions_data) ?>
   </div>
 </section>
 
-<section class="solutions-parallax hidden lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11" style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw">
-  <div class="solutions__section__container px-8" data-sticky="from: -65px, duration: 580vh">
+<section class="solutions-parallax block lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11" style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw">
+  <div class="solutions__section__container px-0 lg:px-8" data-sticky="from: -65px, duration: 580vh">
 
     <div class="w-screen h-screen sticky pt-16">
       <div class="w-full flex">
@@ -48,7 +48,10 @@ function renderSolutions($data)
       <div class="w-full slides__body relative">
 
         <!-- slide 1 -->
-        <div class="slide__container flex absolute top-0 left-0 w-full pt-4" data-animation="opacity: {0: 1, 20vh: 1, 130vh: 0}, transform: {0: translate(0,0), 20vh: translate(0,0), 130vh: translate(0, -20%)}">
+        <div
+          class="slide__container flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4"
+          data-animation="opacity: {0: 1, 20vh: 1, 130vh: 0}, transform: {0: translate(0,0), 20vh: translate(0,0), 130vh: translate(0, -20%)}"
+        >
 
           <div class="w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-10/12">

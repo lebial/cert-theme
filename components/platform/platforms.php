@@ -6,8 +6,8 @@
       echo '<div class="platform-container px-12">';
         echo '<div class="icon__container flex justify-center">';
         echo '<h2 class="visual-element-hide">'.$platform_data['title'].'</h2>';
-          echo '<div class=" w-10/12 h-48 mb-10" >';
-            echo '<img class="style-svg w-full" src="'.$platform_data['main_icon'].'" data-aos="fade-up">';
+          echo '<div class="flex justify-center w-10/12 h-48 md:h-56 mb-10" >';
+            echo '<img class="w-full" src="'.$platform_data['main_icon'].'" data-aos="fade-up">';
           echo '</div>';
         echo '</div>';
         echo '<div class="platform__submenu">';
@@ -15,9 +15,8 @@
           echo '<div class="platform__submenu__item py-10 mb-4" data-aos="fade-up">';
             echo '<div class="submenu__button w-full flex items-center justify-between">';
               echo '<div class="flex items-center">';
-                // replace nextline with real icon $button['icon']
                 echo '<div class="button__icon__container flex flex-col justify-center mr-2">';
-                  echo '<img class=" w-12 max-w-none style-svg" src="'.$button['icon'].'" >';
+                  echo '<img class="w-12 max-w-none" src="'.$button['icon'].'" >';
                 echo '</div>';
                 echo '<p class="text-2xl mb-0">'.$button['text'].'</p>';
               echo '</div>';
