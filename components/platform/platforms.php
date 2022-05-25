@@ -6,7 +6,7 @@
       echo '<div class="platform-container px-12">';
         echo '<div class="icon__container flex justify-center">';
         echo '<h2 class="visual-element-hide">'.$platform_data['title'].'</h2>';
-          echo '<div class=" w-10/12 h-48 mb-10" >';
+          echo '<div class=" w-10/12 md:w-1/2 lg:w10/12 lg:10/12 h-48 mb-10 md:mb-36 lg:mb-10" >';
             echo '<img class="style-svg w-full" src="'.$platform_data['main_icon'].'" data-aos="fade-up">';
           echo '</div>';
         echo '</div>';
