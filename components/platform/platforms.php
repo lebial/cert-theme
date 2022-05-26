@@ -6,8 +6,8 @@
       echo '<div class="platform-container px-12">';
         echo '<div class="icon__container flex justify-center">';
         echo '<h2 class="visual-element-hide">'.$platform_data['title'].'</h2>';
-          echo '<div class=" w-10/12 h-48 mb-10" >';
-            echo '<img class="style-svg w-full" src="'.$platform_data['main_icon'].'" data-aos="fade-up">';
+          echo '<div class=" w-10/12 md:w-1/2 lg:w10/12 lg:10/12 h-48 mb-10 md:mb-36 lg:mb-10" >';
+            echo '<img class="w-full" src="'.$platform_data['main_icon'].'" data-aos="fade-up">';
           echo '</div>';
         echo '</div>';
         echo '<div class="platform__submenu">';
@@ -15,9 +15,8 @@
           echo '<div class="platform__submenu__item py-10 mb-4" data-aos="fade-up">';
             echo '<div class="submenu__button w-full flex items-center justify-between">';
               echo '<div class="flex items-center">';
-                // replace nextline with real icon $button['icon']
                 echo '<div class="button__icon__container flex flex-col justify-center mr-2">';
-                  echo '<img class=" w-12 max-w-none style-svg" src="'.$button['icon'].'" >';
+                  echo '<img class="w-12 max-w-none" src="'.$button['icon'].'" >';
                 echo '</div>';
                 echo '<p class="text-2xl mb-0">'.$button['text'].'</p>';
               echo '</div>';
@@ -114,16 +113,16 @@
     <!-- <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-platform-anim="platforms-slide-in"> -->
     <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-aos="fade-up">
       <button class="platforms__button left" name="platformsPrev">
-        <img class="style-svg w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
       <p class="platforms__slide__title font-bold mb-0 flex-1 text-center">Connect Data</p>
-      <div class="platforms__slide__icon px-4"><img class="w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="" alt=""></div>
+      <div class="platforms__slide__icon px-4"><img class="w-24 max-w-[6rem]" src="" alt=""></div>
       <p class="platforms__slide__description text-base mb-0 w-[52%]">
         all forms of data are mapped, standarized, cleansed, validated and enriched through our market-leading
         data platform, with vendor agnositc interfaces and existing connectors to hundreds of sources.
       </p>
       <button class="platforms__button right" name="platformsNext">
-        <img class="style-svg w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="style-svg w-24 max-w-[6rem]" src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
     </div>
   </div>
