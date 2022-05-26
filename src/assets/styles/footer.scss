@@ -37,7 +37,7 @@
 
 .footer__responsive__hidden {
     display: none;
-    @media #{$tablet} {
+    @media #{$desktopBase} {
         display: block;
     }
 }

@@ -154,7 +154,7 @@ $section_border: 20px solid black;
         transform: rotate(180deg);
     }
     & path {
-        fill: $color-grey;
+        fill: lightgray;
     }
 }
 
@@ -209,7 +209,10 @@ $section_border: 20px solid black;
     background-attachment: fixed;
     background-position: 0% 30%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    @media #{$desktopBase} {
+        background-size: 100%;
+    }
 }
 
 $dots_top: -6px;
@@ -357,7 +360,10 @@ $dots_top: -6px;
 // Data Slides
 .data__slides {
     &__content {
-        min-height: 100vh;
+        min-height: auto;
+        @media #{$desktopMD} {
+            min-height: 100vh;
+        }
         border-top: $section_border;
         border-bottom: $section_border;
         &:last-of-type,
