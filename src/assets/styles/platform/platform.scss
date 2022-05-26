@@ -407,7 +407,11 @@ $dots_top: -6px;
 $deploy_border: 3px dotted #9e9e9e;
 .platform__deploy__options {
     min-height: 100vh;
-    & .deploy__icon__header {}
+    & .mobile-svg-options {
+        & rect:last-of-type {
+            fill: transparent;
+        }
+    }
 }
 
 .deploy__data__content {
