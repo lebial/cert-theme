@@ -50,7 +50,7 @@
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
-				echo '<div class="mb-4 flex justify-between"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block md:hidden"></button></div>';
+				echo '<div class="mb-4 flex justify-between"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group">';
 						foreach($link_group['links'] as $link){
@@ -64,10 +64,10 @@
 
 ?>
 
-<footer class="clearfix text-white mt-0 px-10 md:py-8 pt-0 pb-4 md:px-16 w-screen">			
-	<div class="first-row w-full flex flex-col md:flex-row">
-		<div class="lets-chat w-full md:w-4/12 flex justify-center md:justify-start text-white mb-6 md:mb-0">
-			<div class="flex flex-col items-center lg:items-start w-10/12">
+<footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen">			
+	<div class="first-row w-full flex flex-col xl:flex-row">
+		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0">
+			<div class="flex flex-col items-center xl:items-start w-10/12">
 				<span class="footer__responsive__hidden text-white">
 					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
@@ -80,13 +80,13 @@
 				</a>
 			</div>
 		</div>
-		<div class="footer__links w-full flex flex-col md:flex-row md:justify-evenly ">
+		<div class="footer__links w-full flex flex-col xl:flex-row xl:justify-evenly ">
 			<?php render_link_groups(); ?>
 		</div>
 	</div>
 	
-	<div class="second-row flex justify-center md:justify-end">
-		<div class=" social__icons social__icons__clone hidden lg:flex mt-3">
+	<div class="second-row flex justify-center xl:justify-end">
+		<div class=" social__icons social__icons__clone hidden xl:flex mt-3">
 			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
 			</a>
@@ -97,7 +97,7 @@
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
-		<div class="flex social__icons mt-3  lg:hidden">
+		<div class="flex social__icons mt-3  xl:hidden">
 			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
 			</a>
@@ -110,11 +110,11 @@
 		</div>
 	</div>
 
-	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
+	<div class="third-row border-t-2 border-white border-solid flex flex-col xl:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
 		<div class="address__container">
 			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p>
 		</div>
-		<div class="corp__info flex flex-col md:flex-row mt-4 lg:mt-9 md:mt-0">
+		<div class="corp__info flex flex-col xl:flex-row mt-4 xl:mt-9 xl:mt-0">
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>

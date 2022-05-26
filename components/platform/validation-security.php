@@ -1,6 +1,4 @@
 <section class="validation__security min-h-[80vh] md:min-h-[53vh] lg:min-h-[90vh] relative py-8 flex flex-col bg-dark-blue-background">
-  <!-- <img style="z-index: -2;" src="<?php the_field('validation_background') ?>" class="absolute top-0 left-0 h-full w-full object-cover" alt=""> -->
-  <!-- <div style="z-index: -1;" class="overlay__validation w-full h-full absolute top-0 left-0"></div> -->
   <div class="validation__security__container px-11 md:px-24 lg:px-11 relative text-center md:text-left lg:text-left">
     <p class="text-white font-bold text-3xl mt-14 lg:mx-auto md:text-center lg:text-center xl:text-6xl" >Data <span class="validation__headline" data-aos="change-red">Security</span></p>
     <div class="validation-slider-container left-0 px-0 md:px-8 lg:px-16 absolute w-full h-full md:pb-14 flex justify-between items-center z-10">
