@@ -5,7 +5,7 @@
       <?php custom_slider_arrows("validation__slider")?>
     </div>
     <div class="validation__slider mt-14">
-      <div class="flex justify-center">
+      <div class="validations__slider__text flex justify-center">
         <p class="text-white pr-0 md:pr-16 lg:pr-0 text-lg 2xl:text-4xl">
           <b>Data Security</b> is central to our mission at Certilytics. The Certilytics
           Security Framework includes HIPAA compliance and relevant data security protocols to meet
