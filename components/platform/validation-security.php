@@ -5,33 +5,40 @@
       <?php custom_slider_arrows("validation__slider")?>
     </div>
     <div class="validation__slider mt-14">
-      <div class="flex justify-center">
-        <p class="text-white pr-0 md:pr-16 lg:pr-0 text-lg 2xl:text-4xl">
-          <b>Data Security</b> is central to our mission at Certilytics. The Certilytics
-          Security Framework includes HIPAA compliance and relevant data security protocols to meet
-          highest industry standards of security and integrity. Our framework is based on HITRUST,
-          SOC 2 Type II, NIST CsF, elements of GDPR, and internally defined requirements based on 
-          industry best practices, client expectations, and contractual agreements.
-        </p>
+
+      <div class="w-full">
+        <div class="w-full">
+          <p class="text-white pr-0 md:pr-16 lg:pr-0 text-lg 2xl:text-4xl">
+            <b>Data Security</b> is central to our mission at Certilytics. The Certilytics 
+            Security Framework includes HIPAA compliance and relevant data security protocols to meet 
+            highest industry standards of security and integrity. Our framework is based on HITRUST, 
+            SOC 2 Type II, NIST CsF, elements of GDPR, and internally defined requirements based on 
+            industry best practices, client expectations, and contractual agreements.
+          </p>
+        </div>
       </div>
       
-      <div class="flex justify-center">
-        <p class="text-white pr-0 md:pr-16 lg:pr-0 text-lg 2xl:text-4xl">
-          At Certilytics, we know trust is integral to the success of predictive analytics. 
-          That's why we've developed a proprietary <b>Validation Framework</b> to ensure
-          the highest standards of data, software, and process integrity - with continual
-          checks as data moves through our platform, regular audits and certifications, as well
-          as clear data governance and security policies throughout our organization.
-        </p>
+      <div class="w-full">
+        <div class="flex justify-center">
+          <p class="text-white pr-0 md:pr-16 lg:pr-0 text-lg 2xl:text-4xl">
+            At Certilytics, we know trust is integral to the success of predictive analytics. 
+            That's why we've developed a proprietary <b>Validation Framework</b> to ensure
+            the highest standards of data, software, and process integrity - with continual
+            checks as data moves through our platform, regular audits and certifications, as well
+            as clear data governance and security policies throughout our organization.
+          </p>
+        </div>
       </div>
 
-      <div class="flex justify-center">
-        <p class="text-white pr-0 md:pr-16 lg:pr-0 text-lg 2xl:text-4xl">
-          Since its founding in 2014, Certilytics has established a climate of trust, collaboration
-          and transparent communication. Our <b>Data Governance Board</b> and <b>Data Architecture Committee</b>
-          combine key stakeholders from across the company to make deliberate advances
-          in our approach to data management, architecture, and security.
-        </p>
+      <div class="w-full">
+        <div class="flex justify-center">
+          <p class="text-white pr-0 md:pr-16 lg:pr-0 text-lg 2xl:text-4xl">
+            Since its founding in 2014, Certilytics has established a climate of trust, collaboration
+            and transparent communication. Our <b>Data Governance Board</b> and <b>Data Architecture Committee</b>
+            combine key stakeholders from across the company to make deliberate advances
+            in our approach to data management, architecture, and security.
+          </p>
+        </div>
       </div>
       
     </div>
