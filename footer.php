@@ -93,7 +93,7 @@
 			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://www.linkedin.com/shareArticle?url=<?php echo $base_url ?>">
+			<a href="https://www.linkedin.com/company/certilytics/mycompany/">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
@@ -104,7 +104,7 @@
 			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://www.linkedin.com/shareArticle?url=<?php echo $base_url ?>">
+			<a href="https://www.linkedin.com/company/certilytics/mycompany/">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
