@@ -112,8 +112,7 @@
       <button class="platforms__button left" name="platformsPrev">
         <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
-      <!-- <p class="platforms__slide__title font-bold mb-0 flex-1 text-center" style="font-size: 21.5px">Connect Data</p> -->
-      <p class="platforms__slide__title font-bold mb-0 w-[30%] text-center">Connect Data</p>
+      <p class="platforms__slide__title font-bold mb-0 flex-1 text-center" style="font-size: 21.5px">Connect Data</p>
       <div class="platforms__slide__icon px-4"><img class="w-24 max-w-[6rem]" src="" alt=""></div>
       <p class="platforms__slide__description text-base mb-0 w-[52%]">
         all forms of data are mapped, standarized, cleansed, validated and enriched through our market-leading
