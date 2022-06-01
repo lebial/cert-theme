@@ -50,7 +50,7 @@
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
-				echo '<div class="mb-4 flex justify-between"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
+				echo '<div class="mb-4 flex justify-between w-[55%] md:w-1/4"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group">';
 						foreach($link_group['links'] as $link){
@@ -85,7 +85,7 @@
 		</div>
 	</div>
 	
-	<div class="second-row flex justify-center xl:justify-end">
+	<div class="second-row flex justify-end ">
 		<div class=" social__icons social__icons__clone hidden xl:flex mt-3">
 			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
@@ -93,7 +93,7 @@
 			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://www.linkedin.com/shareArticle?url=<?php echo $base_url ?>">
+			<a href="https://www.linkedin.com/company/certilytics/mycompany/">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
@@ -104,7 +104,7 @@
 			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://www.linkedin.com/shareArticle?url=<?php echo $base_url ?>">
+			<a href="https://www.linkedin.com/company/certilytics/mycompany/">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
