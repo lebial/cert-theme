@@ -100,9 +100,7 @@
 
 <section class="platforms w-screen hidden lg:block">
   <script id="platforms-data" type="application/json"><?php echo json_encode($platforms_data)?></script>
-  <!-- <div class="platforms__data__container pt-2 w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-center pb-10" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)"> -->
   <div class="platforms__data__container w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-evenly" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
-    <!-- <div class="w-full mb-[2.5%]" data-aos="fade-up"> -->
     <div class="w-full" data-aos="fade-up">
       <h1 class=" tracking-wide text-xl lg:text-[3rem] 2xl:text-7xl text-center text-white font-normal leading-tight"><?php the_field('head_line')?></h1>
     </div>
@@ -110,12 +108,11 @@
   </div>
   <?php render_desktop_platform_options($platforms_data) ?>
   <div class="w-full flex justify-center">
-    <!-- <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-platform-anim="platforms-slide-in"> -->
     <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-aos="fade-up">
       <button class="platforms__button left" name="platformsPrev">
         <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>
-      <p class="platforms__slide__title font-bold mb-0 w-[30%] text-center">Connect Data</p>
+      <p class="platforms__slide__title font-bold mb-0 flex-1 text-center" style="font-size: 21.5px">Connect Data</p>
       <div class="platforms__slide__icon px-4"><img class="w-24 max-w-[6rem]" src="" alt=""></div>
       <p class="platforms__slide__description text-base mb-0 w-[52%]">
         all forms of data are mapped, standarized, cleansed, validated and enriched through our market-leading
