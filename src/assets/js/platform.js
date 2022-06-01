@@ -221,16 +221,26 @@ jQuery(document).ready(function($) {
     }
 
     function handleProvenNumbersIncreaseAnimation() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(({ isIntersecting, target }) => {
-                if (isIntersecting) {
-                    animateNumberIncrease(target);
-                    observer.unobserve(target);
-                }
-            });
+        const observer = new MutationObserver((mutations, mut) => {
+            mutations.forEach(({ target }) => {
+                    if (target.className.includes('numberAnimationHook') && !target.className.includes('hookAnimated')) {
+
+                        const animatedNumbers = $(target).find('.increase__number');
+                        $(target).addClass('hookAnimated');
+                        for (let i = 0; i <= animatedNumbers.length - 1; i++) {
+                            animateNumberIncrease(animatedNumbers[i]);
+                        }
+                    }
+                })
+                // entries.forEach(({ isIntersecting, target }) => {
+                //     if (isIntersecting) {
+                //         animateNumberIncrease(target);
+                //         observer.unobserve(target);
+                //     }
+                // });
         });
-        const numberElements = document.querySelectorAll(".increase__number");
-        numberElements.forEach((element) => observer.observe(element));
+        const numberElements = document.querySelectorAll(".slide__container__hook");
+        numberElements.forEach((element) => observer.observe(element, { attributes: true }));
     }
 
     //platform deployment options section

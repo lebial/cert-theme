@@ -4,15 +4,32 @@
 	
 	<head>
 		
-	<?php if (get_field('include_GA', 'options')) {
-			echo '<!-- Google Tag Manager -->';
-			echo '<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":';
-			echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],";
-			echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=";
-			echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);";
-			echo "})(window,document,'script','dataLayer','GTM-M4R5S5Z');</script>";
-			echo "<!-- End Google Tag Manager -->";
-		} ?>
+	<?php 
+	  if (get_field('include_GA', 'options')) {
+		echo '<!-- Google Tag Manager -->';
+		echo '<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":';
+		echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],";
+		echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=";
+		echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);";
+		echo "})(window,document,'script','dataLayer','GTM-M4R5S5Z');</script>";
+		echo "<!-- End Google Tag Manager -->";
+	  }
+
+	  if (get_field('include_zoomInfo', 'options')) {
+      echo '<!-- Zoom Info Tag -->';
+      echo '<script>';
+        echo '(function() {';
+          echo 'const zi = document.createElement("script");';
+          echo 'zi.type = "text/javascript";';
+          echo 'zi.async = true;';
+          echo 'zi.referrerPolicy = "unsafe-url";';
+          echo 'zi.src = "https://ws.zoominfo.com/pixel/61e6d2d41fad08001ae31a33";';
+          echo 'const s = document.getElementsByTagName("script")[0];';
+          echo 's.parentNode.insertBefore(zi, s);';
+        echo '})();';
+      echo '</script>';
+	  }
+	?>
 		
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		
