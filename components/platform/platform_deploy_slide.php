@@ -17,7 +17,7 @@ $certilytics_env = get_field('certilytics_env_icon');
             <p class="text-xl">
               We get our clients up and running in <b>90 days or less.</b>
               Our implementation team is awesome (we don't mind bragging a bit) and works hand-in-hand with our data governance,
-              client engament, and product teams to give you unparalleled support as you get online with Certilytics.
+              client engagement, and product teams to give you unparalleled support as you get online with Certilytics.
             </p>
             <p class="text-xl">
               We offer flexible deployment options, including Software as a Service (SaaS) and
