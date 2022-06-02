@@ -29,11 +29,11 @@ function renderSolutions($data)
   class="solutions-parallax block lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11 "
   style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw"
 >
-  <div class="solutions__section__container px-0 lg:px-8" data-sticky="from: -65px, duration: 580vh">
+  <div class="solutions__section__container" data-sticky="from: -65px, duration: 580vh">
 
     <div class="w-screen h-screen sticky">
       <div class="w-full flex">
-        <div class="w-full xl:w-1/2 flex justify-center xl:justify-end bg-second-blue-background lg:bg-transparent">
+        <div class="w-full xl:w-1/2 flex justify-start pl-[7%] xl:pl-0 xl:justify-end bg-second-blue-background lg:bg-transparent">
           <div class="w-10/12">
             <div class="solutions__section__separator w-full flex items-center pt-6 pb-4 opacity-100 z-20 " data-aos="fade-up">
               <div class="separator__dots w-auto relative flex mr-4">
@@ -48,18 +48,18 @@ function renderSolutions($data)
         </div>
       </div>
 
-      <div class="w-full slides__body relative">
+      <div class="w-full slides__body relative pl-[7%]">
 
         <!-- slide 1 -->
         <div
-          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 z-[-1]"
+          class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 z-[-1]"
           data-animation="opacity: {0: 1, 20vh: 1, 130vh: 0}, transform: {0: translate(0,0), 20vh: translate(0,0), 130vh: translate(0, -20%)}"
           data-classes="-90vh: {add: numberAnimationHook}"
           data-aos="fade-up"
         >
 
           <div class="w-full xl:w-1/2 flex flex-col items-end">
-            <div class="w-full xl:w-10/12 px-[10%]">
+            <div class="w-full xl:w-10/12">
               <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">Massive Data</p>
               <p class="text-white text-lg"> 
                 Our platform was built with the latest open-source technologies to process big data at scale for some
@@ -94,12 +94,12 @@ function renderSolutions($data)
 
       <!-- slide 2 -->
         <div
-          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-6 invisible z-[-1]"
+          class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-6 invisible z-[-1]"
           data-animation="opacity: {130vh: 0.4, 150vh: 1, 190vh: 1, 280vh: 0}, transform: {0: translate(0,0), 190vh: translate(0, 0), 280vh: translate(0, -20%)}"
           data-classes="130vh: {remove: invisible, add: numberAnimationHook}"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
-            <div class="w-full xl:w-10/12 px-[10%]">
+            <div class="w-full xl:w-10/12 ">
               <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">High Throughput</p>
               <p class="text-white text-lg">
                 Industry-leading processing speeds enable our customers
@@ -128,12 +128,12 @@ function renderSolutions($data)
 
       <!-- slide 3 -->
         <div
-          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
+          class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
           data-animation="opacity: {280vh: 0.4, 290vh: 1, 330vh: 1, 430vh: 0}, transform: {0: translate(0,0), 330vh: translate(0, 0), 430vh: translate(0, -20%)}"
           data-classes="280vh: {remove: invisible, add: numberAnimationHook}"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
-            <div class="w-full xl:w-10/12 px-[10%]">
+            <div class="w-full xl:w-10/12 ">
               <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">Unified Intelligence</p>
               <p class="text-white text-lg">
                 Connect, organize, and add value to your data for a
@@ -163,13 +163,13 @@ function renderSolutions($data)
 
       <!-- slide 4 -->
         <div
-          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
+          class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
           data-animation="opacity: {430vh: 0.4, 450vh: 1}"
           data-classes="430vh: {remove: invisible, add: numberAnimationHook}"
           data-reverse="true"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
-            <div class="w-full xl:w-10/12 px-[10%]">
+            <div class="w-full xl:w-10/12 ">
               <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">Faster Deployment</p>
               <p class="text-white text-lg">
                 Accelerate your access to market leading predictive analytics through our proven,
