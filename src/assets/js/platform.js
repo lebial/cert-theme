@@ -224,7 +224,7 @@ jQuery(document).ready(function($) {
         const observer = new MutationObserver((mutations, mut) => {
             mutations.forEach(({ target }) => {
                     if (target.className.includes('numberAnimationHook') && !target.className.includes('hookAnimated')) {
-
+                        debugger;
                         const animatedNumbers = $(target).find('.increase__number');
                         $(target).addClass('hookAnimated');
                         for (let i = 0; i <= animatedNumbers.length - 1; i++) {

@@ -166,6 +166,7 @@ function renderSolutions($data)
           class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
           data-animation="opacity: {430vh: 0.4, 450vh: 1}"
           data-classes="430vh: {remove: invisible, add: numberAnimationHook}"
+          data-reverse="true"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-full xl:w-10/12 px-[10%]">
