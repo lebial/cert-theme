@@ -52,8 +52,9 @@ function renderSolutions($data)
 
         <!-- slide 1 -->
         <div
-          class="slide__container overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 z-[-1]"
+          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 z-[-1]"
           data-animation="opacity: {0: 1, 20vh: 1, 130vh: 0}, transform: {0: translate(0,0), 20vh: translate(0,0), 130vh: translate(0, -20%)}"
+          data-classes="-90vh: {add: numberAnimationHook}"
           data-aos="fade-up"
         >
 
@@ -93,9 +94,9 @@ function renderSolutions($data)
 
       <!-- slide 2 -->
         <div
-          class="slide__container overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-6 invisible z-[-1]"
+          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-6 invisible z-[-1]"
           data-animation="opacity: {130vh: 0.4, 150vh: 1, 190vh: 1, 280vh: 0}, transform: {0: translate(0,0), 190vh: translate(0, 0), 280vh: translate(0, -20%)}"
-          data-classes="130vh: {remove: invisible}"
+          data-classes="130vh: {remove: invisible, add: numberAnimationHook}"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-full xl:w-10/12 px-[10%]">
@@ -127,9 +128,9 @@ function renderSolutions($data)
 
       <!-- slide 3 -->
         <div
-          class="slide__container overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
+          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
           data-animation="opacity: {280vh: 0.4, 290vh: 1, 330vh: 1, 430vh: 0}, transform: {0: translate(0,0), 330vh: translate(0, 0), 430vh: translate(0, -20%)}"
-          data-classes="280vh: {remove: invisible}"
+          data-classes="280vh: {remove: invisible, add: numberAnimationHook}"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-full xl:w-10/12 px-[10%]">
@@ -162,9 +163,10 @@ function renderSolutions($data)
 
       <!-- slide 4 -->
         <div
-          class="slide__container overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
+          class="slide__container__hook overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
           data-animation="opacity: {430vh: 0.4, 450vh: 1}"
-          data-classes="430vh: {remove: invisible}"
+          data-classes="430vh: {remove: invisible, add: numberAnimationHook}"
+          data-reverse="true"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-full xl:w-10/12 px-[10%]">
