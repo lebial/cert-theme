@@ -93,7 +93,7 @@
 			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://www.linkedin.com/company/certilytics/mycompany/">
+			<a href="https://www.linkedin.com/company/11752591/">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
@@ -143,6 +143,9 @@ window._linkedin_data_partner_ids.push(_linkedin_partner_id);
 </script>
 <noscript>
 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2795692&fmt=gif" />
+</noscript>
+<noscript>
+ <img src="https://ws.zoominfo.com/pixel/61e6d2d41fad08001ae31a33" width="1" height="1" style="display: none;" alt="websights">
 </noscript>
 	</body>
 

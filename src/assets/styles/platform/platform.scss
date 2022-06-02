@@ -520,6 +520,20 @@ $deploy_border: 3px dotted #9e9e9e;
     }
 }
 
+.validation__slider{
+    & .slick-slide {
+        @media #{$desktopMD} {
+            width: 23% !important;
+            margin-left: 0;
+        }
+    & > div {
+        @media #{$desktopBase} {
+            width: 70%;
+        }
+        }
+    }
+}
+
 // Contact Us Section
 .action__quote__container__text {
     line-height: 3rem;
@@ -529,7 +543,7 @@ $deploy_border: 3px dotted #9e9e9e;
         font-size: 3rem !important;
     }
     @media #{$desktopLG} {
-        font-size: 4.5rem !important;
+        font-size: 4rem !important;
     }
 }
 

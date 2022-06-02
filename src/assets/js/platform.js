@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
         return { multiplier, speed: 20 };
     }
 
-    function recursiveIncrease(idx, endNumber, element) {
+    function recursiveIncrease(idx, endNumber, element, reverse = false) {
         const newEndNumber = hasDecimals(endNumber) ? endNumber * 10 : endNumber;
         if (idx <= newEndNumber) {
             const { multiplier, speed } = getAnimationMultiplier(endNumber);
@@ -215,33 +215,27 @@ jQuery(document).ready(function($) {
         }
     }
 
-    function animateNumberIncrease(el) {
+    function animateNumberIncrease(el, reverse) {
         const endNumber = +$(el).attr("data-number");
-        recursiveIncrease(0, endNumber, el);
+        recursiveIncrease(0, endNumber, el, reverse);
     }
 
     function handleProvenNumbersIncreaseAnimation() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(({ isIntersecting, target }) => {
-                if (isIntersecting) {
-                    animateNumberIncrease(target);
-                    observer.unobserve(target);
+        const observer = new MutationObserver((mutations, mut) => {
+            mutations.forEach(({ target }) => {
+                if (target.className.includes('numberAnimationHook') && !target.className.includes('hookAnimated')) {
+                    const reverseAnimate = target.attributes['data-reverse'];
+                    const animatedNumbers = $(target).find('.increase__number');
+                    $(target).addClass('hookAnimated');
+                    for (let i = 0; i <= animatedNumbers.length - 1; i++) {
+                        animateNumberIncrease(animatedNumbers[i], reverseAnimate);
+                    }
                 }
-            });
+            })
         });
-        const numberElements = document.querySelectorAll(".increase__number");
-        numberElements.forEach((element) => observer.observe(element));
+        const numberElements = document.querySelectorAll(".slide__container__hook");
+        numberElements.forEach((element) => observer.observe(element, { attributes: true }));
     }
-
-    //platform deployment options section
-
-    // function calculateOptionsGraphicHeight() {
-    //   const { navHeight } = getNavHeight();
-    //   $(".platform__deployment__graphic").css(
-    //     "height",
-    //     `calc(100vh - ${navHeight + 40}px )`
-    //   );
-    // }
 
     if (window.location.href.includes("platform")) {
         setHeroMarginTop();
