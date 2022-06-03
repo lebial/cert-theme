@@ -232,7 +232,7 @@ jQuery(document).ready(function($) {
 
     function animateNumberIncrease(el, reverse) {
         const endNumber = +$(el).attr("data-number");
-        if (reverse) return recursiveDecrease(270, endNumber, el)
+        if (reverse) return recursiveDecrease(180, endNumber, el)
         return recursiveIncrease(0, endNumber, el);
     }
 
