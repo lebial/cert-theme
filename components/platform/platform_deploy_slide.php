@@ -2,7 +2,7 @@
 $customer_env = get_field('customer_env_icon');
 $certilytics_env = get_field('certilytics_env_icon');
 ?>
-<section class="platform__deploy__options bg-gray-100 flex flex-col lg:flex-row py-32">
+<section class="platform__deploy__options bg-gray-100 flex flex-col lg:flex-row py-32 xl:pt-32 xl:pb-0 2xl:pb-16">
   <div data-aos="fade-up" class="w-full flex flex-col lg:flex-row">
     <div class="px-12 w-full lg:w-1/2 ">
       <div class="data__slides__content w-full lg:w-10/12 mx-auto xl:pt-3 2xl:pt-[3%]">

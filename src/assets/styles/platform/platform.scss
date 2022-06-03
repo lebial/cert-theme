@@ -364,6 +364,9 @@ $dots_top: -6px;
         @media #{$desktopMD} {
             min-height: 100vh;
         }
+        @media #{$desktopLG} {
+            min-height: 85vh;
+        }
         border-top: $section_border;
         border-bottom: $section_border;
         &:last-of-type,
@@ -407,6 +410,9 @@ $dots_top: -6px;
 $deploy_border: 3px dotted #9e9e9e;
 .platform__deploy__options {
     min-height: 100vh;
+    @media #{$desktopMD} {
+        min-height: 85vh;
+    }
     & .mobile-svg-options {
         & rect:last-of-type {
             fill: transparent;
@@ -520,16 +526,16 @@ $deploy_border: 3px dotted #9e9e9e;
     }
 }
 
-.validation__slider{
+.validation__slider {
     & .slick-slide {
         @media #{$desktopMD} {
             width: 23% !important;
             margin-left: 0;
         }
-    & > div {
-        @media #{$desktopBase} {
-            width: 70%;
-        }
+        &>div {
+            @media #{$desktopBase} {
+                width: 70%;
+            }
         }
     }
 }
