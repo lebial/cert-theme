@@ -108,7 +108,7 @@
   </div>
   <?php render_desktop_platform_options($platforms_data) ?>
   <div class="w-full flex justify-center">
-    <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-aos="fade-up">
+    <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-aos="fade-up" data-aos-offset="200">
       <button class="platforms__button left" name="platformsPrev">
         <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>

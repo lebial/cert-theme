@@ -191,6 +191,10 @@ jQuery(document).ready(function($) {
         return number + idx;
     }
 
+    function calculateDecreaseValue(number, idx) {
+        return number - idx;
+    }
+
     function calculateDecimals(idx) {
         if (idx === 0) return 1 / 10;
         return idx / 10;
@@ -202,7 +206,7 @@ jQuery(document).ready(function($) {
         return { multiplier, speed: 20 };
     }
 
-    function recursiveIncrease(idx, endNumber, element, reverse = false) {
+    function recursiveIncrease(idx, endNumber, element) {
         const newEndNumber = hasDecimals(endNumber) ? endNumber * 10 : endNumber;
         if (idx <= newEndNumber) {
             const { multiplier, speed } = getAnimationMultiplier(endNumber);
@@ -215,9 +219,21 @@ jQuery(document).ready(function($) {
         }
     }
 
+    function recursiveDecrease(idx = 270, goalNumber, element) {
+        const newGoalNumber = hasDecimals(goalNumber) ? goalNumber * 10 : goalNumber;
+        if (idx >= newGoalNumber) {
+            const { multiplier, speed } = getAnimationMultiplier(goalNumber);
+            element.textContent = hasDecimals(goalNumber) ? calculateDecimals(idx) : idx;
+            setTimeout(() => {
+                recursiveDecrease(calculateDecreaseValue(idx, multiplier), goalNumber, element)
+            }, speed)
+        }
+    }
+
     function animateNumberIncrease(el, reverse) {
         const endNumber = +$(el).attr("data-number");
-        recursiveIncrease(0, endNumber, el, reverse);
+        if (reverse) return recursiveDecrease(180, endNumber, el)
+        return recursiveIncrease(0, endNumber, el);
     }
 
     function handleProvenNumbersIncreaseAnimation() {

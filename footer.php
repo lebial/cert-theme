@@ -38,21 +38,21 @@
 					array('href' => '#', 'text' => 'Careers'),
 				),
 			),
-			array(
-				'button_text' => 'Careers',
-				'button_link' => '#',
-				'links' => array(
-				),
-			)
+			// array(
+			// 	'button_text' => 'Careers',
+			// 	'button_link' => '#',
+			// 	'links' => array(
+			// 	),
+			// )
 		);
 
 		$link_groups = get_field('footer_link_groups', 'option') ? get_field('footer_link_groups', 'options') : $data_mock;
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links">';
-				echo '<div class="mb-4 flex justify-between w-[55%] md:w-1/4"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
+				echo '<div class="mb-4 flex justify-between w-[55%] md:w-1/4 lg:w-[55%]"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
-					echo '<div class="footer__links__group">';
+					echo '<div class="footer__links__group relative">';
 						foreach($link_group['links'] as $link){
 							echo '<a href="'.$link['href'].'" class="footer__link" name="footer-'.$link['text'].'">'.$link['text'].'</a>';
 						}
@@ -80,7 +80,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="footer__links w-full flex flex-col xl:flex-row xl:justify-evenly ">
+		<div class="footer__links w-full flex flex-col xl:flex-row xl:justify-between">
 			<?php render_link_groups(); ?>
 		</div>
 	</div>
@@ -114,7 +114,15 @@
 		<div class="address__container">
 			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p>
 		</div>
-		<div class="corp__info flex flex-col xl:flex-row mt-4 xl:mt-9 xl:mt-0">
+		<div class="corp__info flex flex-col xl:flex-row mt-4 xl:mt-0 lg:hidden">
+			<div>
+				<span>&reg;</span>
+				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
+				<a class="mr-2" href="/terms">Terms</a>
+				<a class="mr-2" href="/privacy">Privacy</a>
+			</div>
+		</div>
+		<div class="corp__info corp__info__clone absolute top-[150%] left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
