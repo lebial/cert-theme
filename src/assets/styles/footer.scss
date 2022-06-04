@@ -60,3 +60,16 @@ footer {
         margin-top: 125px;
     }
 }
+
+.corp__info__clone {
+    bottom: -160%;
+    @media (min-width: 1290px) {
+        bottom: -140%
+    }
+    @media (min-width: 1673px) {
+        bottom: -118%;
+    }
+    @media (min-width: 2396px) {
+        bottom: -104%;
+    }
+}
