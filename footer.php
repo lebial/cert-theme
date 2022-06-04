@@ -72,7 +72,7 @@
 					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="footer__responsive__hidden text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'; ?></p>
+				<p class="footer__responsive__hidden text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI - powered solutions can deliver real value for your organization—today.'; ?></p>
 				<a
 					class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
@@ -122,7 +122,7 @@
 				<a class="mr-2" href="/privacy">Privacy</a>
 			</div>
 		</div>
-		<div class="corp__info corp__info__clone absolute top-[150%] left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
+		<div class="corp__info corp__info__clone absolute left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
