@@ -65,7 +65,7 @@
 ?>
 
 <footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen">			
-	<div class="first-row w-full flex flex-col xl:flex-row">
+	<div class="first-row w-full flex flex-col xl:flex-row xl:justify-between">
 		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0">
 			<div class="flex flex-col items-center xl:items-start w-10/12">
 				<span class="footer__responsive__hidden text-white">
@@ -80,7 +80,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="footer__links w-full flex flex-col xl:flex-row xl:justify-between">
+		<div class="footer__links w-full flex flex-col xl:w-full 2xl:w-1/2 xl:flex-row xl:justify-between">
 			<?php render_link_groups(); ?>
 		</div>
 	</div>
