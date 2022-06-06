@@ -8,7 +8,17 @@ $section_border: 20px solid black;
     border-bottom: 2px solid gray;
     &:last-of-type {
         border-bottom: none;
-        margin-bottom: 8rem;
+        margin-bottom: 0;
+    }
+}
+
+.platform__container {
+    &:first-of-type {
+        & .platform__submenu__item {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 
@@ -412,6 +422,14 @@ $deploy_border: 3px dotted #9e9e9e;
     min-height: 100vh;
     @media #{$desktopMD} {
         min-height: 85vh;
+        padding-bottom: 0;
+        margin-bottom: -4rem;
+    }
+    @media #{$desktopLG} {
+        padding-bottom: 4rem;
+    }
+    @media (min-width: 1535px) {
+        padding-bottom: 12rem;
     }
     & .mobile-svg-options {
         & rect:last-of-type {

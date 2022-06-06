@@ -33,7 +33,7 @@ function renderSolutions($data)
 
     <div class="w-screen h-screen sticky">
       <div class="w-full flex">
-        <div class="w-full xl:w-1/2 flex justify-start pl-[7%] xl:pl-0 xl:justify-end bg-second-blue-background lg:bg-transparent">
+        <div class="w-full xl:w-1/2 flex justify-start pt-0 md:pt-16 pl-[7%] xl:pl-0 xl:justify-end bg-second-blue-background lg:bg-transparent">
           <div class="w-10/12">
             <div class="solutions__section__separator w-full flex items-center pt-6 pb-4 opacity-100 z-20 " data-aos="fade-up">
               <div class="separator__dots w-auto relative flex mr-4">
