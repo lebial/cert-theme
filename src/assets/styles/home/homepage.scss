@@ -17,13 +17,34 @@
     }
 }
 
-.bucket__slider {
-    & .slick-next {
-        top: 40%;
+// .bucket__slider {
+//     & .slick-next {
+//         top: 40%;
+//     }
+//     & .slick-prev {
+//         left: -40px;
+//         top: 40%;
+//     }
+// }
+
+.slick-arrow {
+    display: none !important;
+}
+
+.arrows__container {
+    top: 55%;
+    & button {
+        & svg {
+            & path {
+                fill: black;
+            }
+        }
     }
-    & .slick-prev {
-        left: -40px;
-        top: 40%;
+}
+
+.arrows__container {
+    @media #{$desktopSM} {
+        display: none !important;
     }
 }
 
