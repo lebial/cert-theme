@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
         $('[name="footer-Careers"]').attr('target', '_blank');
     }
 
-    moveSocialIcons();
+    // moveSocialIcons();
     removeMobileArrows();
     addTargetBlankToCareers();
 });

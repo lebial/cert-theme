@@ -29,7 +29,7 @@ $certilytics_env = get_field('certilytics_env_icon');
 
     <div class=" px-8 w-full lg:w-1/2">
       <!-- <div class="sticky lg:static top-28"> -->
-      <div class="">
+      <div class="mt-6 xl:mt-0">
         <img
           class="style-svg w-full platform__deployment__graphic hidden lg:block"
           src="<?php the_field('desktop_graphic')?>"

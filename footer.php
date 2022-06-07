@@ -49,10 +49,10 @@
 		$link_groups = get_field('footer_link_groups', 'option') ? get_field('footer_link_groups', 'options') : $data_mock;
 
 		foreach($link_groups as $link_group) {
-			echo '<div class="footer__links">';
-				echo '<div class="mb-4 flex justify-between w-[55%] md:w-1/4 lg:w-[55%]"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
+			echo '<div class="footer__links mr-0 w-[55%] md:w-[25%] xl:w-auto xl:mr-[4%] ">';
+				echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
-					echo '<div class="footer__links__group relative">';
+					echo '<div class="footer__links__group relative ">';
 						foreach($link_group['links'] as $link){
 							echo '<a href="'.$link['href'].'" class="footer__link" name="footer-'.$link['text'].'">'.$link['text'].'</a>';
 						}
@@ -80,24 +80,14 @@
 				</a>
 			</div>
 		</div>
-		<div class="footer__links w-full flex flex-col xl:w-full 2xl:w-1/2 xl:flex-row xl:justify-between">
+		<div class="footer__links w-full flex flex-col xl:w-full xl:flex-row">
 			<?php render_link_groups(); ?>
 		</div>
 	</div>
 	
 	<div class="second-row flex justify-end ">
-		<div class=" social__icons social__icons__clone hidden xl:flex mt-3">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
-				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
-			</a>
-			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
-				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
-			</a>
-			<a href="https://www.linkedin.com/company/11752591/">
-				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
-			</a>
-		</div>
-		<div class="flex social__icons mt-3  xl:hidden">
+		<!-- <div class="flex social__icons mt-3  xl:hidden"> -->
+		<div class="flex social__icons mt-3  md:hidden">
 			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
 			</a>
@@ -110,11 +100,22 @@
 		</div>
 	</div>
 
-	<div class="third-row border-t-2 border-white border-solid flex flex-col xl:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
+	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
 		<div class="address__container">
 			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p>
 		</div>
-		<div class="corp__info flex flex-col xl:flex-row mt-4 xl:mt-0 lg:hidden">
+		<div class="corp__info relative flex flex-col md:flex-row mt-4 md:mt-0">
+			<div class="absolute right-[6px] top-[-58px] social__icons hidden md:flex">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
+					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
+				</a>
+				<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
+					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
+				</a>
+				<a href="https://www.linkedin.com/company/certilytics/mycompany/">
+					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
+				</a>
+			</div>
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
@@ -122,14 +123,14 @@
 				<a class="mr-2" href="/privacy">Privacy</a>
 			</div>
 		</div>
-		<div class="corp__info corp__info__clone absolute left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
+		<!-- <div class="corp__info corp__info__clone absolute left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
 				<a class="mr-2" href="/terms">Terms</a>
 				<a class="mr-2" href="/privacy">Privacy</a>
 			</div>
-		</div>
+		</div> -->
 	</div>
 		
 </footer>
