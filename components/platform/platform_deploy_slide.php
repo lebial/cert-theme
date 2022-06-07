@@ -2,13 +2,12 @@
 $customer_env = get_field('customer_env_icon');
 $certilytics_env = get_field('certilytics_env_icon');
 ?>
-<section class="platform__deploy__options bg-gray-100 flex flex-col lg:flex-row py-32 xl:pt-32 xl:pb-0 2xl:pb-16">
+<section class="platform__deploy__options bg-gray-100 flex flex-col lg:flex-row py-16 xl:pt-32">
   <div data-aos="fade-up" class="w-full flex flex-col lg:flex-row">
     <div class="px-12 w-full lg:w-1/2 ">
       <div class="data__slides__content w-full lg:w-10/12 mx-auto xl:pt-3 2xl:pt-[3%]">
         <p class="data__slides__content__title text-center xl:text-left font-bold text-3xl 2xl:text-4xl">Adoption & Deployment</p>
         <div class="data__slides__content__description overflow-hidden mt-9 relative ">
-          <!-- <div class="data__slide__overlay absolute bottom-0 left-0 w-full h-1/2 bg-white bg-opacity-60"></div> -->
           <div class="data__slide__text">
             <p class="text-xl ">
               Change is hard. That's why our process is designed to take the burden off you and your team
@@ -30,7 +29,7 @@ $certilytics_env = get_field('certilytics_env_icon');
 
     <div class=" px-8 w-full lg:w-1/2">
       <!-- <div class="sticky lg:static top-28"> -->
-      <div class="">
+      <div class="mt-6 xl:mt-0">
         <img
           class="style-svg w-full platform__deployment__graphic hidden lg:block"
           src="<?php the_field('desktop_graphic')?>"
