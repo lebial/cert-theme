@@ -88,13 +88,13 @@
 	<div class="second-row flex justify-end ">
 		<!-- <div class="flex social__icons mt-3  xl:hidden"> -->
 		<div class="flex social__icons mt-3  md:hidden">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
+			<a href="<?php the_field('facebook_link', 'options')?>https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
+			<a href="<?php the_field('twitter_link', 'options')?>https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://www.linkedin.com/company/certilytics/mycompany/">
+			<a href="<?php the_field('linkedin_link','options')?>https://www.linkedin.com/company/11752591/">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
