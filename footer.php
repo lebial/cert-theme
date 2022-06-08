@@ -62,6 +62,8 @@
 		};
 	};
 
+	$privacy_link = the_field('privacy_link', 'options');
+	$terms_link = the_field('terms_link', 'options');
 ?>
 
 <footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen">			
@@ -105,22 +107,22 @@
 			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p>
 		</div>
 		<div class="corp__info relative flex flex-col md:flex-row mt-4 md:mt-0">
-			<div class="absolute right-[6px] top-[-58px] social__icons hidden md:flex">
+			<div class="absolute right-[6px] top-[-58px] social__icons tw-hidden md:flex">
 				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
 					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
 				</a>
 				<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
 					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 				</a>
-				<a href="https://www.linkedin.com/company/certilytics/mycompany/">
+				<a href="https://www.linkedin.com/company/11752591/">
 					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 				</a>
 			</div>
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
-				<a class="mr-2" href="/terms">Terms</a>
-				<a class="mr-2" href="/privacy">Privacy</a>
+				<a class="mr-2" href="<?php echo $terms_link ?>">Terms</a>
+				<a class="mr-2" href="<?php echo $privacy_link ?>">Privacy</a>
 			</div>
 		</div>
 		<!-- <div class="corp__info corp__info__clone absolute left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
