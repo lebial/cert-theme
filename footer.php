@@ -62,8 +62,6 @@
 		};
 	};
 
-	$privacy_link = the_field('privacy_link', 'options');
-	$terms_link = the_field('terms_link', 'options');
 ?>
 
 <footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen">			
@@ -121,8 +119,8 @@
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
-				<a class="mr-2" href="<?php echo $terms_link ?>">Terms</a>
-				<a class="mr-2" href="<?php echo $privacy_link ?>">Privacy</a>
+				<a class="mr-2" href="<?php the_field('terms_link', 'options');?>">Terms</a>
+				<a class="mr-2" href="<?php the_field('privacy_link', 'options')?>">Privacy</a>
 			</div>
 		</div>
 		<!-- <div class="corp__info corp__info__clone absolute left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
