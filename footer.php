@@ -62,6 +62,8 @@
 		};
 	};
 
+	$privacy_link = the_field('privacy_link', 'options');
+	$terms_link = the_field('terms_link', 'options');
 ?>
 
 <footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen">			
