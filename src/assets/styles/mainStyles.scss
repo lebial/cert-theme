@@ -2681,3 +2681,9 @@ selectric .label {
     padding: 0;
     position: absolute;
 }
+
+.frm_cancel1_icon {
+    &::before {
+        content: "x" !important;
+    }
+}
