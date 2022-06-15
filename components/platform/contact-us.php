@@ -5,7 +5,7 @@
       <div class="w-full flex flex-col items-center lg:w-3/4 px-8 md:px-32 lg:px-0 pt-16 lg:pt-0">
         <p class="action__quote__container__text text-white font-bold text-center" >Are you ready to see the <span class="text-primary">future</span> through data?</p>
         <div class="action__quote__container__button w-full mx-auto mt-10 pb-14 flex lg:px-1 xl:px-2 justify-center">
-          <a href="#" class=" w-7/12 lg:w-8/12 bg-primary text-white font-bold rounded-lg text-xl text-center py-3">Schedule Demo</a>
+          <a href="<?php the_field('schedule_demo_link')?>" class=" w-7/12 lg:w-8/12 bg-primary text-white font-bold rounded-lg text-xl text-center py-3"><?php the_field('schedule_demo_text') ?></a>
         </div>
       </div>
     </div>

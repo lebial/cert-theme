@@ -8,7 +8,7 @@
       <div class="validations__slider__text flex justify-center">
         <div class="text-white pr-0 md:pr-16 lg:pr-0 text-lg lg:text-xl 2xl:text-2xl">
           <b>Data Security</b> is central to our mission at Certilytics. The Certilytics
-          Security Framework includes HIPAA compliance and relevant data security protocols to meet
+          Security Framework includes HIPAA compliance and relevant data security protocols to meet the
           highest industry standards of security and integrity. Our framework is based on HITRUST,
           SOC 2 Type II, NIST CsF, elements of GDPR, and internally defined requirements based on 
           industry best practices, client expectations, and contractual agreements.
