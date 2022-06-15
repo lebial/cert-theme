@@ -29,7 +29,7 @@ function renderSolutions($data)
   class="solutions-parallax block lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11 "
   style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw"
 >
-  <div class="solutions__section__container" data-sticky="from: -65px, duration: 580vh">
+  <div class="solutions__section__container" data-sticky="from: -65px, duration: 720vh">
 
     <div class="w-screen h-screen sticky">
       <div class="w-full flex">
@@ -40,7 +40,8 @@ function renderSolutions($data)
                 <div class="solution__dot red-highlight" data-classes="130vh: {remove: red-highlight }"></div>
                 <div class="solution__dot" data-classes="130vh: { add: red-highlight }, 280vh: { remove: red-highlight } "></div>
                 <div class="solution__dot" data-classes="280vh: { add: red-highlight }, 430vh: { remove: red-highlight }"></div>
-                <div class="solution__dot" data-classes="430vh: { add: red-highlight }"></div>
+                <div class="solution__dot" data-classes="430vh: { add: red-highlight }, 580vh: { remove: red-highlight }"></div>
+                <div class="solution__dot" data-classes="580vh: { add: red-highlight }"></div>
               </div>
               <div class="separator__line w-full"></div>
             </div>
@@ -50,7 +51,7 @@ function renderSolutions($data)
 
       <div class="w-full slides__body relative pl-[7%]">
 
-        <!-- slide 1 -->
+        <!-- slide 0 -->
         <div
           class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 z-[-1]"
           data-animation="opacity: {0: 1, 20vh: 1, 130vh: 0}, transform: {0: translate(0,0), 20vh: translate(0,0), 130vh: translate(0, -20%)}"
@@ -60,7 +61,49 @@ function renderSolutions($data)
 
           <div class="w-full xl:w-1/2 flex flex-col items-end">
             <div class="w-full xl:w-10/12">
-              <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">Massive Data</p>
+              <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">Powerful Predictions</p>
+              <p class="text-white text-lg"> 
+                Our healthcare-focused machine learning and deep learning application, Brainstorm&reg; AI, enables us to get 
+                new models into production rapidly. Answer your most pressing questions with a turnkey data sciencesolution to train, validate,
+                and deploy predictive models and integrate insights into existing data engineering and operational pipelines.
+              </p>
+            </div>
+          </div>
+
+          <div class="w-1/2 flex flex-col items-center pt-8">
+            <div class="number__slide" >
+              <div class="flex flex-col items-center text-center xl:text-left" data-aos="fade-up">
+                <div class="w-full h-full flex flex-col items-center justify-center">
+                  <p class="text-5xl xl:text-6xl text-primary font-bold mb-3" ><span class="increase__number "data-number="67">67</span>B</p>
+                  <p class="text-white text-lg">Predictions made</p>
+                </div>
+
+                <div class="w-full h-full flex flex-col items-center justify-center">
+                  <p class="text-5xl xl:text-6xl text-primary font-bold mb-3" ><span class="increase__number "data-number="132">132</span></p>
+                  <p class="text-white text-lg">Clinical, financial, and behavioral models</p>
+                </div>
+
+                <div class="w-full h-full flex flex-col items-center justify-center">
+                  <p class="text-5xl xl:text-6xl text-primary font-bold mb-3" ><span class="increase__number "data-number="2.4">2.4</span>X</p>
+                  <p class="text-white text-lg">Increase in patient engagement</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- slide 1 -->
+        <div
+          class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 z-[-1] invisible"
+          data-animation="opacity: {130vh: 0.4, 150vh: 1, 190vh: 1, 280vh: 0}, transform: {0: translate(0,0), 190vh: translate(0, 0), 280vh: translate(0, -20%)}"
+          data-classes="130vh: {remove: invisible, add: numberAnimationHook}"
+          data-aos="fade-up"
+        >
+
+          <div class="w-full xl:w-1/2 flex flex-col items-end">
+            <div class="w-full xl:w-10/12">
+              <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">Data Processing At Scale</p>
               <p class="text-white text-lg"> 
                 Our platform was built with the latest open-source technologies to process big data at scale for some
                 of the nation's largest healthcare organizations and plan sponsors. Consume, organize, validate and enrich all your
@@ -95,8 +138,8 @@ function renderSolutions($data)
       <!-- slide 2 -->
         <div
           class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-6 invisible z-[-1]"
-          data-animation="opacity: {130vh: 0.4, 150vh: 1, 190vh: 1, 280vh: 0}, transform: {0: translate(0,0), 190vh: translate(0, 0), 280vh: translate(0, -20%)}"
-          data-classes="130vh: {remove: invisible, add: numberAnimationHook}"
+          data-animation="opacity: {280vh: 0.4, 290vh: 1, 330vh: 1, 430vh: 0}, transform: {0: translate(0,0), 330vh: translate(0, 0), 430vh: translate(0, -20%)}"
+          data-classes="280vh: {remove: invisible, add: numberAnimationHook}"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-full xl:w-10/12 ">
@@ -129,8 +172,8 @@ function renderSolutions($data)
       <!-- slide 3 -->
         <div
           class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
-          data-animation="opacity: {280vh: 0.4, 290vh: 1, 330vh: 1, 430vh: 0}, transform: {0: translate(0,0), 330vh: translate(0, 0), 430vh: translate(0, -20%)}"
-          data-classes="280vh: {remove: invisible, add: numberAnimationHook}"
+          data-animation="opacity: {430vh: 0.4, 450vh: 1, 490vh: 1, 580vh: 0}, transform: {0: translate(0,0), 490vh: translate(0, 0), 580vh: translate(0, -20%)}"
+          data-classes="430vh: {remove: invisible, add: numberAnimationHook}"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">
             <div class="w-full xl:w-10/12 ">
@@ -164,8 +207,8 @@ function renderSolutions($data)
       <!-- slide 4 -->
         <div
           class="slide__container__hook px-[7%] xl:px-0 overflow-y-scroll h-[75vh] xl:h-auto flex flex-col lg:flex-row items-center lg:items-start absolute top-0 left-0 w-full pt-4 invisible z-[-1]"
-          data-animation="opacity: {430vh: 0.4, 450vh: 1}"
-          data-classes="430vh: {remove: invisible, add: numberAnimationHook}"
+          data-animation="opacity: {580vh: 0.4, 630vh: 1}"
+          data-classes="580vh: {remove: invisible, add: numberAnimationHook}"
           data-reverse="true"
           >
           <div class="w-full xl:w-1/2 flex flex-col items-end" data-aos="fade-up">

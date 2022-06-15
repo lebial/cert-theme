@@ -142,7 +142,7 @@ jQuery(document).ready(function($) {
     }
 
     function changeValidationHeader() {
-        const words = ["Security", "Validation", "Governance"];
+        const words = ["Security & Infrastructure", "Validation", "Governance"];
         const element = $(".validation__headline");
         $(".validation__slider").on(
             "beforeChange",
