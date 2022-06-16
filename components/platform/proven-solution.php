@@ -63,8 +63,8 @@ function renderSolutions($data)
             <div class="w-full xl:w-10/12">
               <p class="text-white text-3xl xl:text-[55px] mt-4 leading-relaxed xl:leading-tight">Powerful Predictions</p>
               <p class="text-white text-lg"> 
-                Our healthcare-focused machine learning and deep learning application, Brainstorm&reg; AI, enables us to get 
-                new models into production rapidly. Answer your most pressing questions with a turnkey data sciencesolution to train, validate,
+                Our healthcare-focused predictive analytics and deep learning application, Brainstorm&reg; AI, enables us to get 
+                new models into production rapidly. Answer your most pressing questions with a turnkey data science solution to train, validate,
                 and deploy predictive models and integrate insights into existing data engineering and operational pipelines.
               </p>
             </div>
