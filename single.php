@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="c-page c-page-single-post">
+	<div class="c-page c-page-single-post mb-28">
 		
 		<div class="contain">
 			

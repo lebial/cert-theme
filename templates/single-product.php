@@ -4,7 +4,7 @@
 	
 	$rand = array_rand($slant); ?>
 
-	<div class="c-page c-page-single-product">
+	<div class="c-page c-page-single-product mb-28">
 		
 		<?php $slant = array(' left', ' right'); $rand = array_rand($slant); ?>
 	

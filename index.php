@@ -5,7 +5,7 @@
 	
 	$rand = array_rand($slant); ?>
 	
-	<div class="c-page c-page-articles">
+	<div class="c-page c-page-articles mb-28">
 
 		<div class="page-header <?php the_field('background_type', $slug->ID); echo $slant[$rand]; ?>">
 			

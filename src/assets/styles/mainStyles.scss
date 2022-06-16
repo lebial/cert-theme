@@ -335,6 +335,11 @@ form {
             color: $color-grey!important;
         }
     }
+    .frm_cancel1_icon {
+        &::before {
+            content: "x" !important;
+        }
+    }
     .frm_submit {
         width: 100%;
         float: left;
@@ -1862,6 +1867,7 @@ footer {
                 overflow: hidden;
                 position: relative;
                 img {
+                    width: 100%;
                     max-width: 443px;
                     margin-bottom: 22px;
                     @media #{$tablet} {
@@ -2674,4 +2680,10 @@ selectric .label {
     overflow: hidden;
     padding: 0;
     position: absolute;
+}
+
+.frm_cancel1_icon {
+    &::before {
+        content: "x" !important;
+    }
 }

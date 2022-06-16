@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
     function moveSocialIcons() {
         const lastGroup = $('.footer__links__group').last();
         $('.social__icons__clone').appendTo(lastGroup);
+        $('.corp__info__clone').appendTo(lastGroup);
     }
 
     function removeMobileArrows() {
@@ -20,7 +21,7 @@ jQuery(document).ready(function($) {
         $('[name="footer-Careers"]').attr('target', '_blank');
     }
 
-    moveSocialIcons();
+    // moveSocialIcons();
     removeMobileArrows();
     addTargetBlankToCareers();
 });
