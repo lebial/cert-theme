@@ -1,6 +1,6 @@
 <section class="validation__security min-h-[80vh] md:min-h-[53vh] lg:min-h-[65vh] 2xl:min-h-[70vh] relative py-8 flex flex-col bg-dark-blue-background">
   <div class="validation__security__container px-11 md:px-24 lg:px-11 relative text-center md:text-left lg:text-left">
-    <p class="text-white font-bold text-3xl mt-14 lg:mx-auto md:text-center lg:text-center lg:text-4xl" >Data <span class="validation__headline" data-aos="change-red">Security</span></p>
+    <p class="text-white font-bold text-3xl mt-14 lg:mx-auto md:text-center lg:text-center lg:text-4xl" >Data <span class="validation__headline" data-aos="change-red">Security & Infrastructure</span></p>
     <div class="validation-slider-container left-0 px-0 md:px-8 lg:px-16 2xl:px-[10%] absolute w-full h-full md:pb-14 flex justify-between items-center z-10">
       <?php custom_slider_arrows("validation__slider")?>
     </div>

@@ -101,7 +101,7 @@
 
 	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
 		<div class="address__container">
-			<p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p>
+			<!-- <p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222'?></p> -->
 		</div>
 		<div class="corp__info relative flex flex-col md:flex-row mt-4 md:mt-0">
 			<div class="absolute right-[6px] top-[-58px] social__icons tw-hidden md:flex">
