@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
     }
 
     function removeMobileArrows() {
-        // $('[name = "Platform"]').hide();
+        $('[name = "Platform"]').hide();
         $('[name = "News & Insights"]').hide();
     }
 
