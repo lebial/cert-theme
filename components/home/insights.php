@@ -2,11 +2,16 @@
 
 function render_cards() {
   $card_data = get_field('insights_cards');
+  $post_options = array('numberposts' => 3);
+  $posts = get_posts($post_options);
+  $card_array = array();
   foreach($card_data as $card) {
-    $post = get_post($card['post_id']);
+    array_push($card_array, $card);
+  }
+  foreach($posts as $key=>$post) {
     echo '<div class="h-full ml-1" >';
       echo '<a class="insights__card rounded-md custom-shadow flex flex-col items-center my-4 mx-2.5 text-black p-8" style="height: 98%;" href="'.get_permalink($post).'">';
-        echo '<img class="w-16 h-16 my-2" src="'.$card['icon'].'"/>';
+        echo '<img class="w-16 h-16 my-2" src="'.$card_array[$key]['icon'].'"/>';
         echo '<h2 class="mx-auto pt-6 font-bold text-xl 2xl:text-2xl" >'.$post->post_title.'</h2>';
         echo '<p class="mb-4 mt-auto transition-all" href="'.get_permalink($post).'">
                 Learn More 
