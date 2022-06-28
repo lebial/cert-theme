@@ -174,7 +174,7 @@
           <div class="moving__dots w-full">
             <div class="moving__dots__animation w-full h-16"></div>
           </div>
-          <img class="computer__phone__image absolute w-72 -top-9" src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/computer-phone.svg" class="style-svg" alt="">
+          <img class="computer__phone__image absolute w-72 -top-9" src="<?php the_field('slide_action_image') ?>" class="style-svg" alt="">
         </div>
       </div>
     </div>
