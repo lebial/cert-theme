@@ -1,3 +1,16 @@
+<?php
+
+  function render_validation_slides() {
+    $slides = get_field('validation_slides');
+    foreach($slides as $slide) {
+      echo '<div class="validations__slider__text flex justify-center">';
+        echo '<div class="text-white pr-0 md:pr-16 lg:pr-0 text-lg lg:text-xl 2xl:text-2xl">';
+          echo $slide;
+        echo '</div>';
+      echo '</div>';
+    };
+  };
+ ?>
 <section class="validation__security min-h-[80vh] md:min-h-[53vh] lg:min-h-[65vh] 2xl:min-h-[70vh] relative py-8 flex flex-col bg-dark-blue-background">
   <div class="validation__security__container px-11 md:px-24 lg:px-11 relative text-center md:text-left lg:text-left">
     <p class="text-white font-bold text-3xl mt-14 lg:mx-auto md:text-center lg:text-center lg:text-4xl" >Data <span class="validation__headline" data-aos="change-red">Security & Infrastructure</span></p>
@@ -5,35 +18,7 @@
       <?php custom_slider_arrows("validation__slider")?>
     </div>
     <div class="validation__slider mt-14">
-      <div class="validations__slider__text flex justify-center">
-        <div class="text-white pr-0 md:pr-16 lg:pr-0 text-lg lg:text-xl 2xl:text-2xl">
-          <b>Data Security</b> is central to our mission at Certilytics. The Certilytics
-          Security Framework includes HIPAA compliance and relevant data security protocols to meet the
-          highest industry standards of security and integrity. Our framework is based on HITRUST,
-          SOC 2 Type II, NIST CsF, elements of GDPR, and internally defined requirements based on 
-          industry best practices, client expectations, and contractual agreements.
-</div>
-      </div>
-      
-      <div class="validations__slider__text flex justify-center">
-        <div class="text-white pr-0 md:pr-16 lg:pr-0 text-lg lg:text-xl 2xl:text-2xl">
-          At Certilytics, we know trust is integral to the success of predictive analytics. 
-          That's why we've developed a proprietary <b>Validation Framework</b> to ensure
-          the highest standards of data, software, and process integrity - with continual
-          checks as data moves through our platform, regular audits and certifications, as well
-          as clear data governance and security policies throughout our organization.
-        </div>
-      </div>
-
-      <div class="validations__slider__text flex justify-center">
-        <div class="text-white pr-0 md:pr-16 lg:pr-0 text-lg lg:text-xl 2xl:text-2xl">
-          Since its founding in 2014, Certilytics has established a climate of trust, collaboration
-          and transparent communication. Our <b>Data Governance Board</b> and <b>Data Architecture Committee</b>
-          combine key stakeholders from across the company to make deliberate advances
-          in our approach to data management, architecture, and security.
-        </div>
-      </div>
-      
+      <?php render_validation_slides() ?>
     </div>
   </div>
   <div class="validation__hitrust__container w-full flex justify-center flex-1">
