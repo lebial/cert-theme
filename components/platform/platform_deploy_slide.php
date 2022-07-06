@@ -9,19 +9,7 @@ $certilytics_env = get_field('certilytics_env_icon');
         <p class="data__slides__content__title text-center xl:text-left font-bold text-3xl 2xl:text-4xl">Adoption & Deployment</p>
         <div class="data__slides__content__description overflow-hidden mt-9 relative ">
           <div class="data__slide__text">
-            <p class="text-xl ">
-              Change is hard. That's why our process is designed to take the burden off you and your team
-              to make adoption and deployment as flexible, friendly, and fast as possible.
-            </p>
-            <p class="text-xl">
-              We get our clients up and running in <b>90 days or less.</b>
-              Our implementation team is awesome (we don't mind bragging a bit) and works hand-in-hand with our data governance,
-              client engagement, and product teams to give you unparalleled support as you get online with Certilytics.
-            </p>
-            <p class="text-xl">
-              We offer flexible deployment options, including Software as a Service (SaaS) and
-              a platform license if you want to run our end-to-end platform on your infrastructure.
-            </p>
+            <?php the_field('deployment_content')?>
           </div>
         </div>
       </div>

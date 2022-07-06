@@ -35,19 +35,21 @@
   function render_desktop_platforms($data) {
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
+    $nucleus_icon =  get_field('nucleus_icon');
+    $accelerator_icon = get_field('accelerator_icon');
     echo '<div class="platforms__container flex w-full">';
       echo '<div class="w-1/2">';
       echo '<h2 class="visual-element-hide">'.$accelerator_data['title'].'</h2>';
         // echo '<div class="platforms__icon__container w-full flex justify-end py-4">';
         echo '<div class="platforms__icon__container w-full flex justify-end">';
-          echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="'.$accelerator_data['main_icon_desktop'].'" >';
+          echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="'.$nucleus_icon.'" >';
         echo '</div>';
       echo '</div>';
       echo '<div class="nucleus__content w-1/2">';
       echo '<h2 class="visual-element-hide">'.$nucleus_data['title'].'</h2>';
         // echo '<div class="platforms__icon__container w-full flex justify-start py-4">';
         echo '<div class="platforms__icon__container w-full flex justify-start">';
-          echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%] " src="'.$nucleus_data['main_icon_desktop'].'" >';
+          echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%]" src="'.$accelerator_icon.'" >';
         echo '</div>';
       echo '</div>';
     echo '</div>';
