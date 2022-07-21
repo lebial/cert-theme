@@ -29,6 +29,21 @@
         echo '})();';
       echo '</script>';
 	  }
+
+	  if (get_field('include_active_campaign', 'options')) {
+      echo '<script type="text/javascript">';
+        echo '(function(e,t,o,n,p,r,i){';
+          echo 'e.visitorGlobalObjectAlias=n;';
+          echo 'e[e.visitorGlobalObjectAlias] = e[e.visitorGlobalObjectAlias] || function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};';
+          echo 'e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");';
+          echo 'r.src=o;r.async=true;';
+          echo 'i=t.getElementsByTagName("script")[0];';
+          echo 'i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");';
+          echo 'vgo("setAccount", "27433140");';
+          echo 'vgo("setTrackByDefault", true);';
+          echo 'vgo("process");';
+      echo '</script>';
+	  }
 	?>
 		
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
