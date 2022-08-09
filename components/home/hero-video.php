@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero" id="<?php the_field('hero_section_id')?>">
   <img src="<?php the_field('hero_image') ?>" alt="<?php the_field('hero_image_alt') ?>" class="hero__image object-cover">
   <div class="hero__content flex flex-col lg:hidden">
     <h1 class="hero__headline text-4xl text-center 2xl:text-6xl">
@@ -20,6 +20,10 @@
           <?php the_field('headline') ?>
         </h1>
         <h2 class="text-white text-lg  mt-8 font-normal leading-relaxed tracking-wide"><?php the_field('header_text') ?></h2>
+        <div>
+          <input type="text" class="jumper mr-5" placeholder="id">
+          <a class="jumper-link text-white bg-blue-900 p-5 rounded-lg" href="#second-step" >jump to schedule a demo</a>
+        </div>
       </div>
     </div>
     <div class="hero__content__video w-1/2 h-full flex items-center justify-center">

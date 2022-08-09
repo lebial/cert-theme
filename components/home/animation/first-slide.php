@@ -1,8 +1,9 @@
-<div>
+<div >
   <div class="w-screen">
     <div
       class="full-window opacity-100"
-     data-sticky="from: 0, duration: 100vh"
+      data-sticky="from: 0, duration: 100vh"
+      id="<?php the_field('super_charge_slide_id')?>"
     >
       <p class="absolute-center text-5xl leading-tight font-bold" data-animation="opacity: {0: 1, 40vh: 0}">
         <span data-aos="change-red">Supercharge</span> 
@@ -10,7 +11,7 @@
       </p>
     </div>
       <div class="full-window bg-dark-background">
-        <div class="parallax" style="background-image: url(<?php echo get_template_directory_uri()?>/assets/images/home-animation/opportunity-icon.svg);">
+        <div id="<?php the_field('opportunity_framework_slide_id')?>" class="parallax" style="background-image: url(<?php echo get_template_directory_uri()?>/assets/images/home-animation/opportunity-icon.svg);">
           <div class="absolute-center w-9/12" data-classes="-70vh: {add: second-slide-animation}">
             <div class="flex items-center mb-4">
               <!-- <img class="w-full hidden xl:block" src="<?php echo get_template_directory_uri();?>/assets/images/home-animation/opportunity-framework-logo.svg" class="style-svg" alt=""> -->

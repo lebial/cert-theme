@@ -100,7 +100,7 @@
   <?php render_platforms($platforms_data) ?>
 </section>
 
-<section class="platforms w-screen hidden lg:block">
+<section class="platforms w-screen hidden lg:block" id="<?php the_field('platforms_section_id')?>">
   <script id="platforms-data" type="application/json"><?php echo json_encode($platforms_data)?></script>
   <div class="platforms__data__container w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-evenly" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
     <div class="w-full" data-aos="fade-up">

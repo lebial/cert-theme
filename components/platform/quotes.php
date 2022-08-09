@@ -15,7 +15,7 @@
   }
 ?>
 
-<section class="slider__section flex justify-center p-0 bg-gray-100">
+<section class="slider__section flex justify-center p-0 bg-gray-100" id="<?php the_field('platform_quotes_section_id')?>">
   <div class="slider__relative relative  w-full h-full">
     <div class="slider-container absolute w-full h-full md:pb-14 flex justify-between items-center z-10">
       <?php custom_slider_arrows("quotes__slider")?>
