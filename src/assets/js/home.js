@@ -30,8 +30,17 @@ jQuery(document).ready(function($) {
         });
     }
 
-    window.onload = setVideoHeight;
+    function handleInputChange() {
+        debugger;
+        $('.jumper').on('change input keyup', function() {
+            let str = $(this).val();
+            $('.jumper-link').text('jump to ' + str);
+            $('.jumper-link').attr('href', str);
+        });
+    }
 
+    window.onload = setVideoHeight;
+    handleInputChange();
     setVideoHeight();
     handlePlayClick();
     $(window).resize(setVideoHeight);

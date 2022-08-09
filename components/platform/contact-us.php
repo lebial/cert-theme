@@ -1,4 +1,4 @@
-<section class="platform__contact__us lg:min-h-[70vh]">
+<section class="platform__contact__us lg:min-h-[70vh]" id="<?php the_field('platform_contact_us_section_id')?>">
   <div class="contact__us__image__container w-full lg:min-h-[70vh] relative text-center flex justify-end items-center">
     <img src="<?php the_field('ofast_image') ?>" class="w-full absolute top-0 left-0 z-[-1] h-full object-cover" alt="">
     <div class="action__quote__container w-full lg:w-1/2" data-aos="fade-up">
