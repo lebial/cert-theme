@@ -31,6 +31,7 @@
 	  }
 
 	  if (get_field('include_active_campaign', 'options')) {
+	  echo '<!-- Active Campaing Tag -->';
       echo '<script type="text/javascript">';
         echo '(function(e,t,o,n,p,r,i){';
           echo 'e.visitorGlobalObjectAlias=n;';
@@ -43,6 +44,19 @@
           echo 'vgo("setTrackByDefault", true);';
           echo 'vgo("process");';
       echo '</script>';
+	  }
+
+	  if (get_field('include_twitter', 'options')) {
+		echo '<!-- Twitter universal website tag code -->';
+		echo '<script>';
+		echo '!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);';
+		echo '},s.version="1.1",s.queue=[],u=t.createElement(n),u.async=!0,u.src="//static.ads-twitter.com/uwt.js",';
+		echo 'a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,"script");';
+		echo '// Insert Twitter Pixel ID and Standard Event data below';
+		echo 'twq("init","o9oxl");';
+		echo 'twq("track","PageView");';
+		echo '</script>';
+		echo '<!-- End Twitter universal website tag code -->';
 	  }
 	?>
 		
