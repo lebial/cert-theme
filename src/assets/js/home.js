@@ -33,8 +33,13 @@ jQuery(document).ready(function($) {
         const menuItems = $('#menu-main-menu').children();
         const scheduleButton = menuItems[menuItems.length - 1];
         const link = $(scheduleButton).children();
+        const careers = document.querySelectorAll('a[href*="silk"');
         $(link).attr('target', '_blank');
         $(link).attr('rel', 'noopener noreferrer');
+        careers.forEach(element => {
+            $(element).attr('target', '_blank');
+            $(element).attr('rel', 'noopener noreferrer');
+        });
     }
 
     window.onload = setVideoHeight;

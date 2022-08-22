@@ -74,6 +74,8 @@
 				<p class="footer__responsive__hidden text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI - powered solutions can deliver real value for your organization—today.'; ?></p>
 				<a
 					class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]"
+					target="_blank"
+					rel="noopener noreferrer"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
 						<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us';?>
 				</a>
