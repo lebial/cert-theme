@@ -10,7 +10,7 @@
   };
 ?>
 
-<section class="w-full">
+<section class="w-full" id="<?php the_field('market_segments_section_id')?>">
   <div class="w-full pt-12 sm:pt-20" data-aos="fade-up">
     <div class="flex justify-center px-12 md:px-0">
       <p class="text-xl 2xl:text-2xl sm:text-center w-full sm:w-6/12 px-6 sm:px-0">

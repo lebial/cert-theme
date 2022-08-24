@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero" id="<?php the_field('hero_section_id')?>">
   <img src="<?php the_field('hero_image') ?>" alt="<?php the_field('hero_image_alt') ?>" class="hero__image object-cover">
   <div class="hero__content flex flex-col lg:hidden">
     <h1 class="hero__headline text-4xl text-center 2xl:text-6xl">

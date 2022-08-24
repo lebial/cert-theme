@@ -23,7 +23,7 @@ function render_cards() {
 };
 
 ?>
-<div class="w-full h-full relative py-16 mt-14">
+<div class="w-full h-full relative py-16 mt-14" id="<?php the_field('insights_section_id')?>">
   <div class="flex justify-center w-full mb-12">
     <h2 class="text-3xl 2xl:text-5xl font-bold" data-aos="fade-up"><?php echo get_field('insights_title') ?></h2>
   </div>
