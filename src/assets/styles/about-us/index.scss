@@ -1,0 +1,10 @@
+.au__heading {
+    &__cards {
+        & .card {
+          padding: 2rem 0;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
