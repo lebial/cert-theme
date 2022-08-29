@@ -8,3 +8,17 @@
         }
     }
 }
+
+//Careers section
+.au_careers__arrows {
+    & button {
+        & svg {
+            & path {
+                fill: white;
+                @media #{$desktopBase} {
+                    fill: #5E5E5E;
+                }
+            }
+        }
+    }
+}
