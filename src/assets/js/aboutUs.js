@@ -1,10 +1,9 @@
-import getNavHeight, { addArrowToSlider } from './utils/utils';
+import getNavHeight, { addArrowToSlider } from "./utils/utils";
 
-jQuery(document).ready(function($) {
-
+jQuery(document).ready(function ($) {
   function setImageMargin() {
     const { navHeight } = getNavHeight();
-    $('.au__heading__image').css('margin-top', `${navHeight}px`);
+    $(".au__heading__image").css("margin-top", `${navHeight}px`);
   }
 
   function createTimelineSlider() {
@@ -23,20 +22,33 @@ jQuery(document).ready(function($) {
         }
       ],
     });
-    $('.au__timeline__slider').slick({
+    $(".au__timeline__slider").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: false,
       arrows: false,
       fade: true,
       draggable: false,
-      asNavFor: '.au__timeline__nav',
+      asNavFor: ".au__timeline__nav",
     });
   }
 
-  if (window.location.href.includes('who-we-are')) {
+  function createCareersSlider() {
+    $(".au__careers__slider").slick({
+      centerMode: true,
+      dots: false,
+      infinite: false,
+      slidesToShow: 5,
+      focusOnSelect: true,
+      asNavFor: ".au__careers__slider",
+    });
+  }
+
+  if (window.location.href.includes("who-we-are")) {
     setImageMargin();
     createTimelineSlider();
-    addArrowToSlider('.au__timeline__nav');
+    addArrowToSlider(".au__timeline__nav");
+    createCareersSlider();
+    addArrowToSlider(".au_careers__arrows");
   }
 });
