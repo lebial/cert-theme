@@ -50,7 +50,7 @@
               <div class="w-full md:w-1/2">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima quidem aut molestiae voluptate dolorem nulla officia mollitia dolore</p>
               </div>
-              <div class="w-full md:w-1/2">
+              <div class="w-full md:w-1/2 mt-5 md:mt-0">
                 <p class="text-center"><span class="text-primary">500K</span> lives on platform </p>
               </div>
             </div>
