@@ -35,12 +35,9 @@ jQuery(document).ready(function ($) {
 
   function createCareersSlider() {
     $(".au__careers__slider").slick({
-      centerMode: true,
       dots: false,
-      infinite: false,
-      slidesToShow: 5,
-      focusOnSelect: true,
-      asNavFor: ".au__careers__slider",
+      infinite: true,
+      slidesToShow: 1,
     });
   }
 
@@ -49,6 +46,6 @@ jQuery(document).ready(function ($) {
     createTimelineSlider();
     addArrowToSlider(".au__timeline__nav");
     createCareersSlider();
-    addArrowToSlider(".au_careers__arrows");
+    addArrowToSlider(".au__careers__slider");
   }
 });
