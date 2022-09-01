@@ -15,12 +15,19 @@
 //timeline section
 .au__timeline {
   &__buttons__container {
+    & button {
+      position: relative;
+      z-index: 3;
+    }
+
     & path {
       fill: black;
     }
   }
 
   &__nav {
+    z-index: 2;
+
     & .slick-current {
       & .main-year {
         & .circle__container {
