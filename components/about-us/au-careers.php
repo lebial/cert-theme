@@ -28,7 +28,7 @@
 <section class="au__careers w-full ">
     <div class="w-full flex flex-col lg:flex-row">
         <div class=" pl-32 w-full lg:w-1/2">
-            <div class="w-full 2xl:w-10/12 mx-auto">
+            <div class="au__careers__description w-full 2xl:w-10/12 mx-auto">
                 <p class="text-center text-5xl md:text-[3.50rem] lg:w-9/12 2xl:w-6/12 xl:text-left font-bold lg:text-6xl 2xl:text-6xl pb-8">Certilytics Is <span class="text-primary">Growing!</span></p>
                 <div class="w-full 2xl:w-10/12">
                     <p><?php the_field('careers_section_description')?></p>

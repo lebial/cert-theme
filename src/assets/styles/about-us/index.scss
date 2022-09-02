@@ -121,6 +121,12 @@
 }
 
 //Careers section
+.au__careers__description {
+  & p {
+    margin-bottom: 20px !important;
+  }
+}
+
 .au_careers__arrows {
   & button {
     & svg {

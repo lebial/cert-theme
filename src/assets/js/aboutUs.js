@@ -7,19 +7,19 @@ jQuery(document).ready(function ($) {
   }
 
   function createTimelineSlider() {
-    $('.au__timeline__nav').slick({
+    $(".au__timeline__nav").slick({
       variableWidth: true,
       centerMode: true,
       dots: false,
       infinite: false,
       slidesToShow: 3,
       focusOnSelect: true,
-      asNavFor: '.au__timeline__slider',
+      asNavFor: ".au__timeline__slider",
       responsive: [
         {
           breakpoint: 600,
-          slidesToShow: 3
-        }
+          slidesToShow: 3,
+        },
       ],
     });
     $(".au__timeline__slider").slick({
