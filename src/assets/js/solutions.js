@@ -1,8 +1,12 @@
 import getNavHeight, { addArrowToSlider } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
-  function setImageMargin() {
+  function setNullMargin() {
     const { navHeight } = getNavHeight();
-    $(".au__heading__image").css("margin-top", `${navHeight}px`);
+    $(".solutions__header").css("margin-top", `${navHeight}px`);
+  }
+
+  if (window.location.href.includes('solutions')) {
+    setNullMargin();
   }
 });
