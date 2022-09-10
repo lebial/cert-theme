@@ -8,7 +8,7 @@
                         //echo '<!-- <img src="'.$card['image'].'" alt="" class="card__image"> -->';
                     echo '</div>';
                     echo '<div class="card__content">';
-                        echo '<div class="card__content--title text-center lg:px-12">';
+                        echo '<div class="card__content--title text-center py-4 lg:px-12">';
                             echo '<h4 class="text-base font-bold">'.$card['title'].'</h4>';
                         echo '</div>';
                         echo '<div class="">';
