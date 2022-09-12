@@ -2,7 +2,7 @@
     function render_cards() {
         $cards = get_field('cards');
         foreach($cards as $card) {
-               echo '<div class="card px-12 py-4 lg:px-8 lg:py-8 2xl:px-40">';
+               echo '<div class="card px-12 py-4 lg:px-8 lg:py-8 2xl:px-24">';
                     echo '<div class="card__image w-full flex justify-center">';
                         echo '<p>Image</p>';
                         //echo '<!-- <img src="'.$card['image'].'" alt="" class="card__image"> -->';
