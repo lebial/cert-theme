@@ -1,4 +1,4 @@
-<section class="decision__making mt-12 lg:mt-[25vh] pb-32">
+<section class="decision__making mt-12 lg:mt-[25vh] pb-20 lg:pb-32">
   <div class="data__container w-full md:w-8/12 lg:w-6/12 flex flex-col items-center mx-auto">
     <p class="text-2xl md:text-4xl font-bold text-center">Simplify and accelerate your decision-making with our connected data platform</p>
     <div class="decision__making__grid w-full flex flex-wrap justify-center">
