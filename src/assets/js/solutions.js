@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
     $(".solutions__header").css("margin-top", `${navHeight}px`);
   }
 
-  if (window.location.href.includes('solutions')) {
+  if (window.location.href.includes("solutions")) {
     setNullMargin();
   }
 });
