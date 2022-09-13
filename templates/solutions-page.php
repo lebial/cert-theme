@@ -8,6 +8,7 @@
 <?php get_template_part('components/solutions/brochure_section') ?>
 <?php get_template_part('components/solutions/case_study_section') ?>
 <?php get_template_part('components/solutions/actionable_intelligence_section') ?>
+<?php get_template_part('components/solutions/intuitive_insights') ?>
 <?php get_template_part('components/solutions/brochure_carousel_section') ?>
 <?php get_template_part('components/solutions/sets-certilytics-apart') ?>
 <?php get_template_part('components/solutions/platform-action') ?>
