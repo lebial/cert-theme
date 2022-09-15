@@ -1,114 +1,199 @@
 @import '../variables';
 
+//Brochure Section
+.download__brochure {
+  & .brochure__points {
+    & div {
+      position: relative;
+      margin-left: 10%;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -8%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 0 10px 20px;
+        border-color: transparent transparent transparent $color-red;
+      }
+    }
+  }
+}
+
+//Actionable Intelligence Section
+.actionable_intelligence {
+  & .data__list {
+    & li {
+      margin-top: 1rem;
+    }
+  }
+}
+
+// Intuitive Insights Section
+.intuitive__insights {
+  & p {
+    max-width: 100%;
+  }
+
+  & .option__button {
+    margin-top: 10px;
+    transition: all ease .3s;
+    border-left: 4px solid transparent;
+    padding: .6rem;
+    padding-right: 0;
+    position: relative;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &::after {
+      transition: all ease .3s;
+      position: absolute;
+      content: '';
+      color: transparent;
+      top: 50%;
+      right: 0;
+      font-size: 32px;
+      font-weight: bold;
+      transform: translate(-10px, -50%);
+
+      @media#{$desktopBase} {
+        content: '\2192';
+      }
+    }
+
+    &:hover {
+      border-color: $color-red;
+
+      &::after {
+        color: $color-red;
+        transform: translate(0, -50%);
+      }
+    }
+
+
+  }
+
+  .active__option {
+    border-left: 4px solid $color-red;
+
+    &::after {
+      color: $color-red;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
 //brochure carousel
 
 .carousel {
-    width: 100%;
-    
+  width: 100%;
+
+  padding: 2em;
+  overflow: hidden;
+
+  & .slider__container {
+    width: 300%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 2em;
-    overflow: hidden;
 
-    & .slider__container {
-        width: 300%;
+    transition: all .5s ease;
+    transform: translateX(0%);
+  }
 
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2em;
+  & .slider__container__slide {
+    min-height: 10vh;
 
-        transition: all .5s ease;
-        transform: translateX(0%);
+    @media #{$mobileMin} {
+      width: calc(100% / 3 - 3em);
     }
 
-    & .slider__container__slide {
-        min-height: 10vh;
-        @media #{$mobileMin} {
-            width: calc(100% / 3 - 3em);
-        }
+    @media #{$desktopSM} {
+      width: calc(100% / 3 - 4em);
+    }
+  }
 
-        @media #{$desktopSM} {
-            width: calc(100% / 3 - 4em);
-        }
+  & .nav__options {
+    margin: 1em 0 0;
+    display: flex;
+
+    @media #{$mobileMin} {
+      width: 85%;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      border: 2px solid $color-red;
+      padding: 0em;
     }
 
-    & .nav__options {
-        margin: 1em 0 0;
-        display: flex;
-
-        @media #{$mobileMin} {
-            width: 85%;
-            flex-flow: column nowrap;
-            justify-content: flex-start;
-            border: 2px solid $color-red;
-            padding: 0em;
-        }
-
-        @media #{$tablet} {
-            width: 50%;
-        }
-
-        @media #{$desktopSM} {
-            width: 100%;
-            border: none;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-            padding: 1em;
-            padding-bottom: 2rem;
-        }
-
-        @media #{$desktopLG} {
-            padding-bottom: 8rem;
-        }   
+    @media #{$tablet} {
+      width: 50%;
     }
 
-    & .nav__options--option {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-
-        @media #{$mobileMin} {
-            padding-inline: 0.5rem;
-            font-size: 1rem;
-            line-height: 1.5rem;
-            margin: 0;
-        }
-
-        @media #{$desktopSM} {
-            padding-inline: 1.5rem;
-            font-size: 1.5rem;
-            line-height: 2rem;
-            margin: 1em;
-        }
+    @media #{$desktopSM} {
+      width: 100%;
+      border: none;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+      padding-bottom: 2rem;
     }
 
-    & .active {
+    @media #{$desktopLG} {
+      padding-bottom: 8rem;
+    }
+  }
 
-        @media #{$mobileMin} {
-            background-color: $color-red;
-        }
+  & .nav__options--option {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 
-        @media #{$desktopSM} {
-            background-color: transparent;
-            border-bottom: 5px solid $color-red;
-        }
+    @media #{$mobileMin} {
+      padding-inline: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin: 0;
     }
 
-    & .data__image__desktop {
-
-        @media #{$mobileMin} {
-            display: none !important;
-        }
-
-        @media #{$desktopSM} {
-            display: flex !important;
-        }
+    @media #{$desktopSM} {
+      padding-inline: 1.5rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: 1em;
     }
+  }
+
+  & .active {
+
+    @media #{$mobileMin} {
+      background-color: $color-red;
+    }
+
+    @media #{$desktopSM} {
+      background-color: transparent;
+      border-bottom: 5px solid $color-red;
+    }
+  }
+
+  & .data__image__desktop {
+
+    @media #{$mobileMin} {
+      display: none !important;
+    }
+
+    @media #{$desktopSM} {
+      display: flex !important;
+    }
+  }
 }
-
-
-
-
