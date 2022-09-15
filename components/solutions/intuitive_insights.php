@@ -21,12 +21,12 @@
             </div>
 
             <div class="option__button w-full lg:w-8/12">
-                <button class="text-left text-sm lg:text-base" type="button">Retrospective Cost, Utilization & Trend Reporting and Benchmarking</button>
+                <button class="text-left text-sm lg:text-base" type="button">Prospective Population Level Opportunity Identification</button>
             </div>
         </div>
         <div class="w-full lg:w-1/2">
             <div class="content__description">
-                <div class="w-40 aspect-square mx-auto bg-blue-400 mb-10 mt-10 underline">image</div>
+                <div class="w-40 mx-auto mb-10 mt-10 underline"><img src="<?php the_field('intuitive_insights_image')?>" alt=""></div>
                 <div class="mb-10">
                     <p class="text-sm lg:text-base">
                         Identify areas of avoidable spending, segment member groups, understand trends and cost
