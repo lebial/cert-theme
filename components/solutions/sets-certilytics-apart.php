@@ -3,7 +3,7 @@
         $cards = get_field('cards');
         foreach($cards as $card) {
                echo '<div class="card px-12 py-4 space-x-8 md:space-x-0 flex md:flex-col lg:px-8 lg:py-8 2xl:px-24">';
-                    echo '<div class="card__image w-5/12 md:w-full h-[45%] md:h-[27%] flex justify-end md:justify-center">';
+                    echo '<div class="card__image w-4/12 md:w-full h-[45%] md:h-[27%] flex justify-end md:justify-center">';
                         echo '<img class="card__image" src="'.$card['image'].'" alt="">';
                     echo '</div>';
                     echo '<div class="card__content w-7/12 md:w-full">';
