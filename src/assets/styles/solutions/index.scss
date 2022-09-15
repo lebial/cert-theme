@@ -32,12 +32,11 @@
   }
 }
 
+// Intuitive Insights Section
 .intuitive__insights {
   & p {
     max-width: 100%;
   }
-
-
 
   & .option__button {
     margin-top: 10px;
@@ -54,13 +53,17 @@
     &::after {
       transition: all ease .3s;
       position: absolute;
-      content: '\2192';
+      content: '';
       color: transparent;
       top: 50%;
       right: 0;
       font-size: 32px;
       font-weight: bold;
       transform: translate(-10px, -50%);
+
+      @media#{$desktopBase} {
+        content: '\2192';
+      }
     }
 
     &:hover {

@@ -1,7 +1,7 @@
 <section class="case__study w-full flex flex-col items-center py-20">
-    <div class="content__container w-10/12 lg:w-7/12 flex flex-col md:flex-row">
-        <div class="case__study__description w-full md:w-1/2 lg:w-7/12">
-            <p class="text-4xl">
+    <div class="content__container w-10/12 md:w-7/12 flex flex-col lg:flex-row">
+        <div class="case__study__description w-full lg:w-7/12">
+            <p class="text-2xl lg:text-4xl">
                 <b>Case study:</b> se how employers pinpoint savings opportunities and
                 measure program value
             </p>
@@ -12,7 +12,7 @@
             </p>
             <div>see how we did it - <b>Download our case study now!</b></div>
         </div>
-        <div class="case__study__form w-full md:w-6/12 lg:w-5/12 flex flex-col items-center mt-10 md:mt-0">
+        <div class="mx-auto case__study__form w-full md:w-6/12 lg:w-5/12 flex flex-col items-center mt-10 lg:mt-0">
             <div class=" h-40 w-32 bg-dark-background"></div>
         </div>
     </div>

@@ -6,7 +6,16 @@ jQuery(document).ready(function ($) {
     $(".solutions__header").css("margin-top", `${navHeight}px`);
   }
 
+  function addTopBanner() {
+    const header = $('body');
+    $(header).prepend(`<div class="w-full p-8 bg-blue-400 flex justify-center text-white">
+    Maximize the Impact of Your Clinical Point Solutions. 
+    <a class="font-bold underline" style="margin: 0 10px; position: static;" href="#clinicalPointSolutions">Learn More </a> &rarr;
+    </div>`);
+  }
+
   if (window.location.href.includes("solutions")) {
     setNullMargin();
+    addTopBanner();
   }
 });
