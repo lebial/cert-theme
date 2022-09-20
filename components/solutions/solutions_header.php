@@ -1,4 +1,4 @@
-<section class="solutions__header w-full bg-dark-blue-background flex justify-center items-center bg-cover" style="background:url(<?php the_field('header_background')?>)">
+<section class="solutions__header w-full bg-dark-blue-background flex justify-center items-center bg-cover" style="background:url(<?php the_field('header_background')?>); background-size: cover;">
   <div class="w-full md:w-8/12 lg:w-1/2 px-4 lg:px-0 text-center my-12 lg:my-32 relative">
     <h1 class="text-white font-normal"><?php the_field('headline')?></h1>
     <p class="text-white mx-auto mt-4 md:mt-12 text-sm md:text-lg">
@@ -7,8 +7,8 @@
     <!-- <div class="solutions__video__container relative lg:absolute w-11/12 md:w-[60%] left-1/2 -translate-x-1/2 top-[110%] mt-12 lg:mt-0"> -->
     <div class="solutions__video__container absolute w-11/12 md:w-[60%] left-1/2 -translate-x-1/2 top-[110%]">
       <div class="solutions__video__body relative">
-        <!-- <video class="" id="homepageVideo" width="100%" height="100%" src="<?php the_field('header_video') ?>" controls></video> -->
-        <video class="" id="homepageVideo" width="100%" height="100%" src="url(https://www.youtube.com/watch?v=LXb3EKWsInQ&t=108s)" controls></video>
+        <video class="" id="homepageVideo" width="100%" height="100%" src="<?php the_field('build_better_plans_video') ?>" controls></video>
+        <!-- <video class="" id="homepageVideo" width="100%" height="100%" src="url(https://www.youtube.com/watch?v=LXb3EKWsInQ&t=108s)" controls></video> -->
         <div class="video__overlay absolute flex items-end w-[101%] h-full left-1/2 -translate-x-1/2 top-0 p-1 lg:p-6 bg-cover" style="background: linear-gradient(rgba(8, 116, 236, 0.5),rgba(8, 116, 236, 0.5)), url(<?php the_field('video_thumbnail')?>); background-size: cover;">
           <div class="overlay__content">
             <div class="w-10/12 lg:w-8/12">

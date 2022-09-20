@@ -7,8 +7,8 @@ jQuery(document).ready(function ($) {
   }
 
   function addTopBanner() {
-    const header = $('body');
-    $(header).prepend(`<div class="w-full p-8 bg-blue-400 flex justify-center text-white">
+    const header = $('header');
+    $(header).after(`<div class="w-full p-8 flex justify-center text-white" style="background-color: #c05454;">
     Maximize the Impact of Your Clinical Point Solutions. 
     <a class="font-bold underline" style="margin: 0 10px; position: static;" href="#clinicalPointSolutions">Learn More </a> &rarr;
     </div>`);

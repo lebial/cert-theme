@@ -38,7 +38,7 @@
   </div>
   <div class="graphic__row w-full flex justify-center mt-10 lg:mt-20 mb-12">
     <div class="button__container w-9/12 md:w-4/12 flex justify-center">
-      <a href="#" class="rounded-xl px-8 py-4 bg-primary text-white"><?php the_field('button_text')?></a>
+      <a href="#" class="rounded-xl px-8 py-4 bg-primary text-white"><?php the_field('brochure_button_text')?></a>
     </div>
   </div>
     
