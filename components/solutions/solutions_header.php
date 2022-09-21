@@ -1,4 +1,4 @@
-<section class="solutions__header w-full bg-dark-blue-background flex justify-center items-center bg-cover" style="background:url(<?php the_field('header_background')?>); background-size: cover;">
+<section class="solutions__header w-full bg-dark-blue-background flex justify-center items-center bg-cover" style="background-image:url(<?php the_field('header_background')?>); background-size: cover; margin-top: 0;">
   <div class="w-full md:w-8/12 lg:w-1/2 px-4 lg:px-0 text-center my-12 lg:my-32 relative">
     <h1 class="text-white font-normal"><?php the_field('headline')?></h1>
     <p class="text-white mx-auto mt-4 md:mt-12 text-sm md:text-lg">
