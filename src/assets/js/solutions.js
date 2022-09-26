@@ -1,6 +1,9 @@
 import getNavHeight, { addArrowToSlider } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
+  let intuitiveData = {};
+  let activeData = {};
+
   function setNullMargin() {
     const { navHeight } = getNavHeight();
     $(".solutions__header").css("margin-top", `${navHeight}px`);
@@ -34,9 +37,48 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function setActiveStyles() {
+    debugger;
+    const buttons = $('.option__button');
+    Object.values(buttons).forEach(button => {
+      if ($(button.children).text() === activeData['option_title']) $(button).addClass('active__option');
+      $(button).removeClass('active__option');
+    });
+  }
+
+  function setIntuitiveData(data) {
+    activeData = data;
+    $('#intuitiveImage').attr('src', data['option_image']);
+    $('#intuitiveDescription').innerHTML = data['option_description'];
+    $('#intuitiveLink').attr('src', data['option_link']);
+    setActiveStyles();
+  }
+
+  function parseInsightsData() {
+    const data = JSON.parse(
+      document.getElementById("intuitiveInsightsData").innerHTML
+    );
+    activeData = Object.values(data)[0];
+
+    intuitiveData = Object.values(data).reduce((acc, value) => {
+      acc[value['option_title']] = value
+      return acc;
+    }, {});
+
+    setIntuitiveData(activeData);
+  }
+
+  function handleOptionChange() {
+    $('.option__action__button').click((e) => {
+      setIntuitiveData(intuitiveData[e.target.name])
+    });
+  }
+
   if (window.location.href.includes("solutions")) {
     addTopBanner();
     createBrochureCarousel();
+    parseInsightsData();
+    handleOptionChange();
   }
 
 
