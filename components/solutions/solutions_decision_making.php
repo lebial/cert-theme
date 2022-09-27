@@ -12,7 +12,7 @@
   }
 ?>
 <!-- <section class="decision__making mt-12 lg:mt-[25vh] pb-20 lg:pb-32"> -->
-<section class="decision__making mt-[25vh] pb-20 lg:pb-32 px-10">
+<section class="decision__making mt-[30vh] pb-20 lg:pb-32 px-10">
   <div class="data__container w-full md:w-8/12 lg:w-6/12 flex flex-col items-center mx-auto">
     <p class="text-2xl lg:text-4xl font-bold text-center"><?php the_field('decision_title')?></p>
     <div class="decision__making__grid w-full flex flex-col lg:flex-row lg:flex-wrap items-center lg:justify-center">

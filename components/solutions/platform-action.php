@@ -1,4 +1,4 @@
-<section class="md:min-h-[30vh] lg:min-h-[60vh] bg-light-blue flex items-center">
+<section class="md:min-h-[30vh] lg:min-h-[60vh] flex items-center" style="background-color: #d8e4fc;">
   <div class="w-9/12 lg:w-8/12 flex-col lg:flex-row flex justify-center mx-auto items-center py-12 lg:py-0">
     <img src="<?php the_field('demo_image') ?>" class="md:max-w-[55%] lg:max-w-[40%]" alt="">
     <div class="w-full flex justify-center flex-col">

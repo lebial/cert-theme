@@ -9,9 +9,9 @@
                             echo '<h2 class="text-white">'.$slide['title'].'</h2>';
                             echo '<p class="text-white leading-4 md:leading-6 text-sm lg:text-base">'.$slide['description'].'</p>';
                             echo '<img class="data__image__mobile pt-8 lg:pt-0 lg:hidden w-full lg:w-6/12" src="'.$slide['mobile_image'].'" />';
-                            echo '<div class="w-full pb-0 lg:pb-12 mx-auto mt-8 flex justify-center lg:justify-start">';
-                                echo '<a target="_blank" rel="noopener noreferrer" href="" class="w-9/12 md:w-7/12 lg:w-5/12 2xl:w-4/12 bg-primary text-white font-bold rounded-lg lg:text-base 2xl:text-xl text-center py-2 md:py-3">Download Brochure</a>';
-                            echo '</div>';
+                            // echo '<div class="w-full pb-0 lg:pb-12 mx-auto mt-8 flex justify-center lg:justify-start">';
+                            //     echo '<a target="_blank" rel="noopener noreferrer" href="" class="w-9/12 md:w-7/12 lg:w-5/12 2xl:w-4/12 bg-primary text-white font-bold rounded-lg lg:text-base 2xl:text-xl text-center py-2 md:py-3">Download Brochure</a>';
+                            // echo '</div>';
                         echo '</div>';
                         echo '<div class="data__image__desktop w-full invisible md:w-6/12 md:flex md:justify-center">';
                             echo '<img class="data__image hidden lg:visible md:max-w-[70%] md:max-h-[90%] lg:max-w-[80%] md:flex md:justify-center md:items-center" src="'.$slide['desktop_image'].'" />';
