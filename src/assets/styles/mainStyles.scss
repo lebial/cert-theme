@@ -314,7 +314,7 @@ form {
     select {
         -webkit-appearance: none !important;
         appearance: none !important;
-        border: 2px solid $color-red !important;
+        border: 2px solid $color-red  !important;
         padding: 18px !important;
         border-radius: 0 !important;
         background-image: url(assets/images/icon-select-arrow.svg);
@@ -324,7 +324,7 @@ form {
         font-family: 'Work Sans', sans-serif !important;
         height: auto !important;
         font-size: 22px !important;
-        color: $color-navy !important;
+        color: $color-navy  !important;
 
         option {
             color: $color-navy;
@@ -338,25 +338,25 @@ form {
         border: none !important;
         box-shadow: none !important;
         border-radius: 0 !important;
-        border-bottom: 2px solid $color-red !important;
+        border-bottom: 2px solid $color-red  !important;
         padding: 10px 10px 10px 0 !important;
         padding: 15px 10px 15px 0 !important;
         height: auto !important;
         font-family: 'Work Sans', sans-serif !important;
         font-size: 18px !important;
-        color: $color-navy !important;
+        color: $color-navy  !important;
 
         ::placeholder {
-            color: $color-grey !important;
+            color: $color-grey  !important;
             opacity: 1;
         }
 
         :-ms-input-placeholder {
-            color: $color-grey !important;
+            color: $color-grey  !important;
         }
 
         ::-ms-input-placeholder {
-            color: $color-grey !important;
+            color: $color-grey  !important;
         }
     }
 
@@ -564,7 +564,7 @@ form {
 .switcher {
     -webkit-appearance: none !important;
     appearance: none !important;
-    border: 2px solid $color-red !important;
+    border: 2px solid $color-red  !important;
     border-radius: 0 !important;
     background-image: url(../../assets/images/icon-select-arrow.svg);
     background-color: #fff !important;
@@ -573,7 +573,7 @@ form {
     background-position: right 15px center;
     font-family: 'Work Sans', sans-serif !important;
     height: auto !important;
-    color: $color-navy !important;
+    color: $color-navy  !important;
     min-width: 132px;
     display: table;
     margin: 0 auto 75px;
@@ -910,7 +910,7 @@ header {
 
                                 @media #{$desktopMD} {
                                     padding-left: 0;
-                                    color: $color-blue !important;
+                                    color: $color-blue  !important;
                                 }
 
                                 &:before {
@@ -1094,6 +1094,10 @@ footer {
 /********** HOME **********/
 
 .c-page-home {
+    @media #{$tablet} {
+        margin-top: 0px;
+    }
+
     .content {
         padding: 0;
 
@@ -1913,7 +1917,7 @@ footer {
                 a.btn-flat {
                     margin-top: 18px;
                     background-color: transparent;
-                    color: $color-blue !important;
+                    color: $color-blue  !important;
                     width: fit-content;
                     margin-top: auto;
                     text-align: left;
@@ -2633,7 +2637,7 @@ footer {
 .selectric {
     -webkit-appearance: none !important;
     appearance: none !important;
-    border: 2px solid $color-red !important;
+    border: 2px solid $color-red  !important;
     padding: 18px !important;
     border-radius: 0 !important;
     background-image: url(assets/images/icon-select-arrow.svg);
@@ -2643,7 +2647,7 @@ footer {
     font-family: 'Work Sans', sans-serif !important;
     height: auto !important;
     font-size: 22px !important;
-    color: $color-navy !important;
+    color: $color-navy  !important;
     overflow: hidden;
 }
 
