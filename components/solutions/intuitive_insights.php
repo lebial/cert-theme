@@ -29,20 +29,15 @@
         
     </div>
     <div class="content__box w-11/12 md:w-9/12 max-w-fit mx-auto bg-gray-200 mt-20 p-8 lg:p-12 border border-solid border-primary shadow-lg flex flex-col lg:flex-row">
-        <div class="w-full lg:w-1/2 max-w-sm">
-            <!-- <div class="option__button w-full active__option">
-                <button class="text-left text-sm lg:text-base" type="button">Retrospective Cost, Utilization & Trend Reporting and Benchmarking</button>
-            </div> -->
+        <div class="insights__button__container w-full max-h-28 lg:max-h-fit  lg:w-1/2 max-w-sm overflow-y-scroll lg:overflow-y-clip">
             <?php render_options($intuitive_insights_data) ?>
-
         </div>
-        <div class="w-full lg:w-1/2 pl-10">
+        <div class="w-full lg:w-1/2 lg:pl-10">
             <div class="content__description max-w-sm">
                 <div class="w-full mx-auto lg:mx-0 mb-10 mt-10 underline"><img id="intuitiveImage" src="" alt=""></div>
                 <div class="mb-10">
-                    <p class="intuitiveDescription" class="text-sm lg:text-base">
-                        Identify areas of avoidable spending, segment member groups, understand trends and cost
-                        drivers, and benchmark your population against peers.
+                    <p id="intuitiveDescription" class="text-sm lg:text-base">
+                        loading..
                     </p>
                 </div>
                 <div class="w-full flex justify-center lg:justify-start">

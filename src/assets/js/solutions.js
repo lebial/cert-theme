@@ -1,4 +1,4 @@
-import getNavHeight, { addArrowToSlider } from "./utils/utils";
+import getNavHeight, { createObserver } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
   let intuitiveData = {};
@@ -38,18 +38,17 @@ jQuery(document).ready(function ($) {
   }
 
   function setActiveStyles() {
-    debugger;
     const buttons = $('.option__button');
     Object.values(buttons).forEach(button => {
-      if ($(button.children).text() === activeData['option_title']) $(button).addClass('active__option');
-      $(button).removeClass('active__option');
+      if ($(button.children).text() === activeData['option_title']) return $(button).addClass('active__option');
+      return $(button).removeClass('active__option');
     });
   }
 
   function setIntuitiveData(data) {
     activeData = data;
     $('#intuitiveImage').attr('src', data['option_image']);
-    $('#intuitiveDescription').innerHTML = data['option_description'];
+    $('#intuitiveDescription').text(data['option_description']);
     $('#intuitiveLink').attr('src', data['option_link']);
     setActiveStyles();
   }
@@ -69,9 +68,27 @@ jQuery(document).ready(function ($) {
   }
 
   function handleOptionChange() {
-    $('.option__action__button').click((e) => {
-      setIntuitiveData(intuitiveData[e.target.name])
-    });
+    $('.option__action__button').click((function () {
+      setIntuitiveData(intuitiveData[this.name]);
+    }));
+  }
+
+  function handleMobileOption() {
+    const options = {
+      // root: document.querySelector('.insights__button__container'),
+      threshold: 0.9,
+    };
+    const buttons = document.querySelectorAll('.option__button');
+    const observer = createObserver(entries => {
+      entries.forEach(entry => {
+        debugger;
+        entry.isIntersecting ? $(entry.target).fadeTo(300, 1) : $(entry.target).fadeTo(300, 0.4);
+      }
+      );
+    }, options);
+
+    buttons.forEach(button => observer.observe(button));
+
   }
 
   if (window.location.href.includes("solutions")) {
@@ -79,6 +96,7 @@ jQuery(document).ready(function ($) {
     createBrochureCarousel();
     parseInsightsData();
     handleOptionChange();
+    handleMobileOption();
   }
 
 
