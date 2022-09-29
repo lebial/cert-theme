@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './slick';
+@import './slick-theme';
+@import './home/homepage';
+@import './platform/platform';
+@import './about-us/index';
+@import './solutions/index';
+@import './mainStyles';
+@import './footer.scss';

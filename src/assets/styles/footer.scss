@@ -1,0 +1,80 @@
+@import './variables.scss';
+.footer__links {
+    // min-width: 135px;
+    &__toggle {
+        position: relative;
+        padding: 0 5px;
+        text-align: left;
+        margin-bottom: 15px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: all .3s ease;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid white;
+        }
+        &.arrow--rotate {
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+    &__group {
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        margin-bottom: 10px;
+        @media #{$desktopMD} {
+            align-items: flex-start;
+        }
+    }
+}
+
+.footer__responsive__hidden {
+    display: none;
+    @media #{$desktopBase} {
+        display: block;
+    }
+}
+
+.social__icons {
+    & a {
+        margin-right: 10px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+footer {
+    margin-top: 60px;
+    @media #{$desktopSM} {
+        margin-top: 94px;
+    }
+    @media #{$desktopMD} {
+        margin-top: 125px;
+    }
+}
+
+.corp__info__clone {
+    bottom: -160%;
+    @media (min-width: 1290px) {
+        bottom: -140%
+    }
+    @media (min-width: 1673px) {
+        bottom: -118%;
+    }
+    @media (min-width: 2396px) {
+        bottom: -104%;
+    }
+}
+
+.tw-hidden {
+    display: none;
+}
