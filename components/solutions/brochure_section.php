@@ -3,14 +3,14 @@
     $points = get_field('brochure_points');
     foreach ($points as $point) {
       echo '<div class="flex mt-2">
-        <p class="text-white  mb-0 text-sm lg:text-lg">'.$point.'</p>
+        <p class="text-white  mb-0 text-sm lg:text-lg">'.strip_tags($point, '<a>').'</p>
       </div>';
     }
   }
 ?>
 
-<section id="clinicalPointSolutions" class="download__brochure w-full pb-12 flex flex-col items-center " style="background-image: url(<?php the_field('brochure_section_background')?>); background-size: cover;">
-  <div class="graphic__row w-10/12 mt-28">
+<section id="clinicalPointSolutions" class="download__brochure w-full pb-16 lg:pb-24 flex flex-col items-center " style="background-image: url(<?php the_field('brochure_section_background')?>); background-size: cover;">
+  <div class="graphic__row w-10/12 mt-16 lg:mt-24">
     <div class="graphic__data flex flex-col lg:flex-row">
       <div class="data w-full lg:w-6/12 flex justify-center lg:justify-end">
         <div class="max-w-lg">
@@ -28,12 +28,10 @@
         </div>
       </div>
       <div class="data__image w-full lg:w-6/12 flex justify-center lg:justify-start items-center relative">
-        <!-- <img class="w-[90%] max-w-2xl relative lg:absolute -left-[8%]" src="<?php the_field('laptop_image')?>" alt=""> -->
-        <img class="w-[90%] max-w-2xl" src="<?php the_field('laptop_image')?>" alt="">
+        <img class="w-[90%] max-w-2xl mt-8 lg:mt-0" src="<?php the_field('laptop_image')?>" alt="">
       </div>
     </div>
   </div>
-  <!-- <div class="graphic__row w-10/12 lg:w-8/12 flex flex-col lg:flex-row mt-10"> -->
   <div class="graphic__row w-10/12 flex flex-col items-center lg:flex-row mt-10">
     <div class="graphic__content w-full lg:w-1/2 flex justify-end">
       <div class="lg:max-w-lg w-full">
@@ -46,7 +44,7 @@
       </span>
     </div>
   </div>
-  <div class="graphic__row w-full flex justify-center mt-10 lg:mt-20 mb-12">
+  <div class="graphic__row w-full flex justify-center mt-10 lg:mt-20">
     <div class="button__container w-9/12 md:w-4/12 flex justify-center">
       <a href="#" class="action__button rounded-xl px-8 py-4 bg-white text-primary font-bold text-xl"><?php the_field('brochure_button_text')?></a>
     </div>

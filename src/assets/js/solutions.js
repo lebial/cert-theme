@@ -9,11 +9,21 @@ jQuery(document).ready(function ($) {
     $(".solutions__header").css("margin-top", `${navHeight}px`);
   }
 
+  function handleSolutionsPlayButtonClick(version) {
+    const id = `solutions${version}VideoButton`;
+    const button = document.getElementById(id);
+    const evtHandler = function () {
+      $(`.solutions__${version}__video__overlay`).toggle();
+      $(`#decisionMaking${version}Video`).get(0).play();
+    };
+    button.addEventListener('click', evtHandler);
+  }
+
   function addTopBanner() {
     const header = $('header');
-    $(header).after(`<div class="w-full p-8 flex justify-center text-white" style="background-color: #b85654; font-size: 20px;">
-    Maximize the Impact of Your Clinical Point Solutions. 
-    <a class="font-bold underline" style="margin: 0 10px; position: static;" href="#clinicalPointSolutions">Learn More </a> &rarr;
+    $(header).after(`<div class="w-full p-1 text-center md:text-left md:p-4 flex flex-col md:flex-row justify-center text-white" style="background-color: rgb(87, 134, 228); font-size: 20px;">
+    Maximize the Impact of Your Point Solutions Programs. 
+    <div class=""><a class="font-bold underline" style="margin: 0 10px; position: static;" href="#clinicalPointSolutions">Learn More </a> &rarr;</div>
     </div>`);
   }
 
@@ -47,9 +57,7 @@ jQuery(document).ready(function ($) {
 
   function setIntuitiveData(data) {
     activeData = data;
-    $('#intuitiveImage').attr('src', data['option_image']);
-    $('#intuitiveDescription').text(data['option_description']);
-    $('#intuitiveLink').attr('src', data['option_link']);
+    $('#intuitiveDescription').html(data['option_description']);
     setActiveStyles();
   }
 
@@ -70,6 +78,11 @@ jQuery(document).ready(function ($) {
   function handleOptionChange() {
     $('.option__action__button').click((function () {
       setIntuitiveData(intuitiveData[this.name]);
+      const buttonsOverlay = $('.container__overlay');
+      const { top } = $(this).parent().position();
+      buttonsOverlay.animate({
+        'background-position-y': `${top}px`,
+      }, 300, 'linear');
     }));
   }
 
@@ -81,7 +94,6 @@ jQuery(document).ready(function ($) {
     const buttons = document.querySelectorAll('.option__button');
     const observer = createObserver(entries => {
       entries.forEach(entry => {
-        debugger;
         entry.isIntersecting ? $(entry.target).fadeTo(300, 1) : $(entry.target).fadeTo(300, 0.4);
       }
       );
@@ -97,6 +109,9 @@ jQuery(document).ready(function ($) {
     parseInsightsData();
     handleOptionChange();
     handleMobileOption();
+    handleSolutionsPlayButtonClick('Desktop');
+    handleSolutionsPlayButtonClick('Mobile');
+    // generateVerticalOptionsSlider();
   }
 
 
