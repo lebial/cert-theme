@@ -1,5 +1,5 @@
 <!-- <section class="md:min-h-[30vh] lg:min-h-[60vh] flex items-center" style="background-image: url(<?php the_field('demo_background')?>); background-size: cover;"> -->
-<section class="md:min-h-[30vh] lg:min-h-[40vh] flex items-center" style="background-image: url(<?php the_field('demo_background')?>); background-size: cover;">
+<section class="md:min-h-[30vh] lg:min-h-[40vh] flex items-center bg-no-repeat bg-center md:bg-left" style="background-image: url(<?php the_field('demo_background')?>); background-size: cover;">
   <div class="w-9/12 lg:w-8/12 flex-col lg:flex-row flex justify-center mx-auto items-center py-12 lg:py-0">
     <img src="<?php the_field('demo_image') ?>" class="md:max-w-[55%] lg:max-w-[40%]" alt="">
     <div class="w-full flex justify-center flex-col">

@@ -36,7 +36,7 @@
         </div>
         
     </div>
-    <div class="content__box w-11/12 md:w-9/12 max-w-fit mx-auto bg-gray-200 mt-20 p-8 lg:p-12 border border-solid border-primary shadow-lg flex flex-col lg:flex-row">
+    <div class="content__box w-11/12 md:w-9/12 max-w-fit mx-auto bg-[#b2b2b2] bg-opacity-10 mt-20 p-8 lg:p-12 shadow-lg flex flex-col lg:flex-row">
         <div class="insights__button__container w-full max-h-28 lg:max-h-fit  lg:w-1/2 max-w-sm overflow-y-scroll lg:overflow-y-clip relative">
             <div class="container__overlay hidden lg:block"></div>
             <?php render_options($intuitive_insights_data) ?>

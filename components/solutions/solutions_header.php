@@ -7,7 +7,7 @@
     <div class="hidden md:block solutions__video__container absolute w-11/12 md:w-[60%] left-1/2 -translate-x-1/2 top-[110%]">
       <div class="solutions__video__body relative">
         <video class="" id="decisionMakingDesktopVideo" width="100%" height="100%" src="<?php the_field('build_better_plans_video') ?>" controls></video>
-        <div class="solutions__Desktop__video__overlay shadow-lg absolute flex items-end w-[101%] h-full left-1/2 -translate-x-1/2 top-0 p-1 lg:p-6 bg-cover" style="background: linear-gradient(rgba(87, 134, 228, 0.7),rgba(87, 134, 228, 0.7)), url(<?php the_field('video_thumbnail')?>); background-size: cover;">
+        <div class="solutions__Desktop__video__overlay shadow-lg absolute flex items-end w-[101%] h-full left-1/2 -translate-x-1/2 top-0 p-1 lg:p-6 bg-cover" style="background: linear-gradient(rgba(76, 120, 207, 0.7),rgba(76, 120, 207, 0.7)), url(<?php the_field('video_thumbnail')?>); background-size: cover;">
           <div class="overlay__content">
             <div class="w-10/12 lg:w-8/12">
               <p class="text-white text-base 2xl:text-2xl text-left pl-4" style="line-height: 2;"><?php the_field('thumbnail_description')?></p>
