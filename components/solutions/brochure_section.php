@@ -3,7 +3,7 @@
     $points = get_field('brochure_points');
     foreach ($points as $point) {
       echo '<div class="flex mt-2">
-        <p class="text-white  mb-0 text-sm lg:text-lg">'.strip_tags($point, '<a>').'</p>
+        <p class="text-white  mb-0 text-sm lg:text-lg">'.strip_tags($point, '<a><strong>').'</p>
       </div>';
     }
   }

@@ -4,11 +4,6 @@ jQuery(document).ready(function ($) {
   let intuitiveData = {};
   let activeData = {};
 
-  function setNullMargin() {
-    const { navHeight } = getNavHeight();
-    $(".solutions__header").css("margin-top", `${navHeight}px`);
-  }
-
   function handleSolutionsPlayButtonClick(version) {
     const id = `solutions${version}VideoButton`;
     const button = document.getElementById(id);
@@ -79,28 +74,51 @@ jQuery(document).ready(function ($) {
     $('.option__action__button').click((function () {
       setIntuitiveData(intuitiveData[this.name]);
       const buttonsOverlay = $('.container__overlay');
+      const overlayHeight = -buttonsOverlay.height() / 4;
       const { top } = $(this).parent().position();
       buttonsOverlay.animate({
-        'background-position-y': `${top}px`,
+        'background-position-y': `${overlayHeight + top}px`,
       }, 300, 'linear');
     }));
   }
 
-  function handleMobileOption() {
+  function setInsightsOverlay() {
+    const buttonsOverlay = $('.container__overlay');
+    const overlayHeight = buttonsOverlay.height();
+    const initialPoint = overlayHeight / 4;
+    buttonsOverlay.css('background-position-y', `-${initialPoint}px`);
+  }
+
+
+  function createInsightsSlider() {
+    $('.solutions__insights__slider').slick({
+      vertical: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      centerMode: true,
+      arrows: false,
+      dots: false,
+      verticalSwiping: true,
+      infinite: false,
+    });
+    $('.solutions__insights__slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      const newSlide = $(slick.$slides[nextSlide]);
+      newSlide.find('button').click();
+      if (nextSlide === slick.$slides.length - 1 || !nextSlide) $('body').css('overflow', 'auto');
+    });
+  }
+  function handleMobileInsightsScrollLock() {
+    const element = document.querySelector('.insights__container');
     const options = {
-      // root: document.querySelector('.insights__button__container'),
-      threshold: 0.9,
-    };
-    const buttons = document.querySelectorAll('.option__button');
-    const observer = createObserver(entries => {
-      entries.forEach(entry => {
-        entry.isIntersecting ? $(entry.target).fadeTo(300, 1) : $(entry.target).fadeTo(300, 0.4);
+      threshold: 1,
+    }
+    const observer = createObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        $('body').css('overflow', 'hidden');
+        observer.unobserve();
       }
-      );
     }, options);
-
-    buttons.forEach(button => observer.observe(button));
-
+    observer.observe(element);
   }
 
   if (window.location.href.includes("solutions")) {
@@ -108,10 +126,11 @@ jQuery(document).ready(function ($) {
     createBrochureCarousel();
     parseInsightsData();
     handleOptionChange();
-    handleMobileOption();
     handleSolutionsPlayButtonClick('Desktop');
     handleSolutionsPlayButtonClick('Mobile');
-    // generateVerticalOptionsSlider();
+    setInsightsOverlay();
+    createInsightsSlider();
+    handleMobileInsightsScrollLock();
   }
 
 
