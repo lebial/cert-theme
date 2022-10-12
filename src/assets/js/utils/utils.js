@@ -5,10 +5,10 @@ function getNavHeight() {
 
 function addArrowToSlider(slider) {
     const $ = jQuery;
-    $(`${slider}-prev`).click(function() {
+    $(`${slider}-prev`).click(function () {
         $(slider).slick("slickPrev");
     });
-    $(`${slider}-next`).click(function() {
+    $(`${slider}-next`).click(function () {
         $(slider).slick("slickNext");
     });
 }
@@ -37,4 +37,20 @@ function createObserver(callback, options) {
     return observer;
 }
 
-export { getNavHeight as default, waitForElement, addArrowToSlider, createObserver };
+function makeElementsSameHeight($, selector) {
+    // Calculate the heighest slide and set a top/bottom margin for other children.
+    // As variableHeight is not supported yet: https://github.com/kenwheeler/slick/issues/1803
+    let maxHeight = -1;
+    $(selector).each(function () {
+        if ($(this).height() > maxHeight) {
+            maxHeight = $(this).height();
+        }
+    });
+    $(selector).each(function () {
+        if ($(this).height() < maxHeight) {
+            $(this).css('margin', Math.ceil((maxHeight - $(this).height()) / 2) + 'px 0');
+        }
+    });
+}
+
+export { getNavHeight as default, waitForElement, addArrowToSlider, createObserver, makeElementsSameHeight };

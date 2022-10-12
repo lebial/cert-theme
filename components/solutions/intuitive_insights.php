@@ -4,9 +4,9 @@
   function render_options($data) {
     foreach ($data as $option) {
         echo '
-                <div class="option__button w-full">
-                    <button class="option__action__button text-left text-sm lg:text-base" type="button" name="'.$option['option_title'].'">'.$option['option_title'].'</button>
-                </div>
+            <div class="option__button w-full">
+                <button class="option__action__button text-left text-sm lg:text-base" type="button" name="'.$option['option_title'].'">'.$option['option_title'].'</button>
+            </div>
         ';
     };
   }
@@ -26,7 +26,7 @@
         <div class="text-center lg:text-left">
             <p class="text-sm lg:text-base text-center">
                 Transparently communicate the value of your benefits programs and find
-                opportunities for cost savings. Wheter you're looking for a high-level
+                opportunities for cost savings. Whether you're looking for a high-level
                 overview or in-depth analysis, we help you make better decisions, faster.
             </p>
 
@@ -48,14 +48,14 @@
         </div>
         <div class="w-full lg:w-1/2 lg:pl-10">
             <div class="content__description max-w-sm flex flex-col">
-                <div class="mb-4 pt-2">
+                <div class="mb-10">
                     <p id="intuitiveDescription" class="text-sm lg:text-base">
                         loading..
                     </p>
                 </div>
-                <div class="w-full mx-auto lg:mx-0 lg:mb-10 mt-4 lg:mt-10 underline -order-1 lg:order-2"><img id="intuitiveImage" src="<?php the_field('intuitive_insights_image')?>" alt=""></div>
+                <div class="w-full mx-auto lg:mx-0 lg:mb-10 mt-4 lg:mt-10 underline -order-1"><img id="intuitiveImage" src="<?php the_field('intuitive_insights_image')?>" alt=""></div>
                 <div class="w-full flex justify-center">
-                    <a id="intuitiveLink" href="#" class="text-white py-3 mx-auto lg:mx-0 px-8 bg-primary rounded-lg font-bold">2 Minute Demo</a>
+                    <a id="intuitiveLink" href="#" class="text-white py-3 mx-auto lg:mx-0 px-8 bg-primary rounded-lg font-bold">3 Minute Demo</a>
                 </div>
             </div>
         </div>

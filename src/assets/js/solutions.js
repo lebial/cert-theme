@@ -1,8 +1,10 @@
-import getNavHeight, { createObserver } from "./utils/utils";
+import getNavHeight, { createObserver, makeElementsSameHeight } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
   let intuitiveData = {};
   let activeData = {};
+  let touchstartY = 0;
+  let touchendY = 0;
 
   function handleSolutionsPlayButtonClick(version) {
     const id = `solutions${version}VideoButton`;
@@ -12,14 +14,6 @@ jQuery(document).ready(function ($) {
       $(`#decisionMaking${version}Video`).get(0).play();
     };
     button.addEventListener('click', evtHandler);
-  }
-
-  function addTopBanner() {
-    const header = $('header');
-    $(header).after(`<div class="w-full p-1 text-center md:text-left md:p-4 flex flex-col md:flex-row justify-center text-white" style="background-color: rgb(87, 134, 228); font-size: 20px;">
-    Maximize the Impact of Your Point Solutions Programs. 
-    <div class=""><a class="font-bold underline" style="margin: 0 10px; position: static;" href="#clinicalPointSolutions">Learn More </a> &rarr;</div>
-    </div>`);
   }
 
   function createBrochureCarousel() {
@@ -101,10 +95,16 @@ jQuery(document).ready(function ($) {
       verticalSwiping: true,
       infinite: false,
     });
+
     $('.solutions__insights__slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       const newSlide = $(slick.$slides[nextSlide]);
       newSlide.find('button').click();
-      if (nextSlide === slick.$slides.length - 1 || !nextSlide) $('body').css('overflow', 'auto');
+      if ((nextSlide === slick.$slides.length - 1 || !nextSlide)) {
+        $('body').css('overflow', 'auto');
+        const gestureZone = document.querySelector('body');
+        gestureZone.removeEventListener('touchstart', handleTouchStart);
+        gestureZone.removeEventListener('touchend', handleTouchEnd);
+      }
     });
   }
   function handleMobileInsightsScrollLock() {
@@ -113,25 +113,61 @@ jQuery(document).ready(function ($) {
       threshold: 1,
     }
     const observer = createObserver(([entry]) => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && $(window).width() < 1024) {
         $('body').css('overflow', 'hidden');
-        observer.unobserve();
+        addScrollToSlide();
+        observer.unobserve(element);
       }
     }, options);
     observer.observe(element);
   }
 
+
+  function handleGesture() {
+    if (touchendY < touchstartY) {
+      // console.log('Swiped up');
+      $('.solutions__insights__slider').slick('slickNext');
+    }
+
+    if (touchendY > touchstartY) {
+      // console.log('Swiped down');
+      $('.solutions__insights__slider').slick('slickPrev');
+    }
+  }
+
+  function handleTouchStart(event) {
+    touchstartY = event.changedTouches[0].screenY;
+  }
+  function handleTouchEnd(event) {
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+  }
+
+  function addScrollToSlide() {
+    const gestureZone = document.querySelector('body');
+    gestureZone.addEventListener('touchstart', handleTouchStart, false);
+    gestureZone.addEventListener('touchend', handleTouchEnd, false);
+  }
+
+  function fixSlideHeight() {
+    makeElementsSameHeight($, '.slick-slide');
+  }
+
+  function fixDecisionMakingElements() {
+    makeElementsSameHeight($, '.option__container');
+  }
+
   if (window.location.href.includes("solutions")) {
-    addTopBanner();
     createBrochureCarousel();
+    fixDecisionMakingElements();
     parseInsightsData();
     handleOptionChange();
     handleSolutionsPlayButtonClick('Desktop');
     handleSolutionsPlayButtonClick('Mobile');
     setInsightsOverlay();
     createInsightsSlider();
+    fixSlideHeight();
     handleMobileInsightsScrollLock();
   }
-
 
 });
