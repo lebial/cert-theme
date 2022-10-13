@@ -37,7 +37,7 @@ function createObserver(callback, options) {
     return observer;
 }
 
-function makeElementsSameHeight($, selector) {
+function makeElementsSameHeight($, selector, useMargin = true) {
     // Calculate the heighest slide and set a top/bottom margin for other children.
     // As variableHeight is not supported yet: https://github.com/kenwheeler/slick/issues/1803
     let maxHeight = -1;
@@ -48,7 +48,11 @@ function makeElementsSameHeight($, selector) {
     });
     $(selector).each(function () {
         if ($(this).height() < maxHeight) {
-            $(this).css('margin', Math.ceil((maxHeight - $(this).height()) / 2) + 'px 0');
+            if (useMargin) {
+                $(this).css('margin', Math.ceil((maxHeight - $(this).height()) / 2) + 'px 0');
+            } else {
+                $(this).css('height', maxHeight + 'px');
+            }
         }
     });
 }

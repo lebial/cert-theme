@@ -33,6 +33,11 @@ jQuery(document).ready(function ($) {
         });
         option[i].classList.add("active");
       });
+      const buttons = $('.brochure-next');
+      $(buttons[i]).click(() => {
+        if (i === option.length - 1) return $(option[0]).click();
+        return $(option[i + 1]).click();
+      });
     });
   }
 
@@ -153,13 +158,14 @@ jQuery(document).ready(function ($) {
     makeElementsSameHeight($, '.slick-slide');
   }
 
-  function fixDecisionMakingElements() {
-    makeElementsSameHeight($, '.option__container');
+  function fixElementsHeight() {
+    makeElementsSameHeight($, '.option__container', false);
+    makeElementsSameHeight($, '.solutions__card', false);
   }
 
   if (window.location.href.includes("solutions")) {
     createBrochureCarousel();
-    fixDecisionMakingElements();
+    fixElementsHeight();
     parseInsightsData();
     handleOptionChange();
     handleSolutionsPlayButtonClick('Desktop');

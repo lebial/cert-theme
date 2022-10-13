@@ -19,7 +19,7 @@
       <div class="solutions__video__body relative mb-10">
         <video class="" id="decisionMakingMobileVideo" width="100%" height="100%" src="<?php the_field('build_better_plans_video') ?>" controls></video>
         <div class="solutions__Mobile__video__overlay absolute shadow-xl flex items-end w-[101%] h-[105%] left-1/2 -translate-x-1/2 top-0 p-1 lg:p-6 bg-cover" style="background: linear-gradient(rgba(76, 120, 207, 0.7),rgba(76, 120, 207, 0.7)), url(<?php the_field('video_thumbnail')?>); background-size: cover;">
-          <div class="overlay__content h-full flex flex-col justify-center items-start">
+          <div class="overlay__content h-full w-full flex flex-col justify-center items-start">
             <div class="w-10/12 lg:w-8/12">
               <p class="text-white text-lg 2xl:text-2xl text-left pl-4" style="line-height: 1.5;"><?php the_field('thumbnail_description')?></p>
             </div>

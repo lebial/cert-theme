@@ -53,8 +53,8 @@
                         loading..
                     </p>
                 </div>
-                <div class="w-full mx-auto lg:mx-0 lg:mb-10 mt-4 lg:mt-10 underline -order-1"><img id="intuitiveImage" src="<?php the_field('intuitive_insights_image')?>" alt=""></div>
-                <div class="w-full flex justify-center">
+                <div class="w-full mx-auto lg:mx-0 lg:mb-10 mt-4 lg:mt-0 underline lg:order-2 -order-2"><img id="intuitiveImage" src="<?php the_field('intuitive_insights_image')?>" alt=""></div>
+                <div class="w-full flex justify-center order-3">
                     <a id="intuitiveLink" href="#" class="text-white py-3 mx-auto lg:mx-0 px-8 bg-primary rounded-lg font-bold">3 Minute Demo</a>
                 </div>
             </div>
