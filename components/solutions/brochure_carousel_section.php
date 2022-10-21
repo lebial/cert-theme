@@ -15,7 +15,7 @@
                         echo '</div>';
                         echo '<div class="data__image__desktop  relative w-full md:w-6/12 md:flex md:justify-center">';
                             echo '<img class="data__image hidden lg:visible md:max-w-[70%] md:max-h-[90%] lg:max-w-[80%] md:flex md:justify-center md:items-center" src="'.$slide['desktop_image'].'" />';
-                            echo '<button type="button" class="brochure-next hidden md:block absolute h-10 w-14 right-0 top-[33%] rotate-180 lg:h-24 lg:w-28"><img class="style-svg h-full w-full" src="'.get_template_directory_uri().'/dist/assets/images/platform/rightArrowSlider.svg" alt="right arrow"></button>';
+                            echo '<button type="button" class="brochure-next hidden md:block absolute h-10 w-14 -right-[15%] top-[33%] rotate-180 lg:h-24 lg:w-28"><img class="style-svg h-full w-full" src="'.get_template_directory_uri().'/dist/assets/images/platform/rightArrowSlider.svg" alt="right arrow"></button>';
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';

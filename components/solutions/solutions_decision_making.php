@@ -12,11 +12,12 @@
   }
 ?>
 <!-- <section class="decision__making mt-12 lg:mt-[25vh] pb-20 lg:pb-32"> -->
-<section class="decision__making md:mt-[30vh] pb-16 lg:pb-24 px-10">
+<!-- <section class="decision__making md:mt-[30vh] pb-16 lg:pb-24 px-10"> -->
+<section class="decision__making pb-16 lg:pb-24 px-10">
 
   <div class="relative w-full mt-16">
     <div class="block md:hidden solutions__video__container w-full">
-      <div class="solutions__video__body relative mb-10">
+      <!-- <div class="solutions__video__body relative mb-10">
         <video class="" id="decisionMakingMobileVideo" width="100%" height="100%" src="<?php the_field('build_better_plans_video') ?>" controls></video>
         <div class="solutions__Mobile__video__overlay absolute shadow-xl flex items-end w-[101%] h-[105%] left-1/2 -translate-x-1/2 top-0 p-1 lg:p-6 bg-cover" style="background: linear-gradient(rgba(76, 120, 207, 0.7),rgba(76, 120, 207, 0.7)), url(<?php the_field('video_thumbnail')?>); background-size: cover;">
           <div class="overlay__content h-full w-full flex flex-col justify-center items-start">
@@ -32,7 +33,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 

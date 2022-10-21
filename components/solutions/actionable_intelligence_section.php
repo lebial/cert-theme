@@ -44,7 +44,7 @@
     <img src="<?php the_field('actionable_intelligence_section_image_desktop')?>" class="hidden md:block relative z-10" alt="">
     <img src="<?php the_field('actionable_intelligence_section_image_mobile')?>" class="block md:hidden relative z-10" alt="">
     <div class="flex justify-center px-6 mt-0 lg:-mt-24 relative z-20">
-        <p class="text-white text-sm lg:text-xl">
+        <p class="text-white text-sm lg:text-xl text-center">
             <?php the_field('results_description')?>
         </p>
     </div>
