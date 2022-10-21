@@ -11,6 +11,5 @@
 <?php get_template_part('components/platform/platform_deploy_slide') ?>
 <?php get_template_part('components/platform/validation-security') ?>
 <?php get_template_part('components/platform/contact-us') ?>
-<!-- <script type="text/javascript" src="<?php //echo get_template_directory_uri().'/dist/assets/js/platform.js'?>"></script> -->
 <?php get_footer(); ?>
 

@@ -1,20 +1,19 @@
-import getNavHeight, { createObserver } from "./utils/utils";
+import getNavHeight, { createObserver, makeElementsSameHeight } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
   let intuitiveData = {};
   let activeData = {};
+  let touchstartY = 0;
+  let touchendY = 0;
 
-  function setNullMargin() {
-    const { navHeight } = getNavHeight();
-    $(".solutions__header").css("margin-top", `${navHeight}px`);
-  }
-
-  function addTopBanner() {
-    const header = $('header');
-    $(header).after(`<div class="w-full p-8 flex justify-center text-white" style="background-color: #b85654; font-size: 20px;">
-    Maximize the Impact of Your Clinical Point Solutions. 
-    <a class="font-bold underline" style="margin: 0 10px; position: static;" href="#clinicalPointSolutions">Learn More </a> &rarr;
-    </div>`);
+  function handleSolutionsPlayButtonClick(version) {
+    const id = `solutions${version}VideoButton`;
+    const button = document.getElementById(id);
+    const evtHandler = function () {
+      $(`.solutions__${version}__video__overlay`).toggle();
+      $(`#decisionMaking${version}Video`).get(0).play();
+    };
+    button.addEventListener('click', evtHandler);
   }
 
   function createBrochureCarousel() {
@@ -34,6 +33,11 @@ jQuery(document).ready(function ($) {
         });
         option[i].classList.add("active");
       });
+      const buttons = $('.brochure-next');
+      $(buttons[i]).click(() => {
+        if (i === option.length - 1) return $(option[0]).click();
+        return $(option[i + 1]).click();
+      });
     });
   }
 
@@ -47,9 +51,7 @@ jQuery(document).ready(function ($) {
 
   function setIntuitiveData(data) {
     activeData = data;
-    $('#intuitiveImage').attr('src', data['option_image']);
-    $('#intuitiveDescription').text(data['option_description']);
-    $('#intuitiveLink').attr('src', data['option_link']);
+    $('#intuitiveDescription').html(data['option_description']);
     setActiveStyles();
   }
 
@@ -70,34 +72,108 @@ jQuery(document).ready(function ($) {
   function handleOptionChange() {
     $('.option__action__button').click((function () {
       setIntuitiveData(intuitiveData[this.name]);
+      const buttonsOverlay = $('.container__overlay');
+      const overlayHeight = -buttonsOverlay.height() / 4;
+      const { top } = $(this).parent().position();
+      buttonsOverlay.animate({
+        'background-position-y': `${overlayHeight + top}px`,
+      }, 300, 'linear');
     }));
   }
 
-  function handleMobileOption() {
-    const options = {
-      // root: document.querySelector('.insights__button__container'),
-      threshold: 0.9,
-    };
-    const buttons = document.querySelectorAll('.option__button');
-    const observer = createObserver(entries => {
-      entries.forEach(entry => {
-        debugger;
-        entry.isIntersecting ? $(entry.target).fadeTo(300, 1) : $(entry.target).fadeTo(300, 0.4);
+  function setInsightsOverlay() {
+    const buttonsOverlay = $('.container__overlay');
+    const overlayHeight = buttonsOverlay.height();
+    const initialPoint = overlayHeight / 4;
+    buttonsOverlay.css('background-position-y', `-${initialPoint}px`);
+  }
+
+
+  function createInsightsSlider() {
+    $('.solutions__insights__slider').slick({
+      vertical: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      centerMode: true,
+      arrows: false,
+      dots: false,
+      verticalSwiping: true,
+      infinite: false,
+    });
+
+    $('.solutions__insights__slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      const newSlide = $(slick.$slides[nextSlide]);
+      newSlide.find('button').click();
+      if ((nextSlide === slick.$slides.length - 1 || !nextSlide)) {
+        $('body').css('overflow', 'auto');
+        const gestureZone = document.querySelector('body');
+        gestureZone.removeEventListener('touchstart', handleTouchStart);
+        gestureZone.removeEventListener('touchend', handleTouchEnd);
       }
-      );
+    });
+  }
+  function handleMobileInsightsScrollLock() {
+    const element = document.querySelector('.insights__container');
+    const options = {
+      threshold: 1,
+    }
+    const observer = createObserver(([entry]) => {
+      if (entry.isIntersecting && $(window).width() < 1024) {
+        $('body').css('overflow', 'hidden');
+        addScrollToSlide();
+        observer.unobserve(element);
+      }
     }, options);
+    observer.observe(element);
+  }
 
-    buttons.forEach(button => observer.observe(button));
 
+  function handleGesture() {
+    if (touchendY < touchstartY) {
+      // console.log('Swiped up');
+      $('.solutions__insights__slider').slick('slickNext');
+    }
+
+    if (touchendY > touchstartY) {
+      // console.log('Swiped down');
+      $('.solutions__insights__slider').slick('slickPrev');
+    }
+  }
+
+  function handleTouchStart(event) {
+    touchstartY = event.changedTouches[0].screenY;
+  }
+  function handleTouchEnd(event) {
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+  }
+
+  function addScrollToSlide() {
+    const gestureZone = document.querySelector('body');
+    gestureZone.addEventListener('touchstart', handleTouchStart, false);
+    gestureZone.addEventListener('touchend', handleTouchEnd, false);
+  }
+
+  function fixSlideHeight() {
+    makeElementsSameHeight($, '.slick-slide');
+  }
+
+  function fixElementsHeight() {
+    makeElementsSameHeight($, '.option__container', false);
+    makeElementsSameHeight($, '.solutions__card', false);
   }
 
   if (window.location.href.includes("solutions")) {
-    addTopBanner();
     createBrochureCarousel();
+    fixElementsHeight();
     parseInsightsData();
     handleOptionChange();
-    handleMobileOption();
+    handleSolutionsPlayButtonClick('Desktop');
+    handleSolutionsPlayButtonClick('Mobile');
+    setInsightsOverlay();
+    createInsightsSlider();
+    fixSlideHeight();
+    handleMobileInsightsScrollLock();
   }
-
 
 });
