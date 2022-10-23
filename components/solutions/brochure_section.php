@@ -35,7 +35,8 @@
   <div class="graphic__row w-10/12 flex flex-col items-center lg:flex-row mt-10">
     <div class="graphic__content w-full lg:w-1/2 flex justify-end">
       <div class="lg:max-w-lg w-full">
-        <p class="text-white text-2xl lg:text-4xl font-bold leading-snug text-center lg:text-left" style="line-height: 1.3;"><?php the_field('brochure_section_subtitle')?></p>
+        <!-- <p class="text-white text-2xl lg:text-4xl font-bold leading-snug text-center lg:text-left" style="line-height: 1.3;"><?php the_field('brochure_section_subtitle')?></p> -->
+        <div class="text-white text-2xl lg:text-4xl font-bold leading-snug text-center lg:text-left" style="line-height: 1.3;">The Certilytics <div class=" w-fit rounded-md bg-[#ba6966] shadow-md text-2xl px-3 py-2 leading-none"><span>Impact</span><br><span class=" text-dark-blue-background">Evaluator</span></div> enables you to:</div>
       </div>
     </div>
     <div class="graphic__content brochure__points w-full lg:w-1/2 mt-10 lg:mt-0 flex justify-center lg:justify-start">
