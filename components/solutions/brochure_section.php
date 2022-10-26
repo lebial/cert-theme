@@ -1,12 +1,12 @@
 <?php
 function renderBulletPoints()
 {
-  $points = get_field('brochure_points');
-  foreach ($points as $point) {
-    echo '<div class="flex mt-2">
+    $points = get_field('brochure_points');
+    foreach ($points as $point) {
+        echo '<div class="flex mt-2">
         <p class="text-white  mb-0 text-sm lg:text-lg">' . strip_tags($point, '<a><strong>') . '</p>
       </div>';
-  }
+    }
 }
 ?>
 
@@ -39,9 +39,10 @@ function renderBulletPoints()
         <div class="graphic__content w-full lg:w-1/2 flex justify-end">
             <div class="lg:max-w-lg w-full flex justify-center">
                 <!-- <p class="text-white text-2xl lg:text-4xl font-bold leading-snug text-center lg:text-left" style="line-height: 1.3;"><?php //the_field('brochure_section_subtitle') 
-                                                                                                                                  ?></p> -->
+                                                                                                                                            ?></p> -->
                 <!-- <div class="text-white text-2xl lg:text-4xl font-bold leading-snug text-center lg:text-left" style="line-height: 1.3;">The Certilytics <div class=" w-fit rounded-md bg-[#ba6966] shadow-md text-2xl px-3 py-2 leading-none"><span>Impact</span><br><span class=" text-dark-blue-background">Evaluator</span></div> enables you to:</div> -->
-                <div><img src="<?php the_field('impact_evaluator_logo') ?>" alt="impact evaluator logo"></div>
+                <div><img class="style-svg w-full" src="<?php the_field('impact_evaluator_logo') ?>"
+                        alt="impact evaluator logo"></div>
             </div>
         </div>
         <div
