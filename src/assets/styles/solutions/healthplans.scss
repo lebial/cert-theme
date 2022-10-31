@@ -1,0 +1,23 @@
+@import '../variables';
+.grow__your__book__of__business__section {
+    & .slick-dots {
+        bottom: -50px;
+        & li {
+            & button {
+                transition: all ease .3s;
+                width: 15px;
+                height: 15px;
+                background-color: white;
+                border-radius: 100%;
+                &::before {
+                    color: transparent;
+                }
+            }
+        }
+    }
+    & .slick-active {
+        & button {
+            background-color: $color-red!important;
+        }
+    }
+}
