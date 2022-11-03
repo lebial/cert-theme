@@ -5,8 +5,8 @@
             //    echo '<div class="solutions__card card px-12 pt-8 space-x-8 md:space-x-0 flex md:flex-col lg:px-8 lg:pt-8">';
                 echo '<div class="card solutions__card w-full lg:w-1/3 flex flex-col items-center mt-12 px-5">';
                     // echo '<div class="card__image w-4/12 md:w-full h-[45%] md:h-[27%] flex justify-end md:justify-center">';
-                    echo '<div class="card__body max-w-[268px] ">';
-                        echo '<div class="card__image__container w-4/12 md:w-full flex justify-end md:justify-center">';
+                    echo '<div class="card__body flex md:block max-w-[268px] ">';
+                        echo '<div class="card__image__container w-4/12 md:w-full flex justify-end md:justify-center mr-6 md:mr-0">';
                             echo '<img class="card__image w-28 h-16" src="'.$card['image'].'" alt="">';
                         echo '</div>';
                         echo '<div class="card__content w-7/12 md:w-full">';
