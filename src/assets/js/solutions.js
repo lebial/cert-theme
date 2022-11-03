@@ -52,6 +52,7 @@ jQuery(document).ready(function ($) {
   function setIntuitiveData(data) {
     activeData = data;
     $('#intuitiveDescription').html(data['option_description']);
+    $('.intuitive__dynamic__content').html(data['option_description']);
     setActiveStyles();
   }
 
@@ -186,7 +187,7 @@ jQuery(document).ready(function ($) {
 
   function fixElementsHeight() {
     makeElementsSameHeight($, '.option__container', false);
-    makeElementsSameHeight($, '.solutions__card', false);
+    if (screen.width > 1080) makeElementsSameHeight($, '.solutions__card', false);
   }
 
   if (window.location.href.includes("solutions")) {
@@ -196,8 +197,8 @@ jQuery(document).ready(function ($) {
     handleOptionChange();
     handleHealthPlansOptionChange();
     setInitialNavPoint();
-    handleSolutionsPlayButtonClick('Desktop');
-    handleSolutionsPlayButtonClick('Mobile');
+    // handleSolutionsPlayButtonClick('Desktop');
+    // handleSolutionsPlayButtonClick('Mobile');
     setInsightsOverlay();
     createInsightsSlider();
     fixSlideHeight();

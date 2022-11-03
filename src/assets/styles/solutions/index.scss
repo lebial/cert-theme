@@ -51,15 +51,22 @@
         padding: 15px !important;
       }
 
-      & .frm_form_field:first-of-type {
-        & label {
-          display: none !important;
+      & .frm_form_field {
+        &:first-of-type {
+          & label {
+            display: none !important;
+          }
         }
+      }
+
+      & .frm_html_container {
+        font-size: 11px !important;
       }
 
       & .frm_checkbox {
         & label {
           text-indent: -23px !important;
+          font-weight: bold;
         }
       }
 
