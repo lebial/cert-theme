@@ -56,10 +56,13 @@ jQuery(document).ready(function ($) {
     const brochureDescription = $('.download__brochure__text');
     const brochureLink = $('.download__brochure__link');
     if (data['option_brochure_description']) {
+      const [firstLink, secondLink] = Object.values(data['option_brochure_links']);
       brochureDescription.show();
       brochureLink.show();
       brochureDescription.html(data['option_brochure_description']);
-      brochureLink.attr('href', data['option_brochure_link']);
+      brochureLink.attr('href', firstLink);
+      // if (secondLink) brochureLink.attr('onclick', `location.href = '${secondLink}';`);
+      if (secondLink) brochureLink.attr('onclick', `window.open('${secondLink}');`);
     } else {
       brochureDescription.hide();
       brochureLink.hide();
