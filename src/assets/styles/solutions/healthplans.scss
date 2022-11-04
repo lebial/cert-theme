@@ -34,6 +34,35 @@
         margin-top: 0;
         border-left: 0px solid transparent;
 
+        &:first-of-type {
+            & svg {
+                & * {
+                    opacity: .5;
+                }
+            }
+        }
+
+        //icons manual sizing
+        &:nth-of-type(3) {
+            & svg {
+                width: 29px;
+            }
+        }
+
+        &:nth-of-type(4) {
+            & svg {
+                width: 20px;
+                margin-right: 11px;
+            }
+        }
+
+        &:nth-of-type(5) {
+            & svg {
+                width: 19px;
+                margin-right: 12px;
+            }
+        }
+
         @media #{$desktopBase} {
             &:first-of-type {
                 & svg {
@@ -48,7 +77,6 @@
         }
 
         & svg {
-
             & * {
                 transition: all ease .3s;
             }
@@ -72,6 +100,8 @@
             & svg {
                 & * {
                     fill: $color-red;
+                    stroke: $color-red;
+                    opacity: 1;
                 }
             }
         }
@@ -92,7 +122,9 @@
 
         & svg {
             & * {
+                opacity: 1 !important;
                 fill: $color-red;
+                stroke: $color-red;
             }
         }
     }
@@ -109,5 +141,35 @@
 
     & .slick-current {
         opacity: 1;
+    }
+}
+
+.solutions__insights__slider {
+    & .slick-slide {
+        &:first-of-type {
+            & svg {
+                width: 70px;
+            }
+        }
+
+        &:nth-of-type(3) {
+            & svg {
+                width: 31px;
+            }
+        }
+
+        &:nth-of-type(4) {
+            & svg {
+                width: 15px;
+                margin-right: 13px;
+            }
+        }
+
+        &:nth-of-type(5) {
+            & svg {
+                width: 17px;
+                margin-right: 10px;
+            }
+        }
     }
 }

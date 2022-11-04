@@ -35,13 +35,13 @@ function renderBulletPoints()
             </div>
         </div>
     </div>
-    <div class="graphic__row w-10/12 flex flex-col items-center lg:flex-row mt-10">
+    <div class="graphic__row relative w-10/12 flex flex-col items-center lg:flex-row mt-10">
         <div class="graphic__content w-full lg:w-1/2 flex justify-end">
             <div class="lg:max-w-lg w-full flex justify-center lg:justify-start ">
                 <!-- <p class="text-white text-2xl lg:text-4xl font-bold leading-snug text-center lg:text-left" style="line-height: 1.3;"><?php //the_field('brochure_section_subtitle') 
                                                                                                                                             ?></p> -->
                 <!-- <div class="text-white text-2xl lg:text-4xl font-bold leading-snug text-center lg:text-left" style="line-height: 1.3;">The Certilytics <div class=" w-fit rounded-md bg-[#ba6966] shadow-md text-2xl px-3 py-2 leading-none"><span>Impact</span><br><span class=" text-dark-blue-background">Evaluator</span></div> enables you to:</div> -->
-                <div><img class="style-svg w-full" src="<?php the_field('impact_evaluator_logo') ?>"
+                <div><img class="absolute top-[19px] style-svg w-[280px]" src="<?php the_field('impact_evaluator_logo') ?>"
                         alt="impact evaluator logo"></div>
             </div>
         </div>

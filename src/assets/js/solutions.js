@@ -53,6 +53,17 @@ jQuery(document).ready(function ($) {
     activeData = data;
     $('#intuitiveDescription').html(data['option_description']);
     $('.intuitive__dynamic__content').html(data['option_description']);
+    const brochureDescription = $('.download__brochure__text');
+    const brochureLink = $('.download__brochure__link');
+    if (data['option_brochure_description']) {
+      brochureDescription.show();
+      brochureLink.show();
+      brochureDescription.html(data['option_brochure_description']);
+      brochureLink.attr('href', data['option_brochure_link']);
+    } else {
+      brochureDescription.hide();
+      brochureLink.hide();
+    }
     setActiveStyles();
   }
 

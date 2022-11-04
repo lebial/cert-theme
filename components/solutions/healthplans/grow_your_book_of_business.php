@@ -11,8 +11,8 @@
     }
   }
 ?>
-<section class="grow__your__book__of__business__section py-16 w-full bg-cover relative bg-[#d3dff9] md:bg-transparent lg:min-h-[670px]">
-    <img src="<?php the_field('grow_background')?>" class="hidden md:block w-full h-full absolute top-0 left-0 -z-10 " alt="">
+<section class="grow__your__book__of__business__section py-16 w-full bg-cover relative bg-[#d3dff9] lg:min-h-[670px]">
+    <!-- <img src="<?php// the_field('grow_background')?>" class="hidden md:block w-full h-full absolute top-0 left-0 -z-10 " alt=""> -->
     <div class="section__body w-7/12 mx-auto">
         <h3 class="text-center font-extralight max-w-none"><?php the_field('grow_book_title') ?></h3>
         <div class="w-56 border border-primary border-solid mx-auto mt-8"></div>
