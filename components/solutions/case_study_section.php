@@ -6,10 +6,10 @@
                     <?php the_field('case_study_title')?>
                 </p>
                 <div class=" w-32 border-[3px] border-solid border-primary my-6"></div>
-                <p class="text-lg ">
+                <p class="text-xl ">
                     <?php the_field('case_study_description')?>
                 </p>
-                <p class="text-base">
+                <p class="text-lg">
                     <?php the_field('case_study_sub_description')?>
                 </p>
                 <div class="mt-4 text-primary"><?php the_field('download_form_modal_code')?></div>

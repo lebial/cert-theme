@@ -5,7 +5,7 @@
                 <p class="text-2xl lg:text-4xl mb-0 font-bold">
                     <?php the_field('case_study_title')?>
                 </p>
-                <p class="text-base mt-8">
+                <p class="text-lg mt-8">
                     <?php the_field('case_study_description')?>
                 </p>
             <div class="case__study__form__container max-w-lg pl-0 mt-8">

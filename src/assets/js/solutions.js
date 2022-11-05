@@ -210,7 +210,7 @@ jQuery(document).ready(function ($) {
     parseInsightsData();
     handleOptionChange();
     handleHealthPlansOptionChange();
-    setInitialNavPoint();
+    if (window.location.href.includes('health-plans')) setInitialNavPoint();
     // handleSolutionsPlayButtonClick('Desktop');
     // handleSolutionsPlayButtonClick('Mobile');
     setInsightsOverlay();

@@ -25,13 +25,13 @@
         <h3 class="text-center text-2xl lg:text-4xl text-[#7d7d7d] mb-12">Intuitive Insights for HR <br> and Benefits Leaders</h3>
         <div class="text-center lg:text-left">
             <p class="text-sm lg:text-base text-center">
-                Transparently communicate the value of your benefits programs and find
+                Transparently communicate the value of your client's benefits program and find
                 opportunities for cost savings. Whether you're looking for a high-level
                 overview or in-depth analysis, we help you make better decisions, faster.
             </p>
 
             <p class="text-sm lg:text-base text-center">
-                Here are pre-built reports to improve the health and productivity of your employees and their dependents:
+                Here are pre-built reports to improve the health and productivity of your customers and their employees:
             </p>
         </div>
     </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="w-full lg:w-1/2 lg:pl-10">
             <div class="content__description max-w-sm flex flex-col">
-                <div class="mb-10">
+                <div class="mb-4">
                     <p id="intuitiveDescription" class="text-sm lg:text-base">
                         loading..
                     </p>
