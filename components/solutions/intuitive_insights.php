@@ -22,16 +22,14 @@
 <section class="intuitive__insights w-full py-16 lg:py-24">
     <script id="intuitiveInsightsData" type="application/json"><?php echo json_encode(get_striped_text($intuitive_insights_data))?></script>
     <div class="description__container w-10/12 lg:w-7/12 mx-auto flex flex-col items-center">
-        <h3 class="text-center text-2xl lg:text-4xl text-[#7d7d7d] mb-12">Intuitive Insights for HR <br> and Benefits Leaders</h3>
+        <h3 class="text-center text-2xl lg:text-4xl text-[#7d7d7d] mb-12"><?php the_field('insights_header')?></h3>
         <div class="text-center lg:text-left">
             <p class="text-sm lg:text-base text-center">
-                Transparently communicate the value of your benefits programs and find
-                opportunities for cost savings. Whether you're looking for a high-level
-                overview or in-depth analysis, we help you make better decisions, faster.
+                <?php the_field('insights_subheader_1')?>
             </p>
 
             <p class="text-sm lg:text-base text-center">
-                Here are pre-built reports to improve the health and productivity of your employees and their dependents:
+                <?php the_field('insights_subheader_2')?>
             </p>
         </div>
     </div>
@@ -48,7 +46,7 @@
         </div>
         <div class="w-full lg:w-1/2 lg:pl-10">
             <div class="content__description max-w-sm flex flex-col">
-                <div class="mb-10">
+                <div class="mb-4">
                     <p id="intuitiveDescription" class="text-sm lg:text-base">
                         loading..
                     </p>

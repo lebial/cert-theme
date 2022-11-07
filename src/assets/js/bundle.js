@@ -5,3 +5,4 @@ import './homeAnimation';
 import './platform';
 import './aboutUs';
 import './solutions';
+import './healthplans';

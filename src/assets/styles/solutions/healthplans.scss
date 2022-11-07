@@ -1,0 +1,175 @@
+@import '../variables';
+
+.grow__your__book__of__business__section {
+    & .slick-dots {
+        bottom: -50px;
+
+        & li {
+            & button {
+                transition: all ease .3s;
+                width: 15px;
+                height: 15px;
+                background-color: white;
+                border-radius: 100%;
+
+                &::before {
+                    color: transparent;
+                }
+            }
+        }
+    }
+
+    & .slick-active {
+        & button {
+            background-color: $color-red !important;
+        }
+    }
+}
+
+//healthplans section
+
+.health__plans__insights {
+
+    & .option__button {
+        margin-top: 0;
+        border-left: 0px solid transparent;
+
+        &:first-of-type {
+            & svg {
+                & * {
+                    opacity: .5;
+                }
+            }
+        }
+
+        //icons manual sizing
+        &:nth-of-type(3) {
+            & svg {
+                width: 29px;
+            }
+        }
+
+        &:nth-of-type(4) {
+            & svg {
+                width: 20px;
+                margin-right: 11px;
+            }
+        }
+
+        &:nth-of-type(5) {
+            & svg {
+                width: 19px;
+                margin-right: 12px;
+            }
+        }
+
+        @media #{$desktopBase} {
+            &:first-of-type {
+                & svg {
+                    width: 3.5rem;
+                }
+            }
+        }
+
+
+        & .hp__option__action__button {
+            transition: all .3s ease;
+        }
+
+        & svg {
+            & * {
+                transition: all ease .3s;
+            }
+        }
+
+        &::after {
+            @media#{$desktopBase} {
+                content: '';
+            }
+        }
+
+        & .hp__option__action__button {
+            &:hover {
+                color: $color-red;
+            }
+        }
+
+        &:hover {
+            border-color: transparent;
+
+            & svg {
+                & * {
+                    fill: $color-red;
+                    stroke: $color-red;
+                    opacity: 1;
+                }
+            }
+        }
+
+
+    }
+
+    & .navigation__dot {
+        transition: all .3s ease;
+    }
+
+    .active__option {
+        border-left: 0px solid $color-red;
+
+        & .hp__option__action__button {
+            color: $color-red ;
+        }
+
+        & svg {
+            & * {
+                opacity: 1 !important;
+                fill: $color-red;
+                stroke: $color-red;
+            }
+        }
+    }
+
+    & .slick-track {
+        flex-direction: column !important;
+    }
+
+    & .slick-slide {
+        opacity: .4;
+        transition: all .3s ease;
+        justify-content: flex-start;
+    }
+
+    & .slick-current {
+        opacity: 1;
+    }
+}
+
+.solutions__insights__slider {
+    & .slick-slide {
+        &:first-of-type {
+            & svg {
+                width: 70px;
+            }
+        }
+
+        &:nth-of-type(3) {
+            & svg {
+                width: 31px;
+            }
+        }
+
+        &:nth-of-type(4) {
+            & svg {
+                width: 15px;
+                margin-right: 13px;
+            }
+        }
+
+        &:nth-of-type(5) {
+            & svg {
+                width: 17px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

@@ -51,15 +51,23 @@
         padding: 15px !important;
       }
 
-      & .frm_form_field:first-of-type {
-        & label {
-          display: none !important;
+      & .frm_form_field {
+        &:first-of-type {
+          & label {
+            display: none !important;
+          }
         }
+      }
+
+      & .frm_html_container {
+        font-size: 11px !important;
+        font-family: 'Work Sans';
       }
 
       & .frm_checkbox {
         & label {
           text-indent: -23px !important;
+          font-weight: bold;
         }
       }
 
@@ -297,6 +305,7 @@
       & .card__image {
         height: 3rem;
         width: 4.6rem;
+        margin-top: 13px;
       }
     }
 

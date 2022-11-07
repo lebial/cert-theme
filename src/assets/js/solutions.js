@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
   function setActiveStyles() {
     const buttons = $('.option__button');
     Object.values(buttons).forEach(button => {
-      if ($(button.children).text() === activeData['option_title']) return $(button).addClass('active__option');
+      if ($(button.children).text().includes(activeData['option_title'])) return $(button).addClass('active__option');
       return $(button).removeClass('active__option');
     });
   }
@@ -52,6 +52,21 @@ jQuery(document).ready(function ($) {
   function setIntuitiveData(data) {
     activeData = data;
     $('#intuitiveDescription').html(data['option_description']);
+    $('.intuitive__dynamic__content').html(data['option_description']);
+    const brochureDescription = $('.download__brochure__text');
+    const brochureLink = $('.download__brochure__link');
+    if (data['option_brochure_description']) {
+      const [firstLink, secondLink] = Object.values(data['option_brochure_links']);
+      brochureDescription.show();
+      brochureLink.show();
+      brochureDescription.html(data['option_brochure_description']);
+      brochureLink.attr('href', firstLink);
+      // if (secondLink) brochureLink.attr('onclick', `location.href = '${secondLink}';`);
+      if (secondLink) brochureLink.attr('onclick', `window.open('${secondLink}');`);
+    } else {
+      brochureDescription.hide();
+      brochureLink.hide();
+    }
     setActiveStyles();
   }
 
@@ -81,11 +96,35 @@ jQuery(document).ready(function ($) {
     }));
   }
 
+  function handleHealthPlansOptionChange() {
+    $('.hp__option__action__button').click((function () {
+      setIntuitiveData(intuitiveData[this.name]);
+      const navDot = $('.navigation__dot');
+      const buttonHeight = $($(this).parent()).height();
+      const { top } = $(this).parent().position();
+      const calculatedTop = buttonHeight / 2 + top;
+      navDot.animate({
+        'top': `${calculatedTop}px`,
+      }, 300, 'linear');
+    }));
+  }
+
   function setInsightsOverlay() {
     const buttonsOverlay = $('.container__overlay');
     const overlayHeight = buttonsOverlay.height();
     const initialPoint = overlayHeight / 4;
     buttonsOverlay.css('background-position-y', `-${initialPoint}px`);
+  }
+
+  function setInitialNavPoint() {
+    const navDot = $('.navigation__dot');
+    const [firstButton] = $('.hp__option__action__button');
+    const buttonHeight = $(firstButton).parent().height();
+    const { top } = $(firstButton).parent().position();
+    const calculatedTop = buttonHeight / 2 + top;
+    navDot.animate({
+      'top': `${calculatedTop}px`,
+    }, 300, 'linear');
   }
 
 
@@ -112,6 +151,7 @@ jQuery(document).ready(function ($) {
       }
     });
   }
+
   function handleMobileInsightsScrollLock() {
     const element = document.querySelector('.insights__container');
     const options = {
@@ -143,6 +183,7 @@ jQuery(document).ready(function ($) {
   function handleTouchStart(event) {
     touchstartY = event.changedTouches[0].screenY;
   }
+
   function handleTouchEnd(event) {
     touchendY = event.changedTouches[0].screenY;
     handleGesture();
@@ -160,7 +201,7 @@ jQuery(document).ready(function ($) {
 
   function fixElementsHeight() {
     makeElementsSameHeight($, '.option__container', false);
-    makeElementsSameHeight($, '.solutions__card', false);
+    if (screen.width > 1080) makeElementsSameHeight($, '.solutions__card', false);
   }
 
   if (window.location.href.includes("solutions")) {
@@ -168,8 +209,10 @@ jQuery(document).ready(function ($) {
     fixElementsHeight();
     parseInsightsData();
     handleOptionChange();
-    handleSolutionsPlayButtonClick('Desktop');
-    handleSolutionsPlayButtonClick('Mobile');
+    handleHealthPlansOptionChange();
+    if (window.location.href.includes('health-plans')) setInitialNavPoint();
+    // handleSolutionsPlayButtonClick('Desktop');
+    // handleSolutionsPlayButtonClick('Mobile');
     setInsightsOverlay();
     createInsightsSlider();
     fixSlideHeight();
