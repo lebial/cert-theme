@@ -50,6 +50,7 @@ jQuery(document).ready(function ($) {
   }
 
   function setIntuitiveData(data) {
+    $('#clonedLinkId').remove();
     activeData = data;
     $('#intuitiveDescription').html(data['option_description']);
     $('.intuitive__dynamic__content').html(data['option_description']);
@@ -60,9 +61,15 @@ jQuery(document).ready(function ($) {
       brochureDescription.show();
       brochureLink.show();
       brochureDescription.html(data['option_brochure_description']);
-      brochureLink.attr('href', firstLink);
-      // if (secondLink) brochureLink.attr('onclick', `location.href = '${secondLink}';`);
-      if (secondLink) brochureLink.attr('onclick', `window.open('${secondLink}');`);
+      brochureLink.attr('href', firstLink.link);
+      brochureLink.html(firstLink['button_text']);
+      if (secondLink) {
+        const cloneLink = $(brochureLink.clone());
+        cloneLink.attr('href', secondLink.link);
+        cloneLink.attr('id', 'clonedLinkId');
+        cloneLink.html(secondLink['button_text'])
+        $(brochureLink).after(cloneLink);
+      }
     } else {
       brochureDescription.hide();
       brochureLink.hide();

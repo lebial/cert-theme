@@ -54,7 +54,7 @@
                     </div>
                     <div class="red__divider w-1/3 mx-auto lg:mx-0 lg:mb-5 lg:mt-0 border border-primary border-solid"></div>
                     <p class="mx-auto mt-4 text-center lg:mx-0 lg:mt-0 lg:text-left download__brochure__text">Download our population <br> health management brochure</p>
-                    <a class="download__brochure__link bg-primary mt-4 mx-auto lg:mx-0 w-fit rounded-lg px-6 py-2 text-white text-sm" href="#" target="_blank">Download Brochure</a>
+                    <a class="download__brochure__link font-bold text-center bg-primary mt-4 mx-auto lg:mx-0 w-fit rounded-lg px-6 py-2 text-white text-sm" href="#" target="_blank">Download Brochure</a>
                 </div>
             </div>
         </div>
