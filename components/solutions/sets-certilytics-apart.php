@@ -25,7 +25,7 @@
 
 <section class="sets_apart_section w-full h-full bg-white py-16 lg:py-24">
     <div class="w-full md:w-8/12 lg:w-9/12 flex flex-col items-center mx-auto">
-        <p class="text-2xl md:text-4xl pb-0 mb-0 text-center font-bold hidden lg:block"><?php the_field('title')?></p>
+        <p class="text-2xl md:text-4xl text-gray-header pb-0 mb-0 text-center font-bold hidden lg:block"><?php the_field('title')?></p>
         <p class="text-2xl md:text-4xl text-center font-bold block lg:hidden">What Sets <br> Certilytics Apart</p>
         <!-- <div class="cards w-full grid lg:grid-cols-3 lg:gap-1 2xl:gap-20"> -->
         <div class="cards mt-6 lg:mt-14 w-full flex flex-col lg:flex-row lg:flex-wrap items-center lg:justify-center">

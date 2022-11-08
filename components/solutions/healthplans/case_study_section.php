@@ -2,7 +2,7 @@
     <div class="content__container w-10/12 flex flex-col lg:flex-row ">
         <div class="case__study__description w-full lg:w-6/12 flex justify-center lg:justify-end">
             <div class=" max-w-lg">
-                <p class="text-2xl lg:text-4xl mb-0 font-bold">
+                <p class="text-2xl lg:text-4xl mb-0 font-bold text-gray-header">
                     <?php the_field('case_study_title')?>
                 </p>
                 <p class="text-lg mt-8">

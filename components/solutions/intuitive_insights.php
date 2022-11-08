@@ -22,7 +22,7 @@
 <section class="intuitive__insights w-full py-16 lg:py-24">
     <script id="intuitiveInsightsData" type="application/json"><?php echo json_encode(get_striped_text($intuitive_insights_data))?></script>
     <div class="description__container w-10/12 lg:w-7/12 mx-auto flex flex-col items-center">
-        <h3 class="text-center text-2xl lg:text-4xl text-[#7d7d7d] mb-12"><?php the_field('insights_header')?></h3>
+        <h3 class="text-center text-2xl lg:text-4xl text-gray-header mb-12"><?php the_field('insights_header')?></h3>
         <div class="text-center lg:text-left">
             <p class="text-sm lg:text-base text-center">
                 <?php the_field('insights_subheader_1')?>

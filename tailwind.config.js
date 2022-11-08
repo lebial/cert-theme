@@ -15,6 +15,7 @@ module.exports = {
                 "light-blue": "#8dace8",
                 "gray-primary": "#e6e6e6",
                 "gray-secondary": "#f2f2f2",
+                "gray-header": "#7e7e7e",
                 "dark-background": "#001d3a",
                 "dark-blue-background": "#011b3a",
                 "second-blue-background": "#05133a",

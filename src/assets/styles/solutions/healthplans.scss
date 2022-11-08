@@ -63,6 +63,12 @@
             }
         }
 
+        &:nth-of-type(6) {
+            & svg {
+                height: 20px
+            }
+        }
+
         @media #{$desktopBase} {
             &:first-of-type {
                 & svg {
@@ -169,6 +175,12 @@
             & svg {
                 width: 17px;
                 margin-right: 10px;
+            }
+        }
+
+        &:nth-of-type(6) {
+            & svg {
+                height: 20px
             }
         }
     }

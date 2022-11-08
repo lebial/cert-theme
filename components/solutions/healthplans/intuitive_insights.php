@@ -26,7 +26,7 @@
     <script id="intuitiveInsightsData" type="application/json"><?php echo json_encode(get_striped_text($intuitive_insights_data))?></script>
     <div class="description__container w-10/12 lg:w-7/12 mx-auto flex flex-col items-center">
         <div class="text-center lg:text-left">
-            <p class=" text-xl lg:text-4xl text-center">
+            <p class=" text-xl lg:text-4xl text-center text-gray-header">
                 Make better decisions, faster.
             </p>
         </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="red__divider w-1/3 mx-auto lg:mx-0 lg:mb-5 lg:mt-0 border border-primary border-solid"></div>
                     <p class="mx-auto mt-4 text-center lg:mx-0 lg:mt-0 lg:text-left download__brochure__text">Download our population <br> health management brochure</p>
-                    <a class="download__brochure__link bg-primary mt-4 mx-auto lg:mx-0 w-fit rounded-lg px-6 py-2 text-white text-sm" href="#" target="_blank">Download Brochure</a>
+                    <a class="download__brochure__link font-bold text-center bg-primary mt-4 mx-auto lg:mx-0 w-fit rounded-lg px-6 py-2 text-white text-sm" href="#" target="_blank">Download Brochure</a>
                 </div>
             </div>
         </div>

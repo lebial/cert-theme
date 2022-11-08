@@ -38,7 +38,7 @@
   </div>
 
   <div class="data__container w-full md:w-8/12 lg:w-6/12 flex flex-col items-center mx-auto">
-    <p class="text-2xl lg:text-4xl font-normal text-center"><?php the_field('decision_title')?></p>
+    <p class="text-2xl lg:text-4xl font-normal text-center text-gray-header"><?php the_field('decision_title')?></p>
     <div class="decision__making__grid mt-14 w-full flex flex-col lg:flex-row lg:flex-wrap items-center lg:justify-center">
       <?php render_items()?>
     </div>
