@@ -26,7 +26,7 @@
     <script id="intuitiveInsightsData" type="application/json"><?php echo json_encode(get_striped_text($intuitive_insights_data))?></script>
     <div class="description__container w-10/12 lg:w-7/12 mx-auto flex flex-col items-center">
         <div class="text-center lg:text-left">
-            <p class=" text-xl lg:text-4xl text-center">
+            <p class=" text-xl lg:text-4xl text-center text-gray-header">
                 Make better decisions, faster.
             </p>
         </div>

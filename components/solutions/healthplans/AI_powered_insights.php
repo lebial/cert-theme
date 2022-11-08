@@ -5,9 +5,9 @@ function render_points()
   $check_mark = get_field('checkmark_icon');;;;
 
   foreach ($points as $point) {
-    echo '<div class="list__item__container flex w-fit items-center">';
-    echo '<div class="text-primary mr-2"><img class="w-3 lg:w-4" src="'.$check_mark.'" alt="checkmark icon"></div>';
-    echo '<p class=" text-base max-w-[250px] lg:max-w-fit lg:text-2xl">' . $point . '</p>';
+    echo '<div class="list__item__container flex w-fit items-start">';
+    echo '<div class="text-primary mr-2 pt-[10px]"><img class="w-3 lg:w-4" src="'.$check_mark.'" alt="checkmark icon"></div>';
+    echo '<p class=" text-base max-w-[250px] lg:max-w-none lg:text-2xl">' . $point . '</p>';
     echo '</div>';
   }
 }
