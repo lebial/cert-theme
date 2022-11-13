@@ -3,6 +3,7 @@
 ?>
 
 <?php get_header() ?>
+<?php get_template_part('components/solutions/case_study_modal_form') ?>
 <?php get_template_part('components/solutions/solutions_header') ?>
 <?php get_template_part('components/solutions/solutions_decision_making') ?>
 <?php get_template_part('components/solutions/brochure_section') ?>

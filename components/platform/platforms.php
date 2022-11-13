@@ -58,9 +58,11 @@
   function render_desktop_platform_options($data) {
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
-    echo '<div class="platforms__container w-full flex mb-32 relative">';
+    // echo '<div class="platforms__container w-full flex mb-32 relative">';
+    echo '<div class="platforms__container platforms__down__arrow__container-animation w-full flex mb-32 relative">';
       echo '<div class="w-full absolute top-3">';
-        echo '<img class="style-svg platforms__down__arrow opacity-0 mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
+        // echo '<img class="style-svg platforms__down__arrow opacity-0 mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
+        echo '<img class="style-svg platforms__down__arrow mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
       echo '</div>';
       echo '<div class="platforms__buttons__animated platform-slide-animate w-full absolute flex" style="top: -30px;" data-platform-anim="platforms-slide-in">';
         echo '<div class="w-1/2 flex justify-end relative mr-[6%]">';
@@ -110,7 +112,7 @@
   </div>
   <?php render_desktop_platform_options($platforms_data) ?>
   <div class="w-full flex justify-center">
-    <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-aos="fade-up" data-aos-offset="200">
+    <div id="platforms-slide" class=" platforms__slider__container w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate">
       <button class="platforms__button left" name="platformsPrev">
         <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>

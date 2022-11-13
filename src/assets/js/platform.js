@@ -1,6 +1,6 @@
 import getNavHeight, { createObserver } from "./utils/utils";
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     const sliderOptions = {
         inifinite: true,
         slidesToShow: 1,
@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
     }
 
     function handleOptionColapse() {
-        $(".submenu__button").on("click", function(e) {
+        $(".submenu__button").on("click", function (e) {
             e.preventDefault();
             const [element, arrow] = $(this).children();
             $(arrow).toggleClass("rotate__arrow");
@@ -31,11 +31,11 @@ jQuery(document).ready(function($) {
     }
 
     function createValidationSlider() {
-        $(".validation__slider").slick({...sliderOptions, dots: false });
+        $(".validation__slider").slick({ ...sliderOptions, dots: false });
     }
 
     function revealDataSlideContent() {
-        $(".data__slides__content__button").click(function() {
+        $(".data__slides__content__button").click(function () {
             const parent = $(this).parent();
             parent.toggleClass(".slide__open");
             const isOpen = parent.hasClass(".slide__open");
@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 
     function setPlatformsSlideData(idx) {
         const [leftArrow, title, icon, platformDescription, rightArrow] =
-        $("#platforms-slide").children();
+            $("#platforms-slide").children();
         const { icon_desktop, text, description } = platformsData[idx];
         title.innerHTML = text;
         icon.firstChild.src = icon_desktop;
@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
         const acceleratorData = Object.values(data.platform_1.buttons);
         const nucleusData = Object.values(data.platform_2.buttons);
         const newPlatformsData = [...acceleratorData, ...nucleusData].map(
-            (data, idx) => ({...data, idx })
+            (data, idx) => ({ ...data, idx })
         );
         platformsData = newPlatformsData;
         setPlatformsSlideData(0);
@@ -112,20 +112,25 @@ jQuery(document).ready(function($) {
 
     function handlePlatformScrollObserver() {
         const options = {
-            rootMargin: "-55% 0px 0px 0px",
+            // rootMargin: "-55% 0px 0px 0px",
+            rootMargin: "-80% 0px 0px 0px",
         };
         const platformButtons = document.querySelector(
             ".platforms__buttons__animated"
         );
         // const platformsSlide = document.getElementById('platforms-slide');
 
-        const obsvElement = document.querySelector(".platforms__container");
+        const obsvElement = document.querySelector(".platforms__down__arrow__container-animation");
 
         const observer = createObserver(([entry]) => {
-            if (!entry.target.isIntersecting) {
-                $(platformButtons).toggleClass("platform-slide-animate");
-                $(".platforms__down__arrow").toggleClass("opacity-0");
-                // $(platformsSlide).toggleClass('platform-slide-animate');
+            if (entry.isIntersecting) {
+                $(platformButtons).removeClass("platform-slide-animate");
+                $(".platforms__down__arrow").removeClass("opacity-0");
+                $('.platforms__slider__container ').addClass('opacity-0');
+            } else {
+                $(".platforms__down__arrow").addClass("opacity-0");
+                $(platformButtons).addClass("platform-slide-animate");
+                $('.platforms__slider__container ').removeClass('opacity-0');
             }
         }, options);
 
@@ -133,10 +138,10 @@ jQuery(document).ready(function($) {
     }
 
     function addArrowToSlider(slider) {
-        $(`${slider}-prev`).click(function() {
+        $(`${slider}-prev`).click(function () {
             $(slider).slick("slickPrev");
         });
-        $(`${slider}-next`).click(function() {
+        $(`${slider}-next`).click(function () {
             $(slider).slick("slickNext");
         });
     }
@@ -146,7 +151,7 @@ jQuery(document).ready(function($) {
         const element = $(".validation__headline");
         $(".validation__slider").on(
             "beforeChange",
-            function(event, slick, currentSlide, nextSlide) {
+            function (event, slick, currentSlide, nextSlide) {
                 element.removeClass("aos-animate");
                 element.removeClass("change-red");
                 element.text(words[nextSlide]);
@@ -254,7 +259,7 @@ jQuery(document).ready(function($) {
     }
 
     if (window.location.href.includes("platform")) {
-        setHeroMarginTop();
+        // setHeroMarginTop();
         handleOptionColapse();
         revealDataSlideContent();
         createValidationSlider();

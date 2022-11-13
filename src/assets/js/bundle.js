@@ -6,3 +6,4 @@ import './platform';
 import './aboutUs';
 import './solutions';
 import './healthplans';
+import './thankYou';

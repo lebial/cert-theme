@@ -26,7 +26,6 @@ jQuery(document).ready(function ($) {
     function handleVidModalClose() {
         const closeButton = document.querySelector('.home__video__modal__close');
         closeButton.addEventListener('click', () => {
-            debugger;
             $("#homepageVideoModal").hide();
             document.querySelectorAll('video').forEach(vid => vid.pause());
         })

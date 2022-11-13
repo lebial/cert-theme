@@ -12,7 +12,10 @@
                 <p class="text-lg">
                     <?php the_field('case_study_sub_description')?>
                 </p>
-                <div class="mt-4 text-primary"><?php the_field('download_form_modal_code')?></div>
+                <div class="mt-4 text-primary">
+                    <?php the_field('download_form_modal_code')?>
+                    <button type="button" class="case__open__modal__button hover:text-secondary"><?php the_field('modal_button_text')?></button>
+                </div>
             </div>
         </div>
         <div class="case__study__form w-full md:w-6/12 flex flex-col mt-10 lg:mt-0 mx-auto lg:pl-[5%]">
