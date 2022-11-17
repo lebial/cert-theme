@@ -311,10 +311,14 @@ p {
 form {
     margin-top: 44px;
 
+    & * {
+        font-family: 'Work Sans' !important;
+    }
+
     select {
         -webkit-appearance: none !important;
         appearance: none !important;
-        border: 2px solid $color-red  !important;
+        border: 2px solid $color-red !important;
         padding: 18px !important;
         border-radius: 0 !important;
         background-image: url(assets/images/icon-select-arrow.svg);
@@ -324,7 +328,7 @@ form {
         font-family: 'Work Sans', sans-serif !important;
         height: auto !important;
         font-size: 22px !important;
-        color: $color-navy  !important;
+        color: $color-navy !important;
 
         option {
             color: $color-navy;
@@ -338,25 +342,25 @@ form {
         border: none !important;
         box-shadow: none !important;
         border-radius: 0 !important;
-        border-bottom: 2px solid $color-red  !important;
+        border-bottom: 2px solid $color-red !important;
         padding: 10px 10px 10px 0 !important;
         padding: 15px 10px 15px 0 !important;
         height: auto !important;
         font-family: 'Work Sans', sans-serif !important;
         font-size: 18px !important;
-        color: $color-navy  !important;
+        color: $color-navy !important;
 
         ::placeholder {
-            color: $color-grey  !important;
+            color: $color-grey !important;
             opacity: 1;
         }
 
         :-ms-input-placeholder {
-            color: $color-grey  !important;
+            color: $color-grey !important;
         }
 
         ::-ms-input-placeholder {
-            color: $color-grey  !important;
+            color: $color-grey !important;
         }
     }
 
@@ -375,7 +379,7 @@ form {
             -webkit-appearance: none !important;
             appearance: none !important;
             border-radius: 6px !important;
-            border: 2px solid $color-red  !important;
+            border: 2px solid $color-red !important;
             position: relative !important;
             margin: auto !important;
             text-decoration: none !important;
@@ -389,7 +393,7 @@ form {
             letter-spacing: -0.59px !important;
             font-weight: 600 !important;
             padding: 12px !important;
-            background-color: $color-red  !important;
+            background-color: $color-red !important;
             display: table !important;
             position: relative !important;
             z-index: 2 !important;
@@ -404,7 +408,7 @@ form {
 
             &:hover {
                 background-color: white !important;
-                color: $color-red  !important;
+                color: $color-red !important;
             }
 
             // &:after {
@@ -564,7 +568,7 @@ form {
 .switcher {
     -webkit-appearance: none !important;
     appearance: none !important;
-    border: 2px solid $color-red  !important;
+    border: 2px solid $color-red !important;
     border-radius: 0 !important;
     background-image: url(../../assets/images/icon-select-arrow.svg);
     background-color: #fff !important;
@@ -573,7 +577,7 @@ form {
     background-position: right 15px center;
     font-family: 'Work Sans', sans-serif !important;
     height: auto !important;
-    color: $color-navy  !important;
+    color: $color-navy !important;
     min-width: 132px;
     display: table;
     margin: 0 auto 75px;
@@ -910,7 +914,7 @@ header {
 
                                 @media #{$desktopMD} {
                                     padding-left: 0;
-                                    color: $color-blue  !important;
+                                    color: $color-blue !important;
                                 }
 
                                 &:before {
@@ -1015,7 +1019,7 @@ header {
 
                 &:hover {
                     background-color: white;
-                    color: $color-red  !important;
+                    color: $color-red !important;
                 }
             }
         }
@@ -1094,6 +1098,8 @@ footer {
 /********** HOME **********/
 
 .c-page-home {
+    margin-top: 0px;
+
     @media #{$tablet} {
         margin-top: 0px;
     }
@@ -1917,7 +1923,7 @@ footer {
                 a.btn-flat {
                     margin-top: 18px;
                     background-color: transparent;
-                    color: $color-blue  !important;
+                    color: $color-blue !important;
                     width: fit-content;
                     margin-top: auto;
                     text-align: left;
@@ -1977,6 +1983,8 @@ footer {
 }
 
 .c-page-default {
+    margin-top: 0;
+
     .cb:last-of-type {
         margin-bottom: 0;
     }
@@ -2152,6 +2160,8 @@ footer {
 /********** TEMPLATE: SINGLE PRODUCT **********/
 
 .c-page-single-product {
+    margin-top: 0;
+
     .page-header {
         .contain {
             .box {
@@ -2261,6 +2271,8 @@ footer {
 /********** BLOG **********/
 
 .c-page-articles {
+    margin-top: 0;
+
     .content {
         padding: 0;
 
@@ -2357,6 +2369,7 @@ footer {
 /********** BLOG SINGLE **********/
 
 .c-page-single-post {
+    margin-top: 0;
     position: relative;
     width: 100%;
     float: left;
@@ -2637,7 +2650,7 @@ footer {
 .selectric {
     -webkit-appearance: none !important;
     appearance: none !important;
-    border: 2px solid $color-red  !important;
+    border: 2px solid $color-red !important;
     padding: 18px !important;
     border-radius: 0 !important;
     background-image: url(assets/images/icon-select-arrow.svg);
@@ -2647,7 +2660,7 @@ footer {
     font-family: 'Work Sans', sans-serif !important;
     height: auto !important;
     font-size: 22px !important;
-    color: $color-navy  !important;
+    color: $color-navy !important;
     overflow: hidden;
 }
 
@@ -2896,8 +2909,13 @@ selectric .label {
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 90vh;
+    padding: 20px 0;
     width: 100%;
+    height: auto;
+
+    @media #{$tablet} {
+        height: 85vh;
+    }
 }
 
 .hero__image {

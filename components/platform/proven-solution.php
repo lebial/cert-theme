@@ -26,7 +26,7 @@ function renderSolutions($data)
 </section>
 
 <section
-  class="solutions-parallax block lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11 "
+  class="solutions-parallax block lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-cover bg-dark-blue-background mt-11 "
   style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw"
   id="<?php the_field('platforms_section_id')?>"
 >

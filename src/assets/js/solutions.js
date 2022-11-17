@@ -210,8 +210,27 @@ jQuery(document).ready(function ($) {
     makeElementsSameHeight($, '.option__container', false);
     if (screen.width > 1080) makeElementsSameHeight($, '.solutions__card', false);
   }
+  function handleModalToggle() {
+    $('.case__open__modal__button').click(() => {
+      $('.case__study__modal').toggle();
+    });
+    $('.case__modal__close__button').click(() => {
+      $('.case__study__modal').toggle();
+    });
+
+    $(document).keydown(function (e) {
+      const code = e.keyCode || e.which;
+      if (code === 27) $(".case__study__modal").hide();
+    });
+
+    $('.case__study__modal').click((e) => {
+      if ($(e.target).is($('.case__study__modal'))) $('.case__study__modal').hide();
+    })
+
+  }
 
   if (window.location.href.includes("solutions")) {
+    handleModalToggle();
     createBrochureCarousel();
     fixElementsHeight();
     parseInsightsData();

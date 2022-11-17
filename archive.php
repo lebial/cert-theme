@@ -10,23 +10,14 @@
 			
 			<div class="image">
 				
-				<?php if(z_taxonomy_image()):
-					
-					$image = z_taxonomy_image(); ?>
-					
-					<img class="" data-object-fit="cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-					
-					<?php else:
-						
-						$image = get_field('background_image', 714);	?>
-						
-						<img class="" data-object-fit="cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				<?php $image = get_field('background_image', 714);	?>
+				
+				<img class="" data-object-fit="cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 						
 			</div>
 				
-				<div class="color-guard"></div>
+			<div class="color-guard"></div>
 			
-			<?php endif; ?>
 			
 			<div class="contain">
 				

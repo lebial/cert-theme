@@ -45,7 +45,7 @@
         //icons manual sizing
         &:nth-of-type(3) {
             & svg {
-                width: 29px;
+                width: 26px;
             }
         }
 
@@ -72,7 +72,7 @@
         @media #{$desktopBase} {
             &:first-of-type {
                 & svg {
-                    width: 3.5rem;
+                    width: 35px;
                 }
             }
         }
@@ -154,13 +154,13 @@
     & .slick-slide {
         &:first-of-type {
             & svg {
-                width: 70px;
+                width: 40px;
             }
         }
 
         &:nth-of-type(3) {
             & svg {
-                width: 31px;
+                width: 26px;
             }
         }
 

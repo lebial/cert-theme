@@ -52,7 +52,7 @@ function renderBulletPoints()
     </div>
     <div class="graphic__row w-full flex justify-center mt-10 lg:mt-20">
         <div class="button__container w-9/12 md:w-4/12 flex justify-center">
-            <a href="<?php the_field('brochure_download_link') ?>" target="_blank"
+            <a href="<?php the_field('brochure_download_link') ?>" download 
                 class="action__button rounded-xl px-8 py-4 bg-white text-primary font-bold text-xl"><?php the_field('brochure_button_text') ?></a>
         </div>
     </div>
