@@ -22,6 +22,8 @@
     </div>
   </div>
   <div class="validation__hitrust__container w-full flex justify-center flex-1">
-    <img src="<?php the_field('validation_hitrust_logo') ?>" class="mt-10 lg:mt-16 h-full" alt="HITRUST logo">
+    <a href="https://hitrustalliance.net" class="h-fit w-fit mt-10 " target="_blank">
+      <img src="<?php the_field('validation_hitrust_logo') ?>" class="lg:mt-16 h-full" alt="HITRUST logo">
+    </a>
   </div>
 </section>

@@ -5,6 +5,7 @@ jQuery(document).ready(function ($) {
   let activeData = {};
   let touchstartY = 0;
   let touchendY = 0;
+  let isDropdownOpen = false;
 
   function handleSolutionsPlayButtonClick(version) {
     const id = `solutions${version}VideoButton`;
@@ -52,18 +53,22 @@ jQuery(document).ready(function ($) {
   function setIntuitiveData(data) {
     $('#clonedLinkId').remove();
     activeData = data;
+    const currentData = data;
+    if (!currentData['option_brochure_links']) currentData['option_brochure_links'] = { 'link_1': { 'button_text': null } }
     $('#intuitiveDescription').html(data['option_description']);
     $('.intuitive__dynamic__content').html(data['option_description']);
     const brochureDescription = $('.download__brochure__text');
     const brochureLink = $('.download__brochure__link');
-    if (data['option_brochure_description']) {
-      const [firstLink, secondLink] = Object.values(data['option_brochure_links']);
+    const redDivider = $('.red__divider');
+    if (data['option_brochure_description'] || data['option_brochure_links']['link_1']['button_text']) {
+      const [firstLink, secondLink = {}] = Object.values(data['option_brochure_links']);
       brochureDescription.show();
       brochureLink.show();
+      redDivider.show();
       brochureDescription.html(data['option_brochure_description']);
       brochureLink.attr('href', firstLink.link);
       brochureLink.html(firstLink['button_text']);
-      if (secondLink) {
+      if (secondLink['button_text']) {
         const cloneLink = $(brochureLink.clone());
         cloneLink.attr('href', secondLink.link);
         cloneLink.attr('id', 'clonedLinkId');
@@ -73,9 +78,15 @@ jQuery(document).ready(function ($) {
     } else {
       brochureDescription.hide();
       brochureLink.hide();
+      redDivider.hide();
     }
     setActiveStyles();
   }
+
+  // function setDropdownData() {
+  //   $('.mobile__insights__data__button img').attr('src', activeData['option_image']);
+  //   $('.mobile__insights__data__button span').html(activeData['option_title']);
+  // }
 
   function parseInsightsData() {
     const data = JSON.parse(
@@ -89,11 +100,13 @@ jQuery(document).ready(function ($) {
     }, {});
 
     setIntuitiveData(activeData);
+    // setDropdownData();
   }
 
   function handleOptionChange() {
     $('.option__action__button').click((function () {
       setIntuitiveData(intuitiveData[this.name]);
+      // setDropdownData();
       const buttonsOverlay = $('.container__overlay');
       const overlayHeight = -buttonsOverlay.height() / 4;
       const { top } = $(this).parent().position();
@@ -103,9 +116,19 @@ jQuery(document).ready(function ($) {
     }));
   }
 
+  function handleMobileDropdownChange() {
+    // $('.mobile__insights__data__button').click(() => {
+    //   const height = isDropdownOpen ? 0 : 200;
+    //   $('.insights__dropdown__body').animate({ height }, 200);
+    //   $('.right__margin__arrow').toggleClass('rotate__right__arrow');
+    //   isDropdownOpen = !isDropdownOpen;
+    // });
+  }
+
   function handleHealthPlansOptionChange() {
     $('.hp__option__action__button').click((function () {
       setIntuitiveData(intuitiveData[this.name]);
+      isDropdownOpen = false;
       const navDot = $('.navigation__dot');
       const buttonHeight = $($(this).parent()).height();
       const { top } = $(this).parent().position();
@@ -142,7 +165,7 @@ jQuery(document).ready(function ($) {
       slidesToShow: 1,
       centerMode: true,
       arrows: false,
-      dots: false,
+      dots: true,
       verticalSwiping: true,
       infinite: false,
     });
@@ -159,48 +182,48 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function handleMobileInsightsScrollLock() {
-    const element = document.querySelector('.insights__container');
-    const options = {
-      threshold: 1,
-    }
-    const observer = createObserver(([entry]) => {
-      if (entry.isIntersecting && $(window).width() < 1024) {
-        $('body').css('overflow', 'hidden');
-        addScrollToSlide();
-        observer.unobserve(element);
-      }
-    }, options);
-    observer.observe(element);
-  }
+  // function handleMobileInsightsScrollLock() {
+  //   const element = document.querySelector('.insights__container');
+  //   const options = {
+  //     threshold: 1,
+  //   }
+  //   const observer = createObserver(([entry]) => {
+  //     if (entry.isIntersecting && $(window).width() < 1024) {
+  //       $('body').css('overflow', 'hidden');
+  //       addScrollToSlide();
+  //       observer.unobserve(element);
+  //     }
+  //   }, options);
+  //   observer.observe(element);
+  // }
 
 
-  function handleGesture() {
-    if (touchendY < touchstartY) {
-      // console.log('Swiped up');
-      $('.solutions__insights__slider').slick('slickNext');
-    }
+  // function handleGesture() {
+  //   if (touchendY < touchstartY) {
+  //     // console.log('Swiped up');
+  //     $('.solutions__insights__slider').slick('slickNext');
+  //   }
 
-    if (touchendY > touchstartY) {
-      // console.log('Swiped down');
-      $('.solutions__insights__slider').slick('slickPrev');
-    }
-  }
+  //   if (touchendY > touchstartY) {
+  //     // console.log('Swiped down');
+  //     $('.solutions__insights__slider').slick('slickPrev');
+  //   }
+  // }
 
-  function handleTouchStart(event) {
-    touchstartY = event.changedTouches[0].screenY;
-  }
+  // function handleTouchStart(event) {
+  //   touchstartY = event.changedTouches[0].screenY;
+  // }
 
-  function handleTouchEnd(event) {
-    touchendY = event.changedTouches[0].screenY;
-    handleGesture();
-  }
+  // function handleTouchEnd(event) {
+  //   touchendY = event.changedTouches[0].screenY;
+  //   handleGesture();
+  // }
 
-  function addScrollToSlide() {
-    const gestureZone = document.querySelector('body');
-    gestureZone.addEventListener('touchstart', handleTouchStart, false);
-    gestureZone.addEventListener('touchend', handleTouchEnd, false);
-  }
+  // function addScrollToSlide() {
+  //   const gestureZone = document.querySelector('body');
+  //   gestureZone.addEventListener('touchstart', handleTouchStart, false);
+  //   gestureZone.addEventListener('touchend', handleTouchEnd, false);
+  // }
 
   function fixSlideHeight() {
     makeElementsSameHeight($, '.slick-slide');
@@ -229,20 +252,42 @@ jQuery(document).ready(function ($) {
 
   }
 
-  if (window.location.href.includes("solutions")) {
+  function adjustProvidersIntuitiveInsightsIcons() {
+    $('.health__plans__insights').addClass('providers__insights__section');
+    const icons = $('.hp__option__action__button svg');
+    // $(icons[0]).attr('style', 'width: 26px !important');
+    // $(icons[1]).attr('style', 'width: 20px !important');
+    // $(icons[2]).attr('style', 'height: auto !important');
+    // $(icons[4]).attr('style', 'width: 26px !important');
+    // $(icons[5]).attr('style', 'width: 20px !important');
+    // $(icons[6]).attr('style', 'height: auto !important');
+    // $(icons[7]).attr('style', ' width: 23px !important, margin-right: 10px !important');
+  }
+
+  function handleGrowArrowClick() {
+    const slider = '.grow_book_slider';
+    $(`${slider}-next`).click(() => $(slider).slick('slickNext'));
+    $(`${slider}-prev`).click(() => $(slider).slick('slickPrev'));
+  }
+
+  const { href } = window.location;
+  if (href.includes("solutions")) {
     handleModalToggle();
     createBrochureCarousel();
     fixElementsHeight();
     parseInsightsData();
     handleOptionChange();
     handleHealthPlansOptionChange();
-    if (window.location.href.includes('health-plans')) setInitialNavPoint();
+    // handleMobileDropdownChange();
+    setInsightsOverlay();
+    if (href.includes('health-plans') || href.includes('providers')) setInitialNavPoint();
+    if (href.includes('providers')) adjustProvidersIntuitiveInsightsIcons();
     // handleSolutionsPlayButtonClick('Desktop');
     // handleSolutionsPlayButtonClick('Mobile');
-    setInsightsOverlay();
     createInsightsSlider();
     fixSlideHeight();
-    handleMobileInsightsScrollLock();
+    // handleMobileInsightsScrollLock();
+    handleGrowArrowClick();
   }
 
 });

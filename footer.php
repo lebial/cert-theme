@@ -71,7 +71,7 @@
 					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="footer__responsive__hidden text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI - powered solutions can deliver real value for your organization—today.'; ?></p>
+				<p class="footer__responsive__hidden footer__chat__description text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI-powered solutions can deliver real value for your <span>organization—today.</span>'; ?></p>
 				<a
 					class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]"
 					target="_blank"
