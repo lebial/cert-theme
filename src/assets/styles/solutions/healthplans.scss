@@ -36,6 +36,8 @@
 
         &:first-of-type {
             & svg {
+                width: 30px;
+
                 & * {
                     opacity: .5;
                 }
@@ -43,6 +45,12 @@
         }
 
         //icons manual sizing
+        &:nth-of-type(2) {
+            & svg {
+                width: 30px;
+            }
+        }
+
         &:nth-of-type(3) {
             & svg {
                 width: 26px;

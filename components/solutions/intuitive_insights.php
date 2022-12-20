@@ -46,8 +46,12 @@
                 <div class="w-full h-full hidden lg:block ">
                     <?php render_options($intuitive_insights_data) ?>
                 </div>
-                <div class="w-full h-full block lg:hidden solutions__insights__slider">
-                    <?php render_options($intuitive_insights_data) ?>
+                <div class="mobile__insights w-full h-full block lg:hidden">
+                    <div class="w-full h-44 relative">
+                        <div class="insights__dropdown__body h-44 overflow-y-scroll inline-block bg-white shadow-md p-3 absolute w-full left-1/2 -translate-x-1/2">
+                            <?php render_options($intuitive_insights_data) ?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="w-full lg:w-1/2 lg:pl-10">

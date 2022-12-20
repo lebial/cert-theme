@@ -86,9 +86,10 @@
 			<div class="contain">
 				
 				<select class="switcher" name="event-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
-
-				    <?php $option = '<option value="' . get_option('home') . '/news-insights/">All Categories</option>'; // change category to your custom page slug
-				        $categories = get_categories(); 
+					<option value="" selected>Select Category</option>
+					<option value="<?php echo get_option('home') ?>/news-insights/">All Categories</option>
+				    <?php 
+						$categories = get_categories(); 
 				        foreach ($categories as $category) {
 				            $option .= '<option value="'.get_option('home').'/news-insights/category/'.$category->slug.'">';
 				            $option .= $category->cat_name;

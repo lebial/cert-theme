@@ -145,7 +145,7 @@
         <div class="flex flex-col lg:flex-row w-7/12 lg:w-auto mt-8 mx-auto" data-aos="fade-in" data-aos-offset="-35">
           <div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">
             <a
-              class="p-2 w-full bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+              class="p-2 w-full bg-primary rounded-md font-bold border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
               href="<?php echo $base_url?>/solutions/health-plans-pbms"
             >
               Health Plans
@@ -153,15 +153,23 @@
           </div>
           <div class="flex-1 flex mb-5 lg:mb-0">
             <a
-              class="p-2 w-full mx-0 lg:mx-1 bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+              class="p-2 w-full mx-0 lg:mx-1 bg-primary font-bold rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
               href="<?php echo $base_url?>/solutions/employers"
             >
               Employers
             </a>
           </div>
+          <div class="flex-1 flex mb-5 lg:mb-0">
+            <a
+              class="p-2 w-full ml-0 lg:ml-2 bg-primary font-bold rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+              href="<?php echo $base_url?>/solutions/advisors"
+            >
+             Advisors 
+            </a>
+          </div>
           <div class="flex-1 flex">
             <a
-              class="p-2 w-full ml-0 lg:ml-2 bg-primary rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+              class="p-2 w-full ml-0 lg:ml-2 bg-primary font-bold rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
               href="<?php echo $base_url?>/solutions/providers"
             >
               Providers

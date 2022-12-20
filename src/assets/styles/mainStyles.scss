@@ -806,6 +806,7 @@ header {
                 position: relative;
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
 
                 @media #{$desktopMD} {
                     align-items: center;
@@ -1016,6 +1017,7 @@ header {
                 color: white !important;
                 transition: all ease .3s;
                 border-radius: 6px;
+                padding: 6px !important;
 
                 &:hover {
                     background-color: white;

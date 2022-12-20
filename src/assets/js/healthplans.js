@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
     function createGrowBookCarousel() {
         $('.grow_book_slider').slick({
@@ -9,8 +9,8 @@ jQuery(document).ready(function($) {
         });
     }
 
-
-    if (window.location.href.includes("health-plans")) {
+    const { href } = window.location;
+    if (href.includes("health-plans") || href.includes('providers')) {
         createGrowBookCarousel();
     }
 

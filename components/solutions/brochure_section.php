@@ -10,6 +10,7 @@ function renderBulletPoints()
 }
 ?>
 
+<?php if (get_field('brochure_section_title')) :?>
 <section id="clinicalPointSolutions" class="download__brochure w-full pb-16 lg:pb-24 flex flex-col items-center "
     style="background-image: url(<?php the_field('brochure_section_background') ?>); background-size: cover;">
     <div class="graphic__row w-10/12 mt-16 lg:mt-24">
@@ -58,3 +59,4 @@ function renderBulletPoints()
     </div>
 
 </section>
+<?php endif;?>
