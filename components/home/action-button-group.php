@@ -17,7 +17,7 @@
         <?php echo get_field('action_group_description') ?>
       </p>
     </div>
-    <div class="w-1/2 mx-auto py-12 px-4 sm:px-0 flex flex-col sm:flex-row sm:justify-center">
+    <div class="w-1/2 mx-auto pt-12 pb-12 md:pb-0 md px-4 sm:px-0 flex flex-col sm:flex-row sm:justify-center">
       <?php render_action_buttons() ?>
     </div>
   </div>
