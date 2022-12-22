@@ -29,7 +29,7 @@
           <div class="grow_book_slider mt-8 lg:mt-16">
             <?php render_grow_slides()?>
           </div>
-          <div class="grow_book_slider_arrows w-[93vw] xl:w-full absolute flex justify-between top-1/2 left-1/2" style="transform: translate(-50%, -50%)">
+          <div class="grow_book_slider_arrows w-[93vw] absolute flex justify-between top-1/2 left-1/2" style="transform: translate(-50%, -50%)">
             <?php custom_slider_arrows('grow_book_slider')?>
           </div>
         </div>

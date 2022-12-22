@@ -5,7 +5,7 @@
                 <p class="text-2xl lg:text-4xl mb-0 text-gray-header">
                     <?php the_field('case_study_title')?>
                 </p>
-                <div class=" w-32 border-[3px] border-solid border-primary my-6"></div>
+                <div class=" h-0 w-32 border-[2px] border-solid border-primary my-6"></div>
                 <p class="text-xl ">
                     <?php the_field('case_study_description')?>
                 </p>

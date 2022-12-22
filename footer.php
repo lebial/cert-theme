@@ -89,14 +89,11 @@
 	<div class="second-row flex justify-end ">
 		<!-- <div class="flex social__icons mt-3  xl:hidden"> -->
 		<div class="flex social__icons mt-3  md:hidden">
-			<a href="https://www.linkedin.com/company/11752591/">
+			<a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 			</a>
-			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
+			<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
-			</a>
-			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
-				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
 	</div>
@@ -107,15 +104,15 @@
 		</div>
 		<div class="corp__info relative flex flex-col md:flex-row mt-4 md:mt-0">
 			<div class="absolute right-[6px] top-[-58px] social__icons tw-hidden md:flex">
-				<a href="https://www.linkedin.com/company/11752591/">
+				<a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer">
 					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 				</a>
-				<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
+				<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
 					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 				</a>
-				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
-					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
-				</a>
+				<!-- <a href="https://www.facebook.com/sharer/sharer.php?u=<?php //echo $base_url ?>">
+					<img src="<?php //echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
+				</a> -->
 			</div>
 			<div>
 				<span>&reg;</span>

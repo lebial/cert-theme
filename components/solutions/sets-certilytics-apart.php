@@ -13,7 +13,7 @@
                         // echo '<div class="card__content w-7/12 md:w-full">';
                         echo '<div class="card__content w-full">';
                             // echo '<div class="card__content--title text-left md:text-center pt-0 pb-4 md:pt-4 md:pb-4 lg:px-8">';
-                            echo '<div class="card__content--title text-center pt-4 pb-4 lg:px-8">';
+                            echo '<div class="card__content--title text-center pt-4 pb-4 ">';
                                 echo '<h4 class="text-lg leading-tight font-bold text-[#5E5E5E]">'.$card['title'].'</h4>';
                             echo '</div>';
                             echo '<div class="flex justify-center">';
@@ -27,7 +27,7 @@
 ?>
 
 <section class="sets_apart_section w-full h-full bg-white py-16 lg:py-24">
-    <div class="w-full md:w-8/12 lg:w-9/12 flex flex-col items-center mx-auto">
+    <div class="w-full lg:w-11/12 flex flex-col items-center mx-auto">
         <p class="text-2xl md:text-4xl text-gray-header pb-0 mb-0 text-center font-bold hidden lg:block"><?php the_field('title')?></p>
         <p class="text-2xl md:text-4xl text-center font-bold block lg:hidden">What Sets <br> Certilytics Apart</p>
         <!-- <div class="cards w-full grid lg:grid-cols-3 lg:gap-1 2xl:gap-20"> -->
