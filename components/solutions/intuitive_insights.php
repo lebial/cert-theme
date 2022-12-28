@@ -40,7 +40,7 @@
         <div class="mb-8">
             <p class="text-center mb-4" style="margin-bottom: 1rem;">Pre-built dashboards and self-service analytics at your fingertips</p>
         </div>
-        <div class="w-full flex flex-col lg:flex-row">
+        <div class="w-full flex flex-col items-center lg:flex-row">
             <div class="insights__button__container w-full lg:max-h-fit  lg:w-1/2 max-w-sm overflow-y-scroll lg:overflow-y-clip relative">
                 <div class="container__overlay hidden lg:block"></div>
                 <div class="w-full h-full hidden lg:block ">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/2 lg:pl-10">
-                <div class="content__description max-w-sm flex flex-col">
+                <div class="content__description max-w-sm flex flex-col mx-auto">
                     <div class="mb-4">
                         <p id="intuitiveDescription" class="text-sm lg:text-base">
                             loading..

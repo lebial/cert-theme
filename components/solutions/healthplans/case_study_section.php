@@ -23,7 +23,7 @@
                 <div class="w-full max-w-xs"><img class="w-full" src="<?php the_field('form_image')?>" alt=""></div>
             </div>
         </div>
-        <div class="case__study__form__container max-w-lg pl-0 mt-8 block lg:hidden">
+        <div class="case__study__form__container mx-auto max-w-lg pl-0 mt-8 block lg:hidden">
             <?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('download_brochure_form_id'), 'title' => false, 'description' => true)) ?>
         </div>
     </div>

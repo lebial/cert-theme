@@ -9,7 +9,7 @@
 
 		$data_mock = array(
 			array(
-				'button_link' => '#',
+				'button_link' => '',
 				'button_text' => 'Solutions',
 				'links' => array(
 					array('href' => '#', 'text' => 'Health Plans & PBMs'),
@@ -50,7 +50,15 @@
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links mr-0 w-[55%] md:w-[25%] xl:w-auto xl:mr-[4%] ">';
-				echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
+				echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
+				    if ($link_group['button_link']) {
+						echo '<a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a>';
+					} else {
+
+						echo '<a name="footer-'.$link_group['button_text'].'" class="text-white">'.$link_group['button_text'].'</a>';
+					}
+						echo '<button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button>';
+				echo '</div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group relative ">';
 						foreach($link_group['links'] as $link){
