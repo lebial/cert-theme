@@ -9,7 +9,7 @@
 
 		$data_mock = array(
 			array(
-				'button_link' => '#',
+				'button_link' => '',
 				'button_text' => 'Solutions',
 				'links' => array(
 					array('href' => '#', 'text' => 'Health Plans & PBMs'),
@@ -50,7 +50,15 @@
 
 		foreach($link_groups as $link_group) {
 			echo '<div class="footer__links mr-0 w-[55%] md:w-[25%] xl:w-auto xl:mr-[4%] ">';
-				echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap"><a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a><button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button></div>';
+				echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
+				    if ($link_group['button_link']) {
+						echo '<a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a>';
+					} else {
+
+						echo '<a name="footer-'.$link_group['button_text'].'" class="text-white">'.$link_group['button_text'].'</a>';
+					}
+						echo '<button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button>';
+				echo '</div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 					echo '<div class="footer__links__group relative ">';
 						foreach($link_group['links'] as $link){
@@ -71,9 +79,11 @@
 					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="footer__responsive__hidden text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI - powered solutions can deliver real value for your organization—today.'; ?></p>
+				<p class="footer__responsive__hidden footer__chat__description text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI-powered solutions can deliver real value for your <span>organization—today.</span>'; ?></p>
 				<a
 					class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]"
+					target="_blank"
+					rel="noopener noreferrer"
 					href="<?php echo get_field('contact_link', 'options'); ?>">
 						<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us';?>
 				</a>
@@ -87,14 +97,11 @@
 	<div class="second-row flex justify-end ">
 		<!-- <div class="flex social__icons mt-3  xl:hidden"> -->
 		<div class="flex social__icons mt-3  md:hidden">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
-				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
-			</a>
-			<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
-				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
-			</a>
-			<a href="https://www.linkedin.com/company/11752591/">
+			<a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer">
 				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
+			</a>
+			<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
+				<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 			</a>
 		</div>
 	</div>
@@ -105,15 +112,15 @@
 		</div>
 		<div class="corp__info relative flex flex-col md:flex-row mt-4 md:mt-0">
 			<div class="absolute right-[6px] top-[-58px] social__icons tw-hidden md:flex">
-				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $base_url ?>">
-					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
-				</a>
-				<a href="https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+<?php echo $base_url ?>+%23Topic+via%40my_twitter_name+<?php echo $base_url ?>">
-					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
-				</a>
-				<a href="https://www.linkedin.com/company/11752591/">
+				<a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer">
 					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6" alt="">
 				</a>
+				<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
+					<img src="<?php echo get_template_directory_uri()?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
+				</a>
+				<!-- <a href="https://www.facebook.com/sharer/sharer.php?u=<?php //echo $base_url ?>">
+					<img src="<?php //echo get_template_directory_uri()?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
+				</a> -->
 			</div>
 			<div>
 				<span>&reg;</span>

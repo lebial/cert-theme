@@ -293,7 +293,7 @@
 										
 										<span class="txt"><?php echo $link['title']; ?></span>
 										
-										<span class="bg"></span>
+										<span class="bg "></span>
 										
 									</a>
 								
@@ -317,3 +317,15 @@
 	
 </div>
 <!-- end .content-blocks -->
+
+<!-- download documents form redirect to thankyou page -->
+<?php
+ function set_download_documents_thankyou_page() {
+   if (get_field('download_document')) {
+	echo '<a class="absolute w-0 h-0 hidden" download style="left: 200vw;" id="employers_case_study" href="'.get_field('employers_case_study').'"></a>';
+	echo '<a class="absolute w-0 h-0 hidden" download style="left: 200vw;" id="advisors_case_study" href="'.get_field('advisors_case_study').'"></a>';
+   }
+ }
+?>
+
+<?php set_download_documents_thankyou_page()?>

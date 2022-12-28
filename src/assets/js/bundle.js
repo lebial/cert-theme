@@ -1,5 +1,11 @@
 import './main';
+import './stickymate';
+import './header-shapes';
 import './footer.js';
 import './home';
 import './homeAnimation';
 import './platform';
+import './aboutUs';
+import './solutions';
+import './healthplans';
+import './thankYou';

@@ -35,19 +35,21 @@
   function render_desktop_platforms($data) {
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
+    $nucleus_icon =  get_field('nucleus_icon');
+    $accelerator_icon = get_field('accelerator_icon');
     echo '<div class="platforms__container flex w-full">';
       echo '<div class="w-1/2">';
       echo '<h2 class="visual-element-hide">'.$accelerator_data['title'].'</h2>';
         // echo '<div class="platforms__icon__container w-full flex justify-end py-4">';
         echo '<div class="platforms__icon__container w-full flex justify-end">';
-          echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="'.$accelerator_data['main_icon_desktop'].'" >';
+          echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="'.$nucleus_icon.'" >';
         echo '</div>';
       echo '</div>';
       echo '<div class="nucleus__content w-1/2">';
       echo '<h2 class="visual-element-hide">'.$nucleus_data['title'].'</h2>';
         // echo '<div class="platforms__icon__container w-full flex justify-start py-4">';
         echo '<div class="platforms__icon__container w-full flex justify-start">';
-          echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%] " src="'.$nucleus_data['main_icon_desktop'].'" >';
+          echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%]" src="'.$accelerator_icon.'" >';
         echo '</div>';
       echo '</div>';
     echo '</div>';
@@ -56,9 +58,11 @@
   function render_desktop_platform_options($data) {
     $accelerator_data = $data['platform_1'];
     $nucleus_data = $data['platform_2'];
-    echo '<div class="platforms__container w-full flex mb-32 relative">';
+    // echo '<div class="platforms__container w-full flex mb-32 relative">';
+    echo '<div class="platforms__container platforms__down__arrow__container-animation w-full flex mb-32 relative">';
       echo '<div class="w-full absolute top-3">';
-        echo '<img class="style-svg platforms__down__arrow opacity-0 mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
+        // echo '<img class="style-svg platforms__down__arrow opacity-0 mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
+        echo '<img class="style-svg platforms__down__arrow mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
       echo '</div>';
       echo '<div class="platforms__buttons__animated platform-slide-animate w-full absolute flex" style="top: -30px;" data-platform-anim="platforms-slide-in">';
         echo '<div class="w-1/2 flex justify-end relative mr-[6%]">';
@@ -98,9 +102,9 @@
   <?php render_platforms($platforms_data) ?>
 </section>
 
-<section class="platforms w-screen hidden lg:block">
+<section class="platforms w-screen hidden lg:block" id="<?php the_field('platforms_section_id')?>">
   <script id="platforms-data" type="application/json"><?php echo json_encode($platforms_data)?></script>
-  <div class="platforms__data__container w-full h-[65vh] 2xl:h-[80vh] px-14 flex flex-col items-center justify-evenly" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
+  <div class="platforms__data__container w-full h-[65vh] lg:h-[80vh] px-14 flex flex-col items-center justify-evenly" style="background-image: url(<?php echo get_template_directory_uri()?>/dist/assets/images/platform/platformsbg.png)">
     <div class="w-full" data-aos="fade-up">
       <h1 class=" tracking-wide text-xl lg:text-[3rem] 2xl:text-7xl text-center text-white font-normal leading-tight"><?php the_field('head_line')?></h1>
     </div>
@@ -108,7 +112,7 @@
   </div>
   <?php render_desktop_platform_options($platforms_data) ?>
   <div class="w-full flex justify-center">
-    <div id="platforms-slide" class=" w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate" data-aos="fade-up" data-aos-offset="200">
+    <div id="platforms-slide" class=" platforms__slider__container w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate">
       <button class="platforms__button left" name="platformsPrev">
         <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="">
       </button>

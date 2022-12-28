@@ -29,6 +29,35 @@
         echo '})();';
       echo '</script>';
 	  }
+
+	  if (get_field('include_active_campaign', 'options')) {
+	  echo '<!-- Active Campaing Tag -->';
+      echo '<script type="text/javascript">';
+        echo '(function(e,t,o,n,p,r,i){';
+          echo 'e.visitorGlobalObjectAlias=n;';
+          echo 'e[e.visitorGlobalObjectAlias] = e[e.visitorGlobalObjectAlias] || function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};';
+          echo 'e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");';
+          echo 'r.src=o;r.async=true;';
+          echo 'i=t.getElementsByTagName("script")[0];';
+          echo 'i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");';
+          echo 'vgo("setAccount", "27433140");';
+          echo 'vgo("setTrackByDefault", true);';
+          echo 'vgo("process");';
+      echo '</script>';
+	  }
+
+	  if (get_field('include_twitter', 'options')) {
+		echo '<!-- Twitter universal website tag code -->';
+		echo '<script>';
+		echo '!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);';
+		echo '},s.version="1.1",s.queue=[],u=t.createElement(n),u.async=!0,u.src="//static.ads-twitter.com/uwt.js",';
+		echo 'a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,"script");';
+		echo '// Insert Twitter Pixel ID and Standard Event data below';
+		echo 'twq("init","o9oxl");';
+		echo 'twq("track","PageView");';
+		echo '</script>';
+		echo '<!-- End Twitter universal website tag code -->';
+	  }
 	?>
 		
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -37,12 +66,13 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
 
+		<meta name="google-site-verification" content="fo3XyJv5ZPhtGiMbLtPCaJzFclbCjKt3Cq23igaljVA" />
 		
-		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/favicons/apple-touch-icon.png">
+		<!-- <link rel="apple-touch-icon" sizes="180x180" href="<?php // echo get_template_directory_uri(); ?>/favicons/apple-touch-icon.png">
 		
-		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php // echo get_template_directory_uri(); ?>/favicon-32x32.png">
 		
-		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/favicons/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php // echo get_template_directory_uri(); ?>/favicons/favicon-16x16.png"> -->
 
 		
 		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/favicons/site.webmanifest">

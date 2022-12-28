@@ -10,23 +10,14 @@
 			
 			<div class="image">
 				
-				<?php if(z_taxonomy_image()):
-					
-					$image = z_taxonomy_image(); ?>
-					
-					<img class="" data-object-fit="cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-					
-					<?php else:
-						
-						$image = get_field('background_image', 714);	?>
-						
-						<img class="" data-object-fit="cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				<?php $image = get_field('background_image', 714);	?>
+				
+				<img class="" data-object-fit="cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 						
 			</div>
 				
-				<div class="color-guard"></div>
+			<div class="color-guard"></div>
 			
-			<?php endif; ?>
 			
 			<div class="contain">
 				
@@ -95,9 +86,10 @@
 			<div class="contain">
 				
 				<select class="switcher" name="event-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
-
-				    <?php $option = '<option value="' . get_option('home') . '/news-insights/">All Categories</option>'; // change category to your custom page slug
-				        $categories = get_categories(); 
+					<option value="" selected>Select Category</option>
+					<option value="<?php echo get_option('home') ?>/news-insights/">All Categories</option>
+				    <?php 
+						$categories = get_categories(); 
 				        foreach ($categories as $category) {
 				            $option .= '<option value="'.get_option('home').'/news-insights/category/'.$category->slug.'">';
 				            $option .= $category->cat_name;

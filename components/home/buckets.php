@@ -14,7 +14,7 @@ function render_bucket_cards() {
 };
 
 ?>
-<section class="buckets__section w-screen flex justify-center pb-44 border-b-2 border-gray-500 border-solid">
+<section class="buckets__section w-screen flex justify-center pb-44 border-b-2 border-gray-500 border-solid" id="<?php the_field('buckets_section_id')?>">
   <div class="hidden lg:flex flex-col lg:flex-row lg:justify-between" style="width: 95%">
     <?php render_bucket_cards() ?>
   </div>

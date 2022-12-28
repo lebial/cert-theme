@@ -19,15 +19,16 @@ function renderSolutions($data)
 }
 
 ?>
-<section class="hidden lg:hidden solutions__section w-screen min-h-screen bg-dark-blue-background mt-11">
+<section class="hidden lg:hidden solutions__section w-screen min-h-screen bg-dark-blue-background mt-11" id="<?php the_field('platforms_section_id')?>">
   <div class="solutions__section__container px-8 py-10">
     <?php renderSolutions($solutions_data) ?>
   </div>
 </section>
 
 <section
-  class="solutions-parallax block lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-dark-blue-background mt-11 "
+  class="solutions-parallax block lg:pb-60 lg:block solutions__section w-screen min-h-screen bg-cover bg-dark-blue-background mt-11 "
   style="background-image: url(<?php the_field('proven_solution_background') ?>); width: 100vw"
+  id="<?php the_field('platforms_section_id')?>"
 >
   <div class="solutions__section__container" data-sticky="from: -65px, duration: 720vh">
 

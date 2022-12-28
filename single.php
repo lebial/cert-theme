@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="c-page c-page-single-post mb-28">
+	<div class="c-page c-page-single-post">
 		
 		<div class="contain">
 			
@@ -43,7 +43,7 @@
 		</div>
 		<!-- end .contain -->
 		
-		<div class="bottom-cta">
+		<div class="bottom-cta mb-28">
 			
 			<?php 
 				

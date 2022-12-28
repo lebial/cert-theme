@@ -1,11 +1,13 @@
 @import '../variables';
 $section_border: 20px solid black;
+
 @media (min-width: 1024px) {
     $section_border: none !global;
 }
 
 .platform__submenu__item {
     border-bottom: 2px solid gray;
+
     &:last-of-type {
         border-bottom: none;
         margin-bottom: 0;
@@ -27,6 +29,7 @@ $section_border: 20px solid black;
     width: 0px;
     opacity: 0;
     transition: all ease 0.3s;
+
     & p {
         height: 0px;
         width: 0px;
@@ -59,6 +62,7 @@ $section_border: 20px solid black;
     from {
         transform: rotate(-90deg) translateX(0);
     }
+
     to {
         transform: rotate(-90deg) translateX(15px);
     }
@@ -69,6 +73,7 @@ $section_border: 20px solid black;
     transform: rotate(-90deg) translateY(0);
     transition: all ease .4s;
     animation: 1s infinite alternate pulse__animte;
+
     & path {
         fill: lightgray;
     }
@@ -81,31 +86,38 @@ $section_border: 20px solid black;
             transition: all .4s ease;
             border-bottom: 0px solid transparent;
             padding-bottom: 15px;
+
             &.active__platform {
                 border-width: 5px;
                 border-color: $color-red;
             }
         }
+
         &:hover {
             cursor: pointer;
+
             & p {
                 border-width: 5px;
                 border-color: $color-red;
             }
         }
     }
+
     &--blue {
         & p {
             transition: all .4s ease;
             border-bottom: 0px solid transparent;
             padding-bottom: 15px;
+
             &.active__platform {
                 border-width: 5px;
                 border-color: $color-blue;
             }
         }
+
         &:hover {
             cursor: pointer;
+
             & p {
                 border-width: 5px;
                 border-color: $color-blue;
@@ -118,6 +130,7 @@ $section_border: 20px solid black;
     transition: all .3s ease;
     opacity: 0;
     transform: translateY(-100px);
+
     &.platform-slide-animate {
         opacity: 1;
         transform: translateY(0);
@@ -130,6 +143,7 @@ $section_border: 20px solid black;
             fill: white !important;
         }
     }
+
     &:last-of-type {
         & svg {
             & * {
@@ -137,6 +151,7 @@ $section_border: 20px solid black;
             }
         }
     }
+
     &:nth-of-type(2) {
         & svg {
             & * {
@@ -152,6 +167,7 @@ $section_border: 20px solid black;
             fill: $color-red;
         }
     }
+
     &--blue {
         & .st3 {
             fill: $color-blue;
@@ -163,6 +179,7 @@ $section_border: 20px solid black;
     &.right svg {
         transform: rotate(180deg) translateY(2px);
     }
+
     & path {
         fill: lightgray;
     }
@@ -190,6 +207,7 @@ $section_border: 20px solid black;
     bottom: -3px;
     width: 100%;
     height: 40px;
+
     &__animation {
         overflow: hidden;
         height: 100%;
@@ -220,15 +238,18 @@ $section_border: 20px solid black;
     background-position: 0% 30%;
     background-repeat: no-repeat;
     background-size: cover;
+
     @media #{$desktopBase} {
         background-size: 100%;
     }
 }
 
 $dots_top: -6px;
+
 .solutions__section {
     border-top: $section_border;
     border-bottom: $section_border;
+
     &__separator {
         & .separator__dots {
             & .solution__dot {
@@ -238,19 +259,23 @@ $dots_top: -6px;
                 margin-right: 10px;
                 background-color: white;
                 transition: all .4s, ease;
+
                 &:last-of-type {
                     margin-right: 0;
                 }
             }
+
             & .red-highlight {
                 background-color: $color-red;
             }
         }
+
         & .separator__line {
             height: 2px;
             background-color: white;
         }
     }
+
     .solutions__data {
         &:last-of-type {
             margin-bottom: 100px;
@@ -264,6 +289,7 @@ $dots_top: -6px;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
     }
+
     & circle {
         opacity: 0;
     }
@@ -273,24 +299,31 @@ $dots_top: -6px;
     & polyline {
         transition-property: stroke-dashoffset;
     }
+
     & circle {
         transition-property: opacity;
     }
+
     &.exec-animate {
         & polyline {
             stroke-dashoffset: 0;
         }
+
         & .proven-dot {
+
             &-red,
             &-4 {
                 opacity: 1;
             }
+
             &-1 {
                 opacity: 1;
             }
+
             &-2 {
                 opacity: 1;
             }
+
             &-3 {
                 opacity: 1;
             }
@@ -315,10 +348,12 @@ $dots_top: -6px;
         top: -14em;
         margin-bottom: -14em;
     }
+
     @media #{$desktopLG} {
         top: -15em;
         margin-bottom: -15em;
     }
+
     @media #{$desktopFull} {
         top: -16em;
         margin-bottom: -16em;
@@ -334,9 +369,11 @@ $dots_top: -6px;
             width: 100%;
             display: flex;
             align-items: center;
+
             @media #{$desktopBase} {
                 width: 70%;
             }
+
             @media #{$desktopLG} {
                 width: 50%;
             }
@@ -350,16 +387,20 @@ $dots_top: -6px;
 
 .slider-container {
     padding-inline: 1%;
+
     @media #{$desktopBase} {
         padding-inline: 5%;
     }
+
     @media #{$desktopLG} {
         padding-inline: 18%;
     }
+
     & button {
         & svg {
             & path {
                 fill: black;
+
                 @media #{$desktopBase} {
                     fill: white;
                 }
@@ -372,26 +413,33 @@ $dots_top: -6px;
 .data__slides {
     &__content {
         min-height: auto;
+
         @media #{$desktopMD} {
             min-height: 100vh;
         }
+
         @media #{$desktopLG} {
             min-height: 85vh;
         }
+
         border-top: $section_border;
         border-bottom: $section_border;
+
         &:last-of-type,
         &:first-of-type {
             border-top: none;
         }
+
         &__description {
             height: 100%;
             transition: all ease 0.4s;
         }
+
         &__button {
             & button {
                 overflow: hidden;
                 transition: all ease 0.4s;
+
                 &::before {
                     content: '';
                     position: absolute;
@@ -402,6 +450,7 @@ $dots_top: -6px;
                     left: 50%;
                     transform: translate(-50%, -50%) rotate(45deg);
                 }
+
                 &::after {
                     content: '';
                     position: absolute;
@@ -419,19 +468,24 @@ $dots_top: -6px;
 
 // platform deploy options section
 $deploy_border: 3px dotted #9e9e9e;
+
 .platform__deploy__options {
     min-height: 100vh;
+
     @media #{$desktopMD} {
         min-height: 85vh;
         padding-bottom: 0;
         margin-bottom: -5rem;
     }
+
     @media #{$desktopLG} {
         padding-bottom: 4rem;
     }
+
     @media (min-width: 1535px) {
         padding-bottom: 12rem;
     }
+
     & .mobile-svg-options {
         & rect:last-of-type {
             fill: transparent;
@@ -441,18 +495,23 @@ $deploy_border: 3px dotted #9e9e9e;
 
 .deploy__data__content {
     padding-bottom: 15px;
+
     & .empty__data__block {
-        background: repeating-linear-gradient( 45deg, white, white 3px, #9e9e9e 3px, #9e9e9e 6px, )
+        background: repeating-linear-gradient(45deg, white, white 3px, #9e9e9e 3px, #9e9e9e 6px, )
     }
+
     & .content__body {
         padding: 20px 0;
+
         &:first-of-type {
             border-right: $deploy_border;
             padding-right: 10px;
         }
+
         &:last-of-type {
             padding-left: 10px;
         }
+
         & div {
             padding: 0 10px;
             margin-bottom: 10px;
@@ -462,9 +521,11 @@ $deploy_border: 3px dotted #9e9e9e;
             display: flex;
             justify-content: center;
             align-items: center;
+
             &:last-of-type {
                 margin-bottom: 0;
             }
+
             & p {
                 color: white;
                 line-height: normal;
@@ -482,6 +543,7 @@ $deploy_border: 3px dotted #9e9e9e;
 .validation__headline {
     color: white;
     transition: all ease .3s;
+
     &.change-red {
         color: $color-red;
     }
@@ -489,10 +551,12 @@ $deploy_border: 3px dotted #9e9e9e;
 
 .validation__security {
     border-top: $section_border;
+
     & .slick {
         &-prev {
             z-index: 10;
             display: none !important;
+
             &::before {
                 position: absolute;
                 top: -470%;
@@ -500,6 +564,7 @@ $deploy_border: 3px dotted #9e9e9e;
                 transform: rotate(180deg);
             }
         }
+
         &-next {
             &::before {
                 content: var(--rightArrowUrl);
@@ -509,29 +574,35 @@ $deploy_border: 3px dotted #9e9e9e;
                 left: -170%;
             }
         }
+
         &-dots {
             & li {
                 background-color: white;
                 border-radius: 50%;
+
                 &.slick-active {
                     opacity: 0.7;
                 }
             }
         }
     }
+
     & .slider-next {
         right: 0%;
         top: 50%;
         z-index: 10;
         transform: rotate(180deg);
+
         @media #{$desktopBase} {
             right: 10%;
         }
     }
+
     & .slider-prev {
         display: none;
         top: 50%;
         z-index: 10;
+
         @media #{$desktopBase} {
             display: block;
         }
@@ -540,6 +611,7 @@ $deploy_border: 3px dotted #9e9e9e;
 
 .validations__slider__text {
     display: inline-flex !important;
+
     & p {
         padding-right: 0 !important;
     }
@@ -551,6 +623,7 @@ $deploy_border: 3px dotted #9e9e9e;
             width: 23% !important;
             margin-left: 0;
         }
+
         &>div {
             @media #{$desktopBase} {
                 width: 70%;
@@ -561,15 +634,8 @@ $deploy_border: 3px dotted #9e9e9e;
 
 // Contact Us Section
 .action__quote__container__text {
-    line-height: 3rem;
+    line-height: 3rem !important;
     font-size: 2rem !important;
-    @media #{$desktopBase} {
-        line-height: 5rem;
-        font-size: 3rem !important;
-    }
-    @media #{$desktopLG} {
-        font-size: 4rem !important;
-    }
 }
 
 .action__quote__container__button {
@@ -592,6 +658,7 @@ $deploy_border: 3px dotted #9e9e9e;
  */
 
 $dot-color: #bdcff5;
+
 .dot-pulse {
     position: relative;
     left: -9999px;
@@ -624,35 +691,43 @@ $dot-color: #bdcff5;
         top: 11%;
         left: 40%;
     }
+
     &-2 {
         top: 34%;
         left: 7%;
     }
+
     &-3 {
         top: 30%;
         right: 10%;
     }
+
     &-4 {
         bottom: 27%;
         left: 7%;
     }
+
     &-5 {
         top: 51%;
         right: -5%;
     }
+
     @media #{$desktopBase} {
         &-2 {
             top: 10%;
             left: 50%;
         }
+
         &-3 {
             top: 10%;
         }
+
         &-4 {
             top: 45%;
             right: 17%;
             left: auto;
         }
+
         &-5 {
             top: 30%;
             right: -5%;
@@ -678,9 +753,11 @@ $dot-color: #bdcff5;
     0% {
         box-shadow: 9984px 0 0 -5px $dot-color;
     }
+
     30% {
         box-shadow: 9984px 0 0 2px $dot-color;
     }
+
     60%,
     100% {
         box-shadow: 9984px 0 0 -5px $dot-color;
@@ -691,9 +768,11 @@ $dot-color: #bdcff5;
     0% {
         box-shadow: 9999px 0 0 -5px $dot-color;
     }
+
     30% {
         box-shadow: 9999px 0 0 2px $dot-color;
     }
+
     60%,
     100% {
         box-shadow: 9999px 0 0 -5px $dot-color;
@@ -704,9 +783,11 @@ $dot-color: #bdcff5;
     0% {
         box-shadow: 10014px 0 0 -5px $dot-color;
     }
+
     30% {
         box-shadow: 10014px 0 0 2px $dot-color;
     }
+
     60%,
     100% {
         box-shadow: 10014px 0 0 -5px $dot-color;
