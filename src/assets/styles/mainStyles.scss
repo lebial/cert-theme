@@ -431,8 +431,7 @@ form {
             }
 
             @media #{$desktopMD} {
-                min-width: 280px !important;
-                padding: 15px 60px !important;
+                padding: 15px !important;
             }
 
             @media #{$desktopFull} {

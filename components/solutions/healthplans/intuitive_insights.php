@@ -45,11 +45,8 @@
         <div class="mb-8">
             <p class="text-center ">Pre-built reports and self-service analytics at your fingertips</p>
         </div>
-        <div class="w-full flex flex-col lg:flex-row">
+        <div class="w-full flex flex-col items-center lg:flex-row">
             <div class="insights__button__container w-full lg:max-h-fit lg:w-1/2 max-w-sm ">
-                <!-- <div class="absolute h-full w-px block -left-5 border-r border-black border-solid">
-                    <div class="navigation__dot absolute rounded-full w-4 h-4 bg-primary left-[-7.3px]"></div>
-                </div> -->
                 <div class="w-full h-fit hidden lg:block relative">
                 <div class="absolute h-full w-px block -left-5 border-r border-black border-solid">
                     <div class="navigation__dot absolute rounded-full w-4 h-4 bg-primary left-[-7.3px]"></div>
@@ -64,7 +61,7 @@
                         </div>
                     </div>
             </div>
-            <div class="w-full lg:w-1/2 lg:pl-10 flex items-center mt-6 lg:mt-0">
+            <div class="w-full lg:w-1/2 lg:pl-10 flex items-center justify-center mt-6 lg:mt-0">
                 <div class="content__description max-w-sm flex flex-col justify-center">
                     <div class="mb-5">
                         <p id="intuitiveDescription" class="intuitive__dynamic__content text-sm lg:text-base">
