@@ -5,7 +5,7 @@
       data-sticky="from: 0, duration: 50vh"
       id="<?php the_field('super_charge_slide_id')?>"
     >
-      <p class="absolute-center text-2xl lg:text-5xl leading-tight font-bold" data-animation="opacity: {0: 1, 20vh: 0}">
+      <p id="superChargeHomePage" class="absolute-center text-2xl lg:text-5xl leading-tight font-bold invisible" data-animation="opacity: {0: 1, 20vh: 0}">
         <span data-aos="change-red">Supercharge</span> 
         your digital data ecosystem with value-focused predictive analytics.
       </p>

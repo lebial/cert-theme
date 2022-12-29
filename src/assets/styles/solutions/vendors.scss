@@ -1,0 +1,20 @@
+@import '../variables';
+
+.impact__point__solutions__section {
+  & .evaluator__triangle {
+    padding-left: 30px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 8px 16px;
+      border-color: transparent transparent transparent $color-red;
+      left: 0;
+      top: 10px;
+    }
+  }
+}

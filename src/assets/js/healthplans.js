@@ -10,7 +10,7 @@ jQuery(document).ready(function ($) {
     }
 
     const { href } = window.location;
-    if (href.includes("health-plans") || href.includes('providers')) {
+    if (href.includes("health-plans") || href.includes('providers') || href.includes('vendors')) {
         createGrowBookCarousel();
     }
 
