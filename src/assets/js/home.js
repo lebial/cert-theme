@@ -38,6 +38,11 @@ jQuery(document).ready(function ($) {
             slidesToScroll: 1,
         });
     }
+
+    function showSuperChargeText() {
+        $('#superChargeHomePage').removeClass('invisible');
+    }
+
     function addNewTabOnScheduleMenuButton() {
         const menuItems = $('#menu-main-menu').children();
         const scheduleButton = menuItems[menuItems.length - 1];
@@ -62,6 +67,7 @@ jQuery(document).ready(function ($) {
     handleIosNativePlayerQuit();
     addArrowToSlider(".insights-carousel");
     addArrowToSlider(".bucket__slider");
-    addNewTabOnScheduleMenuButton()
-    handleVidModalClose()
+    addNewTabOnScheduleMenuButton();
+    handleVidModalClose();
+    showSuperChargeText();
 });
