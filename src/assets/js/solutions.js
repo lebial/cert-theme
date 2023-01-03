@@ -89,8 +89,10 @@ jQuery(document).ready(function ($) {
   // }
 
   function parseInsightsData() {
+    const dataElement = document.getElementById("intuitiveInsightsData");
+    if (!dataElement) return null;
     const data = JSON.parse(
-      document.getElementById("intuitiveInsightsData").innerHTML
+      dataElement.innerHTML
     );
     activeData = Object.values(data)[0];
 
