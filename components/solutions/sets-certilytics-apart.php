@@ -26,7 +26,7 @@
     }
 ?>
 
-<section class="sets_apart_section w-full h-full bg-white py-16 lg:py-24">
+<section class="sets_apart_section w-full h-full bg-[#c7d7f6] bg-opacity-20 py-16 lg:py-24">
     <div class="w-full lg:w-11/12 flex flex-col items-center mx-auto">
         <p class="text-2xl md:text-4xl text-gray-header pb-0 mb-0 text-center font-bold hidden lg:block"><?php the_field('title')?></p>
         <p class="text-2xl md:text-4xl text-center font-bold block lg:hidden">What Sets <br> Certilytics Apart</p>
