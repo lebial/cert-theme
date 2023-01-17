@@ -1,5 +1,20 @@
 <?php
   $base_url = get_bloginfo('wpurl');
+
+  function render_action_home_animation_button_group() {
+    $buttons = get_field('action_group_buttons');
+    foreach($buttons as $button) {
+      echo '<div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">';
+        echo '<a
+          class="p-2 w-full bg-primary rounded-md font-bold border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+          href="'.get_bloginfo('wpurl').'/'.$button['link'].'";
+        >';
+          echo $button['text'];
+        echo '</a>';
+      echo '</div>';
+    }
+  }
+
 ?>
 
 <div>
@@ -136,45 +151,14 @@
     </div>
 
     <div class="full-window flex-1 bg-white opacity-100 z-10 pb-10">
-      <div class="absolute-center w-[90%] lg:w-auto ">
-        <h3 class=" text-4xl lg:text-6xl font-bold text-center">
+      <div class="absolute-center w-[90%]">
+        <h3 class=" text-4xl lg:text-6xl font-bold text-center max-w-[60%] mx-auto mb-24">
           Are you ready to see 
           the <span data-aos="change-red">future</span> through
           data? <br>
         </h3>
-        <div class="flex flex-col lg:flex-row w-7/12 lg:w-auto mt-8 mx-auto" data-aos="fade-in" data-aos-offset="-35">
-          <div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">
-            <a
-              class="p-2 w-full bg-primary rounded-md font-bold border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
-              href="<?php echo $base_url?>/solutions/health-plans"
-            >
-              Health Plans
-            </a>
-          </div>
-          <div class="flex-1 flex mb-5 lg:mb-0">
-            <a
-              class="p-2 w-full mx-0 lg:mx-1 bg-primary font-bold rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
-              href="<?php echo $base_url?>/solutions/employers"
-            >
-              Employers
-            </a>
-          </div>
-          <div class="flex-1 flex mb-5 lg:mb-0">
-            <a
-              class="p-2 w-full ml-0 lg:ml-2 bg-primary font-bold rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
-              href="<?php echo $base_url?>/solutions/benefit-advisors"
-            >
-             Advisors 
-            </a>
-          </div>
-          <div class="flex-1 flex">
-            <a
-              class="p-2 w-full ml-0 lg:ml-2 bg-primary font-bold rounded-md border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
-              href="<?php echo $base_url?>/solutions/providers"
-            >
-              Providers
-            </a>
-          </div>
+        <div class="flex flex-col lg:flex-row w-11/12 2xl:w-8/12 mt-8 mx-auto" data-aos="fade-in" data-aos-offset="-35">
+          <?php render_action_home_animation_button_group()?>
         </div>
       </div>
       <div class="absolute bottom-0 w-screen">

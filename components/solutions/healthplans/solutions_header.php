@@ -9,7 +9,7 @@
         <h1 class="text-white font-light"><?php the_field('headline') ?></h1>
         <div class="w-11/12 md:w-1/2 mx-auto">
             <p class="text-white max-w-none mt-4 md:mt-12 text-xl lg:text-2xl">
-                <?php the_field('headline_description') ?>
+                <?php strip_tags(the_field('headline_description'), '<a>') ?>
             </p>
         </div>
     </div>

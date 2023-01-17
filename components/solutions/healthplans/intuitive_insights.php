@@ -45,7 +45,7 @@
         <div class="mb-8">
             <p class="text-center ">Pre-built reports and self-service analytics at your fingertips</p>
         </div>
-        <div class="w-full flex flex-col items-center lg:flex-row">
+        <div class="w-full flex flex-col items-center lg:flex-row min-h-[300px]">
             <div class="insights__button__container w-full lg:max-h-fit lg:w-1/2 max-w-sm ">
                 <div class="w-full h-fit hidden lg:block relative">
                 <div class="absolute h-full w-px block -left-5 border-r border-black border-solid">

@@ -358,13 +358,17 @@
 
     &:nth-of-type(2) {
       & svg {
-        width: 18px !important;
+        //staging
+        width: 24px !important;
+        margin-right: 2px !important;
+        // dev
+        //width: 18px !important;
       }
     }
 
     &:nth-of-type(3) {
       & svg {
-        width: 18px !important;
+        width: 16px !important;
         height: auto;
       }
     }

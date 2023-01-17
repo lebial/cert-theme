@@ -3,7 +3,7 @@
     $buttons = get_field('action_group_buttons');
     foreach($buttons as $button) {
       echo '<a href="'. get_bloginfo('wpurl').'/'. $button['link'].'"';
-        echo' class=" flex-1 text-center border border-solid border-primary bg-primary outline-none text-white font-bold p-3 transition-all hover:text-primary hover:bg-white rounded-md mb-4 sm:mb-0 mr-0 sm:mr-4">';
+        echo' class=" flex-1 text-center border border-solid border-primary bg-primary outline-none text-white font-bold p-3 transition-all hover:text-primary hover:bg-white rounded-md mb-4 md:mb-0 mr-0 md:mr-4">';
         echo $button['text'];
       echo '</a>';
     };
@@ -17,7 +17,7 @@
         <?php echo get_field('action_group_description') ?>
       </p>
     </div>
-    <div class="w-1/2 mx-auto pt-12 pb-12 md:pb-0 md px-4 sm:px-0 flex flex-col sm:flex-row sm:justify-center">
+    <div class="w-11/12 2xl:w-8/12 mx-auto pt-12 pb-12 lg:pb-0 px-4 lg:px-0 flex flex-col lg:flex-row lg:justify-center">
       <?php render_action_buttons() ?>
     </div>
   </div>

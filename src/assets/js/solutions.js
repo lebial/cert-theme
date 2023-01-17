@@ -282,8 +282,8 @@ jQuery(document).ready(function ($) {
     handleHealthPlansOptionChange();
     // handleMobileDropdownChange();
     setInsightsOverlay();
-    if (href.includes('health-plans') || href.includes('providers')) setInitialNavPoint();
-    if (href.includes('providers')) adjustProvidersIntuitiveInsightsIcons();
+    if (href.includes('health-plans') || href.includes('health-systems')) setInitialNavPoint();
+    if (href.includes('health-systems')) adjustProvidersIntuitiveInsightsIcons();
     // handleSolutionsPlayButtonClick('Desktop');
     // handleSolutionsPlayButtonClick('Mobile');
     createInsightsSlider();

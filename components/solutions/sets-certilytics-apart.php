@@ -17,7 +17,7 @@
                                 echo '<h4 class="text-lg leading-tight font-bold text-[#5E5E5E]">'.$card['title'].'</h4>';
                             echo '</div>';
                             echo '<div class="flex justify-center">';
-                                echo '<p class="text-xs lg:text-sm text-center max-w-[268px] ">'.$card['description'].'</p>';
+                                echo '<p class="text-xs lg:text-sm text-center max-w-[268px] ">'.strip_tags($card['description'], '<a><strong>').'</p>';
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
