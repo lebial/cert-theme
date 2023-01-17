@@ -17,7 +17,7 @@ module.exports = {
                 "gray-secondary": "#f2f2f2",
                 "gray-header": "#7e7e7e",
                 "dark-background": "#001d3a",
-                "dark-blue-background": "#011b3a",
+                "dark-blue-background": "#000f3a",
                 "second-blue-background": "#05133a",
             },
         },

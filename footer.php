@@ -49,7 +49,7 @@
 		$link_groups = get_field('footer_link_groups', 'option') ? get_field('footer_link_groups', 'options') : $data_mock;
 
 		foreach($link_groups as $link_group) {
-			echo '<div class="footer__links mr-0 w-[55%] md:w-[25%] xl:w-auto xl:mr-[4%] ">';
+			echo '<div class="footer__links mr-0 w-[55%] md:w-[16%]  xl:mr-12 ">';
 				echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 				    if ($link_group['button_link']) {
 						echo '<a name="footer-'.$link_group['button_text'].'" href="'.$link_group['button_link'].'">'.$link_group['button_text'].'</a>';
