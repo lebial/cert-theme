@@ -48,6 +48,7 @@
         &:nth-of-type(2) {
             & svg {
                 width: 30px;
+                margin-left: -3px;
             }
         }
 
@@ -60,20 +61,21 @@
         &:nth-of-type(4) {
             & svg {
                 width: 20px;
-                margin-right: 11px;
+                margin-right: 13px;
             }
         }
 
         &:nth-of-type(5) {
             & svg {
                 width: 18px;
-                margin-right: 6px;
+                margin-right: 15px;
             }
         }
 
         &:nth-of-type(6) {
             & svg {
-                height: 27px
+                height: 27px;
+                margin-right: 9px;
             }
         }
 
@@ -127,6 +129,14 @@
         }
 
 
+    }
+
+    & .mobile__option__svg {
+        &:first-of-type {
+            & svg {
+                width: 47px;
+            }
+        }
     }
 
     & .navigation__dot {

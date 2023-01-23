@@ -4,9 +4,9 @@
   function render_action_home_animation_button_group() {
     $buttons = get_field('action_group_buttons');
     foreach($buttons as $button) {
-      echo '<div class="flex-1 flex mr-0 lg:mr-2 mb-5 lg:mb-0">';
+      echo '<div class="flex mr-0 md:mr-8 mb-5 md:mb-0 last-of-type:mr-0">';
         echo '<a
-          class="p-2 w-full bg-primary rounded-md font-bold border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary"
+          class="home__slide__action__button p-2 bg-primary rounded-md font-bold border-primary border border-solid text-white text-center transition-all hover:bg-white hover:text-primary w-fit "
           href="'.get_bloginfo('wpurl').'/'.$button['link'].'";
         >';
           echo $button['text'];
@@ -152,12 +152,12 @@
 
     <div class="full-window flex-1 bg-white opacity-100 z-10 pb-10">
       <div class="absolute-center w-[90%]">
-        <h3 class=" text-4xl lg:text-6xl font-bold text-center max-w-[60%] mx-auto mb-24">
+        <h3 class=" text-4xl lg:text-6xl font-bold text-center max-w-[60%] mx-auto mb-0 lg:mb-24">
           Are you ready to see 
           the <span data-aos="change-red">future</span> through
           data? <br>
         </h3>
-        <div class="flex flex-col lg:flex-row w-11/12 2xl:w-8/12 mt-8 mx-auto" data-aos="fade-in" data-aos-offset="-35">
+        <div class="flex flex-col lg:flex-row w-11/12 2xl:w-8/12 mt-8 mx-auto justify-center items-center" data-aos="fade-in" data-aos-offset="-35">
           <?php render_action_home_animation_button_group()?>
         </div>
       </div>

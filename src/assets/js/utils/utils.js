@@ -57,4 +57,18 @@ function makeElementsSameHeight($, selector, useMargin = true) {
     });
 }
 
-export { getNavHeight as default, waitForElement, addArrowToSlider, createObserver, makeElementsSameHeight };
+function makeElementsSameWidth($, selector) {
+    let maxWidth = -1;
+    $(selector).each(function () {
+        if ($(this).outerWidth() > maxWidth) {
+            maxWidth = $(this).outerWidth();
+        }
+    });
+    $(selector).each(function () {
+        if ($(this).outerWidth() < maxWidth) {
+            $(this).css('width', maxWidth + 'px');
+        }
+    });
+}
+
+export { getNavHeight as default, waitForElement, addArrowToSlider, createObserver, makeElementsSameHeight, makeElementsSameWidth };
