@@ -1,4 +1,4 @@
-import { waitForElement, addArrowToSlider } from "./utils/utils";
+import { waitForElement, addArrowToSlider, makeElementsSameWidth } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
     function setVideoHeight() {
@@ -59,6 +59,11 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    function makeButtonsSameWidth() {
+        makeElementsSameWidth($, '.home__action__group__button');
+        makeElementsSameWidth($, '.home__slide__action__button ');
+    }
+
     window.onload = setVideoHeight;
     setVideoHeight();
     handlePlayClick();
@@ -70,4 +75,5 @@ jQuery(document).ready(function ($) {
     addNewTabOnScheduleMenuButton();
     handleVidModalClose();
     showSuperChargeText();
+    makeButtonsSameWidth();
 });

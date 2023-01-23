@@ -14,7 +14,7 @@
                 </p>
                 <div class="mt-4 text-primary">
                     <?php the_field('download_form_modal_code')?>
-                    <button type="button" class="case__open__modal__button hover:text-secondary"><?php the_field('modal_button_text')?></button>
+                    <!-- <button type="button" class="case__open__modal__button hover:text-secondary"><?php //the_field('modal_button_text')?></button> -->
                 </div>
             </div>
         </div>

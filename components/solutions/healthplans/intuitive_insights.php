@@ -1,12 +1,13 @@
 <?php
   $intuitive_insights_data = get_field('intuitive_insights_options');
 
-  function render_options($data) {
+  function render_options($data, $isMobile) {
+    $class_name = $isMobile ? 'mobile__option__svg' : '';
     foreach ($data as $option) {
         if($option['option_title']) echo '
-            <div class="option__button flex w-full">
+            <div class="'.$class_name.' option__button flex w-full">
                 <button class="hp__option__action__button text-left text-sm lg:text-base flex items-center text-[#7c7c7c]" type="button" name="'.$option['option_title'].'">
-                    <img src="'.$option['option_image'].'" class="style-svg w-6 mr-2 h-auto" alt="">
+                    <img src="'.$option['option_image'].'" class="style-svg w-6 mr-2 h-auto " alt="" name="'.$option['option_title'].'">
                     '.$option['option_title'].'
                 </button>
             </div>
@@ -51,12 +52,12 @@
                 <div class="absolute h-full w-px block -left-5 border-r border-black border-solid">
                     <div class="navigation__dot absolute rounded-full w-4 h-4 bg-primary left-[-7.3px]"></div>
                 </div>
-                    <?php render_options($intuitive_insights_data) ?>
+                    <?php render_options($intuitive_insights_data, false) ?>
                 </div>
                     <div class="mobile__insights w-full h-full block lg:hidden">
                         <div class="w-full h-44 relative">
                             <div class="insights__dropdown__body h-44 overflow-y-scroll inline-block bg-white shadow-md p-3 absolute w-[110%] left-1/2 -translate-x-1/2">
-                                <?php render_options($intuitive_insights_data) ?>
+                                <?php render_options($intuitive_insights_data, true) ?>
                             </div>
                         </div>
                     </div>
