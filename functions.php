@@ -281,3 +281,7 @@ function custom_slider_arrows($slider) {
     echo '<button type="button" class="'.$slider.'-prev h-10 w-14 lg:h-24 lg:w-28"><img class="style-svg h-full w-full" src="'.get_template_directory_uri().'/dist/assets/images/platform/rightArrowSlider.svg" alt="left arrow"></button>';
     echo '<button type="button" class="'.$slider.'-next h-10 w-14 rotate-180 lg:h-24 lg:w-28"><img class="style-svg h-full w-full" src="'.get_template_directory_uri().'/dist/assets/images/platform/rightArrowSlider.svg" alt="right arrow"></button>';
 }
+
+function custom_get_field($field, $id) {
+    return strip_tags(get_field($field, $id), '<a><strong><br>');
+}

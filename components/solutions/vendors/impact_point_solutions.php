@@ -12,10 +12,10 @@
         <div class="impact__text__content w-full lg:w-1/2 px-12 md:px-28 lg:px-0 lg:pr-32 2xl:pr-16">
             <h3 class="text-4xl text-center lg:text-left pb-5 pt-8 lg:pt-0"><?php the_field('vendors_impact_evaluator_header')?></h3>
             <p class="evaluator__triangle mb-4 leading-7 max-w-2xl">
-                <?php the_field('impact_evaluator_bullet_1')?>
+                <?php echo strip_tags(get_field('impact_evaluator_bullet_1'), '<a><strong>')?>
             </p>
             <p class="evaluator__triangle mb-4 leading-7 max-w-2xl">
-                <?php the_field('impact_evaluator_bullet_2')?>
+                <?php echo strip_tags(get_field('impact_evaluator_bullet_2'), '<a><strong>')?>
             </p>
         </div>
     </div>
@@ -23,13 +23,13 @@
         <div class="impact__text__content px-12 md:px-28 lg:px-0 w-full lg:w-1/2 lg:pr-0 lg:pl-28 2xl:pl-40 2xl:pr-16">
             <h3 class="text-4xl text-center lg:text-left pb-6"><?php the_field('vendors_impact_maximizer_header')?></h3>
             <p class="evaluator__triangle mb-4 leading-7 max-w-2xl">
-                <?php the_field('impact_maximizer_bullet_1')?>
+                <?php echo strip_tags(get_field('impact_maximizer_bullet_1'), '<a><strong>')?>
             </p>
             <p class="evaluator__triangle mb-4 leading-7 max-w-2xl">
-                <?php the_field('impact_maximizer_bullet_2')?>
+                <?php echo strip_tags(get_field('impact_maximizer_bullet_2'), '<a><strong>')?>
             </p>
             <p class="evaluator__triangle mb-4 leading-7 max-w-2xl">
-                <?php the_field('impact_maximizer_bullet_3')?>
+                <?php echo strip_tags(get_field('impact_maximizer_bullet_3'), '<a><strong>')?>
             </p>
         </div>
         <div class="case__study__form w-full lg:w-5/12 flex items-center justify-start mt-10 mb-10 lg:mb-0 lg:mt-0 -order-1 lg:order-1 ">

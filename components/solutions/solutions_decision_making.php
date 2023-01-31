@@ -5,7 +5,7 @@
       echo '<div class="option__container w-full lg:w-1/3 flex flex-col items-center mt-12">';
         echo '<div class="flex justify-center items-center w-24 h-24 rounded-full"><img class="w-full h-full" src="'.$fact['icon'].'"></div>';
           echo '<div class="w-7/12 mt-4">';
-            echo '<p class="text-sm text-center">'.strip_tags($fact['description'], '<a>').'</p>';
+            echo '<p class="text-sm text-center">'.strip_tags($fact['description'], '<a><strong>').'</p>';
           echo '</div>';
       echo '</div>';
     }

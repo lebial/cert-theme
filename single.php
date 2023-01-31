@@ -1,96 +1,69 @@
+<?php
+    $post = get_post();
+	$post_id = $post->ID;
+	$authorId = $post->post_author;
+	$components = get_field('post_content');
+	$avatar = get_avatar_url($authorId, 96);
+	$author_name = get_the_author_meta('first_name', $authorId);
+	$author_nick = get_the_author_meta('nickname', $authorId);
+	$author_position = get_the_author_meta('last_name', $authorId);
+?>
 <?php get_header(); ?>
-
-	<div class="c-page c-page-single-post">
-		
-		<div class="contain">
-			
-			<div class="meta">
-				
-				<h1><span><?php the_title(); ?></span></h1>
-				
-				<span class="date"><?php echo get_the_date('m/d/o'); ?></span>
-				
-				<span class="tags"><?php echo get_the_category_list(', '); ?></span>
-				
+<main class="post__page w-full">
+	<section class="w-full min-h-[50vh] bg-dark-background flex items-center px-28">
+		<div class="post__content__container w-7/12">
+			<p class="text-white  text-6xl min-w-fit"><?php the_title()?></p>
+			<div class="post__author__container flex">
+				<div class="user__container mt-10 flex">
+					<img src="<?php echo $avatar?>" alt="user avatar" class="rounded-full mr-6">
+					<div class="author__name__container w-full flex flex-col justify-center relative">
+						<p class="text-white font-bold mb-0">By <?php echo $author_name?>, <?php echo $author_nick ?></p>
+						<p class="text-white"><?php echo $author_position?></p>
+						<a class="
+						absolute flex justify-center items-center
+						font-bold rounded-full -bottom-3 border border-white
+						border-solid w-6 h-6 text-center text-white
+						text-xs
+						" href="">in</a>
+					</div>
+				</div>
 			</div>
-			
-			<div class="wysiwyg">
-				
-				<?php the_content(); ?>
-				
-			</div>
-			<!-- end .wysiwyg -->
-			
-			<div class="social-share">
-				
-				<span class="label">SHARE:</span>
-				
-				<a class="share_link" href="https://facebook.com/sharer/sharer.php?u=<?php echo the_permalink(); ?>" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=600');return false;" aria-label="Certilytics on Facebook">
-					
-					<span class="lable">Facebook</span>
-					
-				</a>
-				
-				<a class="c-share_link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=510,width=610');return false;" aria-label="Certilytics on LinkedIn">
-					
-					<span class="lable">Linkedin</span>
-					
-				</a>
-				
-			</div>
-			<!-- end .social-share -->
-			
 		</div>
-		<!-- end .contain -->
-		
-		<div class="bottom-cta mb-28">
-			
-			<?php 
-				
-				$previous_post = get_previous_post();
-				
-				$next_post = get_next_post();
-				
-				if($previous_post && $next_post) {
-					$ctaCount = 'both';
-				} else {
-					$ctaCount = 'single';
-				} ?>
-
-			<div class="contain">
-			
-				<?php if($next_post): ?>
-					
-					<a class="left <?php echo $ctaCount; ?>" href="<?php the_permalink($next_post->ID); ?>">
-						
-						<span class="label">
-						
-						<?php echo get_the_title($next_post->ID); ?>
-						
-						</span>
-						
-					</a>
-				
-				<?php endif; ?>
-					
-				<?php if($previous_post): ?>
-				
-					<a class="right <?php echo $ctaCount; ?>" href="<?php the_permalink($previous_post->ID); ?>">
-						
-						<span class="label">
-						
-							<?php echo get_the_title($previous_post->ID); ?>
-							
-						</span>
-						
-					</a>
-				
-				<?php endif; ?>
-			
+		<div class="w-5/12 flex">
+			<img class=" max-w-lg" src="<?php the_field('post_hero_image')?>" alt="post descriptive image">
+		</div>
+	</section>
+	<section class="post__description w-full pt-20">
+		<p class="text-center text-gray-400 mx-auto"><?php echo get_the_date('F j, Y')?></p>
+		<h2 class="text-3xl mx-auto max-w-lg text-center text-gray-header leading-snug tracking-wide mt-6"><?php the_field('post_description')?></h2>
+	</section>
+	<section class="article__body w-full flex px-14">
+		<aside class="sticky w-[280px] top-[20%] h-fit ">
+			<p class="font-bold">Contents</p>
+			<div class="content__option__container w-full flex flex-col">
+				<a href="#" class="w-full pl-4 py-1 bg-gray-300">Lorem Ipsum</a>
+				<a href="#" class="w-full pl-4 py-1">Lorem Ipsum</a>
+				<a href="#" class="w-full pl-4 py-1">Lorem Ipsum</a>
+				<a href="#" class="w-full pl-4 py-1">Lorem Ipsum</a>
+				<a href="#" class="w-full pl-4 py-1">Lorem Ipsum</a>
+				<a href="#" class="w-full pl-4 py-1">Lorem Ipsum</a>
+				<a href="#" class="w-full pl-4 py-1">Lorem Ipsum</a>
 			</div>
-			<!-- end .bottom-cta  -->
-
-	</div>
-	<!-- end .c-page-single-post -->
+		</aside>
+		<article class="flex-1 flex justify-center">
+			<div class="content__container">
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quis iure nemo! Nemo sit hic id exercitationem quae quos aut tenetur ut numquam quisquam est illum maxime itaque, unde nam?</p>
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus, facilis, nam praesentium numquam iure exercitationem vitae labore ratione cumque pariatur officiis reprehenderit sunt libero recusandae veritatis suscipit, repellat dolorem.</p>
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus, facilis, nam praesentium numquam iure exercitationem vitae labore ratione cumque pariatur officiis reprehenderit sunt libero recusandae veritatis suscipit, repellat dolorem.</p>
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus, facilis, nam praesentium numquam iure exercitationem vitae labore ratione cumque pariatur officiis reprehenderit sunt libero recusandae veritatis suscipit, repellat dolorem.</p>
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus, facilis, nam praesentium numquam iure exercitationem vitae labore ratione cumque pariatur officiis reprehenderit sunt libero recusandae veritatis suscipit, repellat dolorem.</p>
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus, facilis, nam praesentium numquam iure exercitationem vitae labore ratione cumque pariatur officiis reprehenderit sunt libero recusandae veritatis suscipit, repellat dolorem.</p>
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus, facilis, nam praesentium numquam iure exercitationem vitae labore ratione cumque pariatur officiis reprehenderit sunt libero recusandae veritatis suscipit, repellat dolorem.</p>
+				<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus, facilis, nam praesentium numquam iure exercitationem vitae labore ratione cumque pariatur officiis reprehenderit sunt libero recusandae veritatis suscipit, repellat dolorem.</p>
+			</div>
+		</article>
+		<aside class="sticky w-[280px] top-0">other articles</aside>
+	</section>
+</main>
 
 <?php get_footer(); ?>
