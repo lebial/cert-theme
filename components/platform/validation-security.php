@@ -22,7 +22,7 @@
       <?php render_validation_slides() ?>
     </div>
   </div>
-  <div class="validation__hitrust__container w-full flex justify-center flex-1 mb-10 mt-8 relative z-50">
+  <div class="validation__hitrust__container w-full flex justify-center flex-1 mb-10 mt-8 relative z-20">
     <a href="https://hitrustalliance.net" class="h-fit w-fit" target="_blank">
       <img src="<?php the_field('validation_hitrust_logo') ?>" class="h-full" alt="HITRUST logo">
     </a>

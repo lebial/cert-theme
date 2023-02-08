@@ -17,7 +17,7 @@
 
   function get_striped_text($data) {
     foreach ($data as $key => $value) {
-        $data[$key]['option_description'] = strip_tags($data[$key]['option_description'], '<a>');
+        $data[$key]['option_description'] = strip_tags($data[$key]['option_description'], '<a><strong>');
     }
     return $data;
   }

@@ -1,0 +1,40 @@
+.post__page {
+  & .subscribe__form__container {
+    & form {
+      margin-top: 0;
+
+      & label {
+        display: none;
+      }
+
+      & input[type=email] {
+        background-color: transparent;
+        color: white !important;
+        border-bottom: #9ca3af 1px solid !important;
+        padding: 0 0 10px 0 !important;
+        position: relative;
+      }
+
+      & button[type=submit] {
+        font-size: 15px !important;
+        border-radius: 8px !important;
+        padding: 10px !important;
+        margin-bottom: 35px !important;
+        letter-spacing: .025em !important;
+      }
+    }
+  }
+
+  & .post__navigation__option {
+    transition: all .3s ease;
+
+    &.active__post__nav__option {
+      background-color: lightgray;
+    }
+
+    &:hover {
+      background-color: lightgray;
+    }
+  }
+
+}
