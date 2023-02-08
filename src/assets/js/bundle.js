@@ -9,3 +9,4 @@ import './aboutUs';
 import './solutions';
 import './healthplans';
 import './thankYou';
+import './postPage';

@@ -60,7 +60,7 @@
 						echo '<button name="'.$link_group['button_text'].'" class="footer__links__toggle block xl:hidden"></button>';
 				echo '</div>';
 				echo '<div class="footer__dropdown__body footer__responsive__hidden">';
-					echo '<div class="footer__links__group relative ">';
+					echo '<div class="footer__links__group mr-0 relative " style="margin-right: 0;">';
 						foreach($link_group['links'] as $link){
 							echo '<a href="'.$link['href'].'" class="footer__link" name="footer-'.$link['text'].'">'.$link['text'].'</a>';
 						}
