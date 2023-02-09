@@ -41,11 +41,30 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function createStoryCarousel() {
+    $(".au__story__slider").slick({
+      slidesToShow: 1,
+      infinte: true,
+      dots: true,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
+    });
+  }
+
+  function handleStoryArrowClick() {
+    const slider = ".au__story__slider";
+    $(`${slider}-next`).click(() => $(slider).slick("slickNext"));
+    $(`${slider}-prev`).click(() => $(slider).slick("slickPrev"));
+  }
+
   if (window.location.href.includes("who-we-are")) {
     setImageMargin();
     createTimelineSlider();
     addArrowToSlider(".au__timeline__nav");
     createCareersSlider();
     addArrowToSlider(".au__careers__slider");
+    createStoryCarousel();
+    handleStoryArrowClick();
   }
 });

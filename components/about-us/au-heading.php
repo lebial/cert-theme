@@ -1,28 +1,10 @@
-<?php
-function render_cards()
-{
-  $cards = get_field('data_cards');
-  foreach ($cards as $card) {
-    echo '<div class="card  flex-1 flex flex-col items-center justify-start h-fit ">';
-    echo '<p class=" text-4xl font-bold">' . $card['title'] . '</p>';
-    echo '<p class="text-center text-xl">' . $card['description'] . '</p>';
-    echo '</div>';
-  }
-}
-
-?>
-<section class="au__heading w-full">
-  <img src="<?php the_field('banner_image') ?>" alt="group of people" class="au__heading__image w-full">
-  <div class="au__heading__container w-full px-10 flex flex-col items-center">
-    <h1 class="mt-8"><?php the_field('heading_title') ?></h1>
-    <p><?php the_field('heading_description') ?></p>
-  </div>
-
-  <div class="au__heading__cards w-full bg-light-blue-background">
-    <div class="au__heading__cards w-full lg:w-10/12 px-10 mx-auto py-10">
-      <div class="heading__cards__container flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
-        <?php render_cards() ?>
-      </div>
+<section class="au__heading w-full bg-dark-blue-background flex justify-center items-center bg-cover" style="background-image:url(<?php the_field('banner_image') ?>); background-size: cover; margin-top: 0;">
+  <div class="w-full px-4 lg:px-0 text-center my-12 lg:my-32 relative">
+    <h1 class="text-white font-light"><?php the_field('heading_title') ?></h1>
+    <div class="au__heading__description w-11/12 md:w-1/2 lg:w-10/12 2xl:w-8/12 mx-auto">
+      <p class="text-white text-xl lg:text-2xl">
+        <?php the_field('heading_description') ?>
+      </p>
     </div>
   </div>
 </section>

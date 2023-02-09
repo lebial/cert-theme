@@ -1,13 +1,10 @@
 @import '../variables';
 
 .au__heading {
-  &__cards {
-    & .card {
-      padding: 2rem 0;
-
-      p {
-        margin-bottom: 0;
-      }
+  &__description {
+    & p {
+      max-width: none !important;
+      color: white !important;
     }
   }
 }
@@ -123,20 +120,47 @@
 //Careers section
 .au__careers__description {
   & p {
-    margin-bottom: 20px !important;
+      max-width: none !important;
+      margin-bottom: 10px !important;
   }
 }
 
-.au_careers__arrows {
-  & button {
-    & svg {
-      & path {
-        fill: white;
+//Story section
+.au__story__description {      
+  & div {
+    font-size: 1.30rem;
+  }
+}
 
-        @media #{$desktopBase} {
-          fill: #5E5E5E;
-        }
-      }
+//Story slider
+.au__story__section {
+  & svg {
+      & path {
+          fill: $color-navy;
     }
+  }
+
+  & .slick-dots {
+      bottom: -50px;
+
+      & li {
+          & button {
+              transition: all ease .3s;
+              width: 15px;
+              height: 15px;
+              background-color: white;
+              border-radius: 100%;
+
+              &::before {
+                  color: transparent;
+              }
+          }
+      }
+  }
+
+  & .slick-active {
+      & button {
+          background-color: $color-navy !important;
+      }
   }
 }
