@@ -18,6 +18,7 @@ module.exports = {
                 "gray-header": "#7e7e7e",
                 "dark-background": "#001d3a",
                 "dark-blue-background": "#000f3a",
+                "light-blue-background": "#ececfc",
                 "second-blue-background": "#05133a",
             },
         },
