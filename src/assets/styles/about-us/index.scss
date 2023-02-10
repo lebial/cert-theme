@@ -164,3 +164,12 @@
       }
   }
 }
+
+// Solutions
+.au__solutions__cards--card {
+    & p {
+        margin-bottom: 3px !important;
+        font-weight: bold;
+        color: #ffffff;
+    }
+}
