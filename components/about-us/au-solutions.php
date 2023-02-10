@@ -10,7 +10,7 @@
     }
 ?>
 
-<section class="au__solutions w-full h-full bg-[#c7d7f6] bg-opacity-20 py-16 lg:py-24">
+<section class="au__solutions w-full h-full py-16 lg:py-24">
     <div class="w-full lg:w-11/12 flex flex-col items-center mx-auto">        
         <h2 class="text-4xl lg:text-[#5E5E5E] md:text-6xl font-light text-center block pb-8"><?php the_field('solutions_title')?></h2>
         <div class="au__solutions__cards lg:w-[80%] 2xl:w-[48%] flex items-center justify-center flex-wrap">
