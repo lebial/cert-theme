@@ -37,4 +37,17 @@
     }
   }
 
+  & .post__dynamic__content {
+    & ul {
+      & li {
+        list-style: circle;
+      }
+    }
+
+    & ol {
+      & li {
+        list-style: decimal;
+      }
+    }
+  }
 }
