@@ -11,10 +11,10 @@ function render_cards()
 }
 ?>
 <section class="au__story w-full">
-  <div class="w-full px-4 lg:px-0 text-center my-12 lg:my-24 relative">
-    <h2 class="lg:text-[#5E5E5E] text-6xl font-light pb-8"><?php the_field('story_title') ?></h2>
-    <div class="au__story__description w-11/12 md:w-9/12 lg:w-[84%] 2xl:w-7/12 mx-auto">
-      <p class="text-[#5E5E5E] max-w-none text-xl 2xl:text-2xl">
+  <div class="w-full px-8 md:px-16 lg:px-0 text-left lg:text-center my-12 lg:my-24 relative">
+    <h2 class="text-[#5E5E5E] text-4xl lg:text-6xl font-bold lg:font-light pb-0 lg:pb-8"><?php the_field('story_title') ?></h2>
+    <div class="au__story__description w-full lg:w-[84%] 2xl:w-7/12 lg:mx-auto">
+      <p class="text-[#5E5E5E] max-w-none text-lg lg:text-xl 2xl:text-2xl">
         We launched in 2014 with three employees and two fundamental customers. Today we have over 120 employees, dozens
         of customers, and 250M+ patient lives on platform. How'd we do it? Simple. We delivered value
         from day one. We were driven by our frustration with existing analytic tools and belief that we could
