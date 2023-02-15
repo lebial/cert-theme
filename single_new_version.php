@@ -6,6 +6,10 @@ Template Post Type: post
 
 $post = get_post();
 $tmp_author = get_field('author');
+$show_content_navigation = get_field('show_content_navigation');
+$hide_class = $show_content_navigation ? 'lg:block' : '';
+$hide_alternate = $show_content_navigation ? '' : 'lg:block';
+$remove_mt_if_shown = $show_content_navigation ? 'mt-8' : 'mt-0';
 
 function get_realted_posts_by_tags()
 {
@@ -127,16 +131,24 @@ function render_content_navigation()
 {
 	$navigation = get_field('content_navigation');
 	foreach ($navigation as $nav_option) {
-		echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 mb-2">' . $nav_option['display_text'] . '</a>';
+		echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 mb-2 font-light text-gray-header ">' . $nav_option['display_text'] . '</a>';
 	}
+}
+
+function render_subscribe_form()
+{
+	echo '<div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">';
+	echo '<p class="text-white mt-10" style="margin-bottom: 20px;">Subscribe To Our Blog</p>';
+	echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false));
+	echo '</div>';
 }
 
 ?>
 <?php get_header(); ?>
 <main class="post__page w-full">
 	<section class="w-full min-h-[50vh] bg-dark-blue-background flex flex-col lg:flex-row items-center px-10 lg:px-28 py-14">
-		<div class="post__content__container w-full lg:w-7/12 order-2 lg:-order-1">
-			<h2 class="text-white min-w-fit text-center lg:text-left mt-6 lg:mt-0"><?php the_title() ?></h2>
+		<div class="post__content__container w-full lg:w-7/12 order-2 lg:-order-1 mr-5">
+			<h2 class="text-white min-w-fit font-normal text-center lg:text-left mt-6 lg:mt-0"><?php the_title() ?></h2>
 			<div class="post__author__container flex justify-center lg:justify-start">
 				<div class="user__container mt-10 flex">
 					<img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full mr-6 w-16 h-16 lg:w-24 lg:h-24">
@@ -144,7 +156,7 @@ function render_content_navigation()
 						<p class="text-white font-bold mb-0">By <?php echo $tmp_author['author_name'] ?></p>
 						<p class="text-white"><?php echo $tmp_author['author_title'] ?></p>
 						<a class="
-						absolute flex justify-center items-center
+						 flex justify-center items-center
 						font-bold rounded-full lg:-bottom-3 border border-white
 						border-solid w-6 h-6 text-center text-white
 						text-xs -bottom-6
@@ -161,13 +173,17 @@ function render_content_navigation()
 	</section>
 	<section class="post__description w-full pt-20">
 		<p class="text-center text-gray-400 mx-auto"><?php echo get_the_date('F j, Y') ?></p>
-		<h2 class="text-3xl mx-auto max-w-lg text-center text-gray-header leading-snug tracking-wide mt-6"><?php the_field('post_description') ?></h2>
 	</section>
 	<section class="article__body w-full flex flex-col lg:flex-row px-8 lg:px-14">
-		<aside class="sticky w-[280px] top-[20%] h-fit hidden lg:block">
-			<p class="font-bold">Contents</p>
-			<div class="content__option__container w-full flex flex-col">
-				<?php render_content_navigation() ?>
+		<aside class="sticky w-[280px] top-[15%] h-fit ">
+			<div class="hidden <?php echo $hide_alternate ?>">
+				<?php render_subscribe_form() ?>
+			</div>
+			<div class="hidden <?php echo $hide_class ?> ">
+				<p class="font-bold">Contents</p>
+				<div class="content__option__container w-full flex flex-col">
+					<?php render_content_navigation() ?>
+				</div>
 			</div>
 		</aside>
 
@@ -177,14 +193,12 @@ function render_content_navigation()
 			</div>
 		</article>
 
-		<aside class="sticky w-[280px] top-[20%] h-fit hidden lg:block">
-			<div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">
-				<p class="text-white mt-10" style="margin-bottom: 20px;">Subscribe To Our Blog</p>
-				<?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false)); ?>
+		<aside class="sticky w-[280px] top-[15%] h-fit hidden lg:block">
+			<div class="hidden <?php echo $hide_class ?>">
+				<?php render_subscribe_form() ?>
 			</div>
-
 			<!-- related posts container -->
-			<div class="related__posts__container w-full mt-8">
+			<div class="related__posts__container w-full <?php echo $remove_mt_if_shown ?>">
 				<div class="related__posts__headline flex w-full items-center mb-4">
 					<p class="w-fit mr-4">You might also like </p>
 					<div class="flex-1 h-0 border-t-2 border-gray-400 border-solid"></div>
