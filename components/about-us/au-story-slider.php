@@ -22,13 +22,13 @@
 
 ?>
 <section class="au__story__section pt-4 pb-16 w-full bg-cover relative bg-[#d3dff9] ">
-    <div class="section__body w-7/12 mx-auto">
+    <div class="section__body w-9/12 lg:w-7/12 mx-auto">
         <?php render_title()?>
         <div class="w-full relative">
           <div class="au__story__slider mt-8 lg:mt-16 relative z-30">
             <?php render_story_slides()?>
           </div>
-          <div class="au__story__slider__arrows w-[79vw] absolute flex justify-between top-1/2 left-1/2 z-20" style="transform: translate(-50%, -50%)">
+          <div class="au__story__slider__arrows w-[100vw] lg:w-[79vw] absolute flex justify-between top-1/2 left-1/2 z-20" style="transform: translate(-50%, -50%)">
             <?php custom_slider_arrows('au__story__slider')?>
           </div>
         </div>
