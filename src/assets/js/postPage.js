@@ -12,5 +12,18 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function handleOurTeamExpand() {
+    $('.team__member__button').click(function () {
+      const parent = $(this).parent();
+      const isExpanded = $(parent).prev().hasClass('team__member--expanded');
+      const height = isExpanded ? '100px' : `${$($(parent).prev().children()[0]).height() + 10}px`;
+      const rotate = isExpanded ? '0deg' : '180deg';
+      $(parent).prev().toggleClass('team__member--expanded line-clamp-3');
+      $(parent).prev().animate({ height }, 300, "linear");
+      $(this).animate({ rotate }, 300, "linear");
+    });
+  }
+
+  handleOurTeamExpand();
   setActiveNavOption();
 });

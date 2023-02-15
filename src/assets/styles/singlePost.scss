@@ -13,6 +13,10 @@
         border-bottom: #9ca3af 1px solid !important;
         padding: 0 0 10px 0 !important;
         position: relative;
+
+        &:focus {
+          background-color: transparent;
+        }
       }
 
       & button[type=submit] {
@@ -37,4 +41,40 @@
     }
   }
 
+  & .post__dynamic__content {
+    & ul {
+      margin-left: 80px;
+
+      & li {
+        list-style: disc;
+      }
+    }
+
+    & ol {
+      margin-left: 80px;
+
+      & li {
+        list-style: decimal;
+      }
+    }
+
+    & h2 {
+      font-size: 1.875rem;
+    }
+
+    & h3 {
+      font-size: 1.5rem;
+    }
+
+    & h1,
+    h2,
+    h3,
+    h4 {
+      color: #7e7e7e;
+    }
+
+    & p {
+      max-width: none;
+    }
+  }
 }

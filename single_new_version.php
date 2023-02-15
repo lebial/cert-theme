@@ -6,19 +6,46 @@ Template Post Type: post
 
 $post = get_post();
 $tmp_author = get_field('author');
+$show_content_navigation = get_field('show_content_navigation');
+$hide_class = $show_content_navigation ? 'lg:block' : '';
+$hide_alternate = $show_content_navigation ? '' : 'lg:block';
+$remove_mt_if_shown = $show_content_navigation ? 'mt-8' : 'mt-0';
+
+function get_realted_posts_by_tags()
+{
+	$tmp_post = get_post();
+	$post_tag = get_the_tags($tmp_post->ID);
+	// Check if the post has any tags
+	$ids = array();
+	if ($post_tag) {
+		$ids = wp_list_pluck($post_tag, 'term_id');
+	}
+	// Now pass the IDs to tag__in
+	$args = array(
+		'post_type' => 'post',
+		'post__not_in' => array($tmp_post->ID),
+		'tag__in'   => $ids,
+		'posts_per_page' => 3,
+		'caller_get_posts' => 1
+	);
+	// Now proceed with the rest of your query
+	$related_posts_query = new WP_Query($args);
+	$related_posts = array();
+	foreach ($related_posts_query->posts as $rel_post) {
+		array_push($related_posts, $rel_post->ID);
+	};
+	return $related_posts;
+}
 
 function render_related_posts()
 {
 	$related_posts = get_field('related_posts');
-	if (!$related_posts)  return 'no related posts to show';
+	if (!$related_posts)  $related_posts = get_realted_posts_by_tags();
 	foreach ($related_posts as $tmp_post_id) {
-		$tmp_post_author = get_post_field('post_author', $tmp_post_id);
-		$tmp_first_name_author = get_the_author_meta('first_name', $tmp_post_author);
-
 		echo '<a href="' . get_permalink($tmp_post_id) . '">';
 		echo '<div class="related__post__body flex mt-4">';
-		echo '<div class=" w-24 h-16 bg-slate-500 mr-4">
-							<img src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="post_related_image" class="w-full h-full">
+		echo '<div class=" w-24 h-16 bg-dark-blue-background mr-4">
+							<img src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="" class="w-full h-full">
 					</div>';
 		echo '<div class="post__info flex-1">';
 		echo '<p class="post__title mb-0 text-sm font-bold">' . get_the_title($tmp_post_id) . '</p>';
@@ -31,13 +58,12 @@ function render_related_posts()
 function render_mobile_related_posts()
 {
 	$related_posts = get_field('related_posts');
-	if (!$related_posts)  return 'no related posts to show';
+	if (!$related_posts)  $related_posts = get_realted_posts_by_tags();
 	foreach ($related_posts as $tmp_post_id) {
-
 		echo '<div class="mb-8">';
 		echo '<div class="related__post__body mt-4 shadow-xl max-w-sm">';
-		echo '<div class=" w-full bg-slate-500 mr-4">
-								<img src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="post_related_image" class="w-full h-full">
+		echo '<div class=" w-full bg-dark-blue-background mr-4 aspect-video">
+								<img src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="_" class="w-full h-full">
 						</div>';
 		echo '<div class="post__info w-full p-8">';
 		echo '<p class="post__title text-sm font-bold" style="margin-bottom: 20px;">' . get_the_title($tmp_post_id) . '</p>';
@@ -58,9 +84,12 @@ function render_text_content($component)
 function render_image_container($component)
 {
 	$img = $component['post_image'];
+	$img_size = $component['image_size'];
+	$className = $img_size == 'small:Small' ? 'max-w-md' : '';
+	js_console($className);
 	echo '<div class="flex justify-center py-8 my-4 mb-14">';
 	echo '<div class="post_image_container">';
-	echo '<img class=" max-w-md" src="' . $img['url'] . '" alt="' . $img['alt'] . '" >';
+	echo '<img class="' . $className . '" src="' . $img['url'] . '" alt="' . $img['alt'] . '" >';
 	echo '</div>';
 	echo '</div>';
 }
@@ -102,16 +131,24 @@ function render_content_navigation()
 {
 	$navigation = get_field('content_navigation');
 	foreach ($navigation as $nav_option) {
-		echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 mb-2">' . $nav_option['display_text'] . '</a>';
+		echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 mb-2 font-light text-gray-header ">' . $nav_option['display_text'] . '</a>';
 	}
+}
+
+function render_subscribe_form()
+{
+	echo '<div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">';
+	echo '<p class="text-white mt-10" style="margin-bottom: 20px;">Subscribe To Our Blog</p>';
+	echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false));
+	echo '</div>';
 }
 
 ?>
 <?php get_header(); ?>
 <main class="post__page w-full">
 	<section class="w-full min-h-[50vh] bg-dark-blue-background flex flex-col lg:flex-row items-center px-10 lg:px-28 py-14">
-		<div class="post__content__container w-full lg:w-7/12 order-2 lg:-order-1">
-			<p class="text-white text-4xl xl:text-6xl min-w-fit text-center lg:text-left mt-6 lg:mt-0"><?php the_title() ?></p>
+		<div class="post__content__container w-full lg:w-7/12 order-2 lg:-order-1 mr-5">
+			<h2 class="text-white min-w-fit font-normal text-center lg:text-left mt-6 lg:mt-0"><?php the_title() ?></h2>
 			<div class="post__author__container flex justify-center lg:justify-start">
 				<div class="user__container mt-10 flex">
 					<img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full mr-6 w-16 h-16 lg:w-24 lg:h-24">
@@ -119,7 +156,7 @@ function render_content_navigation()
 						<p class="text-white font-bold mb-0">By <?php echo $tmp_author['author_name'] ?></p>
 						<p class="text-white"><?php echo $tmp_author['author_title'] ?></p>
 						<a class="
-						absolute flex justify-center items-center
+						 flex justify-center items-center
 						font-bold rounded-full lg:-bottom-3 border border-white
 						border-solid w-6 h-6 text-center text-white
 						text-xs -bottom-6
@@ -136,30 +173,32 @@ function render_content_navigation()
 	</section>
 	<section class="post__description w-full pt-20">
 		<p class="text-center text-gray-400 mx-auto"><?php echo get_the_date('F j, Y') ?></p>
-		<h2 class="text-3xl mx-auto max-w-lg text-center text-gray-header leading-snug tracking-wide mt-6"><?php the_field('post_description') ?></h2>
 	</section>
 	<section class="article__body w-full flex flex-col lg:flex-row px-8 lg:px-14">
-		<aside class="sticky w-[280px] top-[20%] h-fit hidden lg:block">
-			<p class="font-bold">Contents</p>
-			<div class="content__option__container w-full flex flex-col">
-				<?php render_content_navigation() ?>
+		<aside class="sticky w-[280px] top-[15%] h-fit ">
+			<div class="hidden <?php echo $hide_alternate ?>">
+				<?php render_subscribe_form() ?>
+			</div>
+			<div class="hidden <?php echo $hide_class ?> ">
+				<p class="font-bold">Contents</p>
+				<div class="content__option__container w-full flex flex-col">
+					<?php render_content_navigation() ?>
+				</div>
 			</div>
 		</aside>
 
 		<article class="w-full lg:w-auto lg:flex-1 flex justify-center">
-			<div class="content__container w-full flex flex-col items-center lg:px-10">
+			<div class="content__container post__dynamic__content w-full flex flex-col items-center lg:px-10">
 				<?php render_dynamic_content() ?>
 			</div>
 		</article>
 
-		<aside class="sticky w-[280px] top-[20%] h-fit hidden lg:block">
-			<div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">
-				<p class="text-white mt-10" style="margin-bottom: 20px;">Subscribe To Our Blog</p>
-				<?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false)); ?>
+		<aside class="sticky w-[280px] top-[15%] h-fit hidden lg:block">
+			<div class="hidden <?php echo $hide_class ?>">
+				<?php render_subscribe_form() ?>
 			</div>
-
 			<!-- related posts container -->
-			<div class="related__posts__container w-full mt-8">
+			<div class="related__posts__container w-full <?php echo $remove_mt_if_shown ?>">
 				<div class="related__posts__headline flex w-full items-center mb-4">
 					<p class="w-fit mr-4">You might also like </p>
 					<div class="flex-1 h-0 border-t-2 border-gray-400 border-solid"></div>
@@ -176,10 +215,13 @@ function render_content_navigation()
 	</section>
 	<div class="w-full lg:w-7/12 border-b border-gray-header border-solid flex justify-center mb-14 mx-auto pb-6">
 		<div class="flex items-center">
-			<p class="text-gray-header">SHARE IT :</p>
-			<a href="#"><img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Twitter-navy.jpg" alt=""></a>
-			<a href="#"><img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt=""></a>
-			<a href="#"><img class="w-7" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Facebook-navy.jpg" alt=""></a>
+			<p class="text-gray-header mr-4">SHARE IT :</p>
+			<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>">
+				<img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
+			</a>
+			<a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>">
+				<img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Twitter-navy.jpg" alt="">
+			</a>
 		</div>
 	</div>
 
