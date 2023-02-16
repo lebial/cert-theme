@@ -120,14 +120,14 @@
 //Careers section
 .au__careers__description {
   & p {
-      max-width: none !important;
-      margin-bottom: 10px !important;
-      line-height: 25px;
+    max-width: none !important;
+    margin-bottom: 10px !important;
+    line-height: 25px;
   }
 }
 
 //Story section
-.au__story__description {      
+.au__story__description {
   & div {
     font-size: 1.30rem;
   }
@@ -136,41 +136,58 @@
 //Story slider
 .au__story__section {
   & svg {
-      & path {
-          fill: $color-navy;
+    & path {
+      fill: $color-navy;
     }
   }
 
   & .slick-dots {
-      bottom: -50px;
+    bottom: -50px;
 
-      & li {
-          & button {
-              transition: all ease .3s;
-              width: 15px;
-              height: 15px;
-              background-color: white;
-              border-radius: 100%;
+    & li {
+      & button {
+        transition: all ease .3s;
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        border-radius: 100%;
 
-              &::before {
-                  color: transparent;
-              }
-          }
+        &::before {
+          color: transparent;
+        }
       }
+    }
   }
 
   & .slick-active {
-      & button {
-          background-color: $color-navy !important;
-      }
+    & button {
+      background-color: $color-navy !important;
+    }
   }
 }
 
 // Solutions
 .au__solutions__cards--card {
-    & p {
-        margin-bottom: 3px !important;
-        font-weight: bold;
-        color: #ffffff;
+  transition: all .3s ease;
+
+  & .card__bg__image,
+  .au__right__arrow {
+    transition: all .3s ease;
+  }
+
+  & p {
+    margin-bottom: 3px !important;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  &:hover {
+    & .card__bg__image {
+      transform: scale(1.5);
     }
+
+    & .au__right__arrow {
+      transform: translateX(10px);
+    }
+  }
 }

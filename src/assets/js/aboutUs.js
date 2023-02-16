@@ -58,6 +58,18 @@ jQuery(document).ready(function ($) {
     $(`${slider}-prev`).click(() => $(slider).slick("slickPrev"));
   }
 
+  function handleOurTeamExpand() {
+    $('.team__member__button').click(function () {
+      const prev = $(this).parent().prev();
+      const isExpanded = prev.hasClass('team__member--expanded');
+      const height = isExpanded ? '60px' : `${$(prev.children()[0].children[0]).height() + 10}px`;
+      const rotate = isExpanded ? '0deg' : '180deg';
+      prev.toggleClass('team__member--expanded line-clamp-2');
+      prev.animate({ height }, 300, "linear");
+      $(this).animate({ rotate }, 300, "linear");
+    });
+  }
+
   if (window.location.href.includes("who-we-are")) {
     setImageMargin();
     createTimelineSlider();
@@ -66,5 +78,6 @@ jQuery(document).ready(function ($) {
     addArrowToSlider(".au__careers__slider");
     createStoryCarousel();
     handleStoryArrowClick();
+    handleOurTeamExpand()
   }
 });

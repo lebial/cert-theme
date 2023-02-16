@@ -4,7 +4,7 @@ function render_cards()
   $cards = get_field('data_cards');
   foreach ($cards as $card) {
     echo '<div class="card  flex-1 flex flex-col items-center justify-start h-fit ">';
-    echo '<p class=" text-4xl font-bold mb-0">' . $card['title'] . '</p>';
+    echo '<p class=" text-4xl font-bold mb-0 text-dark-blue-background">' . $card['title'] . '</p>';
     echo '<p class="text-center text-xl">' . $card['description'] . '</p>';
     echo '</div>';
   }
@@ -27,7 +27,7 @@ function render_cards()
     </div>
   </div>
   <div class="au__heading__cards w-full bg-light-blue-background">
-    <div class="au__heading__cards w-full lg:w-10/12 px-10 mx-auto py-10">
+    <div class="au__heading__cards w-full lg:w-10/12 px-10 mx-auto py-20">
       <div class="heading__cards__container flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
         <?php render_cards() ?>
       </div>

@@ -48,7 +48,7 @@ function render_related_posts()
 							<img src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="" class="w-full h-full">
 					</div>';
 		echo '<div class="post__info flex-1">';
-		echo '<p class="post__title mb-0 text-sm font-bold">' . get_the_title($tmp_post_id) . '</p>';
+		echo '<p class="post__title mb-0 font-bold" style="font-size: 12px;">' . get_the_title($tmp_post_id) . '</p>';
 		echo '</div>';
 		echo '</div>';
 		echo '</a>';
@@ -97,10 +97,11 @@ function render_image_container($component)
 function render_quotes($component)
 {
 	$quotes = $component['post_quotes'];
-	echo '<div class="w-full post__quotes__slider mx-8 border-t-2 border-b-2 border-solid border-primary mb-14 py-10">';
+	echo '<div class="w-9/12 h-px bg-primary"> </div>';
+	echo '<div class="w-full post__quotes__slider mx-8 py-10">';
 	foreach ($quotes as $quote) {
 		echo '<div class="quote__body flex flex-col items-center">';
-		echo '<p class="font-bold text-xl text-gray-header">';
+		echo '<p class="font-bold text-xl text-gray-header max-w-sm text-center" style="max-width: 700px;">';
 		echo '&lsquo;&lsquo;' . $quote['quote_body'] . '&rsquo;&rsquo;';
 		echo '</p>';
 		echo '<p class="">';
@@ -109,6 +110,7 @@ function render_quotes($component)
 		echo '</div>';
 	}
 	echo '</div>';
+	echo '<div class="w-9/12 h-px bg-primary mb-10"> </div>';
 }
 
 
@@ -171,7 +173,7 @@ function render_subscribe_form()
 			</div>
 		</div>
 	</section>
-	<section class="post__description w-full pt-20">
+	<section class="post__description w-full pt-20 mb-10">
 		<p class="text-center text-gray-400 mx-auto"><?php echo get_the_date('F j, Y') ?></p>
 	</section>
 	<section class="article__body w-full flex flex-col lg:flex-row px-8 lg:px-14">
