@@ -24,12 +24,14 @@ function render_team_groups()
               <p class="text-white text-center">' . $member['title'] . '</p>
 
               <div class="w-full border-t-[1px] border-solid border-primary mt-4 py-4 relative ' . $show . '">
-                <div class="overflow-y-hidden h-[100px] line-clamp-3">
+                <div class="overflow-y-hidden h-[65px] line-clamp-2">
                   <p class="text-white max-w-none ">
-                    ' . $description . '
+                    <span>
+                      ' . $description . '
+                    </span>
                   </p>
                 </div>
-                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2">
+                <div class="absolute -bottom-14 left-1/2 -translate-x-1/2">
                   <button type="button" class=" team__member__button w-10 h-10 rounded-full bg-primary">
                     <img src="' . $button_image . '" alt="">
                   </button>
