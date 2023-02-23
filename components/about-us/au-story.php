@@ -5,7 +5,7 @@ function render_cards()
   foreach ($cards as $card) {
     echo '<div class="card  flex-1 flex flex-col items-center justify-start h-fit ">';
     echo '<p class=" text-4xl font-bold mb-0 text-dark-blue-background">' . $card['title'] . '</p>';
-    echo '<p class="text-center text-xl">' . $card['description'] . '</p>';
+    echo '<p class="text-center text-xl text-dark-blue-background">' . $card['description'] . '</p>';
     echo '</div>';
   }
 }

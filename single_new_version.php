@@ -48,7 +48,7 @@ function render_related_posts()
 							<img src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="" class="w-full h-full">
 					</div>';
 		echo '<div class="post__info flex-1">';
-		echo '<p class="post__title mb-0 font-bold" style="font-size: 12px;">' . get_the_title($tmp_post_id) . '</p>';
+		echo '<p class="post__title mb-0 font-bold leading-4" style="font-size: 12px;">' . get_the_title($tmp_post_id) . '</p>';
 		echo '</div>';
 		echo '</div>';
 		echo '</a>';
@@ -98,10 +98,10 @@ function render_quotes($component)
 {
 	$quotes = $component['post_quotes'];
 	echo '<div class="w-9/12 h-px bg-primary"> </div>';
-	echo '<div class="w-full post__quotes__slider mx-8 py-10">';
+	echo '<div class="w-full post__quotes__slider mx-8 py-6">';
 	foreach ($quotes as $quote) {
 		echo '<div class="quote__body flex flex-col items-center">';
-		echo '<p class="font-bold text-xl text-gray-header max-w-sm text-center" style="max-width: 700px;">';
+		echo '<p class="font-bold text-lg text-gray-header max-w-sm text-center" style="max-width: 700px;">';
 		echo '&lsquo;&lsquo;' . $quote['quote_body'] . '&rsquo;&rsquo;';
 		echo '</p>';
 		echo '<p class="">';
@@ -173,10 +173,13 @@ function render_subscribe_form()
 			</div>
 		</div>
 	</section>
-	<section class="post__description w-full pt-20 mb-10">
+	<section class="post__description w-full pt-20 mb-14">
 		<p class="text-center text-gray-400 mx-auto"><?php echo get_the_date('F j, Y') ?></p>
+		<div class=" max-w-xl mx-auto mt-10">
+			<h2 class="text-center text-4xl text-gray-header"> <?php the_field('post_h2') ?></h2>
+		</div>
 	</section>
-	<section class="article__body w-full flex flex-col lg:flex-row px-8 lg:px-14">
+	<section class="article__body w-full flex flex-col lg:flex-row px-5 ">
 		<aside class="sticky w-[280px] top-[15%] h-fit ">
 			<div class="hidden <?php echo $hide_alternate ?>">
 				<?php render_subscribe_form() ?>
@@ -189,7 +192,7 @@ function render_subscribe_form()
 			</div>
 		</aside>
 
-		<article class="w-full lg:w-auto lg:flex-1 flex justify-center">
+		<article class="w-full lg:w-auto lg:flex-1 flex justify-center px-10 ">
 			<div class="content__container post__dynamic__content w-full flex flex-col items-center lg:px-10">
 				<?php render_dynamic_content() ?>
 			</div>
@@ -244,7 +247,7 @@ function render_subscribe_form()
 	<div class="about__the__author w-full justify-center my-24 hidden lg:flex ">
 		<div class="author__card flex">
 			<div class="author__icon mr-6">
-				<img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class=" rounded-full grayscale w-24 h-24">
+				<img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class=" rounded-full w-24 h-24" style="filter: grayscale(1);">
 			</div>
 			<div class="author__description">
 				<p class="mb-0 text-lg text-gray-header">ABOUT THE AUTHOR</p>
