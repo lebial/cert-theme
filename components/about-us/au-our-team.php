@@ -60,20 +60,25 @@ function render_team_groups_mobile()
   echo '<div class="our__team__slider block lg:hidden mt-10" >';
   foreach ($team['group_members'] as $member) {
     $description = $member['description'];
-    echo '<div class="team__member w-full max-w-5xl mx-auto px-14 flex flex-col items-center">
-            <p class="text-white font-bold text-center mb-0 text-3xl">' . $member['name'] . '</p>
-            <p class="text-white text-center">' . $member['title'] . '</p>
+    echo '<div class="team__member w-full max-w-5xl mx-auto px-14 flex flex-col items-center pb-20">
+              <p class="text-white font-bold text-center mb-0 text-3xl">' . $member['name'] . '</p>
+              <p class="text-white text-center">' . $member['title'] . '</p>
 
-            <div class="w-full border-t-[1px] border-solid border-primary mt-4 py-4 relative">
-              <div class="">
-                <p class="text-white max-w-none ">
-                  <span>
-                    ' . $description . '
-                  </span>
-                </p>
+              <div class="w-full border-t-[1px] border-solid border-primary mt-4 py-4 relative ">
+                <div class="overflow-y-hidden h-[95px] line-clamp-3">
+                  <p class="text-white max-w-none ">
+                    <span>
+                      ' . $description . '
+                    </span>
+                  </p>
+                </div>
+                <div class="absolute -bottom-14 left-1/2 -translate-x-1/2">
+                  <button type="button" class=" team__member__button member__mobile__button w-36 py-2 text-white hover:text-primary hover:border-primary transition-colors duration-300 border border-white border-solid rounded-md">
+                    Read More
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>';
+            </div>';
   }
   echo '</div>';
   echo '</div>';
@@ -87,13 +92,10 @@ function render_team_groups_mobile()
   <div class="our__team__content w-full">
     <div class="relative">
       <?php render_team_groups_mobile() ?>
-      <div class="absolute w-full lg:hidden flex justify-between top-[20%]">
+      <div class="absolute w-full lg:hidden flex justify-between top-[140px]">
         <?php custom_slider_arrows('our__team__slider') ?>
       </div>
     </div>
     <?php render_team_groups() ?>
   </div>
 </section>
-
-
-<!-- poner al principio el mobil, en el render normal poner un hide al primer groupo de miembres siempre y cuando sea el idx primero y esconder el mobil y el desktop. -->

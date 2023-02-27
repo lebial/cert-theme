@@ -51,16 +51,16 @@ function render_link_groups()
 	$link_groups = get_field('footer_link_groups', 'option') ? get_field('footer_link_groups', 'options') : $data_mock;
 
 	foreach ($link_groups as $link_group) {
-		// echo '<div class="footer__links mr-0 w-[55%] md:w-[16%]  xl:mr-12 ">';
-		echo '<div class="footer__links lg:flex flex-1 flex-col items-center">';
+		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start">';
 		echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 		if ($link_group['button_link']) {
-			echo '<a name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
+			$open_tab = $link_group['button_text'] == 'Contact Us' ? 'target="_blank"' : '';
+			echo '<a name="footer-' . $link_group['button_text'] . '" ' . $open_tab . ' href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
 		} else {
 
 			echo '<a name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
 		}
-		echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block xl:hidden"></button>';
+		echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden"></button>';
 		echo '</div>';
 		echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 		echo '<div class="footer__links__group mr-0 relative " style="margin-right: 0;">';
@@ -76,7 +76,7 @@ function render_link_groups()
 
 <footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen">
 	<div class="first-row w-full flex flex-col xl:flex-row xl:justify-between">
-		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0">
+		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0 mt-10 xl:mt-0">
 			<div class="flex flex-col items-center xl:items-start w-10/12">
 				<span class="footer__responsive__hidden text-white">
 					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
@@ -88,7 +88,7 @@ function render_link_groups()
 				</a>
 			</div>
 		</div>
-		<div class="footer__links w-full flex flex-col xl:w-full xl:flex-row">
+		<div class="footer__links w-full flex flex-col xl:w-full lg:flex-row justify-evenly">
 			<?php render_link_groups(); ?>
 		</div>
 	</div>
@@ -117,11 +117,7 @@ function render_link_groups()
 				<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
 					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6" alt="">
 				</a>
-				<!-- <a href="https://www.facebook.com/sharer/sharer.php?u=<?php //echo $base_url 
-																																		?>">
-					<img src="<?php //echo get_template_directory_uri()
-										?>/dist/assets/images/footer/facebook.svg" class="style-svg w-6" alt="">
-				</a> -->
+
 			</div>
 			<div>
 				<span>&reg;</span>
@@ -130,14 +126,7 @@ function render_link_groups()
 				<a class="mr-2" href="<?php the_field('privacy_link', 'options') ?>">Privacy</a>
 			</div>
 		</div>
-		<!-- <div class="corp__info corp__info__clone absolute left-0 hidden lg:flex flex-col xl:flex-row mt-4 xl:mt-0 text-base">
-			<div>
-				<span>&reg;</span>
-				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
-				<a class="mr-2" href="/terms">Terms</a>
-				<a class="mr-2" href="/privacy">Privacy</a>
-			</div>
-		</div> -->
+
 	</div>
 
 </footer>

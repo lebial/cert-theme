@@ -150,7 +150,7 @@ function render_subscribe_form()
 <main class="post__page w-full">
 	<section class="w-full min-h-[50vh] bg-dark-blue-background flex flex-col lg:flex-row items-center px-10 lg:px-28 py-14">
 		<div class="post__content__container w-full lg:w-7/12 order-2 lg:-order-1 mr-5">
-			<h2 class="text-white min-w-fit font-normal text-center lg:text-left mt-6 lg:mt-0"><?php the_title() ?></h2>
+			<h1 class="text-white min-w-fit font-normal text-center lg:text-left mt-6 lg:mt-0" style="font-size: calc(1.5rem + (1vw - 3.2px) * 1.9375);"><?php the_title() ?></h1>
 			<div class="post__author__container flex justify-center lg:justify-start">
 				<div class="user__container mt-10 flex">
 					<img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full mr-6 w-16 h-16 lg:w-24 lg:h-24">
@@ -176,7 +176,7 @@ function render_subscribe_form()
 	<section class="post__description w-full pt-20 mb-14">
 		<p class="text-center text-gray-400 mx-auto"><?php echo get_the_date('F j, Y') ?></p>
 		<div class=" max-w-xl mx-auto mt-10">
-			<h2 class="text-center text-4xl text-gray-header"> <?php the_field('post_h2') ?></h2>
+			<h2 class="text-center text-2xl lg:text-4xl text-gray-header px-4"> <?php the_field('post_h2') ?></h2>
 		</div>
 	</section>
 	<section class="article__body w-full flex flex-col lg:flex-row px-5 ">
@@ -192,7 +192,7 @@ function render_subscribe_form()
 			</div>
 		</aside>
 
-		<article class="w-full lg:w-auto lg:flex-1 flex justify-center px-10 ">
+		<article class="w-full lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 ">
 			<div class="content__container post__dynamic__content w-full flex flex-col items-center lg:px-10">
 				<?php render_dynamic_content() ?>
 			</div>

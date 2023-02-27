@@ -12,7 +12,7 @@ function render_cards()
 ?>
 <section class="au__story w-full">
   <div class="w-full px-8 md:px-16 lg:px-0 text-left lg:text-center my-12 lg:my-24 relative">
-    <h2 class="text-[#5E5E5E] text-4xl lg:text-6xl font-bold lg:font-light pb-0 lg:pb-8"><?php the_field('story_title') ?></h2>
+    <h2 class="text-[#5E5E5E] text-4xl lg:text-6xl font-bold lg:font-light pb-0 lg:pb-8 text-center"><?php the_field('story_title') ?></h2>
     <div class="au__story__description w-full lg:w-[84%] 2xl:w-7/12 lg:mx-auto">
       <p class="text-[#5E5E5E] max-w-none text-lg lg:text-xl 2xl:text-2xl">
         We launched in 2014 with three employees and two fundamental customers. Today we have over 120 employees, dozens
@@ -28,7 +28,7 @@ function render_cards()
   </div>
   <div class="au__heading__cards w-full bg-light-blue-background">
     <div class="au__heading__cards w-full lg:w-10/12 px-10 mx-auto py-20">
-      <div class="heading__cards__container flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+      <div class="heading__cards__container flex flex-col md:flex-row md:space-x-4 space-y-12 md:space-y-0">
         <?php render_cards() ?>
       </div>
     </div>

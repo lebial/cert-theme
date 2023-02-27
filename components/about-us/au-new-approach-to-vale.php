@@ -4,8 +4,8 @@ function render_points()
   $points = get_field('value_points');
 
   foreach ($points as $point) {
-    echo '<div class="flex items-center mb-4 w-9/12 lg:w-full">';
-    echo '<div class="border-t-[9px] border-b-[9px] border-l-[14px]
+    echo '<div class="flex items-start lg:items-center mb-4 w-9/12 lg:w-full">';
+    echo '<div class="border-t-[9px] border-b-[9px] border-l-[14px] mt-2 lg:mt-0
                 border-t-transparent border-solid border-b-transparent border-l-primary mr-4"></div>';
     echo '<p class="evaluator__triangle text-white text-2xl">' .  $point['point_text'] . '</p>';
     echo '</div>';
