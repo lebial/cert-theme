@@ -60,17 +60,40 @@ jQuery(document).ready(function ($) {
 
   function handleOurTeamExpand() {
     $('.team__member__button').click(function () {
-      const prev = $(this).parent().prev();
-      const isExpanded = prev.hasClass('team__member--expanded');
-      const height = isExpanded ? '60px' : `${$(prev.children()[0].children[0]).height() + 10}px`;
-      const rotate = isExpanded ? '0deg' : '180deg';
-      prev.toggleClass('team__member--expanded line-clamp-2');
-      prev.animate({ height }, 300, "linear");
-      $(this).animate({ rotate }, 300, "linear");
+
+      const viewPort = $(this).hasClass('member__mobile__button') ? 'mobile' : 'desktop';
+      const descriptionContainer = $(this).parent().prev();
+      const isDescriptionExpanded = descriptionContainer.hasClass('team__member--expanded');
+      const descriptionTotalHeight = `${$(descriptionContainer.children()[0].children[0]).height() + 10}px`;
+      const constants = {
+        desktop: {
+          toggle: 'line-clamp-2',
+          height: isDescriptionExpanded ? '65px' : descriptionTotalHeight,
+        },
+        mobile: {
+          toggle: 'line-clamp-3',
+          height: isDescriptionExpanded ? '95px' : descriptionTotalHeight,
+        }
+      }
+      const { toggle, height } = constants[viewPort];
+      const rotate = isDescriptionExpanded ? '0deg' : '180deg';
+      descriptionContainer.toggleClass(`team__member--expanded ${toggle}`);
+      descriptionContainer.animate({ height }, 300, "linear");
+      if (viewPort === 'desktop') return $(this).animate({ rotate }, 300, "linear");
+      const text = !isDescriptionExpanded ? 'Read Less' : 'Read More';
+      $(this).text(text);
     });
   }
 
-  if (window.location.href.includes("who-we-are")) {
+  function createOurTeamSlider() {
+    $('.our__team__slider').slick({
+      slidesToShow: 1,
+      dots: true,
+      slidesToScroll: 1,
+    });
+  }
+
+  if (window.location.href.includes("about-us")) {
     setImageMargin();
     createTimelineSlider();
     addArrowToSlider(".au__timeline__nav");
@@ -78,6 +101,8 @@ jQuery(document).ready(function ($) {
     addArrowToSlider(".au__careers__slider");
     createStoryCarousel();
     handleStoryArrowClick();
-    handleOurTeamExpand()
+    handleOurTeamExpand();
+    createOurTeamSlider();
+    addArrowToSlider(".our__team__slider");
   }
 });

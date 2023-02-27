@@ -8,7 +8,7 @@
       }
 
       & input[type=email] {
-        background-color: transparent;
+        background-color: transparent !important;
         color: white !important;
         border-bottom: #9ca3af 1px solid !important;
         padding: 0 0 10px 0 !important;
@@ -19,12 +19,48 @@
         }
       }
 
+      & p {
+        font-size: 10px;
+        color: white;
+      }
+
+      & .frm_submit {
+        margin-top: 0 !important;
+      }
+
+
+
       & button[type=submit] {
         font-size: 15px !important;
         border-radius: 8px !important;
         padding: 10px !important;
         margin-bottom: 35px !important;
         letter-spacing: .025em !important;
+      }
+    }
+
+    & .frm_message {
+      background-color: transparent;
+      padding: 0 0 10px 0;
+      text-align: center;
+      color: white;
+
+      & .frm_thankyou {
+        font-size: 30;
+      }
+
+      & .frm_subscribing {
+        margin-top: -10px;
+        font-size: 18px;
+      }
+
+      & p {
+        font-size: 12px;
+        color: white;
+        text-align: left;
+        padding: 0 33px;
+        margin-top: 10px;
+        margin-bottom: 30px;
       }
     }
   }
