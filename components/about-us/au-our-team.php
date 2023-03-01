@@ -5,7 +5,7 @@ function render_team_groups()
   $button_image = get_field('button_arrow');
   foreach ($teams as $idx => $team) {
     $first_slider = $idx == 0 ? 'hidden lg:block' : '';
-    echo '<div class="team__group lg:mb-36 ' . $first_slider . '">
+    echo '<div class="team__group lg:mb-36 last-of-type:mb-10 ' . $first_slider . '">
         <div class="team__group__header flex mb-7">
           <div class="group__header__divider w-3/12 lg:w-4/12 flex items-center pr-3 lg:pr-0">
             <div class="flex-1 h-px bg-white"></div>
@@ -25,7 +25,7 @@ function render_team_groups()
               <p class="text-white text-center">' . $member['title'] . '</p>
 
               <div class="w-full border-t-[1px] border-solid border-primary mt-4 py-4 relative ' . $show . '">
-                <div class="overflow-y-hidden h-[65px] line-clamp-2">
+                <div class=" overflow-y-hidden h-[65px] line-clamp-2">
                   <p class="text-white max-w-none ">
                     <span>
                       ' . $description . '
@@ -65,7 +65,7 @@ function render_team_groups_mobile()
               <p class="text-white text-center">' . $member['title'] . '</p>
 
               <div class="w-full border-t-[1px] border-solid border-primary mt-4 py-4 relative ">
-                <div class="overflow-y-hidden h-[95px] line-clamp-3">
+                <div class="member__description overflow-y-hidden h-[95px] line-clamp-3">
                   <p class="text-white max-w-none ">
                     <span>
                       ' . $description . '
@@ -84,9 +84,9 @@ function render_team_groups_mobile()
   echo '</div>';
 }
 ?>
-<section class="about__us__our__team w-full bg-dark-blue-background pb-20">
-  <div class="our__team__header min-h-[30vh] flex flex-col justify-end relative">
-    <img class="top-0 left-0 absolute w-full h-[190%]" src="<?php the_field('our_team_background') ?>" alt="our team background">
+<section class="about__us__our__team w-full bg-dark-blue-background pb-8 ">
+  <div class="our__team__header min-h-[20vh] lg:min-h-[30vh] flex flex-col justify-end relative">
+    <img class="top-0 left-0 absolute w-full h-full lg:h-[190%]" src="<?php the_field('our_team_background') ?>" alt="our team background">
     <h2 class="text-6xl font-bold text-white text-center"><?php the_field('section_title') ?></h2>
   </div>
   <div class="our__team__content w-full">

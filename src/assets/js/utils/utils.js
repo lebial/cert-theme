@@ -3,13 +3,15 @@ function getNavHeight() {
     return { navHeight };
 }
 
-function addArrowToSlider(slider) {
+function addArrowToSlider(slider, optCallback = null) {
     const $ = jQuery;
     $(`${slider}-prev`).click(function () {
         $(slider).slick("slickPrev");
+        if (optCallback) optCallback();
     });
     $(`${slider}-next`).click(function () {
         $(slider).slick("slickNext");
+        if (optCallback) optCallback();
     });
 }
 

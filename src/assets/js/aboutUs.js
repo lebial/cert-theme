@@ -52,10 +52,17 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function handleOurTeamOptionCollapseOnChange() {
+    $('.member__description').addClass('line-clamp-3');
+    $('.member__description').css('height', '95px');
+    $('.member__description').removeClass('team__member--expanded');
+    $('.member__mobile__button').text('Read More');
+  }
+
   function handleStoryArrowClick() {
     const slider = ".au__story__slider";
-    $(`${slider}-next`).click(() => $(slider).slick("slickNext"));
-    $(`${slider}-prev`).click(() => $(slider).slick("slickPrev"));
+    $(`${slider}-next`).click(() => $(slider).slick('slickNext'));
+    $(`${slider}-prev`).click(() => $(slider).slick('slickPrev'));
   }
 
   function handleOurTeamExpand() {
@@ -103,6 +110,6 @@ jQuery(document).ready(function ($) {
     handleStoryArrowClick();
     handleOurTeamExpand();
     createOurTeamSlider();
-    addArrowToSlider(".our__team__slider");
+    addArrowToSlider(".our__team__slider", handleOurTeamOptionCollapseOnChange);
   }
 });

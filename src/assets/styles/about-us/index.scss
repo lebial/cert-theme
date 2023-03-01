@@ -160,6 +160,11 @@
   }
 
   & .slick-active {
+    &>div {
+      display: flex;
+      align-items: center;
+    }
+
     & button {
       background-color: $color-navy !important;
     }
