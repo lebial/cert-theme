@@ -1,4 +1,4 @@
-import getNavHeight, { addArrowToSlider } from "./utils/utils";
+import getNavHeight, { addArrowToSlider, makeElementsSameHeight } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
   function setImageMargin() {
@@ -6,40 +6,40 @@ jQuery(document).ready(function ($) {
     $(".au__heading__image").css("margin-top", `${navHeight}px`);
   }
 
-  function createTimelineSlider() {
-    $(".au__timeline__nav").slick({
-      variableWidth: true,
-      centerMode: true,
-      dots: false,
-      infinite: false,
-      slidesToShow: 3,
-      focusOnSelect: true,
-      asNavFor: ".au__timeline__slider",
-      responsive: [
-        {
-          breakpoint: 600,
-          slidesToShow: 3,
-        },
-      ],
-    });
-    $(".au__timeline__slider").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      infinite: false,
-      arrows: false,
-      fade: true,
-      draggable: false,
-      asNavFor: ".au__timeline__nav",
-    });
-  }
+  // function createTimelineSlider() {
+  //   $(".au__timeline__nav").slick({
+  //     variableWidth: true,
+  //     centerMode: true,
+  //     dots: false,
+  //     infinite: false,
+  //     slidesToShow: 3,
+  //     focusOnSelect: true,
+  //     asNavFor: ".au__timeline__slider",
+  //     responsive: [
+  //       {
+  //         breakpoint: 600,
+  //         slidesToShow: 3,
+  //       },
+  //     ],
+  //   });
+  //   $(".au__timeline__slider").slick({
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     infinite: false,
+  //     arrows: false,
+  //     fade: true,
+  //     draggable: false,
+  //     asNavFor: ".au__timeline__nav",
+  //   });
+  // }
 
-  function createCareersSlider() {
-    $(".au__careers__slider").slick({
-      dots: false,
-      infinite: true,
-      slidesToShow: 1,
-    });
-  }
+  // function createCareersSlider() {
+  //   $(".au__careers__slider").slick({
+  //     dots: false,
+  //     infinite: true,
+  //     slidesToShow: 1,
+  //   });
+  // }
 
   function createStoryCarousel() {
     $(".au__story__slider").slick({
@@ -100,12 +100,17 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function makeSlidesSameHeight() {
+    makeElementsSameHeight($, '.au__quote__slide');
+  }
+
   if (window.location.href.includes("about-us")) {
     setImageMargin();
-    createTimelineSlider();
-    addArrowToSlider(".au__timeline__nav");
-    createCareersSlider();
+    // createTimelineSlider();
+    // addArrowToSlider(".au__timeline__nav");
+    // createCareersSlider();
     addArrowToSlider(".au__careers__slider");
+    makeSlidesSameHeight();
     createStoryCarousel();
     handleStoryArrowClick();
     handleOurTeamExpand();

@@ -86,12 +86,14 @@ function render_image_container($component)
 	$img = $component['post_image'];
 	$img_size = $component['image_size'];
 	$className = $img_size == 'small:Small' ? 'max-w-md' : '';
-	js_console($className);
-	echo '<div class="flex justify-center py-8 my-4 mb-14">';
-	echo '<div class="post_image_container">';
-	echo '<img class="' . $className . '" src="' . $img['url'] . '" alt="' . $img['alt'] . '" >';
-	echo '</div>';
-	echo '</div>';
+	$image_element = '
+		<div class="flex justify-center py-8 my-4 mb-14">
+		  <div class="post_image_container">
+			  <img class="' . $className . '" src="' . $img['url'] . '" alt="' . $img['alt'] . '">
+			</div>
+		</div>
+	';
+	echo $image_element;
 }
 
 function render_quotes($component)
@@ -150,7 +152,7 @@ function render_subscribe_form()
 <main class="post__page w-full">
 	<section class="w-full min-h-[50vh] bg-dark-blue-background flex flex-col lg:flex-row items-center px-10 lg:px-28 py-14">
 		<div class="post__content__container w-full lg:w-7/12 order-2 lg:-order-1 mr-5">
-			<h1 class="text-white min-w-fit font-normal text-center lg:text-left mt-6 lg:mt-0" style="font-size: calc(1.5rem + (1vw - 3.2px) * 1.9375);"><?php the_title() ?></h1>
+			<h1 class="text-white min-w-fit font-extralight text-center lg:text-left mt-6 lg:mt-0" style="font-size: calc(1.5rem + (1vw - 3.2px) * 1.9375);"><?php the_title() ?></h1>
 			<div class="post__author__container flex justify-center lg:justify-start">
 				<div class="user__container mt-10 flex">
 					<img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full mr-6 w-16 h-16 lg:w-24 lg:h-24">
