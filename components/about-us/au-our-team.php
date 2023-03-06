@@ -66,7 +66,7 @@ function render_team_groups_mobile()
 
               <div class="w-full border-t-[1px] border-solid border-primary mt-4 py-4 relative ">
                 <div class="member__description overflow-y-hidden h-[95px] line-clamp-3">
-                  <p class="text-white max-w-none ">
+                  <p class="text-white max-w-none text-center lg:text-left">
                     <span>
                       ' . $description . '
                     </span>

@@ -4,7 +4,7 @@ function render_story_slides()
   $slides = get_field('story_slides');
   foreach ($slides as $slide) {
     if ($slide['description']) {
-      echo '<div class="relative z-20">';
+      echo '<div class="au__quote__slide relative z-20">';
       echo '<p class="text-center text-dark-blue-background">';
       echo '<span>&ldquo;</span>';
       echo strip_tags($slide['description'], '<a><b><strong>');
