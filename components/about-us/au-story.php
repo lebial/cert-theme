@@ -14,7 +14,7 @@ function render_cards()
   <div class="w-full px-8 md:px-16 lg:px-0 text-left lg:text-center my-12 lg:my-24 relative">
     <h2 class=" text-gray-header text-4xl lg:text-6xl font-normal pb-0 lg:pb-8 text-center"><?php the_field('story_title') ?></h2>
     <div class="au__story__description w-full lg:w-[84%] 2xl:w-7/12 lg:mx-auto">
-      <p class="text-[#5E5E5E] max-w-none text-center lg:text-left text-lg lg:text-xl 2xl:text-2xl">
+      <p class="text-[#5E5E5E] max-w-none text-center text-lg lg:text-xl 2xl:text-2xl">
         <?php the_field('story_description')
         ?>
       </p>
