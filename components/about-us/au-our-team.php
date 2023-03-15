@@ -7,14 +7,14 @@ function render_team_groups()
     $first_slider = $idx == 0 ? 'hidden lg:block' : '';
     echo '<div class="team__group lg:mb-36 last-of-type:mb-10 ' . $first_slider . '">
         <div class="team__group__header flex mb-7">
-          <div class="group__header__divider w-3/12 lg:w-4/12 flex items-center pr-3 lg:pr-0">
+          <div class="group__header__divider w-2/12 lg:w-4/12 flex items-center pr-3 lg:pr-0">
             <div class="flex-1 h-px bg-white"></div>
             <div class=" w-3 h-3 rounded-full bg-primary"></div>
           </div>
-          <div class="group__header__title w-6/12 lg:w-4/12">
+          <div class="group__header__title w-8/12 lg:w-4/12">
             <p class="text-4xl text-white text-center">' . $team['team_group_name'] . '</p>
           </div>
-          <div class="group__header__empty w-3/12 lg:w-4/12"></div>
+          <div class="group__header__empty w-2/12 lg:w-4/12"></div>
         </div>';
     foreach ($team['group_members'] as $member) {
       $description = $member['description'];
@@ -90,7 +90,7 @@ function render_team_groups_mobile()
     <h2 class="text-6xl font-bold text-white text-center"><?php the_field('section_title') ?></h2>
   </div>
   <div class="our__team__content w-full">
-    <div class="relative">
+    <div class="relative mb-20">
       <?php render_team_groups_mobile() ?>
       <div class="absolute w-full lg:hidden flex justify-between top-[140px]">
         <?php custom_slider_arrows('our__team__slider') ?>

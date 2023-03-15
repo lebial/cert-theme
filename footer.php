@@ -60,12 +60,17 @@ function render_link_groups()
 
 			echo '<a name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
 		}
-		echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden"></button>';
+		js_console($link_group["links"]);
+		if ($link_group["links"]) {
+			echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden"></button>';
+		}
 		echo '</div>';
 		echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 		echo '<div class="footer__links__group mr-0 relative " style="margin-right: 0;">';
-		foreach ($link_group['links'] as $link) {
-			echo '<a href="' . $link['href'] . '" class="footer__link" name="footer-' . $link['text'] . '">' . $link['text'] . '</a>';
+		if ($link_group["links"]) {
+			foreach ($link_group['links'] as $link) {
+				echo '<a href="' . $link['href'] . '" class="footer__link" name="footer-' . $link['text'] . '">' . $link['text'] . '</a>';
+			}
 		}
 		echo '</div>';
 		echo '</div>';
@@ -122,8 +127,8 @@ function render_link_groups()
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
-				<a class="mr-2" href="<?php the_field('terms_link', 'options'); ?>">Terms</a>
-				<a class="mr-2" href="<?php the_field('privacy_link', 'options') ?>">Privacy</a>
+				<a class="mr-2" href="<?php the_field('terms_link', 'options'); ?>" target="_blank">Terms</a>
+				<a class="mr-2" href="<?php the_field('privacy_link', 'options') ?>" target="_blank">Privacy</a>
 			</div>
 		</div>
 
