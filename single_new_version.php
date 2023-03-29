@@ -135,7 +135,7 @@ function render_content_navigation()
 {
 	$navigation = get_field('content_navigation');
 	foreach ($navigation as $nav_option) {
-		echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 mb-2 font-light text-gray-header ">' . $nav_option['display_text'] . '</a>';
+		echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 mb-2 font-medium text-gray-header ">' . $nav_option['display_text'] . '</a>';
 	}
 }
 
