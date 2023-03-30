@@ -23,6 +23,14 @@ function add_styles_scripts()
 }
 add_action('wp_enqueue_scripts', 'add_styles_scripts');
 
+// enable title in theme
+function custom_theme_slug_support()
+{
+    add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme', 'custom_theme_slug_support');
+
 // register menus
 function register_my_menus()
 {
