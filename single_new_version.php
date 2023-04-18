@@ -239,15 +239,6 @@ function render_subscribe_form()
         </aside>
     </section>
     <div class="w-full lg:w-7/12 border-b border-gray-header border-solid flex justify-center mb-14 mx-auto pb-6">
-        <!-- <div class="flex items-center">
-			<p class="text-gray-header mr-4">SHARE IT :</p>
-			<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>">
-				<img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
-			</a>
-			<a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>">
-				<img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Twitter-navy.jpg" alt="">
-			</a>
-		</div> -->
     </div>
 
     <div class="mobile__related__posts w-full mt-8 lg:hidden flex flex-col items-center">
@@ -274,7 +265,8 @@ function render_subscribe_form()
             <div class="author__description">
                 <p class="mb-0 text-lg text-gray-header">ABOUT THE AUTHOR</p>
                 <p class="font-bold mb-4 text-3xl"><?php echo $tmp_author['author_name'] ?></p>
-                <p class=" text-base max-w-lg"><?php echo $tmp_author['author_description'] ?></p>
+                <p class=" text-base max-w-lg">
+                    <?php echo strip_tags($tmp_author['author_description'], '<a><strong><br><span>') ?></p>
             </div>
         </div>
     </div>
