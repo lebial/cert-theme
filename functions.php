@@ -1,5 +1,17 @@
 <?php
 
+// Hide posts with category 
+function hide_by_excluding_category($query)
+{
+    $cat_id = get_cat_ID('hidden');
+    if ($query->is_home()) {
+        $query->set('cat', '-' . $cat_id);
+    }
+    return $query;
+}
+
+add_filter('pre_get_posts', 'hide_by_excluding_category');
+
 // load styles and scripts
 function add_styles_scripts()
 {
