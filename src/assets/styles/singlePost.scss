@@ -19,6 +19,9 @@
             & p {
                 font-size: 10px;
                 color: white;
+                & a {
+                    position: unset;
+                }
             }
             & .frm_submit {
                 margin-top: 0 !important;
