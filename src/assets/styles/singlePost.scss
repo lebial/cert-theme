@@ -107,3 +107,11 @@
         }
     }
 }
+
+.author__description {
+    & p {
+        & a {
+            position: unset;
+        }
+    }
+}

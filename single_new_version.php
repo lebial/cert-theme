@@ -147,6 +147,13 @@ function render_subscribe_form()
     echo '</div>';
 }
 
+function render_extra_links($links, $color = 'white')
+{
+    foreach ($links as $extra_link) {
+        echo '<a class="text-' . $color . '" href="' . $extra_link['link_url'] . '">' . $extra_link['link_text'] . '</a>';
+    }
+}
+
 ?>
 <?php get_header(); ?>
 <main class="post__page w-full">
@@ -168,6 +175,7 @@ function render_subscribe_form()
 						border-solid w-6 h-6 text-center text-white
 						text-xs -bottom-6
 						" href="<?php echo $tmp_author['author_web'] ?>" target="_blank">in</a>
+                        <?php render_extra_links($tmp_author['extra_author_links']) ?>
                     </div>
                 </div>
             </div>
@@ -271,6 +279,9 @@ function render_subscribe_form()
                 <p class="font-bold mb-4 text-3xl"><?php echo $tmp_author['author_name'] ?></p>
                 <p class=" text-base max-w-lg">
                     <?php echo strip_tags($tmp_author['author_description'], '<a><strong><br><span>') ?></p>
+                <div class="w-full flex flex-col">
+                    <?php render_extra_links($tmp_author['extra_author_links'], 'black') ?>
+                </div>
             </div>
         </div>
     </div>
