@@ -2719,16 +2719,16 @@ selectric .label {
 }
 
 // anchor jump position fix
-h1,
-h2,
-h3,
-h4,
-p {
-    position: relative;
-    & a {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        top: -84px;
-    }
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// p {
+//     position: relative;
+//     & a {
+//         position: absolute;
+//         width: 10px;
+//         height: 10px;
+//         top: -84px;
+//     }
+// }

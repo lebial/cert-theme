@@ -105,6 +105,19 @@
         & p {
             max-width: none;
         }
+        & h1,
+        h2,
+        h3,
+        h4,
+        p {
+            position: relative;
+            & a {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: -84px;
+            }
+        }
     }
 }
 
