@@ -60,7 +60,6 @@ function render_link_groups()
 
 			echo '<a name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
 		}
-		js_console($link_group["links"]);
 		if ($link_group["links"]) {
 			echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden"></button>';
 		}
@@ -84,10 +83,14 @@ function render_link_groups()
 		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0 mt-10 xl:mt-0">
 			<div class="flex flex-col items-center xl:items-start w-10/12">
 				<span class="footer__responsive__hidden text-white">
-					<p class="font-bold text-white text-sm"><?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?></p>
+					<p class="font-bold text-white text-sm">
+						<?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?>
+					</p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="footer__responsive__hidden footer__chat__description text-white text-sm "> <?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI-powered solutions can deliver real value for your <span>organization—today.</span>'; ?></p>
+				<p class="footer__responsive__hidden footer__chat__description text-white text-sm ">
+					<?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI-powered solutions can deliver real value for your <span>organization—today.</span>'; ?>
+				</p>
 				<a class="border border-white border-solid rounded-md p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]" target="_blank" rel="noopener noreferrer" href="<?php echo get_field('contact_link', 'options'); ?>">
 					<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us'; ?>
 				</a>

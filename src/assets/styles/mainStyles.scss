@@ -566,10 +566,8 @@ header {
     height: 70px;
     display: flex;
     align-items: center;
-    background-color: #fff;
     ;
     transition: 0.7s all $animation-cb;
-    border: 1px solid #f6f6f6;
     -webkit-box-shadow: 0 0 10px -6px;
     box-shadow: 0 0 10px -6px;
     html.open-mobile-nav & {
@@ -904,6 +902,21 @@ header {
                     background-color: white;
                     color: $color-red !important;
                 }
+            }
+        }
+    }
+    .search__bar__container {
+        & form {
+            margin-top: 0;
+            & input[type="submit"] {
+                display: none;
+            }
+            & input[type="search"] {
+                height: 40px !important;
+                border-radius: 50px !important;
+                border-bottom: none !important;
+                margin-right: 10px !important;
+                padding-left: 40px !important;
             }
         }
     }
