@@ -66,38 +66,18 @@ jQuery(document).ready(function($) {
 
     // new homepage js
 
-    function handleSearchToggle() {
-        const searchButton = $('.header__search__button');
-        const searchBar = $('.search__bar__container');
 
-        searchButton.click(function() {
-            searchButton.addClass('hidden');
-            $(searchBar).fadeIn();
-        });
-    }
-
-    function handleNavigationToggle() {
-        const burgerMenu = $('.new__burger__menu');
-        burgerMenu.click(function() {
-            $('.main__menu__sidebar').animate({ right: 0 });
-        });
-    }
 
     window.onload = setVideoHeight;
-    if (window.location.href.includes("new-home-page")) {
-        handleSearchToggle();
-        handleNavigationToggle();
-    } else {
-        setVideoHeight();
-        handlePlayClick();
-        $(window).resize(setVideoHeight);
-        createBucketSlider();
-        handleIosNativePlayerQuit();
-        addArrowToSlider(".insights-carousel");
-        addArrowToSlider(".bucket__slider");
-        addNewTabOnScheduleMenuButton();
-        handleVidModalClose();
-        showSuperChargeText();
-        makeButtonsSameWidth();
-    }
+    setVideoHeight();
+    handlePlayClick();
+    $(window).resize(setVideoHeight);
+    createBucketSlider();
+    handleIosNativePlayerQuit();
+    addArrowToSlider(".insights-carousel");
+    addArrowToSlider(".bucket__slider");
+    addNewTabOnScheduleMenuButton();
+    handleVidModalClose();
+    showSuperChargeText();
+    makeButtonsSameWidth();
 });

@@ -696,7 +696,7 @@ header {
             top: auto;
             height: auto;
             margin-left: auto;
-            margin-right: 30px;
+            // margin-right: 30px;
             padding: 0;
         }
         html.open-mobile-nav & {
@@ -712,18 +712,17 @@ header {
             @media #{$desktopMD} {
                 display: flex;
                 list-style: none;
+                justify-content: space-between;
             }
             &>li {
                 margin-bottom: 30px;
-                position: relative;
-                display: flex;
                 flex-direction: column;
                 justify-content: center;
                 @media #{$desktopMD} {
                     align-items: center;
                     margin-bottom: 0;
-                    text-align: center;
-                    margin-left: 10px;
+                    // text-align: center;
+                    // margin-left: 10px;
                     margin-right: 10px;
                     font-weight: 500;
                     &:last-of-type {
@@ -771,38 +770,39 @@ header {
                     }
                 }
                 .sub-menu {
-                    max-height: 0;
+                    // max-height: 0;
                     box-sizing: content-box;
-                    background-color: #f0f5ff;
+                    // background-color: #f0f5ff;
                     list-style: none;
                     overflow: hidden;
                     transition: all 0.7s $animation-cb;
                     @media #{$desktopMD} {
-                        display: block;
-                        width: 180px;
-                        max-height: none;
-                        background-color: white;
-                        border: 1px solid #f6f6f6;
-                        -webkit-box-shadow: 0 0 10px -6px;
-                        box-shadow: 0 0 10px -6px;
-                        padding: 16px 50px;
-                        text-align: left;
-                        float: none;
-                        margin-top: 0;
-                        opacity: 0;
-                        position: absolute;
-                        visibility: hidden;
-                        left: -50px;
-                        right: auto;
-                        top: 90%;
-                        bottom: auto;
-                        height: auto;
-                        transform: none;
-                        transform: translateY(8px);
-                        transition: 0.7s all cubic-bezier(0.19, 1, 0.22, 1);
+                        // display: block;
+                        // width: 180px;
+                        // max-height: none;
+                        // background-color: white;
+                        // border: 1px solid #f6f6f6;
+                        // -webkit-box-shadow: 0 0 10px -6px;
+                        // box-shadow: 0 0 10px -6px;
+                        // padding: 16px 50px;
+                        // text-align: left;
+                        // float: none;
+                        // margin-top: 0;
+                        // opacity: 0;
+                        // position: absolute;
+                        // visibility: hidden;
+                        // left: -50px;
+                        // right: auto;
+                        // top: 90%;
+                        // bottom: auto;
+                        // height: auto;
+                        // transform: none;
+                        // transform: translateY(8px);
+                        // transition: 0.7s all cubic-bezier(0.19, 1, 0.22, 1);
                     }
                     li {
-                        padding: 5px 0;
+                        padding: 2px 0;
+                        text-align: left;
                         font-size: 1.1rem;
                         &.anchor {
                             padding: 6px;
@@ -820,7 +820,7 @@ header {
                             }
                         }
                         a {
-                            font-size: 0.9rem;
+                            font-size: 1rem;
                             @media #{$desktopLG} {
                                 font-size: 1.2rem;
                                 display: inline-block;
@@ -832,7 +832,8 @@ header {
                         }
                         &.current-menu-item {
                             a {
-                                color: $color-navy;
+                                color: $color-red;
+                                font-weight: bold;
                             }
                         }
                         &:first-of-type {
@@ -2717,18 +2718,3 @@ selectric .label {
         content: "x" !important;
     }
 }
-
-// anchor jump position fix
-// h1,
-// h2,
-// h3,
-// h4,
-// p {
-//     position: relative;
-//     & a {
-//         position: absolute;
-//         width: 10px;
-//         height: 10px;
-//         top: -84px;
-//     }
-// }

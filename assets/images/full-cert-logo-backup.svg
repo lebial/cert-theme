@@ -3,50 +3,50 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1617.9 348.5" style="enable-background:new 0 0 1617.9 348.5;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:white;}
-	.st1{fill:none;stroke:white;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;}
-	.st2{fill:none;stroke:white;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,62.4177;}
-	.st3{fill:none;stroke:white;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;}
-	.st4{fill:none;stroke:white;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,62.4177;}
-	.st5{fill:none;stroke:white;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;}
-	.st6{fill:none;stroke:white;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,62.4177;}
-	.st7{display:none;fill:white;}
-	.st8{fill:white !important;}
-	.st9{fill:none;stroke:white;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;}
-	.st10{fill:none;stroke:white;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,47.8246;}
-	.st11{fill:none;stroke:white;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,50.9333;}
-	.st12{fill:white;}
-	.st13{fill:none;stroke:white;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,48.9885;}
-	.st14{fill:none;stroke:white;stroke-width:12.3715;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st15{fill:none;stroke:white;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,52.811;}
-	.st16{fill:white;}
-	.st17{fill:white;}
-	.st18{fill:white;}
-	.st19{fill:white;}
-	.st20{fill:white;}
-	.st21{fill:white;}
-	.st22{opacity:0.26;fill:white;}
-	.st23{fill:white;}
-	.st24{fill:white;}
-	.st25{fill:white;}
-	.st26{fill:white;}
-	.st27{fill:white;}
-	.st28{fill:white;}
-	.st29{fill:white;}
-	.st30{fill:white;}
-	.st31{fill:white;}
+	.st0{fill:#001C3B;}
+	.st1{fill:none;stroke:#5786E4;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:none;stroke:#5786E4;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,62.4177;}
+	.st3{fill:none;stroke:#8FAFED;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;}
+	.st4{fill:none;stroke:#8FAFED;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,62.4177;}
+	.st5{fill:none;stroke:#C7D7F6;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;}
+	.st6{fill:none;stroke:#C7D7F6;stroke-width:20.5666;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,62.4177;}
+	.st7{display:none;fill:#1F5EDB;}
+	.st8{fill:#1F5EDB;}
+	.st9{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;}
+	.st10{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,47.8246;}
+	.st11{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,50.9333;}
+	.st12{fill:#8FAFED;}
+	.st13{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,48.9885;}
+	.st14{fill:none;stroke:#F5695C;stroke-width:12.3715;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,52.811;}
+	.st16{fill:#103D8B;}
+	.st17{fill:#F5695C;}
+	.st18{fill:#042B4F;}
+	.st19{fill:#FFFFFF;}
+	.st20{fill:#5E5E5E;}
+	.st21{fill:#F4695B;}
+	.st22{opacity:0.26;fill:#FFFFFF;}
+	.st23{fill:#E6E6E6;}
+	.st24{fill:#1A1617;}
+	.st25{fill:#3D3D3D;}
+	.st26{fill:#F6D5B8;}
+	.st27{fill:#E6C6AA;}
+	.st28{fill:#383032;}
+	.st29{fill:#494949;}
+	.st30{fill:#F23034;}
+	.st31{fill:#174EB3;}
 	.st32{opacity:0.42;}
-	.st33{fill:white;stroke:white;stroke-width:9.5664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st34{fill:white;}
-	.st35{fill:none;stroke:white;stroke-width:7.5134;stroke-miterlimit:10;}
-	.st36{fill:white;stroke:white;stroke-width:8.2987;stroke-linejoin:bevel;stroke-miterlimit:10;}
+	.st33{fill:#FFFFFF;stroke:#C9C9C9;stroke-width:9.5664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st34{fill:#7D7D7D;}
+	.st35{fill:none;stroke:#FFFFFF;stroke-width:7.5134;stroke-miterlimit:10;}
+	.st36{fill:#1F5EDB;stroke:#FFFFFF;stroke-width:8.2987;stroke-linejoin:bevel;stroke-miterlimit:10;}
 	
-		.st37{fill-rule:evenodd;clip-rule:evenodd;fill:white;stroke:white;stroke-width:8.8772;stroke-linejoin:bevel;stroke-miterlimit:10;}
-	.st38{fill:white;stroke:white;stroke-width:6.2548;stroke-linejoin:bevel;stroke-miterlimit:10;}
-	.st39{fill:none;stroke:white;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st40{fill:none;stroke:white;stroke-width:6.2548;stroke-linejoin:bevel;stroke-miterlimit:10;}
-	.st41{fill:none;stroke:white;stroke-width:8.2987;stroke-linejoin:bevel;stroke-miterlimit:10;}
-	.st42{fill:white;}
+		.st37{fill-rule:evenodd;clip-rule:evenodd;fill:#1F5EDB;stroke:#FFFFFF;stroke-width:8.8772;stroke-linejoin:bevel;stroke-miterlimit:10;}
+	.st38{fill:#1F5EDB;stroke:#FFFFFF;stroke-width:6.2548;stroke-linejoin:bevel;stroke-miterlimit:10;}
+	.st39{fill:none;stroke:#F5695C;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st40{fill:none;stroke:#FFFFFF;stroke-width:6.2548;stroke-linejoin:bevel;stroke-miterlimit:10;}
+	.st41{fill:none;stroke:#FFFFFF;stroke-width:8.2987;stroke-linejoin:bevel;stroke-miterlimit:10;}
+	.st42{fill:#5988E4;}
 </style>
 <polygon class="st20" points="190.6,136.3 261.9,178.7 267,170.1 200.3,130.5 267.1,90.4 261.9,81.9 188,126.2 114,170.6 
 	116.6,174.9 114,179.2 188,223.1 188.1,222.9 261.9,266.7 267,258.1 193.1,214.2 193,214.4 126.4,174.9 "/>
@@ -54,16 +54,16 @@
 	<circle class="st21" cx="117.2" cy="175" r="27.3"/>
 </g>
 <g>
-	<circle class="st21" cx="190.5" cy="218.5" r="27.3"/>
+	<circle class="st8" cx="190.5" cy="218.5" r="27.3"/>
 </g>
 <g>
-	<circle class="st21" cx="263.9" cy="262" r="27.3"/>
+	<circle class="st8" cx="263.9" cy="262" r="27.3"/>
 </g>
 <g>
 	<circle class="st21" cx="190.5" cy="130.5" r="27.3"/>
 </g>
 <g>
-	<circle class="st21" cx="263.9" cy="86.5" r="27.3"/>
+	<circle class="st8" cx="263.9" cy="86.5" r="27.3"/>
 </g>
 <g>
 	<circle class="st21" cx="264.7" cy="174.5" r="27.3"/>
