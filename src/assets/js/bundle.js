@@ -1,5 +1,6 @@
 import './main';
 import './stickymate';
+import './header';
 import './header-shapes';
 import './footer.js';
 import './home';
