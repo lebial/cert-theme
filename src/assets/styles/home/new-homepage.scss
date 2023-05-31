@@ -1,0 +1,27 @@
+@import '../variables';
+
+.new_home__active__report {
+  color: $color-red;
+  font-weight: bold;
+}
+
+.ai__driven__report__option {
+  &:hover svg {
+    right: 0;
+    opacity: 1;
+  }
+
+  &.ai__active__button {
+    color: $color-red;
+    font-weight: bold;
+
+    & svg {
+      right: 0;
+      opacity: 1;
+    }
+  }
+}
+
+.ai__report__image {
+  opacity: 0;
+}
