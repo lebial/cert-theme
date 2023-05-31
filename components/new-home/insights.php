@@ -1,3 +1,0 @@
-<section>
-    bubu
-</section>

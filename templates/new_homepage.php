@@ -17,5 +17,5 @@
 </section>
 
 <?php get_template_part('components/new-home/credibility') ?>
-<?php get_template_part('components/new-home/insights') ?>
+<?php get_template_part('components/new-home/schedule-demo') ?>
 <?php get_footer() ?>
