@@ -1,0 +1,108 @@
+@import '../variables';
+
+.cards__container {
+    & .card {
+        &:nth-of-type(2) {
+              border-right-color: #5e5e5e42;
+              border-right-width: 2px;
+              border-left-color: #5e5e5e42;
+              border-left-width: 2px;
+              border-style: solid;
+            }
+          
+    }
+}
+.partners__container {
+    // width: 270px;
+    // overflow: hidden;
+}
+
+.text.sec-text:before {
+    // text-align: center;
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-left: 2px solid #000000;
+    animation: animate 4s steps(8) infinite;
+}
+
+@keyframes animate {
+    40%,60% {
+        left: calc(100% + 4px);
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+// .partners{
+//     color: #4a4a4a;
+//     font-family: "Poppins",sans-serif;
+//     font-weight: 500;
+//     font-size: 25px;
+//     -webkit-box-sizing: content-box;
+//     box-sizing: content-box;
+//     height: 40px;
+//     padding: 10px 10px;
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     border-radius: 8px;
+
+//     & .partners__subcontainer {
+//         overflow: hidden;
+
+//         & .partners__subcontainer--partner {
+//             display: block;
+//             height: 100%;
+//             color: $color-grey;
+//             animation: cycle-words 6s infinite;
+//         }
+
+//         @keyframes cycle-words {
+//             10% {
+//             -webkit-transform: translateY(-105%);
+//             transform: translateY(-105%);
+//             }
+        
+//             25% {
+//             -webkit-transform: translateY(-100%);
+//             transform: translateY(-100%);
+//             }
+        
+//             35% {
+//             -webkit-transform: translateY(-205%);
+//             transform: translateY(-205%);
+//             }
+        
+//             50% {
+//             -webkit-transform: translateY(-200%);
+//             transform: translateY(-200%);
+//             }
+        
+//             60% {
+//             -webkit-transform: translateY(-305%);
+//             transform: translateY(-305%);
+//             }
+        
+//             75% {
+//             -webkit-transform: translateY(-300%);
+//             transform: translateY(-300%);
+//             }
+        
+//             85% {
+//             -webkit-transform: translateY(-405%);
+//             transform: translateY(-405%);
+//             }
+        
+//             100% {
+//             -webkit-transform: translateY(-400%);
+//             transform: translateY(-400%);
+//             }
+//         }
+//     }
+// }
