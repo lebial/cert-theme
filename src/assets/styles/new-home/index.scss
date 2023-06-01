@@ -1,0 +1,61 @@
+@import '../variables';
+
+.cards__container {
+    & .card {
+        &:nth-of-type(2) {
+              border-right-color: #5e5e5e42;
+              border-right-width: 2px;
+              border-left-color: #5e5e5e42;
+              border-left-width: 2px;
+              border-style: solid;
+            }
+          
+    }
+}
+// .partners__container {
+    // width: 270px;
+    // overflow: hidden;
+// }
+
+.text.sec-text:before {
+    // text-align: center;
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-left: 2px solid #000000;
+    animation: animate 4s steps(8) infinite;
+}
+
+@keyframes animate {
+    40%,60% {
+        left: calc(100% + 4px);
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+.custom-shadow {
+    box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
+}
+
+.insights__card__text p {
+    font-size: 10px;
+    line-height: 20px;
+
+    @media #{$desktopSM} {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    @media #{$desktopLG} {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
