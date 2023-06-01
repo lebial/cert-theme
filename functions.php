@@ -20,15 +20,6 @@ function add_styles_scripts()
     wp_enqueue_script('srcScriptsNew', get_template_directory_uri() . '/dist/assets/js/bundle.js', array(), filemtime(get_stylesheet_directory() . '/dist/assets/js/bundle.js'), '1.0.0', true);
     wp_enqueue_style('srcStyles', get_template_directory_uri() . '/dist/assets/css/bundle.css', array(), filemtime(get_stylesheet_directory() . '/dist/assets/css/bundle.css'));
     wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Work+Sans:200,400,500,600');
-    // wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
-    // wp_enqueue_script( 'vendorsJS', get_stylesheet_directory_uri() . '/assets/js/vendors.js', array(), filemtime( get_stylesheet_directory() . '/assets/js/vendors.js' ));
-    // wp_enqueue_script( 'stickyMate', get_stylesheet_directory_uri() . '/assets/js/stickymate.js', array(), filemtime( get_stylesheet_directory() . '/assets/js/stickymate.js' ));
-    // wp_enqueue_script( 'shapesJS', get_stylesheet_directory_uri() . '/assets/js/header-shapes.js', array(), filemtime( get_stylesheet_directory() . '/assets/js/header-shapes.js' ));
-    // wp_enqueue_script( 'greenSock', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array());
-    // wp_enqueue_script( 'scrollMagic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js');
-    // wp_enqueue_script( 'scrollMagicPlugin', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js');
-    // wp_enqueue_script( 'mainJS', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), filemtime( get_stylesheet_directory() . '/assets/js/main.js' ));
-
     wp_register_style('AOSStyles', "https://unpkg.com/aos@next/dist/aos.css");
     // wp_enqueue_style('AOSStyles');
     wp_enqueue_script('AOSJs', "https://unpkg.com/aos@next/dist/aos.js", array());
@@ -42,6 +33,19 @@ function custom_theme_slug_support()
 }
 
 add_action('after_setup_theme', 'custom_theme_slug_support');
+
+// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
+function theme_gsap_script()
+{
+    // The core GSAP library
+    wp_enqueue_script('gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', array(), false, true);
+    // ScrollTrigger - with gsap.js passed as a dependency
+    wp_enqueue_script('gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js', array('gsap-js'), false, true);
+    // Your animation code file - with gsap.js passed as a dependency
+    wp_enqueue_script('gsap-js2', get_template_directory_uri() . 'dist/assets/js/bundle.js', array('gsap-js'), false, true);
+}
+
+add_action('wp_enqueue_scripts', 'theme_gsap_script');
 
 // register menus
 function register_my_menus()

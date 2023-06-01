@@ -947,15 +947,16 @@ header {
                         a {
                             font-size: 1.1rem !important;
                             font-weight: normal;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                color: $color-red !important;
+                            }
 
                             @media #{$desktopLG} {
                                 font-size: 1.2rem;
                                 display: inline-block;
                                 transition: 0.25s color $animation-cb;
-
-                                &:hover {
-                                    color: $color-red !important;
-                                }
                             }
                         }
 
