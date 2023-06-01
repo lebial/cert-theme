@@ -24,8 +24,8 @@
 ?>
 
 <section class="w-full h-full flex items-center">
-<div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-12">
+<div class="container px-5 lg:pb-28 2xl:pb-32 pt-16 mx-auto">
+    <div class="text-center mb-14">
         <h5 class="text first-text font-semibold text-2xl lg:text-5xl text-center text-[#5e5e5e]">Certilytics News & Expert Insights</h5>
     </div>
     <div class="flex flex-wrap -m-4 w-10/12 mx-auto">
