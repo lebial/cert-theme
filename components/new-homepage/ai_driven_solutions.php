@@ -28,8 +28,8 @@ function render_report_images()
 }
 ?>
 <section class="ai__driven__section w-full px-6">
-  <h3 class="reveal-text text-gray-header font-bold">How Our AI-driven Solutions Work</h3>
-  <h4 class="reveal-text text-2xl text-gray-header">Target the Largest Opportunities. Improve Outcomes. Measure Results</h4>
+  <h3 class="reveal-text text-gray-header font-bold"><?php the_field('ai_heading') ?></h3>
+  <h4 class="reveal-text text-2xl text-gray-header"><?php the_field('ai_subheading') ?></h4>
 
   <div class="w-full px-28 flex justify-center my-20" data-aos="fade-in">
     <div class=" max-w-5xl flex w-full">

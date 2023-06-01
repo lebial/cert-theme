@@ -1,14 +1,28 @@
-.reveal-text {
-  visibility: hidden;
-}
+// .reveal-text {
+//   visibility: hidden;
+// }
 
 .line {
   position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  width: 0;
+  transition: width linear 1s;
 }
 
-* {
-  box-sizing: border-box;
+.typed-animation {
+  width: 100%;
 }
+
+
+.reveal-text {
+  visibility: hidden;
+}
+
+// .line {
+//   position: relative;
+//   overflow: hidden;
+//   display: flex;
+// }
