@@ -1,11 +1,9 @@
 <?php
     function render_partners() {
         $partnerOpts = get_field('partners_title');
-        echo '<div class="partners__subcontainer">';
-            echo '<span class="partners__subcontainer--partner font-medium text-4xl mb-0 text-dark-blue-background text-center">' . $partnerOpts[0]['title'] . '</span>';
-            // echo '<span class="partners__subcontainer--partner font-medium text-4xl mb-0 text-dark-blue-background text-center">' . $partnerOpts[1]['title'] . '</span>';
-            // echo '<span class="partners__subcontainer--partner font-medium text-4xl mb-0 text-dark-blue-background text-center">' . $partnerOpts[2]['title'] . '</span>';
-        echo '</div>';
+        foreach ($partnerOpts as $partner){
+            echo '<p>The <span>' . $partner['title'] . '</span> Partner of Choice for Value-based Care</p>';
+        }
     }
 
     function render_cards() {
@@ -28,31 +26,33 @@
     }
 ?>
 
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <script>
-    const text = document.querySelector(".sec-text");
-    const textLoad = () => {
-        setTimeout(() => {
-            text.textContent = "Data"
-        }, 0);
-        setTimeout(() => {
-            text.textContent = "AI"
-        }, 4000);
-        setTimeout(() => {
-            text.textContent = "Analytics"
-        }, 8000);
-    }
-
-    textLoad();
-    setInterval(textLoad, 12000)
+    const typed = new Typed('.typed', {
+        stringsElement: '#cadenas-texto', // ID del elemento que contiene cadenas de texto a mostrar.
+        typeSpeed: 50, // Velocidad en mlisegundos para poner una letra,
+        startDelay: 0, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
+        backSpeed: 10, // Velocidad en milisegundos para borrrar una letra,
+        smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
+        shuffle: false, // Alterar el orden en el que escribe las palabras.
+        backDelay: 1500, // Tiempo de espera despues de que termina de escribir una palabra.
+        loop: true, // Repetir el array de strings
+        loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
+        showCursor: true, // Mostrar cursor palpitanto
+        cursorChar: '|', // Caracter para el cursor
+        contentType: 'html', // 'html' o 'null' para texto sin formato
+    })
 </script>
 
 <section class="w-full h-full">
     <div class=" w-10/12 mx-auto max-w-4xl mb-0 lg:mb-8 flex">
-        <span class="text first-text font-normal text-2xl lg:text-5xl text-center text-[#5e5e5e]">The</span>
-        <div class="partners__container relative">
-            <span class="text sec-text font-normal text-2xl lg:text-5xl text-center text-[#5e5e5e]">Data</span>
+        <h2 class="font-normal text-2xl lg:text-5xl text-center text-[#5e5e5e]">
+            <span class="typed"></span>
+        </h2>
+        
+        <div id="cadenas-texto">
+            <?php render_partners()?>
         </div>
-        <span class="text sec-text font-normal text-2xl lg:text-5xl text-center text-[#5e5e5e] z-10">Partner of Choice for Value-based Care</span>
     </div>
     <div class="w-7/12 mx-auto pb-20 pt-12 flex justify-center">
         <?php the_field('description')?>
