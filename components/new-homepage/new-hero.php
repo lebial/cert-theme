@@ -12,7 +12,7 @@ function render_hero_options()
   <div class="w-full h-full absolute top-0 left-0 bg-dark-blue-background bg-opacity-90">
     <div class="flex flex-col items-center justify-center text-center pt-36">
       <h1 class="text-white text-6xl leading-snug tracking-normal max-w-2xl"><?php the_field('heading') ?></h1>
-      <h2 class="text-white text-xl mt-8 tracking-normal max-w-2xl"><?php the_field('hero_sub_heading') ?></h2>
+      <h2 class="text-white text-xl mt-8 tracking-normal max-w-3xl"><?php the_field('hero_sub_heading') ?></h2>
       <div class=" w-60 h-px bg-primary mt-6"></div>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
