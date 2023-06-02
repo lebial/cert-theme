@@ -17,7 +17,7 @@ $certilytics_env = get_field('certilytics_env_icon');
             </div>
         </div>
 
-        <div class=" px-8 w-full lg:w-1/2">
+        <div id="validation" class="px-8 w-full lg:w-1/2">
             <!-- <div class="sticky lg:static top-28"> -->
             <div class="mt-6 xl:mt-0">
                 <img class="style-svg w-full platform__deployment__graphic hidden lg:block"
