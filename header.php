@@ -63,7 +63,7 @@
         echo '<!-- End Twitter universal website tag code -->';
     }
 
-    if (get_field('include_linkedin', 'option')) {
+    if (get_field('include_linkedin', 'options')) {
         echo '<!-- LinkedIn Tag -->';
         echo ' 
         <script type="text/javascript">
