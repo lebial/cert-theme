@@ -72,7 +72,10 @@ jQuery(document).ready(function ($) {
       const wordsElement = $(element).find('.words');
       const wordsWidth = $(wordsElement).width();
       const leftMargin = (parentWidth - wordsWidth) / 2;
-      $(wordsElement).css('margin-left', `${leftMargin}px`);
+      $(wordsElement).css({
+        'margin-left': `${leftMargin}px`,
+        // 'height': '55px'
+      });
     }
 
     function removeSpansFromLInes() {
