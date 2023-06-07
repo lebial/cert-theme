@@ -64,6 +64,7 @@
     }
 
     if (get_field('include_linkedin', 'option')) {
+        echo '<!-- LinkedIn Tag -->';
         echo ' 
         <script type="text/javascript">
             _linkedin_partner_id = "2795692";
