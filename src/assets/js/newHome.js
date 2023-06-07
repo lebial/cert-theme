@@ -27,6 +27,29 @@ jQuery(document).ready(function ($) {
     $(`button[name=${currentReport}]`).click();
   }
 
+  function createVerticalSlider() {
+    $('.vertical-slider-options').slick({
+      vertical: true,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      centerMode: true,
+      arrows: false,
+      dots: false,
+      verticalSwiping: true,
+      infinite: true,
+    });
+  }
+
+  function handleNextClick() {
+    $('.vertical__silder__next').click(function () {
+      $('.vertical-slider-options').slick("slickNext");
+    });
+  }
+
   AiOPtionsInit();
   handleHeroButtonClick();
+  createVerticalSlider();
+  handleNextClick();
 });

@@ -25,3 +25,54 @@
 .ai__report__image {
   opacity: 0;
 }
+
+.line-reveal-animation {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: $color-grey-background;
+    top: 0;
+    left: 0;
+    transition: all ease 1s;
+    transition-delay: 500ms;
+  }
+
+  &.line-reveal-animate {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.bottom-reveal {
+  overflow-y: hidden;
+  transition: all ease 1s;
+  transition-delay: 500ms;
+
+  & * {
+    transform: translateY(100%);
+    transition: all ease .5s;
+    opacity: 0;
+  }
+
+  &.bottom-reveal-animate {
+    & * {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.vertical__slider__container {
+  & .slick-track {
+    flex-direction: column;
+  }
+
+  & .slick-list {
+    height: 200px !important;
+  }
+}
