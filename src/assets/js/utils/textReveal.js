@@ -76,19 +76,33 @@ jQuery(document).ready(function ($) {
     }
 
     function removeSpansFromLInes() {
+      //duration per line animation;
+      const secs = 2.5;
+
       const observer = createObserver((entries) => {
         entries.forEach(({ target, isIntersecting }) => {
           if (isIntersecting) {
-            $($(target).parent()[0]).css('visibility', 'visible');
-            $(target).addClass('typed-animation');
+            const textLength = target.textContent.length;
+            const delay = $(target).attr('data-animate-delay');
+
+            //make line visible when animation starts
+            target.addEventListener('animationstart', function () {
+              $(this).css('visibility', 'visible');
+              this.removeEvenListener('animationstart');
+            });
+            // toggle animation
+            $(target).css({
+              'animation': `typing ${secs}s steps(${textLength * 2}, end) ${delay}s`
+            });
           }
         })
-      });
+      }, { threshold: 1.0 });
 
       revealTextElements.forEach(element => {
         const lines = element.querySelectorAll('.line');
-        lines.forEach(line => {
+        lines.forEach((line, idx) => {
           const lineText = $(line).text();
+          $(line).attr('data-animate-delay', idx * secs)
           $(line).find('.words').find('span').remove();
           $(line).find('.words').text(lineText);
           addCenteringMargin(line);
@@ -97,7 +111,21 @@ jQuery(document).ready(function ($) {
       });
     }
 
+    function handleLineReveal() {
+      const observer = createObserver(entries => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (isIntersecting) {
+            $(target).addClass('bottom-reveal-animate line-reveal-animate');
+            observer.unobserve(target);
+          }
+        })
+      }, { threshold: 1.0 });
+      const revealElements = document.querySelectorAll('.bottom-reveal');
+      revealElements.forEach(element => observer.observe(element));
+    }
+
     removeSpansFromLInes();
+    handleLineReveal();
 
   });
 });

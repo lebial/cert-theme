@@ -1,28 +1,23 @@
-// .reveal-text {
-//   visibility: hidden;
-// }
-
 .line {
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: flex-start;
   white-space: nowrap;
-  width: 0;
-  transition: width linear 1s;
-}
-
-.typed-animation {
-  width: 100%;
-}
-
-
-.reveal-text {
+  transition: width linear 5s;
   visibility: hidden;
 }
 
-// .line {
-//   position: relative;
-//   overflow: hidden;
-//   display: flex;
-// }
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.text-reveal {
+  visibility: hidden;
+}
