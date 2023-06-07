@@ -91,6 +91,7 @@ jQuery(document).ready(function ($) {
               this.removeEvenListener('animationstart');
             });
             // toggle animation
+            $($(target).parent()[0]).css('visibility', 'visible');
             $(target).css({
               'animation': `typing ${secs}s steps(${textLength * 2}, end) ${delay}s`
             });

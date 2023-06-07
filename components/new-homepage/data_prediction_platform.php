@@ -1,30 +1,36 @@
+<?php
+
+function render_data_points()
+{
+  $points = get_field('data_points');
+  foreach ($points as $point) {
+    echo '
+      <div class="flex py-3 w-full justify-between bottom-reveal line-reveal-animation">
+        <p class="text-white mb-0">' . $point['text'] . '</p>
+        <p class="text-primary font-bold">' . $point['number_value'] . '</p>
+      </div>';
+  }
+}
+
+function render_vertical_options()
+{
+  $vertical_options = get_field('vertical_slider_options');
+  foreach ($vertical_options as $vert_option) {
+    echo '<p class="pb-2 font-bold text-white">' . $vert_option['text'] . '</p>';
+  }
+}
+?>
 <section class="w-full bg-dark-blue-background my-12 py-12">
-  <h3 class="text-white font-bold text-4xl reveal-text">Certilytics Data & Prediction Platform</h3>
+  <h3 class="text-white font-bold text-4xl reveal-text"><?php the_field('data_prediciton_header') ?>Certilytics Data & Prediction Platform</h3>
   <div class="text_container w-full flex flex-col items-center">
     <p class="text-white text-center text-base max-w-2xl">
-      Our platform makes your data more powerful. We sill unify all your data into a single source of truth and enhance it
-      with our proprietari AI-and machine learning-driven predictive analytics to provide insights that drive real, actionable change.
+      <?php the_field('data_prediction_subheader') ?>
     </p>
     <a href="/platforms" class="px-3 py-2 mt-8 border border-primary text-white border-solid rounded-2xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
   </div>
   <div class="data_path_animation w-full flex">
     <div class="w-4/12 flex flex-col justify-center ml-[10%]">
-      <div class="flex py-3 w-full justify-between bottom-reveal line-reveal-animation">
-        <p class="text-white mb-0">data ingested</p>
-        <p class="text-primary font-bold">2.5Pb</p>
-      </div>
-      <div class="flex py-3 w-full justify-between bottom-reveal line-reveal-animation">
-        <p class="text-white mb-0">lives processed</p>
-        <p class="text-primary font-bold">+200 Mil</p>
-      </div>
-      <div class="flex py-3 w-full justify-between bottom-reveal line-reveal-animation">
-        <p class="text-white mb-0">claims inriched</p>
-        <p class="text-primary font-bold">+50 Bil</p>
-      </div>
-      <div class="flex py-3 w-full justify-between bottom-reveal line-reveal-animation">
-        <p class="text-white mb-0">models scored</p>
-        <p class="text-primary font-bold">+1 Bil</p>
-      </div>
+      <?php render_data_points() ?>
     </div>
     <div class="w-8/12 relative">
       <?php get_template_part('components/new-homepage/graphic_animation') ?>
@@ -33,13 +39,7 @@
   <div class="w-full flex flex-col items-center ">
     <div class="vertical__slider__container flex justify-center relative">
       <div class=" w-96 vertical-slider-options">
-        <p class="pb-2 font-bold text-white">Enhance Existing Analytics</p>
-        <p class="pb-2 font-bold text-white">Accelerate Revenue Growth</p>
-        <p class="pb-2 font-bold text-white">Transform Population Health Strategy</p>
-        <p class="pb-2 font-bold text-white">Health Plan Price Transparency</p>
-        <p class="pb-2 font-bold text-white">HCC Coding & Payment Integrity</p>
-        <p class="pb-2 font-bold text-white">test text</p>
-        <p class="pb-2 font-bold text-white">test text 2</p>
+        <?php render_vertical_options() ?>
       </div>
       <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-dark-blue-background"></div>
 
