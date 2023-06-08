@@ -1,8 +1,8 @@
 <?php
     function render_partners() {
         $partnerOpts = get_field('partners_title');
-        foreach ($partnerOpts as $partner){
-            echo '<span>' . $partner['title'] . '</span>';
+        foreach ($partnerOpts as $idx => $glitch){
+            echo '<span class="glitch hidden font-bold" name="glitch-text-'.$idx.'" data-text=' . $glitch['title'] . '>' . $glitch['title'] . '</span>';
         }
     }
 
@@ -26,37 +26,15 @@
     }
 ?>
 
-<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-<script>
-    const typed = new Typed('.typed', {
-        stringsElement: '#string-text',
-        typeSpeed: 30,
-        startDelay: 0,
-        backSpeed: 15,
-        smartBackspace: true,
-        shuffle: false,
-        backDelay: 1500,
-        loop: true,
-        loopCount: false,
-        showCursor: false,
-        cursorChar: '|',
-        contentType: 'html',
-    })
-</script>
-
 <section class="w-full h-full">
     <div class=" w-10/12 mx-auto max-w-4xl lg:pt-20 mb-0 lg:mb-4 flex justify-center">
         <h2 class="font-normal text-2xl lg:text-5xl text-center text-gray-header flex">
             <?php the_field('first_main_title_section')?> 
             <div class="w-[155px]">
-                <span class="typed font-bold"></span>
+                <?php render_partners()?>
             </div>
             <span class="text-left"><?php the_field('second_main_title_section')?></span>
         </h2>
-        
-        <div id="string-text">
-            <?php render_partners()?>
-        </div>
     </div>
 
     <div class="credibility__body w-7/12 mx-auto pb-20 flex justify-center">
