@@ -5,7 +5,7 @@ function render_report_buttons()
 {
   global $ai_buttons;
   foreach ($ai_buttons as $idx => $button) {
-    echo '<button class="ai__driven__report__option py-4 border-b-gray-header border-b text-gray-header text-left relative
+    echo '<button class="ai__driven__report__option py-4 border-gray-300  border-b text-gray-header text-left relative line-reveal-animation
               transition-all duration-300 hover:text-primary" type="button" name="report-' . $idx . '">
                 ' . $button['button_text'] . '
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="absolute w-14 top-1 right-1 opacity-0 fill-primary transition-all duration-150">
@@ -28,7 +28,7 @@ function render_report_images()
 }
 ?>
 <section class="ai__driven__section w-full px-6">
-  <h3 class="reveal-text text-gray-header font-bold"><?php the_field('ai_heading') ?></h3>
+  <h3 class="mx-auto w-fit reveal-text text-gray-header font-bold"><?php the_field('ai_heading') ?></h3>
   <h4 class="reveal-text text-2xl text-gray-header"><?php the_field('ai_subheading') ?></h4>
 
   <div class="w-full px-28 flex justify-center my-20" data-aos="fade-in">
