@@ -7,7 +7,7 @@
             <h3 class="action__quote__container__text text-3xl 2xl:text-5xl text-white font-bold text-center mb-0 mt-8" ><?php the_field('schedule_demo_title') ?></h3>
         </div>
         <div class="action__quote__container__button w-full mx-auto mt-10 pb-14 flex lg:px-1 xl:px-2 justify-center">
-          <a class="px-4 py-2 text-base lg:text-lg border-primary border border-solid rounded-3xl text-white font-bold hover:cursor-pointer transition-all duration-300 hover:bg-primary text-center" href="<?php the_field('schedule_demo_link')?>" ><?php the_field('schedule_demo_text') ?></a>
+          <a class="px-4 py-2 text-base lg:text-lg border-primary border border-solid rounded-3xl text-white font-bold hover:cursor-pointer transition-all duration-300 hover:bg-primary text-center" href="<?php the_field('schedule_demo_link')?>" target="_blank" ><?php the_field('schedule_demo_text') ?></a>
         </div>
       </div>
     </div>

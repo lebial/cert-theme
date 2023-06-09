@@ -2,7 +2,7 @@
     function render_partners() {
         $partnerOpts = get_field('partners_title');
         foreach ($partnerOpts as $idx => $glitch){
-            echo '<span class="glitch hidden font-bold" name="glitch-text-'.$idx.'" data-text=' . $glitch['title'] . '>' . $glitch['title'] . '</span>';
+            echo '<span class="glitch hidden font-bold" name="glitch-text-'.$idx.'" data-text="' . $glitch['title'] . '">' . $glitch['title'] . '</span>';
         }
     }
 
@@ -28,9 +28,9 @@
 
 <section class="w-full h-full">
     <div class=" w-10/12 mx-auto max-w-4xl lg:pt-20 mb-0 lg:mb-4 flex justify-center">
-        <h2 class="font-normal text-2xl lg:text-5xl text-center text-gray-header flex">
+        <h2 class="font-normal text-2xl lg:text-5xl text-center text-gray-header">
             <?php the_field('first_main_title_section')?> 
-            <div class="w-[155px]">
+            <div class="">
                 <?php render_partners()?>
             </div>
             <span class="text-left"><?php the_field('second_main_title_section')?></span>
