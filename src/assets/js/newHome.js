@@ -32,20 +32,18 @@ jQuery(document).ready(function ($) {
   }
 
   function calculateNext(currentText, length) {
-    if (currentText === length) return { next: 0, prev: length };
+    if (currentText === length) return { next: 0, prev: length - 1 };
     return { next: currentText, prev: currentText - 1 };
   }
 
   function handleGlitchTextChange() {
     let currentText = 0;
     const texts = document.querySelectorAll(".glitch");
-    const lastText = texts.length + 1;
+    const lastText = texts.length;
 
     setInterval(() => {
-      if (currentText === lastText) return (currentText = 0);
       const queue = calculateNext(currentText, lastText);
-      console.log("next:" + queue.next);
-      console.log("prev:" + queue.prev);
+      if (currentText === lastText) currentText = 0;
       $(`[name="glitch-text-${queue.prev}"]`).addClass("hidden");
       $(`[name="glitch-text-${queue.next}"]`).removeClass("hidden");
       currentText += 1;
