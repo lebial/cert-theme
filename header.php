@@ -5,7 +5,7 @@
 <head>
 
     <?php
-    if (get_field('include_GA', 'options')) {
+    if (get_field('include_analytics', 'options')) {
         echo '<!-- Google Tag Manager -->';
         echo '<script async src="https://www.googletagmanager.com/gtag/js?id=G-JM87BS03S7">
 		      </script>
@@ -17,9 +17,7 @@
 			  </script>
 		';
         echo "<!-- End Google Tag Manager -->";
-    }
 
-    if (get_field('include_zoomInfo', 'options')) {
         echo '<!-- Zoom Info Tag -->';
         echo '<script>';
         echo '(function() {';
@@ -32,9 +30,7 @@
         echo 's.parentNode.insertBefore(zi, s);';
         echo '})();';
         echo '</script>';
-    }
 
-    if (get_field('include_active_campaign', 'options')) {
         echo '<!-- Active Campaing Tag -->';
         echo '<script type="text/javascript">';
         echo '(function(e,t,o,n,p,r,i){';
@@ -48,10 +44,7 @@
         echo 'vgo("setTrackByDefault", true);';
         echo 'vgo("process");';
         echo '</script>';
-    }
 
-    if (get_field('include_twitter', 'options')) {
-        echo '<!-- Twitter universal website tag code -->';
         echo '<script>';
         echo '!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);';
         echo '},s.version="1.1",s.queue=[],u=t.createElement(n),u.async=!0,u.src="//static.ads-twitter.com/uwt.js",';
@@ -61,9 +54,7 @@
         echo 'twq("track","PageView");';
         echo '</script>';
         echo '<!-- End Twitter universal website tag code -->';
-    }
 
-    if (get_field('include_linkedin', 'options')) {
         echo '<!-- LinkedIn Tag -->';
         echo ' 
         <script type="text/javascript">
@@ -84,6 +75,7 @@
                 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2795692&fmt=gif" />
             </noscript>';
     }
+
     ?>
 
     <meta charset="<?php bloginfo('charset'); ?>" />
