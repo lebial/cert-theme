@@ -16,7 +16,6 @@ function render_custom_menu_items()
 }
 ?>
 <section class="new__home__page w-full bg-dark-blue-background min-w-full" style="background: url('<?php the_field('hero_background_image') ?>');">
-  <!-- <img src="<?php the_field('hero_background_image') ?>" alt="hero image" class="absolute w-full h-full top-0 left-0 object-cover"> -->
   <div class="w-full h-full bg-dark-blue-background bg-opacity-90 py-14">
     <div class="flex flex-col items-center justify-center text-center">
       <h1 class="text-white text-6xl leading-snug tracking-normal max-w-2xl"><?php the_field('heading') ?></h1>
