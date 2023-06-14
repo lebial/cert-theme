@@ -27,9 +27,9 @@ function render_report_images()
   }
 }
 ?>
-<section class="ai__driven__section w-full px-6">
+<section class="ai__driven__section w-full px-6 mt-14">
   <h3 class="mx-auto w-fit reveal-text text-gray-header font-bold"><?php the_field('ai_heading') ?></h3>
-  <h4 class="reveal-text text-2xl text-gray-header"><?php the_field('ai_subheading') ?></h4>
+  <h4 data-animate-delay="2" class="reveal-text text-2xl text-gray-header"><?php the_field('ai_subheading') ?></h4>
 
   <div class="w-full px-28 flex justify-center my-20" data-aos="fade-in">
     <div class=" max-w-5xl flex w-full">

@@ -142,13 +142,13 @@
                     <path class=" fill-white" d="M130.5,164.2h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9  s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,333.1h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2  c9.3,0,16.9-7.6,16.9-16.9s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,502h-0.2c-9.3,0-16.9,7.6-16.9,16.9c0,9.3,7.6,16.9,16.9,16.9  h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9c0-9.3-7.6-16.9-16.9-16.9h-0.3H130.5z" />
                 </svg>
             </button>
-            <a class="px-3 py-2 border-primary border border-solid rounded-3xl
+            <a class="px-3 py-2 border-solid border-primary border rounded-3xl
 			text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary" href="https://www.certilytics.com/schedule-demo-now/" target="_blank">Schedule
                 Demo</a>
         </div>
 
-        <div class=" main__menu__sidebar w-[70vw] min-h-screen absolute top-0 -right-full flex flex-col items-center bg-white">
+        <div class=" main__menu__sidebar w-[70vw] min-h-screen absolute top-0 -right-full flex flex-col items-center justify-between bg-white">
             <div class=" w-9/12">
                 <div class="w-full pt-8 flex justify-end mb-14">
                     <a href="https://www.certilytics.com/schedule-demo-now/" target="_blank" class="px-3 py-2 border-primary border-2 border-solid rounded-3xl font-bold mr-5 text-gray-header
@@ -162,6 +162,14 @@
                     </button>
                 </div>
                 <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
+            </div>
+            <div class="w-9/12 flex justify-end mb-4">
+                <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
+                </a>
+                <a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 fill-gray-header" alt="">
+                </a>
             </div>
         </div>
 

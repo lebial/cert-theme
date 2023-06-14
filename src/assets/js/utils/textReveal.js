@@ -80,13 +80,13 @@ jQuery(document).ready(function ($) {
 
     function removeSpansFromLInes() {
       //duration per line animation;
-      const secs = 2.5;
+      const secs = 2;
 
       const observer = createObserver((entries) => {
         entries.forEach(({ target, isIntersecting }) => {
           if (isIntersecting) {
             const textLength = target.textContent.length;
-            const delay = $(target).attr('data-animate-delay');
+            const delay = $($(target).parent()).attr('data-animate-delay') || $(target).attr('data-animate-delay');
 
             //make line visible when animation starts
             target.addEventListener('animationstart', function () {

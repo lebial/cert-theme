@@ -801,12 +801,16 @@ header {
 
             &>li {
                 &>a {
+                    position: relative;
+
                     &::after {
+                        position: absolute;
                         display: block;
                         content: '';
                         border-bottom: solid 3px $color-red;
                         transform: scaleX(0);
                         transition: transform 300ms ease-in-out;
+                        width: 100%;
                     }
 
                     &:hover {
@@ -948,9 +952,25 @@ header {
                             font-size: 1.1rem !important;
                             font-weight: normal;
                             transition: all .3s ease;
+                            position: relative;
+                            padding-right: 13px;
+
+                            &::after {
+                                content: url('data:image/svg+xml,<svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class=" fill-primary" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "/></g></g></svg>');
+                                position: absolute;
+                                width: 18px;
+                                height: 18px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                transition: all ease .3s;
+                            }
 
                             &:hover {
                                 color: $color-red !important;
+
+                                &::after {
+                                    filter: invert(55%) sepia(49%) saturate(2851%) hue-rotate(325deg) brightness(101%) contrast(91%);
+                                }
                             }
 
                             @media #{$desktopLG} {
@@ -965,6 +985,10 @@ header {
                             a {
                                 color: $color-red !important;
                                 font-weight: bold;
+
+                                &::after {
+                                    filter: invert(55%) sepia(49%) saturate(2851%) hue-rotate(325deg) brightness(101%) contrast(91%);
+                                }
                             }
                         }
 
