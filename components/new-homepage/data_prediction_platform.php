@@ -21,7 +21,7 @@ function render_vertical_options()
 }
 ?>
 <section class="w-full bg-dark-blue-background my-12 py-12">
-  <h3 class="text-white font-bold reveal-text"><?php the_field('data_prediciton_header') ?>Certilytics Data & Prediction Platform</h3>
+  <h3 class="text-white font-bold reveal-text"><?php the_field('data_prediciton_header') ?></h3>
   <div class="text_container w-full flex flex-col items-center">
     <p class="text-white text-center text-base max-w-2xl">
       <?php the_field('data_prediction_subheader') ?>
