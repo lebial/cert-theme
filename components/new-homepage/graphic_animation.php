@@ -156,7 +156,7 @@
     }
   </style>
 
-  <div class="demo__container relative left-[-6%]">
+  <div class="demo__container relative left-[-6%] 2xl:left-[-2%] max-w-[920px]">
     <svg class="w-full max-h-[600px]" width="1305" viewBox="0 0 1305 792" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="datagraphic-desktop 1">
         <path id="Vector" d="M1119.6 271.3H1116.4V283.7H1119.6V271.3Z" fill="white" />

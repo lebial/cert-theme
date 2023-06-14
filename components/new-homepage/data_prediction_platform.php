@@ -25,6 +25,9 @@ function render_vertical_options()
   <div class="text_container w-full flex flex-col items-center">
     <p class="text-white text-center text-base max-w-2xl">
       <?php the_field('data_prediction_subheader') ?>
+      Our Platform makes your data more powerful. We will unify all your data into a single <br>
+      source of truth and enhance it with our proprietary AI-and machine learning-driven <br>
+      predictive analytics to provide insights that drive real, actionable change.
     </p>
     <a href="/platforms" class=" px-5 py-2 mt-8 border border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
   </div>
