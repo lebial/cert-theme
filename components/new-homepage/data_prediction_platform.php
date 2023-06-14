@@ -26,7 +26,7 @@ function render_vertical_options()
     <p class="text-white text-center text-base max-w-2xl">
       <?php the_field('data_prediction_subheader') ?>
     </p>
-    <a href="/platforms" class=" px-5 py-2 mt-8 border border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
+    <a href="/platform" class=" px-5 py-2 mt-8 border border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
   </div>
   <div class="data_path_animation w-full flex">
     <div class="w-4/12 flex flex-col justify-center ml-[10%]">

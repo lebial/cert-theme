@@ -27,9 +27,6 @@ function render_cards()
     }
     echo '</div>';
     echo '</div>';
-    echo '<div class="text-center p-0 pt-6">';
-    echo '<a class="px-3 py-2 border-primary border border-solid rounded-3xl text-dark-blue-background font-bold hover:cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white text-center" href="' . $card['explore_button_link'] . '" target="_blank">Explore More</a>';
-    echo '</div>';
     echo '</div>';
 }
 ?>
