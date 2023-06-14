@@ -152,16 +152,16 @@
             </button>
             <a class="px-3 py-2 border-primary border border-solid rounded-3xl
 			text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary" href="https://www.google.com">Schedule
+			hover:bg-primary" href="https://www.certilytics.com/schedule-demo-now/" target="_blank">Schedule
                 Demo</a>
         </div>
 
         <div class=" main__menu__sidebar w-[70vw] min-h-screen absolute top-0 -right-full flex flex-col items-center bg-white">
             <div class=" w-9/12">
                 <div class="w-full pt-8 flex justify-end mb-14">
-                    <button class="px-3 py-2 border-primary border-2 bolid-solid rounded-3xl font-bold mr-5 text-gray-header
+                    <a href="https://www.certilytics.com/schedule-demo-now/" target="_blank" class="px-3 py-2 border-primary border-2 border-solid rounded-3xl font-bold mr-5 text-gray-header
 					hover:cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white" type="button">Schedule
-                        Demo</button>
+                        Demo</a>
                     <button class="menu__side__bar__close" type="button">
                         <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <line class=" stroke-gray-header" x1="18" x2="6" y1="6" y2="18" />

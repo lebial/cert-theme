@@ -11,7 +11,7 @@
         foreach ($cards as $card) {
             echo '<div class="card flex flex-col w-1/3 items-center">';
                 echo '<div class="card__data flex flex-col h-48">';
-                    echo '<h4 class="font-bold text-lg text-dark-blue-background text-center pb-6">' . $card['title'] . '</h4>';
+                    echo '<h4 class="font-bold text-xl text-dark-blue-background text-center pb-6">' . $card['title'] . '</h4>';
                     echo '<div class="card__point text-center">';
                         foreach($card['point_description'] as $pointDescription) {
                             echo '<p class="mb-0 text-dark-blue-background">'. $pointDescription['point'] .'</p>';
