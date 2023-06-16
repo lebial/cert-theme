@@ -153,7 +153,7 @@
             <div class=" w-9/12">
                 <div class="w-full pt-8 flex justify-end mb-14">
                     <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
-			text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
+			text-primary hover:text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary" type="button">Schedule
                         Demo</button>
                     <button class="menu__side__bar__close" type="button">
