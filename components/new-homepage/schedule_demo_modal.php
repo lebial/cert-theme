@@ -10,6 +10,9 @@
     </div>
     <div class="w-1/2 h-full">
       <div class="schedule__demo__form__container px-10 py-16">
+        <div class="w-full flex justify-center">
+          <div></div>
+        </div>
         <?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('contact_modal_form_id', 'options'), 'title' => false, 'description' => false)) ?>
       </div>
     </div>
