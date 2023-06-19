@@ -28,7 +28,7 @@
 <section class="w-full h-full flex items-center">
     <div class="container px-5 lg:pb-28 2xl:pb-32 pt-16 mx-auto">
         <div class="text-center mb-14">
-            <h3 class="reveal-text text first-text font-semibold  text-center text-gray-header">Certilytics News & Expert Insights</h5>
+            <h3 class="reveal-text text font-semibold  text-center text-gray-header">Certilytics News & Expert Insights</h5>
         </div>
         <div class="flex flex-wrap -m-4 w-10/12 mx-auto">
             <?php render_new_cards() ?>

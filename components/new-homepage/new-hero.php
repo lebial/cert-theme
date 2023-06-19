@@ -24,7 +24,7 @@ function render_custom_menu_items()
     </div>
     <div class="w-full flex flex-col items-center mt-12">
       <div class="w-8/12">
-        <p class="text-3xl font-bold text-white max-w-none text-center">
+        <p class="lg:text-[1.8rem] 2xl:text-3xl font-bold text-white max-w-none text-center">
           See how we're helping healthcare leaders achieve their goals
         </p>
         <div class="button container w-full flex text-white justify-evenly mt-8">
