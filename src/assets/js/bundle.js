@@ -2,6 +2,7 @@ import './main';
 import './utils/textReveal';
 import './stickymate';
 import './header';
+import './scheduleModal';
 import './header-shapes';
 import './footer.js';
 import './newHome';

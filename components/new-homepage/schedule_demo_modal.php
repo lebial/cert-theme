@@ -7,11 +7,54 @@
       <div class="contact__image__container flex justify-center">
         <img src="<?php the_field('contact_us_modal_laptop_image', 'options') ?>" alt="contact us report image">
       </div>
+      <p class="text-white text-sm ">Today, our solutins are helping <br> healthcare organizations: </p>
+      <div class="points__container mt-5 mb-4">
+        <div class="flex mb-2">
+          <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4 V28 L26 16 z" />
+          </svg>
+          <p class="text-white text-sm">Unify and add power to their <br> data</p>
+        </div>
+        <div class="flex mb-2">
+          <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4 V28 L26 16 z" />
+          </svg>
+          <p class="text-white text-sm">Unify and add power to their <br> data</p>
+        </div>
+        <div class="flex mb-2">
+          <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4 V28 L26 16 z" />
+          </svg>
+          <p class="text-white text-sm">Predict emerging clinical and <br> financial risk</p>
+        </div>
+        <div class="flex mb-2">
+          <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4 V28 L26 16 z" />
+          </svg>
+          <p class="text-white text-sm">Optimize programs and <br> strategies to lower coest and <br> improve outcomes</p>
+        </div>
+        <div class="flex mb-2">
+          <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4 V28 L26 16 z" />
+          </svg>
+          <p class="text-white text-sm">Measure results and <br> demosntrate value</p>
+        </div>
+      </div>
     </div>
     <div class="w-1/2 h-full">
       <div class="schedule__demo__form__container px-10 py-16">
-        <div class="w-full flex justify-center">
-          <div></div>
+        <div class="w-full flex justify-center mb-5">
+          <div class="w-full border border-solid border-black rounded-2xl flex">
+            <div class="first__step__pill w-7/12 bg-dark-blue-background rounded-2xl flex justify-center py-1 text-white font-bold text-base text-center">
+              Step 1
+            </div>
+            <div class="second__step__pill w-5/12 flex justify-center py-1 rounded-2xl text-center font-bold text-base ">
+              Step 2
+            </div>
+          </div>
+        </div>
+        <div class="mb-5">
+          <p class="text-center text-base">Fill out the form below - then choose a <br> time to meet with our team</p>
         </div>
         <?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('contact_modal_form_id', 'options'), 'title' => false, 'description' => false)) ?>
       </div>

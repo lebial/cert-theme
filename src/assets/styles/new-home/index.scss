@@ -252,6 +252,8 @@
 
 .schedule__demo__modal {
 	& form {
+		margin-top: 0 !important;
+
 		& input {
 			padding: 8px 5px !important;
 			border: 1px solid $color-grey !important;
@@ -272,11 +274,32 @@
 			}
 		}
 
-		.frm_html_container {
+		.optin__description {
 			& span {
 				font-size: 8px !important;
 				line-height: 1.2;
 				display: block;
+			}
+		}
+
+		.schedule__button {
+			display: flex;
+			justify-content: center;
+
+			& button {
+				background-color: $color-red;
+				color: white;
+				padding: 10px;
+				border-radius: 7px;
+				transition: all .3s ease;
+				border: solid 1px $color-red;
+				font-size: 15px;
+				font-weight: 600;
+
+				&:hover {
+					background-color: white;
+					color: $color-red;
+				}
 			}
 		}
 
