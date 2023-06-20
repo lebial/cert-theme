@@ -31,25 +31,6 @@ jQuery(document).ready(function ($) {
     $(`button[name=${currentReport}]`).click();
   }
 
-  function calculateNext(currentText, length) {
-    if (currentText === length) return { next: 0, prev: length - 1 };
-    return { next: currentText, prev: currentText - 1 };
-  }
-
-  function handleGlitchTextChange() {
-    let currentText = 0;
-    const texts = document.querySelectorAll(".glitch");
-    const lastText = texts.length;
-
-    setInterval(() => {
-      const queue = calculateNext(currentText, lastText);
-      if (currentText === lastText) currentText = 0;
-      $(`[name="glitch-text-${queue.prev}"]`).addClass("hidden");
-      $(`[name="glitch-text-${queue.next}"]`).removeClass("hidden");
-      currentText += 1;
-    }, 2000);
-  }
-
   function createVerticalSlider() {
     $(".vertical-slider-options").slick({
       vertical: true,
