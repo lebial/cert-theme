@@ -52,7 +52,6 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  handleGlitchTextChange();
   AiOPtionsInit();
   handleHeroButtonClick();
   createVerticalSlider();
