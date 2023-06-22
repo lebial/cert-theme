@@ -26,11 +26,14 @@ function render_vertical_options()
     <p class="text-white text-center text-base max-w-2xl">
       <?php the_field('data_prediction_subheader') ?>
     </p>
-    <a href="/platform" class="px-4 py-2 text-base lg:text-lg mt-8 border border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
+    <a href="/platform" class="px-4 py-2 text-base lg:text-lg mt-8 border font-bold border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
   </div>
   <div class="data_path_animation w-full flex">
     <div class="w-4/12 flex flex-col justify-center ml-[10%]">
-      <?php render_data_points() ?>
+      <p class="text-white font-bold mx-auto">Operational Metrics</p>
+      <div class="flex flex-col w-full mt-5">
+        <?php render_data_points() ?>
+      </div>
     </div>
     <div class="w-8/12 relative">
       <?php get_template_part('components/new-homepage/graphic_animation') ?>
