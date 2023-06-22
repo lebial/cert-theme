@@ -40,10 +40,10 @@ function render_vertical_options()
     </div>
   </div>
   <div class="w-full flex">
-    <div class=" w-10/12 mx-auto max-w-6xl lg:pt-12 mb-0 lg:mb-4 flex justify-center">
-        <h2 class="font-normal text-2xl lg:text-4xl text-center text-white">
+    <div class=" w-10/12 mx-auto max-w-6xl lg:mt-[-2rem] mb-0 lg:mb-4 flex justify-center">
+        <p class="font-normal text-lg lg:text-xl text-center text-white">
             <span class="vertical-option font-bold"></span><br>
-        </h2>
+        </p>
         
         <div id="string-text2">
             <?php render_vertical_options()?>
