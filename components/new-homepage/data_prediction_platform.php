@@ -51,7 +51,8 @@ function render_vertical_options()
     </div>
     <!-- <div class="vertical__slider__container flex justify-center relative">
       <div class=" w-96 vertical-slider-options">
-        <?php // render_vertical_options() ?>
+        <?php // render_vertical_options() 
+        ?>
       </div>
       <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-dark-blue-background"></div>
 

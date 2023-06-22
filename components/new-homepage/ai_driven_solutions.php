@@ -21,7 +21,7 @@ function render_report_images()
 {
   global $ai_buttons;
   foreach ($ai_buttons as $idx => $button) {
-    echo '<div class="report-' . $idx . '-image ai__report__image w-full absolute transition-all duration-150 max-h-[300px] max-w-xl top-3">
+    echo '<div class="report-' . $idx . '-image ai__report__image w-full absolute transition-all duration-150 max-h-[300px] max-w-xl top-3 shadow-2xl">
       <img src="' . $button['report_image'] . '" alt="report-' . $idx . '"  class=" w-full max-h-80">
     </div>';
   }
