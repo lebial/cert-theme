@@ -52,6 +52,39 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function handleTypingEffect() {
+    const typed = new Typed(".typed", {
+      stringsElement: "#string-text",
+      typeSpeed: 50,
+      startDelay: 0,
+      backSpeed: 20,
+      smartBackspace: true,
+      shuffle: false,
+      backDelay: 1500,
+      loop: true,
+      loopCount: false,
+      showCursor: false,
+      cursorChar: "|",
+      contentType: "html",
+    });
+
+    const typed2 = new Typed(".vertical-option", {
+      stringsElement: "#string-text2",
+      typeSpeed: 50,
+      startDelay: 0,
+      backSpeed: 20,
+      smartBackspace: true,
+      shuffle: false,
+      backDelay: 1500,
+      loop: true,
+      loopCount: false,
+      showCursor: false,
+      cursorChar: "|",
+      contentType: "html",
+    });
+  }
+
+  handleTypingEffect();
   AiOPtionsInit();
   handleHeroButtonClick();
   createVerticalSlider();
