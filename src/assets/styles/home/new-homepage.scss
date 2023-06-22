@@ -38,7 +38,6 @@
     top: 0;
     left: 0;
     transition: all ease 1s;
-    transition-delay: 500ms;
   }
 
   &.line-reveal-animate {
@@ -55,13 +54,32 @@
 
   & * {
     transform: translateY(100%);
-    transition: all ease .5s;
+    transition: all ease 1s;
     opacity: 0;
   }
 
   &.bottom-reveal-animate {
     & * {
       transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.left-reveal {
+  overflow-x: hidden;
+  transition: all ease 1s;
+  transition-delay: 500ms;
+
+  & * {
+    transform: translateX(-100%);
+    transition: all ease 1s;
+    opacity: 0;
+  }
+
+  &.left-reveal-animate {
+    & * {
+      transform: translateX(0);
       opacity: 1;
     }
   }

@@ -5,7 +5,7 @@ function render_data_points()
   $points = get_field('data_points');
   foreach ($points as $point) {
     echo '
-      <div class="flex py-3 w-full justify-between bottom-reveal line-reveal-animation">
+      <div class="flex py-3 w-full justify-between left-reveal line-reveal-animation">
         <p class="text-white mb-0">' . $point['text'] . '</p>
         <p class="text-primary font-bold">' . $point['number_value'] . '</p>
       </div>';

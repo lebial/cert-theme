@@ -32,7 +32,6 @@ jQuery(document).ready(function ($) {
         var wrappedLines = "";
         lines.forEach(function (wordsArr) {
           wrappedLines += '<span class="line"><span class="words">';
-          // wrappedLines += '<span class="line"><span class="words">';
           wordsArr.forEach(function (word) {
             wrappedLines += word.outerHTML;
           });
@@ -119,12 +118,14 @@ jQuery(document).ready(function ($) {
       const observer = createObserver(entries => {
         entries.forEach(({ target, isIntersecting }) => {
           if (isIntersecting) {
-            $(target).addClass('bottom-reveal-animate line-reveal-animate');
+            $(target).addClass('bottom-reveal-animate left-reveal-animate line-reveal-animate');
             observer.unobserve(target);
           }
         })
       }, { threshold: 1.0 });
-      const revealElements = document.querySelectorAll('.bottom-reveal');
+      const bottomRevealElements = document.querySelectorAll('.bottom-reveal');
+      const leftRevealElements = document.querySelectorAll('.left-reveal');
+      const revealElements = [...bottomRevealElements, ...leftRevealElements];
       revealElements.forEach(element => observer.observe(element));
     }
 

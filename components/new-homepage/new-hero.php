@@ -15,11 +15,11 @@ function render_custom_menu_items()
   }
 }
 ?>
-<section class="new__home__page w-full bg-dark-blue-background min-w-full relative" style="background: url('<?php the_field('hero_background_image') ?>');">
+<section class="new__home__page w-full bg-dark-blue-background min-w-full relative">
   <video playsinline autoplay muted loop id="HomeBackgroundVideo" class=" object-cover w-full h-full absolute top-0 left-0 z-10">
     <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
   </video>
-  <div class="w-full h-full bg-dark-blue-background bg-opacity-80 py-14 opacity-100 z-20 relative">
+  <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative">
     <div class="flex flex-col items-center justify-center text-center">
       <h1 class="text-white text-4xl 2xl:text-6xl leading-snug tracking-normal max-w-2xl reveal-text"><?php the_field('heading') ?></h1>
       <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
