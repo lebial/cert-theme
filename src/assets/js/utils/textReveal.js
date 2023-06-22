@@ -91,7 +91,7 @@ jQuery(document).ready(function ($) {
             //make line visible when animation starts
             target.addEventListener('animationstart', function () {
               $(this).css('visibility', 'visible');
-              this.removeEvenListener('animationstart');
+              target.removeEventListener('animationstart');
             });
             // toggle animation
             $($(target).parent()[0]).css('visibility', 'visible');

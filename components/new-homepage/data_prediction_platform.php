@@ -41,17 +41,18 @@ function render_vertical_options()
   </div>
   <div class="w-full flex">
     <div class=" w-10/12 mx-auto max-w-6xl lg:pt-12 mb-0 lg:mb-4 flex justify-center">
-        <h2 class="font-normal text-2xl lg:text-4xl text-center text-white">
-            <span class="vertical-option font-bold"></span><br>
-        </h2>
-        
-        <div id="string-text2">
-            <?php render_vertical_options()?>
-        </div>
+      <h2 class="font-normal text-2xl lg:text-4xl text-center text-white">
+        <span class="vertical-option font-bold"></span><br>
+      </h2>
+
+      <div id="string-text2">
+        <?php render_vertical_options() ?>
+      </div>
     </div>
     <!-- <div class="vertical__slider__container flex justify-center relative">
       <div class=" w-96 vertical-slider-options">
-        <?php // render_vertical_options() ?>
+        <?php // render_vertical_options() 
+        ?>
       </div>
       <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-transparent to-dark-blue-background"></div>
 
