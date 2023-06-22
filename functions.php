@@ -16,6 +16,7 @@ add_filter('pre_get_posts', 'hide_by_excluding_category');
 function add_styles_scripts()
 {
     wp_enqueue_script('jquery');
+    wp_enqueue_script('typedJs', "https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js", array());
     wp_enqueue_script('srcScripts', get_template_directory_uri() . '/lib/js/bundleOld.js', array(), filemtime(get_stylesheet_directory() . '/dist/assets/js/bundle.js'), '1.0.0', true);
     wp_enqueue_script('srcScriptsNew', get_template_directory_uri() . '/dist/assets/js/bundle.js', array(), filemtime(get_stylesheet_directory() . '/dist/assets/js/bundle.js'), '1.0.0', true);
     wp_enqueue_style('srcStyles', get_template_directory_uri() . '/dist/assets/css/bundle.css', array(), filemtime(get_stylesheet_directory() . '/dist/assets/css/bundle.css'));
