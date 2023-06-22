@@ -105,3 +105,9 @@
 		}
 	}
 }
+
+.solutions__subheader {
+	& p:last-child {
+		display: none !important;
+	}
+}
