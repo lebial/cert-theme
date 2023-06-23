@@ -84,9 +84,18 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function addTemporaryNavToNavBar() {
+    const marketSegments = $('.new__home__button__container');
+    const placeToPut = $('header>div')[0];
+    $(placeToPut).prepend(marketSegments);
+  }
+
   handleTypingEffect();
   AiOPtionsInit();
   handleHeroButtonClick();
   createVerticalSlider();
   handleNextClick();
+  if (location.href.includes('alternate2')) {
+    addTemporaryNavToNavBar();
+  }
 });
