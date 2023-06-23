@@ -27,14 +27,13 @@ function render_report_images()
   }
 }
 
-function render_subheader() {
+function render_subheader()
+{
   $phraseInput = get_field('ai_subheading');
   $phraseArray = explode('.', $phraseInput);
-  $phraseDelay = 2;
-  js_console($phraseArray);
-  foreach ($phraseArray as $phrase) {
-    echo '<p data-animate-delay="'.$phraseDelay.'" class="reveal-text ml-4 text-2xl text-gray-header">' . $phrase . '.</p>';
-    $phraseDelay = $phraseDelay + 3;
+  $duration =  2 / 3;
+  foreach ($phraseArray as $idx => $phrase) {
+    echo '<p data-animate-delay="' . ($duration + .3) * $idx . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-2xl text-gray-header">' . $phrase . '.</p>';
   }
 }
 
@@ -43,7 +42,7 @@ function render_subheader() {
   <h3 class="mx-auto w-fit reveal-text text-gray-header font-bold"><?php the_field('ai_heading') ?></h3>
   <!-- <h4 data-animate-delay="2" class="reveal-text text-2xl text-gray-header"><?php the_field('ai_subheading') ?></h4> -->
   <div class="solutions__subheader flex mx-auto justify-center">
-    <?php render_subheader()?>
+    <?php render_subheader() ?>
   </div>
   <div class="w-full px-28 flex justify-center my-20" data-aos="fade-in">
     <div class=" max-w-5xl flex w-full">
