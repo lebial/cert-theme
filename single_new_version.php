@@ -11,32 +11,6 @@ $hide_class = $show_content_navigation ? 'lg:block' : '';
 $hide_alternate = $show_content_navigation ? '' : 'lg:block';
 $remove_mt_if_shown = $show_content_navigation ? 'mt-4' : 'mt-0';
 
-function get_realted_posts_by_tags()
-{
-    $tmp_post = get_post();
-    $post_tag = get_the_tags($tmp_post->ID);
-    // Check if the post has any tags
-    $ids = array();
-    if ($post_tag) {
-        $ids = wp_list_pluck($post_tag, 'term_id');
-    }
-    // Now pass the IDs to tag__in
-    $args = array(
-        'post_type' => 'post',
-        'post__not_in' => array($tmp_post->ID),
-        'tag__in'   => $ids,
-        'posts_per_page' => 3,
-        'caller_get_posts' => 1
-    );
-    // Now proceed with the rest of your query
-    $related_posts_query = new WP_Query($args);
-    $related_posts = array();
-    foreach ($related_posts_query->posts as $rel_post) {
-        array_push($related_posts, $rel_post->ID);
-    };
-    return $related_posts;
-}
-
 function render_related_posts()
 {
     $related_posts = get_field('related_posts');
