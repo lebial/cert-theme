@@ -40,13 +40,17 @@ function render_vertical_options()
     </div>
   </div>
   <div class="w-full flex">
-    <div class=" w-10/12 mx-auto max-w-6xl lg:mt-[-2rem] mb-0 lg:mb-4 flex justify-center">
-        <p class="font-normal text-lg lg:text-xl text-center text-white">
-            <span class="vertical-option font-bold"></span><br>
-        </p>
-        
-        <div id="string-text2">
-            <?php render_vertical_options()?>
+    <div class=" w-10/12 mx-auto max-w-6xl lg:mt-[-1rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
+        <div class="w-6/12 2xl:w-[48%]">
+        </div>
+        <div class="w-6/12">
+          <p class="font-normal text-lg lg:text-xl text-white">
+              <span class="vertical-option font-bold"></span><br>
+          </p>
+          
+          <div id="string-text2">
+              <?php render_vertical_options()?>
+          </div>
         </div>
     </div>
     <!-- <div class="vertical__slider__container flex justify-center relative">
