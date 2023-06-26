@@ -15,20 +15,20 @@ function render_custom_menu_items()
   }
 }
 ?>
-<section class="new__home__page w-full bg-dark-blue-background min-w-full relative">
+<section class="new__home__page w-full min-w-full relative">
 
-  <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative">
+  <div class="w-full h-full bg-opacity-70 py-14 opacity-100 z-20 relative">
     <div class="flex flex-col items-center justify-center text-center">
-      <h1 class="text-white text-4xl 2xl:text-6xl reveal-text"><?php the_field('heading') ?></h1>
-      <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
+      <h1 class=" text-gray-header text-4xl 2xl:text-6xl reveal-text"><?php the_field('heading') ?></h1>
+      <h2 class=" text-gray-header text-lg mt-8 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
       <div class=" w-60 h-px bg-primary mt-6"></div>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
       <div class="w-10/12 2xl:w-8/12 flex flex-col">
-        <p class=" text-xl 2xl:text-3xl font-bold text-white max-w-none text-center">
+        <p class=" text-xl 2xl:text-3xl font-bold text-gray-header max-w-none text-center">
           See how we're helping healthcare leaders achieve their goals
         </p>
-        <div class="button container min-w-full w-full flex text-white justify-evenly mt-8">
+        <div class="button container min-w-full w-full flex text-gray-header justify-evenly mt-8">
           <?php render_custom_menu_items() ?>
         </div>
       </div>
@@ -36,8 +36,8 @@ function render_custom_menu_items()
     </div>
   </div>
 </section>
-<section class="video_section flex justify-center">
-  <div class="video__container w-1/2 h-full mt-20 shadow-2xl">
+<section class="video_section flex justify-center mb-28">
+  <div class="video__container w-9/12 h-full mt-20 shadow-2xl">
     <video autoplay muted loop id="HomeBackgroundVideo" class="object-cover w-full h-full ">
       <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
     </video>
