@@ -15,14 +15,11 @@ function render_custom_menu_items()
   }
 }
 ?>
-<section class="new__home__page w-full bg-dark-blue-background min-w-full relative h-[80vh]">
-  <video playsinline autoplay muted loop id="HomeBackgroundVideo" class=" object-cover w-full h-full absolute top-0 left-0 z-10">
-    <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
-  </video>
-  <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative">
+<section class="new__home__page w-full min-w-full relative ">
+  <div class="w-full h-full pt-20 pb-10 opacity-100 z-20 relative flex flex-col justify-center">
     <div class="flex flex-col items-center justify-center text-center h-full">
-      <h1 class="text-white text-4xl 2xl:text-6xl reveal-text"><?php the_field('heading') ?></h1>
-      <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
+      <h1 class=" text-gray-header text-4xl 2xl:text-6xl reveal-text"><?php the_field('heading') ?></h1>
+      <h2 class=" text-gray-header text-lg mt-14 mb-0 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
       <div class="w-10/12 2xl:w-8/12 flex flex-col">
@@ -32,5 +29,12 @@ function render_custom_menu_items()
       </div>
 
     </div>
+  </div>
+</section>
+<section class="w-full flex justify-center mb-28">
+  <div class="w-9/12 shadow-2xl">
+    <video playsinline autoplay muted loop id="HomeBackgroundVideo" class=" object-cover w-full h-full">
+      <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
+    </video>
   </div>
 </section>

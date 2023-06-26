@@ -209,3 +209,22 @@
         }
     }
 }
+
+//government page form styles
+
+#form_scheduledemoform {
+    & label {
+        display: block !important;
+    }
+
+    & input {
+        border: 1px solid black !important;
+        border-radius: 9px !important;
+    }
+
+    & input[type="checkbox"] {
+        border: none !important;
+        border-radius: 5px !important;
+        background-color: lightgray;
+    }
+}

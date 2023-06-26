@@ -11,9 +11,17 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    function removeCaseStudyImgMaxSize() {
+        $('.case__study__image__container').removeClass('max-w-xs');
+    }
+
     const { href } = window.location;
     if (href.includes("health-plans") || href.includes('health-systems') || href.includes('solution-vendors') || href.includes('government')) {
         createGrowBookCarousel();
+    }
+
+    if (href.includes('government')) {
+        removeCaseStudyImgMaxSize();
     }
 
 });

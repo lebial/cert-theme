@@ -257,13 +257,15 @@ jQuery(document).ready(function ($) {
   function adjustProvidersIntuitiveInsightsIcons() {
     $('.health__plans__insights').addClass('providers__insights__section');
     const icons = $('.hp__option__action__button svg');
-    // $(icons[0]).attr('style', 'width: 26px !important');
-    // $(icons[1]).attr('style', 'width: 20px !important');
-    // $(icons[2]).attr('style', 'height: auto !important');
-    // $(icons[4]).attr('style', 'width: 26px !important');
-    // $(icons[5]).attr('style', 'width: 20px !important');
-    // $(icons[6]).attr('style', 'height: auto !important');
-    // $(icons[7]).attr('style', ' width: 23px !important, margin-right: 10px !important');
+    if (window.location.href.includes('government')) {
+      $(icons[0]).attr('style', 'width: 26px !important');
+      $(icons[1]).attr('style', 'width: 20px !important');
+      $(icons[2]).attr('style', 'height: auto !important');
+      $(icons[4]).attr('style', 'width: 26px !important');
+      $(icons[5]).attr('style', 'width: 20px !important');
+      $(icons[6]).attr('style', 'height: auto !important');
+      $(icons[7]).attr('style', ' width: 23px !important, margin-right: 10px !important');
+    }
   }
 
   function handleGrowArrowClick() {
@@ -282,8 +284,8 @@ jQuery(document).ready(function ($) {
     handleHealthPlansOptionChange();
     // handleMobileDropdownChange();
     setInsightsOverlay();
-    if (href.includes('health-plans') || href.includes('health-systems')) setInitialNavPoint();
-    if (href.includes('health-systems')) adjustProvidersIntuitiveInsightsIcons();
+    if (href.includes('health-plans') || href.includes('health-systems') || href.includes('government')) setInitialNavPoint();
+    if (href.includes('health-systems') || href.includes('government')) adjustProvidersIntuitiveInsightsIcons();
     // handleSolutionsPlayButtonClick('Desktop');
     // handleSolutionsPlayButtonClick('Mobile');
     createInsightsSlider();
