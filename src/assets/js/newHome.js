@@ -68,8 +68,23 @@ jQuery(document).ready(function ($) {
       contentType: "html",
     });
 
-    const typed2 = new Typed(".vertical-option", {
-      stringsElement: "#string-text2",
+    const typed2 = new Typed(".vertical-option-mobile", {
+      stringsElement: "#string-text-mobile",
+      typeSpeed: 5,
+      startDelay: 0,
+      backSpeed: 5,
+      smartBackspace: true,
+      shuffle: false,
+      backDelay: 2000,
+      loop: true,
+      loopCount: false,
+      showCursor: false,
+      cursorChar: "|",
+      contentType: "html",
+    });
+
+    const typed3 = new Typed(".vertical-option-desktop", {
+      stringsElement: "#string-text-desktop",
       typeSpeed: 5,
       startDelay: 0,
       backSpeed: 5,

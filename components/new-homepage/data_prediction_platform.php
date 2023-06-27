@@ -40,10 +40,10 @@ function render_vertical_options()
           </div>
           <div class="w-6/12 ml-[-1rem] lg:ml-0 lg:w-6/12">
             <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
-                <span class="vertical-option font-bold"></span><br>
+                <span class="vertical-option-mobile font-bold"></span><br>
             </p>
             
-            <div id="string-text2">
+            <div id="string-text-mobile">
                 <?php render_vertical_options()?>
             </div>
           </div>
@@ -67,10 +67,10 @@ function render_vertical_options()
         </div>
         <div class="w-10/12 ml-[-.8rem] lg:ml-0 lg:w-6/12">
           <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
-              <span class="vertical-option font-bold"></span><br>
+              <span class="vertical-option-desktop font-bold"></span><br>
           </p>
           
-          <div id="string-text2">
+          <div id="string-text-desktop">
               <?php render_vertical_options()?>
           </div>
         </div>
