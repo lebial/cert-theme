@@ -68,8 +68,23 @@ jQuery(document).ready(function ($) {
       contentType: "html",
     });
 
-    const typed2 = new Typed(".vertical-option", {
-      stringsElement: "#string-text2",
+    const typed2 = new Typed(".vertical-option-mobile", {
+      stringsElement: "#string-text-mobile",
+      typeSpeed: 5,
+      startDelay: 0,
+      backSpeed: 5,
+      smartBackspace: true,
+      shuffle: false,
+      backDelay: 2000,
+      loop: true,
+      loopCount: false,
+      showCursor: false,
+      cursorChar: "|",
+      contentType: "html",
+    });
+
+    const typed3 = new Typed(".vertical-option-desktop", {
+      stringsElement: "#string-text-desktop",
       typeSpeed: 5,
       startDelay: 0,
       backSpeed: 5,
@@ -85,17 +100,36 @@ jQuery(document).ready(function ($) {
   }
 
   function addTemporaryNavToNavBar() {
-    const marketSegments = $('.new__home__button__container');
-    const placeToPut = $('header>div')[0];
+    const marketSegments = $(".new__home__button__container");
+    const placeToPut = $("header>div")[0];
     $(placeToPut).prepend(marketSegments);
   }
 
+  function createInsightsCarousel() {
+    $(".home__insights__slider").slick({
+      slidesToShow: 1,
+      infinte: true,
+      dots: true,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
+    });
+  }
+
+  function handleInsightsArrowClick() {
+    const slider = ".home__insights__slider";
+    $(`${slider}-next`).click(() => $(slider).slick("slickNext"));
+    $(`${slider}-prev`).click(() => $(slider).slick("slickPrev"));
+  }
+
+  createInsightsCarousel();
+  handleInsightsArrowClick();
   handleTypingEffect();
   AiOPtionsInit();
   handleHeroButtonClick();
   createVerticalSlider();
   handleNextClick();
-  if (location.href.includes('alternate2')) {
+  if (location.href.includes("alternate2")) {
     addTemporaryNavToNavBar();
   }
 });

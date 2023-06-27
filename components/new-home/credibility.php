@@ -14,7 +14,7 @@ function render_cards()
     $pos = 0;
     foreach ($cards as $card) {
         $delay = .800 * $pos;
-        echo '<div class="card flex flex-col w-1/3 items-center">';
+        echo '<div class="card flex flex-col w-10/12 md:w-full lg:w-1/3 mx-auto items-center py-12 lg:py-0">';
         echo '<div class="card__data flex flex-col h-48">';
         echo '<h4 data-animate-delay="' . $delay . '" data-animate-duration="' . $duration . '" class="reveal-text font-bold text-xl text-dark-blue-background text-center pb-6">' . $card['title'] . '</h4>';
         echo '<div class="card__point text-center">';
@@ -35,9 +35,9 @@ function render_cards()
 }
 ?>
 
-<section class="w-full h-full">
+<section class="home__credibility__section w-full h-full">
     <div class=" w-10/12 mx-auto max-w-4xl lg:pt-12 mb-0 lg:mb-4 flex justify-center">
-        <h2 class="font-normal text-2xl lg:text-5xl text-center text-gray-header">
+        <h2 class="font-normal text-3xl lg:text-5xl text-center text-gray-header">
             <?php the_field('first_main_title_section') ?><br>
             <span class="typed font-bold"></span><br>
             <span><?php the_field('second_main_title_section') ?></span>
@@ -48,12 +48,12 @@ function render_cards()
         </div>
     </div>
 
-    <div class="credibility__body w-7/12 mx-auto pb-20 flex justify-center">
+    <div class="credibility__body w-11/12 md:w-9/12 lg:w-7/12 mx-auto pb-12 lg:pb-20 flex justify-center">
         <?php the_field('description') ?>
     </div>
 
     <div class="w-full h-full bg-light-blue-background">
-        <div class="cards__container w-11/12 mx-auto flex py-16 max-w-7xl text-gray-header">
+        <div class="cards__container w-11/12 mx-auto flex flex-col lg:flex-row py-4 lg:py-16 max-w-7xl text-gray-header">
             <?php render_cards() ?>
         </div>
     </div>
