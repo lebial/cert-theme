@@ -85,17 +85,36 @@ jQuery(document).ready(function ($) {
   }
 
   function addTemporaryNavToNavBar() {
-    const marketSegments = $('.new__home__button__container');
-    const placeToPut = $('header>div')[0];
+    const marketSegments = $(".new__home__button__container");
+    const placeToPut = $("header>div")[0];
     $(placeToPut).prepend(marketSegments);
   }
 
+  function createInsightsCarousel() {
+    $(".home__insights__slider").slick({
+      slidesToShow: 1,
+      infinte: true,
+      dots: true,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
+    });
+  }
+
+  function handleInsightsArrowClick() {
+    const slider = ".home__insights__slider";
+    $(`${slider}-next`).click(() => $(slider).slick("slickNext"));
+    $(`${slider}-prev`).click(() => $(slider).slick("slickPrev"));
+  }
+
+  createInsightsCarousel();
+  handleInsightsArrowClick();
   handleTypingEffect();
   AiOPtionsInit();
   handleHeroButtonClick();
   createVerticalSlider();
   handleNextClick();
-  if (location.href.includes('alternate2')) {
+  if (location.href.includes("alternate2")) {
     addTemporaryNavToNavBar();
   }
 });

@@ -21,30 +21,52 @@ function render_vertical_options()
 }
 ?>
 <section class="w-full bg-dark-blue-background my-12 py-12">
-  <h3 class="text-white font-bold reveal-text"><?php the_field('data_prediciton_header') ?></h3>
-  <div class="text_container w-full flex flex-col items-center">
+  <h3 class="md:hidden text-white font-bold reveal-text"><?php the_field('data_prediction_header_mobile') ?></h3>
+  <h3 class="hidden md:inline text-white font-bold reveal-text"><?php the_field('data_prediciton_header') ?></h3>
+  <div class="text_container w-10/12 mx-auto md:w-full flex flex-col items-center">
     <p class="text-white text-center text-base max-w-2xl">
       <?php the_field('data_prediction_subheader') ?>
     </p>
     <a href="/platform" class="px-4 py-2 text-base font-bold lg:text-lg mt-8 border border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
   </div>
-  <div class="data_path_animation w-full flex">
-    <div class="w-4/12 flex flex-col justify-center ml-[10%]">
+  <div class="data_path_animation w-full flex flex-col lg:flex-row">
+    <!-- mobile version -->
+    <div class="w-full lg:hidden">
+      <?php get_template_part('components/new-homepage/graphic_animation_mobile') ?>
+    </div>
+    <div class="w-full flex lg:hidden items-center">
+      <div class="w-full lg:w-10/12 mx-auto max-w-6xl mt-[-2rem] md:mt-[-4rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
+          <div class="w-6/12 lg:w-6/12 2xl:w-[48%]">
+          </div>
+          <div class="w-6/12 ml-[-1rem] lg:ml-0 lg:w-6/12">
+            <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
+                <span class="vertical-option font-bold"></span><br>
+            </p>
+            
+            <div id="string-text2">
+                <?php render_vertical_options()?>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- End mobile version-->
+
+    <div class="w-10/12 lg:w-4/12 flex flex-col mx-auto justify-center lg:ml-[10%]">
       <div class="bottom-reveal flex justify-center">
-        <p class="text-white font-bold text-base lg:text-2xl pb-8"><?php the_field('metrics_header') ?></p>
+        <p class="text-white font-bold text-lg md:text-xl lg:text-2xl pb-8 pt-8 lg:pt-0"><?php the_field('metrics_header') ?></p>
       </div>
       <?php render_data_points() ?>
     </div>
-    <div class="w-8/12 relative">
+    <div class="hidden lg:inline w-full lg:w-8/12 relative">
       <?php get_template_part('components/new-homepage/graphic_animation') ?>
     </div>
   </div>
-  <div class="w-full flex">
-    <div class=" w-10/12 mx-auto max-w-6xl lg:mt-[-1rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
-        <div class="w-6/12 2xl:w-[48%]">
+  <div class="hidden w-full lg:flex">
+    <div class="w-11/12 lg:w-10/12 mx-auto max-w-6xl mt-[-1rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
+        <div class="w-2/12 lg:w-6/12 2xl:w-[48%]">
         </div>
-        <div class="w-6/12">
-          <p class="font-normal text-lg lg:text-xl text-white">
+        <div class="w-10/12 ml-[-.8rem] lg:ml-0 lg:w-6/12">
+          <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
               <span class="vertical-option font-bold"></span><br>
           </p>
           
