@@ -20,6 +20,13 @@ module.exports = {
                 "dark-blue-background": "#000f3a",
                 "light-blue-background": "#e8effb",
                 "second-blue-background": "#05133a",
+                // "black-background": "#1e1e1e",
+                // "black-background": "#201c1c",
+                // "black-background": "#1c2018",
+                "black-background": "#0b0d14",
+                "secondary-black-background": "#121621",
+                // "black-background": "black",
+
             },
         },
     },

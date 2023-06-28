@@ -19,7 +19,7 @@
 				border-left-color: #5e5e5e42;
 				border-left-width: 2px;
 				border-style: solid;
-			}	
+			}
 		}
 
 	}
@@ -29,6 +29,18 @@
 	box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
 	-webkit-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
+}
+
+.insights__card__text--dark {
+	& p {
+		color: #201c1c;
+	}
+}
+
+.insights__card__text--dark-full {
+	& p {
+		color: white;
+	}
 }
 
 .insights__card__text p {
@@ -50,41 +62,49 @@
 	color: #7e7e7e;
 }
 
+.credibility__body--dark p {
+	color: #201c1c;
+}
+
+.credibility__body--dark-full p {
+	color: white;
+}
+
 .home__credibility__section {
 	& svg {
 		& path {
-		  fill: $color-navy;
+			fill: $color-navy;
 		}
-	  }
-	
-	  & .slick-dots {
+	}
+
+	& .slick-dots {
 		bottom: -50px;
-	
+
 		& li {
-		  & button {
-			transition: all ease .3s;
-			width: 15px;
-			height: 15px;
-			background-color: #011b3a29;
-			border-radius: 100%;
-	
-			&::before {
-			  color: transparent;
+			& button {
+				transition: all ease .3s;
+				width: 15px;
+				height: 15px;
+				background-color: #011b3a29;
+				border-radius: 100%;
+
+				&::before {
+					color: transparent;
+				}
 			}
-		  }
 		}
-	  }
-	
-	  & .slick-active {
+	}
+
+	& .slick-active {
 		&>div {
-		  display: flex;
-		  align-items: center;
+			display: flex;
+			align-items: center;
 		}
-	
+
 		& button {
-		  background-color: $color-navy !important;
+			background-color: $color-navy !important;
 		}
-	  }
+	}
 }
 
 .second__row {
@@ -166,42 +186,42 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 6;
 	-webkit-box-orient: vertical;
-  }
+}
 
 //Story slider
 .home__insights__section {
 	& svg {
-	  & path {
-		fill: $color-navy;
-	  }
-	}
-  
-	& .slick-dots {
-	  bottom: -50px;
-  
-	  & li {
-		& button {
-		  transition: all ease .3s;
-		  width: 15px;
-		  height: 15px;
-		  background-color: #011b3a29;
-		  border-radius: 100%;
-  
-		  &::before {
-			color: transparent;
-		  }
+		& path {
+			fill: $color-navy;
 		}
-	  }
 	}
-  
+
+	& .slick-dots {
+		bottom: -50px;
+
+		& li {
+			& button {
+				transition: all ease .3s;
+				width: 15px;
+				height: 15px;
+				background-color: #011b3a29;
+				border-radius: 100%;
+
+				&::before {
+					color: transparent;
+				}
+			}
+		}
+	}
+
 	& .slick-active {
-	  &>div {
-		display: flex;
-		align-items: center;
-	  }
-  
-	  & button {
-		background-color: $color-navy !important;
-	  }
+		&>div {
+			display: flex;
+			align-items: center;
+		}
+
+		& button {
+			background-color: $color-navy !important;
+		}
 	}
-  }
+}
