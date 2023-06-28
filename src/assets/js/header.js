@@ -37,7 +37,18 @@ jQuery(document).ready(function ($) {
 
     }
 
+    // temporary remove once it's demoed
+    function addBlackToHeader() {
+        if (location.href.includes('new-home-page-dark')) {
+            $('header').removeClass('bg-dark-blue-background');
+            $('header').addClass('bg-black-background');
+            $('footer').removeClass('bg-dark-blue-background');
+            $('footer').addClass('bg-black-background');
+        }
+    }
+
     handleSearchToggle();
     handleNavigationToggle();
     handleScheduleFormToggle();
+    addBlackToHeader();
 });

@@ -78,7 +78,7 @@ function render_link_groups()
 };
 ?>
 
-<footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen">
+<footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen bg-dark-blue-background">
 	<div class="first-row w-full flex flex-col xl:flex-row xl:justify-between">
 		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0 mt-10 xl:mt-0">
 			<div class="flex flex-col items-center xl:items-start w-10/12">
