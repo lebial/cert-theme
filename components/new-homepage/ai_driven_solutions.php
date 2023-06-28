@@ -33,7 +33,7 @@ function render_subheader()
   $phraseArray = explode('.', $phraseInput);
   $duration =  2 / 3;
   foreach ($phraseArray as $idx => $phrase) {
-    echo '<p data-animate-delay="' . ($duration + .3) * $idx . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-2xl text-gray-header">' . $phrase . '.</p>';
+    echo '<p data-animate-delay="' . ($duration + .3) * $idx . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-lg lg:text-2xl mb-0 text-gray-header">' . $phrase . '.</p>';
   }
 }
 
@@ -41,15 +41,15 @@ function render_subheader()
 <section class="ai__driven__section w-full px-6 mt-14">
   <h3 class="mx-auto w-fit reveal-text text-gray-header font-bold"><?php the_field('ai_heading') ?></h3>
   <!-- <h4 data-animate-delay="2" class="reveal-text text-2xl text-gray-header"><?php the_field('ai_subheading') ?></h4> -->
-  <div class="solutions__subheader flex mx-auto justify-center">
+  <div class="solutions__subheader flex flex-col lg:flex-row mx-auto justify-center">
     <?php render_subheader() ?>
   </div>
-  <div class="w-full px-28 flex justify-center my-20" data-aos="fade-in">
-    <div class=" max-w-5xl flex w-full">
-      <div class="w-4/12 flex flex-col">
+  <div class="w-full px-4 lg:px-28 flex justify-center my-10 lg:my-20" data-aos="fade-in">
+    <div class=" max-w-5xl flex flex-col lg:flex-row w-full">
+      <div class="w-full lg:w-4/12 flex flex-col">
         <?php render_report_buttons() ?>
       </div>
-      <div class="w-8/12 pl-20 flex flex-col">
+      <div class="w-full lg:w-8/12 lg:pl-20 flex flex-col min-h-[160px] mt-4 lg:mt-0">
         <div class="w-full relative"><?php render_report_images() ?></div>
       </div>
     </div>

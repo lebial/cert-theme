@@ -7,7 +7,7 @@ function render_data_points()
     echo '
       <div class="flex py-3 w-full justify-between left-reveal line-reveal-animation">
         <p class="text-white mb-0">' . $point['text'] . '</p>
-        <p class="text-primary font-bold">' . $point['number_value'] . '</p>
+        <p class="text-white font-bold">' . $point['number_value'] . '</p>
       </div>';
   }
 }
@@ -36,17 +36,17 @@ function render_vertical_options()
     </div>
     <div class="w-full flex lg:hidden items-center">
       <div class="w-full lg:w-10/12 mx-auto max-w-6xl mt-[-2rem] md:mt-[-4rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
-          <div class="w-6/12 lg:w-6/12 2xl:w-[48%]">
+        <div class="hidden lg:block w-6/12 lg:w-6/12 2xl:w-[48%]">
+        </div>
+        <div class="w-full flex justify-center  lg:ml-0 lg:w-6/12">
+          <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
+            <span class="vertical-option-mobile font-bold"></span><br>
+          </p>
+
+          <div id="string-text-mobile">
+            <?php render_vertical_options() ?>
           </div>
-          <div class="w-6/12 ml-[-1rem] lg:ml-0 lg:w-6/12">
-            <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
-                <span class="vertical-option-mobile font-bold"></span><br>
-            </p>
-            
-            <div id="string-text-mobile">
-                <?php render_vertical_options()?>
-            </div>
-          </div>
+        </div>
       </div>
     </div>
     <!-- End mobile version-->
@@ -60,20 +60,24 @@ function render_vertical_options()
     <div class="hidden lg:inline w-full lg:w-8/12 relative">
       <?php get_template_part('components/new-homepage/graphic_animation') ?>
     </div>
+    <div class=" lg:hidden w-full relative">
+      <?php get_template_part('components/new-homepage/graphic_animation_mobile')
+      ?>
+    </div>
   </div>
   <div class="hidden w-full lg:flex">
     <div class="w-11/12 lg:w-10/12 mx-auto max-w-6xl mt-[-1rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
-        <div class="w-2/12 lg:w-6/12 2xl:w-[48%]">
+      <div class="w-2/12 lg:w-6/12 2xl:w-[48%]">
+      </div>
+      <div class="w-10/12 ml-[-.8rem] lg:ml-0 lg:w-6/12">
+        <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
+          <span class="vertical-option-desktop font-bold"></span><br>
+        </p>
+
+        <div id="string-text-desktop">
+          <?php render_vertical_options() ?>
         </div>
-        <div class="w-10/12 ml-[-.8rem] lg:ml-0 lg:w-6/12">
-          <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
-              <span class="vertical-option-desktop font-bold"></span><br>
-          </p>
-          
-          <div id="string-text-desktop">
-              <?php render_vertical_options()?>
-          </div>
-        </div>
+      </div>
     </div>
     <!-- <div class="vertical__slider__container flex justify-center relative">
       <div class=" w-96 vertical-slider-options">
