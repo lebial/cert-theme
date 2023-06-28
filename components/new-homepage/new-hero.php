@@ -21,7 +21,7 @@ function render_custom_menu_items()
   </video>
   <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative">
     <div class="flex flex-col items-center justify-center text-center">
-      <h1 class="text-white text-4xl 2xl:text-6xl leading-snug tracking-normal max-w-2xl reveal-text"><?php the_field('heading') ?></h1>
+      <h1 class="text-white text-4xl 2xl:text-6xl reveal-text"><?php the_field('heading') ?></h1>
       <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
       <div class=" w-60 h-px bg-primary mt-6"></div>
     </div>
