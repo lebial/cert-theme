@@ -45,6 +45,11 @@ jQuery(document).ready(function ($) {
             $('footer').removeClass('bg-dark-blue-background');
             $('footer').addClass('bg-black-background');
         }
+        if (location.href.includes('new-home-page-dark-full')) {
+            $('body').css('background-color', '#121621');
+        } else {
+            $('body').css('background-color', 'white');
+        }
     }
 
     handleSearchToggle();

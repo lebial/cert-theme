@@ -37,6 +37,12 @@
 	}
 }
 
+.insights__card__text--dark-full {
+	& p {
+		color: white;
+	}
+}
+
 .insights__card__text p {
 	font-size: 10px;
 	line-height: 20px;
@@ -58,6 +64,10 @@
 
 .credibility__body--dark p {
 	color: #201c1c;
+}
+
+.credibility__body--dark-full p {
+	color: white;
 }
 
 .home__credibility__section {
