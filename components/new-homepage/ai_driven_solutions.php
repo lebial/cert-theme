@@ -38,9 +38,8 @@ function render_subheader()
 }
 
 ?>
-<section class="ai__driven__section w-full px-6 mt-14">
+<section class="ai__driven__section w-full px-6 mt-14 mb-20">
   <h3 class="mx-auto w-fit reveal-text text-gray-header font-bold"><?php the_field('ai_heading') ?></h3>
-  <!-- <h4 data-animate-delay="2" class="reveal-text text-2xl text-gray-header"><?php the_field('ai_subheading') ?></h4> -->
   <div class="solutions__subheader flex flex-col lg:flex-row mx-auto justify-center">
     <?php render_subheader() ?>
   </div>

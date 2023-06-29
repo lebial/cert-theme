@@ -119,7 +119,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4R5S5Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <header class="z-50 sticky bg-dark-blue-background">
+    <header class="header__section overflow-hidden z-50 sticky bg-dark-blue-background">
 
         <a class="logo" href="/">
             <img class="text style-svg w-24 lg:w-40" src="<?php echo get_template_directory_uri(); ?>/assets/images/full-cert-logo.svg" alt="Certilytics Logo" />
