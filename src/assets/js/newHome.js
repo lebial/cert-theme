@@ -23,6 +23,29 @@ jQuery(document).ready(function ($) {
     $(`.${currentReport}-image`).css("opacity", 0);
     $(`.${this.name}-image`).css("opacity", 1);
     $(this).addClass(activeClass);
+    if ($(this).hasClass('mobile__button')) {
+      $(`button[name=${currentReport}]`).next().animate({ height: 0 });
+      $(`button[name=${currentReport}]`).find('svg').animate(
+        { deg: 0 },
+        {
+          duration: 300,
+          step: function (now) {
+            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+          }
+        }
+      );
+
+      $($(this).next()).animate({ 'height': '150px' });
+      $(this).find('svg').animate(
+        { deg: 90 },
+        {
+          duration: 300,
+          step: function (now) {
+            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+          }
+        }
+      );
+    }
     currentReport = this.name;
   }
 

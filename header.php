@@ -122,7 +122,7 @@
     <header class="header__section overflow-hidden z-50 sticky bg-dark-blue-background">
 
         <a class="logo" href="/">
-            <img class="text style-svg w-24 lg:w-40" src="<?php echo get_template_directory_uri(); ?>/assets/images/full-cert-logo.svg" alt="Certilytics Logo" />
+            <img class="text style-svg w-36 lg:w-40" src="<?php echo get_template_directory_uri(); ?>/assets/images/full-cert-logo.svg" alt="Certilytics Logo" />
         </a>
 
         <div class="flex-1 flex justify-end">
@@ -151,7 +151,7 @@
 
         <div class=" main__menu__sidebar w-[70vw] min-h-screen absolute top-0 -right-full flex flex-col items-center justify-between bg-white">
             <div class="w-full lg:w-9/12">
-                <div class="w-full pt-8 flex justify-end mb-14">
+                <div class="w-full pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-14">
                     <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
 			text-primary hover:text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary" type="button">Schedule
