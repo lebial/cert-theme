@@ -13,6 +13,7 @@ jQuery(document).ready(function ($) {
 
     function removeCaseStudyImgMaxSize() {
         $('.case__study__image__container').removeClass('max-w-xs');
+        $('#form_scheduledemoform').addClass('government__schedule__form');
     }
 
     const { href } = window.location;

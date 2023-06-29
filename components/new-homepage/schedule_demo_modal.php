@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="w-full lg:w-1/2 h-full">
-      <div class="schedule__demo__form__container px-10 py-16">
+      <div class="schedule__demo__form__container px-5 lg:px-10 py-16">
         <div class="w-full flex justify-center mb-5">
           <div class="w-full border border-solid border-black rounded-2xl flex">
             <div class="first__step__pill w-7/12 bg-dark-blue-background rounded-2xl flex justify-center py-1 text-white font-bold text-base text-center">
