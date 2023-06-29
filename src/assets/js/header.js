@@ -15,8 +15,7 @@ jQuery(document).ready(function ($) {
     const sideCloseButton = $(".menu__side__bar__close");
     const sideBarMenu = $(".main__menu__sidebar");
     sideCloseButton.click(function () {
-      sideBarMenu.animate({ right: "-100%" });
-      headerSection.css("overflow", "hidden");
+      sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
     });
     burgerMenu.click(function () {
       sideBarMenu.animate({ right: 0 });

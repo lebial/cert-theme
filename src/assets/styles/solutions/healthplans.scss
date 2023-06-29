@@ -212,7 +212,7 @@
 
 //government page form styles
 
-#form_scheduledemoform {
+.government__schedule__form {
     & label {
         display: block !important;
     }
@@ -225,6 +225,11 @@
     & input[type="checkbox"] {
         border: none !important;
         border-radius: 5px !important;
-        background-color: lightgray;
+        background-color: lightgray !important;
+    }
+
+    & input[type="email"] {
+        border: 1px solid black !important;
+        border-radius: 9px !important;
     }
 }

@@ -115,9 +115,13 @@
 	& form {
 		margin-top: 0 !important;
 
+		& .form-field {
+			margin-bottom: 6px !important;
+		}
+
 		& input {
-			padding: 8px 5px !important;
-			border: 1px solid $color-grey !important;
+			padding: 2px !important;
+			border: 1px solid black !important;
 			border-radius: 6px !important;
 		}
 
@@ -150,11 +154,11 @@
 			& button {
 				background-color: $color-red;
 				color: white;
-				padding: 10px;
+				padding: 5px;
 				border-radius: 7px;
 				transition: all .3s ease;
 				border: solid 1px $color-red;
-				font-size: 15px;
+				font-size: 12px;
 				font-weight: 600;
 
 				&:hover {
@@ -163,13 +167,29 @@
 				}
 			}
 		}
+	}
 
-		.frm_submit {
-			margin-top: 15px !important;
 
-			& button {
-				padding: 10px !important;
-				font-size: 15px !important;
+	@media #{$desktopBase} {
+		& form {
+			& input {
+				padding: 8px 5px !important;
+				border: 1px solid $color-grey !important;
+			}
+
+			.schedule__button {
+				& button {
+					font-size: 15px;
+				}
+			}
+
+			.frm_submit {
+				margin-top: 15px !important;
+
+				& button {
+					padding: 10px !important;
+					font-size: 15px !important;
+				}
 			}
 		}
 	}
