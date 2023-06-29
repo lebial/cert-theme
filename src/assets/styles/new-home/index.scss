@@ -113,6 +113,76 @@
 
 .schedule__demo__modal {
 	& form {
+		& input {
+			padding: 2px !important;
+		}
+	}
+
+	@media #{$desktopBase} {
+		& form {
+			margin-top: 0 !important;
+
+			& input {
+				padding: 8px 5px !important;
+				border: 1px solid $color-grey !important;
+				border-radius: 6px !important;
+			}
+
+			& .frm_checkbox {
+				& label {
+					font-size: 10px !important;
+
+					& input {
+						padding: 0px !important;
+						border-radius: 4px !important;
+						background-color: lightgray !important;
+						border: none !important;
+						margin-right: 0 !important;
+					}
+				}
+			}
+
+			.optin__description {
+				& span {
+					font-size: 8px !important;
+					line-height: 1.2;
+					display: block;
+				}
+			}
+
+			.schedule__button {
+				display: flex;
+				justify-content: center;
+
+				& button {
+					background-color: $color-red;
+					color: white;
+					padding: 10px;
+					border-radius: 7px;
+					transition: all .3s ease;
+					border: solid 1px $color-red;
+					font-size: 15px;
+					font-weight: 600;
+
+					&:hover {
+						background-color: white;
+						color: $color-red;
+					}
+				}
+			}
+
+			.frm_submit {
+				margin-top: 15px !important;
+
+				& button {
+					padding: 10px !important;
+					font-size: 15px !important;
+				}
+			}
+		}
+	}
+
+	& form {
 		margin-top: 0 !important;
 
 		& input {
