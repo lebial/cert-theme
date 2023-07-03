@@ -15,11 +15,6 @@ jQuery(document).ready(function ($) {
         $('.case__study__image__container').removeClass('max-w-xs');
         $('#form_scheduledemoform').addClass('government__schedule__form');
         // icons fix
-        // const buttons = document.querySelectorAll('.hp__option__action__button');
-        // buttons.forEach(button => {
-        //     $(button).removeClass('hp__option__action__button');
-        //     $(button).addClass('government__option__action__button');
-        // });
         const mobileSvgOPtion = document.querySelectorAll('.option__button');
         mobileSvgOPtion.forEach(option => {
             $(option).addClass('government__option__button');
