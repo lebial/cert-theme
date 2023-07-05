@@ -43,6 +43,12 @@
 	}
 }
 
+.insights__card__text--navy {
+	& p {
+		color: #000f3a;
+	}
+}
+
 .insights__card__text p {
 	font-size: 10px;
 	line-height: 20px;

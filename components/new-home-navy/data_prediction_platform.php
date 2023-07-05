@@ -20,7 +20,7 @@ function render_vertical_options()
   }
 }
 ?>
-<section class="w-full bg-black-background my-12 py-12">
+<section class="w-full bg-dark-blue-background my-12 py-12">
   <h3 class="md:hidden text-white font-bold reveal-text"><?php the_field('data_prediction_header_mobile') ?></h3>
   <h3 class="hidden md:inline text-white font-bold reveal-text"><?php the_field('data_prediciton_header') ?></h3>
   <div class="text_container w-10/12 mx-auto md:w-full flex flex-col items-center">
@@ -31,7 +31,7 @@ function render_vertical_options()
   </div>
   <div class="data_path_animation w-full flex flex-col lg:flex-row">
     <!-- mobile version -->
-    <div class="w-full lg:hidden">
+    <div class="w-full lg:hidden ml-[10px] lg:ml-0">
       <?php get_template_part('components/new-homepage/graphic_animation_mobile') ?>
     </div>
     <div class="w-full flex lg:hidden items-center">
@@ -60,11 +60,8 @@ function render_vertical_options()
     <div class="hidden lg:inline w-full lg:w-8/12 relative">
       <?php get_template_part('components/new-homepage/graphic_animation') ?>
     </div>
-    <div class=" lg:hidden w-full relative">
-      <?php get_template_part('components/new-homepage/graphic_animation_mobile')
-      ?>
-    </div>
   </div>
+
   <div class="hidden w-full lg:flex">
     <div class="w-11/12 lg:w-10/12 mx-auto max-w-6xl mt-[-1rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
       <div class="w-2/12 lg:w-6/12 2xl:w-[48%]">
