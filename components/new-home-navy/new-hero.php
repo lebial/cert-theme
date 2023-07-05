@@ -15,14 +15,15 @@ function render_custom_menu_items()
   }
 }
 ?>
-<section class="new__home__page w-full bg-black-background min-w-full relative">
+<section class="new__home__page w-full bg-dark-blue-background min-w-full relative">
   <video playsinline autoplay muted loop id="HomeBackgroundVideo" class=" object-cover w-full h-full absolute top-0 left-0 z-10">
     <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
   </video>
-  <div class="w-full h-full bg-black-background bg-opacity-70 py-14 opacity-100 z-20 relative">
+  <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative">
     <div class="flex flex-col items-center justify-center text-center">
-      <h1 class="text-white text-4xl 2xl:text-6xl reveal-text"><?php the_field('heading') ?></h1>
-      <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
+      <h1 class="text-white text-2xl lg:text-4xl 2xl:text-6xl reveal-text hidden lg:block"><?php the_field('heading') ?></h1>
+      <h1 class="text-white text-2xl lg:text-4xl 2xl:text-6xl reveal-text block lg:hidden"><?php the_field('heading_mobile') ?></h1>
+      <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal px-4 lg:px-0"><?php the_field('hero_sub_heading') ?></h2>
       <div class=" w-60 h-px bg-primary mt-6"></div>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
@@ -30,7 +31,7 @@ function render_custom_menu_items()
         <p class=" text-xl 2xl:text-3xl font-bold text-white max-w-none text-center">
           See how we're helping healthcare leaders achieve their goals
         </p>
-        <div class="button container min-w-full w-full flex text-white justify-evenly mt-8">
+        <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 items-center">
           <?php render_custom_menu_items() ?>
         </div>
       </div>
