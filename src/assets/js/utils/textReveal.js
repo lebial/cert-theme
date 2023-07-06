@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
 
     function setLinesFromElement(element) {
       const lines = element.innerHTML.split('<br>');
-      element.innerHTML = lines.map(line => `<span class="line"><span class="words">${line}</span></span>`).join('');
+      element.innerHTML = lines.map(line => `<span class="line" style="padding-bottom: 5px;"><span class="words">${line}</span></span>`).join('');
     }
 
     function addCenteringMargin(element) {

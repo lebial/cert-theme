@@ -2,8 +2,8 @@
   <div class="schedule__demo__modal__body w-11/12 md:w-1/2 relative h-fit bg-white flex flex-col lg:flex-row">
     <button type="button" class="schedule__demo__modal__close__button absolute left-4 top-4 text-black lg:text-white">X</button>
     <div class="w-1/2 h-full bg-dark-blue-background px-10 py-16 hidden lg:block ">
-      <p class="text-white text-2xl font-bold"> See how our platform <br> can help you achieve <br> your value-based <br> care goals.</p>
-      <p class="text-white text-sm">During our 30-minute dem, share your <br> challenges with us and we'll show you how <br> our predictive insights can help. </p>
+      <p class="text-white text-lg 2xl:text-2xl font-bold mb-4"> See how our platform <br> can help you achieve <br> your value-based <br> care goals.</p>
+      <p class="text-white text-sm mb-4">During our 30-minute dem, share your <br> challenges with us and we'll show you how <br> our predictive insights can help. </p>
       <div class="contact__image__container flex justify-center">
         <img src="<?php the_field('contact_us_modal_laptop_image', 'options') ?>" alt="contact us report image">
       </div>
@@ -13,13 +13,7 @@
           <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 4 V28 L26 16 z" />
           </svg>
-          <p class="text-white text-sm">Unify and add power to their <br> data</p>
-        </div>
-        <div class="flex mb-2">
-          <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 4 V28 L26 16 z" />
-          </svg>
-          <p class="text-white text-sm">Unify and add power to their <br> data</p>
+          <p class="text-white text-sm">Unify and add power to their data</p>
         </div>
         <div class="flex mb-2">
           <svg height="20" id="triangle-right" viewBox="0 0 32 32" width="20" class="fill-primary mr-1" xmlns="http://www.w3.org/2000/svg">

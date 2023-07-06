@@ -1,58 +1,72 @@
 jQuery(document).ready(function ($) {
-  let currentHeroButton = "Health Plans";
+  // let currentHeroButton = "Health Plans";
+  const firstButton = "report-0";
   let currentReport = "report-0";
   const buttons = document.querySelectorAll(".ai__driven__report__option");
   const activeClass = "ai__active__button";
 
-  function handleHeroButtonClick() {
-    const heroButtons = document.querySelectorAll(".hero__option__button");
-    const heroButtonActiveClass = "new_home__active__report";
-    heroButtons.forEach((button) =>
-      $(button).click(function () {
-        $(`button[name="${currentHeroButton}"]`).removeClass(
-          heroButtonActiveClass
-        );
-        $(this).addClass(heroButtonActiveClass);
-        currentHeroButton = this.name;
-      })
-    );
-    $(`button[name="${currentHeroButton}"]`).click();
-  }
+  //check if this is no longer needed and remove
+  // function handleHeroButtonClick() {
+  //   const heroButtons = document.querySelectorAll(".hero__option__button");
+  //   const heroButtonActiveClass = "new_home__active__report";
+  //   heroButtons.forEach((button) =>
+  //     $(button).click(function () {
+  //       $(`button[name="${currentHeroButton}"]`).removeClass(
+  //         heroButtonActiveClass
+  //       );
+  //       $(this).addClass(heroButtonActiveClass);
+  //       currentHeroButton = this.name;
+  //     })
+  //   );
+  //   $(`button[name="${currentHeroButton}"]`).click();
+  // }
   function handleAiOptionClick() {
-    debugger;
-    $(`button[name=${currentReport}]`).removeClass(activeClass);
-    $(`.${currentReport}-image`).css("opacity", 0);
-    $(`.${this.name}-image`).css("opacity", 1);
-    $(this).addClass(activeClass);
-    if ($(this).hasClass('mobile__button') && $(this).is(':visible')) {
-      $(`button[name=${currentReport}]`).next().animate({ height: 0 });
-      $(`button[name=${currentReport}]`).find('svg').animate(
-        { deg: 0 },
-        {
-          duration: 300,
-          step: function (now) {
-            $(this).css({ transform: 'rotate(' + now + 'deg)' });
-          }
-        }
-      );
 
-      $($(this).next()).animate({ 'height': '150px' });
-      $(this).find('svg').animate(
-        { deg: 90 },
-        {
-          duration: 300,
-          step: function (now) {
-            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+    //handle mobile
+    if ($(this).hasClass('mobile__button') && $(this).is(':visible')) {
+      if (!$(this).hasClass('ai__active__button')) {
+        $(this).addClass(activeClass);
+        $($(this).next()).animate({ 'height': '150px' });
+        $(this).find('svg').animate(
+          { deg: 90 },
+          {
+            duration: 300,
+            step: function (now) {
+              $(this).css({ transform: 'rotate(' + now + 'deg)' });
+            }
           }
-        }
-      );
+        );
+      }
+      else {
+        $(`button[name=${currentReport}]`).next().animate({ height: 0 });
+        $(`button[name=${currentReport}]`).find('svg').animate(
+          { deg: 0 },
+          {
+            duration: 300,
+            step: function (now) {
+              $(this).css({ transform: 'rotate(' + now + 'deg)' });
+            }
+          }
+        );
+        $(`button[name=${currentReport}]`).removeClass(activeClass);
+      }
+    }
+    //handle desktop
+    else {
+      $(`button[name=${currentReport}]`).removeClass(activeClass);
+      $(this).addClass(activeClass);
+      $(`.${currentReport}-image`).css("opacity", 0);
+      $(`.${this.name}-image`).css("opacity", 1);
     }
     currentReport = this.name;
   }
 
   function AiOPtionsInit() {
+    const initButtons = document.querySelectorAll(`button[name=${firstButton}]`);
     buttons.forEach((button) => $(button).click(handleAiOptionClick));
-    $(`button[name=${currentReport}]`).click();
+    initButtons.forEach(initButton => {
+      if ($(initButton).is(':visible')) initButton.click();
+    });
   }
 
   function createVerticalSlider() {
@@ -150,7 +164,6 @@ jQuery(document).ready(function ($) {
   handleInsightsArrowClick();
   handleTypingEffect();
   AiOPtionsInit();
-  handleHeroButtonClick();
   createVerticalSlider();
   handleNextClick();
   if (location.href.includes("alternate2")) {
