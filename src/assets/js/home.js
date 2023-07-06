@@ -1,6 +1,6 @@
 import { waitForElement, addArrowToSlider, makeElementsSameWidth } from "./utils/utils";
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     function setVideoHeight() {
         waitForElement("#homepageVideo").then((videoElement) => {
             const videoHeight = videoElement.offsetHeight;
@@ -9,14 +9,14 @@ jQuery(document).ready(function($) {
     }
 
     function handlePlayClick() {
-        $('.hero__play__button').click(function() {
+        $('.hero__play__button').click(function () {
             $(".video__overlay").toggle();
             $("#homepageVideo").get(0).play();
         });
     }
 
     function handleIosNativePlayerQuit() {
-        $('video').bind('webkitendfullscreen', function() {
+        $('video').bind('webkitendfullscreen', function () {
             $('#homepageHeroVideo')[0].webkitExitFullScreen();
             $("#homepageVideoModal").hide();
             document.querySelectorAll('video').forEach(vid => vid.pause());
@@ -76,7 +76,7 @@ jQuery(document).ready(function($) {
     handleIosNativePlayerQuit();
     addArrowToSlider(".insights-carousel");
     addArrowToSlider(".bucket__slider");
-    addNewTabOnScheduleMenuButton();
+    // addNewTabOnScheduleMenuButton();
     handleVidModalClose();
     showSuperChargeText();
     makeButtonsSameWidth();

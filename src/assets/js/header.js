@@ -38,6 +38,17 @@ jQuery(document).ready(function ($) {
         contactModal.css("display", "none");
       });
     });
+
+    //handle esc to close modal
+    $(document).keydown(function (e) {
+      const code = e.keyCode || e.which;
+      if (code === 27) closeButton.click();
+    });
+
+    //handle overlayClick Close
+    $('.schedule__demo__modal').click((e) => {
+      if ($(e.target).is($('.schedule__demo__modal'))) closeButton.click();
+    })
   }
 
   // temporary remove once it's demoed

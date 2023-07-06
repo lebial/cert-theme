@@ -245,7 +245,10 @@ jQuery(document).ready(function ($) {
 
     $(document).keydown(function (e) {
       const code = e.keyCode || e.which;
-      if (code === 27) $(".case__study__modal").hide();
+      if (code === 27) {
+        $(".case__study__modal").hide();
+        $(".schedule__demo__modal").hide();
+      }
     });
 
     $('.case__study__modal').click((e) => {
