@@ -21,8 +21,9 @@ function render_custom_menu_items()
   </video>
   <div class="w-full h-full bg-black-background bg-opacity-70 py-14 opacity-100 z-20 relative">
     <div class="flex flex-col items-center justify-center text-center">
-      <h1 class="text-white text-4xl 2xl:text-6xl reveal-text"><?php the_field('heading') ?></h1>
-      <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal"><?php the_field('hero_sub_heading') ?></h2>
+      <h1 class="text-white text-2xl lg:text-4xl 2xl:text-6xl reveal-text hidden lg:block"><?php the_field('heading') ?></h1>
+      <h1 class="text-white text-2xl lg:text-4xl 2xl:text-6xl reveal-text block lg:hidden"><?php the_field('heading_mobile') ?></h1>
+      <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal px-4 lg:px-0"><?php the_field('hero_sub_heading') ?></h2>
       <div class=" w-60 h-px bg-primary mt-6"></div>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
@@ -30,7 +31,7 @@ function render_custom_menu_items()
         <p class=" text-xl 2xl:text-3xl font-bold text-white max-w-none text-center">
           See how we're helping healthcare leaders achieve their goals
         </p>
-        <div class="button container min-w-full w-full flex text-white justify-evenly mt-8">
+        <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 items-center">
           <?php render_custom_menu_items() ?>
         </div>
       </div>

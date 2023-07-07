@@ -4,10 +4,13 @@
     <div class="action__quote__container w-full lg:w-6/12" data-aos="fade-up">
       <div class="w-full flex flex-col items-center px-4 md:px-32 lg:px-0 lg:pr-20 pt-4 lg:pt-0">
         <div class="w-full lg:w-10/12 2xl:w-7/12">
-            <h3 class="action__quote__container__text text-3xl 2xl:text-5xl text-white font-bold text-center mb-0 mt-8" ><?php the_field('schedule_demo_title') ?></h3>
+          <h3 class="action__quote__container__text text-3xl 2xl:text-5xl text-white font-bold text-center mb-0 mt-8"><?php the_field('schedule_demo_title') ?></h3>
         </div>
         <div class="action__quote__container__button w-full mx-auto mt-10 pb-14 flex lg:px-1 xl:px-2 justify-center">
-          <a class="px-4 py-2 text-base lg:text-lg border-primary border border-solid rounded-3xl text-white font-bold hover:cursor-pointer transition-all duration-300 hover:bg-primary text-center" href="<?php the_field('schedule_demo_link')?>" target="_blank" ><?php the_field('schedule_demo_text') ?></a>
+          <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
+			text-white font-bold hover:cursor-pointer transition-all duration-300
+			hover:bg-primary text-xs lg:text-base " type="button">Schedule
+            Demo</button>
         </div>
       </div>
     </div>

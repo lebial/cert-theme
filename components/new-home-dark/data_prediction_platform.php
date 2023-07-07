@@ -31,7 +31,7 @@ function render_vertical_options()
   </div>
   <div class="data_path_animation w-full flex flex-col lg:flex-row">
     <!-- mobile version -->
-    <div class="w-full lg:hidden">
+    <div class="w-full lg:hidden ml-[10px] lg:ml-0">
       <?php get_template_part('components/new-homepage/graphic_animation_mobile') ?>
     </div>
     <div class="w-full flex lg:hidden items-center">
@@ -60,11 +60,8 @@ function render_vertical_options()
     <div class="hidden lg:inline w-full lg:w-8/12 relative">
       <?php get_template_part('components/new-homepage/graphic_animation') ?>
     </div>
-    <div class=" lg:hidden w-full relative">
-      <?php get_template_part('components/new-homepage/graphic_animation_mobile')
-      ?>
-    </div>
   </div>
+
   <div class="hidden w-full lg:flex">
     <div class="w-11/12 lg:w-10/12 mx-auto max-w-6xl mt-[-1rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
       <div class="w-2/12 lg:w-6/12 2xl:w-[48%]">
