@@ -4,7 +4,6 @@
 
 <?php get_header() ?>
 
-    <?php get_template_part('components/new-home-dark-full/schedule_demo_modal') ?>
     <?php get_template_part('components/new-home-dark-full/new-hero') ?>
     <?php get_template_part('components/new-home-dark-full/ai_driven_solutions') ?>
     <?php get_template_part('components/new-home-dark-full/data_prediction_platform') ?>
