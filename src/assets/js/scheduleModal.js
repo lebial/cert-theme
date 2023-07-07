@@ -34,6 +34,6 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  handleSubmit();
-  addClickToNextButton();
+  // handleSubmit();
+  // addClickToNextButton();
 });
