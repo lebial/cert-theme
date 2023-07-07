@@ -5,7 +5,7 @@
       <p class="text-white text-base 2xl:text-xl font-bold mb-4"> See how our platform <br> can help you achieve <br> your value-based <br> care goals.</p>
       <p class="text-white text-xs 2xl:text-lg mb-4">During our 30-minute demo, share your <br> challenges with us and we'll show you how <br> our predictive insights can help. </p>
       <div class="contact__image__container flex justify-center">
-        <img class=" max-w-[165px] 2xl:max-w-none" src="<?php the_field('contact_us_modal_laptop_image', 'options') ?>" alt="contact us report image">
+        <img class=" max-w-[165px] 2xl:max-w-xs" src="<?php the_field('contact_us_modal_laptop_image', 'options') ?>" alt="contact us report image">
       </div>
       <p class="text-white text-xs 2xl:text-base ">Today, our solutins are helping <br> healthcare organizations: </p>
       <div class="points__container mt-5 mb-4">
