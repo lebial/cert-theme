@@ -121,14 +121,20 @@
 	& form {
 		margin-top: 0 !important;
 
+		& .frm_error_style {
+			display: none !important;
+		}
+
 		& .form-field {
 			margin-bottom: 6px !important;
 		}
 
-		& input {
+		& input,
+		select {
 			padding: 2px !important;
 			border: 1px solid black !important;
 			border-radius: 6px !important;
+			appearance: auto !important;
 		}
 
 		& .frm_checkbox {
@@ -184,8 +190,10 @@
 
 	@media #{$desktopBase} {
 		& form {
-			& input {
-				padding: 8px 5px !important;
+
+			& input,
+			select {
+				padding: 4px 5px !important;
 				border: 1px solid $color-grey !important;
 			}
 
