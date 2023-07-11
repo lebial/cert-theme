@@ -1,5 +1,5 @@
 <section class="min-h-[60vh] 2xl:min-h-[45vh]">
-  <div class="contact__us__image__container w-full min-h-[60vh] 2xl:min-h-[45vh] relative text-center flex justify-end items-center bg-dark-blue-background">
+  <div class="contact__us__image__container w-full min-h-[60vh] 2xl:min-h-[45vh] relative text-center flex justify-end items-center">
     <img src="<?php the_field('ofast_image') ?>" class="w-full absolute top-0 left-0 z-[-1] h-full object-cover" alt="">
     <div class="action__quote__container w-full lg:w-6/12" data-aos="fade-up">
       <div class="w-full flex flex-col items-center px-4 md:px-32 lg:px-0 lg:pr-20 pt-4 lg:pt-0">
