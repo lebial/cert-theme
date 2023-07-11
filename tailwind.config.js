@@ -9,6 +9,9 @@ module.exports = {
     darkmode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            screens: {
+                '3xl': '1700px',
+            },
             colors: {
                 primary: "#F4695B",
                 secondary: "#1f5edb",
