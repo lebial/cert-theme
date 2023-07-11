@@ -1,5 +1,5 @@
 <section class="min-h-[60vh] 2xl:min-h-[45vh]">
-  <div class="contact__us__image__container w-full min-h-[60vh] 2xl:min-h-[45vh] relative text-center flex justify-end items-center bg-dark-blue-background">
+  <div class="contact__us__image__container w-full min-h-[60vh] 2xl:min-h-[45vh] relative text-center flex justify-end items-center">
     <img src="<?php the_field('ofast_image') ?>" class="w-full absolute top-0 left-0 z-[-1] h-full object-cover" alt="">
     <div class="action__quote__container w-full lg:w-6/12" data-aos="fade-up">
       <div class="w-full flex flex-col items-center px-4 md:px-32 lg:px-0 lg:pr-20 pt-4 lg:pt-0">
@@ -12,8 +12,8 @@
 			hover:bg-primary text-xs lg:text-base " type="button">Schedule
             Demo</button>
         </div>
-        <div class="w-full lg:w-10/12 2xl:w-7/12">
-          <p class=" text-2xl text-white font-bold text-center mb-0">
+        <div class="w-full">
+          <p class=" text-2xl text-white font-bold text-center mb-8">
             Receive a brief introduction or dive deep into our solutions by choosing a 15, 30 or 60 minute demo
           </p>
         </div>
