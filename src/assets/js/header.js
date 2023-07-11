@@ -23,6 +23,13 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function handleMenuItemClickCloseNav() {
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => $(item).click(function () {
+      $('.menu__side__bar__close').click();
+    }));
+  }
+
   function handleScheduleFormToggle() {
     const buttons = document.querySelectorAll(".schedule__demo__button");
     const closeButton = $(".schedule__demo__modal__close__button");
@@ -69,5 +76,6 @@ jQuery(document).ready(function ($) {
   handleSearchToggle();
   handleNavigationToggle();
   handleScheduleFormToggle();
+  handleMenuItemClickCloseNav();
   addBlackToHeader();
 });

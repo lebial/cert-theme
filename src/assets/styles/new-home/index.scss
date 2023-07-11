@@ -161,7 +161,7 @@
 				background-color: $color-red;
 				color: white;
 				padding: 5px;
-				border-radius: 7px;
+				border-radius: 20px;
 				transition: all .3s ease;
 				border: solid 1px $color-red;
 				font-size: 12px;
@@ -172,6 +172,12 @@
 					color: $color-red;
 				}
 			}
+		}
+	}
+
+	.frm_submit {
+		& button {
+			border-radius: 20px !important;
 		}
 	}
 
