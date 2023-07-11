@@ -7,7 +7,7 @@ function render_custom_menu_items()
     if (!$item->url || $item->title == 'Contact Us' || $item->title == 'Careers' || $item->title == 'About Us') {
       echo '';
     } else {
-      echo '<a class="hero__option__button flex items-center transition-all duration-300 hover:text-primary text-sm xl:text-lg" 
+      echo '<a class="hero__option__button flex items-center transition-all duration-200 hover:text-primary text-sm xl:text-lg" 
               href="' . $item->url . '"
               name="' . $item->title . '">
               ' . $item->title . '<span class="w-[20px] pt-[3px]"><svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class=" fill-primary" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "/></g></g></svg></span></a>';
@@ -15,11 +15,11 @@ function render_custom_menu_items()
   }
 }
 ?>
-<section class="new__home__page w-full bg-dark-blue-background min-w-full relative">
+<section class="new__home__page w-full bg-dark-blue-background min-w-full relative h-[80vh]">
   <video playsinline autoplay muted loop id="HomeBackgroundVideo" class=" object-cover w-full h-full absolute top-0 left-0 z-10">
     <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
   </video>
-  <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative">
+  <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative flex flex-col justify-center">
     <div class="flex flex-col items-center justify-center text-center">
       <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text hidden lg:block"><?php the_field('heading') ?></h1>
       <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text block lg:hidden"><?php the_field('heading_mobile') ?></h1>

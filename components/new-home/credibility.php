@@ -37,7 +37,7 @@ function render_cards()
 
 <section class="home__credibility__section w-full h-full">
     <div class=" w-10/12 mx-auto max-w-4xl lg:pt-12 mb-0 lg:mb-4 flex justify-center">
-        <h2 class="font-normal text-3xl lg:text-5xl text-center text-gray-header">
+        <h2 class="font-normal text-3xl lg:text-5xl text-center text-dark-blue-background">
             <?php the_field('first_main_title_section') ?><br>
             <span class="typed font-bold"></span><br>
             <span><?php the_field('second_main_title_section') ?></span>
@@ -49,11 +49,11 @@ function render_cards()
     </div>
 
     <div class="credibility__body w-11/12 md:w-9/12 lg:w-7/12 mx-auto pb-12 lg:pb-20 flex justify-center">
-        <?php the_field('description') ?>
+        <p class="text-center text-dark-blue-background max-w-none" style="color: #180f36;"><?php echo strip_tags(get_field('description')) ?></p>
     </div>
 
     <div class="w-full h-full bg-light-blue-background">
-        <div class="cards__container w-11/12 mx-auto flex flex-col lg:flex-row py-4 lg:py-16 max-w-7xl text-gray-header">
+        <div class="cards__container w-11/12 mx-auto flex flex-col lg:flex-row py-4 lg:py-16 max-w-7xl text-dark-blue-background">
             <?php render_cards() ?>
         </div>
     </div>
