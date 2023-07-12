@@ -13,7 +13,7 @@
             Demo</button>
         </div>
         <div class="w-full">
-          <p class=" text-2xl text-white font-bold text-center mb-8">
+          <p class=" text-2xl text-white font-bold text-center pb-8">
             Receive a brief introduction or dive deep into our solutions by choosing a 15, 30 or 60 minute demo
           </p>
         </div>
