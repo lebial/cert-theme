@@ -143,19 +143,27 @@
                     <path class=" fill-white" d="M130.5,164.2h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9  s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,333.1h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2  c9.3,0,16.9-7.6,16.9-16.9s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,502h-0.2c-9.3,0-16.9,7.6-16.9,16.9c0,9.3,7.6,16.9,16.9,16.9  h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9c0-9.3-7.6-16.9-16.9-16.9h-0.3H130.5z" />
                 </svg>
             </button>
-            <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
+            <!-- <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
 			text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary text-xs lg:text-base " type="button">Schedule
-                Demo</button>
+                Demo</button> -->
+            <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
+			text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
+			hover:bg-primary text-xs lg:text-base " type="button">Let's talk
+            </button>
         </div>
 
         <div class=" main__menu__sidebar w-[70vw] min-h-screen absolute top-0 -right-full flex flex-col items-center justify-between bg-white">
             <div class="w-full lg:w-9/12">
                 <div class="w-full pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-14">
-                    <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
+                    <!-- <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
 			text-primary hover:text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary" type="button">Schedule
-                        Demo</button>
+                        Demo</button> -->
+                    <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
+			text-primary hover:text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
+			hover:bg-primary" type="button">Let's talk
+                    </button>
                     <button class="menu__side__bar__close" type="button">
                         <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <line class=" stroke-gray-header" x1="18" x2="6" y1="6" y2="18" />

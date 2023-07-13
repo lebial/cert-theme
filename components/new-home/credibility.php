@@ -48,7 +48,7 @@ function render_cards()
         </div>
     </div>
 
-    <div class="credibility__body w-11/12 md:w-9/12 lg:w-7/12 mx-auto pb-12 lg:pb-20 flex justify-center">
+    <div class="credibility__body w-11/12 md:w-10/12 lg:w-8/12 2xl:w-7/12 mx-auto pb-12 lg:pb-20 flex justify-center">
         <p class="text-center text-dark-blue-background max-w-none" style="color: #180f36;"><?php echo strip_tags(get_field('description')) ?></p>
     </div>
 
