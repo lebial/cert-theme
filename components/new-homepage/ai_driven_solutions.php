@@ -33,7 +33,7 @@ function render_subheader()
   $phraseArray = explode('.', $phraseInput);
   $duration =  2 / 3;
   foreach ($phraseArray as $idx => $phrase) {
-    echo '<p data-animate-delay="' . ($duration + .3) * $idx . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-lg lg:text-2xl mb-0 text-dark-blue-background">' . $phrase . '.</p>';
+    echo '<p data-animate-delay="' . ($duration + .2) * $idx + 2 . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-lg lg:text-2xl mb-0 text-dark-blue-background">' . $phrase . '.</p>';
   }
 }
 
