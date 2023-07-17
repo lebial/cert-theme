@@ -31,7 +31,7 @@ function render_vertical_options()
   </div>
   <div class="data_path_animation w-full flex flex-col lg:flex-row">
     <!-- mobile version -->
-    <div class="w-full lg:hidden ml-[10px] lg:ml-0">
+    <div class="w-full lg:hidden">
       <?php get_template_part('components/new-homepage/graphic_animation_mobile') ?>
     </div>
     <div class="w-full flex lg:hidden items-center">
