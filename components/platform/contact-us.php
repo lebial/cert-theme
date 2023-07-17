@@ -12,8 +12,8 @@
 			hover:bg-primary text-xs lg:text-base " type="button">Schedule
             Demo</button>
         </div>
-        <div class="w-full">
-          <p class=" text-base text-white font-bold text-center pb-8">
+        <div class="w-full flex justify-center">
+          <p class=" text-base text-white font-bold text-center pb-8 max-w-[450px]">
             Receive a brief introduction or dive deep into our solutions by choosing a 15, 30 or 60 minute demo
           </p>
         </div>
