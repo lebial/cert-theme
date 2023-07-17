@@ -27,13 +27,20 @@ function render_report_images()
   }
 }
 
+function get_delay($idx, $duration)
+{
+  $delay = $duration + 0.2;
+  $delay2 = $delay * $idx;
+  return $delay2 + 2;
+}
+
 function render_subheader()
 {
   $phraseInput = get_field('ai_subheading');
   $phraseArray = explode('.', $phraseInput);
   $duration =  2 / 3;
   foreach ($phraseArray as $idx => $phrase) {
-    echo '<p data-animate-delay="' . ($duration + .2) * $idx + 2 . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-lg lg:text-2xl mb-0 text-dark-blue-background">' . $phrase . '.</p>';
+    echo '<p data-animate-delay="' . get_delay($idx, $duration) . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-lg lg:text-2xl mb-0 text-dark-blue-background">' . $phrase . '.</p>';
   }
 }
 

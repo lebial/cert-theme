@@ -30,7 +30,7 @@ function render_new_cards()
 <section class="home__insights__section w-full h-full flex items-center">
     <div class="container px-5 pb-20 lg:pb-28 2xl:pb-32 pt-16 mx-auto">
         <div class="text-center mb-4 md:mb-8 lg:mb-14">
-            <h3 class="hidden lg:inline reveal-text text font-semibold text-2xl lg:text-4xl text-center text-dark-blue-background">Certilytics News & Expert Insights</h5>
+            <h3 class="hidden lg:block reveal-text text font-semibold text-2xl lg:text-4xl text-center text-dark-blue-background">Certilytics News & Expert Insights</h5>
                 <h3 class="lg:hidden reveal-text text font-semibold text-2xl md:text-3xl lg:text-4xl text-center text-dark-blue-background">Certilytics News & <br> Expert Insights</h5>
         </div>
         <div class="hidden lg:flex flex-wrap -m-4 w-10/12 mx-auto">
