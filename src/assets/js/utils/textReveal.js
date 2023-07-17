@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
             });
           }
         })
-      }, { threshold: 1.0 });
+      }, { threshold: 0.9 });
 
       elements.forEach(element => {
         const lines = element.querySelectorAll('.line');
