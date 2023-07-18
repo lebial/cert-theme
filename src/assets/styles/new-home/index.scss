@@ -213,6 +213,14 @@
 			}
 		}
 	}
+
+	& .frm_message {
+		background-color: #000f3a !important;
+
+		& p {
+			color: white !important;
+		}
+	}
 }
 
 //insights section

@@ -9,8 +9,7 @@
         <div class="action__quote__container__button w-full mx-auto mt-10 pb-10 flex lg:px-1 xl:px-2 justify-center">
           <button class="schedule__demo__button px-3 py-2  border-solid border-primary border rounded-3xl
 			text-white font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary text-xs lg:text-base " type="button">Schedule
-            Demo</button>
+			hover:bg-primary text-xs lg:text-base " type="button">Let's Talk</button>
         </div>
       </div>
     </div>

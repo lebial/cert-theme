@@ -9,13 +9,12 @@
         <div class="action__quote__container__button w-full mx-auto mt-10 pb-10 flex lg:px-1 xl:px-2 justify-center">
           <button class="schedule__demo__button px-3 py-2  border-solid border-primary border rounded-3xl
 			text-white font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary text-xs lg:text-base " type="button">Schedule
-            Demo</button>
+			hover:bg-primary text-xs lg:text-base " type="button">Let's Talk</button>
         </div>
         <div class="w-full flex justify-center">
           <!-- <h3 class="action__quote__container__text text-3xl 2xl:text-5xl text-white font-bold text-center mb-0 mt-8"><?php the_field('schedule_demo_title') ?></h3> -->
           <p class=" text-base text-white font-bold text-center pb-8 max-w-[450px]">
-            Receive a brief introduction or dive deep into our solutions by choosing a 15, 30 or 60 minute demo
+            Schedule a meeting with us for a 15-minute brief introduction, 30-minute presentation or a 60-minute deep dive deep into our solutions.
           </p>
         </div>
       </div>
