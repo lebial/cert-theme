@@ -153,17 +153,17 @@
             </button>
         </div>
 
-        <div class=" main__menu__sidebar w-[70vw] min-h-screen absolute top-0 -right-full flex flex-col items-center justify-between bg-white">
-            <div class="w-full lg:w-9/12">
+        <div class=" main__menu__sidebar w-[63vw] h-[80vh] absolute top-[80px] -right-full flex flex-col shadow-xl items-center justify-between bg-white">
+            <div class="w-full lg:w-10/12">
                 <div class="w-full pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-14">
-                    <!-- <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
-			text-primary hover:text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary" type="button">Schedule
-                        Demo</button> -->
-                    <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
-			text-primary hover:text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary" type="button">Let's Talk
-                    </button>
+                    <div class="w-9/12 flex justify-end mr-2">
+                        <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
+                            <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
+                        </a>
+                        <a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
+                            <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 fill-gray-header" alt="">
+                        </a>
+                    </div>
                     <button class="menu__side__bar__close" type="button">
                         <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <line class=" stroke-gray-header" x1="18" x2="6" y1="6" y2="18" />
@@ -173,14 +173,7 @@
                 </div>
                 <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
             </div>
-            <div class="w-9/12 flex justify-end mb-4">
-                <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
-                </a>
-                <a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 fill-gray-header" alt="">
-                </a>
-            </div>
+
         </div>
 
     </header>
