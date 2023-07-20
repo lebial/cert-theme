@@ -12,16 +12,17 @@ function render_arrow_svg()
   <!-- <div class="schedule__demo__modal__body w-11/12 md:w-8/12 relative h-[550px] 3xl:h-[670px]  bg-dark-blue-background 3xl:bg-white flex flex-col lg:flex-row"> -->
   <!-- <div class="schedule__demo__modal__body w-11/12 md:w-8/12 relative h-fit min-h[550px] bg-dark-blue-background 3xl:bg-white flex flex-col lg:flex-row"> -->
   <div class="schedule__demo__modal__body w-11/12 md:w-8/12 relative h-fit min-h[550px] flex flex-col lg:flex-row" style="background: linear-gradient(90deg, rgba(24,15,54,1) 0%, rgba(24,15,54,1) 50%, rgba(255,255,255,1) 50%);">
-    <button type="button" class="schedule__demo__modal__close__button absolute left-4 top-4 text-black lg:text-white"><svg class="fill-white" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+    <button type="button" class="schedule__demo__modal__close__button absolute left-4 top-4 text-black lg:text-white"><svg class=" fill-dark-blue-background lg:fill-white" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
         <polygon fill-rule="evenodd" points="8 9.414 3.707 13.707 2.293 12.293 6.586 8 2.293 3.707 3.707 2.293 8 6.586 12.293 2.293 13.707 3.707 9.414 8 13.707 12.293 12.293 13.707 8 9.414" />
       </svg></button>
     <div class="w-1/2 h-full bg-dark-blue-background px-10 pt-10 pb-6 hidden lg:block ">
       <p class="text-white text-base 3xl:text-xl font-bold mb-4"> See how we<br class="block xl:hidden"> can help you achieve <br class="block xl:hidden"> your <br class="hidden xl:block"> value-based <br class="block xl:hidden"> care goals.</p>
-      <p class="text-white text-xs 3xl:text-lg mb-4">Schedule a meeting that's right for you.
-        <br class="block xl:hidden">From a 15-minute brief introduction to a
-        <br class="block xl:hidden">60-minute deep dive into our solutions.
-        <br class="block xl:hidden"> Share your challenges with us and we'll
-        <br class="block xl:hidden">show you how our predictive insights can help.
+      <p class="text-white text-xs 3xl:text-lg mb-4">Schedule a meeting that's right for you -
+        <br class="block xl:hidden"> a 30-minute introduction,
+        <br class="block xl:hidden">60-minute overview of our solutions
+        <br class="block xl:hidden">or a 90-minute demo. Share your challenges
+        <br class="block xl:hidden">with us and we'll show you how our
+        <br class="block xl:hidden">predictive insights can help.
       </p>
       <div class="contact__image__container flex justify-center">
         <img class=" max-w-[200px] xl:max-w-xs" src="<?php the_field('contact_us_modal_laptop_image', 'options') ?>" alt="contact us report image">

@@ -1,12 +1,13 @@
 <?php
 function render_new_cards()
 {
-    $related_posts = get_field('related_posts');
-    if (!$related_posts)  $related_posts = get_realted_posts_by_tags();
+    $selected_posts = get_field('news_and_insights_posts');
+    $recent_posts = get_most_recent_posts();
+    $related_posts = get_recent_or_selected_posts($recent_posts, $selected_posts);
     foreach ($related_posts as $tmp_post_id) {
         echo '<div class="px-8 py-0 lg:py-4 sm:w-1/2 lg:w-1/3 lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-105 lg:duration-300">';
         echo '<div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg">';
-        echo '<img class="rounded-t-lg md:h-30 lg:h-44 2xl:h-52 w-full object-cover object-center hover:blur-none" src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="insights-image-thumbnail" style="filter: blur(2px);">';
+        echo '<img class="rounded-t-lg md:h-30 lg:h-44 2xl:h-52 w-full object-cover object-center hover:blur-none" src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="insights-image-thumbnail" style="filter: blur(1px);">';
         echo '<div class="insights__card__text md:h-64 lg:h-56 2xl:h-64 flex flex-col justify-between p-4 custom-shadow rounded-b-lg">';
         echo '<div class="line-clamp overflow-hidden">';
         echo '<h3 class="text-base md:text-xl 2xl:text-xl lg:leading-5 2xl:leading-6 font-semibold mb-3 mt-2 text-dark-blue-background">' . get_the_title($tmp_post_id) . '</h3>';
