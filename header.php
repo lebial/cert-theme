@@ -152,7 +152,6 @@
         <div class=" main__menu__sidebar w-[63vw] h-[80vh] absolute top-[80px] -right-full flex flex-col shadow-xl items-center justify-between bg-white">
             <div class="w-full lg:w-10/12">
                 <div class="w-full pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-14">
-
                     <button class="menu__side__bar__close" type="button">
                         <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <line class=" stroke-gray-header" x1="18" x2="6" y1="6" y2="18" />
