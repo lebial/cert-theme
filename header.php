@@ -143,10 +143,6 @@
                     <path class=" fill-white" d="M130.5,164.2h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9  s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,333.1h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2  c9.3,0,16.9-7.6,16.9-16.9s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,502h-0.2c-9.3,0-16.9,7.6-16.9,16.9c0,9.3,7.6,16.9,16.9,16.9  h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9c0-9.3-7.6-16.9-16.9-16.9h-0.3H130.5z" />
                 </svg>
             </button>
-            <!-- <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
-			text-white mr-7 font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary text-xs lg:text-base " type="button">Schedule
-                Demo</button> -->
             <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
 			text-white mr-3 lg:mr-7 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary text-xs lg:text-base " type="button">Let's Talk
@@ -156,14 +152,6 @@
         <div class=" main__menu__sidebar w-[63vw] h-[80vh] absolute top-[80px] -right-full flex flex-col shadow-xl items-center justify-between bg-white">
             <div class="w-full lg:w-10/12">
                 <div class="w-full pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-14">
-                    <div class="w-9/12 flex justify-end mr-2">
-                        <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
-                            <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
-                        </a>
-                        <a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
-                            <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 fill-gray-header" alt="">
-                        </a>
-                    </div>
                     <button class="menu__side__bar__close" type="button">
                         <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <line class=" stroke-gray-header" x1="18" x2="6" y1="6" y2="18" />
@@ -173,7 +161,14 @@
                 </div>
                 <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
             </div>
-
+            <div class="w-10/12 flex justify-end mr-2 mb-5">
+                <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
+                </a>
+                <a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 fill-gray-header" alt="">
+                </a>
+            </div>
         </div>
 
     </header>
