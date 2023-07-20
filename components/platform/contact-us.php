@@ -13,7 +13,7 @@
         </div>
         <div class="w-full flex justify-center">
           <p class=" text-base text-white font-bold text-center pb-8 max-w-[450px]">
-            Schedule a meeting with us for a 15-minute brief introduction, 30-minute presentation or a 60-minute deep dive deep into our solutions.
+            Schedule a meeting with us for a 15-minute brief introduction, 30-minute presentation or a 60-minute deep dive into our solutions.
           </p>
         </div>
       </div>
