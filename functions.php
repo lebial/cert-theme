@@ -314,7 +314,8 @@ function js_console($variable)
     echo '<script> console.log(`PHP console:' . json_encode($variable) . '`); </script>';
 }
 
-function get_realted_posts_by_tags() {
+function get_realted_posts_by_tags()
+{
     $tmp_post = get_post();
     $post_tag = get_the_tags($tmp_post->ID);
     // Check if the post has any tags
@@ -338,3 +339,31 @@ function get_realted_posts_by_tags() {
     };
     return $related_posts;
 }
+
+function get_most_recent_posts()
+{
+    $recent_posts = wp_get_recent_posts(array(
+        'numberposts' => '3',
+        'post_status' => 'publish'
+    ));
+
+    $recent_posts_ids = array();
+    foreach ($recent_posts as $rec_post) {
+        array_push($recent_posts_ids, $rec_post['ID']);
+    };
+    return $recent_posts_ids;
+}
+
+function get_recent_or_selected_posts($recent, $selected)
+{
+    $posts_to_show = array();
+    foreach ($recent as $idx => $post) {
+        // if ($selected && $selected[$idx] ) {
+        array_push($posts_to_show, $selected[$idx] ?? $recent[$idx]);
+        // } else {
+        //     array_push($posts_to_show, $recent[$idx]);
+        // }
+    }
+
+    return $posts_to_show;
+};
