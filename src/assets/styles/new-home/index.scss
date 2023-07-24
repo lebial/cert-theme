@@ -131,11 +131,13 @@
 
 		& input,
 		select {
-			padding: 2px !important;
+			padding: 6px 3px !important;
 			border: 1px solid black !important;
 			border-radius: 6px !important;
 			appearance: auto !important;
+			font-size: 16px !important;
 		}
+
 
 		& .frm_checkbox {
 			& label {
@@ -191,10 +193,15 @@
 	@media #{$desktopBase} {
 		& form {
 
-			& input,
-			select {
+			& input {
 				padding: 4px 5px !important;
 				border: 1px solid $color-grey !important;
+			}
+
+			& select {
+				padding: 8px 5px !important;
+				border: 1px solid $color-grey !important;
+				font-size: 16px !important;
 			}
 
 			.schedule__button {
