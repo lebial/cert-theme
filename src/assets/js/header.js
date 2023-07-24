@@ -14,13 +14,34 @@ jQuery(document).ready(function ($) {
     const headerSection = $(".header__section");
     const sideCloseButton = $(".menu__side__bar__close");
     const sideBarMenu = $(".main__menu__sidebar");
+
+    //handle outside click
+    $(document).click((e) => {
+      const bar = document.querySelector('.main__menu__sidebar');
+      //make sure it's open and it's not the burger button and the click it's outside the menu
+      if (!bar.contains(e.target) && bar.classList.contains('side-bar--open') && !burgerMenu[0].contains(e.target)) {
+        sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
+        sideBarMenu.removeClass('side-bar--open');
+      }
+    })
+
     sideCloseButton.click(function () {
       sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
+      sideBarMenu.removeClass('side-bar--open');
     });
     burgerMenu.click(function () {
-      sideBarMenu.animate({ right: 0 });
-      headerSection.css("overflow", "visible");
+      if (sideBarMenu.hasClass('side-bar--open')) {
+        sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
+        sideBarMenu.removeClass('side-bar--open');
+      }
+      else {
+        sideBarMenu.animate({ right: 0 });
+        headerSection.css("overflow", "visible");
+        sideBarMenu.addClass('side-bar--open');
+      }
     });
+
+
   }
 
   function handleMenuItemClickCloseNav() {
@@ -33,6 +54,7 @@ jQuery(document).ready(function ($) {
   function handleScheduleFormToggle() {
     const buttons = document.querySelectorAll(".schedule__demo__button");
     const closeButton = $(".schedule__demo__modal__close__button");
+    const sideMenuCloseButton = $(".menu__side__bar__close");
     const contactModal = $(".schedule__demo__modal");
     buttons.forEach((button) =>
       $(button).click(function () {
@@ -49,7 +71,10 @@ jQuery(document).ready(function ($) {
     //handle esc to close modal
     $(document).keydown(function (e) {
       const code = e.keyCode || e.which;
-      if (code === 27) closeButton.click();
+      if (code === 27) {
+        closeButton.click();
+        sideMenuCloseButton.click();
+      }
     });
 
     //handle overlayClick Close
