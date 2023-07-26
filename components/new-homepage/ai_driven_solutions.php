@@ -67,7 +67,8 @@ function render_report_mobile_buttons()
 
 ?>
 <section class="ai__driven__section w-full px-6 mt-14 mb-20">
-  <h3 class="mx-auto w-fit reveal-text text-dark-blue-background font-bold"><?php the_field('ai_heading') ?></h3>
+  <h3 class="mx-auto w-fit reveal-text text-dark-blue-background font-bold hidden lg:block"><?php the_field('ai_heading') ?></h3>
+  <h3 class="mx-auto w-fit reveal-text text-dark-blue-background font-bold block lg:hidden"><?php the_field('ai_heading_mobile') ?></h3>
   <div class="solutions__subheader flex flex-col lg:flex-row mx-auto justify-center">
     <?php render_subheader() ?>
   </div>

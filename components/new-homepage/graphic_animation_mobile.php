@@ -151,7 +151,7 @@
     </style>
 
     <div class="w-full">
-        <svg width="1124" class="w-full" viewBox="0 0 1124 1056" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="1124" class="w-full" viewBox="-50 0 1124 1056" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Frame" clip-path="url(#clip0_0_1)">
                 <g id="datagraphic-mobile 1">
                     <g id="Group">

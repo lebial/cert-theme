@@ -1,3 +1,14 @@
+<?php
+function render_svg_vertical_options()
+{
+  $vertical_options = get_field('vertical_slider_options');
+  foreach ($vertical_options as $vert_option) {
+    echo '<p class="pb-2 font-bold text-white">' . $vert_option['text'] . '</p>';
+  }
+}
+?>
+
+?>
 <div>
   <style>
     :root {
@@ -159,8 +170,8 @@
     }
   </style>
 
-  <div class="demo__container relative left-[4%] top-[80px] max-w-[920px]">
-    <svg class="w-full max-h-[600px]" width="1305" viewBox="0 0 1305 792" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="demo__container mx-auto relative top-[80px] max-w-[920px]">
+    <svg class="w-full max-h-[600px]" width="1305" viewBox="-100 0 1305 792" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Flowchart-v2-desktop 1">
         <path id="Vector" d="M710.602 499.204L710.704 509.23C710.959 533.701 688.827 554.613 660.018 554.903H659.519C630.71 555.203 606.141 534.76 605.887 510.29L605.642 487.178" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
         <path id="Vector_2" d="M319.122 163.639L320.09 255.645L461.485 255.065L501.263 254.655" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -346,6 +357,18 @@
         <circle class="marker" r="7" fill="#F4695B"></circle>
       </g>
     </svg>
+    <div class="hidden lg:flex absolute bottom-[17%] left-[185px]">
+      <div class="flex">
+        <div class="">
+          <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
+            <span class="vertical-option-desktop font-bold"></span><br>
+          </p>
 
+          <div id="string-text-desktop">
+            <?php render_svg_vertical_options() ?>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
