@@ -170,7 +170,7 @@ function render_svg_vertical_options()
     }
   </style>
 
-  <div class="demo__container mx-auto relative top-[80px] max-w-[920px]">
+  <div class="demo__container mx-auto relative top-[10px] max-w-[920px]">
     <svg class="w-full max-h-[600px]" width="1305" viewBox="-100 0 1305 792" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Flowchart-v2-desktop 1">
         <path id="Vector" d="M710.602 499.204L710.704 509.23C710.959 533.701 688.827 554.613 660.018 554.903H659.519C630.71 555.203 606.141 534.76 605.887 510.29L605.642 487.178" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />

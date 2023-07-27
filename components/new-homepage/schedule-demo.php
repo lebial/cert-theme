@@ -1,4 +1,4 @@
-<section class="h-[60vh] 2xl:h-[45vh]">
+<section class="min-h-[60vh] 2xl:min-h-[45vh]">
   <div class="contact__us__image__container w-full min-h-[60vh] 2xl:min-h-[45vh] relative text-center flex justify-end items-center">
     <video playsinline autoplay muted loop id="HomeBackgroundVideo" class=" object-cover w-full h-full absolute top-0 left-0 z-10">
       <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
