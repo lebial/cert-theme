@@ -21,7 +21,7 @@ function render_report_images()
 {
   global $ai_buttons;
   foreach ($ai_buttons as $idx => $button) {
-    echo '<div class="report-' . $idx . '-image ai__report__image w-full absolute transition-all duration-150 max-h-[300px] max-w-xl top-3">
+    echo '<div class="report-' . $idx . '-image ai__report__image w-full absolute transition-all duration-150 max-h-[300px] max-w-xl top-3 shadow-xl">
       <img src="' . $button['report_image'] . '" alt="report-' . $idx . '"  class=" w-full max-h-80">
     </div>';
   }
@@ -58,7 +58,7 @@ function render_report_mobile_buttons()
                 </g>
               </svg>
             </button>
-            <div class="mobile__image__container w-full  justify-center flex h-0 mt-2">
+            <div class="mobile__image__container w-full  justify-center flex h-0 mt-2 shadow-xl">
               <img src="' . $button['report_image'] . '" alt="report-' . $idx . '"  class=" w-full max-h-80">
             </div>
           </div>';
