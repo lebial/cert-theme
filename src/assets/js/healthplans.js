@@ -22,6 +22,14 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    function addStickyToFormImg() {
+        const imageContainer = $('.case__study__form');
+        const floatingImage = imageContainer.find('div');
+        imageContainer.removeClass('flex');
+        floatingImage.addClass('sticky');
+        floatingImage.css('top', '25%');
+    }
+
     const { href } = window.location;
     if (href.includes("health-plans") || href.includes('health-systems') || href.includes('solution-vendors') || href.includes('government')) {
         createGrowBookCarousel();
@@ -29,6 +37,7 @@ jQuery(document).ready(function ($) {
 
     if (href.includes('government')) {
         removeCaseStudyImgMaxSize();
+        addStickyToFormImg();
     }
 
 });
