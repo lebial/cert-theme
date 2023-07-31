@@ -218,8 +218,12 @@
             display: block !important;
         }
 
+        & input {
+            padding: 7px !important;
+        }
+
         & select {
-            padding: 15px 10px 15px 0 !important;
+            padding: 7px !important;
             appearance: auto !important;
         }
 
@@ -237,6 +241,7 @@
             border: none !important;
             border-radius: 5px !important;
             background-color: lightgray !important;
+            padding: 0 !important;
         }
 
         & input[type="email"] {
