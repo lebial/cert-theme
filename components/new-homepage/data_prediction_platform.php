@@ -77,7 +77,7 @@ function render_vertical_options()
       </div>
     </div>
   </div> -->
-  <div class="w-full flex justify-center">
+  <div class="w-full flex justify-center relative z-20">
     <a href="/platform" class="px-4 py-2 mx-auto text-base font-bold lg:text-lg mt-5 lg:-mt-6 border border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
   </div>
 
