@@ -8,7 +8,6 @@ function render_svg_vertical_options()
 }
 ?>
 
-?>
 <div>
   <style>
     :root {

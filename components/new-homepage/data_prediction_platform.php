@@ -48,35 +48,12 @@ function render_vertical_options()
         </div>
       </div>
     </div>
-    <!-- End mobile version-->
 
-    <!-- <div class="w-10/12 lg:w-4/12 flex flex-col mx-auto justify-center lg:ml-[10%]">
-      <div class="bottom-reveal flex justify-center">
-        <p class="text-white font-bold text-lg md:text-xl lg:text-2xl pb-8 pt-8 lg:pt-0"><?php the_field('metrics_header') ?></p>
-      </div>
-      <?php //render_data_points() 
-      ?>
-    </div> -->
-    <!-- <div class="hidden lg:inline w-full lg:w-8/12 relative"> -->
     <div class="hidden lg:inline w-full relative">
       <?php get_template_part('components/new-homepage/graphic_animation') ?>
     </div>
   </div>
 
-  <!-- <div class="hidden w-full lg:flex ">
-    <div class="w-full max-w-6xl mt-[-1rem] 2xl:mt-[-2rem] mb-0 lg:mb-4 flex">
-      <div class="w-10/12 ml-[-.8rem] lg:ml-0 lg:w-6/12">
-        <p class="font-normal text-xs md:text-lg lg:text-xl text-white">
-          <span class="vertical-option-desktop font-bold"></span><br>
-        </p>
-
-        <div id="string-text-desktop">
-          <?php //render_vertical_options() 
-          ?>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="w-full flex justify-center relative z-20">
     <a href="/platform" class="px-4 py-2 mx-auto text-base font-bold lg:text-lg mt-5 lg:-mt-6 border border-primary text-white border-solid rounded-3xl transition-all duration-300 hover:bg-primary">Explore Platform</a>
   </div>
