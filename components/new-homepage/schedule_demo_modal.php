@@ -18,8 +18,8 @@ function render_arrow_svg()
     <div class="w-1/2 h-full bg-dark-blue-background px-10 pt-10 pb-6 hidden lg:block ">
       <p class="text-white text-base 3xl:text-xl font-bold mb-4"> See how we<br class="block xl:hidden"> can help you achieve <br class="block xl:hidden"> your <br class="hidden xl:block"> value-based <br class="block xl:hidden"> care goals.</p>
       <p class="text-white text-xs 3xl:text-lg mb-4">Schedule a meeting that's right for you -
-        <br class="block xl:hidden"> a 30-minute introduction,
-        <br class="block xl:hidden">60-minute overview of our solutions
+        <br class="block xl:hidden"> a 15-minute introduction,
+        <br class="block xl:hidden">30-minute overview of our solutions
         <br class="block xl:hidden">or a 90-minute demo. Share your challenges
         <br class="block xl:hidden">with us and we'll show you how our
         <br class="block xl:hidden">predictive insights can help.
