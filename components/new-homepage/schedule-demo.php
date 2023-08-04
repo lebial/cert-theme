@@ -16,7 +16,7 @@
           </div>
           <div class="w-full flex justify-center">
             <p class=" text-base text-white text-center pb-8 max-w-[450px]">
-              Schedule a meeting with us for a 30-minute introduction, 60-minute overview of our solutions or a 90-minute demo.
+              Schedule a 15-minute introduction call, 30-minute overview of our solutions or a 90-minute demo
             </p>
           </div>
         </div>
