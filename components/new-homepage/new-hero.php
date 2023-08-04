@@ -29,7 +29,7 @@ function render_custom_menu_items()
     <div class="w-full flex flex-col items-center mt-12">
       <div class="w-10/12 2xl:w-8/12 flex flex-col">
         <p class=" text-xl 2xl:text-3xl font-bold text-white max-w-none text-center">
-          See how we're helping healthcare leaders achieve their goals
+          <?php the_field('hero_third_heading') ?>
         </p>
         <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 items-center">
           <?php render_custom_menu_items() ?>
