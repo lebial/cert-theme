@@ -1,3 +1,26 @@
+//share session between tabs;
+function handleSessionStorage() {
+  window.addEventListener('storage', (event) => {
+    const visited = window.sessionStorage.getItem('firstVisit');
+    if (event.key === 'requestShare' && visited) {
+      window.localStorage.setItem('shareSession', 'true');
+      window.localStorage.removeItem('shareSession');
+    }
+    if (event.key === 'shareSession' && !visited) {
+      {
+        window.sessionStorage.setItem('firstVisit', event.newValue);
+      }
+    }
+  });
+}
+function handleTabOpen() {
+  window.localStorage.setItem('requestShare', 'true');
+  window.localStorage.removeItem('requestShare');
+};
+handleSessionStorage();
+handleTabOpen();
+
+//header logic
 jQuery(document).ready(function ($) {
   function handleSearchToggle() {
     const searchButton = $(".header__search__button");
@@ -56,10 +79,14 @@ jQuery(document).ready(function ($) {
     const closeButton = $(".schedule__demo__modal__close__button");
     const sideMenuCloseButton = $(".menu__side__bar__close");
     const contactModal = $(".schedule__demo__modal");
+    const dropdownOptions = document.querySelectorAll('#field_meetingoptionsdrop option');
+    const select = document.getElementById('field_meetingoptionsdrop');
+
     buttons.forEach((button) =>
       $(button).click(function () {
         contactModal.css("display", "flex");
         contactModal.animate({ opacity: 1 });
+        select.value = $(dropdownOptions[1]).attr('value');
       })
     );
     closeButton.click(function () {
@@ -98,9 +125,33 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  handleSearchToggle();
+  function handleDirectDemoOptionsClick() {
+    const directOptionButtons = document.querySelectorAll('.direct__schedule__button');
+    directOptionButtons.forEach(button => $(button).click(function () {
+      $('.schedule__demo__button')[0].click();
+      const dropdownOptions = document.querySelectorAll('#field_meetingoptionsdrop option');
+      const select = document.getElementById('field_meetingoptionsdrop');
+      select.value = $(dropdownOptions[this.dataset.value]).attr('value');
+    }))
+  }
+
+  function handleDemoOptions() {
+    const firstVisit = sessionStorage.getItem('firstVisit');
+    const buttonContainer = $('.fade__in__container');
+    const navScheduleButton = $('.nav__schedule__demo__button');
+    if (!firstVisit) {
+      navScheduleButton.addClass('pulse__animate');
+      buttonContainer.delay(4000).fadeIn("slow", handleDirectDemoOptionsClick);
+      sessionStorage.setItem('firstVisit', 'true');
+    }
+
+  };
+
+  handleTabOpen();
+  // handleSearchToggle();
   handleNavigationToggle();
   handleScheduleFormToggle();
   handleMenuItemClickCloseNav();
   addBlackToHeader();
+  handleDemoOptions();
 });
