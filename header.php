@@ -165,13 +165,13 @@
                 </div>
             </div>
 
-            <button class="new__burger__menu text-white relative w-10 order-1 lg:-order-1 lg:-top-[6px]" type="button">
+            <button class="new__burger__menu text-white relative w-10 order-1 lg:-top-[6px] mr-3 lg:mr-7" type="button">
                 <svg class="w-7 lg:w-10 absolute top-[3px] lg:top-2 left-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
                     <path class=" fill-white" d="M130.5,164.2h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9  s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,333.1h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2  c9.3,0,16.9-7.6,16.9-16.9s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,502h-0.2c-9.3,0-16.9,7.6-16.9,16.9c0,9.3,7.6,16.9,16.9,16.9  h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9c0-9.3-7.6-16.9-16.9-16.9h-0.3H130.5z" />
                 </svg>
             </button>
             <button class="schedule__demo__button nav__schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
-			text-white mr-3 lg:mr-7 font-bold hover:cursor-pointer transition-all duration-300
+			text-white mr-3 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary text-xs lg:text-base " type="button">Let's Talk
             </button>
         </div>
