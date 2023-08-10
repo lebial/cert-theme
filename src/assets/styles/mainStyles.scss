@@ -3100,3 +3100,20 @@ selectric .label {
         content: "x" !important;
     }
 }
+
+.pulse__animate {
+    animation: pulse-animation 2s;
+    animation-delay: 2s;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(244, 105, 91, 1);
+        background-color: $color-red;
+    }
+
+    100% {
+        box-shadow: 0 0 0 15px rgba(244, 105, 91, 0);
+        background-color: transparent;
+    }
+}

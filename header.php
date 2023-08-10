@@ -76,6 +76,28 @@
             </noscript>';
     }
 
+    function render_demo_buttons()
+    {
+        $demo_buttons = array(array("text" => '15-minute Introduction', "value" => 1), array("text" => '30-minute Solution Overview', "value" => 2), array("text" => '90-minute Demo', "value" => 3));
+
+        foreach ($demo_buttons as $button) {
+            echo '
+                <button class="text-white transition-all direct__schedule__button duration-300 hover:text-primary mr-5" data-value="' . $button['value'] . '">
+                    ' . $button['text'] . '
+                    <span class="w-[20px] pt-[3px] inline-block relative top-[6px]">
+                        <svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                                    <polyline class=" fill-primary" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    " />
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+            ';
+        }
+    }
+
     ?>
 
     <meta charset="<?php bloginfo('charset'); ?>" />
@@ -137,13 +159,18 @@
                     ?>
                 </div>
             </div> -->
+            <div class="demo__buttons__container flex-1 flex justify-center items-center">
+                <div class="fade__in__container hidden">
+                    <?php render_demo_buttons() ?>
+                </div>
+            </div>
 
             <button class="new__burger__menu text-white relative w-10 order-1 lg:-order-1" type="button">
                 <svg class="w-7 absolute top-[3px] lg:top-2 left-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
                     <path class=" fill-white" d="M130.5,164.2h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9  s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,333.1h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2  c9.3,0,16.9-7.6,16.9-16.9s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,502h-0.2c-9.3,0-16.9,7.6-16.9,16.9c0,9.3,7.6,16.9,16.9,16.9  h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9c0-9.3-7.6-16.9-16.9-16.9h-0.3H130.5z" />
                 </svg>
             </button>
-            <button class="schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
+            <button class="schedule__demo__button nav__schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
 			text-white mr-3 lg:mr-7 font-bold hover:cursor-pointer transition-all duration-300
 			hover:bg-primary text-xs lg:text-base " type="button">Let's Talk
             </button>
