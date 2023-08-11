@@ -160,15 +160,15 @@ function render_extra_links($links, $color = 'white')
     <section class="post__description w-full pt-20 mb-14">
         <p class="text-center text-gray-400 mx-auto"><?php echo get_the_date('F j, Y') ?></p>
         <div class="mt-10 flex">
-            <div class="w-[280px]"></div>
-            <h2 class=" flex-1 text-center text-2xl lg:text-4xl text-gray-header px-20 tracking-normal">
+            <div class="lg:w-[280px]"></div>
+            <h2 class=" flex-1 text-center text-2xl lg:text-4xl text-gray-header px-8 lg:px-20 tracking-normal">
                 <?php the_field('post_h2') ?>
             </h2>
-            <div class="w-[280px]"></div>
+            <div class="lg:w-[280px]"></div>
         </div>
     </section>
     <section class="article__body w-full flex flex-col lg:flex-row px-5 ">
-        <aside class="sticky w-[280px] top-[15%] h-fit ">
+        <aside class="lg:sticky w-[280px] top-[15%] h-fit ">
             <div class="hidden <?php echo $hide_alternate ?>">
                 <?php render_subscribe_form() ?>
             </div>
