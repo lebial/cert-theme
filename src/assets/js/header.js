@@ -126,7 +126,9 @@ jQuery(document).ready(function ($) {
     const buttonContainer = $('.fade__in__container');
     const navScheduleButton = $('.nav__schedule__demo__button');
     const isMobile = window.matchMedia("only screen and (max-width: 1023px)").matches;
-    if (!firstVisit) {
+    const isHome = $('body').hasClass('home');
+
+    if (isHome || !firstVisit) {
       navScheduleButton.addClass('pulse__animate');
       if (!isMobile) buttonContainer.delay(4000).fadeIn("slow", handleDirectDemoOptionsClick);
       sessionStorage.setItem('firstVisit', 'true');
