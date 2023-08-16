@@ -37,10 +37,6 @@
         &:first-of-type {
             & svg {
                 width: 25px;
-
-                & * {
-                    opacity: .5;
-                }
             }
         }
 
@@ -281,7 +277,7 @@
 
         &:nth-of-type(2) {
             & svg {
-                width: 26px !important;
+                width: 20px !important;
                 margin-right: 3px;
             }
         }

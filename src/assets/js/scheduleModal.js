@@ -1,39 +1,60 @@
 jQuery(document).ready(function ($) {
-  function handleNextButtonClick(e) {
-    const firstName = $('.schedule__first');
-    const lastName = $('.schedule__last');
-    const email = $('.schedule__email');
-    const fields = [firstName, lastName, email];
-    if (fields.some(field => !$(field).find('input').val())) return e.preventDefault();
-    fields.forEach(field => $(field).addClass('hidden'));
-    $('.schedule__optin').addClass('hidden');
-    $('.optin__description').addClass('hidden');
-    $($($(this).parent()).parent()).css('display', 'none');
-    $('.date__picker').removeClass('hidden');
-    $('.frm_submit').removeClass('hidden');
-    $('.first__step__pill').removeClass('bg-dark-blue-background w-7/12 text-white');
-    $('.first__step__pill').addClass('w-5/12');
-    $('.second__step__pill').removeClass('w-5/12');
-    $('.second__step__pill').addClass('bg-dark-blue-background w-7/12 text-white');
+
+  function getFormParts() {
+    const form = $('#form_scheduledemoform');
+    const body = form.find('.frm_form_fields ');
+    const message = form.find('.frm_message');
+    return { body, message };
   }
 
-  function addClickToNextButton() {
-    const button = $('.next__step__button');
-    button.click(handleNextButtonClick);
-  }
+  function handleScheduleFormToggle() {
+    const buttons = document.querySelectorAll(".schedule__demo__button");
+    const closeButton = $(".schedule__demo__modal__close__button");
+    const sideMenuCloseButton = $(".menu__side__bar__close");
+    const contactModal = $(".schedule__demo__modal");
 
-  function handleSubmit() {
-    const dateTime = $('input[type="datetime-local"]');
-    $('.frm_button_submit').click(function (e) {
-      if (!dateTime.val()) {
-        e.preventDefault()
-        if (!$('.error_message_form').length) $(dateTime.parent()).append('<span class="text-primary error_message_form">This field is required</span>')
-        return e.stopPropagation();
+    buttons.forEach((button) =>
+      $(button).click(function () {
+        const select = document.getElementById('field_meetingoptionsdrop');
+        const dropdownOptions = document.querySelectorAll('#field_meetingoptionsdrop option');
+        contactModal.css("display", "flex");
+        contactModal.animate({ opacity: 1 });
+        select.value = $(dropdownOptions[1]).attr('value');
+      })
+    );
+    closeButton.click(function () {
+      const form = getFormParts();
+      contactModal.animate({ opacity: 0 }, 400, function () {
+        contactModal.css("display", "none");
+        form.message.hide();
+        form.body.show();
+      });
+    });
+
+
+
+    //handle esc to close modal
+    $(document).keydown(function (e) {
+      const code = e.keyCode || e.which;
+      if (code === 27) {
+        closeButton.click();
+        sideMenuCloseButton.click();
       }
-      $('#field_scheduledtime').val(dateTime.val());
+    });
+
+    //handle overlayClick Close
+    $('.schedule__demo__modal').click((e) => {
+      if ($(e.target).is($('.schedule__demo__modal'))) closeButton.click();
+    })
+  }
+
+  function handleAfterFormSubmit() {
+    $(document).on('frmFormComplete', function (event, form, response) {
+      const { body: formBody } = getFormParts();
+      formBody.hide();
     });
   }
 
-  // handleSubmit();
-  // addClickToNextButton();
+  handleScheduleFormToggle();
+  handleAfterFormSubmit();
 });

@@ -761,26 +761,25 @@ header {
     .menu-main-menu-container {
         background-color: #fff;
 
-        @media(max-width: 1199px) {
-            position: absolute;
-            top: 68px;
-            width: 100%;
-            visibility: visible;
-            margin-top: 20px;
-            transition: 0.5s height $animation-cb;
-        }
+        // @media(max-width: 1199px) {
+        //     position: absolute;
+        //     top: 68px;
+        //     width: 100%;
+        //     visibility: visible;
+        //     margin-top: 0px;
+        //     transition: 0.5s height $animation-cb;
+        // }
 
         @media #{$desktopMD} {
-            width: auto;
+            width: 100%;
             position: static;
             visibility: visible;
             opacity: 1;
             background-color: transparent;
             top: auto;
             height: auto;
-            margin-left: auto;
             // margin-right: 30px;
-            padding: 0;
+            padding: 0 40px;
         }
 
         html.open-mobile-nav & {
@@ -814,6 +813,11 @@ header {
                         transition: transform 300ms ease-in-out;
                         width: 100%;
                         bottom: -5px;
+                        margin-left: 32px;
+
+                        @media #{$desktopBase} {
+                            margin-left: 0;
+                        }
                     }
 
                     &:hover {
