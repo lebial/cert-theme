@@ -176,9 +176,9 @@
             </button>
         </div>
 
-        <div class=" main__menu__sidebar w-[63vw] h-[80vh] absolute top-[70px] lg:top-[80px] -right-full flex flex-col shadow-xl items-center justify-between bg-white">
-            <div class="w-full lg:w-10/12">
-                <div class="w-full pt-4 lg:pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end lg:mb-14">
+        <div class=" main__menu__sidebar w-[63vw] h-[80vh] absolute top-[70px] lg:top-[80px] -right-full flex flex-col shadow-xl items-start xl:items-center justify-between lg:justify-start bg-white">
+            <div class="w-full lg:px-10">
+                <div class="w-full pt-4 lg:pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-4">
                     <button class="menu__side__bar__close" type="button">
                         <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <line class=" stroke-gray-header" x1="18" x2="6" y1="6" y2="18" />
@@ -188,7 +188,7 @@
                 </div>
             </div>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
-            <div class="w-10/12 flex justify-end mr-2 mb-5">
+            <div class="w-10/12 flex justify-end mr-2 mb-5 mt-auto">
                 <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
                     <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
                 </a>
