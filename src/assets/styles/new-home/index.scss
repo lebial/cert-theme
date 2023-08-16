@@ -222,10 +222,11 @@
 	}
 
 	& .frm_message {
-		background-color: #000f3a !important;
+		background-color: white !important;
+		border: none !important;
 
 		& p {
-			color: white !important;
+			color: #000f3a !important;
 		}
 	}
 }

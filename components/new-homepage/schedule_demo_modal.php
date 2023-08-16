@@ -39,7 +39,7 @@ function render_arrow_svg()
         </div>
         <div class="flex mb-2 relative">
           <?php render_arrow_svg() ?>
-          <p class="text-white text-xs 3xl:text-base pl-4">Optimize programs and strategies to lower cost and improve outcomes</p>
+          <p class="text-white text-xs 3xl:text-base pl-4">Optimize programs and strategies to lower costs and improve outcomes</p>
         </div>
         <div class="flex mb-2 relative">
           <?php render_arrow_svg() ?>

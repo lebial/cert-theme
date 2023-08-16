@@ -766,7 +766,7 @@ header {
             top: 68px;
             width: 100%;
             visibility: visible;
-            margin-top: 20px;
+            margin-top: 0px;
             transition: 0.5s height $animation-cb;
         }
 
@@ -814,6 +814,7 @@ header {
                         transition: transform 300ms ease-in-out;
                         width: 100%;
                         bottom: -5px;
+                        margin-left: 32px;
                     }
 
                     &:hover {

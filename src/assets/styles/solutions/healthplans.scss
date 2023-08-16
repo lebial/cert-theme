@@ -37,10 +37,6 @@
         &:first-of-type {
             & svg {
                 width: 25px;
-
-                & * {
-                    opacity: .5;
-                }
             }
         }
 

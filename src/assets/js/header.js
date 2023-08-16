@@ -74,42 +74,6 @@ jQuery(document).ready(function ($) {
     }));
   }
 
-  function handleScheduleFormToggle() {
-    const buttons = document.querySelectorAll(".schedule__demo__button");
-    const closeButton = $(".schedule__demo__modal__close__button");
-    const sideMenuCloseButton = $(".menu__side__bar__close");
-    const contactModal = $(".schedule__demo__modal");
-    const dropdownOptions = document.querySelectorAll('#field_meetingoptionsdrop option');
-    const select = document.getElementById('field_meetingoptionsdrop');
-
-    buttons.forEach((button) =>
-      $(button).click(function () {
-        contactModal.css("display", "flex");
-        contactModal.animate({ opacity: 1 });
-        select.value = $(dropdownOptions[1]).attr('value');
-      })
-    );
-    closeButton.click(function () {
-      contactModal.animate({ opacity: 0 }, 400, function () {
-        contactModal.css("display", "none");
-      });
-    });
-
-    //handle esc to close modal
-    $(document).keydown(function (e) {
-      const code = e.keyCode || e.which;
-      if (code === 27) {
-        closeButton.click();
-        sideMenuCloseButton.click();
-      }
-    });
-
-    //handle overlayClick Close
-    $('.schedule__demo__modal').click((e) => {
-      if ($(e.target).is($('.schedule__demo__modal'))) closeButton.click();
-    })
-  }
-
 
   function handleDirectDemoOptionsClick() {
     const directOptionButtons = document.querySelectorAll('.direct__schedule__button');
@@ -139,7 +103,6 @@ jQuery(document).ready(function ($) {
   handleTabOpen();
   // handleSearchToggle();
   handleNavigationToggle();
-  handleScheduleFormToggle();
   handleMenuItemClickCloseNav();
   handleDemoOptions();
 });
