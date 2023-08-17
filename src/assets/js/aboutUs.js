@@ -104,6 +104,12 @@ jQuery(document).ready(function ($) {
     makeElementsSameHeight($, '.au__quote__slide');
   }
 
+  function handleSwipeEvent() {
+    $('.our__team__slider').on('swipe', function (event, slick, direction) {
+      handleOurTeamOptionCollapseOnChange();
+    })
+  }
+
   if (window.location.href.includes("about-us")) {
     setImageMargin();
     // createTimelineSlider();
@@ -116,5 +122,6 @@ jQuery(document).ready(function ($) {
     handleOurTeamExpand();
     createOurTeamSlider();
     addArrowToSlider(".our__team__slider", handleOurTeamOptionCollapseOnChange);
+    handleSwipeEvent();
   }
 });

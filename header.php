@@ -188,7 +188,7 @@
                 </div>
             </div>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
-            <div class="w-10/12 flex justify-end mr-2 mb-5 mt-auto">
+            <div class="w-full flex justify-end pr-10 mb-5 mt-auto">
                 <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
                     <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
                 </a>
