@@ -56,24 +56,23 @@
         echo '<!-- End Twitter universal website tag code -->';
 
         echo '<!-- LinkedIn Tag -->';
-        echo ' 
-        <script type="text/javascript">
-            _linkedin_partner_id = "2795692";
-            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-            </script><script type="text/javascript">
-            (function(l) {
-            if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-            window.lintrk.q=[]}
-            var s = document.getElementsByTagName("script")[0];
-            var b = document.createElement("script");
-            b.type = "text/javascript";b.async = true;
-            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-            s.parentNode.insertBefore(b, s);})(window.lintrk);
-            </script>
-            <noscript>
-                <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2795692&fmt=gif" />
-            </noscript>';
+        echo '<script type="text/javascript">';
+        echo '_linkedin_partner_id = "2795692";';
+        echo 'window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];';
+        echo 'window._linkedin_data_partner_ids.push(_linkedin_partner_id);';
+        echo '</script><script type="text/javascript">';
+        echo '(function(l) {';
+        echo 'if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};';
+        echo 'window.lintrk.q=[]}';
+        echo 'var s = document.getElementsByTagName("script")[0];';
+        echo 'var b = document.createElement("script");';
+        echo 'b.type = "text/javascript";b.async = true;';
+        echo 'b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";';
+        echo 's.parentNode.insertBefore(b, s);})(window.lintrk);';
+        echo '</script>';
+        echo '<noscript>';
+        echo '<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2795692&fmt=gif" />';
+        echo '</noscript>';
     }
 
     function render_demo_buttons()
