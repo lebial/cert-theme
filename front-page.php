@@ -1,6 +1,3 @@
-<?php
-// Template Name: New Home Page Tempatle
-?>
 
 <?php get_header() ?>
 
