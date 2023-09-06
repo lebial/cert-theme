@@ -89,12 +89,24 @@ function render_quotes($component)
     echo '<div class="w-9/12 h-px bg-primary mb-10"> </div>';
 }
 
+function render_video($component)
+{
+    $video_element = '
+      <div class="flex justify-center mx-8 py-6">
+        <video src="' . $component['video_src'] . '" class="w-full" width="100%" height="100%" controls></video>
+      </div>
+    ';
+
+    echo $video_element;
+}
+
 
 function render_dynamic_content()
 {
     $web_components = array(
         'image_container' => 'render_image_container',
         'text_container' => 'render_text_content',
+        'video_component' => 'render_video',
         'quotes' => 'render_quotes',
     );
 
