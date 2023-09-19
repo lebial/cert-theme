@@ -20,7 +20,7 @@
         </div>
         <div class="case__study__form w-full md:w-6/12 flex flex-col mt-10 lg:mt-0 mx-auto lg:pl-[5%] justify-center">
             <div class="w-full max-w-lg flex justify-center">
-                <div class="case__study__image__container w-full max-w-xs"><img class="w-full" src="<?php the_field('form_image') ?>" alt=""></div>
+                <div class="case__study__image__container w-full max-w-xs"><img class="w-full" src="<?php the_field('form_image') ?>" alt="case study image"></div>
             </div>
         </div>
         <div class="case__study__form__container mx-auto max-w-lg pl-0 mt-8 block lg:hidden">

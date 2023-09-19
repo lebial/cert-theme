@@ -8,7 +8,7 @@ function render_options($data, $isMobile)
         if ($option['option_title']) echo '
             <div class="' . $class_name . ' option__button flex w-full">
                 <button class="hp__option__action__button text-left text-sm lg:text-base flex items-center text-[#7c7c7c] relative pl-7" type="button" name="' . $option['option_title'] . '">
-                    <img src="' . $option['option_image'] . '" class="style-svg w-6 mr-2 h-auto absolute left-0" alt="" name="' . $option['option_title'] . '">
+                    <img src="' . $option['option_image'] . '" class="style-svg w-6 mr-2 h-auto absolute left-0" alt="" name="' . $option['option_title'] . '" alt="intuitive insights option image">
                     ' . $option['option_title'] . '
                 </button>
             </div>

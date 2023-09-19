@@ -44,14 +44,14 @@ function render_desktop_platforms($data)
   echo '<h2 class="visual-element-hide">' . $accelerator_data['title'] . '</h2>';
   // echo '<div class="platforms__icon__container w-full flex justify-end py-4">';
   echo '<div class="platforms__icon__container w-full flex justify-end">';
-  echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="' . $first_icon . '" >';
+  echo '<img class="style-svg platforms__main__icon--red w-[70%] mr-[10%]" src="' . $first_icon . '" alt="accelerator icons" >';
   echo '</div>';
   echo '</div>';
   echo '<div class="nucleus__content w-1/2">';
   echo '<h2 class="visual-element-hide">' . $nucleus_data['title'] . '</h2>';
   // echo '<div class="platforms__icon__container w-full flex justify-start py-4">';
   echo '<div class="platforms__icon__container w-full flex justify-start">';
-  echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%]" src="' . $second_icon . '" >';
+  echo '<img class="style-svg platforms__main__icon--blue w-[70%] ml-[10%]" src="' . $second_icon . '" alt="nucleus icons">';
   echo '</div>';
   echo '</div>';
   echo '</div>';
@@ -61,11 +61,9 @@ function render_desktop_platform_options($data)
 {
   $accelerator_data = $data['platform_1'];
   $nucleus_data = $data['platform_2'];
-  // echo '<div class="platforms__container w-full flex mb-32 relative">';
   echo '<div class="platforms__container platforms__down__arrow__container-animation w-full flex mb-32 relative">';
   echo '<div class="w-full absolute top-3">';
-  // echo '<img class="style-svg platforms__down__arrow opacity-0 mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="'.get_field('platforms_button_arrow').'"/>';
-  echo '<img class="style-svg platforms__down__arrow mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="' . get_field('platforms_button_arrow') . '"/>';
+  echo '<img class="style-svg platforms__down__arrow mx-auto w-24 2xl:w-44 max-w-[6rem] 2xl:max-w-[11rem] negative__arrow__rotate" style="transform: rotate(-90deg);" src="' . get_field('platforms_button_arrow') . '" alt="down arrow icon"/>';
   echo '</div>';
   echo '<div class="platforms__buttons__animated platform-slide-animate w-full absolute flex" style="top: -30px;" data-platform-anim="platforms-slide-in">';
   echo '<div class="w-1/2 flex justify-end relative mr-[6%]">';
@@ -73,7 +71,7 @@ function render_desktop_platform_options($data)
   echo '<div class="w-10/12 h-full flex justify-between">';
   foreach ($accelerator_data['buttons'] as $accelerator_button) {
     echo '<div class="platforms__icons--red platforms__icon__button rounded-full p-1 w-14 h-14 bg-primary relative flex justify-center items-center" >';
-    echo '<img class="style-svg" src="' . $accelerator_button['icon_desktop'] . '">';
+    echo '<img class="style-svg" src="' . $accelerator_button['icon_desktop'] . '" alt="accelerator desktop icon">';
     echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
     echo '<p class="text-base leading-tight" name="' . $accelerator_button['text'] . '">' . $accelerator_button['text'] . '</p>';
     echo '</div>';
@@ -87,7 +85,7 @@ function render_desktop_platform_options($data)
   echo '<div class="w-10/12 h-full flex justify-between">';
   foreach ($nucleus_data['buttons'] as $nucleus_button) {
     echo '<div class="platforms__icons--blue platforms__icon__button rounded-full p-1 w-14 h-14 bg-secondary relative flex justify-center items-center" >';
-    echo '<img class="style-svg" src="' . $nucleus_button['icon_desktop'] . '">';
+    echo '<img class="style-svg" src="' . $nucleus_button['icon_desktop'] . '" alt="nucleus desktop icon">';
     echo '<div class="platforms__button__content absolute text-center" style="width: 240%;">';
     echo '<p class="text-base leading-tight" name="' . $nucleus_button['text'] . '">' . $nucleus_button['text'] . '</p>';
     echo '</div>';
@@ -119,16 +117,18 @@ function render_desktop_platform_options($data)
   <div class="w-full flex justify-center">
     <div id="platforms-slide" class=" platforms__slider__container w-11/12 2xl:w-8/12 flex items-center justify-between platform-slide-animate">
       <button class="platforms__button left" name="platformsPrev">
-        <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="style-svg w-24  max-w-[6rem] " src="<?php the_field('platforms_button_arrow') ?>" alt="left arrow">
       </button>
       <p class="platforms__slide__title font-bold mb-0 flex-1 text-center" style="font-size: 21.5px">Connect Data</p>
-      <div class="platforms__slide__icon px-4"><img class="w-24 max-w-[6rem]" src="" alt=""></div>
+      <div class="platforms__slide__icon px-4">
+        <div class="w-24 max-w-[6rem]"></div>
+      </div>
       <p class="platforms__slide__description text-base mb-0 w-[52%]">
         all forms of data are mapped, standarized, cleansed, validated and enriched through our market-leading
         data platform, with vendor agnositc interfaces and existing connectors to hundreds of sources.
       </p>
       <button class="platforms__button right" name="platformsNext">
-        <img class="style-svg w-24 max-w-[6rem] xl:ml-8 2xl:ml-16" src="<?php the_field('platforms_button_arrow') ?>" alt="">
+        <img class="style-svg w-24 max-w-[6rem] xl:ml-8 2xl:ml-16" src="<?php the_field('platforms_button_arrow') ?>" alt="right arrow button">
       </button>
     </div>
   </div>
