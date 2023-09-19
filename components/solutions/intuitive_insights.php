@@ -1,37 +1,41 @@
 <?php
-  $intuitive_insights_data = get_field('intuitive_insights_options');
+$intuitive_insights_data = get_field('intuitive_insights_options');
 
-  function render_options($data) {
+function render_options($data)
+{
     foreach ($data as $option) {
         if ($option['option_title']) {
             echo '
                 <div class="option__button w-full">
-                    <button class="option__action__button text-left text-sm lg:text-base" type="button" name="'.$option['option_title'].'">'.$option['option_title'].'</button>
+                    <button class="option__action__button text-left text-sm lg:text-base" type="button" name="' . $option['option_title'] . '">' . $option['option_title'] . '</button>
                 </div>
             ';
         }
     };
-  }
+}
 
-  function get_striped_text($data) {
+function get_striped_text($data)
+{
     foreach ($data as $key => $value) {
         $data[$key]['option_description'] = strip_tags($data[$key]['option_description'], '<a><strong>');
     }
     return $data;
-  }
+}
 
 ?>
 <section class="intuitive__insights w-full py-16 lg:py-24">
-    <script id="intuitiveInsightsData" type="application/json"><?php echo json_encode(get_striped_text($intuitive_insights_data))?></script>
+    <script id="intuitiveInsightsData" type="application/json">
+        <?php echo json_encode(get_striped_text($intuitive_insights_data)) ?>
+    </script>
     <div class="description__container w-10/12 lg:w-7/12 mx-auto flex flex-col items-center">
-        <h3 class="text-center text-2xl lg:text-4xl text-gray-header mb-0"><?php the_field('insights_header')?></h3>
+        <h3 class="text-center text-2xl lg:text-4xl text-gray-header mb-0"><?php the_field('insights_header') ?></h3>
         <div class="text-center lg:text-left">
             <p class="text-sm lg:text-base text-center">
-                <?php the_field('insights_subheader_1')?>
+                <?php the_field('insights_subheader_1') ?>
             </p>
 
             <p class="text-sm lg:text-base text-center">
-                <?php the_field('insights_subheader_2')?>
+                <?php the_field('insights_subheader_2') ?>
             </p>
         </div>
     </div>
@@ -61,7 +65,7 @@
                             loading..
                         </p>
                     </div>
-                    <div class="w-full mx-auto lg:mx-0 lg:mb-10 mt-4 lg:mt-0 underline lg:order-2 -order-2"><img id="intuitiveImage" src="<?php the_field('intuitive_insights_image')?>" alt=""></div>
+                    <div class="w-full mx-auto lg:mx-0 lg:mb-10 mt-4 lg:mt-0 underline lg:order-2 -order-2"><img id="intuitiveImage" src="<?php the_field('intuitive_insights_image') ?>" alt="intuitive insights image"></div>
                     <!-- <div class="w-full flex justify-center order-3">
                         <a id="intuitiveLink" href="#" class="text-white py-3 mx-auto lg:mx-0 px-8 bg-primary rounded-lg font-bold">3 Minute Demo</a>
                     </div> -->
@@ -69,5 +73,5 @@
             </div>
         </div>
     </div>
-    
+
 </section>
