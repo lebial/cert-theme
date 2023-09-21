@@ -95,7 +95,9 @@ function render_video($component)
     $className = $video_size == 'small:Small' ? 'max-w-md' : 'w-full';
     $video_element = '
       <div class="flex justify-center mx-8 py-6">
-        <video src="' . $component['video_src'] . '" class="' . $className . '" width="100%" height="100%" controls></video>
+        <video  class="' . $className . '" width="100%" height="100%" controls preload="metadata">
+        <source  src="' . $component['video_src'] . '#t=0.1">
+        </video>
       </div>
     ';
 

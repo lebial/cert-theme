@@ -57,7 +57,7 @@ function render_team_groups_mobile()
             </div>
             <div class="group__header__empty w-3/12 lg:w-4/12"></div>
           </div>';
-  echo '<div class="our__team__slider block lg:hidden mt-10" >';
+  echo '<div class="our__team__slider block lg:hidden mt-10 mb-0" >';
   foreach ($team['group_members'] as $member) {
     $description = $member['description'];
     echo '<div class="team__member w-full max-w-5xl mx-auto px-14 flex flex-col items-center pb-20">
@@ -90,7 +90,7 @@ function render_team_groups_mobile()
     <h2 class="text-6xl font-bold text-white text-center"><?php the_field('section_title') ?></h2>
   </div>
   <div class="our__team__content w-full">
-    <div class="relative mb-20">
+    <div class="relative mb-10">
       <?php render_team_groups_mobile() ?>
       <div class="absolute w-full lg:hidden flex justify-between top-[140px]">
         <?php custom_slider_arrows('our__team__slider') ?>
