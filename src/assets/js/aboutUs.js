@@ -69,9 +69,10 @@ jQuery(document).ready(function ($) {
     $('.team__member__button').click(function () {
 
       const viewPort = $(this).hasClass('member__mobile__button') ? 'mobile' : 'desktop';
-      const descriptionContainer = $(this).parent().prev();
+      const parentElement = $(this).parent();
+      const descriptionContainer = viewPort === 'mobile' ? parentElement.parent().find('.member__description') : parentElement.prev();
       const isDescriptionExpanded = descriptionContainer.hasClass('team__member--expanded');
-      const descriptionTotalHeight = `${$(descriptionContainer.children()[0].children[0]).height() + 10}px`;
+      const descriptionTotalHeight = `${$(descriptionContainer.find('span')).height() + 10}px`;
       const constants = {
         desktop: {
           toggle: 'line-clamp-2',

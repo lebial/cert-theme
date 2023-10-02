@@ -60,7 +60,26 @@ function render_team_groups_mobile()
   echo '<div class="our__team__slider block lg:hidden mt-10 mb-0" >';
   foreach ($team['group_members'] as $member) {
     $description = $member['description'];
-    echo '<div class="team__member w-full max-w-5xl mx-auto px-14 flex flex-col items-center pb-20">
+    // echo '<div class="team__member w-full max-w-5xl mx-auto px-14 flex flex-col items-center pb-20">
+    //           <p class="text-white font-bold text-center mb-0 text-3xl">' . $member['name'] . '</p>
+    //           <p class="text-white text-center">' . $member['title'] . '</p>
+
+    //           <div class="w-full border-t-[1px] border-solid border-primary mt-4 py-4 relative ">
+    //             <div class="member__description overflow-y-hidden h-[95px] line-clamp-3">
+    //               <p class="text-white max-w-none text-center lg:text-left">
+    //                 <span>
+    //                   ' . $description . '
+    //                 </span>
+    //               </p>
+    //             </div>
+    //             <div class="absolute -bottom-14 left-1/2 -translate-x-1/2">
+    //               <button type="button" class=" team__member__button member__mobile__button w-36 py-2 text-white hover:text-primary hover:border-primary transition-colors duration-300 border border-white border-solid rounded-md">
+    //                 Read More
+    //               </button>
+    //             </div>
+    //           </div>
+    //         </div>';
+    echo '<div class="team__member w-full max-w-5xl mx-auto px-14 flex flex-col items-center pb-10">
               <p class="text-white font-bold text-center mb-0 text-3xl">' . $member['name'] . '</p>
               <p class="text-white text-center">' . $member['title'] . '</p>
 
@@ -72,11 +91,12 @@ function render_team_groups_mobile()
                     </span>
                   </p>
                 </div>
-                <div class="absolute -bottom-14 left-1/2 -translate-x-1/2">
-                  <button type="button" class=" team__member__button member__mobile__button w-36 py-2 text-white hover:text-primary hover:border-primary transition-colors duration-300 border border-white border-solid rounded-md">
-                    Read More
-                  </button>
-                </div>
+              </div>
+
+              <div class="w-full flex justify-center"> 
+                <button type="button" class="team__member__button member__mobile__button w-36 py-2 mx-auto text-white hover:text-primary hover:border-primary transition-colors duration-300 border border-white border-solid rounded-md">
+                  Read More
+                </button>
               </div>
             </div>';
   }
