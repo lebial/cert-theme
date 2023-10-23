@@ -160,13 +160,27 @@ jQuery(document).ready(function ($) {
     $(`${slider}-prev`).click(() => $(slider).slick("slickPrev"));
   }
 
+  function handleSecondVideo() {
+    const video = $('.home__secondary__video');
+    const button = $('.second_video_play_button');
+
+    button.click(function () {
+      video.get(0).play();
+      $(this).hide();
+      $(video.get(0)).attr('controls', true);
+
+      video.get(0).addEventListener('pause', function () {
+        $(button).show();
+        $(video.get(0)).attr('controls', false);
+      });
+    });
+  };
+
   createInsightsCarousel();
   handleInsightsArrowClick();
   handleTypingEffect();
   AiOPtionsInit();
   createVerticalSlider();
   handleNextClick();
-  if (location.href.includes("alternate2")) {
-    addTemporaryNavToNavBar();
-  }
+  handleSecondVideo();
 });

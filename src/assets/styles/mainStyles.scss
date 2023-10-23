@@ -147,17 +147,14 @@ body {
     }
 }
 
-blockquote,
-q {
-    quotes: none;
-}
+blockquote {
+    &::after {
+        content: "”";
+    }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
+    &::before {
+        content: "“";
+    }
 }
 
 table {
