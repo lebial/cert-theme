@@ -8,20 +8,32 @@ function render_partners()
 }
 ?>
 
-<section class="trusted__partner__section w-full ">
-  <div class=" w-10/12 mx-auto max-w-4xl pt-12 mb-0 lg:mb-4 flex justify-center">
-    <h2 class="font-normal text-3xl lg:text-5xl text-center text-dark-blue-background">
-      <?php the_field('first_main_title_section') ?><br>
-      <span class="typed font-bold"></span><br>
-      <span><?php the_field('second_main_title_section') ?></span>
-    </h2>
+<section class="trusted__partner__section w-full flex flex-col lg:flex-row py-24">
+  <div class="w-full lg:w-1/2 flex justify-center lg:justify-end mb-8">
+    <div class="mb-0 lg:mb-4 w-7/12 mr-0 lg:mr-12">
+      <h2 class="font-normal text-3xl xl:text-5xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left">
+        <?php the_field('first_main_title_section') ?><br>
+        <span class="typed font-bold"></span><br>
+        <span><?php the_field('second_main_title_section') ?></span>
+      </h2>
 
-    <div id="string-text">
-      <?php render_partners() ?>
+      <div id="string-text">
+        <?php render_partners() ?>
+      </div>
+      <p class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0" style="color: #180f36;"><?php echo strip_tags(get_field('description'), '<q><blockquote><br>') ?></p>
+    </div>
+  </div>
+  <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+    <div class="w-7/12 flex flex-col lg:justify-center ml-0 lg:ml-12 relative">
+      <button class="second_video_play_button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 132 130" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M67 130C107.869 130 132 104.317 132 64C132 23.6832 107.869 0 67 0C26.1309 0 0 23.6832 0 64C0 104.317 26.1309 130 67 130ZM51.75 91.0478L96 65.5L51.75 39.9522V91.0478Z" fill="white" fill-opacity="0.6" />
+        </svg>
+      </button>
+      <video class="home__secondary__video object-cover w-full rounded-xl shadow-lg">
+        <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
+      </video>
     </div>
   </div>
 
-  <div class="credibility__body w-11/12 md:w-10/12 lg:w-8/12 2xl:w-7/12 mx-auto pb-12 flex justify-center">
-    <p class="text-center text-dark-blue-background max-w-none" style="color: #180f36;"><?php echo strip_tags(get_field('description')) ?></p>
-  </div>
 </section>

@@ -46,6 +46,8 @@ Here are the templates for the new pages, which are using the files from the com
 
 - **single_new_version.php:** This file is used to update or change the posts template.
 
+- **functions.php:** This file hosts common functions shared within all php files and the wordpress loop.
+
 ## Commands
 
 Installs dependencies.
@@ -57,7 +59,7 @@ $ npm install
 $ npm start     
 ```
 
-Generates the zip theme file certilytics.zip and this is used in dev, staging and prod.  
+Generates the zip theme file `certilytics.zip` and this is used in dev, staging and prod.  
 The generated file lives under `./packaged/`
 ```
 $ npm run bundle 
