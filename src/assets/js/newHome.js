@@ -166,11 +166,11 @@ jQuery(document).ready(function ($) {
 
     button.click(function () {
       video.get(0).play();
-      $(this).hide();
+      $(this).parent().hide();
       $(video.get(0)).attr('controls', true);
 
       video.get(0).addEventListener('pause', function () {
-        $(button).show();
+        $(button).parent().show();
         $(video.get(0)).attr('controls', false);
       });
     });
