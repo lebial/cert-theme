@@ -37,7 +37,7 @@ $quote = get_field('main_quote');
         </button>
       </div>
       <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg">
-        <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
+        <source src="<?php the_field('home_main_video_url') ?>" type="video/mp4">
       </video>
     </div>
   </div>
