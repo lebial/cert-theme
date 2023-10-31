@@ -164,14 +164,24 @@ jQuery(document).ready(function ($) {
     const video = $('.home__secondary__video');
     const button = $('.second_video_play_button');
 
+    video.get(0).onseeking = function () {
+      this.play();
+      $(this).attr('controls', true);
+      $(this).prev().hide();
+    };
+
+
     button.click(function () {
       video.get(0).play();
       $(this).parent().hide();
       $(video.get(0)).attr('controls', true);
 
-      video.get(0).addEventListener('pause', function () {
+      video.get(0).addEventListener('pause', function (ev) {
+        ev.preventDefault();
         $(button).parent().show();
-        $(video.get(0)).attr('controls', false);
+        if (!this.seeking) {
+          $(video.get(0)).attr('controls', false);
+        }
       });
     });
   };

@@ -22,9 +22,9 @@ $quote = get_field('main_quote');
         <?php render_partners() ?>
       </div>
       <!-- <p class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0" style="color: #180f36;"><?php echo strip_tags(get_field('description'), '<span><q><blockquote><br><strong>') ?></p> -->
-      <p class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0 text-lg mb-8"><?php echo $quote[0]['body'] ?></p>
+      <p class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0 text-lg mb-8 font-light"><?php echo $quote[0]['body'] ?></p>
       <div class="w-20 h-1 bg-primary mb-4"></div>
-      <p class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0 text-xl font-bold"><?php echo $quote[0]['author'] ?></p>
+      <p class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0 text-xl font-normal"><?php echo $quote[0]['author'] ?></p>
     </div>
   </div>
   <div class="w-full h-full lg:w-1/2 flex justify-center lg:justify-start ">
@@ -36,7 +36,7 @@ $quote = get_field('main_quote');
           </svg>
         </button>
       </div>
-      <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg">
+      <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg" poster="<?php the_field('home_main_video_thumbnail') ?>">
         <source src="<?php the_field('home_main_video_url') ?>" type="video/mp4">
       </video>
     </div>
