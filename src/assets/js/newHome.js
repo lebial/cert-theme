@@ -161,26 +161,34 @@ jQuery(document).ready(function ($) {
   }
 
   function handleSecondVideo() {
-    const video = $('.home__secondary__video');
+    const videos = document.querySelectorAll('.home__secondary__video');
     const button = $('.second_video_play_button');
 
-    video.get(0).onseeking = function () {
-      this.play();
-      $(this).attr('controls', true);
-      $(this).prev().hide();
-    };
+    videos.forEach(video => {
+      video.onseeking = function () {
+        this.play();
+        $(this).attr('controls', true);
+        $(this).prev().hide();
+      }
+      video.onended = function () {
+        this.load();
+      }
+    });
 
 
     button.click(function () {
-      video.get(0).play();
+      const isMobile = $($(this).parent().parent().parent()).attr('name') === 'mobile_main_video';
+      const videoToPlay = isMobile ? 0 : 1;
+      const currentVideo = videos[videoToPlay];
+      currentVideo.play();
       $(this).parent().hide();
-      $(video.get(0)).attr('controls', true);
+      $(currentVideo).attr('controls', true);
 
-      video.get(0).addEventListener('pause', function (ev) {
+      currentVideo.addEventListener('pause', function (ev) {
         ev.preventDefault();
         $(button).parent().show();
         if (!this.seeking) {
-          $(video.get(0)).attr('controls', false);
+          $(currentVideo).attr('controls', false);
         }
       });
     });
