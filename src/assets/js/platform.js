@@ -264,7 +264,7 @@ jQuery(document).ready(function ($) {
         handleOptionColapse();
         revealDataSlideContent();
         createValidationSlider();
-        // populatePlatformSlide();
+        populatePlatformSlide();
         handleSlideCycle();
         handlePlatformClick();
         addArrowToSlider(".validation__slider");
