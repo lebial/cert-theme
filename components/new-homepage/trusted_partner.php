@@ -9,7 +9,7 @@ function render_partners()
 $quote = get_field('main_quote');
 ?>
 
-<section class="trusted__partner__section w-full flex flex-col lg:items-center lg:flex-row py-24">
+<section class="trusted__partner__section w-full flex flex-col lg:items-center lg:flex-row py-24" id="video_main_section">
   <div class="w-full lg:w-1/2 flex justify-center lg:justify-end mb-8">
     <div class="mb-0 lg:mb-4 w-7/12 mr-0 lg:mr-12">
       <h2 class="font-normal text-3xl xl:text-5xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left">

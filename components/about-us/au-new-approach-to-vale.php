@@ -14,7 +14,7 @@ function render_points()
 ?>
 
 <section class="new_approach_to_value w-full flex flex-col lg:flex-row mt-20 lg:max-h-[552px]">
-  <div class="w-full lg:w-1/2 bg-dark-blue-background mx-auto py-12 lg:pl-24 lg:py-14 px-4">
+  <div class="w-full lg:w-1/2 bg-dark-blue-background mx-auto py-12 lg:pl-8 2xl:pl-24 lg:py-14 px-4">
     <p class="text-white text-3xl lg:text-4xl text-center lg:text-left font-bold ">A New Approach <br class="block lg:hidden"> to Value-Based <br> Decision-Making:</p>
     <div class="points__list pt-14 flex flex-col items-center justify-center">
       <?php render_points(); ?>

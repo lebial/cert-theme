@@ -183,6 +183,7 @@ jQuery(document).ready(function ($) {
       currentVideo.play();
       $(this).parent().hide();
       $(currentVideo).attr('controls', true);
+      $(currentVideo).css('outline', 'none');
 
       currentVideo.addEventListener('pause', function (ev) {
         ev.preventDefault();
