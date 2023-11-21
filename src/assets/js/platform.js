@@ -1,4 +1,5 @@
 import getNavHeight, { createObserver } from "./utils/utils";
+import initPlatform from "./newPlatform";
 
 jQuery(document).ready(function ($) {
     const sliderOptions = {
@@ -277,5 +278,6 @@ jQuery(document).ready(function ($) {
         createQuotesSlider();
         // calculateOptionsGraphicHeight();
         handlePlatformScrollObserver();
+        initPlatform($);
     }
 });

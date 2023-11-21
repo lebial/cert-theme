@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
             //make line visible when animation starts
             target.addEventListener('animationstart', function () {
               $(this).css('visibility', 'visible');
-              target.removeEventListener('animationstart');
+              target.removeEventListener('animationstart', null);
             });
             // toggle animation
             $($(target).parent()[0]).css('visibility', 'visible');

@@ -81,7 +81,7 @@
 
         foreach ($demo_buttons as $button) {
             echo '
-                <button class="text-white transition-all direct__schedule__button duration-300 hover:text-primary mr-5" data-value="' . $button['value'] . '">
+                <button class="text-white transition-all direct__schedule__button duration-300 hover:text-primary mr-5" data-value="' . $button['value'] . '" name="' . $button['text'] . '">
                     ' . $button['text'] . '
                     <span class="w-[20px] pt-[3px] inline-block relative top-[6px]">
                         <svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -171,7 +171,7 @@
             </button>
             <button class="schedule__demo__button nav__schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
 			text-white mr-3 font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary text-xs lg:text-base " type="button">Let's Talk
+			hover:bg-primary text-xs lg:text-base " type="button" name="let's talk">Let's Talk
             </button>
         </div>
 
