@@ -66,6 +66,11 @@
       & .frm_html_container {
         font-size: 11px !important;
         font-family: 'Work Sans';
+
+        & * {
+          font-size: 11px !important;
+          font-family: 'Work Sans';
+        }
       }
 
       & .frm_checkbox {
