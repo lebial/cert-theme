@@ -3,15 +3,15 @@
 ?>
 
 <?php get_header(); ?>
-<?php get_template_part('components/platform/hero-section')
+<?php //get_template_part('components/platform/hero-section')
 ?>
-<?php //get_template_part('components/new-platform/hero-platform') 
+<?php get_template_part('components/new-platform/hero-platform')
 ?>
-<?php //get_template_part('components/new-platform/highlight-video') 
+<?php get_template_part('components/new-platform/highlight-video')
 ?>
-<?php //get_template_part('components/new-platform/highlights-slider') 
+<?php get_template_part('components/new-platform/highlights-slider')
 ?>
-<?php get_template_part('components/platform/platforms')
+<?php //get_template_part('components/platform/platforms')
 ?>
 <?php get_template_part('components/platform/proven-solution') ?>
 <?php //get_template_part('components/platform/data-slides') 
