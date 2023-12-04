@@ -788,3 +788,82 @@ $dot-color: #bdcff5;
         box-shadow: 10014px 0 0 -5px $dot-color;
     }
 }
+
+// new platform styles
+
+.highlight__slider {
+
+    //slick 3d slider styles
+    // & .slick-slide {
+    //     transition: all .3s ease;
+    //     opacity: 1;
+    //     // transition-delay: .5s;
+    //     visibility: visible;
+
+    //     &:not(.slick-active) {
+    //         visibility: hidden;
+    //     }
+
+    //     &.slick-active {
+    //         // opacity: 1;
+    //         // transition-delay: 0;
+    //     }
+    // }
+
+    & .slick-arrow {
+        display: inline-block !important;
+
+        &::before {
+            content: '';
+            display: none;
+        }
+
+        &.slick-prev {
+            left: -40px;
+        }
+
+        & svg {
+            width: 30px;
+        }
+    }
+
+    & .slick-dots {
+        bottom: -80px;
+
+        & .slick-active {
+            & button {
+                &::before {
+                    background-color: $color-red;
+                }
+            }
+        }
+
+        & button {
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: #9e9e9e;
+                border-radius: 50%;
+                opacity: 1;
+            }
+
+        }
+    }
+
+    .platform__highlight__card {
+        perspective: 800px;
+
+        & .platform__highlight__card__body {
+            transition: all .3s ease;
+        }
+
+        & .left__card__rotated {
+            transform: rotate3d(0, 1, 0, 23deg) scaleY(.93);
+        }
+
+        & .right__card__rotated {
+            transform: rotate3d(0, 1, 0, -23deg) scaleY(.93);
+        }
+    }
+}

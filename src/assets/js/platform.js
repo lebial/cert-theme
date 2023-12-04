@@ -270,7 +270,7 @@ jQuery(document).ready(function ($) {
         addArrowToSlider(".validation__slider");
         addArrowToSlider(".quotes__slider");
         addArrowToSlider(".validation__slider");
-        handleAutoCycle();
+        // handleAutoCycle();
         // removeLastLineAnimation();
         changeValidationHeader();
         observeSolutionsData();

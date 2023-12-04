@@ -6,8 +6,8 @@ function render_hightlight_cards()
 
   foreach ($cards as $card) {
     echo '
-    <div class="higlight__card pr-4">
-      <div class=" higlight__card__body flex flex-col items-center w-full bg-dark-background px-8 py-14 rounded-xl">
+    <div class="platform__highlight__card  ">
+      <div class=" platform__highlight__card__body flex flex-col items-center w-full bg-dark-background px-3 py-10 rounded-xl">
         <p class="text-white font-bold text-2xl text-center">250M Lives on Platform</p>
         <div class=" w-32 bg-primary h-px mb-8"></div>
         <p class="text-white font-bold text-lg">Scability is key</p>
@@ -22,8 +22,8 @@ function render_hightlight_cards()
 }
 
 ?>
-<section class="w-full">
-  <div class="highlight__slider max-w-4xl mx-auto">
+<section class="w-full py-28 border-t border-gray-500 border-solid">
+  <div class="highlight__slider max-w-5xl mx-auto">
     <?php render_hightlight_cards() ?>
   </div>
 </section>
