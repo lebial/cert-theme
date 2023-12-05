@@ -1,5 +1,8 @@
+import { makeElementsSameHeight } from "./utils/utils";
+
 function initPlatform($) {
   const sliderSelector = '.highlight__slider';
+  const cardBodySelector = '.platform__highlight__card__body';
   function createHighlightSlider() {
     $(sliderSelector).slick({
       centerMode: true,
@@ -30,20 +33,38 @@ function initPlatform($) {
       $(this).css('opacity', 1);
     });
     //Set the opacity of the first and last partial slides.
-    $(visibleSlides).first().prev().css('opacity', 0);
-    // debugger
-    $($(visibleSlides).get(2)).next().css('opacity', 0);
+    $(visibleSlides).first().prev().animate({ 'opacity': 0 }, 250);
+    $($(visibleSlides).get(2)).next().animate({ 'opacity': 0 }, 250);
   }
 
   function handleSlickOnInit() {
     $(sliderSelector).on('init', function (event, slick) {
       const currentSlide = $(slick.$slides[slick.currentSlide]);
-      const prevCardBody = $(currentSlide.prev()[0]).find('.platform__highlight__card__body');
-      const nextCardBody = $(currentSlide.next()[0]).find('.platform__highlight__card__body');
+      const prevCardBody = $(currentSlide.prev()[0]).find(cardBodySelector);
+      const nextCardBody = $(currentSlide.next()[0]).find(cardBodySelector);
       prevCardBody.addClass('left__card__rotated');
+      prevCardBody.find('img').animate({ opacity: 0 });
       nextCardBody.addClass('right__card__rotated');
+      nextCardBody.find('img').animate({ opacity: 0 });
       setSlideVisibility();
+      makeElementsSameHeight($, '.slick-slide')
     });
+  }
+  function handleInfiniteLastScroll(slick, currentSlide, nextSlide) {
+    if (!currentSlide && nextSlide === slick.slideCount - 1) {
+      $($('[data-slick-index=0]')[0]).find(cardBodySelector).addClass('right__card__rotated');
+      $($('[data-slick-index=0]')[0]).find('img').animate({ opacity: 0 });
+      $($('[data-slick-index=-1]')[0]).find('img').animate({ opacity: 1 });
+      $($('[data-slick-index=-2]')[0]).find(cardBodySelector).addClass('left__card__rotated');
+      $($('[data-slick-index=-2]')[0]).find('img').animate({ opacity: 0 });
+    }
+    if (currentSlide === slick.slideCount - 1 && !nextSlide) {
+      $($('[data-slick-index=5]')[0]).find(cardBodySelector).addClass('right__card__rotated');
+      $($('[data-slick-index=5]')[0]).find('img').animate({ opacity: 0 });
+      $($('[data-slick-index=4]')[0]).find('img').animate({ opacity: 1 });
+      $($('[data-slick-index=3]')[0]).find(cardBodySelector).addClass('left__card__rotated');
+      $($('[data-slick-index=3]')[0]).find('img').animate({ opacity: 0 });
+    }
   }
 
   function handleCustom3DSlider() {
@@ -51,8 +72,19 @@ function initPlatform($) {
       const cardClass = '.platform__highlight__card__body';
       const currentSlideEl = $(slick.$slides[nextSlide]);
       $('.platform__highlight__card__body').removeClass('left__card__rotated right__card__rotated');
+      handleInfiniteLastScroll(slick, currentSlide, nextSlide)
       $(currentSlideEl.prev()[0]).find(cardClass).addClass('left__card__rotated');
+      $(currentSlideEl.prev()[0]).find('img').animate({ opacity: 0 });
       $(currentSlideEl.next()[0]).find(cardClass).addClass('right__card__rotated');
+      $(currentSlideEl.next()[0]).find('img').animate({ opacity: 0 });
+      $(currentSlideEl).find('img').animate({ opacity: 1 });
+      $('.slick-slide').each(function () {
+        $(this).animate({ 'opacity': 1 }, 250);
+      });
+    });
+
+    $(sliderSelector).on('afterChange', function () {
+      setSlideVisibility();
     });
 
   }
