@@ -65,7 +65,7 @@ jQuery(document).ready(function ($) {
   }
 
   // Verify the URL when the page is loaded
-  if (window.location.hash === "#schedule-modal") {
+  if (window.location.hash === "#schedule-meeting") {
     $(".schedule__demo__modal").css("display", "flex").animate({ opacity: 1 });
   }
 
