@@ -15,11 +15,19 @@ jQuery(document).ready(function ($) {
 
     buttons.forEach((button) =>
       $(button).click(function () {
-        const select = document.getElementById('field_meetingoptionsdrop');
-        const dropdownOptions = document.querySelectorAll('#field_meetingoptionsdrop option');
+        const urlActual = window.location.href.split("#")[0];
+        history.pushState({ modal: true }, "", urlActual + "#schedule-meeting");
+        const select = document.getElementById("field_meetingoptionsdrop");
+        if (select) {
+          const dropdownOptions = document.querySelectorAll(
+            "#field_meetingoptionsdrop option"
+          );
+          if (dropdownOptions.length > 1) {
+            select.value = $(dropdownOptions[1]).attr("value");
+          }
+        }
         contactModal.css("display", "flex");
         contactModal.animate({ opacity: 1 });
-        select.value = $(dropdownOptions[1]).attr('value');
       })
     );
     closeButton.click(function () {
@@ -29,6 +37,7 @@ jQuery(document).ready(function ($) {
         form.message.hide();
         form.body.show();
       });
+      history.pushState({ modal: false }, "", window.location.pathname);
     });
 
 
@@ -53,6 +62,11 @@ jQuery(document).ready(function ($) {
       const { body: formBody } = getFormParts();
       formBody.hide();
     });
+  }
+
+  // Verify the URL when the page is loaded
+  if (window.location.hash === "#schedule-meeting") {
+    $(".schedule__demo__modal").css("display", "flex").animate({ opacity: 1 });
   }
 
   handleScheduleFormToggle();
