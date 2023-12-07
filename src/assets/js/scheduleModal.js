@@ -16,7 +16,6 @@ jQuery(document).ready(function ($) {
     buttons.forEach((button) =>
       $(button).click(function () {
         const urlActual = window.location.href.split("#")[0];
-        history.pushState({ modal: true }, "", urlActual + "#schedule-meeting");
         const select = document.getElementById("field_meetingoptionsdrop");
         if (select) {
           const dropdownOptions = document.querySelectorAll(
@@ -37,7 +36,6 @@ jQuery(document).ready(function ($) {
         form.message.hide();
         form.body.show();
       });
-      history.pushState({ modal: false }, "", window.location.pathname);
     });
 
 

@@ -14,8 +14,8 @@ function render_hightlight_cards()
         <div class="w-full h-full z-20 flex flex-col items-center">
           <p class="text-white font-bold text-2xl text-center">'.$card['card_title'].'</p>
           <div class=" w-32 bg-primary h-px mb-8"></div>
-          <p class="text-white font-bold text-lg">'.$card['card_subtitle'].'</p>
-          <p class="text-white text-base text-center">
+          <p class="text-white font-bold text-xl">'.$card['card_subtitle'].'</p>
+          <p class="text-white text-base text-center px-6">
           '.$card['card_content'].'
           </p>
         </div>
