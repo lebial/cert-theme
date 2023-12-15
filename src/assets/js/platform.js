@@ -281,3 +281,10 @@ jQuery(document).ready(function ($) {
         initPlatform($);
     }
 });
+
+// handleAutoCycle();
+// removeLastLineAnimation();
+// setHeroMarginTop();
+// populatePlatformSlide();
+// calculateOptionsGraphicHeight();
+// handlePlatformScrollObserver();

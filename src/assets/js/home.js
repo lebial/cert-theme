@@ -77,7 +77,7 @@ jQuery(document).ready(function ($) {
     addArrowToSlider(".insights-carousel");
     addArrowToSlider(".bucket__slider");
     // addNewTabOnScheduleMenuButton();
-    handleVidModalClose();
+    // handleVidModalClose();
     showSuperChargeText();
     makeButtonsSameWidth();
 });

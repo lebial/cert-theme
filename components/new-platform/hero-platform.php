@@ -19,7 +19,7 @@ function render_custom_menu_items()
     <div class="flex flex-col items-center justify-center text-center">
       <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text hidden lg:block">
         <?php the_field('head_line') ?> <br>
-        <span class="text-4xl text-primary font-normal">Powered by Brainstorm AI</span>
+        <span class="text-4xl text-primary font-normal">Powered by Brainstorm AI&reg;</span>
       </h1>
       <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text block lg:hidden"><?php the_field('head_line') ?></h1>
       <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal px-4 lg:px-0"><?php the_field('hero_sub_heading') ?></h2>

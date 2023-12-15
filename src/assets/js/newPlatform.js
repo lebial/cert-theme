@@ -3,6 +3,20 @@ import { makeElementsSameHeight } from "./utils/utils";
 function initPlatform($) {
   const sliderSelector = '.highlight__slider';
   const cardBodySelector = '.platform__highlight__card__body';
+  const nextArrow = `
+    <button type="button" class="slick-next !inline-block">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="69" viewBox="0 0 40 69" fill="none">'
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4664 1.51669C5.09958 0.149872 2.88351 0.149872 1.51669 1.51669C0.149872 2.88358 0.149872 5.09964 1.51669 6.46646L29.7027 34.6525L1.47482 62.8805C0.108002 64.2473 0.108002 66.4633 1.47482 67.8302C2.84164 69.1971 5.05771 69.1971 6.42453 67.8302L34.6521 39.6018L39.305 34.9497L39.6018 34.6521L6.4664 1.51669Z" fill="#787878"/>
+      </svg>
+    </button>`;
+
+  const prevArrow = `
+  <button type="button" class="slick-prev ">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="69" viewBox="0 0 40 69" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M33.5851 67.8302C34.9519 69.1971 37.168 69.1971 38.5348 67.8302C39.9016 66.4633 39.9016 64.2473 38.5348 62.8805L10.3488 34.6944L38.5767 6.46646C39.9435 5.09964 39.9435 2.88358 38.5767 1.51675C37.2099 0.149872 34.9938 0.149871 33.627 1.51675L5.39945 29.7451L0.746493 34.3972L0.449741 34.6949L33.5851 67.8302Z" fill="#787878"/>
+    </svg>
+  </button>`;
+
   function createHighlightSlider() {
     $(sliderSelector).slick({
       centerMode: true,
@@ -11,17 +25,8 @@ function initPlatform($) {
       centerPadding: '60px',
       dots: true,
       arrows: true,
-      nextArrow: `<button type="button" class="slick-next ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="69" viewBox="0 0 40 69" fill="none">'
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4664 1.51669C5.09958 0.149872 2.88351 0.149872 1.51669 1.51669C0.149872 2.88358 0.149872 5.09964 1.51669 6.46646L29.7027 34.6525L1.47482 62.8805C0.108002 64.2473 0.108002 66.4633 1.47482 67.8302C2.84164 69.1971 5.05771 69.1971 6.42453 67.8302L34.6521 39.6018L39.305 34.9497L39.6018 34.6521L6.4664 1.51669Z" fill="#787878"/>
-                    </svg>
-                  </button>`,
-      prevArrow: `<button type="button" class="slick-prev ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="69" viewBox="0 0 40 69" fill="none">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M33.5851 67.8302C34.9519 69.1971 37.168 69.1971 38.5348 67.8302C39.9016 66.4633 39.9016 64.2473 38.5348 62.8805L10.3488 34.6944L38.5767 6.46646C39.9435 5.09964 39.9435 2.88358 38.5767 1.51675C37.2099 0.149872 34.9938 0.149871 33.627 1.51675L5.39945 29.7451L0.746493 34.3972L0.449741 34.6949L33.5851 67.8302Z" fill="#787878"/>
-                    </svg>
-                  </button>
-      `,
+      nextArrow,
+      prevArrow,
     });
   }
 
@@ -89,11 +94,43 @@ function initPlatform($) {
 
   }
 
+  function handlePlatformButtonClick(event) {
+    const selected = this.name;
+    const activeBtnClasses = 'active__button';
+    const activeContainerClasses = 'active__details container__animated';
+    //buttons management
+    $('.platform__detail__button').removeClass(activeBtnClasses);
+    $(this).parent().addClass(activeBtnClasses);
+
+    //data containers logic
+    $('.details__container').removeClass(activeContainerClasses);
+    const selectedContainer = $(`.details__container[name="${selected}"]`)
+    $(selectedContainer).addClass(activeContainerClasses);
+  }
+
+  function handlePlatformsDetails() {
+    const buttons = document.querySelectorAll('.platform__detail__button button');
+    buttons.forEach(button => $(button).click(handlePlatformButtonClick));
+  }
+
+  function createPlatformInsightsSlider() {
+    $('.platform__insights__slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+      arrows: true,
+      nextArrow,
+      prevArrow
+    });
+  }
+
 
 
   handleSlickOnInit();
   createHighlightSlider();
   handleCustom3DSlider();
+  handlePlatformsDetails();
+  createPlatformInsightsSlider();
 }
 
 export default initPlatform;
