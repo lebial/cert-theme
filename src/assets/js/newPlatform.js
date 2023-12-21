@@ -1,6 +1,7 @@
 import { makeElementsSameHeight } from "./utils/utils";
 
 function initPlatform($) {
+  const insightsSliderSelector = '.platform__insights__slider';
   const sliderSelector = '.highlight__slider';
   const cardBodySelector = '.platform__highlight__card__body';
   const nextArrow = `
@@ -17,6 +18,16 @@ function initPlatform($) {
     </svg>
   </button>`;
 
+  function handleHeroPlatformOption() {
+    const buttons = document.querySelectorAll('.platform__hero__option__button');
+    buttons.forEach(btn => {
+      $(btn).click(function () {
+        const { name } = this;
+        $(`.platform__detail__button [name="${name}"]`).click();
+      });
+    });
+  }
+
   function createHighlightSlider() {
     $(sliderSelector).slick({
       centerMode: true,
@@ -27,6 +38,15 @@ function initPlatform($) {
       arrows: true,
       nextArrow,
       prevArrow,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        }
+      ]
     });
   }
 
@@ -52,7 +72,7 @@ function initPlatform($) {
       nextCardBody.addClass('right__card__rotated');
       nextCardBody.find('img').animate({ opacity: 0 });
       setSlideVisibility();
-      makeElementsSameHeight($, '.slick-slide')
+      makeElementsSameHeight($, `${sliderSelector} .slick-slide`)
     });
   }
   function handleInfiniteLastScroll(slick, currentSlide, nextSlide) {
@@ -114,22 +134,39 @@ function initPlatform($) {
   }
 
   function createPlatformInsightsSlider() {
-    $('.platform__insights__slider').slick({
+    $(insightsSliderSelector).slick({
       slidesToShow: 3,
       slidesToScroll: 1,
       infinite: true,
       arrows: true,
       nextArrow,
-      prevArrow
+      prevArrow,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        }
+      ]
+    });
+  }
+
+  function handleInsightsOnInit() {
+    $(insightsSliderSelector).on('init', function (event, slick) {
+      makeElementsSameHeight($, `${insightsSliderSelector} .slick-slide`);
     });
   }
 
 
 
+  handleHeroPlatformOption();
   handleSlickOnInit();
   createHighlightSlider();
   handleCustom3DSlider();
   handlePlatformsDetails();
+  handleInsightsOnInit();
   createPlatformInsightsSlider();
 }
 
