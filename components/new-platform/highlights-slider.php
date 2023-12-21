@@ -1,51 +1,33 @@
-<section class="w-full">
-  <div class="highlight__slider max-w-7xl mx-auto">
-    <div class="higlight__card ">
-      <div class=" higlight__card__body flex flex-col items-center w-96 bg-dark-background px-8 py-14 rounded-xl">
-        <p class="text-white font-bold text-4xl text-center">250M Lives on Platform</p>
-        <div class=" w-32 bg-primary h-px mb-8"></div>
-        <p class="text-white font-bold">Scability is key</p>
-        <p class="text-white text-lg text-center">
-          From Day 1, we were tasked with having to process a vast amount of data through our platform.
-          We can scale our cloud-based platform to meet the demands and size of any data
-        </p>
-      </div>
-    </div>
+<?php
 
-    <div class="higlight__card ">
-      <div class=" higlight__card__body flex flex-col items-center w-96 bg-dark-background px-8 py-14 rounded-xl">
-        <p class="text-white font-bold text-4xl text-center">250M Lives on Platform</p>
-        <div class=" w-32 bg-primary h-px mb-8"></div>
-        <p class="text-white font-bold">Scability is key</p>
-        <p class="text-white text-lg text-center">
-          From Day 1, we were tasked with having to process a vast amount of data through our platform.
-          We can scale our cloud-based platform to meet the demands and size of any data
-        </p>
-      </div>
-    </div>
+function render_hightlight_cards()
+{
+  $platform_cards = get_field('highlight_cards');
 
-    <div class="higlight__card ">
-      <div class=" higlight__card__body flex flex-col items-center w-96 bg-dark-background px-8 py-14 rounded-xl">
-        <p class="text-white font-bold text-4xl text-center">250M Lives on Platform</p>
-        <div class=" w-32 bg-primary h-px mb-8"></div>
-        <p class="text-white font-bold">Scability is key</p>
-        <p class="text-white text-lg text-center">
-          From Day 1, we were tasked with having to process a vast amount of data through our platform.
-          We can scale our cloud-based platform to meet the demands and size of any data
-        </p>
+  foreach ($platform_cards as $card) {
+    echo '
+    <div class="platform__highlight__card h-full">
+      <div class=" platform__highlight__card__body shadow-lg relative flex flex-col items-center w-full bg-dark-blue-background px-3 py-10 rounded-xl h-full overflow-hidden">
+        <div class="w-full h-full absolute top-0 left-0 bg-dark-blue-background before:content-['."''".'] before:block before:w-full before:h-full before:bg-dark-blue-background before:bg-opacity-70 before:absolute before:top-0 before:z-20">
+          <img src="'.$card['card_background'].'" alt="card background" class="card__background absolute top-0 left-0 w-full h-full object-cover z-10 "/>
+        </div>
+        <div class="w-full h-full z-20 flex flex-col items-center">
+          <p class="text-white font-bold text-xl lg:text-2xl text-center mb-2 lg:mb-8">'.$card['card_title'].'</p>
+          <div class=" w-32 bg-primary h-px mb-2 lg:mb-8"></div>
+          <p class="text-white font-bold text-lg lg:text-xl mb-2 lg:mb-8">'.$card['card_subtitle'].'</p>
+          <p class="text-white text-sm lg:text-base text-center px-6 mb-2 lg:mb-8">
+          '.$card['card_content'].'
+          </p>
+        </div>
       </div>
     </div>
-    <div class="higlight__card ">
-      <div class=" higlight__card__body flex flex-col items-center w-96 bg-dark-background px-8 py-14 rounded-xl">
-        <p class="text-white font-bold text-4xl text-center">250M Lives on Platform</p>
-        <div class=" w-32 bg-primary h-px mb-8"></div>
-        <p class="text-white font-bold">Scability is key</p>
-        <p class="text-white text-lg text-center">
-          From Day 1, we were tasked with having to process a vast amount of data through our platform.
-          We can scale our cloud-based platform to meet the demands and size of any data
-        </p>
-      </div>
-    </div>
+    ';
+  }
+}
 
+?>
+<section class="w-full py-28 border-t border-gray-500 border-solid">
+  <div class="highlight__slider max-w-5xl mx-auto">
+    <?php render_hightlight_cards() ?>
   </div>
 </section>

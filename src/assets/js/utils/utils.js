@@ -73,4 +73,25 @@ function makeElementsSameWidth($, selector) {
     });
 }
 
-export { getNavHeight as default, waitForElement, addArrowToSlider, createObserver, makeElementsSameHeight, makeElementsSameWidth };
+function triggerGtagEvent(eventName, options = null) {
+    if (typeof gtag === 'function') {
+        gtag('event', eventName, options);
+    }
+}
+
+function getVideoProgressPercentages(video) {
+    const { currentTime, duration } = video;
+    const playedPercent = currentTime * 100 / duration;
+    return { 'current_time': currentTime, 'played_percent': playedPercent.toFixed(2) }
+}
+
+export {
+    getNavHeight as default,
+    waitForElement,
+    addArrowToSlider,
+    createObserver,
+    makeElementsSameHeight,
+    makeElementsSameWidth,
+    triggerGtagEvent,
+    getVideoProgressPercentages
+};

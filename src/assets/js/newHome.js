@@ -1,3 +1,5 @@
+import { getVideoProgressPercentages, triggerGtagEvent } from "./utils/utils";
+
 jQuery(document).ready(function ($) {
   // let currentHeroButton = "Health Plans";
   const firstButton = "report-0";
@@ -170,8 +172,14 @@ jQuery(document).ready(function ($) {
         $(this).attr('controls', true);
         $(this).prev().hide();
       }
-      video.onended = function () {
+      video.onseeked = function (ev) {
+        const { target } = ev;
+        triggerGtagEvent(`${$(target).attr('name')}_video_paused`, getVideoProgressPercentages(target))
+      }
+      video.onended = function (ev) {
         this.load();
+        const { target } = ev;
+        triggerGtagEvent(`${$(target).attr('name')}_video_endend`);
       }
     });
 
@@ -181,15 +189,18 @@ jQuery(document).ready(function ($) {
       const videoToPlay = isMobile ? 0 : 1;
       const currentVideo = videos[videoToPlay];
       currentVideo.play();
+      triggerGtagEvent(`${$(currentVideo).attr('name')}_video_started`);
       $(this).parent().hide();
       $(currentVideo).attr('controls', true);
       $(currentVideo).css('outline', 'none');
 
       currentVideo.addEventListener('pause', function (ev) {
+        const { target } = ev;
         ev.preventDefault();
         $(button).parent().show();
         if (!this.seeking) {
           $(currentVideo).attr('controls', false);
+          triggerGtagEvent(`${$(target).attr('name')}_video_paused`, getVideoProgressPercentages(target))
         }
       });
     });

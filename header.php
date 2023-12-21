@@ -175,7 +175,7 @@
             </button>
         </div>
 
-        <div class=" main__menu__sidebar w-[63vw] h-[80vh] absolute top-[70px] lg:top-[80px] -right-full flex flex-col shadow-xl items-start xl:items-center justify-between lg:justify-start bg-white">
+        <div class=" main__menu__sidebar w-[80vw] absolute top-0 lg:top-[80px] -right-full flex flex-col shadow-xl items-start xl:items-center justify-between lg:justify-start bg-white">
             <div class="w-full lg:px-10">
                 <div class="w-full pt-4 lg:pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-4">
                     <button class="menu__side__bar__close" type="button">
@@ -187,11 +187,11 @@
                 </div>
             </div>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
-            <div class="w-full flex justify-end pr-10 mb-5 mt-auto">
+            <div class="w-full flex justify-end items-center pr-10 mb-5 mt-0 lg:mt-16">
                 <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
                     <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
                 </a>
-                <a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
+                <a class="w-5" href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
                     <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 fill-gray-header" alt="">
                 </a>
             </div>

@@ -6,7 +6,7 @@
       </svg>
     </button>
   </div>
-  <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg " style="outline: 3px solid white; outline-offset: -2px;" poster="<?php the_field('home_main_video_thumbnail') ?>" height="432" width="576">
+  <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg " style="outline: 3px solid white; outline-offset: -2px;" poster="<?php the_field('home_main_video_thumbnail') ?>" height="432" width="576" name="home">
     <source src="<?php the_field('home_main_video_url') ?>" type="video/mp4">
   </video>
 </div>

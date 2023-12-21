@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-  function setAnimationContentHeight () {
+  function setAnimationContentHeight() {
     const shapesContainerHeight = document.querySelector('.shapes-container').offsetHeight;
     const navHeight = document.querySelector('header').offsetHeight;
     const totalHeight = shapesContainerHeight + navHeight;
@@ -11,5 +11,5 @@ jQuery(document).ready(function ($) {
 
   //function calls;
 
-  setAnimationContentHeight();
+  // setAnimationContentHeight();
 });

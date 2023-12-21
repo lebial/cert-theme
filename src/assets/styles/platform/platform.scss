@@ -788,3 +788,188 @@ $dot-color: #bdcff5;
         box-shadow: 10014px 0 0 -5px $dot-color;
     }
 }
+
+// new platform styles
+
+//slider section
+.highlight__slider {
+
+    //slick 3d slider styles
+
+    & .slick-arrow {
+        display: inline-block !important;
+
+        &::before {
+            content: '';
+            display: none;
+        }
+
+        &.slick-prev {
+            left: -40px;
+        }
+
+        & svg {
+            width: 30px;
+        }
+    }
+
+    & .slick-dots {
+        bottom: -80px;
+
+        & .slick-active {
+            & button {
+                &::before {
+                    background-color: $color-red;
+                }
+            }
+        }
+
+        & button {
+            &::before {
+                content: '';
+                width: 80%;
+                height: 80%;
+                background-color: #9e9e9e;
+                border-radius: 50%;
+                opacity: 1;
+            }
+
+        }
+    }
+
+    .platform__highlight__card {
+        perspective: 800px;
+
+        & .platform__highlight__card__body {
+            transition: all .3s ease;
+        }
+
+        & .left__card__rotated {
+            transform: rotate3d(0, 1, 0, 23deg) scaleY(.70);
+        }
+
+        & .right__card__rotated {
+            transform: rotate3d(0, 1, 0, -23deg) scaleY(.70);
+        }
+    }
+}
+
+//Platforms details section
+
+.platforms__main__container {
+    background: linear-gradient(180deg, rgba(24, 15, 54, 1) 0%, rgba(24, 15, 54, 1) 63%, rgba(24, 15, 54, 0) 100%), var(--section-bg-img);
+    background-size: cover;
+}
+
+.platform__detail__button {
+    &.active__button {
+        & button {
+            opacity: 1;
+        }
+
+        & svg {
+            opacity: 1;
+            right: -8px;
+        }
+    }
+}
+
+.details__container {
+    display: none;
+
+    &.active__details {
+        display: grid;
+    }
+
+    & .detail__card {
+        transition: all ease 200ms;
+    }
+
+    &.container__animated {
+        & .detail__card {
+            animation-name: animateIn;
+            animation-duration: 350ms;
+            animation-delay: calc(var(--animation-order) * 100ms);
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
+    }
+}
+
+//card animation
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.detail__card {
+    animation-duration: 300ms;
+    animation-delay: calc(var(--animation-order) * 100ms);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+
+    &.detail__card__animated {
+        animation-name: animateIn;
+    }
+}
+
+.platform__insights__slider {
+    & button {
+        display: block !important;
+        top: 35%;
+
+        &.slick-prev {
+
+            left: 30px;
+            z-index: 20;
+
+            @media #{$desktopMD} {
+                left: -40px;
+            }
+        }
+
+        &.slick-next {
+            right: 13px;
+            z-index: 20;
+
+            @media #{$desktopMD} {
+                left: -50px;
+            }
+        }
+
+        & svg {
+            width: 16px;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    & .slick-track {
+        padding: 20px;
+
+        & .slick-slide {
+            transition: all .3s ease;
+
+            &>div {
+                width: 80%;
+
+                @media #{$desktopMD} {
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+
+
+}

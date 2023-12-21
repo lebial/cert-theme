@@ -264,20 +264,27 @@ jQuery(document).ready(function ($) {
         handleOptionColapse();
         revealDataSlideContent();
         createValidationSlider();
-        populatePlatformSlide();
+        // populatePlatformSlide();
         handleSlideCycle();
         handlePlatformClick();
         addArrowToSlider(".validation__slider");
         addArrowToSlider(".quotes__slider");
         addArrowToSlider(".validation__slider");
-        handleAutoCycle();
+        // handleAutoCycle();
         // removeLastLineAnimation();
         changeValidationHeader();
         observeSolutionsData();
         handleProvenNumbersIncreaseAnimation();
         createQuotesSlider();
         // calculateOptionsGraphicHeight();
-        handlePlatformScrollObserver();
+        // handlePlatformScrollObserver();
         initPlatform($);
     }
 });
+
+// handleAutoCycle();
+// removeLastLineAnimation();
+// setHeroMarginTop();
+// populatePlatformSlide();
+// calculateOptionsGraphicHeight();
+// handlePlatformScrollObserver();
