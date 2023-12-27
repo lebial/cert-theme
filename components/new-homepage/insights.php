@@ -2,7 +2,7 @@
 function render_new_cards()
 {
     $selected_posts = get_field('news_and_insights_posts');
-    $recent_posts = get_most_recent_posts();
+    $recent_posts = get_most_recent_posts(3);
     $related_posts = get_recent_or_selected_posts($recent_posts, $selected_posts);
     foreach ($related_posts as $tmp_post_id) {
         echo '<div class="px-8 py-0 lg:py-4 sm:w-1/2 lg:w-1/3 lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-105 lg:duration-300">';

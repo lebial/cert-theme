@@ -1,13 +1,13 @@
 <?php
 function render_insights_slider() {
   $selected_posts = get_field('ai_insights_posts');
-  $recent_posts = get_most_recent_posts();
+  $recent_posts = get_most_recent_posts(6);
   $posts =  get_recent_or_selected_posts($recent_posts, $selected_posts);
   foreach ($posts as $post) {
     echo '
       <div class="h-full">
-        <a href="#" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 p-2 mr-6 ">
-          <div class="absolute top-0 h-full roudned-xl w-full before:content-['."''".'] before:block before:w-full before:h-full before:bg-blue-500 before:bg-opacity-70 before:absolute before:top-0 before:z-20 before:rounded-xl">
+        <a href="'.get_permalink($post).'" target="_blank" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 p-2 mr-6 shadow-lg">
+          <div class="absolute top-0 h-full roudned-xl w-full before:content-['."''".'] before:block before:w-full before:h-full before:bg-blue-500 before:bg-opacity-80 before:absolute before:top-0 before:z-20 before:rounded-xl">
             <img src="'.get_field('post_hero_image', $post).'" alt="ai insights card background" class="absolute top-0 left-0 w-full h-full object-cover z-10 rounded-xl"/>
           </div>
           <div class="w-full h-full z-20 flex flex-col items-center">
@@ -41,7 +41,7 @@ function render_insights_slider() {
               </g>
             </svg>
             <p class="text-white text-base text-center">'.get_the_title($post).'</p>
-            <p class="text-white">
+            <p class="text-white mt-auto">
               Read Article
               <svg class="w-4 h-3 inline-block transition-all duration-200 group-hover:translate-x-1" width="40" height="69" viewBox="0 0 40 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.0167 1.02513C4.64987 -0.341709 2.43379 -0.341709 1.06696 1.02513C-0.299879 2.39196 -0.299879 4.60804 1.06696 5.97487L29.253 34.161L1.02513 62.3889C-0.341709 63.7557 -0.341709 65.9718 1.02513 67.3386C2.39196 68.7054 4.60804 68.7054 5.97487 67.3386L38.8553 34.4581L38.8549 34.4577L39.1521 34.1605L6.0167 1.02513Z" fill="#F4695B"/>
@@ -56,7 +56,7 @@ function render_insights_slider() {
 ?>
 <section class="ai__insights w-full py-14">
   <div class="w-full flex flex-col items-center">
-    <p class=" text-dark-blue-background text-2xl lg:text-4xl reveal-text font-bold">AI Insights by Certilytics</p>
+    <p class=" text-dark-blue-background text-2xl lg:text-4xl reveal-text font-normal">AI Insights by Certilytics</p>
     <p class="text-dark-blue-background text-lg text-center">
       Our experts share how AI is changing healthcare and how Certilytics is commited 
       to leading the way in making people healthier and healthcare more affordable.

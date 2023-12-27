@@ -44,10 +44,15 @@ function initPlatform($) {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
+            centerMode: true,
           },
         }
       ]
     });
+  }
+
+  function handleMobileVisibility(visibleSlide) {
+
   }
 
   function setSlideVisibility() {
@@ -58,8 +63,11 @@ function initPlatform($) {
       $(this).css('opacity', 1);
     });
     //Set the opacity of the first and last partial slides.
-    $(visibleSlides).first().prev().animate({ 'opacity': 0 }, 250);
-    $($(visibleSlides).get(2)).next().animate({ 'opacity': 0 }, 250);
+    if (visibleSlides.length >= 3) {
+      $(visibleSlides).first().prev().animate({ 'opacity': 0 }, 250);
+      $($(visibleSlides).get(2)).next().animate({ 'opacity': 0 }, 250);
+    }
+
   }
 
   function handleSlickOnInit() {

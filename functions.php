@@ -340,10 +340,11 @@ function get_realted_posts_by_tags()
     return $related_posts;
 }
 
-function get_most_recent_posts()
+function get_most_recent_posts($number_posts)
 {
+    $posts_to_get = $number_posts ?? '3';
     $recent_posts = wp_get_recent_posts(array(
-        'numberposts' => '3',
+        'numberposts' => $posts_to_get,
         'post_status' => 'publish'
     ));
 
