@@ -23,7 +23,7 @@ function render_detail_cards() {
     echo '<div class="details__cards '.$active_class.' grid grid-cols-1 lg:grid-cols-3 gap-4 pt-5 lg:pr-14">';
     foreach ($data['cards'] as $card_idx => $card) {
       $card_order = $card_idx + 1;
-      echo '<a href="'.$card['href'].'" class="detail__card border border-white border-solid rounded-lg p-5 lg:min-h-[250px] group transition-all duration-300 hover:scale-105 " style="--animation-order: '.$card_order.';">
+      echo '<a href="'.$card['href'].'" target="_blank" class="detail__card border border-white border-solid rounded-lg py-5 px-4 lg:min-h-[250px] group transition-all duration-300 hover:scale-105 " style="--animation-order: '.$card_order.';">
               <p class="text-white font-bold mb-0 leading-snug">
               '.$card['title'].'
                 <svg class="w-[10px] h-3 inline-block transition-all duration-200 group-hover:translate-x-1" width="40" height="69" viewBox="0 0 40 69" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -805,7 +805,21 @@ $dot-color: #bdcff5;
         }
 
         &.slick-prev {
-            left: -40px;
+            left: 3%;
+            z-index: 40;
+
+            @media #{$desktopMD} {
+                left: -40px;
+            }
+        }
+
+        &.slick-next {
+            z-index: 40;
+            right: 6%;
+
+            @media #{$desktopMD} {
+                right: -25px;
+            }
         }
 
         & svg {
@@ -845,11 +859,11 @@ $dot-color: #bdcff5;
         }
 
         & .left__card__rotated {
-            transform: rotate3d(0, 1, 0, 23deg) scaleY(.70);
+            transform: rotate3d(0, 1, 0, 23deg) scaleY(.75);
         }
 
         & .right__card__rotated {
-            transform: rotate3d(0, 1, 0, -23deg) scaleY(.70);
+            transform: rotate3d(0, 1, 0, -23deg) scaleY(.75);
         }
     }
 }
@@ -938,7 +952,7 @@ $dot-color: #bdcff5;
             z-index: 20;
 
             @media #{$desktopMD} {
-                left: -50px;
+                right: -50px;
             }
         }
 
