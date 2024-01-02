@@ -25,7 +25,7 @@ function render_cards()
 }
 ?>
 
-<section class="logistics__data__processing__section w-full flex justify-center items-center flex-col bg-center md:bg-left bg-cover min-h-[40vh] lg:min-h-[45vh]" style="background-image:url(<?php the_field('data_processing_background') ?>); background-size: cover; margin-top: 0;">
+<section class="logistics__data__processing__section w-full flex justify-center items-center flex-col bg-center md:bg-left bg-cover min-h-[40vh] lg:min-h-[45vh]" style="--logistics-section-bg-img: url('<?php the_field('data_processing_background')?>'); ">
     <div class="w-full text-white text-center pt-16">
         <h3 class="text-xl md:text-4xl"><?php the_field('data_processing_title') ?></h3>
     </div>

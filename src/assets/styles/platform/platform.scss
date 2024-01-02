@@ -816,6 +816,7 @@ $dot-color: #bdcff5;
         &.slick-next {
             z-index: 40;
             right: 6%;
+            top: 49.4%;
 
             @media #{$desktopMD} {
                 right: -25px;
@@ -859,11 +860,11 @@ $dot-color: #bdcff5;
         }
 
         & .left__card__rotated {
-            transform: rotate3d(0, 1, 0, 23deg) scaleY(.75);
+            transform: rotate3d(0, 1, 0, 23deg) scaleY(.80);
         }
 
         & .right__card__rotated {
-            transform: rotate3d(0, 1, 0, -23deg) scaleY(.75);
+            transform: rotate3d(0, 1, 0, -23deg) scaleY(.80);
         }
     }
 }
