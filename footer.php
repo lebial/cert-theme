@@ -108,7 +108,7 @@ function render_link_groups()
 				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-white" alt="">
 			</a>
 			<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
-				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-6 fill-white" alt="">
+				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-5 fill-white" alt="">
 			</a>
 		</div>
 	</div>
@@ -123,7 +123,7 @@ function render_link_groups()
 					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-white" alt="">
 				</a>
 				<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
-					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-6 fill-white" alt="">
+					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-5 fill-white" alt="">
 				</a>
 
 			</div>
