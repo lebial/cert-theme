@@ -14,7 +14,7 @@
                 <?php the_field('description') ?>
             </p>
         </div>
-        <div class="w-8/12 mx-auto flex justify-center mt-12 mb-8">
+        <div class="w-8/12 mx-auto flex justify-center mt-12 mb-8 space-x-8">
             <?php render_logos() ?>
         </div>
     </div>
