@@ -9,4 +9,3 @@
 <?php get_template_part('components/logistics-suite/security-framework') ?>
 <?php get_template_part('components/platform/contact-us') ?>
 <?php get_footer(); ?>
-

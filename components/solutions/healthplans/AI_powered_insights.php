@@ -2,7 +2,7 @@
 function render_points()
 {
   $points = get_field('points');
-  $check_mark = get_field('checkmark_icon');;;;
+  $check_mark = get_field('checkmark_icon');
 
   foreach ($points as $point) {
     echo '<div class="list__item__container flex w-fit items-start">';

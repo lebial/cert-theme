@@ -14,3 +14,4 @@ import './solutions';
 import './healthplans';
 import './thankYou';
 import './postPage';
+import './brainstorm.js';
