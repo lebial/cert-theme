@@ -185,9 +185,7 @@ jQuery(document).ready(function ($) {
 
 
     button.click(function () {
-      const isMobile = $($(this).parent().parent().parent()).attr('name') === 'mobile_main_video';
-      const videoToPlay = isMobile ? 0 : 1;
-      const currentVideo = videos[videoToPlay];
+      const currentVideo = $(this).parent().next()[0];
       currentVideo.play();
       triggerGtagEvent(`${$(currentVideo).attr('name')}_video_started`);
       $(this).parent().hide();
@@ -206,11 +204,11 @@ jQuery(document).ready(function ($) {
     });
   };
 
+  handleSecondVideo();
   createInsightsCarousel();
   handleInsightsArrowClick();
   handleTypingEffect();
   AiOPtionsInit();
   createVerticalSlider();
   handleNextClick();
-  handleSecondVideo();
 });
