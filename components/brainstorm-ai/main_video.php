@@ -6,7 +6,7 @@
       </svg>
     </button>
   </div>
-  <video class="logistics__secondary__video object-cover w-full h-full rounded-xl shadow-lg" poster="<?php the_field('main_video_thumbnail') ?>">
+  <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg" poster="<?php the_field('main_video_thumbnail') ?>" name="brainstorm">
     <source src="<?php the_field('main_video_url') ?>" type="video/mp4">
   </video>
 </div>

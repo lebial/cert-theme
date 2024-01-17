@@ -16,7 +16,7 @@ $quote = get_field('platform_hightlight_quote');
   <div class="w-full lg:w-1/2 flex justify-center lg:justify-start mb-8">
     <div class="mb-0 lg:mb-4 w-full px-4 lg:pl-12 mr-0 lg:mr-12">
 
-      <h2 class="font-bold text-3xl xl:text-5xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left reveal-text" data-reveal-direction="left">
+      <h2 class="font-normal text-3xl xl:text-5xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left reveal-text" data-reveal-direction="left">
         <?php echo $quote['title'] ?>
       </h2>
 
