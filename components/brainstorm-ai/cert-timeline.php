@@ -38,7 +38,7 @@ function render_timeline_cards() {
   <div class="w-full flex justify-center py-16">
     <h2 class="text-white">How We've Been Using AI Since Day 1</h2>
   </div>
-  <div class="w-full h-screen flex">
+  <div class="w-full h-[70vh] flex">
     <div class="w-4/12 h-full relative">
       <div class="w-px bg-white h-full absolute right-7"></div>
       <div class="cert-timeline-slider">
