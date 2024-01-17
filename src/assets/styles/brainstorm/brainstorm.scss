@@ -1,0 +1,15 @@
+.cert-timeline-slider {
+  & .slick-track {
+    display: block !important;
+  }
+
+  & .slick-slide {
+    &>div {
+      margin-left: auto;
+    }
+  }
+
+  & .slick-list {
+    height: 70vh !important;
+  }
+}

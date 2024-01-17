@@ -368,3 +368,7 @@ function get_recent_or_selected_posts($recent, $selected)
 
     return $posts_to_show;
 };
+
+function limit_post_text($text, $limit, $after_content) {
+    return mb_strimwidth($text, 0, $limit, $after_content);
+}

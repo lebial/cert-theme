@@ -46,10 +46,11 @@ jQuery(document).ready(function ($) {
       elements.forEach(element => {
         const lines = element.querySelectorAll('.line');
         const duration = secs / lines.length;
+        const direction = $(lines[0]).parent().attr('data-reveal-direction');
         lines.forEach((line, idx) => {
           $(line).attr('data-animate-delay', idx * duration);
           $(line).attr('data-animate-duration', duration);
-          addCenteringMargin(line);
+          if (direction !== 'left') addCenteringMargin(line);
           observer.observe(line);
         });
       });

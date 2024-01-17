@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
   function createStoryCarousel() {
     $(".au__story__slider").slick({
       slidesToShow: 1,
-      infinte: true,
+      infinte: false,
       dots: true,
       arrows: false,
       autoplay: true,
@@ -96,6 +96,7 @@ jQuery(document).ready(function ($) {
   function createOurTeamSlider() {
     $('.our__team__slider').slick({
       slidesToShow: 1,
+      infinite: false,
       dots: true,
       slidesToScroll: 1,
     });
