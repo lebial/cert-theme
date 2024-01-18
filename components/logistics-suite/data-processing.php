@@ -1,12 +1,10 @@
 <?php
-
-
 function render_cards()
 {
     $cards = get_field('cards');
 
     foreach ($cards as $card) {
-        echo '<div class="flex flex-col w-10/12 md:w-full lg:w-1/3 mx-auto items-center py-12 lg:py-0">';
+        echo '<div class="px-6 !flex !flex-col !justify-center !items-center py-12 lg:py-0">';
             echo '<div class="flex flex-col">';
                 echo '<h4 class="font-black text-4xl text-primary text-center">' . $card['title'] . '</h4>';
                 echo '<div class="text-center">';
@@ -19,9 +17,6 @@ function render_cards()
             echo '</div>';
         echo '</div>';
     }
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
 }
 ?>
 
@@ -29,7 +24,9 @@ function render_cards()
     <div class="w-full text-white text-center pt-16">
         <h3 class="text-xl md:text-4xl"><?php the_field('data_processing_title') ?></h3>
     </div>
-    <div class="w-9/12 mx-auto flex flex-col lg:flex-row py-4 lg:py-12 pb-4 lg:pb-16 max-w-5xl text-white space-x-0 lg:space-x-24">
-        <?php render_cards() ?>
+    <div class="w-full">
+        <div class="data__processing__slider mt-8 lg:mt-16 max-w-4xl flex mx-auto">
+            <?php render_cards() ?>
+        </div>
     </div>
 </section>
