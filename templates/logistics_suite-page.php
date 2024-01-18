@@ -8,5 +8,6 @@
 <?php get_template_part('components/logistics-suite/data-processing') ?>
 <?php get_template_part('components/logistics-suite/validation-process') ?>
 <?php get_template_part('components/logistics-suite/security-framework') ?>
+<?php get_template_part('components/new-platform/ia-insights') ?>
 <?php get_template_part('components/platform/contact-us') ?>
 <?php get_footer(); ?>

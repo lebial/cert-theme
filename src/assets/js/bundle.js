@@ -14,5 +14,5 @@ import './solutions';
 import './healthplans';
 import './thankYou';
 import './postPage';
-import './brainstorm';
-import './logisticsSuite';
+import './brainstorm.js';
+import './logisticsSuite.js'

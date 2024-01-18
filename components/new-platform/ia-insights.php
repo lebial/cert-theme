@@ -58,8 +58,8 @@ function render_insights_slider() {
   <div class="w-full flex flex-col items-center">
     <p class=" text-dark-blue-background text-2xl lg:text-4xl reveal-text font-normal">AI Insights by Certilytics</p>
     <p class="text-dark-blue-background text-lg text-center">
-      Our experts share how AI is changing healthcare and how Certilytics is commited 
-      to leading the way in making people healthier and healthcare more affordable.
+      Our experts share how AI is changing healthcare and how Certilytics is committed 
+      to using AI to lead the way in making people healthier and healthcare more affordable.
     </p>
   </div>
   <!-- search box will be hidden until search functionality is implemented -->
