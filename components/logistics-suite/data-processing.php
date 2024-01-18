@@ -25,7 +25,7 @@ function render_cards()
         <h3 class="text-xl md:text-4xl"><?php the_field('data_processing_title') ?></h3>
     </div>
     <div class="w-full">
-        <div class="data__processing__slider mt-8 lg:mt-16 max-w-4xl flex mx-auto">
+        <div class="data__processing__slider mt-8 max-w-4xl flex mx-auto pb-12">
             <?php render_cards() ?>
         </div>
     </div>

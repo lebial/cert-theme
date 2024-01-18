@@ -278,8 +278,8 @@ jQuery(document).ready(function ($) {
         createQuotesSlider();
         // calculateOptionsGraphicHeight();
         // handlePlatformScrollObserver();
-        initPlatform($);
     }
+    (window.location.href.includes("platform") || window.location.href.includes("logistics")) && initPlatform($);
 });
 
 // handleAutoCycle();

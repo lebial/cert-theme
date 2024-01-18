@@ -1,5 +1,3 @@
-import { makeElementsSameHeight } from "./utils/utils";
-
 jQuery(document).ready(function ($) {
     const insightsSliderSelector = '.data__processing__slider';
     const nextArrow = `
@@ -36,26 +34,10 @@ jQuery(document).ready(function ($) {
       });
     }
 
-    function setSlideVisibility() {
-      //Find the visible slides i.e. where aria-hidden="false"
-      const visibleSlides = $('.slick-slide[aria-hidden="false"]');
-      //Make sure all of the visible slides have an opacity of 1
-      $(visibleSlides).each(function () {
-        $(this).css('opacity', 1);
-      });
-      //Set the opacity of the first and last partial slides.
-      if (visibleSlides.length >= 3) {
-        $(visibleSlides).first().prev().animate({ 'opacity': 0 }, 250);
-        $($(visibleSlides).get(3)).next().animate({ 'opacity': 0 }, 250);
-      }
-  
-    }
-
     //function calls;
     const { href } = window.location;
     if (href.includes("logistics")) {
       createDataProcessSlider();
-      setSlideVisibility();
     }
     
   });
