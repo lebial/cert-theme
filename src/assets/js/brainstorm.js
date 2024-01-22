@@ -3,6 +3,9 @@ import { createObserver } from "./utils/utils";
 jQuery(document).ready(function ($) {
   const timelineSlider = '.cert-timeline-slider';
   function createTimelineSlider() {
+    $(timelineSlider).on('init', function (slick) {
+      $($(this).find('.slick-current .point__container')).addClass('point-active');
+    });
     $(timelineSlider).slick({
       vertical: true,
       slidesToShow: 1,
@@ -21,12 +24,27 @@ jQuery(document).ready(function ($) {
       fade: true,
       speed: 500,
     });
+    $(timelineSlider).on('beforeChange', function (ev, slick, currentSlide, nextSlide) {
+      // debugger;
+      const slides = slick.$slides;
+      $(slides[currentSlide]).find('.point__container').removeClass('point-active');
+      $(slides[nextSlide]).find('.point__container').addClass('point-active');
+
+    });
+    $(timelineSlider).on('afterChange', function (ev, slick, currentSlide) {
+      const slides = slick.$slides;
+      if (!currentSlide || currentSlide === slides.length - 1) {
+        $('body').css('overflow-y', 'auto');
+        $('body').removeClass('scroll__lock');
+      }
+    })
   }
 
   function handleScrollSlide(ev) {
     const scrollUp = ev.wheelDelta > 0;
     const direction = scrollUp ? 'slickPrev' : 'slickNext';
-    $(timelineSlider).slick(direction);
+    if ($('body').hasClass('scroll__lock')) $(timelineSlider).slick(direction);
+
   }
 
   function handleScrollLock() {
@@ -36,8 +54,8 @@ jQuery(document).ready(function ($) {
     }
     const observer = createObserver(([entry]) => {
       if (entry.isIntersecting) {
-        $('body').css('overflow', 'hidden');
-        observer.unobserve(element);
+        $('body').css('overflow-y', 'hidden');
+        $('body').addClass('scroll__lock');
         window.addEventListener('wheel', handleScrollSlide);
       }
     }, options);

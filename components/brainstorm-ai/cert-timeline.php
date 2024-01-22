@@ -4,9 +4,14 @@ function render_dates() {
   foreach ($dates as $date) {
     echo '
       <div>
-        <div class="flex items-center  py-20">
-          <p class="font-bold text-2xl text-white mr-4">201'.$date.'</p>
-          <div class="bg-primary rounded-full w-14 h-14"></div>
+        <div class="point__container flex items-center  py-20 pr-5 group">
+          <p class="text-xl text-white mr-8 transition-all duration-300
+          group-[.point-active]:text-primary group-[.point-active]:text-4xl group-[.point-active]:font-bold"
+          >201'.$date.'</p>
+          <div class="bg-white rounded-full w-8 h-8 transition-all duration-300 realtive
+          group-[.point-active]:scale-150 group-[.point-active]:bg-primary
+          before:content-[""]
+          "></div>
         </div>
       </div>
     ';
@@ -40,13 +45,13 @@ function render_timeline_cards() {
   </div>
   <div class="w-full h-[70vh] flex">
     <div class="w-4/12 h-full relative">
-      <div class="w-px bg-white h-full absolute right-7"></div>
+      <div class="w-px bg-white h-full absolute right-[37px]"></div>
       <div class="cert-timeline-slider">
         <?php render_dates()?>
       </div>
     </div>
     <div class="w-9/12 h-full">
-      <div class="cert-timeline-data-slider">
+      <div class="cert-timeline-data-slider mt-[13%]">
         <?php render_timeline_cards()?>
       </div>
     </div>
