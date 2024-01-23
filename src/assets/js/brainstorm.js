@@ -51,6 +51,7 @@ jQuery(document).ready(function ($) {
     const element = document.querySelector('.cert-timeline-slider');
     const options = {
       threshold: 1,
+      rootMargin: '-200px 0px 0px 0px',
     }
     const observer = createObserver(([entry]) => {
       if (entry.isIntersecting) {
