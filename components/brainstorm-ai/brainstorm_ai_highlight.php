@@ -13,7 +13,7 @@ function render_highlight_cards() {
 }
 ?>
 <section class="brainstorm__ai__highlight w-full py-16">
-  <p class=" text-dark-blue-background text-5xl mx-auto max-w-none text-center font-bold ">How Our Brainstorm AI <span></span> is Different</p>
+  <p class=" text-dark-blue-background text-5xl mx-auto max-w-none text-center font-bold ">How Our Brainstorm AI&reg; is Different</p>
   <div class="w-full flex mt-16 max-w-[1300px] mx-auto">
     <?php render_highlight_cards()?>
   </div>

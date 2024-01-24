@@ -25,7 +25,6 @@ jQuery(document).ready(function ($) {
       speed: 500,
     });
     $(timelineSlider).on('beforeChange', function (ev, slick, currentSlide, nextSlide) {
-      // debugger;
       const slides = slick.$slides;
       $(slides[currentSlide]).find('.point__container').removeClass('point-active');
       $(slides[nextSlide]).find('.point__container').addClass('point-active');

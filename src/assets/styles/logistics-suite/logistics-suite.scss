@@ -56,6 +56,18 @@
       }
     }
   }
+}
 
+.custom__slick {
+  &-arrow {
+    &::before {
+      display: none;
+    }
 
+    display: inline-block !important;
+
+    & svg {
+      width: 20px;
+    }
+  }
 }
