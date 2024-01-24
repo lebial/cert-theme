@@ -26,7 +26,7 @@ function render_data_points() {
   }
 }
 ?>
-<section class="data-ingestion__validation__process w-full h-full bg-slate-100 py-16">
+<section id="dataPipeline" class="data-ingestion__validation__process w-full h-full bg-slate-100 py-16">
   <p class="max-w-none text-2xl lg:text-5xl text-dark-blue-background mx-auto text-center !mb-10 lg:!mb-36"><?php the_field('section_title')?></p>
   <div class="w-10/12 mx-auto relative lg:mt-24 flex flex-col lg:flex-row justify-between">
     <div class=" hidden lg:block w-10/12 bg-slate-300 h-[2px] absolute top-[24px] z-10 left-1/2 -translate-x-1/2"></div>

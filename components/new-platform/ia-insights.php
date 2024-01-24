@@ -40,7 +40,7 @@ function render_insights_slider() {
                 </g>
               </g>
             </svg>
-            <p class="text-white text-base text-center">'.get_the_title($post).'</p>
+            <p class="text-white text-base text-center font-bold">'.get_the_title($post).'</p>
             <p class="text-white mt-auto">
               Read Article
               <svg class="w-4 h-3 inline-block transition-all duration-200 group-hover:translate-x-1" width="40" height="69" viewBox="0 0 40 69" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ function render_insights_slider() {
 ?>
 <section class="ai__insights w-full py-14">
   <div class="w-full flex flex-col items-center">
-    <p class=" text-dark-blue-background text-2xl lg:text-4xl reveal-text font-normal">AI Insights by Certilytics</p>
+    <p class=" text-dark-blue-background text-2xl lg:text-4xl reveal-text font-bold">AI Insights by Certilytics</p>
     <p class="text-dark-blue-background text-lg text-center">
       Our experts share how AI is changing healthcare and how Certilytics is committed 
       to using AI to lead the way in making people healthier and healthcare more affordable.

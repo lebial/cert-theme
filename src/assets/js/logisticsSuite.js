@@ -69,6 +69,21 @@ jQuery(document).ready(function ($) {
       $(slides[nextSlide]).find('.logistics__point__card').addClass('is-card-active');
     });
   };
+  
+  function startVideoAtSpecificTime() {
+    const video = document.getElementById("HomeBackgroundVideo");
+
+    video.oncanplaythrough = function() {
+      video.play();
+    };
+
+    video.currentTime = 49;
+
+    const source = document.createElement('source');
+    source.setAttribute('src', 'movie.mp4');
+    source.setAttribute('type', 'video/mp4');
+    video.appendChild(source);
+  }
 
   //function calls;
   const { href } = window.location;
@@ -76,6 +91,7 @@ jQuery(document).ready(function ($) {
     createDataProcessSlider();
     handleValidationOptionSelect();
     createMobileSlider();
+    startVideoAtSpecificTime();
   }
 
 });

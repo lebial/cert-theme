@@ -6,7 +6,7 @@
         }
     }
 ?>
-<section class="w-full bg-gray-secondary py-12">
+<section id="dataSecurity" class="w-full bg-gray-secondary py-12">
     <div class="w-full px-4 lg:px-0 text-center">
         <h3 class="text-dark-blue-background font-semibold text-xl md:text-4xl"><?php the_field('title') ?></h3>
         <div class="w-11/12 md:w-8/12 md:max-w-8/12 mx-auto">
