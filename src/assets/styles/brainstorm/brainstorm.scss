@@ -13,3 +13,11 @@
     height: 70vh !important;
   }
 }
+
+.cert-timeline-data-slider {
+  & .slick-slide {
+    &>div {
+      width: 100%;
+    }
+  }
+}

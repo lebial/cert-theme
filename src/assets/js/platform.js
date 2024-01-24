@@ -270,10 +270,9 @@ jQuery(document).ready(function ($) {
         addArrowToSlider(".validation__slider");
         addArrowToSlider(".quotes__slider");
         addArrowToSlider(".validation__slider");
-        // handleAutoCycle();
-        // removeLastLineAnimation();
+        handleAutoCycle();
         changeValidationHeader();
-        observeSolutionsData();
+        // observeSolutionsData();
         handleProvenNumbersIncreaseAnimation();
         createQuotesSlider();
         // calculateOptionsGraphicHeight();
