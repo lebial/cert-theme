@@ -259,6 +259,21 @@ jQuery(document).ready(function ($) {
         numberElements.forEach((element) => observer.observe(element, { attributes: true }));
     }
 
+    function startVideoAtSpecificTime() {
+        const video = document.getElementById("HomeBackgroundVideo");
+    
+        video.oncanplaythrough = function() {
+          video.play();
+        };
+    
+        video.currentTime = 3;
+    
+        const source = document.createElement('source');
+        source.setAttribute('src', 'movie.mp4');
+        source.setAttribute('type', 'video/mp4');
+        video.appendChild(source);
+      }
+
     if (window.location.href.includes("platform")) {
         // setHeroMarginTop();
         handleOptionColapse();
@@ -277,6 +292,7 @@ jQuery(document).ready(function ($) {
         createQuotesSlider();
         // calculateOptionsGraphicHeight();
         // handlePlatformScrollObserver();
+        startVideoAtSpecificTime();
     }
     (window.location.href.includes("platform") || window.location.href.includes("logistics")) && initPlatform($);
 });

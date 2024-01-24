@@ -19,7 +19,7 @@ function render_detail_cards() {
   foreach ($platforms_data as $idx => $data) {
     $active_class = $idx == 0 ? 'active__details container__animated' : '';
     echo '<div name="'.$data['button'].'"  class="w-full details__container '.$active_class.'">';
-    echo '<p class="detail__description text-white text-lg lg:text-xl text-center lg:text-left">'.$data['description'].'</p>';
+    echo '<p class="detail__description text-white text-lg text-center lg:text-left">'.$data['description'].'</p>';
     echo '<div class="details__cards '.$active_class.' grid grid-cols-1 lg:grid-cols-3 gap-4 pt-5 lg:pr-14">';
     foreach ($data['cards'] as $card_idx => $card) {
       $card_order = $card_idx + 1;

@@ -26,7 +26,7 @@ function render_hightlight_cards()
 }
 
 ?>
-<section class="w-full py-28 border-t border-gray-500 border-solid">
+<section class="w-full py-28 border-t border-gray-500/25 border-solid">
   <div class="highlight__slider max-w-5xl mx-auto">
     <?php render_hightlight_cards() ?>
   </div>
