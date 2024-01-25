@@ -27,7 +27,7 @@ function render_custom_menu_items()
     </div>
     <div class="w-full flex flex-col items-center mt-12">
       <div class="w-10/12 2xl:w-8/12 flex flex-col">
-        <p class=" text-xl 2xl:text-3xl font-bold text-white max-w-none text-center">
+        <p class=" text-xl 2xl:text-2xl font-bold text-white max-w-none text-center">
           <?php the_field('sub_head_line') ?>
         </p>
         <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 items-center">

@@ -261,18 +261,18 @@ jQuery(document).ready(function ($) {
 
     function startVideoAtSpecificTime() {
         const video = document.getElementById("HomeBackgroundVideo");
-    
-        video.oncanplaythrough = function() {
-          video.play();
+
+        video.oncanplaythrough = function () {
+            video.play();
         };
-    
+
         video.currentTime = 3;
-    
+
         const source = document.createElement('source');
         source.setAttribute('src', 'movie.mp4');
         source.setAttribute('type', 'video/mp4');
         video.appendChild(source);
-      }
+    }
 
     if (window.location.href.includes("platform")) {
         // setHeroMarginTop();
@@ -285,7 +285,7 @@ jQuery(document).ready(function ($) {
         addArrowToSlider(".validation__slider");
         addArrowToSlider(".quotes__slider");
         addArrowToSlider(".validation__slider");
-        handleAutoCycle();
+        // handleAutoCycle();
         changeValidationHeader();
         // observeSolutionsData();
         handleProvenNumbersIncreaseAnimation();
