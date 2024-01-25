@@ -67,7 +67,7 @@ jQuery(document).ready(function ($) {
         entries.forEach(({ target, isIntersecting }) => {
           if (isIntersecting) {
             $(target).addClass('bottom-reveal-animate left-reveal-animate line-reveal-animate');
-            observer.unobserve(target);
+            // observer.unobserve(target);
           }
         })
       }, { threshold: 1.0 });
