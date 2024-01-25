@@ -18,7 +18,7 @@
   </video>
     <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative flex flex-col justify-center px-6">
         <div class="flex flex-col items-center justify-center text-center">
-            <h1 class="text-white font-bold relative text-2xl lg:text-4xl xl:text-6xl"><?php the_field('head_line') ?><span class="absolute top-[-10px] right-[-43px] scale-50 font-normal">®</span></h1>
+            <h1 class="text-white font-bold relative text-2xl lg:text-4xl xl:text-6xl text-reveal"><?php the_field('head_line') ?><span class="absolute top-[-10px] right-[-43px] scale-50 font-normal">®</span></h1>
             <h2 class="text-white text-xl lg:text-2xl mt-8 tracking-normal font-normal px-4 lg:px-0 mx-auto mb-12"><?php the_field('hero_sub_heading') ?></h2>
             <div class=" header__divider w-60 h-px bg-primary mx-auto"></div>
             <div class="w-11/12 md:w-8/12 mx-auto">

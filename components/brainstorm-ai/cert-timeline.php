@@ -13,8 +13,8 @@ function render_dates($data) {
              top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
              border border-white border-solid
              shadow-sm shadow-slate-400 opacity-0 transition-all duration-300
-             group-[.point-active]:opacity-100 blur-[1.2px]
-             "></div>
+             group-[.point-active]:opacity-100
+             " style="filter: blur(1.2px);"></div>
             <div class="bg-white rounded-full w-6 h-6 transition-all duration-300 realtive 
             group-[.point-active]:scale-150 group-[.point-active]:bg-primary
             "></div>
