@@ -39,20 +39,22 @@ jQuery(document).ready(function ($) {
     })
   }
 
-  function handleScrollSlide(ev) {
-    const scrollUp = ev.wheelDelta > 0;
-    const direction = scrollUp ? 'slickPrev' : 'slickNext';
-    if ($('body').hasClass('scroll__lock')) $(timelineSlider).slick(direction);
-
-  }
-
-  function handleSliderChangeOnScroll({ isIntersecting, intersectionRect }) {
-    const { y } = intersectionRect;
-    if (y >= 900 && isIntersecting) $(timelineSlider).slick('slickNext');
-    if (y >= 0 && y <= 30 && isIntersecting) $(timelineSlider).slick('slickPrev');
+  function handleSliderChangeOnScroll({ isIntersecting, target }, scrollUp) {
+    const cycleSlider = dir => $(timelineSlider).slick(dir);
+    if (!scrollUp && isIntersecting) return cycleSlider('slickNext');
+    if (scrollUp && !isIntersecting && !+$(target).attr('data-position')) return cycleSlider('slickPrev');
+    if (scrollUp && isIntersecting) return cycleSlider('slickPrev');
+    // if (scrollUp )
+    $(timelineSlider).slick(direction);
   }
 
   function handleScrollLock() {
+    let scrollUp = 'null';
+    window.addEventListener('scroll', function (ev) {
+      scrollUp = this.oldScroll > this.scrollY;
+      this.oldScroll = this.scrollY;
+    });
+
     const elements = document.querySelectorAll('.click__control');
     const options = {
       threshold: 1,
@@ -60,14 +62,9 @@ jQuery(document).ready(function ($) {
     }
     const observer = createObserver(([entry]) => {
       // debugger;
-      console.log(entry);
-      // if (entry.isIntersecting) {
-      // $('body').css('overflow-y', 'hidden');
-      // $('body').addClass('scroll__lock');
-      // window.addEventListener('wheel', handleScrollSlide);
-      // }
-      handleSliderChangeOnScroll(entry);
+      handleSliderChangeOnScroll(entry, scrollUp);
     }, options);
+
     elements.forEach(element => {
       observer.observe(element);
     });

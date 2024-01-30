@@ -1,6 +1,7 @@
+import './stickymate';
+import './pageable';
 import './main';
 import './utils/textReveal';
-import './stickymate';
 import './header';
 import './scheduleModal';
 import './header-shapes';
