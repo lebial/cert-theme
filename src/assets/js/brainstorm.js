@@ -46,20 +46,31 @@ jQuery(document).ready(function ($) {
 
   }
 
+  function handleSliderChangeOnScroll({ isIntersecting, intersectionRect }) {
+    const { y } = intersectionRect;
+    if (y >= 900 && isIntersecting) $(timelineSlider).slick('slickNext');
+    if (y >= 0 && y <= 30 && isIntersecting) $(timelineSlider).slick('slickPrev');
+  }
+
   function handleScrollLock() {
-    const element = document.querySelector('.cert-timeline-slider');
+    const elements = document.querySelectorAll('.click__control');
     const options = {
       threshold: 1,
-      rootMargin: '-200px 0px 0px 0px',
+      // rootMargin: '-50% 0px 0px 0px',
     }
     const observer = createObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        $('body').css('overflow-y', 'hidden');
-        $('body').addClass('scroll__lock');
-        window.addEventListener('wheel', handleScrollSlide);
-      }
+      // debugger;
+      console.log(entry);
+      // if (entry.isIntersecting) {
+      // $('body').css('overflow-y', 'hidden');
+      // $('body').addClass('scroll__lock');
+      // window.addEventListener('wheel', handleScrollSlide);
+      // }
+      handleSliderChangeOnScroll(entry);
     }, options);
-    observer.observe(element);
+    elements.forEach(element => {
+      observer.observe(element);
+    });
   }
 
   if (window.location.href.includes("brainstorm")) {

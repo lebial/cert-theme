@@ -1,5 +1,6 @@
 <?php
 $timeline_data = get_field('timeline_data');
+$section_height = count($timeline_data) * 120;
 function render_dates($data) {
   foreach ($data as $date) {
     echo '
@@ -40,24 +41,39 @@ function render_timeline_cards($data) {
       </div>
     ';
   }
+}
 
+function render_cycle_controls($data) {
+  $points_count = count($data);
+  echo '<div class="absolute left-0 top-0 w-1 h-['.$count * 120 .'vh]">';
+  foreach ($data as $idx => $point) {
+    echo '<div class="w-full h-[120vh] flex items-end">';
+      echo $idx  == $points_count - 1 ? '' : '<div class="click__control w-1 h-1"></div>';
+    echo '</div>';
+  }
+  echo '</div>';
 }
 
 ?>
-<section class="cert-timeline w-full  bg-dark-blue-background">
-  <div class="w-full flex justify-center py-16">
-    <h2 class="text-white text-2xl lg:text-3xl xl:text-5xl">How We've Been Using AI Since Day 1</h2>
-  </div>
-  <div class="w-full h-[70vh] flex">
-    <div class="w-4/12 h-full relative">
-      <div class="w-px bg-white h-full absolute right-[33px]"></div>
-      <div class="cert-timeline-slider">
-        <?php render_dates($timeline_data)?>
-      </div>
+<section class="cert-timeline w-full  bg-dark-blue-background relative" style="height: <?php echo $section_height?>vh;">
+
+  <?php render_cycle_controls($timeline_data)?>
+
+  <div class="w-full sticky top-20">
+    <div class="w-full flex justify-center py-16">
+      <h2 class="text-white text-2xl lg:text-3xl xl:text-5xl">How We've Been Using AI Since Day 1</h2>
     </div>
-    <div class="w-9/12 h-full">
-      <div class="cert-timeline-data-slider mt-[13%]">
-        <?php render_timeline_cards($timeline_data)?>
+    <div class="w-full h-[70vh] flex ">
+      <div class="w-4/12 h-full relative">
+        <div class="w-px bg-white h-full absolute right-[33px]"></div>
+        <div class="cert-timeline-slider">
+          <?php render_dates($timeline_data)?>
+        </div>
+      </div>
+      <div class="w-9/12 h-full">
+        <div class="cert-timeline-data-slider mt-[13%]">
+          <?php render_timeline_cards($timeline_data)?>
+        </div>
       </div>
     </div>
   </div>
