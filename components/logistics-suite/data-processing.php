@@ -20,13 +20,14 @@ function render_cards()
 }
 ?>
 
-<section id="dataProcessing" class="logistics__data__processing__section w-full flex justify-center items-center flex-col bg-center md:bg-left bg-cover min-h-[40vh] lg:min-h-[45vh]" style="--logistics-section-bg-img: url('<?php the_field('data_processing_background')?>'); ">
+<section class="logistics__data__processing__section w-full flex justify-center items-center flex-col bg-center md:bg-left bg-cover min-h-[40vh] lg:min-h-[45vh]" style="--logistics-section-bg-img: url('<?php the_field('data_processing_background')?>'); ">
     <div class="w-full text-white text-center pt-16">
         <h3 class="text-xl md:text-4xl"><?php the_field('data_processing_title') ?></h3>
     </div>
     <div class="w-full">
-        <div class="data__processing__slider mt-8 max-w-4xl flex mx-auto pb-12">
+        <div class="data__processing__slider mt-8 max-w-4xl flex mx-auto pb-8">
             <?php render_cards() ?>
         </div>
+        <div class="pb-4" id="dataPipeline"></div>
     </div>
 </section>
