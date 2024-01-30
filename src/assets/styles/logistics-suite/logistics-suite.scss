@@ -73,8 +73,10 @@
 }
 
 .registeredSymbol {
-  font-size: 12px;
-  vertical-align: super;
-  position: relative;
-  top: 3px;
+  &::after {
+    content: attr(data-symbol);
+    font-size: 11px;
+    vertical-align: text-top;
+    line-height: 1.3;
+  }
 }
