@@ -49,7 +49,6 @@ function render_cycle_controls($data) {
   foreach ($data as $idx => $point) {
     echo '<div class="w-full h-[120vh] flex items-end">';
       echo $idx == $points_count - 1 ? '' : '<div data-position="'.$idx.'" class="click__control w-1 h-1 bg-primary"></div>';
-      // echo $idx  == $points_count - 1 ? '' : '<div class="w-1 h-1"></div>';
     echo '</div>';
   }
   echo '</div>';

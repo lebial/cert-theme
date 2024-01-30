@@ -41,15 +41,18 @@ jQuery(document).ready(function ($) {
 
   function handleSliderChangeOnScroll({ isIntersecting, target }, scrollUp) {
     const cycleSlider = dir => $(timelineSlider).slick(dir);
+    const totalPoints = document.querySelectorAll('.click__control').length;
     if (!scrollUp && isIntersecting) return cycleSlider('slickNext');
     if (scrollUp && !isIntersecting && !+$(target).attr('data-position')) return cycleSlider('slickPrev');
     if (scrollUp && isIntersecting) return cycleSlider('slickPrev');
-    // if (scrollUp )
-    $(timelineSlider).slick(direction);
+    if (!scrollUp && !isIntersecting && +$(target).attr('data-position') === totalPoints - 1) return cycleSlider('slickNext');
+    const currentSlideControl = +$(target).attr('data-position');
+    // debugger;
+    // if (scrollUp === null) $(timelineSlider).slick('slickGoTo', currentSlideControl);
   }
 
   function handleScrollLock() {
-    let scrollUp = 'null';
+    let scrollUp = null;
     window.addEventListener('scroll', function (ev) {
       scrollUp = this.oldScroll > this.scrollY;
       this.oldScroll = this.scrollY;
