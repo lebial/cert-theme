@@ -6,7 +6,7 @@ function render_insights_slider() {
   foreach ($posts as $post) {
     echo '
       <div class="h-full">
-        <a href="'.get_permalink($post).'" target="_blank" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 p-2 mr-6 shadow-lg">
+        <a href="'.get_permalink($post).'" target="_blank" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 py-2 px-6 mr-6 shadow-lg">
           <div class="absolute top-0 h-full roudned-xl w-full before:content-['."''".'] before:block before:w-full before:h-full before:bg-blue-500 before:bg-opacity-80 before:absolute before:top-0 before:z-20 before:rounded-xl">
             <img src="'.get_field('post_hero_image', $post).'" alt="ai insights card background" class="absolute top-0 left-0 w-full h-full object-cover z-10 rounded-xl"/>
           </div>
@@ -56,7 +56,7 @@ function render_insights_slider() {
 ?>
 <section class="ai__insights w-full py-24">
   <div class="w-full flex flex-col items-center">
-    <h3 class="mb-8 text-dark-blue-background text-3xl lg:text-4xl reveal-text font-bold">AI Insights by Certilytics</h3>
+    <h3 class="mb-8 text-dark-blue-background text-3xl lg:text-4xl reveal-text font-bold reveal-text">AI Insights by Certilytics</h3>
     <p class="text-dark-blue-background text-lg text-center">
       Our experts share how AI is changing healthcare and how Certilytics is committed 
       to using AI to lead the way in making people healthier and healthcare more affordable.

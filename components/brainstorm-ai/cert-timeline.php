@@ -59,9 +59,9 @@ function render_cycle_controls($data) {
 
   <?php render_cycle_controls($timeline_data)?>
 
-  <div class="w-full sticky top-20">
+  <div class="w-full sticky top-20 bg-cover bg-center bg-no-repeat" style="background-image: url(<?php the_field('timeline_background')?>)">
     <div class="w-full flex justify-center py-16">
-      <h2 class="text-white text-3xl xl:text-4xl ">How We've Been Using AI Since Day 1</h2>
+      <h2 class="text-white text-3xl xl:text-4xl reveal-text">How We've Been Using AI Since Day 1</h2>
     </div>
     <div class="w-full h-[70vh] flex ">
       <div class="w-4/12 h-full relative">
