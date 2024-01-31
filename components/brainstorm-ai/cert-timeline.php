@@ -7,7 +7,7 @@ function render_dates($data) {
       <div>
         <div class="point__container flex items-center  py-20 pr-5 group">
           <p class="text-lg text-white mr-8 transition-all duration-300
-          group-[.point-active]:text-primary group-[.point-active]:text-6xl group-[.point-active]:font-bold"
+          group-[.point-active]:text-primary group-[.point-active]:text-5xl group-[.point-active]:font-bold"
           >'.$date['date'].'</p>
           <div class="relative">
             <div class="w-12 h-12 rounded-full absolute 
@@ -16,8 +16,8 @@ function render_dates($data) {
              shadow-sm shadow-slate-400 opacity-0 transition-all duration-300
              group-[.point-active]:opacity-100
              " style="filter: blur(1.2px);"></div>
-            <div class="bg-white rounded-full w-6 h-6 transition-all duration-300 realtive 
-            group-[.point-active]:scale-150 group-[.point-active]:bg-primary
+            <div class="bg-white rounded-full w-4 h-4 transition-all duration-300 realtive 
+            group-[.point-active]:scale-[2.3] group-[.point-active]:bg-primary
             "></div>
           </div>
         </div>
@@ -48,7 +48,7 @@ function render_cycle_controls($data) {
   echo '<div class="absolute left-0 top-0 w-1 h-['.$count * 120 .'vh]">';
   foreach ($data as $idx => $point) {
     echo '<div class="w-full h-[120vh] flex items-end">';
-      echo $idx == $points_count - 1 ? '' : '<div data-position="'.$idx.'" class="click__control w-1 h-1 bg-primary"></div>';
+      echo $idx == $points_count - 1 ? '' : '<div data-position="'.$idx.'" class="click__control w-1 h-1"></div>';
     echo '</div>';
   }
   echo '</div>';
@@ -61,17 +61,17 @@ function render_cycle_controls($data) {
 
   <div class="w-full sticky top-20">
     <div class="w-full flex justify-center py-16">
-      <h2 class="text-white text-2xl lg:text-3xl xl:text-5xl">How We've Been Using AI Since Day 1</h2>
+      <h2 class="text-white text-3xl xl:text-4xl ">How We've Been Using AI Since Day 1</h2>
     </div>
     <div class="w-full h-[70vh] flex ">
       <div class="w-4/12 h-full relative">
-        <div class="w-px bg-white h-full absolute right-[33px]"></div>
+        <div class="w-px bg-white bg-gradient-to-r from-transparent to-white h-full absolute right-[29px]"></div>
         <div class="cert-timeline-slider">
           <?php render_dates($timeline_data)?>
         </div>
       </div>
       <div class="w-9/12 h-full">
-        <div class="cert-timeline-data-slider mt-[13%]">
+        <div class="cert-timeline-data-slider mt-[45px]">
           <?php render_timeline_cards($timeline_data)?>
         </div>
       </div>

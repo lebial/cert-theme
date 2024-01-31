@@ -54,7 +54,7 @@ function render_insights_slider() {
   }
 }
 ?>
-<section class="ai__insights w-full py-20">
+<section class="ai__insights w-full py-24">
   <div class="w-full flex flex-col items-center">
     <h3 class="mb-8 text-dark-blue-background text-3xl lg:text-4xl reveal-text font-bold">AI Insights by Certilytics</h3>
     <p class="text-dark-blue-background text-lg text-center">

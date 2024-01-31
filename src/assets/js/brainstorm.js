@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
       infinite: false,
       asNavFor: '.cert-timeline-data-slider',
       focusOnSelect: true,
-      speed: 500,
+      speed: 300,
     });
     $('.cert-timeline-data-slider').slick({
       slidesToShow: 1,
@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
       draggable: false,
       asNavFor: timelineSlider,
       fade: true,
-      speed: 500,
+      speed: 300,
     });
     $(timelineSlider).on('beforeChange', function (ev, slick, currentSlide, nextSlide) {
       const slides = slick.$slides;
@@ -31,11 +31,7 @@ jQuery(document).ready(function ($) {
 
     });
     $(timelineSlider).on('afterChange', function (ev, slick, currentSlide) {
-      const slides = slick.$slides;
-      if (!currentSlide || currentSlide === slides.length - 1) {
-        $('body').css('overflow-y', 'auto');
-        $('body').removeClass('scroll__lock');
-      }
+      sessionStorage.setItem('currentSlide', `${currentSlide}`);
     })
   }
 
@@ -46,12 +42,14 @@ jQuery(document).ready(function ($) {
     if (scrollUp && !isIntersecting && !+$(target).attr('data-position')) return cycleSlider('slickPrev');
     if (scrollUp && isIntersecting) return cycleSlider('slickPrev');
     if (!scrollUp && !isIntersecting && +$(target).attr('data-position') === totalPoints - 1) return cycleSlider('slickNext');
-    const currentSlideControl = +$(target).attr('data-position');
-    // debugger;
-    // if (scrollUp === null) $(timelineSlider).slick('slickGoTo', currentSlideControl);
+
+    //check set slider on page reload
+    if (scrollUp === null) {
+      $(timelineSlider).slick('slickGoTo', +sessionStorage.getItem('currentSlide'));
+    }
   }
 
-  function handleScrollLock() {
+  function handleSliderScroll() {
     let scrollUp = null;
     window.addEventListener('scroll', function (ev) {
       scrollUp = this.oldScroll > this.scrollY;
@@ -61,10 +59,8 @@ jQuery(document).ready(function ($) {
     const elements = document.querySelectorAll('.click__control');
     const options = {
       threshold: 1,
-      // rootMargin: '-50% 0px 0px 0px',
     }
     const observer = createObserver(([entry]) => {
-      // debugger;
       handleSliderChangeOnScroll(entry, scrollUp);
     }, options);
 
@@ -75,6 +71,6 @@ jQuery(document).ready(function ($) {
 
   if (window.location.href.includes("brainstorm")) {
     createTimelineSlider();
-    handleScrollLock();
+    handleSliderScroll();
   }
 });
