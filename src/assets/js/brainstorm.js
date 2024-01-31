@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
       infinite: false,
       asNavFor: '.cert-timeline-data-slider',
       focusOnSelect: true,
-      speed: 500,
+      speed: 300,
     });
     $('.cert-timeline-data-slider').slick({
       slidesToShow: 1,
@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
       draggable: false,
       asNavFor: timelineSlider,
       fade: true,
-      speed: 500,
+      speed: 300,
     });
     $(timelineSlider).on('beforeChange', function (ev, slick, currentSlide, nextSlide) {
       const slides = slick.$slides;
@@ -31,39 +31,46 @@ jQuery(document).ready(function ($) {
 
     });
     $(timelineSlider).on('afterChange', function (ev, slick, currentSlide) {
-      const slides = slick.$slides;
-      if (!currentSlide || currentSlide === slides.length - 1) {
-        $('body').css('overflow-y', 'auto');
-        $('body').removeClass('scroll__lock');
-      }
+      sessionStorage.setItem('currentSlide', `${currentSlide}`);
     })
   }
 
-  function handleScrollSlide(ev) {
-    const scrollUp = ev.wheelDelta > 0;
-    const direction = scrollUp ? 'slickPrev' : 'slickNext';
-    if ($('body').hasClass('scroll__lock')) $(timelineSlider).slick(direction);
+  function handleSliderChangeOnScroll({ isIntersecting, target }, scrollUp) {
+    const cycleSlider = dir => $(timelineSlider).slick(dir);
+    const totalPoints = document.querySelectorAll('.click__control').length;
+    if (!scrollUp && isIntersecting) return cycleSlider('slickNext');
+    if (scrollUp && !isIntersecting && !+$(target).attr('data-position')) return cycleSlider('slickPrev');
+    if (scrollUp && isIntersecting) return cycleSlider('slickPrev');
+    if (!scrollUp && !isIntersecting && +$(target).attr('data-position') === totalPoints - 1) return cycleSlider('slickNext');
 
+    //check set slider on page reload
+    if (scrollUp === null) {
+      $(timelineSlider).slick('slickGoTo', +sessionStorage.getItem('currentSlide'));
+    }
   }
 
-  function handleScrollLock() {
-    const element = document.querySelector('.cert-timeline-slider');
+  function handleSliderScroll() {
+    let scrollUp = null;
+    window.addEventListener('scroll', function (ev) {
+      scrollUp = this.oldScroll > this.scrollY;
+      this.oldScroll = this.scrollY;
+    });
+
+    const elements = document.querySelectorAll('.click__control');
     const options = {
       threshold: 1,
-      rootMargin: '-200px 0px 0px 0px',
     }
     const observer = createObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        $('body').css('overflow-y', 'hidden');
-        $('body').addClass('scroll__lock');
-        window.addEventListener('wheel', handleScrollSlide);
-      }
+      handleSliderChangeOnScroll(entry, scrollUp);
     }, options);
-    observer.observe(element);
+
+    elements.forEach(element => {
+      observer.observe(element);
+    });
   }
 
   if (window.location.href.includes("brainstorm")) {
     createTimelineSlider();
-    handleScrollLock();
+    handleSliderScroll();
   }
 });

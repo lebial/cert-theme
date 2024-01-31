@@ -100,9 +100,18 @@ jQuery(document).ready(function ($) {
 
   };
 
+  function addTradeMarkToBrainstormLinks() {
+    const links = document.querySelectorAll('a[href*=brainstorm-ai]');
+    const trademark = '<span class="registeredSymbol" data-symbol="®"></span>'
+    links.forEach(link => {
+      $(link).append(trademark);
+    });
+  }
+
   handleTabOpen();
   // handleSearchToggle();
   handleNavigationToggle();
   handleMenuItemClickCloseNav();
   handleDemoOptions();
+  addTradeMarkToBrainstormLinks();
 });
