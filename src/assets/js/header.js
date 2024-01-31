@@ -101,7 +101,7 @@ jQuery(document).ready(function ($) {
   };
 
   function addTradeMarkToBrainstormLinks() {
-    const links = document.querySelectorAll('a[href*=brainstorm-ai]');
+    const links = [...document.querySelectorAll('.menu-item a[href*=brainstorm-ai]'), ...document.querySelectorAll('.footer__link[href*="brainstorm"]')];
     const trademark = '<span class="registeredSymbol" data-symbol="®"></span>'
     links.forEach(link => {
       $(link).append(trademark);
