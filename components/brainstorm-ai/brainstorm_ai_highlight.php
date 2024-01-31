@@ -19,5 +19,5 @@ function render_highlight_cards() {
   </div>
 </section>
 <div class="w-full flex justify-center">
-  <div class=" w-8/12 h-px bg-slate-400"></div>
+  <div class=" w-full h-px bg-gray-500/25"></div>
 </div>
