@@ -32,7 +32,7 @@ function render_data_points() {
 }
 ?>
 <section class="data-ingestion__validation__process w-full h-full bg-slate-100 py-16">
-  <h2 class="max-w-none text-3xl lg:text-4xl text-dark-blue-background mx-auto font-bold text-center !mb-10 lg:!mb-40"><?php the_field('section_title')?></h2>
+  <h2 class="max-w-none tracking-normal text-3xl lg:text-4xl text-dark-blue-background mx-auto font-bold text-center !mb-10 lg:!mb-40"><?php the_field('section_title')?></h2>
   <div class="w-8/12 lg:w-10/12 mx-auto relative lg:mt-24 flex flex-col lg:flex-row justify-between">
     <div class=" hidden lg:block w-10/12 bg-slate-300 h-[2px] absolute top-[24px] z-10 left-1/2 -translate-x-1/2"></div>
     <div class="validation__mobile__slider w-full flex justify-between">

@@ -22,7 +22,7 @@ function render_cards()
 
 <section class="logistics__data__processing__section w-full flex justify-center items-center flex-col bg-center md:bg-left bg-cover min-h-[40vh] lg:min-h-[45vh]" style="--logistics-section-bg-img: url('<?php the_field('data_processing_background')?>'); ">
     <div class="w-full text-white text-center pt-16">
-        <h3 class="text-3xl lg:text-4xl reveal-text"><?php the_field('data_processing_title') ?></h3>
+        <h3 class="text-3xl lg:text-4xl tracking-normal reveal-text"><?php the_field('data_processing_title') ?></h3>
     </div>
     <div class="w-full">
         <div class="data__processing__slider mt-8 max-w-4xl flex mx-auto pb-8">
