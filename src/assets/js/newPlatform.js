@@ -167,6 +167,14 @@ function initPlatform($) {
     });
   }
 
+  function handleMainMenuNav() {
+    const { search } = window.location;
+    if (search) {
+      const urlParam = new URLSearchParams(search);
+      const btn = urlParam.get('btn');
+      $(`.platform__detail__button button[name="platform-button-${btn}"]`).click();
+    }
+  }
 
 
   handleHeroPlatformOption();
@@ -176,6 +184,7 @@ function initPlatform($) {
   handlePlatformsDetails();
   handleInsightsOnInit();
   createPlatformInsightsSlider();
+  handleMainMenuNav();
 }
 
 export default initPlatform;
