@@ -26,7 +26,7 @@ function render_custom_menu_items()
             <h2 class="text-white max-w-none mt-4 md:mt-12 text-lg font-normal tracking-normal">
                 <?php strip_tags(the_field('sub_headline'), '<a>') ?>
             </h2>
-            <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 items-center">
+            <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 2xl:mt-24 items-center">
                 <?php render_custom_menu_items() ?>
             </div>
         </div>

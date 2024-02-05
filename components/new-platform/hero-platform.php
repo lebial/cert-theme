@@ -3,8 +3,8 @@
 function render_custom_menu_items()
 {
   $items = get_field('heading_buttons');
-  foreach ($items as $idx => $item) {
-    echo '<a class="platform__hero__option__button flex items-center transition-all duration-200 hover:text-primary text-sm xl:text-lg" 
+  foreach ($items as $item) {
+    echo '<a class="platform__hero__option__button flex items-center lg:w-1/3 lg:pt-4 transition-all duration-200 hover:text-primary text-sm xl:text-lg" 
               href="' . $item['url'] . '"
               name="platform-button-'.$idx.'">
               ' . $item['text'] . '<span class="w-[20px] pt-[3px]"><svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class=" fill-primary" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "/></g></g></svg></span></a>';
@@ -26,12 +26,11 @@ function render_custom_menu_items()
       <div class=" header__divider w-60 h-px bg-primary"></div>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
-      <!-- <div class="w-10/12 2xl:w-8/12 flex flex-col"> -->
-      <div class="w-full flex flex-col">
+      <div class="w-10/12 2xl:w-9/12 flex flex-col">
         <p class=" text-xl 2xl:text-2xl font-normal text-white max-w-none text-center">
           <?php the_field('sub_head_line') ?>
         </p>
-        <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 items-center">
+        <div class="button container min-w-full w-full flex flex-col lg:flex-row lg:flex-wrap text-white justify-evenly mt-8 items-center">
           <?php render_custom_menu_items() ?>
         </div>
       </div>
