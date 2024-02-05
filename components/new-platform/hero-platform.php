@@ -19,14 +19,15 @@ function render_custom_menu_items()
     <div class="flex flex-col items-center justify-center text-center">
       <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text">
         <?php the_field('head_line') ?> <br>
-        <span class="text-2xl lg:text-4xl text-primary font-normal relative">Powered by Brainstorm AI <span class="absolute top-[-5px] right-[-20px] scale-50 ">&reg;</span></span>
+        <span class="text-2xl lg:text-4xl text-primary font-normal relative">Powered by BrainstormAI<span class=" text-base align-super">&reg;</span></span>
       </h1>
       <!-- <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text block lg:hidden"><?php //the_field('head_line') ?></h1> -->
       <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal px-4 lg:px-0"><?php the_field('hero_sub_heading') ?></h2>
       <div class=" header__divider w-60 h-px bg-primary"></div>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
-      <div class="w-10/12 2xl:w-8/12 flex flex-col">
+      <!-- <div class="w-10/12 2xl:w-8/12 flex flex-col"> -->
+      <div class="w-full flex flex-col">
         <p class=" text-xl 2xl:text-2xl font-normal text-white max-w-none text-center">
           <?php the_field('sub_head_line') ?>
         </p>

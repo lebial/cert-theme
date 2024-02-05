@@ -53,7 +53,7 @@ function render_detail_cards() {
 
 <div class="w-full" id="platformsDetails"></div>
 <!-- <section class="w-full py-14" id="platformsDetails"> -->
-<section class="w-full py-14">
+<section class="w-full pt-14 pb-2">
   <div class="w-full flex flex-col items-center py-14 border-t border-t-dark-blue-background border-solid bg-dark-blue-background">
     <h2 class=" text-white font-normal text-3xl lg:text-4xl reveal-text"><?php the_field('section_title')?></h2>
     <h3 class="text-white font-normal text-xl px-4 text-center lg:text-left"><?php the_field('section_subtitle')?></h3>
