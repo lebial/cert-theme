@@ -33,17 +33,19 @@ function render_detail_cards() {
     echo '<div class="details__cards '.$active_class.' grid grid-cols-1 lg:grid-cols-3 gap-4 pt-5 lg:pr-14">';
     foreach ($data['cards'] as $card_idx => $card) {
       $card_order = $card_idx + 1;
-      echo '<a href="'.$card['href'].'" target="_blank" class="detail__card border border-white border-solid rounded-lg py-5 px-4 lg:min-h-[250px] group transition-all duration-300 hover:scale-105 " style="--animation-order: '.$card_order.';">
-              <p class="text-white font-bold mb-0 leading-snug">
+      $arrow_class = $card['href'] ? '' : 'hidden';
+      $element = $card['href'] ? 'a' : 'div';
+      echo '<'.$element.' href="'.$card['href'].'" target="_blank" class="detail__card border border-white border-solid rounded-lg py-5 px-4 lg:min-h-[250px] group transition-all duration-300 hover:scale-105 " style="--animation-order: '.$card_order.';">
+              <p class="text-white font-bold mb-3 leading-snug">
               '.$card['title'].'
-                <svg class="w-[10px] h-3 inline-block transition-all duration-200 group-hover:translate-x-1" width="40" height="69" viewBox="0 0 40 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-[10px] '.$arrow_class.' h-3 inline-block transition-all duration-200 group-hover:translate-x-1" width="40" height="69" viewBox="0 0 40 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M6.0167 1.02513C4.64987 -0.341709 2.43379 -0.341709 1.06696 1.02513C-0.299879 2.39196 -0.299879 4.60804 1.06696 5.97487L29.253 34.161L1.02513 62.3889C-0.341709 63.7557 -0.341709 65.9718 1.02513 67.3386C2.39196 68.7054 4.60804 68.7054 5.97487 67.3386L38.8553 34.4581L38.8549 34.4577L39.1521 34.1605L6.0167 1.02513Z" fill="#F4695B"/>
                 </svg>
               </p>
               <p class="text-white text-base">
               '.$card['description'].'
               </p>
-            </a>';
+            </'.$element.'>';
     }
     echo '</div>';
     echo '</div>';

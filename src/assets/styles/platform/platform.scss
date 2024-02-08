@@ -860,11 +860,11 @@ $dot-color: #bdcff5;
         }
 
         & .left__card__rotated {
-            transform: rotate3d(0, 1, 0, 23deg) scaleY(.80);
+            transform: rotate3d(0, 1, 0, 15deg) scaleY(.80);
         }
 
         & .right__card__rotated {
-            transform: rotate3d(0, 1, 0, -23deg) scaleY(.80);
+            transform: rotate3d(0, 1, 0, -15deg) scaleY(.80);
         }
     }
 }

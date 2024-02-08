@@ -104,7 +104,7 @@ jQuery(document).ready(function ($) {
   }
 
   function setCycle() {
-    cycleTime = setInterval(handleAutoCycle, 2000);
+    cycleTime = setInterval(handleAutoCycle, 5000);
   }
 
   function handleCardClick(ev, direction = null) {

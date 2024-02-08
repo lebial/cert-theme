@@ -102,6 +102,16 @@ function getCustomArrows(name = 'slick', customClass = 'custom__slick-arrow') {
     return [prevArrow, nextArrow];
 }
 
+function handleAutoScroll($) {
+    $(window).bind('load', function () {
+        const { hash } = window.location;
+        if (hash) {
+            const targetElement = $(`${hash}`);
+            $('html, body').animate({ scrollTop: (targetElement.offset().top) }, 700);
+        }
+    });
+}
+
 
 
 export {
@@ -113,5 +123,6 @@ export {
     makeElementsSameWidth,
     triggerGtagEvent,
     getVideoProgressPercentages,
-    getCustomArrows
+    getCustomArrows,
+    handleAutoScroll,
 };

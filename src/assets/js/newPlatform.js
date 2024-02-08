@@ -1,4 +1,4 @@
-import { makeElementsSameHeight } from "./utils/utils";
+import { makeElementsSameHeight, handleAutoScroll } from "./utils/utils";
 
 function initPlatform($) {
   const insightsSliderSelector = '.platform__insights__slider';
@@ -177,6 +177,7 @@ function initPlatform($) {
   }
 
 
+  handleAutoScroll($);
   handleHeroPlatformOption();
   handleSlickOnInit();
   createHighlightSlider();
