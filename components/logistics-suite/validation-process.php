@@ -26,7 +26,7 @@ function render_data_points($data) {
               group-[.is-card-active]:border-primary group-[.is-card-active]:opacity-100
               "></div>
         </div>
-        <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-4 block lg:hidden">
+        <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-4 block lg:hidden max-w-md">
         '.$card['description'].'
         </p>
       </div>
