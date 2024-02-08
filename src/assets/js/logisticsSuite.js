@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
   const insightsSliderSelector = '.data__processing__slider';
 
   const [prevArrow, nextArrow] = getCustomArrows();
+  let cycleTime = null;
 
 
   function createDataProcessSlider() {
@@ -27,9 +28,15 @@ jQuery(document).ready(function ($) {
 
   const cardSelector = '.logistics__point__card';
 
-  function handleOptionClick() {
+  function handleOptionClick(ev) {
     $(cardSelector).removeClass('is-card-active');
     $(this).addClass('is-card-active');
+    $('.copy--active').removeClass('copy--active');
+    const nextPos = $(this).attr('data-dot-position');
+    const nextCopy = $(`.copy__container[data-copy-position=${nextPos}]`);
+    $('copy__container').removeClass('copy--active');
+    nextCopy.addClass('copy--active');
+    if (!ev.isTrigger) clearInterval(cycleTime);
   }
 
   function handleValidationOptionSelect() {
@@ -80,20 +87,43 @@ jQuery(document).ready(function ($) {
   }
 
   function checkValidationButtonsCycle(btnName, activeCard) {
-    if (activeCard.attr('name') === 'first' && btnName === 'prev') return true;
-    if (activeCard.attr('name') === 'last' && btnName === 'next') return true;
+    if (activeCard.attr('name') === 'first' && btnName === 'prev') {
+      $(cardSelector).last().click();
+      return true;
+    }
+    if (activeCard.attr('name') === 'last' && btnName === 'next') {
+      $(cardSelector).first().click();
+      return true;
+    }
+
     return false;
   }
 
+  function handleAutoCycle() {
+    handleCardClick('auto', 'next');
+  }
+
+  function setCycle() {
+    cycleTime = setInterval(handleAutoCycle, 5000);
+  }
+
+  function handleCardClick(ev, direction = null) {
+    const name = direction || this.name;
+    const activeCard = $('.is-card-active');
+    const activeCopy = $('.copy--active');
+    //name is next or prev === activeCard.next() || activeCard.prev();
+    const nextCard = activeCard[name]();
+    const nextCopy = activeCopy[name]();
+    if (checkValidationButtonsCycle(name, activeCard)) return null;
+    $(activeCard).removeClass('is-card-active');
+    $(activeCopy).removeClass('copy--active');
+    nextCard.addClass('is-card-active');
+    nextCopy.addClass('copy--active');
+    if (ev != 'auto') clearInterval(cycleTime);
+  }
+
   function handleValidationProcessNavigation() {
-    $('.process-navigation').click(function () {
-      const activeCard = $('.is-card-active');
-      //name is next or prev === activeCard.next() || activeCard.prev();
-      const nextCard = activeCard[this.name]();
-      if (checkValidationButtonsCycle(this.name, activeCard)) return null;
-      $(activeCard).removeClass('is-card-active');
-      nextCard.addClass('is-card-active');
-    });
+    $('.process-navigation').click(handleCardClick);
   }
 
   //function calls;
@@ -104,6 +134,7 @@ jQuery(document).ready(function ($) {
     createMobileSlider();
     startVideoAtSpecificTime();
     handleValidationProcessNavigation();
+    setCycle();
   }
 
 });

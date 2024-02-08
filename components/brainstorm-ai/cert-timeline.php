@@ -45,9 +45,9 @@ function render_timeline_cards($data) {
 
 function render_cycle_controls($data) {
   $points_count = count($data);
-  echo '<div class="absolute left-0 top-0 w-1 h-['.$count * 120 .'vh]">';
+  echo '<div class="absolute left-0 top-0 w-1 h-['.$count * 110 .'vh]">';
   foreach ($data as $idx => $point) {
-    echo '<div class="w-full h-[120vh] flex items-end">';
+    echo '<div class="w-full h-[110vh] flex items-end">';
       echo $idx == $points_count - 1 ? '' : '<div data-position="'.$idx.'" class="click__control w-1 h-1"></div>';
     echo '</div>';
   }

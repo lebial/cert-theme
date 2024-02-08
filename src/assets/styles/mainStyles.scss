@@ -864,6 +864,7 @@ header {
                     padding: 0 32px;
                     font-size: 14px;
                     font-weight: bold;
+                    margin-bottom: 10px;
 
                     @media #{$desktopMD} {
                         padding: 0;
@@ -899,12 +900,15 @@ header {
                     list-style: none;
                     overflow: hidden;
                     transition: all 0.7s $animation-cb;
+                    margin-top: 10px;
 
 
                     li {
                         padding: 2px 0;
                         text-align: left;
                         font-size: 12px;
+                        line-height: 16px;
+                        margin-bottom: 8px;
 
                         @media #{$desktopMD} {
                             font-size: 1.1rem;
@@ -937,7 +941,7 @@ header {
                             padding-right: 18px;
 
                             @media #{$desktopMD} {
-                                font-size: 16px !important;
+                                font-size: 14px !important;
 
                             }
 
@@ -3128,4 +3132,10 @@ selectric .label {
         box-shadow: 0 0 0 15px rgba(244, 105, 91, 0);
         background-color: transparent;
     }
+}
+
+.super_mark {
+    font-size: 16px;
+    display: inline;
+    vertical-align: super;
 }
