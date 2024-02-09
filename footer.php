@@ -51,7 +51,7 @@ function render_link_groups()
 	$link_groups = get_field('footer_link_groups', 'option') ? get_field('footer_link_groups', 'options') : $data_mock;
 
 	foreach ($link_groups as $link_group) {
-		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start">';
+		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start flex-1 pr-6">';
 		echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 		if ($link_group['button_link']) {
 			$open_tab = $link_group['button_text'] == 'Contact Us' ? 'target="_blank"' : '';

@@ -62,7 +62,7 @@ function render_detail_cards() {
   </div>
   <div class="platforms__main__container w-full flex flex-col lg:flex-row py-14 min-h-screen px-4 lg:px-0" style="--section-bg-img: url('<?php the_field('background_image')?>');">
     <aside class="w-full lg:w-4/12 lg:max-w-md  flex justify-center lg:justify-end">
-      <div class="flex flex-col items-start">
+      <div class="flex flex-col items-start max-w-xs">
         <?php render_buttons()?>
       </div>
     </aside>
