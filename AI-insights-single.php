@@ -188,7 +188,7 @@ function get_latest_posts($number_of_posts = 3) {
     <div class="max-w-screen-2xl flex flex-col">
         <main class="post__page w-full">
             <section class="article__body w-full flex flex-col lg:flex-row px-5 ">
-                <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 pr-4 lg:pr-24 ">
+                <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 pr-4 lg:pr-20 ">
                     <div class="content__container post__dynamic__content w-full flex flex-col items-center lg:px-10">
                         <div class="post__content__container w-full order-2 lg:-order-1 mb-12">
                             <div class="pt-12 pb-8">
@@ -223,7 +223,7 @@ function get_latest_posts($number_of_posts = 3) {
                     </div>
                 </article>
 
-                <aside class="sticky w-[320px] top-[15%] h-fit hidden lg:block">
+                <aside class="sticky !w-[335px] top-[15%] h-fit hidden lg:block">
                     <div class="hidden <?php echo $hide_class ?>">
                         <?php render_subscribe_form() ?>
                     </div>
