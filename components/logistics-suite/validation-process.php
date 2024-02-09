@@ -41,7 +41,7 @@ function render_data_copy($data) {
     echo '
       <div class="copy__container group absolute left-1/2 -translate-x-1/2 '.$active.'" data-copy-position="'.$idx.'">
         <div class="copy__body opacity-0 group-[.copy--active]:opacity-100 ">
-          <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-4">
+          <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-4 text-center">
           '.$card['description'].'
           </p>
         </div>
