@@ -2,9 +2,11 @@
     & .subscribe__form__container {
         & form {
             margin-top: 0;
+
             & label {
                 display: none;
             }
+
             & input[type=email],
             input[type=text] {
                 background-color: transparent !important;
@@ -12,20 +14,25 @@
                 border-bottom: #9ca3af 1px solid !important;
                 padding: 0 0 10px 0 !important;
                 position: relative;
+
                 &:focus {
                     background-color: transparent;
                 }
             }
+
             & p {
                 font-size: 10px;
                 color: white;
+
                 & a {
                     position: unset;
                 }
             }
+
             & .frm_submit {
                 margin-top: 0 !important;
             }
+
             & button[type=submit] {
                 font-size: 13px !important;
                 border-radius: 8px !important;
@@ -34,18 +41,22 @@
                 letter-spacing: .025em !important;
             }
         }
+
         & .frm_message {
             background-color: transparent;
             padding: 0 0 10px 0;
             text-align: center;
             color: white;
+
             & .frm_thankyou {
                 font-size: 30;
             }
+
             & .frm_subscribing {
                 margin-top: -10px;
                 font-size: 18px;
             }
+
             & p {
                 font-size: 12px;
                 color: white;
@@ -56,15 +67,19 @@
             }
         }
     }
+
     & .post__navigation__option {
         transition: all .3s ease;
         position: relative;
+
         &.active__post__nav__option {
             background-color: lightgray;
         }
+
         &:hover {
             background-color: lightgray;
         }
+
         &::before {
             content: '';
             position: absolute;
@@ -77,39 +92,49 @@
             transform: translateY(-50%);
         }
     }
+
     & .post__dynamic__content {
         & ul {
             margin-left: 80px;
+
             & li {
                 list-style: disc;
             }
         }
+
         & ol {
             margin-left: 80px;
+
             & li {
                 list-style: decimal;
             }
         }
+
         & h2 {
             font-size: 1.875rem;
         }
+
         & h3 {
             font-size: 1.5rem;
         }
+
         & h1,
         h2,
         h3,
         h4 {
             color: #7e7e7e;
         }
+
         & p {
             max-width: none;
         }
+
         & h1,
         h2,
         h3,
         h4 {
             position: relative;
+
             & a {
                 position: absolute;
                 width: 10px;
@@ -126,4 +151,8 @@
             position: unset;
         }
     }
+}
+
+.post__article__container * {
+    color: #180f36 !important;
 }
