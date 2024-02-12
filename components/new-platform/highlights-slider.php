@@ -26,8 +26,8 @@ function render_hightlight_cards()
 }
 
 ?>
-<section class="w-full py-28 border-t border-gray-500/25 border-solid">
-  <p class="text-dark-blue-background font-bold mx-auto !mb-16 text-center text-3xl lg:text-4xl reveal-text max-w-none">Our Platform by the Numbers</p>
+<section class="w-full py-14 lg:py-28 border-t border-gray-500/25 border-solid">
+  <p class="text-dark-blue-background font-bold mx-auto !mb-16 text-center text-2xl lg:text-4xl reveal-text max-w-none">Our Platform <br class="block lg:hidden"> by the Numbers</p>
   <div class="highlight__slider max-w-5xl mx-auto">
     <?php render_hightlight_cards() ?>
   </div>

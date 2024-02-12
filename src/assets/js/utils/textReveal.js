@@ -3,7 +3,8 @@ import { createObserver } from "./utils";
 jQuery(document).ready(function ($) {
 
   function setLinesFromElement(element) {
-    const lines = element.innerHTML.split('<br>');
+    const html = element.innerHTML;
+    const lines = html.split('<br>') || html.split('<br class="block lg:hidden">') || html.split('<br class="hidden lg:block">');
     element.innerHTML = lines.map(line => `<span class="line" style="padding-bottom: 5px;"><span class="words">${line}</span></span>`).join('');
   }
 

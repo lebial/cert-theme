@@ -5,7 +5,9 @@
 
   & .slick-slide {
     &>div {
-      margin-left: auto;
+      @media (min-width: 1024px) {
+        margin-left: auto;
+      }
     }
   }
 
