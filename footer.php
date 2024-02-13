@@ -67,8 +67,8 @@ function render_link_groups()
 		echo '<div class="footer__dropdown__body footer__responsive__hidden">';
 		echo '<div class="footer__links__group mr-0 relative " style="margin-right: 0;">';
 		if ($link_group["links"]) {
-			foreach ($link_group['links'] as $link) {
-				echo '<a href="' . $link['href'] . '" class="footer__link" name="footer-' . $link['text'] . '">' . $link['text'] . '</a>';
+			foreach ($link_group['links'] as $idx => $link) {
+				echo '<a href="' . $link['href'] . '" class="footer__link" name="footer-' . $idx . '">' . $link['text'] . '</a>';
 			}
 		}
 		echo '</div>';

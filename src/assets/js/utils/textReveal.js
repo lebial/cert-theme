@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
 
   function setLinesFromElement(element) {
     const html = element.innerHTML;
+    debugger;
     const lines = html.split('<br>') || html.split('<br class="block lg:hidden">') || html.split('<br class="hidden lg:block">');
     element.innerHTML = lines.map(line => `<span class="line" style="padding-bottom: 5px;"><span class="words">${line}</span></span>`).join('');
   }

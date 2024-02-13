@@ -5,7 +5,7 @@ function render_dates($data) {
   foreach ($data as $date) {
     echo '
       <div>
-        <div class="point__container flex items-center justify-center lg:justify-start py-8 lg:py-20 lg:pr-5 group flex-col lg:flex-row">
+        <div class="point__container flex items-center justify-center lg:justify-start pt-2 pb-8 lg:py-20 lg:pr-5 group flex-col lg:flex-row">
           <p class="text-lg text-white lg:mr-8 transition-all duration-300
           group-[.point-active]:text-2xl !mb-4 lg:mb-0
           group-[.point-active]:text-primary lg:group-[.point-active]:text-5xl group-[.point-active]:font-bold"
@@ -33,10 +33,10 @@ function render_timeline_cards($data) {
     echo '
     <div class="w-full">
       <div class="timeline__card lg:pl-20">
-        <p class="text-xl lg:text-3xl text-primary font-bold">
+        <p class="text-xl lg:text-3xl text-primary font-bold text-center lg:text-left">
           '.$card['title'].'
         </p>
-        <p class="text-white text-base lg:text-xl">
+        <p class="text-white text-base lg:text-xl text-center lg:text-left">
         '.$card['description'].'
         </p>
       </div>
@@ -62,18 +62,18 @@ function render_cycle_controls($data) {
   <?php render_cycle_controls($timeline_data)?>
 
   <div class="w-full sticky top-20 bg-cover bg-center bg-no-repeat" style="background-image: url(<?php the_field('timeline_background')?>)">
-    <div class="w-full flex justify-center pt-16  lg:pb-16">
-      <h2 class="text-white text-2xl xl:text-4xl reveal-text">How We've Been Using <br class="block lg:hidden"> AI Since Day 1</h2>
+    <div class="w-full flex justify-center pt-6 lg:pt-16  lg:pb-16">
+      <h2 class="text-white text-2xl xl:text-4xl reveal-text mb-0">How We've Been Using <br class="block lg:hidden"> AI Since Day 1</h2>
     </div>
-    <div class="w-full h-[70vh] flex ">
-      <div class="w-2/12 lg:w-3/12 h-full relative">
+    <div class="w-full h-[70vh] flex items-center flex-col lg:flex-row">
+      <div class="w-2/12 lg:w-3/12 h-fit lg:h-full relative">
         <div class="linde__divider w-px bg-white bg-gradient-to-r from-transparent to-white h-full absolute right-[29px] hidden lg:block"></div>
         <div class="cert-timeline-slider">
           <?php render_dates($timeline_data)?>
         </div>
       </div>
       <div class="w-10/12 lg:w-9/12 h-full pl-2 lg:pl-0">
-        <div class="cert-timeline-data-slider mt-[45px]">
+        <div class="cert-timeline-data-slider lg:mt-[45px]">
           <?php render_timeline_cards($timeline_data)?>
         </div>
       </div>
