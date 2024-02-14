@@ -130,7 +130,7 @@ function render_tags() {
         foreach( $post_tags as $tag ) {
             echo'
                 <button class="px-5 py-1 border-solid border-primary border lg:border-[2px] rounded-3xl
-                text-dark-blue-background hover:text-white mr-3 font-medium hover:cursor-pointer transition-all duration-300
+                text-dark-blue-background hover:text-white mr-3 font-medium cursor-default hover:cursor-default transition-all duration-300
                 hover:bg-primary text-xs lg:text-sm " type="button" name="Example">'. esc_html($tag->name) .'
                 </button>
             ';
@@ -185,7 +185,7 @@ function get_latest_posts($number_of_posts = 3) {
 ?>
 <?php get_header(); ?>
 <div class="w-full flex justify-center">
-    <div class="max-w-screen-2xl flex flex-col">
+    <div class=" flex flex-col">
         <main class="post__page w-full">
             <section class="article__body w-full flex flex-col lg:flex-row px-5 ">
                 <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 pr-4 lg:pr-20 ">
@@ -209,10 +209,10 @@ function get_latest_posts($number_of_posts = 3) {
                             </div>
                             <div class="flex items-center mt-8">
                                 <p>SHARE IT : &nbsp;</p>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>" target="_blank">
                                     <img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
                                 </a>
-                                <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>">
+                                <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>" target="_blank">
                                     <img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/X-icon-navy.jpg" alt="">
                                 </a>
                             </div>
@@ -255,7 +255,7 @@ function get_latest_posts($number_of_posts = 3) {
         </main>
 
         <div class="w-full">
-            <div class="w-11/12 mx-auto py-12">
+            <div class="w-11/12 lg:px-10 py-12">
                 <h3 class="text-dark-blue-background ml-12 pb-4">Related Insights</h3>
                 <div class="flex justify-between space-x-8 px-12 pb-12">
                     <?php get_latest_posts()?>
