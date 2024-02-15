@@ -5,8 +5,8 @@ function render_highlight_cards() {
     echo '
     <div class="brainstorm__highlight__card flex-1 px-8 mb-10 lg:mb-0 flex flex-col items-center lg:items-start">
       <img class="w-16 h-16 mb-4" src="'.$card['icon'].'" alt="brainstorm card icon">
-      <p class="font-bold mb-2 text-2xl text-dark-blue-background text-center lg:text-left">'.$card['title'].'</p>
-      <p class="text-xl text-dark-blue-background text-center lg:text-left">'.$card['body'].'</p>
+      <p class="font-bold mb-2 text-lg lg:text-2xl text-dark-blue-background text-center lg:text-left">'.$card['title'].'</p>
+      <p class="text-lg lg:text-xl text-dark-blue-background text-center lg:text-left">'.$card['body'].'</p>
     </div>
     ';
   }

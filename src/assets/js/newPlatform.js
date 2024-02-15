@@ -177,7 +177,6 @@ function initPlatform($) {
   }
 
 
-  handleAutoScroll($);
   handleHeroPlatformOption();
   handleSlickOnInit();
   createHighlightSlider();
@@ -186,6 +185,7 @@ function initPlatform($) {
   handleInsightsOnInit();
   createPlatformInsightsSlider();
   handleMainMenuNav();
+  handleAutoScroll($);
 }
 
 export default initPlatform;

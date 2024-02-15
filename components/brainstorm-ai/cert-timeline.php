@@ -7,10 +7,10 @@ function render_dates($data) {
       <div>
         <div class="point__container flex items-center justify-center lg:justify-start pt-2 pb-8 lg:py-20 lg:pr-5 group flex-col lg:flex-row">
           <p class="text-lg text-white lg:mr-8 transition-all duration-300
-          group-[.point-active]:text-2xl !mb-4 lg:mb-0
+          group-[.point-active]:text-2xl
           group-[.point-active]:text-primary lg:group-[.point-active]:text-5xl group-[.point-active]:font-bold"
           >'.$date['date'].'</p>
-          <div class="relative">
+          <div class="relative hidden lg:block">
             <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full absolute 
              top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
              border border-white border-solid
