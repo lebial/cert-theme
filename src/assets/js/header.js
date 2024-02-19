@@ -38,13 +38,15 @@ jQuery(document).ready(function ($) {
     const burgerMenu = $(".new__burger__menu");
     const mainItem = $(e.target).parent();
 
-    if (mainItem.classList.contains('main-page-link') && isMobile) return false;
+    if (mainItem.hasClass('main-page-link') && isMobile) return false;
     //make sure it's open and it's not the burger button and the click it's outside the menu
     if (!bar.contains(e.target) && bar.classList.contains('side-bar--open') && !burgerMenu[0].contains(e.target)) return true;
   }
 
   function handleOutsideClick(e) {
     if (menuClickCheck(e)) {
+      const headerSection = $(".header__section");
+      const sideBarMenu = $(".main__menu__sidebar");
       sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
       sideBarMenu.removeClass('side-bar--open');
     }
@@ -120,9 +122,15 @@ jQuery(document).ready(function ($) {
   }
 
   function handleMobileOptionClick(ev) {
-    ev.preventDefault();
-    $('.sub-menu').hide('fast');
-    $(this).find('.sub-menu').toggle('fast');
+    const currentSubMenu = $(this).find('.sub-menu');
+    const currentLink = $(this).find('a');
+    const { href } = ev.target;
+    if (!href || href?.contains('news-insights')) ev.preventDefault();
+    if (currentSubMenu.is(':visible')) return null;
+    $('.main-page-link>a').removeClass('active_item_arrow');
+    $('.sub-menu').hide();
+    currentLink.addClass('active_item_arrow');
+    currentSubMenu.show();
   }
 
   function handleMobileSiteMap() {
@@ -130,6 +138,7 @@ jQuery(document).ready(function ($) {
     if (isMobile) {
       $('.sub-menu').hide();
       $('.main-page-link').click(handleMobileOptionClick);
+      $('.current-menu-parent>a').click();
     }
   }
 
