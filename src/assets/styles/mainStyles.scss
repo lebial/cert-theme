@@ -11,6 +11,7 @@ $mobileMin: '(min-width:320px)';
 $mobileMax: '(max-width:320px)';
 $tablet: '(min-width:768px)';
 $desktopSM: '(min-width:960px)';
+$desktopBase: '(min-width: 1024px)';
 $desktopMD: '(min-width:1200px)';
 $desktopLG: '(min-width:1400px)';
 $desktopXL: '(min-width:1650px)';
@@ -757,6 +758,7 @@ header {
 
     .menu-main-menu-container {
         background-color: #fff;
+        padding-left: 20px;
 
         // @media(max-width: 1199px) {
         //     position: absolute;
@@ -803,9 +805,33 @@ header {
                 &>a {
                     position: relative;
 
-                    &::after {
+                    &.active_item_arrow {
+                        &::before {
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    &::before {
+                        transition: all ease 0.3s;
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-top: 10px solid transparent;
+                        border-bottom: 10px solid transparent;
+                        border-left: 10px solid lightgray;
                         position: absolute;
+                        right: -25px;
+                        top: 0;
                         display: block;
+
+                        @media #{$desktopBase} {
+                            display: none;
+                        }
+                    }
+
+                    &::after {
+                        display: none;
+                        position: absolute;
                         content: '';
                         border-bottom: solid 3px $color-red;
                         transform: scaleX(0);
@@ -815,6 +841,7 @@ header {
                         margin-left: 32px;
 
                         @media #{$desktopBase} {
+                            display: block;
                             margin-left: 0;
                         }
                     }
@@ -828,6 +855,12 @@ header {
 
                 &.current-menu-parent {
                     &>a {
+                        color: $color-red !important;
+
+                        @media #{$desktopBase} {
+                            color: inherit;
+                        }
+
                         &::after {
                             transform: scaleX(1);
                         }
@@ -861,13 +894,11 @@ header {
                 a {
                     color: $color-grey !important;
                     text-decoration: none;
-                    padding: 0 32px;
                     font-size: 14px;
                     font-weight: bold;
                     margin-bottom: 10px;
 
                     @media #{$desktopMD} {
-                        padding: 0;
                         font-size: 18px;
                     }
                 }

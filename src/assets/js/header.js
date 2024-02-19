@@ -32,6 +32,26 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function menuClickCheck(e) {
+    const bar = document.querySelector('.main__menu__sidebar');
+    const isMobile = window.matchMedia("only screen and (max-width: 1023px)").matches;
+    const burgerMenu = $(".new__burger__menu");
+    const mainItem = $(e.target).parent();
+
+    if (mainItem.hasClass('main-page-link') && isMobile) return false;
+    //make sure it's open and it's not the burger button and the click it's outside the menu
+    if (!bar.contains(e.target) && bar.classList.contains('side-bar--open') && !burgerMenu[0].contains(e.target)) return true;
+  }
+
+  function handleOutsideClick(e) {
+    if (menuClickCheck(e)) {
+      const headerSection = $(".header__section");
+      const sideBarMenu = $(".main__menu__sidebar");
+      sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
+      sideBarMenu.removeClass('side-bar--open');
+    }
+  }
+
   function handleNavigationToggle() {
     const burgerMenu = $(".new__burger__menu");
     const headerSection = $(".header__section");
@@ -39,14 +59,7 @@ jQuery(document).ready(function ($) {
     const sideBarMenu = $(".main__menu__sidebar");
 
     //handle outside click
-    $(document).click((e) => {
-      const bar = document.querySelector('.main__menu__sidebar');
-      //make sure it's open and it's not the burger button and the click it's outside the menu
-      if (!bar.contains(e.target) && bar.classList.contains('side-bar--open') && !burgerMenu[0].contains(e.target)) {
-        sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
-        sideBarMenu.removeClass('side-bar--open');
-      }
-    })
+    $(document).click(handleOutsideClick);
 
     sideCloseButton.click(function () {
       sideBarMenu.animate({ right: "-100%" }, function () { headerSection.css("overflow", "hidden"); });
@@ -69,9 +82,9 @@ jQuery(document).ready(function ($) {
 
   function handleMenuItemClickCloseNav() {
     const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(item => $(item).click(function () {
-      $('.menu__side__bar__close').click();
-    }));
+    // menuItems.forEach(item => $(item).click(function () {
+    //   $('.menu__side__bar__close').click();
+    // }));
   }
 
 
@@ -108,10 +121,32 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function handleMobileOptionClick(ev) {
+    const currentSubMenu = $(this).find('.sub-menu');
+    const currentLink = $(this).find('a');
+    const { href } = ev.target;
+    if (!href || href?.contains('news-insights')) ev.preventDefault();
+    if (currentSubMenu.is(':visible')) return null;
+    $('.main-page-link>a').removeClass('active_item_arrow');
+    $('.sub-menu').hide();
+    currentLink.addClass('active_item_arrow');
+    currentSubMenu.show();
+  }
+
+  function handleMobileSiteMap() {
+    const isMobile = window.matchMedia("only screen and (max-width: 1023px)").matches;
+    if (isMobile) {
+      $('.sub-menu').hide();
+      $('.main-page-link').click(handleMobileOptionClick);
+      $('.current-menu-parent>a').click();
+    }
+  }
+
   handleTabOpen();
   // handleSearchToggle();
   handleNavigationToggle();
   handleMenuItemClickCloseNav();
   handleDemoOptions();
   addTradeMarkToBrainstormLinks();
+  handleMobileSiteMap();
 });

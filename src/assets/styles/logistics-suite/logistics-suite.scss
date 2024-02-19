@@ -38,7 +38,9 @@
   }
 
   & .slick-track {
-    padding: 20px;
+    @media #{$desktopMD} {
+      padding: 20px;
+    }
 
     & .slick-slide {
       transition: all .3s ease;

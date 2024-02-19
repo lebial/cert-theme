@@ -5,12 +5,16 @@
 
   & .slick-slide {
     &>div {
-      margin-left: auto;
+      @media (min-width: 1024px) {
+        margin-left: auto;
+      }
     }
   }
 
   & .slick-list {
-    height: 70vh !important;
+    @media (min-width: 1024px) {
+      height: 70vh !important;
+    }
   }
 }
 
