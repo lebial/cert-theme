@@ -224,7 +224,7 @@ function get_latest_posts($number_of_posts = 3) {
         <div class="w-full flex flex-col items-center lg:items-start lg:flex-row">
             <div class="w-11/12 lg:px-10 pt-8 lg:pt-12 lg:pb-12">
                 <h3 class="text-dark-blue-background ml-0 lg:ml-12 pb-8 lg:pb-4 text-center lg:text-left text-2xl">Related Insights</h3>
-                <div class="flex flex-col lg:flex-row lg:justify-between lg:space-x-8 lg:px-12 lg:pb-12">
+                <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between lg:space-x-8 lg:px-12 lg:pb-12">
                     <?php get_latest_posts()?>
                 </div>
             </div>
@@ -236,8 +236,6 @@ function get_latest_posts($number_of_posts = 3) {
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 
