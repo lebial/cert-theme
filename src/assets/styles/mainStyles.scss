@@ -858,7 +858,7 @@ header {
                         color: $color-red !important;
 
                         @media #{$desktopBase} {
-                            color: inherit;
+                            color: inherit !important;
                         }
 
                         &::after {
