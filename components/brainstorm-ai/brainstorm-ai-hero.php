@@ -22,8 +22,8 @@
                 <?php the_field('head_line') ?><span class="font-normal text-lg align-super relative -top-[6px]">®</span> <br>
                 <span class="text-2xl lg:text-4xl text-primary font-normal relative"><?php the_field('hero_sub_heading') ?> </span>
             </h1>
-            <div>
-                <h1 class="text-white font-bold relative text-2xl lg:text-4xl xl:text-6xl reveal-text block lg:hidden">
+            <div class="block lg:hidden">
+                <h1 class="text-white font-bold relative text-2xl lg:text-4xl xl:text-6xl reveal-text ">
                     <?php the_field('head_line') ?><span class="font-normal text-base align-super ">®</span> <br>
                 </h1>
                 <h2 class="text-2xl text-primary font-normal reveal-text">

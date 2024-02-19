@@ -18,10 +18,18 @@ function render_custom_menu_items()
   </video>
   <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative flex flex-col justify-center px-6">
     <div class="flex flex-col items-center justify-center text-center">
-      <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text">
+      <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text hidden lg:block">
         <?php the_field('head_line') ?> <br>
         <span class="text-2xl lg:text-4xl text-primary font-normal relative">Powered by BrainstormAI<span class=" text-base align-super">&reg;</span></span>
       </h1>
+      <div class="w-full block lg:hidden" >
+        <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text ">
+          <?php the_field('head_line_mobile') ?>
+        </h1>
+        <p class="text-2xl lg:text-4xl text-primary font-normal relative">
+          <span >Powered by BrainstormAI<span class=" text-base align-super">&reg;</span></span>
+        </p>
+      </div>
       <!-- <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text block lg:hidden"><?php //the_field('head_line') ?></h1> -->
       <h2 class="text-white text-lg mt-8 tracking-normal max-w-3xl font-normal px-4 lg:px-0"><?php the_field('hero_sub_heading') ?></h2>
       <div class=" header__divider w-60 h-px bg-primary"></div>

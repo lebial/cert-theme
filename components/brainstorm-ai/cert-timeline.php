@@ -63,7 +63,8 @@ function render_cycle_controls($data) {
 
   <div class="w-full sticky top-20 bg-cover bg-center bg-no-repeat" style="background-image: url(<?php the_field('timeline_background')?>)">
     <div class="w-full flex justify-center pt-6 lg:pt-16  lg:pb-16">
-      <h2 class="text-white text-2xl xl:text-4xl reveal-text mb-0">How We've Been Using <br class="block lg:hidden"> AI Since Day 1</h2>
+      <h2 class="text-white text-2xl xl:text-4xl reveal-text mb-0 hidden lg:block">How We've Been Using AI Since Day 1</h2>
+      <h2 class="text-white text-2xl xl:text-4xl reveal-text mb-0 block lg:hidden">How We've Been Using <br> AI Since Day 1</h2>
     </div>
     <div class="w-full h-[70vh] flex items-center flex-col lg:flex-row">
       <div class="w-2/12 lg:w-3/12 h-fit lg:h-full relative">
