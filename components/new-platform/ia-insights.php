@@ -1,8 +1,9 @@
 <?php
 function render_insights_slider() {
-  $selected_posts = get_field('ai_insights_posts');
-  $recent_posts = get_most_recent_posts(6);
-  $posts =  get_recent_or_selected_posts($recent_posts, $selected_posts);
+  // $selected_posts = get_field('ai_insights_posts');
+  // $recent_posts = get_most_recent_posts(6);
+  // $posts =  get_recent_or_selected_posts($recent_posts, $selected_posts);
+  $posts = get_field('ai_insights_posts');
   foreach ($posts as $post) {
     echo '
       <div class="h-full">

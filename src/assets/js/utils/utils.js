@@ -112,11 +112,13 @@ function getCustomArrows(name = 'slick', customClass = 'custom__slick-arrow') {
 //     });
 // }
 
-function handleAutoScroll($) {
-    const { hash } = window.location;
+function handleAutoScroll() {
+    const $ = jQuery;
+    let { hash } = window.location;
+    let target = hash;
     if (hash) {
-        const targetElement = $(`${hash}`);
-        $('html, body').animate({ scrollTop: (targetElement.offset().top) }, 700);
+        // delete hash so the page won't scroll to it
+        window.location.hash = "";
     }
 }
 

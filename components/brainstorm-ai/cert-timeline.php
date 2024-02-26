@@ -66,7 +66,7 @@ function render_cycle_controls($data) {
       <h2 class="text-white text-2xl xl:text-4xl reveal-text mb-0 hidden lg:block">How We've Been Using AI Since Day 1</h2>
       <h2 class="text-white text-2xl xl:text-4xl reveal-text mb-0 block lg:hidden">How We've Been Using <br> AI Since Day 1</h2>
     </div>
-    <div class="w-full h-[70vh] flex items-center flex-col lg:flex-row">
+    <div class="w-full h-[70vh] mt-5 lg:mt-0 flex items-center flex-col lg:flex-row">
       <div class="w-2/12 lg:w-3/12 h-fit lg:h-full relative">
         <div class="linde__divider w-px bg-white bg-gradient-to-r from-transparent to-white h-full absolute right-[29px] hidden lg:block"></div>
         <div class="cert-timeline-slider">

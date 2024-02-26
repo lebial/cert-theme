@@ -1,5 +1,6 @@
-import getNavHeight, { createObserver } from "./utils/utils";
+import getNavHeight, { createObserver, handleAutoScroll } from "./utils/utils";
 import initPlatform from "./newPlatform";
+handleAutoScroll($);
 
 jQuery(document).ready(function ($) {
     const sliderOptions = {

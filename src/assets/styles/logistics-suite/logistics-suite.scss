@@ -82,3 +82,13 @@
     line-height: 1.3;
   }
 }
+
+.validation__mobile__slider {
+  & .slick-next {
+    right: -45px;
+  }
+
+  & .slick-prev {
+    left: -45px;
+  }
+}

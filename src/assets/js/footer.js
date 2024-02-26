@@ -1,5 +1,5 @@
-jQuery(document).ready(function($) {
-    $('.footer__links__toggle').click(function() {
+jQuery(document).ready(function ($) {
+    $('.footer__links__toggle').click(function () {
         $(this).toggleClass('arrow--rotate');
         // $(this).next().toggle();
         $(this).parent().next().toggle();
@@ -13,7 +13,6 @@ jQuery(document).ready(function($) {
     }
 
     function removeMobileArrows() {
-        $('[name = "Platform"]').hide();
         $('[name = "News & Insights"]').hide();
     }
 

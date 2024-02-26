@@ -58,6 +58,7 @@ jQuery(document).ready(function ($) {
   function handleAfterFormSubmit() {
     $(document).on('frmFormComplete', function (event, form, response) {
       const { body: formBody } = getFormParts();
+      $('.demo__form__message').hide();
       formBody.hide();
     });
   }
