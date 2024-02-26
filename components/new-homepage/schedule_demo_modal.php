@@ -59,7 +59,7 @@ function render_arrow_svg()
             </div>
           </div> 
         </div> -->
-        <div class="mb-5">
+        <div class="mb-5 demo__form__message">
           <p class="text-center text-sm 2xl:text-base">Fill out the form below - and choose a meeting<br> that works for you.</p>
         </div>
         <?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('contact_modal_form_id', 'options'), 'title' => false, 'description' => false)) ?>

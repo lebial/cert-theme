@@ -1,4 +1,4 @@
-import { makeElementsSameHeight, handleAutoScroll } from "./utils/utils";
+import { makeElementsSameHeight } from "./utils/utils";
 
 function initPlatform($) {
   const insightsSliderSelector = '.platform__insights__slider';
@@ -64,8 +64,8 @@ function initPlatform($) {
     });
     //Set the opacity of the first and last partial slides.
     if (visibleSlides.length >= 3) {
-      $(visibleSlides).first().prev().animate({ 'opacity': 0 }, 250);
-      $($(visibleSlides).get(2)).next().animate({ 'opacity': 0 }, 250);
+      $(visibleSlides).first().prev().animate({ 'opacity': 0 });
+      $($(visibleSlides).get(2)).next().animate({ 'opacity': 0 });
     }
 
   }
@@ -185,7 +185,6 @@ function initPlatform($) {
   handleInsightsOnInit();
   createPlatformInsightsSlider();
   handleMainMenuNav();
-  handleAutoScroll($);
 }
 
 export default initPlatform;

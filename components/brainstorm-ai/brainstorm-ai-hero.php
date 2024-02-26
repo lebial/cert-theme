@@ -31,7 +31,7 @@
                 </h2>
             </div>
             <!-- <h2 class="text-white text-xl lg:text-2xl mt-8 tracking-normal font-normal px-4 lg:px-0 mx-auto mb-12"><?php the_field('hero_sub_heading') ?></h2> -->
-            <div class=" header__divider w-60 h-px bg-primary mx-auto mt-10"></div>
+            <div class=" header__divider w-60 h-px bg-primary mx-auto mt-2 mb-4 lg:mt-10"></div>
             <div class="w-11/12 md:w-8/12 mx-auto">
                 <p class="text-white max-w-4xl mt-4 md:mt-12 text-normal lg:text-xl mx-auto">
                     <?php strip_tags(the_field('hero_description'), '<a>') ?>
