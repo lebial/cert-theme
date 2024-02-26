@@ -13,7 +13,7 @@ function render_data_points($data) {
     echo '
       <div class="logistics__point__card text-center lg:text-left flex items-center flex-col max-w-[350px] h-fit opacity-100 z-20 group flex-1 hover:cursor-pointer relative '.$active.'" name="'.$position.'" data-dot-position="'.$idx.'">
 
-        <p class=" text-slate-400 text-xl pb-6 mb-0 font-bold group-hover:text-primary group-[.is-card-active]:text-primary transition-all duration-300 relative lg:absolute lg:-top-20 text-center">'.$card['title'].'</p>
+        <p class=" text-primary lg:text-slate-400 text-xl pb-6 mb-0 font-bold lg:group-hover:text-primary lg:group-[.is-card-active]:text-primary transition-all duration-300 relative lg:absolute lg:-top-20 text-center">'.$card['title'].'</p>
         <div class="relative justify-center lg:justify-start hidden  lg:flex">
           <button class="bg-slate-100 group-hover:bg-primary hidden lg:block
            group-[.is-card-active]:bg-primary group-[.is-card-active]:border-transparent border-2 border-solid border-slate-300 group-hover:border-transparent rounded-full w-12 h-12 relative z-20 opacity-100 transition-all duration-300
@@ -41,7 +41,7 @@ function render_data_copy($data) {
     echo '
       <div class="copy__container group absolute left-1/2 -translate-x-1/2 '.$active.'" data-copy-position="'.$idx.'">
         <div class="copy__body opacity-0 group-[.copy--active]:opacity-100 ">
-          <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-4 text-center">
+          <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-12 text-center">
           '.$card['description'].'
           </p>
         </div>
@@ -56,7 +56,7 @@ function render_data_copy($data) {
   <div class="w-8/12 lg:w-10/12 mx-auto relative lg:mt-24 flex flex-col lg:flex-row justify-between">
     <div class=" hidden lg:block w-10/12 bg-slate-300 h-[2px] absolute top-[24px] z-10 left-1/2 -translate-x-1/2"></div>
     <div class="w-full flex justify-between relative max-w-[1900px]">
-      <div class="validation__mobile__slider w-full flex justify-between relative max-w-[1900px]">
+      <div id="dataSecurity" class="validation__mobile__slider w-full flex justify-between relative max-w-[1900px]">
         <?php render_data_points($data_cards) ?>
       </div>
 
