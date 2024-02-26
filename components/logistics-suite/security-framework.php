@@ -7,7 +7,7 @@
     }
 ?>
 <section class="w-full bg-gray-secondary bg-opacity-50 py-12">
-    <div class="w-full px-4 lg:px-0 text-center">
+    <div id="dataSecurity" class="w-full px-4 lg:px-0 text-center">
         <h3 class="mb-8 text-dark-blue-background font-semibold text-3xl lg:text-4xl"><?php the_field('title') ?></h3>
         <div class="w-11/12 md:w-8/12 md:max-w-8/12 mx-auto">
             <p class="text-dark-blue-background mx-auto mt-4 text-base lg:text-lg">
