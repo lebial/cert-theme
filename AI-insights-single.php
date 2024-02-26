@@ -111,8 +111,8 @@ function render_tags() {
         foreach( $post_tags as $tag ) {
             echo'
                 <button class="px-5 py-1 border-solid border-primary border lg:border-[2px] rounded-3xl
-                text-dark-blue-background hover:text-white mr-2 lg:mr-3 mb-3 font-medium cursor-default hover:cursor-default transition-all duration-300
-                hover:bg-primary text-xs lg:text-sm " type="button" name="Example">'. esc_html($tag->name) .'
+                text-dark-blue-background mr-2 lg:mr-3 mb-3 font-medium cursor-default hover:cursor-default transition-all duration-300
+                text-xs lg:text-sm " type="button" name="Example">'. esc_html($tag->name) .'
                 </button>
             ';
         }
@@ -177,12 +177,12 @@ function get_latest_posts($number_of_posts = 3) {
                                 <?php render_tags() ?>
                             </div>
                             <h1 class="!text-dark-blue-background min-w-fit tracking-normal font-bold text-center mb-4 lg:text-left mt-6 lg:mt-0" style="font-size: calc(2rem + (1vw - 3.2px) * 1.9375);"><?php the_title() ?></h1>
-                            <h2 class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-center lg:text-left mt-6 lg:mt-0" style="font-size: calc(0.5rem + (1vw - 3.2px) * 1.9375);"><?php the_field('post_h2') ?></h2>
+                            <h2 class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-center lg:text-left mt-6 lg:mt-0 !text-2xl lg:!text-3xl"><?php the_field('post_h2') ?></h2>
                             <div class="post__author__container mt-8 flex justify-center lg:justify-start">
                                 <div class="user__container flex">
                                     <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full object-contain mr-4 w-16 h-16 lg:w-24 lg:h-24">
                                     <div class="author__name__container w-full flex flex-col justify-center relative">
-                                        <p class="font-normal mb-0">By <?php echo $tmp_author['author_name'] ?></p>
+                                        <p class="font-normal mb-0 leading-5">By <?php echo $tmp_author['author_name'] ?></p>
                                         <p class=""><?php echo $tmp_author['publication_date'] ?></p>
                                         <?php render_extra_links($tmp_author['extra_author_links']) ?>
                                     </div>

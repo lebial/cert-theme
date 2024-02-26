@@ -42,7 +42,7 @@ function render_data_copy($data) {
     echo '
       <div class="copy__container group absolute left-1/2 -translate-x-1/2 '.$active.'" data-copy-position="'.$idx.'">
         <div class="copy__body opacity-0 group-[.copy--active]:opacity-100 ">
-          <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-4 text-center">
+          <p class="text-sm transition-all duration-300  text-dark-blue-background leading-snug mt-12 text-center">
           '.$card['description'].'
           </p>
         </div>
@@ -57,7 +57,7 @@ function render_data_copy($data) {
   <div class="w-8/12 lg:w-10/12 mx-auto relative lg:mt-24 flex flex-col lg:flex-row justify-between">
     <div class=" hidden lg:block w-10/12 bg-slate-300 h-[2px] absolute top-[24px] z-10 left-1/2 -translate-x-1/2"></div>
     <div class="w-full flex justify-between relative max-w-[1900px]">
-      <div class="validation__mobile__slider w-full flex justify-between relative max-w-[1900px]">
+      <div id="dataSecurity" class="validation__mobile__slider w-full flex justify-between relative max-w-[1900px]">
         <?php render_data_points($data_cards) ?>
       </div>
 
