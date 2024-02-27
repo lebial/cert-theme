@@ -205,10 +205,6 @@ function get_latest_posts($number_of_posts = 3) {
                 </article>
 
                 <aside class="sticky !w-[335px] top-[15%] h-fit hidden lg:block">
-                    <div class="hidden <?php echo $hide_class ?>">
-                        <?php render_subscribe_form() ?>
-                    </div>
-                    <div class="flex-1 h-0 border-t-[1px] mt-8 border-gray-400/50 border-solid"></div>
                     <div class="related__posts__container w-full <?php echo $remove_mt_if_shown ?>">
                         <div class="related__posts__headline w-full mb-4">
                             <p class="w-fit mr-4 font-bold">Content </p>
@@ -216,6 +212,10 @@ function get_latest_posts($number_of_posts = 3) {
                                 <?php render_content_navigation() ?>
                             </div>
                         </div>
+                    </div>
+                    <div class="flex-1 h-0 border-t-[1px] my-8 border-gray-400/50 border-solid"></div>
+                    <div class="hidden <?php echo $hide_class ?>">
+                        <?php render_subscribe_form() ?>
                     </div>
                 </aside>
             </section>
