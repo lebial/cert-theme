@@ -23,7 +23,7 @@ function render_custom_menu_items()
         <span class="text-2xl lg:text-4xl text-primary font-normal relative">Powered by BrainstormAI<span class=" text-base align-super">&reg;</span></span>
       </h1>
       <div class="w-full block lg:hidden" >
-        <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text ">
+        <h1 class="text-white text-4xl lg:text-4xl xl:text-6xl reveal-text ">
           <?php the_field('head_line_mobile') ?>
         </h1>
         <p class="text-2xl lg:text-4xl text-primary font-normal relative">
