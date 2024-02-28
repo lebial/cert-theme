@@ -77,7 +77,7 @@ function render_data_copy($data) {
 
     </div>
   </div>
-  <div class="copy__container mx-auto relative min-h-28 pt-14 hidden lg:block">
+  <div class="copy__container mx-auto relative min-h-44 pt-14 hidden lg:block">
     <?php render_data_copy($data_cards) ?>
   </div>
   <div id="dataSecurity"></div>
