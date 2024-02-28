@@ -28,6 +28,7 @@ jQuery(document).ready(function ($) {
     if ($(this).hasClass('mobile__button') && $(this).is(':visible')) {
       if (!$(this).hasClass('ai__active__button')) {
         $(this).addClass(activeClass);
+        $('.mobile__image__container').animate({ 'height': '0px' });
         $($(this).next()).animate({ 'height': '150px' });
         $(this).find('svg').animate(
           { deg: 90 },
