@@ -807,20 +807,22 @@ $dot-color: #bdcff5;
         &.slick-prev {
             left: 3%;
             z-index: 40;
-            top: 110%;
+            display: none;
 
             @media #{$desktopMD} {
                 left: -40px;
+                display: block;
             }
         }
 
         &.slick-next {
             z-index: 40;
             right: 6%;
-            top: 110%;
+            display: none;
 
             @media #{$desktopMD} {
                 right: -25px;
+                display: block;
             }
         }
 

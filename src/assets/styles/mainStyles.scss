@@ -807,21 +807,23 @@ header {
 
                     &.active_item_arrow {
                         &::before {
-                            transform: rotate(90deg);
+                            transform: rotate(134deg);
+                            top: 0px;
                         }
                     }
 
                     &::before {
                         transition: all ease 0.3s;
                         content: '';
-                        width: 0;
-                        height: 0;
-                        border-top: 10px solid transparent;
-                        border-bottom: 10px solid transparent;
-                        border-left: 10px solid lightgray;
+                        width: 12px;
+                        height: 12px;
+                        transform: rotate(45deg);
+                        border-top: 2px solid $color-grey;
+                        border-right: 2px solid $color-grey;
+                        border-radius: 1px;
                         position: absolute;
                         right: -25px;
-                        top: 0;
+                        top: 3px;
                         display: block;
 
                         @media #{$desktopBase} {

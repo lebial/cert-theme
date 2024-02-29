@@ -102,27 +102,6 @@ function getCustomArrows(name = 'slick', customClass = 'custom__slick-arrow') {
     return [prevArrow, nextArrow];
 }
 
-// function handleAutoScroll($) {
-//     $(window).bind('load', function () {
-//         const { hash } = window.location;
-//         if (hash) {
-//             const targetElement = $(`${hash}`);
-//             $('html, body').animate({ scrollTop: (targetElement.offset().top) }, 700);
-//         }
-//     });
-// }
-
-function handleAutoScroll() {
-    const $ = jQuery;
-    let { hash } = window.location;
-    let target = hash;
-    if (hash) {
-        // delete hash so the page won't scroll to it
-        window.location.hash = "";
-    }
-}
-
-
 export {
     getNavHeight as default,
     waitForElement,
@@ -133,5 +112,4 @@ export {
     triggerGtagEvent,
     getVideoProgressPercentages,
     getCustomArrows,
-    handleAutoScroll,
 };
