@@ -66,7 +66,7 @@ function render_detail_cards() {
         <?php render_buttons()?>
       </div>
     </aside>
-    <main class="w-full lg:w-8/12 pl-2 lg:pl-14 pt-5 pb-8 flex justify-center pr-2">
+    <main class="w-full lg:w-8/12 pl-2 lg:pl-14 pt-5 pb-20 lg:pb-12 flex justify-center pr-2">
       <div class="max-w-4xl">
         <?php render_detail_cards()?>
       </div>
