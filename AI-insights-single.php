@@ -39,7 +39,7 @@ function render_quotes($component)
     echo '<div class="w-full post__quotes__slider mx-8 py-6 hidden">';
     foreach ($quotes as $quote) {
         echo '<div class="quote__body flex flex-col items-center">';
-        echo '<p class="font-bold text-lg text-gray-header max-w-sm text-center" style="max-width: 700px;">';
+        echo '<p class="font-bold text-base text-gray-header max-w-sm text-center" style="max-width: 700px;">';
         echo '&lsquo;&lsquo;' . $quote['quote_body'] . '&rsquo;&rsquo;';
         echo '</p>';
         echo '<p class="">';
@@ -86,7 +86,7 @@ function render_content_navigation()
 {
     $navigation = get_field('content_navigation');
     foreach ($navigation as $nav_option) {
-        echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 mb-2 font-medium text-gray-header ">' . $nav_option['display_text'] . '</a>';
+        echo '<a href="#' . $nav_option['anchor_id'] . '" class="post__navigation__option w-full pl-4 py-1 text-sm mb-2 font-medium text-gray-header ">' . $nav_option['display_text'] . '</a>';
     }
 }
 
@@ -143,7 +143,7 @@ function get_latest_posts($number_of_posts = 3) {
                     </div>
                     <div class="py-2 flex flex-col justify-between h-56">
                         <span class="font-base text-base text-gray-400">'.get_the_date('F j, Y').'</span>
-                        <h5 class="text-xl font-bold tracking-tight text-gray-900 line-clamp-2">'.get_the_title().'</h5>
+                        <h5 class="text-lg font-bold tracking-tight text-gray-900 line-clamp-2">'.get_the_title().'</h5>
                         <p class="pt-2 pb-6 font-base text-base text-dark-blue-background">'.esc_html($post_content).'</p>
                         <div class="">
                             <a href="'.get_permalink().'" target="_blank" class="schedule__demo__button nav__schedule__demo__button px-3 py-2 border-solid border-primary border lg:border-[2px] rounded-3xl
@@ -171,48 +171,51 @@ function get_latest_posts($number_of_posts = 3) {
             <section class="article__body w-full flex flex-col lg:flex-row px-5 ">
                 <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 pr-4 lg:pr-0 ">
                     <div class="content__container post__dynamic__content w-full flex flex-col items-center lg:pl-10">
-                        <div class="post__content__container w-full mb-12">
-                            <div class="pt-8 pb-2 lg:pt-12 lg:pb-8">
-                                <p class="pb-4 text-dark-blue-background">AI Insights by Certilytics</p>
-                                <?php render_tags() ?>
-                            </div>
-                            <h1 class="!text-dark-blue-background min-w-fit tracking-normal font-bold text-center mb-4 lg:text-left mt-6 lg:mt-0" style="font-size: calc(2rem + (1vw - 3.2px) * 1.9375);"><?php the_title() ?></h1>
-                            <h2 class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-center lg:text-left mt-6 lg:mt-0 !text-2xl lg:!text-3xl"><?php the_field('post_h2') ?></h2>
-                            <div class="post__author__container mt-8 flex justify-center lg:justify-start">
-                                <div class="user__container flex">
-                                    <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full object-contain mr-4 w-16 h-16 lg:w-24 lg:h-24">
-                                    <div class="author__name__container w-full flex flex-col justify-center relative">
-                                        <p class="font-normal mb-0 leading-5">By <?php echo $tmp_author['author_name'] ?></p>
-                                        <p class=""><?php echo $tmp_author['publication_date'] ?></p>
-                                        <?php render_extra_links($tmp_author['extra_author_links']) ?>
+                        <div class="post__content__container flex w-full mb-12">
+                            <div class="max-w-4xl mx-auto">
+                                <div class="pt-8 pb-2 lg:pt-12 lg:pb-8">
+                                    <p class="pb-4 text-dark-blue-background">AI Insights by Certilytics</p>
+                                    <?php render_tags() ?>
+                                </div>
+                                <h1 class="!text-dark-blue-background min-w-fit tracking-normal font-bold text-center mb-4 lg:text-left mt-6 lg:mt-0 text-2xl lg:text-4xl " ><?php the_title() ?></h1>
+                                <h2 class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-center lg:text-left mt-6 lg:mt-0 !text-lg lg:!text-xl"><?php the_field('post_h2') ?></h2>
+                                <div class="post__author__container mt-8 flex justify-center lg:justify-start">
+                                    <div class="user__container flex">
+                                        <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full object-contain mr-4 w-16 h-16 lg:w-24 lg:h-24">
+                                        <div class="author__name__container w-full flex flex-col justify-center relative">
+                                            <p class="font-normal mb-0 leading-5 text-base">By <?php echo $tmp_author['author_name'] ?></p>
+                                            <p class="text-base"><?php echo $tmp_author['publication_date'] ?></p>
+                                            <?php render_extra_links($tmp_author['extra_author_links']) ?>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="flex items-center justify-center lg:justify-start mt-8">
+                                    <p class="text-lg">SHARE IT : &nbsp;</p>
+                                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>" target="_blank">
+                                        <img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
+                                    </a>
+                                    <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>" target="_blank">
+                                        <img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/X-icon-navy.jpg" alt="">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="flex items-center justify-center lg:justify-start mt-8">
-                                <p>SHARE IT : &nbsp;</p>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>" target="_blank">
-                                    <img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
-                                </a>
-                                <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>" target="_blank">
-                                    <img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/X-icon-navy.jpg" alt="">
-                                </a>
-                            </div>
+                            <div class="w-[335px] ml-auto"></div>
                         </div>
                         <div class="flex w-full">
-                            <div class="post__article__container w-full lg:pr-16 break-words">
+                            <div class="post__article__container max-w-4xl mx-auto break-words">
                                 <?php render_dynamic_content() ?>
                             </div>
 
-                            <aside class="sticky !w-[335px] top-[15%] h-fit hidden lg:block">
+                            <aside class="sticky !w-[335px] top-[10%] h-fit hidden lg:block ml-auto mr-4">
                                 <div class="related__posts__container w-full">
-                                    <div class="related__posts__headline w-full mb-4">
+                                    <div class="related__posts__headline w-full ">
                                         <p class="w-fit mr-4 font-bold">Content </p>
                                         <div class="content__option__container w-full flex flex-col">
                                             <?php render_content_navigation() ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex-1 h-0 border-t-[1px] my-8 border-gray-400/50 border-solid"></div>
+                                <div class="flex-1 h-0 border-t-[1px] mt-4 mb-6 border-gray-400/50 border-solid"></div>
                                 <div class="hidden <?php echo $hide_class ?>">
                                     <?php render_subscribe_form() ?>
                                 </div>
