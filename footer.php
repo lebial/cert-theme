@@ -69,7 +69,7 @@ function render_link_groups()
 		echo '<div class="footer__links__group mr-0 relative " style="margin-right: 0;">';
 		if ($link_group["links"]) {
 			foreach ($link_group['links'] as $idx => $link) {
-				echo '<a href="' . $link['href'] . '" class="footer__link" name="footer-' . $idx . '">' . $link['text'] . '</a>';
+				echo '<a href="' . $link['href'] . '" class="footer__link leading-tight mb-2 " name="footer-' . $idx . '">' . $link['text'] . '</a>';
 			}
 		}
 		echo '</div>';
@@ -97,7 +97,7 @@ function render_link_groups()
 				</a>
 			</div>
 		</div>
-		<div class="footer__links w-full flex flex-col xl:w-full lg:flex-row justify-evenly">
+		<div class="footer__links space-x-8 w-full flex flex-col xl:w-full lg:flex-row justify-evenly">
 			<?php render_link_groups(); ?>
 		</div>
 	</div>
