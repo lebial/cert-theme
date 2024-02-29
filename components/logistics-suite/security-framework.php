@@ -2,7 +2,7 @@
     function render_logos() {
         $logos = get_field('standard_images');
         foreach ($logos as $logo) {
-            echo '<img class="w-24 h-12" src="' . $logo['image'] . '" alt="card image">';
+            echo '<img class="w-24 h-12 lg:w-28 lg:h-16" src="' . $logo['image'] . '" alt="card image">';
         }
     }
 ?>
@@ -14,7 +14,7 @@
                 <?php the_field('description') ?>
             </p>
         </div>
-        <div class="w-8/12 mx-auto flex justify-center mt-12 mb-8 space-x-8">
+        <div class="w-8/12 mx-auto flex justify-center mt-12 mb-8 space-x-4 lg:space-x-8">
             <?php render_logos() ?>
         </div>
     </div>

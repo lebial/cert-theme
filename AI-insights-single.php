@@ -166,11 +166,11 @@ function get_latest_posts($number_of_posts = 3) {
 ?>
 <?php get_header(); ?>
 <div class="w-full flex justify-center">
-    <div class=" flex flex-col">
+    <div class="w-full flex flex-col">
         <main class="post__page w-full">
             <section class="article__body w-full flex flex-col lg:flex-row px-5 ">
-                <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 pr-4 lg:pr-20 ">
-                    <div class="content__container post__dynamic__content w-full flex flex-col items-center lg:px-10">
+                <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 pr-4 lg:pr-0 ">
+                    <div class="content__container post__dynamic__content w-full flex flex-col items-center lg:pl-10">
                         <div class="post__content__container w-full mb-12">
                             <div class="pt-8 pb-2 lg:pt-12 lg:pb-8">
                                 <p class="pb-4 text-dark-blue-background">AI Insights by Certilytics</p>
@@ -198,26 +198,30 @@ function get_latest_posts($number_of_posts = 3) {
                                 </a>
                             </div>
                         </div>
-                        <div class="post__article__container">
-                            <?php render_dynamic_content() ?>
+                        <div class="flex w-full">
+                            <div class="post__article__container w-full lg:pr-16 break-words">
+                                <?php render_dynamic_content() ?>
+                            </div>
+
+                            <aside class="sticky !w-[335px] top-[15%] h-fit hidden lg:block">
+                                <div class="related__posts__container w-full">
+                                    <div class="related__posts__headline w-full mb-4">
+                                        <p class="w-fit mr-4 font-bold">Content </p>
+                                        <div class="content__option__container w-full flex flex-col">
+                                            <?php render_content_navigation() ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1 h-0 border-t-[1px] my-8 border-gray-400/50 border-solid"></div>
+                                <div class="hidden <?php echo $hide_class ?>">
+                                    <?php render_subscribe_form() ?>
+                                </div>
+                            </aside>
                         </div>
                     </div>
                 </article>
 
-                <aside class="sticky !w-[335px] top-[15%] h-fit hidden lg:block">
-                    <div class="related__posts__container w-full <?php echo $remove_mt_if_shown ?>">
-                        <div class="related__posts__headline w-full mb-4">
-                            <p class="w-fit mr-4 font-bold">Content </p>
-                            <div class="content__option__container w-full flex flex-col">
-                                <?php render_content_navigation() ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-1 h-0 border-t-[1px] my-8 border-gray-400/50 border-solid"></div>
-                    <div class="hidden <?php echo $hide_class ?>">
-                        <?php render_subscribe_form() ?>
-                    </div>
-                </aside>
+                
             </section>
         </main>
 
