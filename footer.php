@@ -97,7 +97,7 @@ function render_link_groups()
 				</a>
 			</div>
 		</div>
-		<div class="footer__links space-x-8 w-full flex flex-col xl:w-full lg:flex-row justify-evenly">
+		<div class="footer__links space-x-0 lg:space-x-8 w-full flex flex-col xl:w-full lg:flex-row justify-evenly">
 			<?php render_link_groups(); ?>
 		</div>
 	</div>

@@ -199,15 +199,15 @@ function get_latest_posts($number_of_posts = 3) {
                                     </a>
                                 </div>
                             </div>
-                            <div class="w-[335px] ml-auto"></div>
+                            <div class="w-[335px] ml-auto hidden lg:block"></div>
                         </div>
-                        <div class="flex w-full">
-                            <div class="post__article__container max-w-4xl mx-auto break-words">
+                        <div class="flex w-full space-x-0 lg:space-x-12">
+                            <div class="post__article__container w-full lg:max-w-2xl xl:max-w-4xl mx-auto break-words">
                                 <?php render_dynamic_content() ?>
                             </div>
 
-                            <aside class="sticky !w-[335px] top-[10%] h-fit hidden lg:block ml-auto mr-4">
-                                <div class="related__posts__container w-full">
+                            <aside class="sticky !w-[335px] top-[15%] h-fit hidden lg:block ml-auto mr-4">
+                                <div class="related__posts__container w-full hidden lg:block">
                                     <div class="related__posts__headline w-full ">
                                         <p class="w-fit mr-4 font-bold">Content </p>
                                         <div class="content__option__container w-full flex flex-col">
@@ -223,8 +223,6 @@ function get_latest_posts($number_of_posts = 3) {
                         </div>
                     </div>
                 </article>
-
-                
             </section>
         </main>
 
