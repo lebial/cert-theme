@@ -14,7 +14,7 @@ function render_points()
 ?>
 <?php if (get_field('add_title')) :?>
 <section class="ai_powered__section w-full py-16 w-">
-    <div class="mx-auto w-11/12 lg:w-7/12">
+    <div class="mx-auto w-11/12 lg:w-[60%]">
         <h3 class="text-center text-[#7d7d7d]"><?php the_field('ai_title') ?>
         </h3>
         <div class="list__container w-10/12 mx-auto mt-10">
