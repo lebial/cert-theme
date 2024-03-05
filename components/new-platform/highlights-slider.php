@@ -27,8 +27,8 @@ function render_hightlight_cards()
 
 ?>
 <section class="w-full py-14 lg:py-28 border-t border-gray-500/25 border-solid relative">
-  <p class="text-dark-blue-background font-bold mx-auto !mb-16 text-center text-2xl lg:text-4xl reveal-text max-w-none block lg:hidden">Our Platform <br> by the Numbers</p>
-  <p class="text-dark-blue-background font-bold mx-auto !mb-16 text-center text-2xl lg:text-4xl reveal-text max-w-none hidden lg:block">Our Platform by the Numbers</p>
+  <p class="text-dark-blue-background font-bold mx-auto !mb-16 text-center text-2xl lg:text-4xl reveal-text max-w-none block lg:hidden"><?php the_field('highlight_section_title_mobile') ?></p>
+  <p class="text-dark-blue-background font-bold mx-auto !mb-16 text-center text-2xl lg:text-4xl reveal-text max-w-none hidden lg:block"><?php the_field('highlight_section_title') ?></p>
   <!-- <div class="highlight__slider max-w-5xl mx-auto max-h-[1237px] flex"> -->
   <div class="highlight__slider mx-auto max-w-5xl  lg:max-w-6xl max-h-[1237px] flex">
     <?php render_hightlight_cards() ?>
