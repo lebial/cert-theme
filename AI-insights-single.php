@@ -120,13 +120,25 @@ function render_tags() {
 }
 
 function get_latest_posts($number_of_posts = 3) {
-    // WP query args
-    $args = array(
-        'post_type'      => 'post',
-        'posts_per_page' => $number_of_posts,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-    );
+    $related_posts_ids = get_field('related_posts');
+
+    // Si hay posts relacionados, ajusta los argumentos de la consulta para incluir esos IDs
+    if (!empty($related_posts_ids)) {
+        $args = array(
+            'post_type'      => 'post',
+            'post__in'       => array_map('intval', $related_posts_ids), // Asegurarse de que los IDs sean enteros
+            'posts_per_page' => $number_of_posts,
+            'orderby'        => 'post__in', // Respeta el orden de los posts como aparecen en el campo relacionado
+        );
+    } else {
+        // Argumentos para la consulta por defecto para obtener los últimos posts globales
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' => $number_of_posts,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        );
+    }
 
     // WP query instance
     $latest_posts_query = new WP_Query($args);
@@ -178,9 +190,9 @@ function get_latest_posts($number_of_posts = 3) {
                                     <p class="pb-4 text-dark-blue-background">AI Insights by Certilytics</p>
                                     <?php render_tags() ?>
                                 </div>
-                                <h1 class="!text-dark-blue-background min-w-fit tracking-normal font-bold text-center mb-4 lg:text-left mt-6 lg:mt-0 text-2xl lg:text-4xl " ><?php the_title() ?></h1>
-                                <h2 class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-center lg:text-left mt-6 lg:mt-0 !text-lg lg:!text-xl"><?php the_field('post_h2') ?></h2>
-                                <div class="post__author__container mt-8 flex justify-center lg:justify-start">
+                                <h1 class="!text-dark-blue-background min-w-fit tracking-normal font-bold mb-4 text-left mt-6 lg:mt-0 text-2xl lg:text-4xl " ><?php the_title() ?></h1>
+                                <h2 class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-left mt-6 lg:mt-0 !text-lg lg:!text-xl"><?php the_field('post_h2') ?></h2>
+                                <div class="post__author__container mt-8 flex justify-start">
                                     <div class="user__container flex">
                                         <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full object-contain mr-4 w-16 h-16 lg:w-24 lg:h-24">
                                         <div class="author__name__container w-full flex flex-col justify-center relative">
@@ -190,7 +202,7 @@ function get_latest_posts($number_of_posts = 3) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-center lg:justify-start mt-8">
+                                <div class="flex items-center justify-start mt-8">
                                     <p class="text-lg text-dark-blue-background">SHARE IT : &nbsp;</p>
                                     <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>" target="_blank">
                                         <img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
