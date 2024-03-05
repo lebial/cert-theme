@@ -175,7 +175,7 @@ jQuery(document).ready(function ($) {
       }
       video.onseeked = function (ev) {
         const { target } = ev;
-        triggerGtagEvent(`${$(target).attr('name')}_video_paused`, getVideoProgressPercentages(target))
+        triggerGtagEvent(`${$(target).attr('name')}_video_seeked`, getVideoProgressPercentages(target))
       }
       video.onended = function (ev) {
         this.load();
