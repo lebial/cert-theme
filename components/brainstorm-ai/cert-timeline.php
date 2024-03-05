@@ -6,7 +6,7 @@ function render_dates($data) {
     echo '
       <div>
         <div class="point__container flex items-center justify-center lg:justify-start pt-2 pb-8 lg:py-20 lg:pr-5 group flex-col lg:flex-row">
-          <p class="text-lg text-white lg:mr-8 transition-all duration-300
+          <p class="text-lg text-primary lg:text-white lg:mr-8 transition-all duration-300
           group-[.point-active]:text-2xl
           group-[.point-active]:text-primary lg:group-[.point-active]:text-5xl group-[.point-active]:font-bold"
           >'.$date['date'].'</p>

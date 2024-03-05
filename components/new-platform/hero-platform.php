@@ -20,14 +20,14 @@ function render_custom_menu_items()
     <div class="flex flex-col items-center justify-center text-center">
       <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text hidden lg:block">
         <?php the_field('head_line') ?> <br>
-        <span class="text-2xl lg:text-4xl text-primary font-normal relative"><?php the_field('sub_heading') ?></span>
+        <span class="text-xl lg:text-2xl text-primary font-normal relative"><?php the_field('sub_heading') ?></span>
       </h1>
       <div class="w-full block lg:hidden" >
-        <h1 class="text-white text-3xl lg:text-4xl xl:text-6xl reveal-text ">
+        <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text ">
           <?php the_field('head_line_mobile') ?>
         </h1>
         <p class="text-2xl lg:text-4xl text-primary font-normal relative">
-          <span ><?php the_field('sub_head_line') ?></span>
+          <span ><?php the_field('sub_heading') ?></span>
         </p>
       </div>
       <!-- <h1 class="text-white text-2xl lg:text-4xl xl:text-6xl reveal-text block lg:hidden"><?php //the_field('head_line') ?></h1> -->
