@@ -78,8 +78,10 @@ jQuery(document).ready(function ($) {
     revealElements.forEach(element => observer.observe(element));
   }
 
-  revealInit();
-  handleLineReveal();
+  $(window).bind('load', function () {
+    revealInit();
+    handleLineReveal();
+  })
 
 });
 

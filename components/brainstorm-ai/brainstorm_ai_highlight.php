@@ -16,7 +16,7 @@ function render_highlight_cards() {
   <p class=" text-dark-blue-background text-2xl xl:text-4xl mx-auto max-w-none block lg:hidden text-center font-bold reveal-text">How BrainstormAI<span class=" align-super !text-xl">®</span> <br> is Different</p>
   <p class=" text-dark-blue-background text-2xl xl:text-4xl mx-auto max-w-none hidden lg:block text-center font-bold reveal-text">How BrainstormAI<span class=" align-super !text-xl">®</span> is Different</p>
   <!-- <div class="w-full flex flex-col lg:flex-row mt-16 max-w-[1300px] space-x-0 lg:space-x-28 mx-auto"> -->
-  <div class="w-9/12 flex flex-col lg:flex-row mt-16 max-w-[1300px] mx-auto space-x-28">
+  <div class="w-10/12 lg:w-9/12 flex flex-col lg:flex-row mt-16 max-w-[1300px] mx-auto lg:space-x-28">
     <?php render_highlight_cards()?>
   </div>
 </section>
