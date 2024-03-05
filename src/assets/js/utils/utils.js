@@ -73,7 +73,7 @@ function makeElementsSameWidth($, selector) {
     });
 }
 
-function triggerGtagEvent(eventName, options = null) {
+function triggerGtagEvent(eventName, options = {}) {
     if (typeof gtag === 'function') {
         gtag('event', eventName, options);
     }

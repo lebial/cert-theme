@@ -105,7 +105,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no minimum-scale=1">
 
-    <meta name="google-site-verification" content="fo3XyJv5ZPhtGiMbLtPCaJzFclbCjKt3Cq23igaljVA" />
+    <!-- <meta name="google-site-verification" content="fo3XyJv5ZPhtGiMbLtPCaJzFclbCjKt3Cq23igaljVA" /> -->
 
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="<?php // echo get_template_directory_uri(); 
                                                             ?>/favicons/apple-touch-icon.png">
@@ -138,7 +138,7 @@
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4R5S5Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+     <!-- Google Tag Manager (noscript) -->
 
     <header class="header__section overflow-hidden z-50 sticky bg-dark-blue-background">
 
