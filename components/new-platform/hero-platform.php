@@ -35,7 +35,7 @@ function render_custom_menu_items()
       <div class=" header__divider w-60 h-px bg-primary"></div>
     </div>
     <div class="w-full flex flex-col items-center mt-12">
-      <div class="w-10/12 2xl:w-9/12 flex flex-col">
+      <div class="w-11/12 3xl:w-9/12 flex flex-col">
         <p class=" text-xl 2xl:text-2xl font-normal text-white max-w-none text-center">
           <?php the_field('sub_head_line') ?>
         </p>
