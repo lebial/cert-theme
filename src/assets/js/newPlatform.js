@@ -180,6 +180,10 @@ function initPlatform($) {
     }
   }
 
+  function addPlatformNameToVideo() {
+    $('.home__secondary__video').attr('name', 'platform');
+  }
+
 
   handleHeroPlatformOption();
   handleSlickOnInit();
@@ -189,6 +193,7 @@ function initPlatform($) {
   handleInsightsOnInit();
   createPlatformInsightsSlider();
   handleMainMenuNav();
+  addPlatformNameToVideo();
 }
 
 export default initPlatform;

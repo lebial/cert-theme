@@ -126,11 +126,8 @@ jQuery(document).ready(function ($) {
     const currentLink = $(this).find('a');
     const { href } = ev.target;
     if (!href || href?.contains('news-insights')) ev.preventDefault();
-    // if (currentSubMenu.is(':visible')) return null;
-    $('.main-page-link>a').removeClass('active_item_arrow');
-    $('.sub-menu').hide();
-    currentLink.addClass('active_item_arrow');
-    currentSubMenu.show();
+    currentLink.toggleClass('active_item_arrow');
+    currentSubMenu.toggle();
   }
 
   function handleMobileSiteMap() {
