@@ -69,8 +69,13 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function addBrainstormToVideo() {
+    $('.home__secondary__video').attr('name', 'brainstorm');
+  }
+
   if (window.location.href.includes("brainstorm")) {
     createTimelineSlider();
     handleSliderScroll();
+    addBrainstormToVideo();
   }
 });

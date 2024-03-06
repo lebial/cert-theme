@@ -125,6 +125,9 @@ jQuery(document).ready(function ($) {
   function handleValidationProcessNavigation() {
     $('.process-navigation').click(handleCardClick);
   }
+  function addLogisticsToVideo() {
+    $('.home__secondary__video').attr('name', 'logistics_suite');
+  }
 
   //function calls;
   const { href } = window.location;
@@ -135,6 +138,7 @@ jQuery(document).ready(function ($) {
     startVideoAtSpecificTime();
     handleValidationProcessNavigation();
     setCycle();
+    addLogisticsToVideo();
   }
 
 });
