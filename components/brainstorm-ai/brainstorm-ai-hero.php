@@ -26,7 +26,7 @@
                 <h1 class="text-white font-bold relative text-2xl lg:text-4xl xl:text-6xl reveal-text ">
                     <?php the_field('head_line') ?><span class="font-normal text-base align-super ">®</span> <br>
                 </h1>
-                <h2 class="text-2xl text-primary font-normal reveal-text">
+                <h2 class="text-xl text-primary font-normal reveal-text">
                     <?php the_field('mobile_hero_sub_heading') ?>
                 </h2>
             </div>

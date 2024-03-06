@@ -824,6 +824,7 @@ header {
     .menu-main-menu-container {
         background-color: #fff;
         padding-left: 20px;
+        width: 75%;
 
         // @media(max-width: 1199px) {
         //     position: absolute;
@@ -959,6 +960,8 @@ header {
                 }
 
                 a {
+                    display: inline-block;
+                    width: 100%;
                     color: $color-grey !important;
                     text-decoration: none;
                     font-size: 14px;
