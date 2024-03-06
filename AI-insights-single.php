@@ -93,7 +93,7 @@ function render_content_navigation()
 function render_subscribe_form()
 {
     echo '<div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">';
-    echo '<p class="text-white mt-4 mb-[10px]">Sign Up for AI Insights by Email</p>';
+    echo '<p class="text-white mt-4 mb-[10px]">Sign up for AI Insights</p>';
     echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false));
     echo '</div>';
 }
@@ -249,7 +249,7 @@ function get_latest_posts($number_of_posts = 3) {
 
             <div class="mobile__subscribe__to__blog w-full lg:hidden block">
                 <div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">
-                    <p class="text-white mt-10 mb-8">Sign Up for AI Insights by Email</p>
+                    <p class="text-white mt-10 mb-8">Sign up for AI Insights</p>
                     <?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false)); ?>
                 </div>
             </div>
