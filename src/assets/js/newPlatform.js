@@ -147,7 +147,7 @@ function initPlatform($) {
 
   function createPlatformInsightsSlider() {
     $(insightsSliderSelector).slick({
-      slidesToShow: 3,
+      slidesToShow: 2, //remove after having more than 3;
       slidesToScroll: 1,
       infinite: true,
       arrows: true,
