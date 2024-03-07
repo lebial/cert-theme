@@ -20,7 +20,7 @@
         <div class="flex flex-col items-center justify-center text-center">
             <h1 class="text-white font-bold relative text-2xl lg:text-4xl xl:text-6xl reveal-text hidden lg:block">
                 <?php the_field('head_line') ?><span class="font-normal text-lg align-super relative -top-[6px]">®</span> <br>
-                <span class="text-2xl lg:text-4xl text-primary font-normal relative"><?php the_field('hero_sub_heading') ?> </span>
+                <span class="text-xl lg:text-2xl text-primary font-normal relative"><?php the_field('hero_sub_heading') ?> </span>
             </h1>
             <div class="block lg:hidden">
                 <h1 class="text-white font-bold relative text-2xl lg:text-4xl xl:text-6xl reveal-text ">
