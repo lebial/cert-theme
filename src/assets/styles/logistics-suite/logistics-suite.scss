@@ -86,9 +86,11 @@
 .validation__mobile__slider {
   & .slick-next {
     right: -45px;
+    top: -10px;
   }
 
   & .slick-prev {
     left: -45px;
+    top: -10px;
   }
 }
