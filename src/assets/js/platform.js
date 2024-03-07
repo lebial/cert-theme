@@ -294,7 +294,8 @@ jQuery(document).ready(function ($) {
         // handlePlatformScrollObserver();
         startVideoAtSpecificTime();
     }
-    (window.location.href.includes("platform") || window.location.href.includes("logistics")) && initPlatform($);
+    const { href } = window.location;
+    (href.includes("platform") || href.includes("logistics") || href.includes('brainstorm')) && initPlatform($);
 });
 
 // handleAutoCycle();
