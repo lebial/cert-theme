@@ -30,7 +30,8 @@ $quote = get_field('platform_hightlight_quote');
         <?php get_template_part('components/new-platform/main_video') ?>
       </div>
       <p class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0 text-lg mb-8 font-light">&ldquo;<?php echo $quote['body'] ?>&rdquo;</p>
-      <div class="divider w-full lg:w-20 h-px bg-primary mb-4"></div>
+      <!-- <div class="divider w-full lg:w-20 h-px bg-primary mb-4"></div> -->
+      <div class="divider mx-auto lg:mx-0 w-16 lg:w-20 h-px bg-primary mb-4"></div>
       <p id="dataProcessing" class="text-dark-blue-background max-w-xl text-center lg:text-left mx-auto lg:mx-0 text-xl font-normal"><?php echo $quote['author'] ?></p>
     </div>
   </div>
