@@ -6,6 +6,11 @@ function hide_button($count)
 	return 'hidden';
 }
 
+function get_open_new_tab($tab_text) {
+	if ($tab_text == 'Contact US' || $tab_text == 'Careers') return 'target="_blank"';
+	return '';
+}
+
 function render_link_groups()
 {
 
@@ -55,8 +60,7 @@ function render_link_groups()
 		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start flex-1 lg:'.$pr_class.' ">';
 		echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 		if ($link_group['button_link']) {
-			$open_tab = $link_group['button_text'] == 'Contact Us' ? 'target="_blank"' : '';
-			echo '<a name="footer-' . $link_group['button_text'] . '" ' . $open_tab . ' href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
+			echo '<a name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
 		} else {
 
 			echo '<a name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
@@ -69,7 +73,8 @@ function render_link_groups()
 		echo '<div class="footer__links__group mr-0 relative " style="margin-right: 0;">';
 		if ($link_group["links"]) {
 			foreach ($link_group['links'] as $idx => $link) {
-				echo '<a href="' . $link['href'] . '" class="footer__link leading-tight mb-2 " name="footer-' . $idx . '">' . $link['text'] . '</a>';
+				$open_tab = get_open_new_tab($link['text']);
+				echo '<a href="' . $link['href'] . '" '.$open_tab.' class="footer__link leading-tight mb-2 " name="footer-' . $idx . '">' . $link['text'] . '</a>';
 			}
 		}
 		echo '</div>';
@@ -83,13 +88,13 @@ function render_link_groups()
 	<div class="first-row w-full flex flex-col xl:flex-row xl:justify-between">
 		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0 mt-10 xl:mt-0">
 			<div class="flex flex-col items-center xl:items-start w-10/12">
-				<span class="footer__responsive__hidden text-white">
+				<span class="text-white">
 					<p class="font-bold text-white text-sm">
 						<?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?>
 					</p>
 					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
-				<p class="footer__responsive__hidden footer__chat__description text-white text-sm ">
+				<p class="footer__chat__description text-white text-sm text-center lg:text-left">
 					<?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI-powered solutions can deliver real value for your <span>organization—today.</span>'; ?>
 				</p>
 				<a class="border border-white border-solid rounded-3xl p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]" target="_blank" rel="noopener noreferrer" href="<?php echo get_field('contact_link', 'options'); ?>">

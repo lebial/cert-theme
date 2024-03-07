@@ -1,7 +1,6 @@
 import './stickymate';
 import './pageable';
 import './main';
-import './utils/textReveal';
 import './header';
 import './scheduleModal';
 import './header-shapes';
@@ -17,3 +16,4 @@ import './thankYou';
 import './postPage';
 import './brainstorm.js';
 import './logisticsSuite.js'
+import './utils/textReveal';

@@ -26,6 +26,13 @@ jQuery(document).ready(function ($) {
 
     //handle mobile
     if ($(this).hasClass('mobile__button') && $(this).is(':visible')) {
+      $('.ai__driven__report__option').removeClass('ai__active__button');
+      $('.ai__driven__report__option').find('svg').animate({ deg: 0 }, {
+        duration: 300,
+        step: function (now) {
+          $(this).css({ transform: `rotate(${now}deg)` });
+        }
+      })
       if (!$(this).hasClass('ai__active__button')) {
         $(this).addClass(activeClass);
         $('.mobile__image__container').animate({ 'height': '0px' });

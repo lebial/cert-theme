@@ -23,9 +23,29 @@
             border-left: 10px solid white;
         }
 
+        &::before {
+            content: '';
+            position: absolute;
+            transition: all .3s ease;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid $dark-blue-background;
+            top: 0;
+            left: -2px;
+            z-index: 2;
+        }
+
         &.arrow--rotate {
             &::after {
                 transform: rotate(90deg);
+            }
+
+            &::before {
+                transform: rotate(90deg);
+                top: -2px;
+                left: 0;
             }
         }
     }
