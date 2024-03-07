@@ -406,8 +406,8 @@ form {
             }
 
             &:hover {
-                background-color: $color-red !important;
-                color: white !important;
+                background-color: white !important;
+                color: $color-red !important;
             }
 
             // &:after {
