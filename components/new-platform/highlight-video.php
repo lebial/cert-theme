@@ -9,7 +9,7 @@ function render_partners()
 $quote = get_field('platform_hightlight_quote');
 ?>
 
-<section class="trusted__partner__section w-full flex flex-col lg:items-center lg:flex-row py-12 lg:py-32">
+<section id="<?php the_field('video_section_id')?>" class="trusted__partner__section w-full flex flex-col lg:items-center lg:flex-row py-12 lg:py-32">
   <div name="desktop_main_video" class="h-full hidden w-1/2 lg:flex justify-center ">
     <?php get_template_part('components/new-platform/main_video') ?>
   </div>

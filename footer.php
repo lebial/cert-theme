@@ -57,16 +57,17 @@ function render_link_groups()
 
 	foreach ($link_groups as $idx => $link_group) {
 		$pr_class = $idx == 0 ? '' : 'pr-6';
+		$text_classes =  "text-[10px] 2xl:text-sm";
 		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start flex-1 lg:'.$pr_class.' ">';
 		echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 		if ($link_group['button_link']) {
-			echo '<a name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
+			echo '<a class="'.$text_classes.'" name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
 		} else {
 
-			echo '<a name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
+			echo '<a class="'.$text_classes.'" name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
 		}
 		if ($link_group["links"]) {
-			echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden"></button>';
+			echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden '.$text_classes.'"></button>';
 		}
 		echo '</div>';
 		echo '<div class="footer__dropdown__body footer__responsive__hidden">';
@@ -74,7 +75,7 @@ function render_link_groups()
 		if ($link_group["links"]) {
 			foreach ($link_group['links'] as $idx => $link) {
 				$open_tab = get_open_new_tab($link['text']);
-				echo '<a href="' . $link['href'] . '" '.$open_tab.' class="footer__link leading-tight mb-2 " name="footer-' . $idx . '">' . $link['text'] . '</a>';
+				echo '<a href="' . $link['href'] . '" '.$open_tab.' class="footer__link leading-tight mb-2 '.$text_classes.' " name="footer-' . $idx . '">' . $link['text'] . '</a>';
 			}
 		}
 		echo '</div>';
@@ -136,7 +137,7 @@ function render_link_groups()
 			<div>
 				<span>&reg;</span>
 				<span class="mr-2"><?php echo date("Y") ?> Certilytics</span>
-				<a class="mr-2" href="<?php the_field('terms_link', 'options'); ?>" target="_blank">Terms</a>
+				<a class="mr-2 text- " href="<?php the_field('terms_link', 'options'); ?>" target="_blank">Terms</a>
 				<a class="mr-2" href="<?php the_field('privacy_link', 'options') ?>" target="_blank">Privacy</a>
 			</div>
 		</div>
