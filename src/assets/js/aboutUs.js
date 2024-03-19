@@ -94,11 +94,27 @@ jQuery(document).ready(function ($) {
   }
 
   function createOurTeamSlider() {
+    $('.our__team__slider').on('init', function () {
+      $('.our__team__slider-prev').css('visibility', 'hidden');
+    });
+
     $('.our__team__slider').slick({
       slidesToShow: 1,
       infinite: false,
       dots: true,
       slidesToScroll: 1,
+    });
+
+
+    $('.our__team__slider').on('afterChange', function (event, slick, currentSlide) {
+      if (currentSlide === 0) {
+        $('.our__team__slider-prev').css('visibility', 'hidden');
+      } else if (currentSlide === slick.slideCount - 1) {
+        $('.our__team__slider-next').css('visibility', 'hidden');
+      } else {
+        $('.our__team__slider-prev').css('visibility', 'visible');
+        $('.our__team__slider-next').css('visibility', 'visible');
+      }
     });
   }
 
