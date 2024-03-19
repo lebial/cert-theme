@@ -135,7 +135,7 @@ jQuery(document).ready(function ($) {
     createDataProcessSlider();
     handleValidationOptionSelect();
     createMobileSlider();
-    startVideoAtSpecificTime();
+    // startVideoAtSpecificTime();
     handleValidationProcessNavigation();
     setCycle();
     addLogisticsToVideo();

@@ -1,7 +1,7 @@
 <?php
 $quote = get_field('highlight_quote');
 ?>
-<section class="trusted__partner__section w-full flex flex-col lg:items-center lg:flex-row py-14 lg:py-32">
+<section id="<?php the_field('video_section_id')?>" class="trusted__partner__section w-full flex flex-col lg:items-center lg:flex-row py-14 lg:py-32">
   <div name="desktop_main_video" class="h-full hidden w-1/2 lg:flex justify-center ">
     <?php get_template_part('components/brainstorm-ai/main_video') ?>
   </div>
