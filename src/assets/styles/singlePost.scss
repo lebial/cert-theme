@@ -53,10 +53,17 @@
 
             & button[type=submit] {
                 font-size: 13px !important;
-                border-radius: 8px !important;
                 padding: 8px !important;
                 margin-bottom: 15px !important;
                 letter-spacing: .025em !important;
+                border-radius: 1.5rem !important;
+                border: 1px solid $color-red !important;
+                background-color: transparent !important;
+
+                &:hover {
+                    background-color: $color-red !important;
+                    color: white !important;
+                }
             }
         }
 
