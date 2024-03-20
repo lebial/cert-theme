@@ -1,4 +1,14 @@
+@import './variables.scss';
+
 .post__page {
+    & .article__body {
+        & .wysiwyg {
+            & * {
+                color: $dark-blue-background;
+            }
+        }
+    }
+
     & .subscribe__form__container {
         & form {
             margin-top: 0;
