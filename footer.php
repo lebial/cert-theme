@@ -7,7 +7,7 @@ function hide_button($count)
 }
 
 function get_open_new_tab($tab_text) {
-	if ($tab_text == 'Contact US' || $tab_text == 'Careers') return 'target="_blank"';
+	if ($tab_text == 'Contact Us' || $tab_text == 'Careers') return 'target="_blank"';
 	return '';
 }
 
@@ -63,7 +63,6 @@ function render_link_groups()
 		if ($link_group['button_link']) {
 			echo '<a class="'.$text_classes.'" name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
 		} else {
-
 			echo '<a class="'.$text_classes.'" name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
 		}
 		if ($link_group["links"]) {
