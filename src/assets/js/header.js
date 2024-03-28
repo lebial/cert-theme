@@ -103,9 +103,10 @@ jQuery(document).ready(function ($) {
     const buttonContainer = $('.fade__in__container');
     const navScheduleButton = $('.nav__schedule__demo__button');
     const isMobile = window.matchMedia("only screen and (max-width: 1023px)").matches;
-    const isHome = $('body').hasClass('home');
+    // const isHome = $('body').hasClass('home');
 
-    if (isHome || !firstVisit) {
+    // if (isHome || !firstVisit) { //revert once this comes back to being just in home
+    if (!firstVisit) {
       navScheduleButton.addClass('pulse__animate');
       if (!isMobile) buttonContainer.delay(4000).fadeIn("slow", handleDirectDemoOptionsClick);
       sessionStorage.setItem('firstVisit', 'true');
