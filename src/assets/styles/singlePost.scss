@@ -6,6 +6,12 @@
             & * {
                 color: $dark-blue-background;
             }
+
+            & a {
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: normal;
+            }
         }
     }
 
