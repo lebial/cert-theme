@@ -18,9 +18,17 @@ function render_text_content($component)
     echo '</div>';
 }
 
+function get_image_or_url($comp) {
+    $img_or_url = $comp['image_or_url'];
+    if ($img_or_url == 'Image') return $comp['post_image'];
+    $new_img_arr = array('url' => $comp['image_url'], 'alt' => 'post image example');
+    return $new_img_arr;
+}
+
 function render_image_container($component)
 {
-    $img = $component['post_image'];
+    // $img = $component['post_image'];
+    $img = get_image_or_url($component);
     $img_size = $component['image_size'];
     $className = $img_size == 'small:Small' ? 'max-w-md' : '';
     $image_element = '

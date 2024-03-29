@@ -55,9 +55,18 @@ function render_text_content($component)
     echo '</div>';
 }
 
+function get_image_or_url($comp) {
+    $img_or_url = $comp['image_or_url'];
+    if ($img_or_url == 'Image') return $comp['post_image'];
+    $new_img_arr = array('url' => $comp['image_url'], 'alt' => 'post image example');
+    return $new_img_arr;
+}
+
 function render_image_container($component)
 {
-    $img = $component['post_image'];
+    $img_or_url = $component['img_or_url'];
+    // $img = $img_or_url == 'Image' ? $component['post_image']['url'] : $component['image_url'];
+    $img = get_image_or_url($component);
     $img_size = $component['image_size'];
     $className = $img_size == 'small:Small' ? 'max-w-md' : '';
     $image_element = '

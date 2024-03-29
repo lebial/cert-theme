@@ -18,7 +18,7 @@ function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
 }
 ?>
 
-<div class="c-page c-page-articles mb-28">
+<div class="c-page c-page-articles mb-28 default-template">
 
     <div class="page-header <?php the_field('background_type', $slug->ID);
                             echo $slant[$rand]; ?>">
