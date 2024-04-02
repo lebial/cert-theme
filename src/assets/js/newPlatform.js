@@ -1,4 +1,4 @@
-import { makeElementsSameHeight } from "./utils/utils";
+import { makeElementsSameHeight, triggerGtagEvent } from "./utils/utils";
 
 function initPlatform($) {
   const insightsSliderSelector = '.platform__insights__slider';
@@ -51,10 +51,6 @@ function initPlatform($) {
         }
       ]
     });
-  }
-
-  function handleMobileVisibility(visibleSlide) {
-
   }
 
   function setSlideVisibility() {
@@ -116,6 +112,10 @@ function initPlatform($) {
       $('.slick-slide').each(function () {
         // $(this).animate({ 'opacity': 1 }, 250);
         $(this).animate({ 'opacity': 1 });
+      });
+      triggerGtagEvent('platform_by_numbers_slide_change', {
+        fromSlide: currentSlide,
+        toSlide: nextSlide
       });
 
     });
@@ -184,6 +184,20 @@ function initPlatform($) {
     $('.home__secondary__video').attr('name', 'platform');
   }
 
+  function handleGoogleEventTriggerOnDetailCard(cardSelector, name) {
+    // const cards = document.querySelectorAll('.platform__detail__card');
+    const cards = document.querySelectorAll(cardSelector);
+    cards.forEach(card => {
+      if ($(card).is('a')) {
+        $(card).click(function () {
+          triggerGtagEvent(name, {
+            linkClicked: card.attributes['href'],
+          });
+        });
+      }
+    });
+  }
+
 
   handleHeroPlatformOption();
   handleSlickOnInit();
@@ -194,6 +208,8 @@ function initPlatform($) {
   createPlatformInsightsSlider();
   handleMainMenuNav();
   addPlatformNameToVideo();
+  handleGoogleEventTriggerOnDetailCard('.paltform__detail__card', 'pdf_download');
+  handleGoogleEventTriggerOnDetailCard('.ai__insights__card', 'ai_insights_link');
 }
 
 export default initPlatform;

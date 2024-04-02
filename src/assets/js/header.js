@@ -1,3 +1,5 @@
+import { handleGoogleTriggerOnClick } from "./utils/utils";
+
 //share session between tabs;
 function handleSessionStorage() {
   window.addEventListener('storage', (event) => {
@@ -90,12 +92,12 @@ jQuery(document).ready(function ($) {
 
   function handleDirectDemoOptionsClick() {
     const directOptionButtons = document.querySelectorAll('.direct__schedule__button');
-    directOptionButtons.forEach(button => $(button).click(function () {
+    directOptionButtons.forEach(button => $(button).click(handleGoogleTriggerOnClick('Demo Button Click', function () {
       $('.schedule__demo__button')[0].click();
       const dropdownOptions = document.querySelectorAll('#field_meetingoptionsdrop option');
       const select = document.getElementById('field_meetingoptionsdrop');
       select.value = $(dropdownOptions[this.dataset.value]).attr('value');
-    }))
+    })))
   }
 
   function handleDemoOptions() {

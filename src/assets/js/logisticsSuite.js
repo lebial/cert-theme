@@ -1,4 +1,4 @@
-import { getCustomArrows } from "./utils/utils";
+import { getCustomArrows, triggerGtagEvent } from "./utils/utils";
 jQuery(document).ready(function ($) {
   const insightsSliderSelector = '.data__processing__slider';
 
@@ -23,6 +23,12 @@ jQuery(document).ready(function ($) {
           },
         }
       ]
+    });
+    $(insightsSliderSelector).on('beforeChange', function (ev, slick, currentSlide, nextSlide) {
+      triggerGtagEvent('data_processing_click', {
+        fromSlide: currentSlide,
+        toSlide: nextSlide
+      });
     });
   }
 
@@ -71,20 +77,20 @@ jQuery(document).ready(function ($) {
 
   };
 
-  function startVideoAtSpecificTime() {
-    const video = document.getElementById("HomeBackgroundVideo");
+  // function startVideoAtSpecificTime() {
+  //   const video = document.getElementById("HomeBackgroundVideo");
 
-    video.oncanplaythrough = function () {
-      video.play();
-    };
+  //   video.oncanplaythrough = function () {
+  //     video.play();
+  //   };
 
-    video.currentTime = 49;
+  //   video.currentTime = 49;
 
-    const source = document.createElement('source');
-    source.setAttribute('src', 'movie.mp4');
-    source.setAttribute('type', 'video/mp4');
-    video.appendChild(source);
-  }
+  //   const source = document.createElement('source');
+  //   source.setAttribute('src', 'movie.mp4');
+  //   source.setAttribute('type', 'video/mp4');
+  //   video.appendChild(source);
+  // }
 
   function checkValidationButtonsCycle(btnName, activeCard) {
     if (activeCard.attr('name') === 'first' && btnName === 'prev') {
@@ -119,7 +125,13 @@ jQuery(document).ready(function ($) {
     $(activeCopy).removeClass('copy--active');
     nextCard.addClass('is-card-active');
     nextCopy.addClass('copy--active');
-    if (ev != 'auto') clearInterval(cycleTime);
+    if (ev != 'auto') {
+      clearInterval(cycleTime);
+      triggerGtagEvent('data_pipeline_click', {
+        direction,
+        buttonClicked: this.name,
+      });
+    }
   }
 
   function handleValidationProcessNavigation() {
@@ -127,6 +139,10 @@ jQuery(document).ready(function ($) {
   }
   function addLogisticsToVideo() {
     $('.home__secondary__video').attr('name', 'logistics_suite');
+  }
+
+  function triggerGTagOnClick() {
+    triggerGtagEvent();
   }
 
   //function calls;

@@ -73,10 +73,19 @@ function makeElementsSameWidth($, selector) {
     });
 }
 
+
 function triggerGtagEvent(eventName, options = {}) {
     if (typeof gtag === 'function') {
         gtag('event', eventName, options);
     }
+}
+
+function handleGoogleTriggerOnClick(title, cb) {
+    triggerGtagEvent(title, {
+        buttonName: this.name,
+        originPage: window.location.pathname,
+    });
+    return cb;
 }
 
 function getVideoProgressPercentages(video) {
@@ -112,4 +121,5 @@ export {
     triggerGtagEvent,
     getVideoProgressPercentages,
     getCustomArrows,
+    handleGoogleTriggerOnClick,
 };
