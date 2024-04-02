@@ -1,3 +1,5 @@
+import { handleGoogleTriggerOnClick } from "./utils/utils";
+
 jQuery(document).ready(function ($) {
 
   function getFormParts() {
@@ -14,8 +16,7 @@ jQuery(document).ready(function ($) {
     const contactModal = $(".schedule__demo__modal");
 
     buttons.forEach((button) =>
-      $(button).click(function () {
-        const urlActual = window.location.href.split("#")[0];
+      $(button).click(handleGoogleTriggerOnClick('Schedule Demo Clicked', function () {
         const select = document.getElementById("field_meetingoptionsdrop");
         if (select) {
           const dropdownOptions = document.querySelectorAll(
@@ -27,7 +28,7 @@ jQuery(document).ready(function ($) {
         }
         contactModal.css("display", "flex");
         contactModal.animate({ opacity: 1 });
-      })
+      }))
     );
     closeButton.click(function () {
       const form = getFormParts();
