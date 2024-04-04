@@ -4,5 +4,6 @@
 
 
 <?php get_header(); ?>
-<?php get_template_part('components/brainstorm-ai/brainstorm-ai-hero') ?>
+<?php get_template_part('components/ai-insights/ai-insights-hero') ?>
+<?php get_template_part('components/ai-insights/highlighted-post') ?>
 <?php get_footer(); ?>
