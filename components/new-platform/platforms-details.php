@@ -26,6 +26,11 @@ $platforms_data = get_field('platforms_data');
   }
 }
 
+function render_card_extra_icon($with_icon) {
+  if ($with_icon == true) return 'block';
+  return 'hidden';
+}
+
 function render_detail_cards() {
   $platforms_data = get_field('platforms_data');
   foreach ($platforms_data as $idx => $data) {
@@ -36,6 +41,7 @@ function render_detail_cards() {
     foreach ($data['cards'] as $card_idx => $card) {
       $card_order = $card_idx + 1;
       $arrow_class = $card['href'] ? '' : 'hidden';
+      $img_class = render_card_extra_icon($card['with_icon']);
       $element = $card['href'] ? 'a' : 'div';
       echo '<'.$element.' href="'.$card['href'].'" target="_blank" class="platform__detail__card border border-white border-solid  rounded-lg py-5 px-4 lg:min-h-[250px] group transition-all duration-300 hover:scale-105 " style="--animation-order: '.$card_order.';">
               <p class="text-white font-bold mb-3 leading-snug">
@@ -47,6 +53,7 @@ function render_detail_cards() {
               <p class="text-white text-base">
               '.$card['description'].'
               </p>
+              <img class="'.$img_class.' w-20 h-20 ml-auto mt-4" src="'.$card['icon_url'].'"  alt="extra icon"/>
             </'.$element.'>';
     }
     echo '</div>';
