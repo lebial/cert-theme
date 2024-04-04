@@ -53,7 +53,7 @@ function render_detail_cards() {
               <p class="text-white text-base">
               '.$card['description'].'
               </p>
-              <img class="'.$img_class.' w-20 h-20 ml-auto mt-4" src="'.$card['icon_url'].'"  alt="extra icon"/>
+              <img class="'.$img_class.' w-20 ml-auto mt-4" src="'.$card['icon_url'].'"  alt="extra icon"/>
             </'.$element.'>';
     }
     echo '</div>';
