@@ -1,0 +1,81 @@
+@import '../variables';
+
+.contact__us__header {
+    & p {
+        color: white;
+        line-height: 1.5rem;
+    }
+}
+
+.contact__info__details {
+    & div {
+        & h3 {
+            color: $dark-blue-background;
+        }
+        & p {
+            line-height: 1.5rem;
+            margin-bottom: 4px;
+            color: $dark-blue-background;
+        }
+    }
+}
+
+.contact__us__current__openings {
+    & p {
+        font-size: 1rem;
+    }
+}
+
+.cu__header__form {
+    box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25);
+    & input,
+    select {
+        border-bottom: 1px solid #e6e6e6 !important;
+    }
+    & .frm_verify {
+        display: none !important;
+    }
+    & .frm_checkbox {
+        padding-top: 2.5rem !important;
+        & label {
+            font-size: 10px !important;
+
+            & input {
+                padding: 0px !important;
+                border-radius: 4px !important;
+                background-color: lightgray !important;
+                border: none !important;
+                margin-right: 0 !important;
+            }
+        }
+    }
+    & .frm_description {
+        padding-top: 0.5rem !important;
+        font-size: 9px !important;
+        line-height: 1.2;
+        display: block;
+    }
+
+    .frm_submit {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3rem;
+
+        & .cu_frm_button_submit {
+            background-color: white !important;
+            color: $dark-blue-background !important;
+            padding: 10px !important;
+            padding-inline: 3rem !important;
+            border-radius: 25px !important;
+            transition: all .3s ease !important;
+            border: solid 1px $color-red !important;
+            font-size: 1.3rem !important;
+            font-weight: 600 !important;
+
+            &:hover {
+                background-color: $color-red !important;
+                color: white !important;
+            }
+        }
+    }
+}
