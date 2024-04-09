@@ -80,12 +80,11 @@ function triggerGtagEvent(eventName, options = {}) {
     }
 }
 
-function handleGoogleTriggerOnClick(title, cb) {
+function handleGoogleTriggerOnClick(title, ctx) {
     triggerGtagEvent(title, {
-        buttonName: this.name,
+        buttonName: ctx.name,
         originPage: window.location.pathname,
     });
-    return cb;
 }
 
 function getVideoProgressPercentages(video) {

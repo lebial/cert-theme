@@ -16,7 +16,9 @@ jQuery(document).ready(function ($) {
     const contactModal = $(".schedule__demo__modal");
 
     buttons.forEach((button) =>
-      $(button).click(handleGoogleTriggerOnClick('Schedule Demo Clicked', function () {
+      $(button).click(function () {
+        const context = this;
+        handleGoogleTriggerOnClick('test Schedule Demo Clicked', context);
         const select = document.getElementById("field_meetingoptionsdrop");
         if (select) {
           const dropdownOptions = document.querySelectorAll(
@@ -28,8 +30,8 @@ jQuery(document).ready(function ($) {
         }
         contactModal.css("display", "flex");
         contactModal.animate({ opacity: 1 });
-      }))
-    );
+      }
+      ));
     closeButton.click(function () {
       const form = getFormParts();
       contactModal.animate({ opacity: 0 }, 400, function () {
