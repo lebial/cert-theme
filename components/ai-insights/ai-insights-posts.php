@@ -9,17 +9,18 @@
     $cards = [1,2,3,4,5,6];
     foreach ($cards as $key => $card) {
       echo '
-      <div class="ai_insight_card">
+      <div class="ai_insight_card rounded-lg mb-10 p-4">
         <div class="image__container">
-          <img src="https://www.shutterstock.com/shutterstock/photos/2151833739/display_1500/stock-photo-portrait-of-a-young-latin-woman-with-pleasant-smile-and-crossed-arms-isolated-on-grey-wall-with-2151833739.jpg" class=""/>
+          <img src="https://www.shutterstock.com/shutterstock/photos/2151833739/display_1500/stock-photo-portrait-of-a-young-latin-woman-with-pleasant-smile-and-crossed-arms-isolated-on-grey-wall-with-2151833739.jpg" class="rounded-xl"/>
         </div>
         <div class="ai_card_body">
-          <p class="text-gray-400 text-xs">May 3, 2021</p>
-          <p class=" text-dark-blue-background text-sm">Fugiam sit ut em lique sitas qui num vallem</p>
+          <p class="text-gray-400 text-xs my-2">May 3, 2021</p>
+          <p class=" text-dark-blue-background text-sm font-bold mb-2">Fugiam sit ut em lique sitas qui num vallem</p>
           <p class="text-dark-blue-background text-xs">
             Exereate ducia ium qui blaut eicit sent, officia sinus, simagnat debis res dolori inverum facepudit,
             si conet aut et offi-
           </p>
+          <a href="#" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
         </div>
       </div>
       ';
@@ -46,7 +47,9 @@
     <div class="ai-insights__filter__option group"><button class="<?php echo $button_classes ?>">Deep Learning</button></div>
   </div>
 
-  <main class="ai__posts__container grid grid-cols-3">
-    <?php render_ai_cards()?>
+  <main class="ai__posts__container mt-10 flex justify-center">
+    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-10">
+      <?php render_ai_cards()?>
+    </div>
   </main>
 </section>
