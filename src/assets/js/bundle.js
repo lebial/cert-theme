@@ -17,3 +17,4 @@ import './postPage';
 import './brainstorm.js';
 import './logisticsSuite.js'
 import './utils/textReveal';
+import './contactUs'
