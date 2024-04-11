@@ -7,7 +7,7 @@ function hide_button($count)
 }
 
 function get_open_new_tab($tab_text) {
-	if ($tab_text == 'Contact Us' || $tab_text == 'Careers') return 'target="_blank"';
+	if ($tab_text == 'Careers') return 'target="_blank"';
 	return '';
 }
 
@@ -97,7 +97,7 @@ function render_link_groups()
 				<p class="footer__chat__description text-white text-sm text-center lg:text-left">
 					<?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI-powered solutions can deliver real value for your <span>organization—today.</span>'; ?>
 				</p>
-				<a class="border border-white border-solid rounded-3xl p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]" target="_blank" rel="noopener noreferrer" href="<?php echo get_field('contact_link', 'options'); ?>">
+				<a class="border border-white border-solid rounded-3xl p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]" rel="noopener noreferrer" href="<?php echo get_field('contact_link', 'options'); ?>">
 					<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us'; ?>
 				</a>
 			</div>
