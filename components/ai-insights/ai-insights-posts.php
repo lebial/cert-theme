@@ -4,32 +4,23 @@
   px-4 py-1 rounded-3xl border border-solid border-gray-400 text-gray-400 text-sm mr-3
   transition-all duration-300 hover:border-primary hover:bg-primary hover:text-white
   ';
-
-  function render_ai_cards() {
-    $cards = [1,2,3,4,5,6];
-    foreach ($cards as $key => $card) {
-      echo '
-      <div class="ai_insight_card rounded-lg mb-10 p-4">
-        <div class="image__container">
-          <img src="https://www.shutterstock.com/shutterstock/photos/2151833739/display_1500/stock-photo-portrait-of-a-young-latin-woman-with-pleasant-smile-and-crossed-arms-isolated-on-grey-wall-with-2151833739.jpg" class="rounded-xl"/>
-        </div>
-        <div class="ai_card_body">
-          <p class="text-gray-400 text-xs my-2">May 3, 2021</p>
-          <p class=" text-dark-blue-background text-sm font-bold mb-2">Fugiam sit ut em lique sitas qui num vallem</p>
-          <p class="text-dark-blue-background text-xs">
-            Exereate ducia ium qui blaut eicit sent, officia sinus, simagnat debis res dolori inverum facepudit,
-            si conet aut et offi-
-          </p>
-          <a href="#" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
-        </div>
-      </div>
-      ';
+function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
+{
+    $post_content = get_field('post_content', $custom_post_id);
+    if ($post_content) {
+        $text_content = trim(strip_tags($post_content[0]['post_text']));
+        $custom_excerpt = substr($text_content, 0, 140);
+        $custom_excerpt .= ',...';
+        echo $custom_excerpt;
+        return null;
     }
-  }
+    echo $post_excerpt;
+}
+
 ?>
 <div class="group-[.active_filter]"></div>
 <section class="ai-insights__posts py-14 w-ful px-20">
-  <div class="search__container">
+  <!-- <div class="search__container">
     <label class="flex items-center p-2 border border-gray-400 border-solid rounded-3xl w-fit">
       <input type="text" placeholder="search..." class="outline-none">
       <button type="button" class="h-full flex items-center">
@@ -38,18 +29,36 @@
         </svg>
       </button>
     </label>
-  </div>
+  </div> -->
   <div class="tags__container flex mt-4">
-    <div class="ai-insights__filter__option group"><button class="<?php echo $button_classes ?>">All</button></div>
-    <div class="ai-insights__filter__option group"><button class="<?php echo $button_classes ?>">Gen AI</button></div>
-    <div class="ai-insights__filter__option group"><button class="<?php echo $button_classes ?>">Mahcine Learning</button></div>
-    <div class="ai-insights__filter__option group"><button class="<?php echo $button_classes ?>">Predictive Modeling</button></div>
-    <div class="ai-insights__filter__option group"><button class="<?php echo $button_classes ?>">Deep Learning</button></div>
+    <div class="ai-insights__filter__option group" data-option="all"><a href="/insights/ai-insights/" class="<?php echo $button_classes ?>">All</a></div>
+    <div class="ai-insights__filter__option group" data-option="gen-ai"><a href="/insights/ai-insights/?tag=gen-ai" class="<?php echo $button_classes ?>">Gen AI</a></div>
+    <div class="ai-insights__filter__option group" data-option="machine-learning"><a href="/insights/ai-insights/?tag=machine-learning" class="<?php echo $button_classes ?>">Mahcine Learning</a></div>
+    <div class="ai-insights__filter__option group" data-option="predictive-learning"><a href="/insights/ai-insights/?tag=predictive-learning" class="<?php echo $button_classes ?>">Predictive Modeling</a></div>
+    <div class="ai-insights__filter__option group" data-option="deep-learning"><a href="/insights/ai-insights/?tag=deep-learning" class="<?php echo $button_classes ?>">Deep Learning</a></div>
   </div>
 
   <main class="ai__posts__container mt-10 flex justify-center">
     <div class="w-full max-w-screen-lg grid grid-cols-3 gap-10">
-      <?php render_ai_cards()?>
+
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <div class="ai_insight_card rounded-lg mb-4 p-4">
+          <div class="image__container">
+            <img src="<?php the_field('post_hero_image', get_the_ID())?>" class="rounded-xl"/>
+          </div>
+          <div class="ai_card_body">
+            <p class="text-gray-400 text-xs my-2"><?php echo get_the_date('m/d/o'); ?></p>
+            <h3 class=" text-dark-blue-background text-sm font-bold mb-2"> <?php the_title(); ?></h3>
+            <p class="text-dark-blue-background text-xs">
+              <?php render_excerpt_or_post_content(get_the_ID(), excerpt(20)) ?>
+            </p>
+            <a href="<?php the_permalink();?>" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
+          </div>
+        </div>
+
+      <?php endwhile;
+      endif; ?>
+      <?php wpbeginner_numeric_posts_nav(); ?>
     </div>
   </main>
 </section>
