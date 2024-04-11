@@ -4,6 +4,11 @@
     & p {
         color: white;
         line-height: 1.5rem;
+        text-align: center;
+
+        @media #{$desktopBase} {
+            text-align: left;
+        }
     }
 }
 
@@ -33,11 +38,24 @@
 }
 
 .cu__header__form {
-    box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    border-bottom: 1px solid #e6e6e6 !important;
+    @media #{$desktopBase} {
+        box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25);
+    }
+
     & input,
     select {
         border-bottom: 1px solid #e6e6e6 !important;
-        padding: 8px 5px 8px 0 !important;
+        padding: 6px 5px 6px 0 !important;
+
+        &::placeholder {
+            font-size: 15px !important;
+
+            @media #{$desktopBase} {
+                font-size: 17px !important;
+            }
+        }
     }
     & textarea {
         padding: 0 !important;
@@ -52,12 +70,20 @@
         font-size: 18px !important;
 
         &::placeholder {
-            font-size: 18px !important;
+            font-size: 15px !important;
+
+            @media #{$desktopBase} {
+                font-size: 17px !important;
+            }
         }
     } 
     & .frm_title {
         & h3 {
+            font-size: calc(1.125rem + (1vw - 3.2px) * 1.375);
             margin-bottom: 0;
+            @media #{$desktopBase} {
+                font-size: calc(1.125rem + (1vw - 3.2px) * 1.375);
+            }
         }
     }
     & .frm_verify {
@@ -77,9 +103,12 @@
         }
     }
     & .opt-out-message {
-        margin-top: -10px;
-        font-size: 9px !important;
-        line-height: 1.2;
+        margin-bottom: 10 !important;
+        & p{
+            margin-top: -15px !important;
+            font-size: 9px !important;
+            line-height: 1.2 !important;
+        }
     }
     & .frm_description {
         padding-top: 0.5rem !important;
@@ -93,6 +122,10 @@
         justify-content: center;
         margin-top: 12px !important;
         padding-bottom: 12px;
+
+        @media #{$desktopBase} {
+            margin-top: 0 !important;
+        }
 
         & .cu_frm_button_submit {
             background-color: white !important;
@@ -109,6 +142,18 @@
                 background-color: $color-red !important;
                 color: white !important;
             }
+        }
+    }
+}
+
+#form_form-contact_us_form {
+    margin-top: 20px !important;
+    & .frm_message {
+        background: transparent;
+        border: none;
+
+        & p {
+            color: $dark-blue-background;
         }
     }
 }

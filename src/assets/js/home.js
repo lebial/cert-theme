@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
         const contactUs = document.querySelector('a[href*="contact-us-now"');
         $(link).attr('target', '_blank');
         $(link).attr('rel', 'noopener noreferrer');
-        $(contactUs).attr('target', '_blank');
+        // $(contactUs).attr('target', '_blank');
         $(contactUs).attr('rel', 'noopener noreferrer');
         careers.forEach(element => {
             $(element).attr('target', '_blank');
