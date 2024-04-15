@@ -20,7 +20,6 @@ jQuery(document).ready(function ($) {
       const lastPage = +btn.dataset.lastPage;
       const currentPage = +btn.dataset.currentPage;
       const page = currentPage + 1;
-      debugger;
       $.ajax({
         type: 'POST',
         url: '/wp-admin/admin-ajax.php',
