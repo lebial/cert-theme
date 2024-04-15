@@ -2,7 +2,7 @@
   <div class=" lg:pl-20">
     <div class="highlighted__post__container flex">
       <div class="mr-10">
-        <img class="max-w-md" src="https://www.shutterstock.com/shutterstock/photos/2151833739/display_1500/stock-photo-portrait-of-a-young-latin-woman-with-pleasant-smile-and-crossed-arms-isolated-on-grey-wall-with-2151833739.jpg" alt="">
+        <img class="max-w-md rounded-xl" src="https://www.shutterstock.com/shutterstock/photos/2151833739/display_1500/stock-photo-portrait-of-a-young-latin-woman-with-pleasant-smile-and-crossed-arms-isolated-on-grey-wall-with-2151833739.jpg" alt="">
       </div>
       <div class=" w-8/12 max-w-md">
         <p class=" text-gray-400 mb-2 text-base">May 3, 2021</p>

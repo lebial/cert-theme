@@ -1,5 +1,49 @@
 <?php
 
+//infinite scroll support ajax api
+function ai_insights_scroll() {
+    $page = $_POST['page'] ? $_POST['page'] : 1;
+    $tag = $_POST['tag'];
+    $ajax_posts = new WP_Query([
+        'posts_per_page' => 6,
+        'category_name' => 'ai-insights',
+        'paged' => $page,
+        'tag' => $tag,
+        'orderby' => 'date',
+        'order' => 'desc',
+    ]);
+    $response = '';
+    if ($ajax_posts->have_posts()) {
+        while($ajax_posts->have_posts()) : $ajax_posts->the_post();
+        $img = get_field('post_hero_image', get_the_ID());
+        $content = get_field('post_content', get_the_ID());
+        $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
+        $custom_content .= ',...';
+            $response .= '
+                <div class="ai_insight_card rounded-lg mb-4 p-4">
+                    <div class="image__container">
+                    <img src="'.$img['url'].'" class="rounded-xl"/>
+                    </div>
+                    <div class="ai_card_body">
+                    <p class="text-gray-400 text-xs my-2">'.get_the_date('m/d/o').'</p>
+                    <h3 class=" text-dark-blue-background text-sm font-bold mb-2"> '.get_the_title().'</h3>
+                    <p class="text-dark-blue-background text-xs">
+                        '.$custom_content.'
+                    </p>
+                    <a href="'.get_the_permalink().'" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
+                    </div>
+                </div>
+            ';
+        endwhile;
+    }else {
+        $response = 'empty';
+    }
+    echo $response;
+    exit;
+}
+add_action('wp_ajax_ai_insights_scroll', 'ai_insights_scroll');
+add_action('wp_ajax_nopriv_ai_insights_scroll', 'ai_insights_scroll');
+
 // Hide posts with category 
 function hide_by_excluding_category($query)
 {
