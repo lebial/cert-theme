@@ -16,17 +16,22 @@ jQuery(document).ready(function ($) {
   function handleAjaxPosts() {
     $('.load__more__button').click(function () {
       const params = getParams();
+      const btn = this;
+      const lastPage = +btn.dataset.lastPage;
+      const currentPage = +btn.dataset.currentPage;
+      const page = currentPage + 1;
       $.ajax({
         type: 'POST',
         url: '/wp-admin/admin-ajax.php',
         dataType: 'html',
         data: {
           action: 'ai_insights_scroll',
-          page: params.get('page'),
+          page,
           tag: params.get('tag'),
         },
         success: function (res) {
-          debugger;
+          if (page === lastPage) $(btn).hide();
+          btn.setAttribute('data-current-page', page);
           $('#scrollContent').append(res);
         }
       });
