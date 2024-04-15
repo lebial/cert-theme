@@ -11,7 +11,7 @@ $link = get_permalink($post);
   <div class="">
     <div class="highlighted__post__container flex">
       <div class="mr-10">
-        <img class="max-w-md rounded-xl" src="<?php echo $img['url']?>" alt="featured post image">
+        <img class="max-w-md rounded-xl" src="<?php echo $img ?>" alt="featured post image">
       </div>
       <div class=" w-8/12 max-w-md">
         <p class=" text-gray-400 mb-2 text-base"><?php echo wp_date('M j, Y', $str_date)?></p>
