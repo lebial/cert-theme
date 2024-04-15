@@ -1,6 +1,6 @@
 import './stickymate';
 import './pageable';
-import './ai-insights.js';
+import './ai-insights';
 import './main';
 import './header';
 import './scheduleModal';

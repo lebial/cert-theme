@@ -38,27 +38,10 @@ function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
     <div class="ai-insights__filter__option group" data-option="deep-learning"><a href="/insights/ai-insights/?tag=deep-learning" class="<?php echo $button_classes ?>">Deep Learning</a></div>
   </div>
 
-  <main class="ai__posts__container mt-10 flex justify-center">
-    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-10">
-
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="ai_insight_card rounded-lg mb-4 p-4">
-          <div class="image__container">
-            <img src="<?php the_field('post_hero_image', get_the_ID())?>" class="rounded-xl"/>
-          </div>
-          <div class="ai_card_body">
-            <p class="text-gray-400 text-xs my-2"><?php echo get_the_date('m/d/o'); ?></p>
-            <h3 class=" text-dark-blue-background text-sm font-bold mb-2"> <?php the_title(); ?></h3>
-            <p class="text-dark-blue-background text-xs">
-              <?php render_excerpt_or_post_content(get_the_ID(), excerpt(20)) ?>
-            </p>
-            <a href="<?php the_permalink();?>" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
-          </div>
-        </div>
-
-      <?php endwhile;
-      endif; ?>
-      <?php wpbeginner_numeric_posts_nav(); ?>
+  <main class="ai__posts__container mt-10 flex justify-center flex-col">
+    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-10" id="scrollContent">
+      <?php get_template_part('components/ai-insights/ai-insights-post-render') ?>
     </div>
+    <div class="w-full flex justify-center"><button type="button" class="load__more__button">Load More</button></div>
   </main>
 </section>
