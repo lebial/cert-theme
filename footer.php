@@ -131,7 +131,9 @@ function render_link_groups()
 				<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
 					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-5 fill-white" alt="">
 				</a>
-
+				<a href="https://www.youtube.com/@certilytics" target="_blank" rel="noopener noreferer">
+					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg" class="style-svg w-6 fill-white" alt="">
+				</a>
 			</div>
 			<div>
 				<span>&reg;</span>
