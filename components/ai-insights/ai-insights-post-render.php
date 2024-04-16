@@ -1,14 +1,13 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <?php 
   $img = get_field('post_hero_image', get_the_ID());
-  $img_url = $img['url'];
   $content = get_field('post_content', get_the_ID());
   $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
   $custom_content .= ',...';
 ?>
   <div class="ai_insight_card rounded-lg mb-4 p-4">
       <div class="image__container">
-      <img src="<?php echo $img['url'] ?>" class="rounded-xl"/>
+      <img src="<?php echo $img ?>" class="rounded-xl"/>
       </div>
       <div class="ai_card_body">
       <p class="text-gray-400 text-xs my-2"><?php echo get_the_date('M j, Y') ?></p>

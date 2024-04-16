@@ -22,7 +22,7 @@ function ai_insights_scroll() {
             $response .= '
                 <div class="ai_insight_card rounded-lg mb-4 p-4">
                     <div class="image__container">
-                    <img src="'.$img['url'].'" class="rounded-xl"/>
+                    <img src="'.$img.'" class="rounded-xl"/>
                     </div>
                     <div class="ai_card_body">
                     <p class="text-gray-400 text-xs my-2">'.get_the_date('m/d/o').'</p>
