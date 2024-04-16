@@ -1,4 +1,4 @@
-<section class="w-full h-[55vh] lg:h-[65vh] flex flex-col justify-center bg-dark-blue-background bg-cover bg-no-repeat" style="background-image: url(<?php the_field('background_image')?>);">
+<section class="w-full h-[55vh] lg:h-[65vh] flex flex-col justify-center bg-dark-blue-background bg-cover bg-no-repeat bg-center lg:bg-left" style="background-image: url(<?php the_field('background_image')?>);">
   <div class="max-w-10/12 h-64">
     <div class="w-10/12 flex mx-auto">
       <div class="contact__us__header w-full lg:w-7/12 flex flex-col">
