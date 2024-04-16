@@ -44,7 +44,7 @@ function get_load_more() {
     <div class="ai-insights__filter__option group" data-option="all"><a href="/insights/ai-insights/" class="<?php echo $button_classes ?>">All</a></div>
     <div class="ai-insights__filter__option group" data-option="gen-ai"><a href="/insights/ai-insights/?tag=gen-ai" class="<?php echo $button_classes ?>">Gen AI</a></div>
     <div class="ai-insights__filter__option group" data-option="machine-learning"><a href="/insights/ai-insights/?tag=machine-learning" class="<?php echo $button_classes ?>">Mahcine Learning</a></div>
-    <div class="ai-insights__filter__option group" data-option="predictive-learning"><a href="/insights/ai-insights/?tag=predictive-learning" class="<?php echo $button_classes ?>">Predictive Modeling</a></div>
+    <div class="ai-insights__filter__option group" data-option="predictive-modeling"><a href="/insights/ai-insights/?tag=predictive-modeling" class="<?php echo $button_classes ?>">Predictive Modeling</a></div>
     <div class="ai-insights__filter__option group" data-option="deep-learning"><a href="/insights/ai-insights/?tag=deep-learning" class="<?php echo $button_classes ?>">Deep Learning</a></div>
   </div>
 
