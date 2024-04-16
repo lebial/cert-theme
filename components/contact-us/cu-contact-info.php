@@ -18,7 +18,7 @@ function render_contact_details()
     <div class="contact__us__contact__details w-full lg:w-7/12 flex flex-col">
       <?php render_contact_details() ?>
       <div class="contact__us__current__openings">
-        <a href="'.<?php the_field('current_openings_url') ?>.'" target="_blank" class="px-3 py-2 border-solid border-primary border lg:border-[2px] rounded-3xl text-primary hover:text-white mr-3 font-medium hover:cursor-pointer transition-all duration-300 hover:bg-primary text-xs lg:text-sm " type="button" name="Current Openings">See Current Openings</a>
+        <a href="<?php the_field('current_openings_url') ?>" target="_blank" class="px-3 py-2 border-solid border-primary border lg:border-[2px] rounded-3xl text-primary hover:text-white mr-3 font-medium hover:cursor-pointer transition-all duration-300 hover:bg-primary text-xs lg:text-sm " type="button" name="Current Openings">See Current Openings</a>
         <?php the_field('current_openings_description') ?>
       </div>
     </div>
