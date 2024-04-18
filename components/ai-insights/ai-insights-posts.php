@@ -17,16 +17,6 @@ function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
     echo $post_excerpt;
 }
 
-function get_load_more() {
-  global $wp_query;
-  $max_pages = $wp_query->max_num_pages;
-  $paged = get_query_var('paged');
-  $current_page = $paged ? absint($paged) : 1;
-  if ($max_pages <= 1 || $current_page == $max_pages) return;
-  echo '<button data-last-page="'.$max_pages.'" data-current-page="'.$current_page.'" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More Insights</button>';
-
-}
-
 ?>
 <div class="group-[.active_filter]"></div>
 <section class="ai-insights__posts py-14 w-ful px-20">
@@ -49,9 +39,9 @@ function get_load_more() {
   </div>
 
   <main class="ai__posts__container mt-10 flex justify-center flex-col">
-    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-10 mx-auto" id="scrollContent">
+    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-5 mx-auto" id="scrollContent">
       <?php get_template_part('components/ai-insights/ai-insights-post-render') ?>
     </div>
-    <div class="w-full flex justify-center"><?php get_load_more()?></div>
+    <div class="w-full flex justify-center"><?php render_load_more()?></div>
   </main>
 </section>

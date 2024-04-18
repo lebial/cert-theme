@@ -2,7 +2,7 @@
 
 function render_custom_menu_items()
 {
-  $items = get_field('heading_buttons');
+  $items = get_field('heading_buttons', 'options');
   foreach ($items as $item) {
     echo '<a class="platform__hero__option__button flex items-center transition-all duration-200 hover:text-primary text-sm xl:text-lg" 
               href="' . $item['url'] . '"
@@ -19,18 +19,18 @@ function render_custom_menu_items()
   <div class="w-full h-full bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative flex flex-col justify-center px-6">
     <div class="flex flex-col items-center justify-center text-center">
         <h1 class="text-white text-2xl hidden lg:block lg:text-4xl xl:text-6xl reveal-text">
-            <?php the_field('head_line') ?> <br>
+            <?php the_field('head_line', 'options') ?> <br>
         </h1>
         <h1 class="text-white text-2xl block lg:hidden lg:text-4xl xl:text-6xl reveal-text">
-            <?php the_field('mobile_head_line') ?> 
+            <?php the_field('mobile_head_line', 'options') ?> 
         </h1>
         <div class=" header__divider w-60 mt-12 h-px bg-primary mx-auto"></div>
         <div class="w-11/12 md:w-8/12 mx-auto">
             <h2 class="text-white max-w-none hidden lg:block mt-4 md:mt-12 text-lg font-normal tracking-normal">
-                <?php strip_tags(the_field('sub_headline'), '<a>') ?>
+                <?php strip_tags(the_field('sub_headline', 'options'), '<a>') ?>
             </h2>
             <h2 class="text-white max-w-none block lg:hidden mt-4 md:mt-12 text-lg font-normal tracking-normal">
-                <?php strip_tags(the_field('mobile_sub_headline'), '<a>') ?>
+                <?php strip_tags(the_field('mobile_sub_headline', 'options'), '<a>') ?>
             </h2>
             <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 2xl:mt-24 items-center">
                 <?php render_custom_menu_items() ?>

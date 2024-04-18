@@ -1,6 +1,7 @@
 import './stickymate';
 import './pageable';
 import './ai-insights';
+import './newsroom';
 import './main';
 import './header';
 import './scheduleModal';

@@ -1,17 +1,30 @@
 <?php
 
-//infinite scroll support ajax api
-function ai_insights_scroll() {
+function render_load_more() {
+  global $wp_query;
+  $max_pages = $wp_query->max_num_pages;
+  $paged = get_query_var('paged');
+  $current_page = $paged ? absint($paged) : 1;
+  if ($max_pages <= 1 || $current_page == $max_pages) return;
+  echo '<button data-last-page="'.$max_pages.'" data-current-page="'.$current_page.'" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More Insights</button>';
+}
+
+function get_insights_posts($category) {
     $page = $_POST['page'] ? $_POST['page'] : 1;
     $tag = $_POST['tag'];
-    $ajax_posts = new WP_Query([
+    return new WP_Query([
         'posts_per_page' => 6,
-        'category_name' => 'ai-insights',
+        'category_name' => $category,
         'paged' => $page,
         'tag' => $tag,
         'orderby' => 'date',
         'order' => 'desc',
     ]);
+}
+
+//infinite scroll support ajax api
+function ai_insights_scroll() {
+    $ajax_posts = get_insights_posts('ai-insights');
     $response = '';
     if ($ajax_posts->have_posts()) {
         while($ajax_posts->have_posts()) : $ajax_posts->the_post();
@@ -43,6 +56,39 @@ function ai_insights_scroll() {
 }
 add_action('wp_ajax_ai_insights_scroll', 'ai_insights_scroll');
 add_action('wp_ajax_nopriv_ai_insights_scroll', 'ai_insights_scroll');
+
+function news_insights_scroll() {
+    $ajax_posts = get_insights_posts('newsroom');
+    $response = '';
+    if ($ajax_posts->have_posts()) {
+        while($ajax_posts->have_posts()) : $ajax_posts->the_post();
+        $img = get_field('post_hero_image', get_the_ID());
+        $content = get_field('post_content', get_the_ID());
+        $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
+        $custom_content .= ',...';
+        $tags = get_the_tags();
+            $response .= '
+            <div class="ai_insight_card rounded-lg mb-4 p-4">
+                <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl">
+                <p class="text-gray-400 text-base mb-4 uppercase">'.$tags[0]->name.'</p>
+                <h3 class=" text-dark-blue-background text-sm font-bold mb-2">'.get_the_title().'</h3>
+                <p class="text-dark-blue-background text-xs mb-2">
+                    '.$custom_content.'
+                </p>
+                <p class="text-gray-400 text-xs">'.get_the_date("M j, Y").'</p>
+                <a href="'.get_the_permalink().'" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+                </div>
+            </div>
+            ';
+        endwhile;
+    }else {
+        $response = 'empty';
+    }
+    echo $response;
+    exit;
+}
+add_action('wp_ajax_news_insights_scroll', 'news_insights_scroll');
+add_action('wp_ajax_nopriv_news_insights_scroll', 'news_insights_scroll');
 
 // Hide posts with category 
 function hide_by_excluding_category($query)
