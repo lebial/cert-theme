@@ -16,7 +16,7 @@ $link = get_permalink($post);
       <div class=" w-8/12 max-w-md">
         <p class=" text-gray-400 mb-2 text-base"><?php echo wp_date('M j, Y', $str_date)?></p>
         <p class="mb-2 font-bold text-dark-blue-background text-xl"><?php echo $post->post_title ?></p>
-        <p class="text-base max-w-lg">
+        <p class="text-base max-w-lg text-dark-blue-background">
           <?php echo $custom_content ?>
         </p>
         <a class="border border-primary border-solid text-primary inline-block

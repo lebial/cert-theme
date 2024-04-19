@@ -3,7 +3,7 @@ function render_news_cards() {
 if (have_posts()) : while (have_posts()) : the_post();
   $content = get_field('post_content', get_the_ID());
   $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
-  $custom_content .= ',...';
+  $custom_content .= '...';
   $tags = get_the_tags();
   echo '
     <div class="ai_insight_card rounded-lg mb-4 p-4">
