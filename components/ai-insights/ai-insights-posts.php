@@ -1,7 +1,7 @@
 <?php
   $button_classes = '
-  group-[.active_filter]:border-primary group-[.active_filter]:text-primary
   px-4 py-1 rounded-3xl border border-solid border-gray-400 text-gray-400 text-sm mr-3
+  font-medium
   transition-all duration-300 hover:border-primary hover:bg-primary hover:text-white
   ';
 function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
@@ -10,26 +10,16 @@ function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
     if ($post_content) {
         $text_content = trim(strip_tags($post_content[0]['post_text']));
         $custom_excerpt = substr($text_content, 0, 140);
-        $custom_excerpt .= ',...';
+        $custom_excerpt .= '...';
         echo $custom_excerpt;
         return null;
     }
     echo $post_excerpt;
 }
 
-function get_load_more() {
-  global $wp_query;
-  $max_pages = $wp_query->max_num_pages;
-  $paged = get_query_var('paged');
-  $current_page = $paged ? absint($paged) : 1;
-  if ($max_pages <= 1 || $current_page == $max_pages) return;
-  echo '<button data-last-page="'.$max_pages.'" data-current-page="'.$current_page.'" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More Insights</button>';
-
-}
-
 ?>
 <div class="group-[.active_filter]"></div>
-<section class="ai-insights__posts py-14 w-ful px-20">
+<section class="ai-insights__posts py-14 px-20">
   <!-- <div class="search__container">
     <label class="flex items-center p-2 border border-gray-400 border-solid rounded-3xl w-fit">
       <input type="text" placeholder="search..." class="outline-none">
@@ -40,18 +30,19 @@ function get_load_more() {
       </button>
     </label>
   </div> -->
-  <div class="tags__container flex mt-4 max-w-screen-lg mx-auto pl-4">
-    <div class="ai-insights__filter__option group" data-option="all"><a href="/insights/ai-insights/" class="<?php echo $button_classes ?>">All</a></div>
-    <div class="ai-insights__filter__option group" data-option="gen-ai"><a href="/insights/ai-insights/?tag=gen-ai" class="<?php echo $button_classes ?>">Gen AI</a></div>
-    <div class="ai-insights__filter__option group" data-option="machine-learning"><a href="/insights/ai-insights/?tag=machine-learning" class="<?php echo $button_classes ?>">Mahcine Learning</a></div>
-    <div class="ai-insights__filter__option group" data-option="predictive-modeling"><a href="/insights/ai-insights/?tag=predictive-modeling" class="<?php echo $button_classes ?>">Predictive Modeling</a></div>
-    <div class="ai-insights__filter__option group" data-option="deep-learning"><a href="/insights/ai-insights/?tag=deep-learning" class="<?php echo $button_classes ?>">Deep Learning</a></div>
+  <!-- <div class="tags__container flex mt-4 max-w-screen-lg mx-auto pl-4"> -->
+  <div class="tags__container flex mt-4 justify-center">
+    <div class="ai-insights__filter__option group font-" data-option="all"><a href="/insights/ai-insights/#scrollContent" class="<?php echo $button_classes ?>">All</a></div>
+    <div class="ai-insights__filter__option group" data-option="gen-ai"><a href="/insights/ai-insights/?tag=gen-ai#scrollContent" class="<?php echo $button_classes ?>">Gen AI</a></div>
+    <div class="ai-insights__filter__option group" data-option="machine-learning"><a href="/insights/ai-insights/?tag=machine-learning#scrollContent" class="<?php echo $button_classes ?>">Machine Learning</a></div>
+    <div class="ai-insights__filter__option group" data-option="predictive-modeling"><a href="/insights/ai-insights/?tag=predictive-modeling#scrollContent" class="<?php echo $button_classes ?>">Predictive Modeling</a></div>
+    <div class="ai-insights__filter__option group" data-option="deep-learning"><a href="/insights/ai-insights/?tag=deep-learning#scrollContent" class="<?php echo $button_classes ?>">Deep Learning</a></div>
   </div>
 
   <main class="ai__posts__container mt-10 flex justify-center flex-col">
-    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-10 mx-auto" id="scrollContent">
+    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-5 mx-auto" id="scrollContent">
       <?php get_template_part('components/ai-insights/ai-insights-post-render') ?>
     </div>
-    <div class="w-full flex justify-center"><?php get_load_more()?></div>
+    <div class="w-full flex justify-center"><?php render_load_more()?></div>
   </main>
 </section>
