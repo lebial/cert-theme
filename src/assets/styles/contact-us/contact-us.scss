@@ -1,0 +1,170 @@
+@import '../variables';
+
+.contact__us__header {
+    & p {
+        color: white;
+        line-height: 1.5rem;
+        text-align: center;
+
+        @media #{$desktopBase} {
+            text-align: left;
+        }
+    }
+}
+
+.contact__info__details {
+    &:nth-of-type(n+2) {
+        padding-top: 3rem;
+        & div {
+            & img {
+                width: 3rem !important;
+                height: 2rem !important;
+
+                @media #{$desktopBase} {
+                    width: 4.8rem !important;
+                    height: 3rem !important;
+                }
+            }
+        }
+    }
+    & div {
+        & h3 {
+            color: $dark-blue-background;
+        }
+        & p {
+            line-height: 1.5rem;
+            margin-bottom: 4px;
+            color: $dark-blue-background;
+        }
+    }
+}
+
+.contact__us__current__openings {
+    display: block;
+    padding-top: 2rem;
+    & p {
+        padding-top: 2rem !important;
+        font-size: 1rem;
+    }
+}
+
+.cu__header__form {
+    box-shadow: none;
+    border-bottom: 1px solid #e6e6e6 !important;
+    @media #{$desktopBase} {
+        box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    & input,
+    select {
+        border-bottom: 1px solid #e6e6e6 !important;
+        padding: 6px 5px 6px 0 !important;
+
+        &::placeholder {
+            font-size: 15px !important;
+
+            @media #{$desktopBase} {
+                font-size: 17px !important;
+            }
+        }
+    }
+    & textarea {
+        padding: 0 !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid #e6e6e6 !important;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        color: #011B3A !important;
+        font-size: 18px !important;
+
+        &::placeholder {
+            font-size: 15px !important;
+
+            @media #{$desktopBase} {
+                font-size: 17px !important;
+            }
+        }
+    } 
+    & .frm_title {
+        & h3 {
+            font-size: calc(1.125rem + (1vw - 3.2px) * 1.375);
+            margin-bottom: 0;
+            @media #{$desktopBase} {
+                font-size: calc(1.125rem + (1vw - 3.2px) * 1.375);
+            }
+        }
+    }
+    & .frm_verify {
+        display: none !important;
+    }
+    & .frm_checkbox {
+        padding-top: 1rem !important;
+        & label {
+            font-size: 10px !important;
+            & input {
+                padding: 0px !important;
+                border-radius: 4px !important;
+                background-color: lightgray !important;
+                border: none !important;
+                margin-right: 0 !important;
+            }
+        }
+    }
+    & .opt-out-message {
+        margin-bottom: 10 !important;
+        & p{
+            margin-top: -15px !important;
+            font-size: 9px !important;
+            line-height: 1.2 !important;
+        }
+    }
+    & .frm_description {
+        padding-top: 0.5rem !important;
+        font-size: 9px !important;
+        line-height: 1.2;
+        display: block;
+    }
+
+    .frm_submit {
+        display: flex;
+        justify-content: center;
+        margin-top: 12px !important;
+        padding-bottom: 12px;
+
+        @media #{$desktopBase} {
+            margin-top: 0 !important;
+        }
+
+        & .cu_frm_button_submit {
+            background-color: white !important;
+            color: $dark-blue-background !important;
+            padding: 10px !important;
+            padding-inline: 3rem !important;
+            border-radius: 25px !important;
+            transition: all .3s ease !important;
+            border: solid 1px $color-red !important;
+            font-size: 1.3rem !important;
+            font-weight: 600 !important;
+
+            &:hover {
+                background-color: $color-red !important;
+                color: white !important;
+            }
+        }
+    }
+}
+
+#form_form-contact_us_form {
+    margin-top: 20px !important;
+    & .frm_message {
+        background: transparent;
+        border: none;
+
+        & p {
+            color: $dark-blue-background;
+        }
+    }
+}

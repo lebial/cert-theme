@@ -1,5 +1,7 @@
 import './stickymate';
 import './pageable';
+import './ai-insights';
+import './newsroom';
 import './main';
 import './header';
 import './scheduleModal';
@@ -17,3 +19,4 @@ import './postPage';
 import './brainstorm.js';
 import './logisticsSuite.js'
 import './utils/textReveal';
+import './contactUs'

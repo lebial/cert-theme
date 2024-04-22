@@ -191,8 +191,11 @@
                 <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
                     <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
                 </a>
-                <a class="w-5" href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
+                <a class="w-5 mr-3" href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
                     <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-5 fill-gray-header" alt="">
+                </a>
+                <a class="w-5" href="https://www.youtube.com/@certilytics" target="_blank" rel="noopener noreferer">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg" class="style-svg w-6 fill-gray-header" alt="">
                 </a>
             </div>
         </div>

@@ -106,10 +106,10 @@ function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
                 $categories = get_categories();
                 foreach ($categories as $category) {
                     $category_name = $category->cat_name;
-                    if ($category_name == 'hidden' || $category_name == 'Uncategorized') {
+                    if ($category_name == 'hidden' || $category_name == 'Uncategorized' || $category_name == 'ai-insights') {
                         continue;
                     }
-                    $option .= '<option value="' . get_option('home') . '/news-insights/category/' . $category->slug . '">';
+                    $option .= '<option value="' . get_option('home') . '/insights/' . $category->slug . '">';
                     $option .= $category_name;
                     $option .= '</option>';
                 }
