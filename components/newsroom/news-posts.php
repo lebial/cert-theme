@@ -30,5 +30,5 @@ endif;
   <div class="w-full max-w-screen-lg grid grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
     <?php render_news_cards()?>
   </div>
-  <div class="w-full flex justify-center mb-12"><?php render_load_more()?></div>
+  <div class="w-full flex justify-center mb-20"><?php render_load_more()?></div>
 </section>
