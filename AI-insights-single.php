@@ -218,9 +218,9 @@ function get_latest_posts($number_of_posts = 3) {
                                     <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>" target="_blank">
                                         <img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/X-icon-navy.jpg" alt="">
                                     </a>
-                                    <a href="https://www.youtube.com/@certilytics" target="_blank">
-                                        <img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/youtube-icon-navy.svg" alt="">
-                                    </a>
+                                    <!-- <a href="https://www.youtube.com/@certilytics" target="_blank">
+                                        <img class="w-7 mx-2" src="<?php // echo get_template_directory_uri() ?>/dist/assets/images/postsPage/youtube-icon-navy.svg" alt="">
+                                    </a> -->
                                 </div>
                             </div>
                             <div class="w-[335px] ml-auto hidden lg:block"></div>
