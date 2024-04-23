@@ -4,7 +4,7 @@ $str_date = strtotime($post->post_date);
 $img = get_field('post_hero_image', $post->ID);
 $content = get_field('post_content', $post->ID);
 $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
-$custom_content .= ',...';
+$custom_content .= '...';
 $link = get_permalink($post);
 ?>
 <section class="ai__insights__highlighted__post w-full pt-14 lg:pt-20 flex justify-center flex-col lg:flex-row">
