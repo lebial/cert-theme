@@ -123,6 +123,7 @@
     max-width: none !important;
     margin-bottom: 10px !important;
     line-height: 25px;
+    color: #180f36 !important;
   }
 }
 
@@ -254,5 +255,18 @@
     & button[type="submit"] {
       border-radius: 18px !important;
     }
+  }
+}
+
+// about us 2.0
+.founding__description {
+  & h2 {
+    color: white !important;
+    margin-bottom: 15px !important;
+  }
+  & p {
+    max-width: 100% !important;
+    color: white !important;
+    line-height: 1.7rem;
   }
 }
