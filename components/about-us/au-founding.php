@@ -1,7 +1,5 @@
-<section class="w-full h-full">
-    <div class="w-10/12 mx-auto flex justify-center flex-col items-center">
-        <image />
-        <h3>Our founding</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi veniam sequi illo laboriosam cumque cupiditate voluptate iste incidunt possimus, provident magni expedita, quos impedit blanditiis sapiente eveniet? Ullam, minus expedita.</p>
+<section class="w-full h-full bg-dark-blue-background py-12 bg-cover bg-no-repeat bg-center lg:bg-left" style="background-image: url(<?php the_field('founding_background_img')?>);"">
+    <div class="founding__description w-9/12 mx-auto flex justify-center flex-col items-center pb-20 max-w-screen-2xl">
+        <?php the_field('founding_main_description')?>
     </div>
 </section>

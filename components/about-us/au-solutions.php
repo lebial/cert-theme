@@ -19,7 +19,7 @@ function render_au_solution_cards($image)
 ?>
 <section class="au__solutions w-full h-full py-16 lg:py-24">
   <div class="w-full lg:w-11/12 flex flex-col items-center mx-auto">
-    <h2 class="text-2xl md:text-3xl font-bold text-center block pb-8 mx-6 text-dark-blue-background" >Who We Serve</h2>
+    <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold text-center block pb-8 mx-6 text-dark-blue-background" ><?php the_field('solutions_title')?></h2>
     <div class="au__solutions__cards w-full max-w-[930px] flex flex-wrap justify-center ">
       <?php render_au_solution_cards($arrow_image) ?>
     </div>
