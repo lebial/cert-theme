@@ -57,7 +57,7 @@ function render_link_groups()
 
 	foreach ($link_groups as $idx => $link_group) {
 		$pr_class = $idx == 0 ? '' : 'pr-6';
-		$text_classes =  "text-[10px] 2xl:text-sm";
+		$text_classes =  "text-xs 2xl:text-sm";
 		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start flex-1 lg:'.$pr_class.' ">';
 		echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 		if ($link_group['button_link']) {

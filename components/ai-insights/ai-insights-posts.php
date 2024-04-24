@@ -19,7 +19,7 @@ function render_excerpt_or_post_content($custom_post_id, $post_excerpt)
     <?php get_template_part('components/ai-insights/filter-buttons'); ?>
   </div>
   <main class="ai__posts__container mt-10 flex justify-center flex-col">
-    <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 auto-rows-fr mx-auto" id="scrollContent">
+    <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 lg:auto-rows-fr mx-auto" id="scrollContent">
       <?php get_template_part('components/ai-insights/ai-insights-post-render') ?>
     </div>
     <div class="w-full flex justify-center pb-12"><?php render_load_more()?></div>

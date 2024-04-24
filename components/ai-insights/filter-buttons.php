@@ -1,8 +1,8 @@
 <?php
 $button_classes = '
-  px-4 py-1 rounded-3xl border border-solid border-gray-400 text-gray-400 text-[8px] lg:text-sm mr-3
-  font-medium
-  transition-all duration-300 hover:border-primary hover:bg-primary hover:text-white
+  px-4 py-1 rounded-3xl border border-solid border-gray-400 text-gray-400 text-xs lg:text-sm mr-3
+  font-normal tracking-tight
+  transition-all duration-300 hover:border-primary hove`r:bg-primary hover:text-white
   ';
 ?>
 <!-- <div class="search__container">
@@ -15,10 +15,10 @@ $button_classes = '
       </button>
     </label>
   </div> -->
-<div class="tags__container flex justify-center flex-wrap ">
-  <div class="ai-insights__filter__option group" data-option="all"><a href="/insights/ai-insights/#scrollContent" class="<?php echo $button_classes ?>">All</a></div>
-  <div class="ai-insights__filter__option group" data-option="gen-ai"><a href="/insights/ai-insights/?tag=gen-ai#scrollContent" class="<?php echo $button_classes ?>">Gen AI</a></div>
-  <div class="ai-insights__filter__option group" data-option="machine-learning"><a href="/insights/ai-insights/?tag=machine-learning#scrollContent" class="<?php echo $button_classes ?>">Machine Learning</a></div>
-  <div class="ai-insights__filter__option group" data-option="predictive-modeling"><a href="/insights/ai-insights/?tag=predictive-modeling#scrollContent" class="<?php echo $button_classes ?>">Predictive Modeling</a></div>
-  <div class="ai-insights__filter__option group" data-option="deep-learning"><a href="/insights/ai-insights/?tag=deep-learning#scrollContent" class="<?php echo $button_classes ?>">Deep Learning</a></div>
+<div class="tags__container flex justify-center flex-wrap">
+  <div class="ai-insights__filter__option group mb-2" data-option="all"><a href="/insights/ai-insights/#scrollContent" class="<?php echo $button_classes ?>">All</a></div>
+  <div class="ai-insights__filter__option group mb-2" data-option="gen-ai"><a href="/insights/ai-insights/?tag=gen-ai#scrollContent" class="<?php echo $button_classes ?>">Gen AI</a></div>
+  <div class="ai-insights__filter__option group mb-2" data-option="machine-learning"><a href="/insights/ai-insights/?tag=machine-learning#scrollContent" class="<?php echo $button_classes ?>">Machine Learning</a></div>
+  <div class="ai-insights__filter__option group mb-2" data-option="predictive-modeling"><a href="/insights/ai-insights/?tag=predictive-modeling#scrollContent" class="<?php echo $button_classes ?>">Predictive Modeling</a></div>
+  <div class="ai-insights__filter__option group mb-2" data-option="deep-learning"><a href="/insights/ai-insights/?tag=deep-learning#scrollContent" class="<?php echo $button_classes ?>">Deep Learning</a></div>
 </div>

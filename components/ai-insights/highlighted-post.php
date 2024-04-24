@@ -23,7 +23,7 @@ $link = get_permalink($post);
           <?php echo $custom_content ?>
         </p>
         <a class="border border-primary border-solid text-primary inline-block
-                  rounded-3xl px-2 py-2 mt-2 !text-base
+                  rounded-3xl px-2 py-2 mt-2 !text-base tracking-tight
                    transition-all duration-300 hover:bg-primary hover:text-white
                   "
                   href="<?php echo $link ?>">Read Article</a>
