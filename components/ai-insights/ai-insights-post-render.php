@@ -3,7 +3,7 @@
   $img = get_field('post_hero_image', get_the_ID());
   $content = get_field('post_content', get_the_ID());
   $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
-  $custom_content .= ',...';
+  $custom_content .= '...';
 ?>
 <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col ">
   <div class="image__container ">
