@@ -16,7 +16,10 @@
         <?php echo $custom_content ?>
     </p>
     <div class="flex-1 flex items-end">
-      <a href="<?php echo get_the_permalink() ?>" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
+      <a href="<?php echo get_the_permalink() ?>" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary tracking-tight
+                                                        text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">
+        Read More
+      </a>
     </div>
   </div>
 </div>
