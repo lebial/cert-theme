@@ -5,7 +5,7 @@
     // min-width: 135px;
     &__toggle {
         position: relative;
-        padding: 0 5px;
+        padding: 0 4px;
         text-align: left;
         margin-bottom: 15px;
         top: 3px;
@@ -18,9 +18,9 @@
             transition: all .3s ease;
             width: 0;
             height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 10px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid white;
         }
 
         &::before {
@@ -29,9 +29,9 @@
             transition: all .3s ease;
             width: 0;
             height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 10px solid $dark-blue-background;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid $dark-blue-background;
             top: 0;
             left: -2px;
             z-index: 2;
