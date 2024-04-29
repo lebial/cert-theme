@@ -312,3 +312,10 @@
     color: white !important;
   }
 }
+
+.executive__description {
+  & p {
+    color: #180f36 !important;
+    margin-bottom: 0 !important;
+  }
+}
