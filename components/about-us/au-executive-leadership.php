@@ -4,8 +4,8 @@ function render_executive_leadership()
   $items = get_field('executive_leadership');
   foreach ($items as $item) {
     echo '<div class="flex flex-col items-center text-white">
-            <div class="">
-              <img src="'.$item['image_url'].'" alt="executive_image" class="w-10 h-6 lg:w-12 lg:h-8 2xl:w-16 2xl:h-12" />
+            <div class="mb-8">
+              <img src="'.$item['image_url'].'" alt="executive_image" class="w-36 h-36 lg:w-48 lg:h-48 2xl:w-52 2xl:h-52" />
             </div>
             <span class="text-center font-bold text-md lg:text-xl tracking-tight">'.$item['name'].'</span>
             <span class="text-center text-sm lg:text-md tracking-tight">'.$item['title'].'</span>
@@ -47,7 +47,7 @@ function render_board_of_directors()
 <section class="w-full h-full bg-dark-blue-background">
     <div class="w-9/12 lg:w-10/12 flex mx-auto flex-col items-center py-14 lg:py-20 max-w-screen-2xl">
         <h3 class="font-bold text-white pb-12">Executive Leadership</h3>
-        <div class="w-full mx-auto grid grid-cols-3 gap-16">
+        <div class="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             <?php render_executive_leadership() ?>
         </div>
 

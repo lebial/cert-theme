@@ -268,5 +268,47 @@
     max-width: 100% !important;
     color: white !important;
     line-height: 1.7rem;
+    text-align: center !important;
+
+    @media #{$desktopBase} {
+      text-align: left !important;
+    }
+  }
+}
+
+.slick-dots {
+  position:inherit;
+
+  & li {
+      & button {
+          transition: all ease .3s;
+          width: 15px;
+          height: 15px;
+          background-color: #180f36;
+          border-radius: 100%;
+          border: white 1px solid;
+
+          &::before {
+              color: transparent !important;
+          }
+      }
+  }
+}
+
+.slick-active {
+  & button {
+      background-color: white !important;
+  }
+}
+
+.slick-slide {
+  & div {
+    width: 100% !important;
+  }
+}
+
+.copy-carousel {
+  & p {
+    color: white !important;
   }
 }

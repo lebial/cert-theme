@@ -5,7 +5,7 @@
             <p class="max-w-6xl text-lg lg:text-xl text-center text-dark-blue-background"><?php the_field('careers_section_description') ?></p>
         </div>
         <div class="w-full mt-8 pb-8 flex justify-center lg:w-5/12 2xl:w-3/12 xl:px-2 mx-auto">
-            <a target="_blank" rel="noopener noreferrer" href="<?php the_field('careers_button_link') ?>" class="w-11/12 sm:w-6/12 lg:w-5/12 2xl:w-8/12 border border-solid rounded-3xl border-primary bg-white text-primary hover:bg-primary hover:text-white font-bold text-lg text-center py-2"><?php the_field('careers_section_text_button') ?></a>
+            <a target="_blank" rel="noopener noreferrer" href="<?php the_field('careers_button_link') ?>" class="w-8/12 sm:w-6/12 lg:w-5/12 2xl:w-8/12 border border-solid rounded-3xl border-primary bg-white text-primary hover:bg-primary hover:text-white font-bold text-lg text-center py-2"><?php the_field('careers_section_text_button') ?></a>
         </div>
         <div class="au__careers__description w-full mx-auto lg:p-0 lg:w-5/12 2xl:w-[18%]">
             <p class="text-xs leading-[15px!important] lg:leading-[18px!important] lg:text-sm text-center"><?php the_field('careers_section_text_contact') ?></p>

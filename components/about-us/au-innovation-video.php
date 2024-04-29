@@ -1,7 +1,7 @@
 <section class="w-full h-full">
   <div class="flex justify-center flex-col items-center py-16 mx-auto max-w-screen-2xl">
-    <h3 class="text-bold text-center text-dark-blue-background !mb-0 leading-10"><?php the_field('innovation_heading_title')?></h3>
-    <div name="desktop_innovation_video" class="h-full hidden w-1/2 lg:flex justify-center pt-12 ">
+    <h3 class="text-bold text-center text-dark-blue-background !mb-0 leading-6 lg:leading-10"><?php the_field('innovation_heading_title')?></h3>
+    <div name="desktop_innovation_video" class="h-full w-8/12 lg:w-1/2 lg:flex justify-center pt-12 ">
       <div class="w-full lg:w-[72%] h-fit flex flex-col lg:justify-center relative">
         <div class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-xl z-20" style="box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25);">
           <button class="second_video_play_button">
@@ -10,7 +10,7 @@
             </svg>
           </button>
         </div>
-        <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg" poster="<?php the_field('platform_main_video_thumbnail') ?>">
+        <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg" poster="<?php the_field('innovation_main_video_thumbnail') ?>">
           <source src="<?php the_field('innovation_main_video_url') ?>" type="video/mp4">
         </video>
       </div>

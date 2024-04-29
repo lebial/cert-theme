@@ -22,10 +22,10 @@ $quote = get_field('about_us_highlight_quote');
         <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <div class="w-full px-4 lg:pl-12 mr-0 lg:mr-12">
 
-            <h2 class="font-bold text-2xl xl:text-4xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left reveal-text hidden lg:block" data-reveal-direction="left">
+            <h2 class="font-bold text-3xl xl:text-4xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left reveal-text hidden lg:block" data-reveal-direction="left">
                 <?php echo $quote['title'] ?>
             </h2>
-            <h2 class="font-bold text-2xl xl:text-4xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left block lg:hidden">
+            <h2 class="font-bold text-3xl xl:text-4xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left block lg:hidden">
                 <?php echo $quote['title'] ?>
             </h2>
 

@@ -128,7 +128,31 @@ jQuery(document).ready(function ($) {
     })
   }
 
+  function createHeaderSliders() {
+    $('.copy-carousel').slick({
+      autoplay: true,
+      autoplaySpeed: 4000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      asNavFor: '.images-carousel',
+      dots: true,
+      appendDots: '.carousel-dots',
+      customPaging: function(slider, i) {
+          return '<button>' + (i + 1) + '</button>';
+      },
+      fade: true,
+    });
+
+    $('.images-carousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.copy-carousel',
+        arrows: false,
+    });
+  }
+
   if (window.location.href.includes("about-us")) {
+    createHeaderSliders();
     setImageMargin();
     // createTimelineSlider();
     // addArrowToSlider(".au__timeline__nav");
