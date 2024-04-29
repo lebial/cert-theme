@@ -151,6 +151,29 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function hideThumbnailText() {
+    const video = document.getElementById('healthcareInnovation');
+    const texts = document.querySelectorAll('.thumbnail__text');
+    const videoContainer = document.getElementById('videoContainer')
+
+    texts.forEach((item) => {
+      video.addEventListener('play', function() {
+        item.style.display = 'none';
+      });
+
+      video.addEventListener('pause', function() {
+        item.style.display = 'none';
+        videoContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      });
+
+      video.addEventListener('ended', function() {
+        item.style.display = 'flex';
+        item.style.flexDirection = 'column';
+        videoContainer.style.backgroundColor = 'transparent';
+      });
+    });
+  }
+
   if (window.location.href.includes("about-us")) {
     createHeaderSliders();
     setImageMargin();
@@ -165,5 +188,6 @@ jQuery(document).ready(function ($) {
     createOurTeamSlider();
     addArrowToSlider(".our__team__slider", handleOurTeamOptionCollapseOnChange);
     handleSwipeEvent();
+    hideThumbnailText();
   }
 });

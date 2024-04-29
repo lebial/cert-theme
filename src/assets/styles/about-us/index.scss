@@ -319,3 +319,10 @@
     margin-bottom: 0 !important;
   }
 }
+
+.thumbnail__text--author {
+  & small {
+    font-size: 9px !important;
+    font-weight: 600;
+  }
+}

@@ -10,6 +10,7 @@ function render_executive_leadership()
             <span class="text-center font-bold text-md lg:text-xl tracking-tight">'.$item['name'].'</span>
             <span class="text-center text-sm lg:text-md tracking-tight">'.$item['title'].'</span>
             <a class="platform__hero__option__button tracking-tight font-bold flex items-center transition-all duration-200 text-primary text-sm xl:text-md" 
+              target="_blank"
               href="' . $item['bio_url'] . '"
               name="' . $item['name'] . '" name="'.$item['name'].'">
               Read Bio <span class="w-[20px] pt-[3px]"><svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class=" fill-primary" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "/></g></g></svg></span></a>

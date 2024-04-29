@@ -5,7 +5,7 @@ function render_au_solution_cards($image)
   $cards = get_field('solution_images');
   foreach ($cards as $card) {
     echo '<a class="flex justify-center" href="' . $card['link'] . '">
-            <div class="au__solutions__cards--card w-64 h-36 flex justify-center items-center m-4 relative overflow-hidden">
+            <div class="au__solutions__cards--card w-64 h-36 flex justify-center items-center m-4 relative overflow-hidden rounded-xl">
               <img class="card__bg__image w-full h-full absolute top-0 left-0" src="' . $card['image'] . '" alt="' . $card['title'] . ' image">
               <div class="relative flex items-center">
                 <p>' . $card['title'] . '</p>

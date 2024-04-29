@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="h-[70vh] w-1/2 bg-red-500">
+    <div class="h-[70vh] w-1/2">
       <div class="w-full images-carousel h-[70vh] flex flex-col items-center">
         <?php renderHeaderImages()?>
       </div>
