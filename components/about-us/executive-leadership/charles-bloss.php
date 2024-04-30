@@ -1,5 +1,5 @@
 <section class="w-full h-full bg-white">
-  <div class="w-8/12 flex justify-center mx-auto py-12">
+  <div class="w-8/12 flex flex-col items-center lg:flex-row lg:items-start lg:justify-center mx-auto py-12">
     <div class="executive__image w-6/12 flex justify-end ">
       <div class="mr-8 mb-12 rounded-full w-36 h-36 lg:w-48 lg:h-48 xl:w-56 xl:h-56 overflow-hidden relative">
         <img src="<?php the_field('image_url') ?>" alt="" class="w-full h-full object-cover absolute" />

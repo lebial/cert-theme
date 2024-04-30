@@ -1,6 +1,6 @@
 <section class="au__careers w-full">
     <div class="w-full px-6 md:px-2 lg:px-0 text-center my-12 lg:my-20 relative mx-auto max-w-screen-2xl">
-        <h2 class=" text-dark-blue-background text-4xl md:text-5xl font-bold lg:text-6xl 2xl:text-6xl pb-4">Certilytics Is Growing!</h2>
+        <h3 class="text-2xl xl:text-3xl text-dark-blue-background font-bold pb-4">Certilytics Is Growing!</h3>
         <div class="au__careers__description w-full text-left lg:text-center xl:w-9/12 mx-auto">
             <p class="max-w-6xl text-lg lg:text-xl text-center text-dark-blue-background"><?php the_field('careers_section_description') ?></p>
         </div>

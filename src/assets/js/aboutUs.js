@@ -1,4 +1,4 @@
-import getNavHeight, { addArrowToSlider, makeElementsSameHeight } from "./utils/utils";
+import getNavHeight, { addArrowToSlider, makeElementsSameHeight, getCustomArrows } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
   function setImageMargin() {
@@ -174,7 +174,30 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function executiveCarousel() {
+    const [prevArrow, nextArrow] = getCustomArrows();
+
+    $('.executive__carousel').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      arrows: true,
+      nextArrow,
+      prevArrow,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        }
+      ]
+    });
+  }
+
   if (window.location.href.includes("about-us")) {
+    executiveCarousel();
     createHeaderSliders();
     setImageMargin();
     // createTimelineSlider();
