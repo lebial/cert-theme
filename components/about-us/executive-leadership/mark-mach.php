@@ -1,8 +1,8 @@
 <section class="w-full h-full bg-white">
   <div class="w-8/12 flex justify-center mx-auto py-12">
-    <div class="executive__image w-6/12 flex justify-end ">
-      <div class="mr-8 mb-12 rounded-full w-36 h-36 lg:w-48 lg:h-48 xl:w-56 xl:h-56 overflow-hidden relative">
-        <img src="<?php the_field('image_url') ?>" alt="" class="w-full h-full object-cover absolute" />
+    <div class="executive__image">
+      <div class="mr-8">
+        <img src="<?php the_field('image_url') ?>" alt="executive_image" class="w-36 h-36 lg:w-60 lg:h-56 2xl:w-52 2xl:h-52" />
       </div>
     </div>
     <div class="executive__description">
