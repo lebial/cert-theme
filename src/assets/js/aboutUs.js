@@ -1,4 +1,4 @@
-import getNavHeight, { addArrowToSlider, makeElementsSameHeight } from "./utils/utils";
+import getNavHeight, { addArrowToSlider, makeElementsSameHeight, getCustomArrows } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
   function setImageMargin() {
@@ -128,7 +128,77 @@ jQuery(document).ready(function ($) {
     })
   }
 
+  function createHeaderSliders() {
+    $('.copy-carousel').slick({
+      autoplay: true,
+      autoplaySpeed: 4000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      asNavFor: '.images-carousel',
+      dots: true,
+      appendDots: '.carousel-dots',
+      customPaging: function(slider, i) {
+          return '<button>' + (i + 1) + '</button>';
+      },
+      fade: true,
+    });
+
+    $('.images-carousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.copy-carousel',
+        arrows: false,
+    });
+  }
+
+  function hideThumbnailText() {
+    const video = document.getElementById('healthcareInnovation');
+    const texts = document.querySelectorAll('.thumbnail__text');
+    const videoContainer = document.getElementById('videoContainer')
+
+    texts.forEach((item) => {
+      video.addEventListener('play', function() {
+        item.style.display = 'none';
+      });
+
+      video.addEventListener('pause', function() {
+        item.style.display = 'none';
+        videoContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      });
+
+      video.addEventListener('ended', function() {
+        item.style.display = 'flex';
+        item.style.flexDirection = 'column';
+        videoContainer.style.backgroundColor = 'transparent';
+      });
+    });
+  }
+
+  function executiveCarousel() {
+    const [prevArrow, nextArrow] = getCustomArrows();
+
+    $('.executive__carousel').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      arrows: true,
+      nextArrow,
+      prevArrow,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        }
+      ]
+    });
+  }
+
   if (window.location.href.includes("about-us")) {
+    executiveCarousel();
+    createHeaderSliders();
     setImageMargin();
     // createTimelineSlider();
     // addArrowToSlider(".au__timeline__nav");
@@ -141,5 +211,6 @@ jQuery(document).ready(function ($) {
     createOurTeamSlider();
     addArrowToSlider(".our__team__slider", handleOurTeamOptionCollapseOnChange);
     handleSwipeEvent();
+    hideThumbnailText();
   }
 });

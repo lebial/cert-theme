@@ -260,13 +260,96 @@
 
 // about us 2.0
 .founding__description {
-  & h2 {
+  & h3 {
     color: white !important;
     margin-bottom: 15px !important;
+    font-size: 1.5rem;
+
+    @media #{$desktopBase} {
+      text-align: left !important;
+      font-size: 1.875rem;
+    }
   }
   & p {
     max-width: 100% !important;
     color: white !important;
     line-height: 1.7rem;
+    text-align: left !important;
+
+    @media #{$desktopBase} {
+      text-align: left !important;
+    }
+  }
+}
+
+.slick-dots {
+  position:inherit;
+
+  & li {
+      & button {
+          transition: all ease .3s;
+          width: 15px;
+          height: 15px;
+          background-color: #180f36;
+          border-radius: 100%;
+          border: white 1px solid;
+
+          &::before {
+              color: transparent !important;
+          }
+      }
+  }
+}
+
+.slick-active {
+  & button {
+      background-color: white !important;
+  }
+}
+
+.slick-slide {
+  & div {
+    width: 100% !important;
+  }
+}
+
+.copy-carousel {
+  & p {
+    color: white !important;
+  }
+}
+
+.executive__description {
+  & p {
+    color: #180f36 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+.thumbnail__text--author {
+  & small {
+    font-size: 5px !important;
+    font-weight: 600;
+    letter-spacing: 0em;
+
+    @media #{$tablet} {
+      font-size: 9px !important;
+      font-weight: 600;
+    }
+  }
+}
+
+.executive__carousel {
+  & .slick-arrow {
+    position: absolute;
+    top: 3.5rem !important;
+    margin-inline: 3.5rem;
+
+    & svg {
+      width: 17px !important;
+      & path {
+        fill: white !important;
+      }
+    }
   }
 }
