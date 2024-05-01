@@ -2,7 +2,7 @@
 $button_classes = '
   px-4 py-1 rounded-3xl border border-solid border-gray-400 text-gray-400 text-xs lg:text-sm mr-3
   font-normal tracking-tight
-  transition-all duration-300 hover:border-primary hove`r:bg-primary hover:text-white
+  transition-all duration-300 hover:border-primary hover:bg-primary hover:text-white
   ';
 ?>
 <!-- <div class="search__container">

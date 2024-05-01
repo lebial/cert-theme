@@ -12,15 +12,47 @@ function render_load_more($text = 'Insights') {
 function get_insights_posts($category) {
     $page = $_POST['page'] ? $_POST['page'] : 1;
     $tag = $_POST['tag'];
-    return new WP_Query([
+    $options = [
         'posts_per_page' => 6,
         'category_name' => $category,
         'paged' => $page,
+        'post_type' => 'post',
         'tag' => $tag,
         'orderby' => 'date',
         'order' => 'desc',
-    ]);
+    ];
+    
+    return new WP_Query($options);
 }
+
+function resources_infinite_scroll() {
+    $ajax_posts = get_insights_posts('');
+    $response = '';
+    if ($ajax_posts->have_posts()){
+        while($ajax_posts->have_posts()) : $ajax_posts->the_post();
+            $img = get_field('post_hero_image', get_the_ID());
+            $tags = get_the_tags();
+            $response .= '
+                <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
+                    <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
+                        <p class="text-gray-400 text-base mb-4 uppercase">'.$tags[0]->name.'</p>
+                        <img src="'.$img.'" alt="post thumbnail" class=" rounded-lg my-4"/>
+                        <h3 class=" text-dark-blue-background text-sm font-bold mb-2">'.get_the_title().'</h3>
+                        <div class="flex-1 flex items-end">
+                        <a href="'.get_the_permalink().'" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            ';
+        endwhile;
+    } else {
+        $response = 'empty';
+    }
+    echo $response;
+    exit;
+}
+add_action('wp_ajax_resources_infinite_scroll', 'resources_infinite_scroll');
+add_action('wp_ajax_nopriv_resources_infinite_scroll', 'resources_infinite_scroll');
 
 //infinite scroll support ajax api
 function ai_insights_scroll() {

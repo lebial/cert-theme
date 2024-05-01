@@ -270,6 +270,7 @@
       font-size: 1.875rem;
     }
   }
+
   & p {
     max-width: 100% !important;
     color: white !important;
@@ -282,34 +283,37 @@
   }
 }
 
-.slick-dots {
-  position:inherit;
+.copy-carousel,
+.resources__video__slider {
+  .slick-dots {
+    position: inherit;
 
-  & li {
+    & li {
       & button {
-          transition: all ease .3s;
-          width: 15px;
-          height: 15px;
-          background-color: #180f36;
-          border-radius: 100%;
-          border: white 1px solid;
+        transition: all ease .3s;
+        width: 15px;
+        height: 15px;
+        background-color: #180f36;
+        border-radius: 100%;
+        border: white 1px solid;
 
-          &::before {
-              color: transparent !important;
-          }
+        &::before {
+          color: transparent !important;
+        }
       }
+    }
   }
-}
 
-.slick-active {
-  & button {
+  .slick-active {
+    & button {
       background-color: white !important;
+    }
   }
-}
 
-.slick-slide {
-  & div {
-    width: 100% !important;
+  .slick-slide {
+    & div {
+      width: 100% !important;
+    }
   }
 }
 
@@ -347,6 +351,7 @@
 
     & svg {
       width: 17px !important;
+
       & path {
         fill: white !important;
       }
