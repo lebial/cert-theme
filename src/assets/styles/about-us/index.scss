@@ -266,7 +266,7 @@
     font-size: 1.5rem;
 
     @media #{$desktopBase} {
-      text-align: left !important;
+      text-align: center !important;
       font-size: 1.875rem;
     }
   }
@@ -332,7 +332,7 @@
 
 .thumbnail__text--author {
   & small {
-    font-size: 5px !important;
+    font-size: 7px !important;
     font-weight: 600;
     letter-spacing: 0em;
 
@@ -340,6 +340,12 @@
       font-size: 9px !important;
       font-weight: 600;
     }
+  }
+}
+
+.carousel__quote {
+  & p {
+    line-height: 2rem !important;
   }
 }
 
@@ -356,5 +362,38 @@
         fill: white !important;
       }
     }
+  }
+}
+
+.executive__profile__title__mobile {
+  & p {
+    color:#180f36;
+    font-size: 0.875rem;
+    padding-bottom: 3rem;
+
+    @media #{$desktopBase} {
+      padding-bottom: 1rem;
+      display: none;
+    }
+  }
+}
+
+.executive__profile__title__desktop {
+  & p {
+    color:#180f36;
+    font-size: 0.875rem;
+    padding-bottom: 3rem;
+    display: none;
+
+    @media #{$desktopBase} {
+      padding-bottom: 1rem;
+      display: block;
+    }
+  }
+}
+
+.executive__section {
+  &:hover {
+    text-decoration: underline;
   }
 }

@@ -178,6 +178,8 @@ jQuery(document).ready(function ($) {
     const [prevArrow, nextArrow] = getCustomArrows();
 
     $('.executive__carousel').slick({
+      autoplay: true,
+      autoplaySpeed: 4000,
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
