@@ -2,7 +2,7 @@
   $header_quotes = get_field('carousel_section');
 
   foreach ($header_quotes as $quote) {
-    echo '<div class="text-white font-bold text-lg lg:text-xl text-center lg:text-left">'.$quote['copy'].'</div>';
+    echo '<div class="carousel__quote text-white font-bold text-lg lg:text-xl text-center lg:text-left !leading-10">'.$quote['copy'].'</div>';
   };
 }
 ?>
@@ -12,8 +12,7 @@
 
   foreach ($header_images as $image) {
     echo '
-    <div class="w-full relative h-[75vh]">
-      <img src="'.$image['image_url'].'" alt="" class="w-full h-full object-cover" />
+    <div class="w-full relative h-[75vh] bg-cover bg-no-repeat bg-[center_-3rem]" style="background-image: url('.$image['image_url'].');"">
     </div>';
   };
 }
@@ -24,7 +23,7 @@
     <div class="w-full lg:w-1/2 flex justify-center absolute lg:static z-10">
       <div class="flex flex-col w-9/12">
         <h1 class="text-white mb-6 text-4xl lg:text-6xl text-center lg:text-left">About Us</h1>
-        <div class="red__divider w-1/12 mx-auto lg:mx-0 mb-8 lg:mt-0 border-[0.1px] border-primary border-solid"></div>
+        <div class="red__divider w-1/12 mx-auto lg:mx-0 mb-4 lg:mt-0 border-[0.1px] border-primary border-solid"></div>
         <div class="h-[25vh]">
           <div class="copy-carousel">
               <?php renderHeaderQuotes()?>
