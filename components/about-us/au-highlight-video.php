@@ -20,7 +20,7 @@ $quote = get_field('about_us_highlight_quote');
         </div>
 
         <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
-            <div class="w-full px-4 lg:pl-12 mr-0 lg:mr-12">
+            <div class="w-full lg:pl-12 mr-0 lg:mr-12">
 
             <h3 class="font-bold text-2xl xl:text-3xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left reveal-text hidden lg:block" data-reveal-direction="left">
                 <?php echo $quote['title'] ?>
