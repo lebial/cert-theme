@@ -137,17 +137,17 @@ jQuery(document).ready(function ($) {
       asNavFor: '.images-carousel',
       dots: true,
       appendDots: '.carousel-dots',
-      customPaging: function(slider, i) {
-          return '<button>' + (i + 1) + '</button>';
+      customPaging: function (slider, i) {
+        return '<button>' + (i + 1) + '</button>';
       },
       fade: true,
     });
 
     $('.images-carousel').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.copy-carousel',
-        arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      asNavFor: '.copy-carousel',
+      arrows: false,
     });
   }
 
@@ -157,16 +157,16 @@ jQuery(document).ready(function ($) {
     const videoContainer = document.getElementById('videoContainer')
 
     texts.forEach((item) => {
-      video.addEventListener('play', function() {
+      video.addEventListener('play', function () {
         item.style.display = 'none';
       });
 
-      video.addEventListener('pause', function() {
+      video.addEventListener('pause', function () {
         item.style.display = 'none';
         videoContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
       });
 
-      video.addEventListener('ended', function() {
+      video.addEventListener('ended', function () {
         item.style.display = 'flex';
         item.style.flexDirection = 'column';
         videoContainer.style.backgroundColor = 'transparent';
