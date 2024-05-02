@@ -5,8 +5,8 @@ function render_executive_leadership()
   foreach ($items as $item) {
     echo '<div class="!flex flex-col items-center text-white flex-1 md:flex-[0_0_50%] lg:flex-[0_0_33%] mt-14" >
             <div class="mb-8 flex justify-center md:block">
-              <a href="' . $item['bio_url'] . '" target="_blank" name="' . $item['name'] . '" class=" group">
-                <img src="' . $item['image_url'] . '" alt="executive_image" class="w-40 h-40 lg:w-48 lg:h-48 2xl:w-52 2xl:h-52 transition-all duration-300 group-hover:scale-110 grayscale group-hover:grayscale-0" />
+              <a href="' . $item['bio_url'] . '" target="_blank" name="' . $item['name'] . '" class="group">
+                <img src="' . $item['image_url'] . '" alt="executive_image" class="executive__headshot w-40 h-40 lg:w-48 lg:h-48 2xl:w-52 2xl:h-52 transition-all duration-300 group-hover:scale-110" />
               </a>
             </div>
             <span class="text-center font-bold text-md lg:text-xl tracking-tight">' . $item['name'] . '</span>
