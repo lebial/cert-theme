@@ -432,3 +432,11 @@
     text-decoration: underline;
   }
 }
+
+.executive__headshot {
+  filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0);
+  }
+}
