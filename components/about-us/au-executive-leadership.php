@@ -49,7 +49,7 @@ function render_board_of_directors()
 
 <section id="executive-leadership" class="w-full h-full bg-dark-blue-background">
   <div class="w-9/12 lg:w-10/12 flex mx-auto flex-col items-center py-14 lg:py-20 max-w-screen-2xl">
-    <h3 class="font-bold text-2xl xl:text-3xl text-white pb-12 reveal-text">Executive Leadership</h3>
+    <h3 class="font-bold text-2xl xl:text-3xl text-white pb-8 reveal-text">Executive Leadership</h3>
     <!-- <div class="hidden w-full mx-auto md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-16"> -->
     <div class="hidden w-full mx-auto md:flex flex-wrap justify-center">
       <?php render_executive_leadership() ?>
@@ -60,12 +60,12 @@ function render_board_of_directors()
       <?php render_executive_leadership() ?>
     </div>
 
-    <h3 class="font-bold text-2xl xl:text-3xl text-white py-12 pt-8 lg:pt-16 reveal-text">Administrative Leadership</h3>
+    <h3 class="font-bold text-2xl xl:text-3xl text-white py-6 lg:pt-16 reveal-text">Administrative Leadership</h3>
     <div class="w-full mx-auto flex flex-col items-center">
       <?php render_administrative_leadership() ?>
     </div>
 
-    <h3 class="font-bold text-2xl xl:text-3xl text-white py-12 reveal-text">Board of Directors</h3>
+    <h3 class="font-bold text-2xl xl:text-3xl text-white pt-12 pb-6 reveal-text">Board of Directors</h3>
     <div class="w-full mx-auto flex flex-col items-center">
       <?php render_board_of_directors() ?>
     </div>
