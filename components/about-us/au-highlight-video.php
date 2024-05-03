@@ -25,7 +25,7 @@ $quote = get_field('about_us_highlight_quote');
             <h3 class="font-bold text-2xl xl:text-4xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left reveal-text hidden lg:block" data-reveal-direction="left">
                 <?php echo $quote['title'] ?>
             </h3>
-            <h3 class="font-bold text-2xl xl:text-4xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left block lg:hidden">
+            <h3 class="font-bold text-2xl xl:text-4xl text-dark-blue-background mx-auto lg:mx-0 text-center lg:text-left block reveal-text lg:hidden">
                 <?php echo $quote['title'] ?>
             </h3>
 
