@@ -267,7 +267,7 @@
 
     @media #{$desktopBase} {
       text-align: center !important;
-      font-size: 1.875rem;
+      font-size: 2.25rem;
     }
   }
 
@@ -387,7 +387,7 @@
 .executive__carousel {
   & .slick-arrow {
     position: absolute;
-    top: 3.5rem !important;
+    top: 7rem !important;
     margin-inline: 3.5rem;
 
     & svg {

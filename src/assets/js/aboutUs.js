@@ -131,7 +131,7 @@ jQuery(document).ready(function ($) {
   function createHeaderSliders() {
     $('.copy-carousel').slick({
       autoplay: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 7000,
       slidesToShow: 1,
       slidesToScroll: 1,
       asNavFor: '.images-carousel',
