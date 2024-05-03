@@ -14,7 +14,7 @@
 
   foreach ($header_images as $image) {
     echo '
-    <div class="w-full relative h-[75vh] bg-cover bg-no-repeat bg-[center_-3rem]" style="background-image: url(' . $image['image_url'] . ');"">
+    <div class="w-full relative h-[75vh] bg-cover bg-no-repeat lg:bg-[center_-3rem]" style="background-image: url(' . $image['image_url'] . ');"">
     </div>';
   };
 }
