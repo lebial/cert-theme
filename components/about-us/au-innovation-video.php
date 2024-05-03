@@ -14,7 +14,7 @@
             <source src="<?php the_field('innovation_main_video_url') ?>" type="video/mp4">
           </video>
           <div class="thumbnail__text absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 rounded-lg"></div>
-          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 h-full md:h-auto absolute top-0 md:mt-8 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:py-8 rounded-xl">
+          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 h-full md:h-auto absolute top-0 md:mt-6 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:py-6 rounded-xl">
             <p class="w-full inset-0 flex items-center justify-center mb-2 text-white text-[11px] md:text-xs lg:text-sm rounded-xl pointer-events-none leading-4 md:leading-[1.1rem] font-normal">
               <?php the_field('quote') ?>
             </p>
