@@ -1,10 +1,10 @@
 <?php 
-function render_video_cards() {
+function render_highlighted_cards() {
   $cards = array(1,2,3,4,5,6);
   foreach ($cards as $card) {
     echo '
       <div class=" flex justify-center">
-        <div class="video__card flex flex-col lg:flex-row w-9/12 lg:w-10/12 mx-auto">
+        <div class="highlighted__card flex flex-col lg:flex-row w-9/12 lg:w-10/12 mx-auto">
           <div class="w-full lg:w-5/12 ">
             <div class="w-full h-fit flex flex-col lg:justify-center relative">
               <div class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-xl z-20">
@@ -39,7 +39,7 @@ function render_video_cards() {
 <section class="resources-hero bg-dark-blue-background py-14">
   <div class="w-full lg:w-8/12 flex justify-center mx-auto">
     <div class="resources__video__slider w-full">
-      <?php render_video_cards()?>
+      <?php render_highlighted_cards()?>
     </div>
   </div>
 </section>

@@ -33,10 +33,12 @@ function render_filter_options() {
   }
 }
 function render_resources_cards() {
+$allowedTags = ['video' => 'video', 'case study' => 'case study', 'webinars' => 'webinars', 'article' => 'article'];
 if (have_posts()) : while (have_posts()) : the_post();
   $content = get_field('post_content', get_the_ID());
   $img = get_field('post_hero_image', get_the_ID());
   $tags = get_the_tags();
+  if (isset($allowedTags[$tags[0]->name])) {
   echo '
     <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
       <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
@@ -48,6 +50,7 @@ if (have_posts()) : while (have_posts()) : the_post();
         </div>
       </div>
     </div>';
+  }
 
 endwhile;
 endif; 
