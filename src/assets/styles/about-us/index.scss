@@ -311,8 +311,8 @@
   }
 
   .slick-slide {
-    & div {
-      width: 100% !important;
+    &>div {
+      width: 100%;
     }
   }
 }

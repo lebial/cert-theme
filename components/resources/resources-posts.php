@@ -19,7 +19,7 @@ function render_filter_options() {
 
   foreach ($options as $option) {
     echo '
-      <a href="/resources/?tag='.$option['link'].'" class="text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold">
+      <a href="/resources/?tag='.$option['link'].'" class="text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-auto justify-center mt-2 lg:mt-0">
         '.$option['text'].' 
         <svg class="w-3 h-3 fill-dark-blue-background group-hover:fill-primary" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185.343 185.343" xml:space="preserve">
           <g>
@@ -55,11 +55,11 @@ endif;
 ?>
 
 <section class="resources__posts py-14">
-  <div class="filter__options flex justify-center">
+  <div class="filter__options flex justify-center flex-wrap">
     <?php render_filter_options()?>
   </div>
   <main class="mt-14">
-    <div class="w-full max-w-screen-lg grid grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
+    <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
       <?php render_resources_cards()?>
     </div>
   <div class="w-full flex justify-center mb-20"><?php render_load_more('Resources')?></div>

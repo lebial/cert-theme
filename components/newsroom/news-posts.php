@@ -27,7 +27,7 @@ endif;
 ?>
 <section class="news__container">
   <h2 class=" text-dark-blue-background mx-auto text-center py-12">Latest News</h2>
-  <div class="w-full max-w-screen-lg grid grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
+  <div class="w-full max-w-screen-lg grid grid-cols-1  lg:grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
     <?php render_news_cards()?>
   </div>
   <div class="w-full flex justify-center mb-20"><?php render_load_more()?></div>
