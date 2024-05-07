@@ -21,7 +21,7 @@ function render_custom_menu_items()
         <h1 class="text-white text-3xl lg:text-4xl xl:text-6xl reveal-text">
             <?php the_field('head_line', 'options') ?> <br>
         </h1>
-        <div class=" header__divider w-60 mt-12 h-px bg-primary mx-auto"></div>
+        <div class=" header__divider w-60 my-6 lg:my-0 lg:mt-10 h-px bg-primary mx-auto"></div>
         <div class="w-11/12 md:w-8/12 mx-auto">
             <h2 class="text-white max-w-none hidden lg:block mt-4 md:mt-12 text-lg font-normal tracking-normal">
                 <?php strip_tags(the_field('sub_headline', 'options'), '<a>') ?>
