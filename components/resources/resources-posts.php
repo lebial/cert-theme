@@ -11,17 +11,13 @@ $icon = '
 
 function render_filter_options()
 {
-  $options = [
-    ['link' => 'articles', 'text' => 'Articles'],
-    ['link' => 'case-studies', 'text' => 'Case Studies'],
-    ['link' => 'videos', 'text' => 'Videos'],
-    ['link' => 'webinars', 'text' => 'Webinars'],
-  ];
+  $options = get_field('filter_tags', get_option('page_for_posts'));
+  js_console($options);
 
   foreach ($options as $option) {
     echo '
-      <a href="/resources/?tag=' . $option['link'] . '" class="text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0">
-        ' . $option['text'] . ' 
+      <a href="/resources/?tag=' . $option['url'] . '" class="text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0">
+        ' . $option['tag_name'] . ' 
         <svg class="w-3 h-3 fill-dark-blue-background group-hover:fill-primary" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185.343 185.343" xml:space="preserve">
           <g>
             <g>
@@ -66,7 +62,7 @@ function render_video_or_case_study()
           <img src="' . $img_url . '" alt="post thumbnail" class=" rounded-lg my-4"/>
           <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
           <div class="flex-1 flex items-end">
-            <a href="' . the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+            <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
           </div>
         </div>
       </div>';
@@ -77,7 +73,7 @@ function render_dynamic_content($tag_name)
   $components = [
     'article' => 'render_articles',
     'video' => 'render_video_or_case_study',
-    'cast study' => 'render_video_or_case_study',
+    'case study' => 'render_video_or_case_study',
   ];
   $components[$tag_name]();
 }
@@ -106,6 +102,6 @@ function render_resources_cards()
     <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
       <?php render_resources_cards() ?>
     </div>
-    <div class="w-full flex justify-center mb-20"><?php render_load_more('Resources') ?></div>
+    <div class="w-full flex justify-center mb-20"><?php render_resources_load_more('Resources') ?></div>
   </main>
 </section>

@@ -11,15 +11,35 @@ function render_load_more($text = 'Insights')
     echo '<button data-last-page="' . $max_pages . '" data-current-page="' . $current_page . '" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More ' . $text . '</button>';
 }
 
+function render_resources_load_more($text = 'Resources')
+{
+    $tags = ['video', 'case study', 'article', 'webinar'];
+    $options = [
+        'post_per_page' => 6,
+        'post_type' => 'post',
+        'tag__in' => $tags,
+        'orderby' => 'date',
+        'order' => 'desc',
+    ];
+    $posts = new WP_Query($options);
+    $max_pages = $posts->max_num_pages;
+    $paged = get_query_var('paged');
+    $current_page = $paged ? absint($paged) : 1;
+    if ($max_pages <= 1 || $current_page == $max_pages)
+        return;
+    echo '<button data-last-page="' . $max_pages . '" data-current-page="' . $current_page . '" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More ' . $text . '</button>';
+}
+
 function get_resources_posts()
 {
+    $allowed_tags = ['video', 'case study', 'article', 'webinar'];
     $page = $_POST['page'] ? $_POST['page'] : 1;
-    $tag = $_POST['tag'];
+    $tags = $_POST['tag'] ? [$_POST['tag']] : $allowed_tags;
     $options = [
         'posts_per_page' => 6,
         'paged' => $page,
         'post_type' => 'post',
-        'tag_in' => $tag,
+        'tag__in' => $tags,
         'orderby' => 'date',
         'order' => 'desc',
     ];
@@ -43,28 +63,43 @@ function get_insights_posts($category)
 
     return new WP_Query($options);
 }
+function render_article_card()
+{
+    $tag_name = get_the_tags()[0];
+    $id = get_the_ID();
+    if ($tag_name != 'article') {
+        $post_type = get_field('post_type', $id);
+        $keys = $post_type == 'video' ?
+            ['post_type' => 'video_post', 'image_key' => 'video_thumbnail']
+            : ['post_type' => 'case_study_post', 'image_key' => 'case_study_thumbnail'];
+        $post_fields = get_field($keys['post_type'], $id);
+        $img = $post_fields[$keys['image_key']];
+    } else {
+        $img = get_field('post_hero_image', $id);
+    }
+
+    return '
+        <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
+            <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
+                <p class="text-gray-400 text-base mb-4 uppercase">' . $tag_name . '</p>
+                <img src="' . $img . '" alt="post thumbnail" class=" rounded-lg my-4"/>
+                <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
+                <div class="flex-1 flex items-end">
+                <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+                </div>
+            </div>
+        </div>
+    ';
+}
 
 function resources_infinite_scroll()
 {
-    $ajax_posts = get_insights_posts('');
+    $ajax_posts = get_resources_posts();
     $response = '';
     if ($ajax_posts->have_posts()) {
         while ($ajax_posts->have_posts()):
             $ajax_posts->the_post();
-            $img = get_field('post_hero_image', get_the_ID());
-            $tags = get_the_tags();
-            $response .= '
-                <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
-                    <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
-                        <p class="text-gray-400 text-base mb-4 uppercase">' . $tags[0]->name . '</p>
-                        <img src="' . $img . '" alt="post thumbnail" class=" rounded-lg my-4"/>
-                        <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
-                        <div class="flex-1 flex items-end">
-                        <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
-                        </div>
-                    </div>
-                </div>
-            ';
+            $response .= render_article_card();
         endwhile;
     } else {
         $response = 'empty';

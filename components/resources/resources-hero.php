@@ -1,6 +1,7 @@
-<?php 
-function render_highlighted_cards() {
-  $cards = array(1,2,3,4,5,6);
+<?php
+function render_highlighted_cards()
+{
+  $cards = get_field('featured_posts', get_option('page_for_posts'));
   foreach ($cards as $card) {
     echo '
       <div class=" flex justify-center">
@@ -33,13 +34,14 @@ function render_highlighted_cards() {
         </div>
       </div>
     ';
-  };
+  }
+  ;
 }
 ?>
 <section class="resources-hero bg-dark-blue-background py-14">
   <div class="w-full lg:w-8/12 flex justify-center mx-auto">
     <div class="resources__video__slider w-full">
-      <?php render_highlighted_cards()?>
+      <?php render_highlighted_cards() ?>
     </div>
   </div>
 </section>
