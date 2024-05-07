@@ -20,7 +20,7 @@ function render_filter_options()
 
   foreach ($options as $option) {
     echo '
-      <a href="/resources/?tag=' . $option['link'] . '" class="text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-auto justify-center mt-2 lg:mt-0">
+      <a href="/resources/?tag=' . $option['link'] . '" class="text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0">
         ' . $option['text'] . ' 
         <svg class="w-3 h-3 fill-dark-blue-background group-hover:fill-primary" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185.343 185.343" xml:space="preserve">
           <g>
