@@ -1,15 +1,34 @@
 <?php
 
-function render_load_more($text = 'Insights') {
-  global $wp_query;
-  $max_pages = $wp_query->max_num_pages;
-  $paged = get_query_var('paged');
-  $current_page = $paged ? absint($paged) : 1;
-  if ($max_pages <= 1 || $current_page == $max_pages) return;
-  echo '<button data-last-page="'.$max_pages.'" data-current-page="'.$current_page.'" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More '.$text.'</button>';
+function render_load_more($text = 'Insights')
+{
+    global $wp_query;
+    $max_pages = $wp_query->max_num_pages;
+    $paged = get_query_var('paged');
+    $current_page = $paged ? absint($paged) : 1;
+    if ($max_pages <= 1 || $current_page == $max_pages)
+        return;
+    echo '<button data-last-page="' . $max_pages . '" data-current-page="' . $current_page . '" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More ' . $text . '</button>';
 }
 
-function get_insights_posts($category) {
+function get_resources_posts()
+{
+    $page = $_POST['page'] ? $_POST['page'] : 1;
+    $tag = $_POST['tag'];
+    $options = [
+        'posts_per_page' => 6,
+        'paged' => $page,
+        'post_type' => 'post',
+        'tag_in' => $tag,
+        'orderby' => 'date',
+        'order' => 'desc',
+    ];
+
+    return new WP_Query($options);
+}
+
+function get_insights_posts($category)
+{
     $page = $_POST['page'] ? $_POST['page'] : 1;
     $tag = $_POST['tag'];
     $options = [
@@ -21,25 +40,27 @@ function get_insights_posts($category) {
         'orderby' => 'date',
         'order' => 'desc',
     ];
-    
+
     return new WP_Query($options);
 }
 
-function resources_infinite_scroll() {
+function resources_infinite_scroll()
+{
     $ajax_posts = get_insights_posts('');
     $response = '';
-    if ($ajax_posts->have_posts()){
-        while($ajax_posts->have_posts()) : $ajax_posts->the_post();
+    if ($ajax_posts->have_posts()) {
+        while ($ajax_posts->have_posts()):
+            $ajax_posts->the_post();
             $img = get_field('post_hero_image', get_the_ID());
             $tags = get_the_tags();
             $response .= '
                 <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
                     <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
-                        <p class="text-gray-400 text-base mb-4 uppercase">'.$tags[0]->name.'</p>
-                        <img src="'.$img.'" alt="post thumbnail" class=" rounded-lg my-4"/>
-                        <h3 class=" text-dark-blue-background text-sm font-bold mb-2">'.get_the_title().'</h3>
+                        <p class="text-gray-400 text-base mb-4 uppercase">' . $tags[0]->name . '</p>
+                        <img src="' . $img . '" alt="post thumbnail" class=" rounded-lg my-4"/>
+                        <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
                         <div class="flex-1 flex items-end">
-                        <a href="'.get_the_permalink().'" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+                        <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
                         </div>
                     </div>
                 </div>
@@ -55,34 +76,36 @@ add_action('wp_ajax_resources_infinite_scroll', 'resources_infinite_scroll');
 add_action('wp_ajax_nopriv_resources_infinite_scroll', 'resources_infinite_scroll');
 
 //infinite scroll support ajax api
-function ai_insights_scroll() {
+function ai_insights_scroll()
+{
     $ajax_posts = get_insights_posts('ai-insights');
     $response = '';
     if ($ajax_posts->have_posts()) {
-        while($ajax_posts->have_posts()) : $ajax_posts->the_post();
-        $img = get_field('post_hero_image', get_the_ID());
-        $content = get_field('post_content', get_the_ID());
-        $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
-        $custom_content .= '...';
+        while ($ajax_posts->have_posts()):
+            $ajax_posts->the_post();
+            $img = get_field('post_hero_image', get_the_ID());
+            $content = get_field('post_content', get_the_ID());
+            $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
+            $custom_content .= '...';
             $response .= '
                 <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
                     <div class="image__container ">
-                        <img src="'.$img.'" class="rounded-xl"/>
+                        <img src="' . $img . '" class="rounded-xl"/>
                     </div>
                     <div class="ai_card_body flex-1 flex flex-col">
-                    <p class="text-gray-400 text-xs my-2">'.get_the_date('m/d/o').'</p>
-                    <h3 class=" text-dark-blue-background text-sm font-bold mb-2"> '.get_the_title().'</h3>
+                    <p class="text-gray-400 text-xs my-2">' . get_the_date('m/d/o') . '</p>
+                    <h3 class=" text-dark-blue-background text-sm font-bold mb-2"> ' . get_the_title() . '</h3>
                     <p class="text-dark-blue-background text-xs">
-                        '.$custom_content.'
+                        ' . $custom_content . '
                     </p>
                     <div class="flex-1 flex items-end">
-                        <a href="'.get_the_permalink().'" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
+                        <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read More</a>
                     </div>
                     </div>
                 </div>
             ';
         endwhile;
-    }else {
+    } else {
         $response = 'empty';
     }
     echo $response;
@@ -91,33 +114,35 @@ function ai_insights_scroll() {
 add_action('wp_ajax_ai_insights_scroll', 'ai_insights_scroll');
 add_action('wp_ajax_nopriv_ai_insights_scroll', 'ai_insights_scroll');
 
-function news_insights_scroll() {
+function news_insights_scroll()
+{
     $ajax_posts = get_insights_posts('newsroom');
     $response = '';
     if ($ajax_posts->have_posts()) {
-        while($ajax_posts->have_posts()) : $ajax_posts->the_post();
-        $img = get_field('post_hero_image', get_the_ID());
-        $content = get_field('post_content', get_the_ID());
-        $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
-        $custom_content .= '...';
-        $tags = get_the_tags();
+        while ($ajax_posts->have_posts()):
+            $ajax_posts->the_post();
+            $img = get_field('post_hero_image', get_the_ID());
+            $content = get_field('post_content', get_the_ID());
+            $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
+            $custom_content .= '...';
+            $tags = get_the_tags();
             $response .= '
             <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
                 <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
-                    <p class="text-gray-400 text-base mb-4 uppercase">'.$tags[0]->name.'</p>
-                    <h3 class=" text-dark-blue-background text-sm font-bold mb-2">'.get_the_title().'</h3>
+                    <p class="text-gray-400 text-base mb-4 uppercase">' . $tags[0]->name . '</p>
+                    <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
                     <p class="text-dark-blue-background text-xs mb-2">
-                        '.$custom_content.'
+                        ' . $custom_content . '
                     </p>
-                    <p class="text-gray-400 text-xs">'.get_the_date("M j, Y").'</p>
+                    <p class="text-gray-400 text-xs">' . get_the_date("M j, Y") . '</p>
                     <div class="flex-1 flex items-end">
-                        <a href="'.get_the_permalink().'" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+                        <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
                     </div>
                 </div>
             </div>
             ';
         endwhile;
-    }else {
+    } else {
         $response = 'empty';
     }
     echo $response;
@@ -178,9 +203,11 @@ add_action('init', 'register_my_menus');
 // acf global page
 if (function_exists('acf_add_options_page')) {
 
-    acf_add_options_page(array(
-        'menu_title'    => 'Site Wide'
-    ));
+    acf_add_options_page(
+        array(
+            'menu_title' => 'Site Wide'
+        )
+    );
 }
 
 //Remove JQuery migrate
@@ -303,7 +330,7 @@ function wpbeginner_numeric_posts_nav()
         return;
 
     $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
-    $max   = intval($wp_query->max_num_pages);
+    $max = intval($wp_query->max_num_pages);
 
     /** Add current page to the array */
     if ($paged >= 1)
@@ -453,7 +480,7 @@ function get_realted_posts_by_tags()
     $args = array(
         'post_type' => 'post',
         'post__not_in' => array($tmp_post->ID),
-        'tag__in'   => $ids,
+        'tag__in' => $ids,
         'posts_per_page' => 3,
         'caller_get_posts' => 1
     );
@@ -462,22 +489,26 @@ function get_realted_posts_by_tags()
     $related_posts = array();
     foreach ($related_posts_query->posts as $rel_post) {
         array_push($related_posts, $rel_post->ID);
-    };
+    }
+    ;
     return $related_posts;
 }
 
 function get_most_recent_posts($number_posts)
 {
     $posts_to_get = $number_posts ?? '3';
-    $recent_posts = wp_get_recent_posts(array(
-        'numberposts' => $posts_to_get,
-        'post_status' => 'publish'
-    ));
+    $recent_posts = wp_get_recent_posts(
+        array(
+            'numberposts' => $posts_to_get,
+            'post_status' => 'publish'
+        )
+    );
 
     $recent_posts_ids = array();
     foreach ($recent_posts as $rec_post) {
         array_push($recent_posts_ids, $rec_post['ID']);
-    };
+    }
+    ;
     return $recent_posts_ids;
 }
 
@@ -493,8 +524,10 @@ function get_recent_or_selected_posts($recent, $selected)
     }
 
     return $posts_to_show;
-};
+}
+;
 
-function limit_post_text($text, $limit, $after_content) {
+function limit_post_text($text, $limit, $after_content)
+{
     return mb_strimwidth($text, 0, $limit, $after_content);
 }
