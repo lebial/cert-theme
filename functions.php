@@ -119,9 +119,15 @@ function ai_insights_scroll()
         while ($ajax_posts->have_posts()):
             $ajax_posts->the_post();
             $img = get_field('post_hero_image', get_the_ID());
-            $content = get_field('post_content', get_the_ID());
-            $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
-            $custom_content .= '...';
+            $content = get_the_content();
+            $content = apply_filters('the_content', $content);
+            $content = str_replace(']]>', ']]&gt;', $content);
+
+            $content = preg_replace('#<h2(.*?)>(.*?)</h2>#is', '', $content);
+
+            $content = wp_strip_all_tags($content);
+            $content = substr($content, 0, 130);
+            $content .= '...';
             $response .= '
                 <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
                     <div class="image__container ">
@@ -157,9 +163,17 @@ function news_insights_scroll()
         while ($ajax_posts->have_posts()):
             $ajax_posts->the_post();
             $img = get_field('post_hero_image', get_the_ID());
-            $content = get_field('post_content', get_the_ID());
-            $custom_content = substr(strip_tags($content[0]['post_text']), 0, 140);
-            $custom_content .= '...';
+
+            $content = get_the_content();
+            $content = apply_filters('the_content', $content);
+            $content = str_replace(']]>', ']]&gt;', $content);
+
+            $content = preg_replace('#<h2(.*?)>(.*?)</h2>#is', '', $content);
+
+            $content = wp_strip_all_tags($content);
+            $content = substr($content, 0, 130);
+            $content .= '...';
+
             $tags = get_the_tags();
             $response .= '
             <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
@@ -167,7 +181,7 @@ function news_insights_scroll()
                     <p class="text-gray-400 text-base mb-4 uppercase">' . $tags[0]->name . '</p>
                     <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
                     <p class="text-dark-blue-background text-xs mb-2">
-                        ' . $custom_content . '
+                        ' . $content . '
                     </p>
                     <p class="text-gray-400 text-xs">' . get_the_date("M j, Y") . '</p>
                     <div class="flex-1 flex items-end">
