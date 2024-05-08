@@ -125,7 +125,6 @@ function handleAjaxPosts(action, btn) {
   const page = currentPage + 1;
   const buttonTxt = btn.innerHTML;
   btn.innerHTML = loader;
-  debugger;
   $.ajax({
     type: 'POST',
     url: '/wp-admin/admin-ajax.php',
@@ -140,6 +139,9 @@ function handleAjaxPosts(action, btn) {
       if (page === lastPage) $(btn).hide();
       btn.setAttribute('data-current-page', page);
       $('#scrollContent').append(res);
+    },
+    error: function () {
+      btn.innerHTML = buttonTxt;
     }
   });
 }

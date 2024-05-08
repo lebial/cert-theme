@@ -34,7 +34,6 @@ function render_resources_load_more($text = 'Resources')
     ];
     $posts = new WP_Query($options);
     $max_pages = $posts->max_num_pages;
-    js_console($max_pages);
     $paged = get_query_var('paged');
     $current_page = $paged ? absint($paged) : 1;
     if ($max_pages <= 1 || $current_page == $max_pages)
@@ -50,8 +49,7 @@ function get_resources_posts()
     $options = [
         'posts_per_page' => 6,
         'paged' => $page,
-        'post_type' => 'post',
-        'tag__in' => $tags,
+        'tag_slug__in' => $tags,
         'orderby' => 'date',
         'order' => 'desc',
     ];
@@ -77,8 +75,10 @@ function get_insights_posts($category)
 }
 function render_article_card()
 {
-    $tag_name = get_the_tags()[0];
+    $tag_name = get_the_tags()[0]->name;
     $id = get_the_ID();
+    $perma_link = get_the_permalink();
+    $title = get_the_title();
     if ($tag_name != 'article') {
         $post_type = get_field('post_type', $id);
         $keys = $post_type == 'video' ?
@@ -90,18 +90,19 @@ function render_article_card()
         $img = get_field('post_hero_image', $id);
     }
 
-    return '
+    $markup = '
         <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
             <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
                 <p class="text-gray-400 text-base mb-4 uppercase">' . $tag_name . '</p>
                 <img src="' . $img . '" alt="post thumbnail" class=" rounded-lg my-4"/>
-                <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
+                <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . $title . '</h3>
                 <div class="flex-1 flex items-end">
-                <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+                <a href="' . $perma_link . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
                 </div>
             </div>
         </div>
     ';
+    return $markup;
 }
 
 function resources_infinite_scroll()
