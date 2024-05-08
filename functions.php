@@ -13,16 +13,16 @@ function render_load_more($text = 'Insights')
 
 function render_resources_load_more($text = 'Resources')
 {
-    $tags = ['video', 'case study', 'article', 'webinar'];
+    $tags = ['video', 'case-study', 'article', 'webinar'];
     $options = [
         'post_per_page' => 6,
-        'post_type' => 'post',
-        'tag__in' => $tags,
+        'tag_slug__in' => $tags,
         'orderby' => 'date',
         'order' => 'desc',
     ];
     $posts = new WP_Query($options);
     $max_pages = $posts->max_num_pages;
+    js_console($max_pages);
     $paged = get_query_var('paged');
     $current_page = $paged ? absint($paged) : 1;
     if ($max_pages <= 1 || $current_page == $max_pages)

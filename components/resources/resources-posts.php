@@ -12,7 +12,6 @@ $icon = '
 function render_filter_options()
 {
   $options = get_field('filter_tags', get_option('page_for_posts'));
-  js_console($options);
 
   foreach ($options as $option) {
     echo '
