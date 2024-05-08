@@ -1,5 +1,17 @@
 <?php
 
+function get_clean_content_from_post()
+{
+    $acf_content = get_field('post_content', get_the_ID());
+    if ($acf_content)
+        return $acf_content;
+    $content = get_the_content();
+    $content = apply_filters('the_content', $content);
+    $content = str_replace(']]>', ']]&gt;', $content);
+    $content = preg_replace('#<h2(.*?)>(.*?)</h2>#is', '', $content);
+    $content = wp_strip_all_tags($content);
+    return $content;
+}
 function render_load_more($text = 'Insights')
 {
     global $wp_query;
@@ -119,13 +131,8 @@ function ai_insights_scroll()
         while ($ajax_posts->have_posts()):
             $ajax_posts->the_post();
             $img = get_field('post_hero_image', get_the_ID());
-            $content = get_the_content();
-            $content = apply_filters('the_content', $content);
-            $content = str_replace(']]>', ']]&gt;', $content);
 
-            $content = preg_replace('#<h2(.*?)>(.*?)</h2>#is', '', $content);
-
-            $content = wp_strip_all_tags($content);
+            $content = get_clean_content_from_post();
             $content = substr($content, 0, 130);
             $content .= '...';
             $response .= '
@@ -163,14 +170,7 @@ function news_insights_scroll()
         while ($ajax_posts->have_posts()):
             $ajax_posts->the_post();
             $img = get_field('post_hero_image', get_the_ID());
-
-            $content = get_the_content();
-            $content = apply_filters('the_content', $content);
-            $content = str_replace(']]>', ']]&gt;', $content);
-
-            $content = preg_replace('#<h2(.*?)>(.*?)</h2>#is', '', $content);
-
-            $content = wp_strip_all_tags($content);
+            $content = get_clean_content_from_post();
             $content = substr($content, 0, 130);
             $content .= '...';
 
