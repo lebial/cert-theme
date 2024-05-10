@@ -33,7 +33,7 @@ endif;
 
 ?>
 <section class="news__container">
-  <h2 id="dynamicHeader" class=" text-dark-blue-background mx-auto text-center py-12">Latest News</h2>
+  <h3 id="dynamicHeader" class="text-2xl xl:text-4xl reveal-text text-dark-blue-background mx-auto text-center py-12">Latest News</h3>
   <div class="w-full max-w-screen-lg grid grid-cols-1  lg:grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
     <?php render_news_cards()?>
   </div>
