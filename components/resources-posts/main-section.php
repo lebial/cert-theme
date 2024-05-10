@@ -77,9 +77,9 @@ function render_case_study_content()
                 <a href="' . $case_study_post['case_study_url'] . '" class="rounded-3xl border border-primary border-solid text-primary py-1 px-2 transition-all duration-300 hover:text-white hover:bg-primary">Read Case Study</a>
               </div>
           </div>
-          <div class="w-5/12">
-            <img src="' . $case_study_post['case_study_thumbnail'] . '" alt="case study cover" class="w-10/12 mx-auto">
-            <div class="flex justify-center">
+          <div class="w-5/12 flex flex-col">
+            <img src="' . $case_study_post['case_study_thumbnail'] . '" alt="case study cover" class="w-10/12 mx-auto rounded-lg shadow-lg">
+            <div class="flex justify-center mt-auto">
               <a href="' . $case_study_post['case_study_url'] . '" class="mx-auto rounded-3xl border border-solid border-primary text-primary py-1 px-2 transition-all duration-300 hover:text-white hover:bg-primary" download="">Download Case Study</a>
             </div>
           </div>

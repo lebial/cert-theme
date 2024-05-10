@@ -1,12 +1,12 @@
 <?php
-function render_video_or_image($post)
+function get_resource_content($post_id)
 {
-  $tag_name = get_the_tags($post->ID)[0]->name;
+  $tag_name = get_the_tags($post_id)[0]->name;
   if ($tag_name == 'video') {
-    $video = get_field('video_post', $post->ID);
+    $video = get_field('video_post', $post_id);
     $video_url = $video['video_url'];
-    $video_thumbnail = $video['$video_thumbnail'];
-    return '
+    $video_thumbnail = $video['video_thumbnail'];
+    $markup = '
       <div class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-xl z-20">
         <button class="second_video_play_button " style="background-color: transparent !important;">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 132 130" fill="none">
@@ -18,13 +18,20 @@ function render_video_or_image($post)
         <source src="' . $video_url . '" type="video/mp4">
       </video>
     ';
+    return ['html' => $markup, 'content' => $video['video_description']];
   }
   if ($tag_name == 'case study') {
-    $case_study = get_field('case_study_post', $post->ID);
+    $case_study = get_field('case_study_post', $post_id);
     $img_url = $case_study['case_study_thumbnail'];
-    return '
-    <img src="' . $img_url . '" class="banner__image h-full rounded-xl shadow-lg w-[80%]" alt="featured banner image" />
-    ';
+    $markup = '<img src="' . $img_url . '" class="banner__image h-full rounded-xl shadow-lg w-full" alt="featured banner image" />';
+    return ['html' => $markup, 'content' => $case_study['description']];
+  } else {
+    $img_url = get_field('post_hero_image', $post_id);
+    $markup = '<img src="' . $img_url . '" class="banner__image h-full rounded-xl shadow-lg w-full" alt="featured banner image" />';
+    $content = get_clean_content($post_id);
+    $content = substr($content, 0, 130);
+    $content .= '...';
+    return ['html' => $markup, 'content' => $content];
   }
 }
 function render_highlighted_cards()
@@ -32,24 +39,25 @@ function render_highlighted_cards()
   $cards = get_field('featured_posts', get_option('page_for_posts'));
   foreach ($cards as $card) {
     $tag = get_the_tags($card->ID)[0]->name;
+    $title = $card->post_title;
+    $content = get_resource_content($card->ID);
+    $url = get_the_permalink($card->ID);
+    $button_text = $tag == 'video' ? 'Watch Video' : 'Read More';
     echo '
       <div class=" flex justify-center">
         <div class="highlighted__card flex flex-col lg:flex-row w-9/12 lg:w-10/12 mx-auto">
           <div class="w-full lg:w-5/12 ">
             <div class="w-full h-fit flex flex-col lg:justify-center relative">
-            ' . render_video_or_image($card) . '
+            ' . $content['html'] . '
             </div>
           </div>
           <div class="w-full lg:w-7/12 lg:pl-8 mt-4 lg:mt-0">
             <p class="uppercase text-gray-400 text-xs mb-1">Featured ' . $tag . '</p>
-            <p class="text-white text-lg font-bold mb-1">Fugiam sit ut rem lique sitas qui num valletem  unt et excea</p>
+            <p class="text-white text-lg font-bold mb-1"> ' . $title . '</p>
             <p class="text-white text-xs pb-2">
-              Exerate ducia ium qui si blaut eicit, sent, officia sinus,
-              simagnat debis res dolori inverum facepudit, si conet
-              aut et offici di berum lam a quis aditatis sequias su-
-              sapides prepta que enet liam vollo moditasi re nitatur
+            ' . $content['content'] . '
             </p>
-            <a href="#" class=" text-white text-xs rounded-3xl border border-solid border-primary px-2 py-1 hover:bg-primary transition-all duration-300">Read More</a>
+            <a href="' . $url . '" class=" text-white text-xs rounded-3xl border border-solid border-primary px-2 py-1 hover:bg-primary transition-all duration-300">' . $button_text . '</a>
           </div>
         </div>
       </div>

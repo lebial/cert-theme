@@ -18,9 +18,11 @@ function render_text_content($component)
     echo '</div>';
 }
 
-function get_image_or_url($comp) {
+function get_image_or_url($comp)
+{
     $img_or_url = $comp['image_or_url'];
-    if ($img_or_url == 'Image') return $comp['post_image'];
+    if ($img_or_url == 'Image')
+        return $comp['post_image'];
     $new_img_arr = array('url' => $comp['image_url'], 'alt' => 'post image example');
     return $new_img_arr;
 }
@@ -113,38 +115,40 @@ function render_extra_links($links, $color = 'white')
     }
 }
 
-function render_tags() {
+function render_tags()
+{
     $post_tags = get_the_tags();
-    if ( $post_tags ) {
-        foreach( $post_tags as $tag ) {
-            echo'
+    if ($post_tags) {
+        foreach ($post_tags as $tag) {
+            echo '
                 <button class="px-5 py-1 border-solid border-primary border lg:border-[2px] rounded-3xl
                 text-dark-blue-background mr-2 lg:mr-3 mb-3 font-medium cursor-default hover:cursor-default transition-all duration-300
-                text-xs lg:text-sm " type="button" name="Example">'. esc_html($tag->name) .'
+                text-xs lg:text-sm " type="button" name="Example">' . esc_html($tag->name) . '
                 </button>
             ';
         }
     }
 }
 
-function get_latest_posts($number_of_posts = 3) {
+function get_latest_posts($number_of_posts = 3)
+{
     $related_posts_ids = get_field('related_posts');
 
     // Si hay posts relacionados, ajusta los argumentos de la consulta para incluir esos IDs
     if (!empty($related_posts_ids)) {
         $args = array(
-            'post_type'      => 'post',
-            'post__in'       => array_map('intval', $related_posts_ids), // Asegurarse de que los IDs sean enteros
+            'post_type' => 'post',
+            'post__in' => array_map('intval', $related_posts_ids), // Asegurarse de que los IDs sean enteros
             'posts_per_page' => $number_of_posts,
-            'orderby'        => 'post__in', // Respeta el orden de los posts como aparecen en el campo relacionado
+            'orderby' => 'post__in', // Respeta el orden de los posts como aparecen en el campo relacionado
         );
     } else {
         // Argumentos para la consulta por defecto para obtener los últimos posts globales
         $args = array(
-            'post_type'      => 'post',
+            'post_type' => 'post',
             'posts_per_page' => $number_of_posts,
-            'orderby'        => 'date',
-            'order'          => 'DESC',
+            'orderby' => 'date',
+            'order' => 'DESC',
         );
     }
 
@@ -155,18 +159,18 @@ function get_latest_posts($number_of_posts = 3) {
     if ($latest_posts_query->have_posts()) {
         while ($latest_posts_query->have_posts()) {
             $latest_posts_query->the_post(); // Set the current post in the $post object.
-            $post_content = limit_post_text(strip_tags(get_field('post_content')[0]['post_text']),85,'...');
+            $post_content = limit_post_text(strip_tags(get_field('post_content')[0]['post_text']), 85, '...');
             echo '
                 <div class="max-w-sm px-4 lg:px-0 bg-white rounded-lg pb-12 lg:pb-0">
                     <div class="h-52 w-full overflow-hidden rounded-lg">
-                        <img class="w-full h-full object-cover" src="'.get_field('post_hero_image').'" alt="" />
+                        <img class="w-full h-full object-cover" src="' . get_field('post_hero_image') . '" alt="" />
                     </div>
                     <div class="py-2 flex flex-col justify-between h-56">
-                        <span class="font-base text-base text-gray-400">'.get_the_date('F j, Y').'</span>
-                        <h5 class="text-lg font-bold tracking-tight text-dark-blue-background line-clamp-2">'.get_the_title().'</h5>
-                        <p class="pt-2 pb-6 font-base text-base text-dark-blue-background">'.esc_html($post_content).'</p>
+                        <span class="font-base text-base text-gray-400">' . get_the_date('F j, Y') . '</span>
+                        <h5 class="text-lg font-bold tracking-tight text-dark-blue-background line-clamp-2">' . get_the_title() . '</h5>
+                        <p class="pt-2 pb-6 font-base text-base text-dark-blue-background">' . esc_html($post_content) . '</p>
                         <div class="">
-                            <a href="'.get_permalink().'" target="_blank" class="schedule__demo__button nav__schedule__demo__button px-3 py-2 border-solid border-primary border lg:border-[2px] rounded-3xl
+                            <a href="' . get_permalink() . '" target="_blank" class="schedule__demo__button nav__schedule__demo__button px-3 py-2 border-solid border-primary border lg:border-[2px] rounded-3xl
                             text-primary hover:text-white mr-3 font-medium hover:cursor-pointer transition-all duration-300
                             hover:bg-primary text-xs lg:text-sm " type="button" name="Example">Read Article
                             </a>
@@ -190,7 +194,8 @@ function get_latest_posts($number_of_posts = 3) {
         <main class="post__page w-full">
             <section class="article__body w-full flex flex-col lg:flex-row">
                 <!-- <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center px-5 lg:px-10 pr-4 lg:pr-0 "> -->
-                <article class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center lg:pl-[10%] 4xl:pl-[14%] px-4 lg:px-0">
+                <article
+                    class="w-full text-dark-blue-background lg:w-auto lg:flex-1 flex justify-center lg:pl-[10%] 4xl:pl-[14%] px-4 lg:px-0">
                     <div class="content__container post__dynamic__content w-full flex flex-col items-center">
                         <div class="post__content__container flex w-full mb-12">
                             <div class="max-w-4xl">
@@ -198,25 +203,39 @@ function get_latest_posts($number_of_posts = 3) {
                                     <p class="pb-4 text-dark-blue-background">AI Insights by Certilytics</p>
                                     <?php render_tags() ?>
                                 </div>
-                                <h1 class="!text-dark-blue-background min-w-fit tracking-normal font-bold mb-4 text-left mt-6 lg:mt-0 text-2xl lg:text-4xl " ><?php the_title() ?></h1>
-                                <h2 class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-left mt-6 lg:mt-0 !text-lg lg:!text-xl"><?php the_field('post_h2') ?></h2>
+                                <h1
+                                    class="!text-dark-blue-background min-w-fit tracking-normal font-bold mb-4 text-left mt-6 lg:mt-0 text-2xl lg:text-4xl ">
+                                    <?php the_title() ?></h1>
+                                <h2
+                                    class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-left mt-6 lg:mt-0 !text-lg lg:!text-xl">
+                                    <?php the_field('post_h2') ?></h2>
                                 <div class="post__author__container mt-8 flex justify-start">
                                     <div class="user__container flex">
-                                        <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full object-contain mr-4 w-16 h-16 lg:w-24 lg:h-24">
-                                        <div class="author__name__container w-full flex flex-col justify-center relative">
-                                            <p class="font-normal mb-0 leading-5 text-base text-dark-blue-background">By <?php echo $tmp_author['author_name'] ?></p>
-                                            <p class="text-base text-dark-blue-background"><?php echo $tmp_author['publication_date'] ?></p>
+                                        <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar"
+                                            class="rounded-full object-contain mr-4 w-16 h-16 lg:w-24 lg:h-24">
+                                        <div
+                                            class="author__name__container w-full flex flex-col justify-center relative">
+                                            <p class="font-normal mb-0 leading-5 text-base text-dark-blue-background">By
+                                                <?php echo $tmp_author['author_name'] ?></p>
+                                            <p class="text-base text-dark-blue-background">
+                                                <?php echo $tmp_author['publication_date'] ?></p>
                                             <?php render_extra_links($tmp_author['extra_author_links']) ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex items-center justify-start mt-8">
                                     <p class="text-lg text-dark-blue-background">SHARE IT : &nbsp;</p>
-                                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>" target="_blank">
-                                        <img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
+                                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>"
+                                        target="_blank">
+                                        <img class="w-7 mr-2"
+                                            src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg"
+                                            alt="">
                                     </a>
-                                    <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>" target="_blank">
-                                        <img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/X-icon-navy.jpg" alt="">
+                                    <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>"
+                                        target="_blank">
+                                        <img class="w-7 mx-2"
+                                            src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/X-icon-navy.jpg"
+                                            alt="">
                                     </a>
                                     <!-- <a href="https://www.youtube.com/@certilytics" target="_blank">
                                         <img class="w-7 mx-2" src="<?php // echo get_template_directory_uri() ?>/dist/assets/images/postsPage/youtube-icon-navy.svg" alt="">
@@ -252,14 +271,17 @@ function get_latest_posts($number_of_posts = 3) {
 
         <div class="w-full flex flex-col items-center lg:items-start lg:flex-row">
             <div class="w-11/12 lg:px-10 pt-8 lg:pt-12 lg:pb-12">
-                <h3 class="text-dark-blue-background ml-0 lg:ml-12 pb-8 lg:pb-4 text-center lg:text-left text-2xl">Related Insights</h3>
-                <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between lg:space-x-8 lg:px-12 lg:pb-12">
-                    <?php get_latest_posts()?>
+                <h3 class="text-dark-blue-background ml-0 lg:ml-12 pb-8 lg:pb-4 text-center lg:text-left text-2xl">
+                    Related Insights</h3>
+                <div
+                    class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between lg:space-x-8 lg:px-12 lg:pb-12">
+                    <?php get_latest_posts() ?>
                 </div>
             </div>
 
             <div class="mobile__subscribe__to__blog w-full lg:hidden block">
-                <div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">
+                <div
+                    class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">
                     <p class="text-white mt-10 mb-8 !text-[18px]">Sign up for AI Insights</p>
                     <?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false)); ?>
                 </div>
