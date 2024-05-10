@@ -1,16 +1,21 @@
 <?php
 
-function get_clean_content_from_post()
+function get_clean_content($id = null)
 {
-    $acf_content = get_field('post_content', get_the_ID());
+    $acf_content = get_field('post_content', $id);
     if ($acf_content)
-        return $acf_content;
-    $content = get_the_content();
+        $post_text = $acf_content[0]['post_text'];
+    return strip_tags($post_text);
+    $content = $id ? get_the_content($id) : get_the_content();
     $content = apply_filters('the_content', $content);
     $content = str_replace(']]>', ']]&gt;', $content);
     $content = preg_replace('#<h2(.*?)>(.*?)</h2>#is', '', $content);
     $content = wp_strip_all_tags($content);
     return $content;
+}
+function get_clean_content_from_post()
+{
+    return get_clean_content(get_the_ID());
 }
 function render_load_more($text = 'Insights')
 {
@@ -23,12 +28,14 @@ function render_load_more($text = 'Insights')
     echo '<button data-last-page="' . $max_pages . '" data-current-page="' . $current_page . '" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More ' . $text . '</button>';
 }
 
-function render_resources_load_more($text = 'Resources')
+function render_resources_load_more($text = 'Resources', $tag = null)
 {
+    global $wp;
+    $tag = $wp->query_vars['tag'];
     $tags = ['video', 'case-study', 'article', 'webinar'];
     $options = [
         'post_per_page' => 6,
-        'tag_slug__in' => $tags,
+        'tag_slug__in' => $tag ? [$tag] : $tags,
         'orderby' => 'date',
         'order' => 'desc',
     ];
@@ -170,7 +177,7 @@ function news_insights_scroll()
     if ($ajax_posts->have_posts()) {
         while ($ajax_posts->have_posts()):
             $ajax_posts->the_post();
-            $img = get_field('post_hero_image', get_the_ID());
+            // $img = get_field('post_hero_image', get_the_ID());
             $content = get_clean_content_from_post();
             $content = substr($content, 0, 130);
             $content .= '...';
