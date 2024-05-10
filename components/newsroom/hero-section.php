@@ -29,7 +29,7 @@ function render_custom_menu_items()
             <h2 class="text-white max-w-none block lg:hidden mt-4 md:mt-12 text-lg font-normal tracking-normal">
                 <?php strip_tags(the_field('mobile_sub_headline', 'options'), '<a>') ?>
             </h2>
-            <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-center space-x-16 mt-8 2xl:mt-24 items-center">
+            <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-center space-x-0 lg:space-x-16 mt-8 2xl:mt-24 items-center">
                 <?php render_custom_menu_items() ?>
             </div>
         </div>
