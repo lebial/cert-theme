@@ -61,7 +61,7 @@ function render_video_or_case_study()
           <img src="' . $img_url . '" alt="post thumbnail" class=" rounded-lg my-4"/>
           <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
           <div class="flex-1 flex items-end">
-            <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+            <a href="' . get_the_permalink() . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white" target="_blank">Read Article</a>
           </div>
         </div>
       </div>';

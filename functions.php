@@ -3,9 +3,10 @@
 function get_clean_content($id = null)
 {
     $acf_content = get_field('post_content', $id);
-    if ($acf_content)
+    if ($acf_content) {
         $post_text = $acf_content[0]['post_text'];
-    return strip_tags($post_text);
+        return strip_tags($post_text);
+    }
     $content = $id ? get_the_content($id) : get_the_content();
     $content = apply_filters('the_content', $content);
     $content = str_replace(']]>', ']]&gt;', $content);
@@ -15,7 +16,8 @@ function get_clean_content($id = null)
 }
 function get_clean_content_from_post()
 {
-    return get_clean_content(get_the_ID());
+    $post_id = get_the_ID();
+    return get_clean_content($post_id);
 }
 function render_load_more($text = 'Insights')
 {
