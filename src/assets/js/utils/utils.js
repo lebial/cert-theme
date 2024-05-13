@@ -124,7 +124,7 @@ function handleAjaxPosts(action, btn) {
   const currentPage = +btn.dataset.currentPage;
   const page = currentPage + 1;
   const buttonTxt = btn.innerHTML;
-  btn.innerHTML = loader;
+  // btn.innerHTML = loader;
   $.ajax({
     type: 'POST',
     url: '/wp-admin/admin-ajax.php',
