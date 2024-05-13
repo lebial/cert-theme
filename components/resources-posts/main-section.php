@@ -32,6 +32,16 @@ function render_video_content()
       <div class="resources__video__container flex mx-auto max-w-screen-lg 2xl:max-w-screen-xl">
         <div class="w-1/2 pr-10">
           <h2 class="text-dark-blue-background text-2xl">' . $video_post['title'] . '</h2>
+          <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
+            <p class=" text-gray-400 mr-4 text-base">SHARE IT :</p>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . get_the_permalink() . '&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=' . get_the_permalink() . '">
+                <img class="w-6 mr-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="linkedin logo">
+            </a>
+            <a href="https://twitter.com/share?url=' . get_the_permalink() . '&text=' . strip_tags(get_the_title()) . '">
+                <img class="w-6 mx-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Twitter-navy.jpg" alt="twitter logo">
+            </a>
+              
+          </div>
           <p class=" text-dark-background text-base">' . $video_post['video_description'] . '</p>
         </div>
         <div class="w-1/2 flex justify-end">
@@ -56,26 +66,24 @@ function render_video_content()
 function render_case_study_content()
 {
   $case_study_post = get_field('case_study_post');
+
   echo '<div class="case__study flex mx-auto max-w-screen-lg ">
           <div class="w-7/12">
             <h1 class=" text-dark-blue-background font-bold text-4xl mb-4">' . $case_study_post['title'] . '</h1>
             <p class="text-sm text-gray-400 mb-4">' . get_the_date() . '</p>
               <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
                   <p class=" text-gray-400 mr-4 text-base">SHARE IT :</p>
-                  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>">
-                      <img class="w-6 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . get_the_permalink() . '&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=' . get_the_permalink() . '">
+                      <img class="w-6 mr-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="linkedin logo">
                   </a>
-                  <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>">
-                      <img class="w-6 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Twitter-navy.jpg" alt="">
+                  <a href="https://twitter.com/share?url=' . get_the_permalink() . '&text=' . strip_tags(get_the_title()) . '">
+                      <img class="w-6 mx-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Twitter-navy.jpg" alt="twitter logo">
                   </a>
                   
               </div>
               <p class="text-sm text-dark-blue-background">
               ' . $case_study_post['description'] . '
               </p>
-              <div class="mt-4">
-                <a href="' . $case_study_post['case_study_url'] . '" class="rounded-3xl border border-primary border-solid text-primary py-1 px-2 transition-all duration-300 hover:text-white hover:bg-primary">Read Case Study</a>
-              </div>
           </div>
           <div class="w-5/12 flex flex-col">
             <img src="' . $case_study_post['case_study_thumbnail'] . '" alt="case study cover" class="w-10/12 mx-auto rounded-lg shadow-lg">
@@ -107,18 +115,24 @@ function render_cards_slider()
   $post_type = get_field('post_type');
   $components[$post_type]();
 }
+$post_type = get_field('post_type');
+$related_content_title = $post_type == 'video' ? 'More Videos From Certilytics' : 'You Might Also Be Interested In';
+$tag = $post_type == 'video' ? 'video' : 'case-study';
+$tag_text = $post_type == 'video' ? 'Videos' : 'Case Studies';
 ?>
 <section class="resources__post__container">
   <main>
     <div class="navigation__container ml-20 my-12">
-      <a href="/">Home</a> / <a href="/resources">Resources</a> / <a href="/ressources/?tag=videos">Videos</a>
+      <a href="/">Home</a> / <a href="/resources">Resources</a> / <a
+        href="/ressources/?tag=<?php echo $tag ?>"><?php echo $tag_text ?></a>
     </div>
     <div class="pt-10 pb-16">
       <?php render_content() ?>
     </div>
     <div class="related__section bg-[#f0f4fc] py-16">
-      <p class="text-dark-blue-background text-2xl lg:text-3xl mx-auto text-center font-bold reveal-text">More Videos
-        From Certilytics</p>
+      <p class="text-dark-blue-background text-2xl lg:text-3xl mx-auto text-center font-bold reveal-text">
+        <?php echo $related_content_title ?>
+      </p>
       <div class="resources-related-slider mt-14 max-w-5xl flex mx-auto">
         <?php render_cards_slider() ?>
       </div>
