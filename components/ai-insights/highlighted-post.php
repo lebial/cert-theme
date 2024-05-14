@@ -8,9 +8,6 @@ $custom_content .= '...';
 $link = get_permalink($post);
 ?>
 <section class="ai__insights__highlighted__post w-full pt-14 lg:pt-20 flex justify-center flex-col lg:flex-row">
-  <div class="block lg:hidden mb-10">
-    <?php get_template_part('components/ai-insights/filter-buttons')?>
-  </div>
   <div class="px-10">
     <div class="highlighted__post__container flex flex-col lg:flex-row w-full items-center lg:items-start">
       <div class="lg:mr-10 w-full flex justify-center lg:justify-start">
