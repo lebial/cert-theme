@@ -28,6 +28,15 @@ jQuery(document).ready(function ($) {
       arrows: true,
       nextArrow,
       prevArrow,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        }
+      ]
     });
   };
 
