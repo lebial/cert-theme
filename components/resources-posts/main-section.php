@@ -6,6 +6,7 @@ function render_related_content()
   $keys = $post_type == 'video' ?
     ['post_type' => 'video_post', 'image_key' => 'video_thumbnail']
     : ['post_type' => 'case_study_post', 'image_key' => 'case_study_thumbnail'];
+  $related_text = $post_type == 'video' ? 'Watch Video' : 'Read Article';
 
   foreach ($posts as $post) {
     $post_fields = get_field($keys['post_type'], $post->ID);
@@ -18,7 +19,7 @@ function render_related_content()
           <img src="' . $img_url . '" alt="post thumbnail" class=" rounded-lg my-4"/>
           <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title($post->ID) . '</h3>
           <div class="flex-1 flex items-end">
-            <a href="' . get_the_permalink($post->ID) . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+            <a href="' . get_the_permalink($post->ID) . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">' . $related_text . '</a>
           </div>
         </div>
       </div>';
