@@ -1,6 +1,6 @@
 <section class="relative w-full h-[47vh] lg:h-[73vh] bg-cover bg-no-repeat bg-center bg-dark-blue-background" style="background-image: url(<?php the_field('background_image')?>);">
   <div class="flex justify-center flex-col items-center h-full py-16 mx-auto max-w-screen-5xl">
-    <div class="w-10/12 lg:w-5/12 mb-28 md:40 lg:mb-60">
+    <div class="w-10/12 lg:w-5/12 mb-28 md:40 lg:mb-64 2xl:mb-52">
       <h1 class="text-bold mb-6 text-4xl lg:text-6xl text-center text-white leading-6 lg:leading-10 reveal-text"><?php the_field('innovation_heading_title')?></h1>
       <h2 class="text-white text-center mt-4 md:mt-8 text-lg font-normal tracking-normal"><?php the_field("innovation_heading_description")?></h2>
     </div>
@@ -18,8 +18,8 @@
             <source src="<?php the_field('innovation_main_video_url') ?>" type="video/mp4">
           </video>
           <div class="thumbnail__text absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 rounded-lg"></div>
-          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 md:w-4/12 h-full md:h-auto absolute top-0 md:mt-6 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:px-6 lg:py-10 rounded-xl">
-            <p class="w-full inset-0 flex items-center justify-center mb-2 text-white text-[11px] md:text-xs lg:text-sm rounded-xl pointer-events-none leading-4 md:leading-[1.1rem] font-normal">
+          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 md:w-4/12 h-full md:h-auto absolute top-0 md:mt-6 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:px-6 lg:py-6 rounded-xl">
+            <p class="w-full inset-0 flex items-center justify-center mb-2 text-white text-[11px] md:text-xs 2xl:text-base rounded-xl pointer-events-none leading-4 md:leading-[1.1rem] font-normal">
               <?php the_field('quote') ?>
             </p>
             <div class="red__divider w-2/12 mx-0 mb-2 lg:mt-4 border-[0.1px] border-primary border-solid"></div>
