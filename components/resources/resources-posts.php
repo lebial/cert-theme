@@ -50,7 +50,7 @@ function render_video_or_case_study()
   $post_type = get_field('post_type');
   $keys = $post_type == 'video' ?
     ['post_type' => 'video_post', 'image_key' => 'video_thumbnail']
-    : ['post_type' => 'case_study_post', 'image_key' => 'case_study_thumbnail'];
+    : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail'];
   $post_fields = get_field($keys['post_type'], get_the_ID());
   $img_url = $post_fields[$keys['image_key']];
   $tags = get_the_tags();
