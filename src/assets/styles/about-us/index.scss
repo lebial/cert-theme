@@ -340,9 +340,9 @@
         transition: all ease .3s;
         width: 15px;
         height: 15px;
-        background-color: #180f36;
+        background-color: #white;
         border-radius: 100%;
-        border: white 1px solid;
+        border: #180f36 1px solid;
 
         &::before {
           color: transparent !important;
@@ -352,7 +352,7 @@
 
     & .slick-active {
       & button {
-        background-color: white;
+        background-color: #180f36;
       }
     }
   }
@@ -381,6 +381,19 @@
 .carousel__quote {
   & p {
     line-height: 1.6rem !important;
+    color: #180f36 !important;
+    max-width: none !important;
+  }
+
+  & h3 {
+    padding-bottom: 1rem !important;
+    & span {
+      font-size: 1.5rem !important;
+
+      @media #{$desktopBase} {
+        font-size: 2.25rem !important;
+      }
+    }
   }
 }
 
