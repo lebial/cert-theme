@@ -1,8 +1,12 @@
-<section class="w-full h-full">
-  <div class="flex justify-center flex-col items-center py-16 mx-auto max-w-screen-2xl">
-    <h3 class="text-bold text-2xl xl:text-4xl text-center text-dark-blue-background !mb-0 leading-6 lg:leading-10 reveal-text"><?php the_field('innovation_heading_title')?></h3>
-    <div name="desktop_innovation_video" class="h-full w-10/12 lg:w-1/2 lg:flex justify-center pt-12 ">
-      <div class="w-full lg:w-[72%] h-fit flex flex-col lg:justify-center relative overflow-hidden">
+<section class="relative w-full h-[47vh] lg:h-[73vh] bg-cover bg-no-repeat bg-center bg-dark-blue-background" style="background-image: url(<?php the_field('background_image')?>);">
+  <div class="flex justify-center flex-col items-center h-full py-16 mx-auto max-w-screen-5xl">
+    <div class="w-10/12 lg:w-5/12 mb-28 md:40 lg:mb-60">
+      <h1 class="text-bold mb-6 text-4xl lg:text-6xl text-center text-white leading-6 lg:leading-10 reveal-text"><?php the_field('innovation_heading_title')?></h1>
+      <h2 class="text-white text-center mt-4 md:mt-8 text-lg font-normal tracking-normal"><?php the_field("innovation_heading_description")?></h2>
+    </div>
+    
+    <div name="desktop_innovation_video" class="absolute inset-x-0 bottom-12 lg:bottom-24 transform -translate-y-1/4 w-11/12 lg:w-7/12 mx-auto flex justify-center items-center max-w-screen-2xl">
+      <div class="absolute w-11/12 lg:w-[72%] h-fit flex flex-col lg:justify-center overflow-hidden">
         <div id="videoContainer" class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl z-20" style="box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25);">
           <button class="second_video_play_button">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 132 130" fill="none">
@@ -14,11 +18,11 @@
             <source src="<?php the_field('innovation_main_video_url') ?>" type="video/mp4">
           </video>
           <div class="thumbnail__text absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 rounded-lg"></div>
-          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 h-full md:h-auto absolute top-0 md:mt-6 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:py-6 rounded-xl">
+          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 h-full md:h-auto absolute top-0 md:mt-6 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:px-6 lg:py-10 rounded-xl">
             <p class="w-full inset-0 flex items-center justify-center mb-2 text-white text-[11px] md:text-xs lg:text-sm rounded-xl pointer-events-none leading-4 md:leading-[1.1rem] font-normal">
               <?php the_field('quote') ?>
             </p>
-            <div class="red__divider w-2/12 mx-0 mb-2 lg:mt-0 border-[0.1px] border-primary border-solid"></div>
+            <div class="red__divider w-2/12 mx-0 mb-2 lg:mt-4 border-[0.1px] border-primary border-solid"></div>
             <p class="thumbnail__text--author text-[11px] md:text-xs lg:text-sm text-white leading-[8px] lg:leading-3">
               <?php the_field('author') ?>
             </p>
