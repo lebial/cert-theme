@@ -14,7 +14,8 @@ $remove_mt_if_shown = $show_content_navigation ? 'mt-4' : 'mt-0';
 function render_related_posts()
 {
     $related_posts = get_field('related_posts');
-    if (!$related_posts)  $related_posts = get_realted_posts_by_tags();
+    if (!$related_posts)
+        $related_posts = get_realted_posts_by_tags();
     foreach ($related_posts as $tmp_post_id) {
         echo '<a href="' . get_permalink($tmp_post_id) . '">';
         echo '<div class="related__post__body flex mt-4">';
@@ -32,7 +33,8 @@ function render_related_posts()
 function render_mobile_related_posts()
 {
     $related_posts = get_field('related_posts');
-    if (!$related_posts)  $related_posts = get_realted_posts_by_tags();
+    if (!$related_posts)
+        $related_posts = get_realted_posts_by_tags();
     foreach ($related_posts as $tmp_post_id) {
         echo '<div class="mb-8">';
         echo '<div class="related__post__body mt-4 shadow-xl max-w-sm rounded-lg overflow-hidden">';
@@ -55,9 +57,11 @@ function render_text_content($component)
     echo '</div>';
 }
 
-function get_image_or_url($comp) {
+function get_image_or_url($comp)
+{
     $img_or_url = $comp['image_or_url'];
-    if ($img_or_url == 'Image') return $comp['post_image'];
+    if ($img_or_url == 'Image')
+        return $comp['post_image'];
     $new_img_arr = array('url' => $comp['image_url'], 'alt' => 'post image example');
     return $new_img_arr;
 }
@@ -156,21 +160,24 @@ function render_extra_links($links, $color = 'white')
 ?>
 <?php get_header(); ?>
 <main class="post__page w-full">
-    <section class="w-full min-h-[50vh] bg-dark-blue-background flex flex-col lg:flex-row items-center px-10 lg:px-28 py-14">
+    <section
+        class="w-full min-h-[50vh] bg-dark-blue-background flex flex-col lg:flex-row items-center px-10 lg:px-28 py-14">
         <div class="post__content__container w-full lg:w-7/12 order-2 lg:-order-1 mr-5">
-            <h1 class="text-white min-w-fit font-extralight text-center lg:text-left mt-6 lg:mt-0" style="font-size: calc(1.5rem + (1vw - 3.2px) * 1.9375);"><?php the_title() ?></h1>
+            <h1 class="text-white min-w-fit font-bold text-center lg:text-left mt-6 lg:mt-0"
+                style="font-size: calc(1.5rem + (1vw - 3.2px) * 1.9375);"><?php the_title() ?></h1>
             <div class="post__author__container flex justify-center lg:justify-start">
                 <div class="user__container mt-10 flex">
-                    <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class="rounded-full object-contain mr-6 w-16 h-16 lg:w-24 lg:h-24">
+                    <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar"
+                        class="rounded-full object-contain mr-6 w-16 h-16 lg:w-24 lg:h-24">
                     <div class="author__name__container w-full flex flex-col justify-center relative">
                         <p class="text-white font-bold mb-0">By <?php echo $tmp_author['author_name'] ?></p>
                         <p class="text-white"><?php echo $tmp_author['author_title'] ?></p>
                         <a class="
-						 flex justify-center items-center
-						font-bold rounded-full lg:-bottom-3 border border-white
-						border-solid w-6 h-6 text-center text-white
-						text-xs -bottom-6
-						" href="<?php echo $tmp_author['author_web'] ?>" target="_blank">in</a>
+                         flex justify-center items-center
+                        font-bold rounded-full lg:-bottom-3 border border-white
+                        border-solid w-6 h-6 text-center text-white
+                        text-xs -bottom-6
+                        " href="<?php echo $tmp_author['author_web'] ?>" target="_blank">in</a>
                         <?php render_extra_links($tmp_author['extra_author_links']) ?>
                     </div>
                 </div>
@@ -182,11 +189,12 @@ function render_extra_links($links, $color = 'white')
             </div>
         </div>
     </section>
-    <section class="post__description w-full pt-20 mb-14">
+    <section class="post__description w-full pt-10 lg:pt-20 lg:mb-14">
         <p class="text-center text-dark-blue-background mx-auto"><?php echo get_the_date('F j, Y') ?></p>
-        <div class="mt-10 flex pl-5 lg:pl-0">
+        <div class="lg:mt-10 flex pl-5 lg:pl-0">
             <div class="lg:w-[280px]"></div>
-            <h2 class=" flex-1 text-left lg:text-center text-2xl lg:text-4xl text-dark-blue-background px-5 lg:px-20 tracking-normal">
+            <h2
+                class=" flex-1 text-left lg:text-center text-2xl lg:text-4xl text-dark-blue-background px-5 lg:px-20 tracking-normal">
                 <?php the_field('post_h2') ?>
             </h2>
             <div class="lg:w-[280px]"></div>
@@ -205,11 +213,17 @@ function render_extra_links($links, $color = 'white')
             </div>
             <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header">
                 <p class=" text-dark-blue-background mr-4">SHARE IT :</p>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>">
-                    <img class="w-7 mr-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="">
+                <a
+                    href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo the_permalink(); ?>&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=<?php echo the_permalink(); ?>">
+                    <img class="w-7 mr-2"
+                        src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg"
+                        alt="">
                 </a>
-                <a href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>">
-                    <img class="w-7 mx-2" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Twitter-navy.jpg" alt="">
+                <a
+                    href="https://twitter.com/share?url=<?php echo the_permalink() ?>&text=<?php echo strip_tags(the_title()) ?>">
+                    <img class="w-7 mx-2"
+                        src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Twitter-navy.jpg"
+                        alt="">
                 </a>
                 <!-- <a href="https://www.youtube.com/@certilytics" target="_blank">
                     <img class="w-7 mx-2" src="<?php //echo get_template_directory_uri() ?>/dist/assets/images/postsPage/youtube-icon-navy.svg" alt="">
@@ -254,7 +268,8 @@ function render_extra_links($links, $color = 'white')
     </div>
 
     <div class="mobile__subscribe__to__blog w-full lg:hidden block">
-        <div class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">
+        <div
+            class="subscribe__form__container w-full bg-dark-blue-background  px-5 flex flex-col items-center justify-center">
             <p class="text-white mt-10" style="margin-bottom: 20px;">Subscribe To Our Blog</p>
             <?php echo FrmFormsController::get_form_shortcode(array('id' => get_field('subscribe_form_id'), 'title' => false, 'description' => false)); ?>
         </div>
@@ -263,13 +278,16 @@ function render_extra_links($links, $color = 'white')
     <div class="about__the__author w-full justify-center my-24 hidden lg:flex ">
         <div class="author__card flex">
             <div class="author__icon mr-6">
-                <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar" class=" rounded-full w-24 h-24 object-contain" style="filter: grayscale(1);">
+                <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar"
+                    class=" rounded-full w-24 h-24 object-contain" style="filter: grayscale(1);">
             </div>
             <div class="author__description">
                 <p class="mb-0 text-lg text-dark-blue-background">ABOUT THE AUTHOR</p>
-                <p class="font-bold mb-4 text-3xl text-dark-blue-background"><?php echo $tmp_author['author_name'] ?></p>
+                <p class="font-bold mb-4 text-3xl text-dark-blue-background"><?php echo $tmp_author['author_name'] ?>
+                </p>
                 <p class=" text-base max-w-lg text-dark-blue-background">
-                    <?php echo strip_tags($tmp_author['author_description'], '<a><strong><br><span>') ?></p>
+                    <?php echo strip_tags($tmp_author['author_description'], '<a><strong><br><span>') ?>
+                </p>
                 <div class="w-full flex flex-col">
                     <?php render_extra_links($tmp_author['extra_author_links'], 'black') ?>
                 </div>
