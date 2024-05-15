@@ -5,7 +5,7 @@ function render_related_content()
   $post_type = get_field('post_type');
   $keys = $post_type == 'video' ?
     ['post_type' => 'video_post', 'image_key' => 'video_thumbnail']
-    : ['post_type' => 'case_study_post', 'image_key' => 'case_study_thumbnail'];
+    : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail'];
   $related_text = $post_type == 'video' ? 'Watch Video' : 'Read Article';
 
   foreach ($posts as $post) {
@@ -88,7 +88,7 @@ function render_case_study_content()
               </p>
           </div>
           <div class="w-full lg:w-5/12 flex flex-col my-4 lg:my-0">
-            <img src="' . $case_study_post['case_study_thumbnail'] . '" alt="case study cover" class="w-10/12 mx-auto rounded-lg shadow-lg">
+            <img src="' . $case_study_post['case_study_thumbnail'] . '" alt="case study cover" class="w-10/12 mx-auto rounded-lg">
             <div class="flex justify-center my-8 lg:mb-0 lg:mt-auto pt-4">
               <a href="' . $case_study_post['case_study_url'] . '" class="mx-auto rounded-3xl border border-solid border-primary text-primary py-1 px-2 transition-all duration-300 hover:text-white hover:bg-primary" download="" target="_blank">Download Case Study</a>
             </div>

@@ -22,7 +22,7 @@ function get_resource_content($post_id)
   }
   if ($tag_name == 'case study') {
     $case_study = get_field('case_study_post', $post_id);
-    $img_url = $case_study['case_study_thumbnail'];
+    $img_url = $case_study['case_study_card_thumbnail'];
     $markup = '<img src="' . $img_url . '" class="banner__image h-full rounded-xl shadow-lg w-full" alt="featured banner image" />';
     return ['html' => $markup, 'content' => $case_study['description']];
   } else {
