@@ -10,7 +10,7 @@
 
 <section class="h-[47vh] w-full bg-white mt-0 md:mt-8 lg:mt-12">
   <div class="h-[47vh] w-full mx-auto relative flex items-center">
-    <div class="w-full lg:w-full flex justify-center absolute lg:static z-10">
+    <div class="w-full lg:w-full flex justify-center absolute lg:static">
       <div class="flex flex-col w-10/12 lg:w-5/12 pt-12">
         <div class="h-[20vh] md:h-[10vh] lg:h-[20vh]">
           <div class="copy-carousel">
