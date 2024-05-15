@@ -88,6 +88,7 @@ function render_article_card()
     $id = get_the_ID();
     $perma_link = get_the_permalink();
     $title = get_the_title();
+    $btn_text = '';
     if ($tag_name != 'article') {
         $post_type = get_field('post_type', $id);
         $keys = $post_type == 'video' ?
@@ -95,8 +96,10 @@ function render_article_card()
             : ['post_type' => 'case_study_post', 'image_key' => 'case_study_thumbnail'];
         $post_fields = get_field($keys['post_type'], $id);
         $img = $post_fields[$keys['image_key']];
+        $btn_text = $post_type == 'video' ? 'Watch Video' : 'Read Study';
     } else {
         $img = get_field('post_hero_image', $id);
+        $btn_text = 'Read Article';
     }
 
     $markup = '
@@ -106,7 +109,7 @@ function render_article_card()
                 <img src="' . $img . '" alt="post thumbnail" class=" rounded-lg my-4"/>
                 <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . $title . '</h3>
                 <div class="flex-1 flex items-end">
-                <a href="' . $perma_link . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">Read Article</a>
+                <a href="' . $perma_link . '" class="py-1 px-2 border border-solid rounded-3xl border-primary text-primary text-xs inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white">' . $btn_text . '</a>
                 </div>
             </div>
         </div>
