@@ -6,7 +6,7 @@
     </div>
     
     <div name="desktop_innovation_video" class="absolute inset-x-0 bottom-12 lg:bottom-24 -translate-y-1/4 w-11/12 lg:w-7/12 mx-auto flex justify-center items-center max-w-screen-2xl z-10">
-      <div class="absolute w-11/12 lg:w-[72%] flex flex-col lg:justify-center ">
+      <div class="absolute w-11/12 lg:w-[72%] flex flex-col lg:justify-center">
         <div id="videoContainer" class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl z-20" style="box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25);">
           <button class="second_video_play_button">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 132 130" fill="none">

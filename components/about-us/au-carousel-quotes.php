@@ -17,7 +17,7 @@
             <?php renderHeaderQuotes() ?>
           </div>
         </div>
-        <div class="about__us__hero__dots carousel-dots text-center pt-4 md:pt-2"></div>
+        <div class="about__us__hero__dots carousel-dots text-center pt-12 md:pt-2"></div>
       </div>
     </div>
   </div>
