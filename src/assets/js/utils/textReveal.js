@@ -20,17 +20,20 @@ jQuery(document).ready(function ($) {
   }
 
   function handleElementsObserve(elements) {
-    //duration per line animation;
-    let secs = 2;
+    // minimum and maximum base duration for a line in seconds
+    const baseDurationSecs = 0.9;
+    const maxDurationSecs = 2;
 
     const observer = createObserver((entries) => {
       entries.forEach(({ target, isIntersecting }) => {
         if (isIntersecting) {
           const textLength = target.textContent.length;
           const delay = $($(target).parent()).attr('data-animate-delay') || $(target).attr('data-animate-delay');
-          const duration = $($(target).parent()).attr('data-animate-duration') || $(target).attr('data-animate-duration');
-
-          //make line visible when animation starts
+          
+          // calculate proportional duration with a maximum limit of 2 seconds
+          const proportionalDuration = Math.min(maxDurationSecs, Math.max(baseDurationSecs, textLength * 0.05));
+          
+          // make line visible when animation starts
           target.addEventListener('animationstart', function () {
             $(this).css('visibility', 'visible');
             target.removeEventListener('animationstart', null);
@@ -38,7 +41,7 @@ jQuery(document).ready(function ($) {
           // toggle animation
           $($(target).parent()[0]).css('visibility', 'visible');
           $(target).css({
-            'animation': `typing ${duration}s steps(${textLength * 2}, end) ${delay}s`
+            'animation': `typing ${proportionalDuration}s steps(${textLength * 2}, end) ${delay}s`
           });
         }
       })
@@ -46,11 +49,12 @@ jQuery(document).ready(function ($) {
 
     elements.forEach(element => {
       const lines = element.querySelectorAll('.line');
-      const duration = secs / lines.length;
-      const direction = $(lines[0]).parent().attr('data-reveal-direction');
       lines.forEach((line, idx) => {
-        $(line).attr('data-animate-delay', idx * duration);
-        $(line).attr('data-animate-duration', duration);
+        const textLength = line.textContent.length;
+        const lineDuration = Math.min(maxDurationSecs, Math.max(baseDurationSecs, textLength * 0.05));
+        $(line).attr('data-animate-delay', idx * (maxDurationSecs / lines.length));
+        $(line).attr('data-animate-duration', lineDuration);
+        const direction = $(lines[0]).parent().attr('data-reveal-direction');
         if (direction !== 'left' || window.screen.width <= 1024) addCenteringMargin(line);
         observer.observe(line);
       });

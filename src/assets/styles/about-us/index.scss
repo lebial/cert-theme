@@ -367,13 +367,17 @@
 
 .thumbnail__text--author {
   & small {
-    font-size: 7px !important;
+    font-size: 8px !important;
     font-weight: 600;
     letter-spacing: 0em;
 
     @media #{$tablet} {
-      font-size: 9px !important;
+      font-size: 10px !important;
       font-weight: 600;
+    }
+
+    @media #{$desktopLG} {
+      font-size: 12px !important;
     }
   }
 }

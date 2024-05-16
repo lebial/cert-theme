@@ -17,13 +17,17 @@
           <video id="healthcareInnovation" class="home__secondary__video relative object-cover w-full h-fit rounded-xl shadow-lg" poster="<?php the_field('innovation_main_video_thumbnail') ?>">
             <source src="<?php the_field('innovation_main_video_url') ?>" type="video/mp4">
           </video>
-          <div class="thumbnail__text absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 rounded-lg"></div>
-          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 md:w-4/12 h-full md:h-auto absolute top-0 md:mt-6 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:px-6 lg:py-6 rounded-xl">
-            <p class="w-full inset-0 flex items-center justify-center mb-2 text-white text-[11px] md:text-xs 2xl:text-base rounded-xl pointer-events-none leading-4 md:leading-[1.1rem] font-normal">
+          <div class="thumbnail__text absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 rounded-lg"></div>
+          <div class="thumbnail__text flex flex-col justify-center md:block w-5/12 md:w-4/12 h-full md:h-auto absolute top-0 md:mt-6 bg-dark-blue-background bg-opacity-80 px-4 py-4 lg:px-[1.3rem] lg:py-6 rounded-xl">
+            <p class="hidden w-full inset-0 md:flex items-center justify-center mb-2 text-white text-[11px] md:text-xs 2xl:text-base rounded-xl pointer-events-none leading-4 md:leading-[1.1rem] font-normal">
               <?php the_field('quote') ?>
             </p>
+            <!-- mobile quote-->
+            <p class="md:hidden w-full inset-0 flex items-center justify-center mb-2 text-white text-[11px] md:text-xs 2xl:text-base rounded-xl pointer-events-none leading-4 md:leading-[1.1rem] font-normal">
+              <?php the_field('mobile_quote') ?>
+            </p>
             <div class="red__divider w-2/12 mx-0 mb-2 lg:mt-4 border-[0.1px] border-primary border-solid"></div>
-            <p class="thumbnail__text--author text-[11px] md:text-xs lg:text-sm text-white leading-[8px] lg:leading-3">
+            <p class="thumbnail__text--author text-[10px] md:text-xs lg:text-sm text-white leading-[8px] lg:leading-3">
               <?php the_field('author') ?>
             </p>
           </div>
