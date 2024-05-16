@@ -27,7 +27,7 @@
               <?php the_field('mobile_quote') ?>
             </p>
             <div class="red__divider w-2/12 mx-0 mb-2 lg:mt-4 border-[0.1px] border-primary border-solid"></div>
-            <p class="thumbnail__text--author text-[10px] md:text-xs lg:text-sm text-white leading-[8px] lg:leading-3">
+            <p class="thumbnail__text--author text-[10px] md:text-xs lg:text-sm text-white leading-[8px] lg:leading-4">
               <?php the_field('author') ?>
             </p>
           </div>
