@@ -29,7 +29,7 @@ function get_resource_content($post_id)
     $img_url = get_field('post_hero_image', $post_id);
     $markup = '<img src="' . $img_url . '" class="banner__image h-full rounded-xl shadow-lg w-full" alt="featured banner image" />';
     $content = get_clean_content($post_id);
-    $content = substr($content, 0, 130);
+    $content = substr($content, 0, 320);
     $content .= '...';
     return ['html' => $markup, 'content' => $content];
   }
@@ -51,13 +51,15 @@ function render_highlighted_cards()
             ' . $content['html'] . '
             </div>
           </div>
-          <div class="w-full lg:w-7/12 lg:pl-8 mt-4 lg:mt-0">
-            <p class="uppercase text-gray-400 text-xs mb-1">Featured ' . $tag . '</p>
-            <p class="text-white text-lg font-bold mb-1"> ' . $title . '</p>
-            <p class="text-white text-xs pb-2">
+          <div class="w-full lg:w-6/12 lg:pl-8 mt-4 lg:mt-0 flex flex-col">
+            <p class="uppercase text-gray-400 text-xs mb-1 pr-8">Featured ' . $tag . '</p>
+            <p class="text-white text-lg leading-tight font-bold mb-1"> ' . $title . '</p>
+            <p class="text-white text-xs lg:text-sm pb-2">
             ' . $content['content'] . '
             </p>
-            <a href="' . $url . '" class=" text-white text-xs rounded-3xl border border-solid border-primary px-2 py-1 hover:bg-primary transition-all duration-300">' . $button_text . '</a>
+            <div class="flex-1 flex items-end">
+              <a href="' . $url . '" class=" text-white text-xs rounded-3xl border border-solid border-primary px-2 py-1 hover:bg-primary transition-all duration-300">' . $button_text . '</a>
+            </div>
           </div>
         </div>
       </div>
@@ -67,8 +69,8 @@ function render_highlighted_cards()
 }
 ?>
 <section class="resources-hero bg-dark-blue-background py-14">
-  <div class="w-full lg:w-8/12 flex justify-center mx-auto">
-    <div class="resources__video__slider w-full">
+  <div class="w-full lg:w-8/12 flex justify-center mx-auto min-h-[336px]">
+    <div class="resources__video__slider w-full hidden">
       <?php render_highlighted_cards() ?>
     </div>
   </div>

@@ -20,8 +20,9 @@ function render_text_content($component)
 
 function get_image_or_url($comp)
 {
+    js_console($comp);
     $img_or_url = $comp['image_or_url'];
-    if ($img_or_url == 'Image')
+    if ($img_or_url == 'Image' || !$img_or_url)
         return $comp['post_image'];
     $new_img_arr = array('url' => $comp['image_url'], 'alt' => 'post image example');
     return $new_img_arr;
@@ -205,10 +206,12 @@ function get_latest_posts($number_of_posts = 3)
                                 </div>
                                 <h1
                                     class="!text-dark-blue-background min-w-fit tracking-normal font-bold mb-4 text-left mt-6 lg:mt-0 text-2xl lg:text-4xl ">
-                                    <?php the_title() ?></h1>
+                                    <?php the_title() ?>
+                                </h1>
                                 <h2
                                     class="!text-dark-blue-background min-w-fit tracking-normal font-normal text-left mt-6 lg:mt-0 !text-lg lg:!text-xl">
-                                    <?php the_field('post_h2') ?></h2>
+                                    <?php the_field('post_h2') ?>
+                                </h2>
                                 <div class="post__author__container mt-8 flex justify-start">
                                     <div class="user__container flex">
                                         <img src="<?php echo $tmp_author['author_avatar'] ?>" alt="user avatar"
@@ -216,9 +219,11 @@ function get_latest_posts($number_of_posts = 3)
                                         <div
                                             class="author__name__container w-full flex flex-col justify-center relative">
                                             <p class="font-normal mb-0 leading-5 text-base text-dark-blue-background">By
-                                                <?php echo $tmp_author['author_name'] ?></p>
+                                                <?php echo $tmp_author['author_name'] ?>
+                                            </p>
                                             <p class="text-base text-dark-blue-background">
-                                                <?php echo $tmp_author['publication_date'] ?></p>
+                                                <?php echo $tmp_author['publication_date'] ?>
+                                            </p>
                                             <?php render_extra_links($tmp_author['extra_author_links']) ?>
                                         </div>
                                     </div>

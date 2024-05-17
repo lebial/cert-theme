@@ -149,7 +149,7 @@ function ai_insights_scroll()
             $content = substr($content, 0, 130);
             $content .= '...';
             $response .= '
-                <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col mx-10 lg:mx-0">
+                <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col mx-10 lg:mx-0 transition-all duration-300 hover:scale-105">
                     <div class="image__container ">
                         <img src="' . $img . '" class="rounded-xl"/>
                     </div>
@@ -189,7 +189,7 @@ function news_insights_scroll()
 
             $tags = get_the_tags();
             $response .= '
-            <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col mx-10 lg:mx-0">
+            <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col mx-10 lg:mx-0 transition-all duration-300 hover:scale-105">
                 <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
                     <p class="text-gray-400 text-base mb-4 uppercase">' . $tags[0]->name . '</p>
                     <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>

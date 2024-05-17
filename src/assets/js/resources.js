@@ -43,8 +43,8 @@ jQuery(document).ready(function ($) {
   function handleFilterHighlight() {
     const params = getParams();
     let tag = params.get('tag');
-    if (!tag) return null;
-    const option = $(`[data-option=${tag}]`);
+    let option = $(`[data-option=${tag}]`);
+    if (!tag) option = $(`.tag__resource__option:first-of-type`);
     option.find('svg').removeClass('fill-dark-blue-background');
     option.find('svg').addClass('fill-primary');
     option.removeClass('text-dark-blue-background');
