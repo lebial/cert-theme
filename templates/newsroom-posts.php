@@ -154,30 +154,15 @@ $tag_text = $tag->name . 's';
         </section>
     </div>
     <section class="media__contact py-14 bg-indigo-50 px-10 lg:px-20">
-        <h3 class="text-dark-blue-background text-lg lg:text-xl">About Certilytics Inc.</h3>
-        <p class="text-dark-blue-background text-sm">Certilytics is a privately-held company founded in 2014 to bring
-            AI-inspired predictive models to organizations across
-            the healthcare ecosystem, including health plans, providers, biotechnology, pharmaceuticals, large employers
-            and
-            government entities.
-            <br>
-            <br>
-            Utilizing an organically designed IT processing infrastructure, while also merging machine learning and
-            software
-            engineering, Certilytics has commercialized two distinct data logistics and analytic platforms.
-            <br>
-            <br>
-            These solutions are managing and extracting value from customers’ legacy data assets to reform existing
-            workflows,
-            processes and decision making - resulting in the use of AI-driven predictive analytics to help customers
-            realize the
-            true potential of their data and turn it into powerful insights.
-        </p>
-        <h3 class="text-dark-blue-background text-lg lg:text-xl">Media Contact</h3>
-        <p class="text-dark-blue-background text-sm mb-0">Alyssa Read, VP of Marketing & Communications</p>
-        <p class="text-dark-blue-background text-sm mb-0">Tel: 518-569-0600</p>
+        <h3 class="text-dark-blue-background text-lg lg:text-xl"><?php the_field('about_title', 'options') ?></h3>
+        <p class="text-dark-blue-background text-sm"><?php the_field('about_description', 'options') ?></p>
+        <h3 class="text-dark-blue-background text-lg lg:text-xl"><?php the_field('media_contact_title', 'options') ?>
+        </h3>
+        <p class="text-dark-blue-background text-sm mb-0"><?php the_field('contact_author', 'options') ?></p>
+        <p class="text-dark-blue-background text-sm mb-0">Tel: <?php the_field('contact_phone', 'options') ?></p>
         <p class="text-dark-blue-background text-sm mb-0">Email: <a class=" underline font-bold"
-                href="mailto:alyssa.read@certilytics.com">alyssa.read@certilytics.com</a></p>
+                href="mailto:<?php the_field('contact_email', 'options') ?>"><?php the_field('contact_email', 'options') ?></a>
+        </p>
     </section>
 </main>
 <?php get_footer(); ?>
