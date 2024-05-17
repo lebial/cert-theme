@@ -36,11 +36,11 @@ function render_video_content()
           <p class="text-sm text-gray-400 mb-4 text-center lg:text-left">' . get_the_date() . '</p>
           <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
             <p class=" text-gray-400 mr-4 text-base">SHARE IT :</p>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . get_the_permalink() . '&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=' . get_the_permalink() . '">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . get_the_permalink() . '&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=' . get_the_permalink() . '" target="_blank">
                 <img class="w-6 mr-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="linkedin logo">
             </a>
-            <a href="https://twitter.com/share?url=' . get_the_permalink() . '&text=' . strip_tags(get_the_title()) . '">
-                <img class="w-6 mx-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Twitter-navy.jpg" alt="twitter logo">
+            <a class="flex" href="https://twitter.com/share?url=' . get_the_permalink() . '&text=' . strip_tags(get_the_title()) . '" target="_blank">
+               <span class=" bg-dark-blue-background inline-block rounded-full"> <img class="w-4 h-4 m-1 style-svg fill-white" src="' . get_template_directory_uri() . '/dist/assets/images/footer/twitter.svg" alt="twitter logo"></span>
             </a>
               
           </div>
@@ -78,8 +78,8 @@ function render_case_study_content()
                   <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . get_the_permalink() . '&amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host=' . get_the_permalink() . '">
                       <img class="w-6 mr-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Linkenin-Navy.jpg" alt="linkedin logo">
                   </a>
-                  <a href="https://twitter.com/share?url=' . get_the_permalink() . '&text=' . strip_tags(get_the_title()) . '">
-                      <img class="w-6 mx-2" src="' . get_template_directory_uri() . '/dist/assets/images/postsPage/Twitter-navy.jpg" alt="twitter logo">
+                  <a href="https://twitter.com/share?url=' . get_the_permalink() . '&text=' . strip_tags(get_the_title()) . '" class="flex">
+                    <span class=" bg-dark-blue-background inline-block rounded-full"> <img class="w-4 h-4 m-1 style-svg fill-white" src="' . get_template_directory_uri() . '/dist/assets/images/footer/twitter.svg" alt="twitter logo"></span>
                   </a>
                   
               </div>
@@ -128,7 +128,7 @@ $tag_text = $post_type == 'video' ? 'Videos' : 'Case Studies';
     <div class="navigation__container lg:ml-20 my-12 flex justify-center lg:justify-start">
       <div>
         <a href="/">Home</a> / <a href="/resources">Resources</a> / <a
-          href="/resources/?tag=<?php echo $tag ?>"><?php echo $tag_text ?></a>
+          href="/resources/?tag=<?php echo $tag ?>#scrollaContent"><?php echo $tag_text ?></a>
       </div>
     </div>
     <div class="lg:pt-10 lg:pb-16">

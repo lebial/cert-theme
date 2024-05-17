@@ -12,10 +12,12 @@ $icon = '
 function render_filter_options()
 {
   $options = get_field('filter_tags', get_option('page_for_posts'));
+  $options_with_default = [['url' => '/resources/#scrollContent', 'tag_name' => 'All'], ...$options];
 
-  foreach ($options as $option) {
+  foreach ($options_with_default as $idx => $option) {
+    $new_url = $idx == 0 ? '/resources/#scrollContent' : '/resources/?tag=' . $option['url'] . '#scrollContent';
     echo '
-      <a href="/resources/?tag=' . $option['url'] . '#scrollContent" class="text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0" data-option="' . $option['url'] . '">
+      <a href="' . $new_url . '" class="tag__resource__option text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0" data-option="' . $option['url'] . '">
         ' . $option['tag_name'] . ' 
         <svg class="ml-1 w-2 h-2 fill-dark-blue-background group-hover:fill-primary" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185.343 185.343" xml:space="preserve">
           <g>
@@ -102,11 +104,11 @@ function render_resources_cards()
 ?>
 
 <section class="resources__posts py-8 lg:py-14">
-  <div class="filter__options flex flex-col lg:flex-row justify-center flex-wrap">
+  <div class="filter__options flex flex-col lg:flex-row justify-center flex-wrap" id="scrollContent">
     <?php render_filter_options() ?>
   </div>
   <main class="mt-14">
-    <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
+    <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto auto-rows-fr">
       <?php render_resources_cards() ?>
     </div>
     <div class="w-full flex justify-center mb-20"><?php render_resources_load_more('Resources'); ?></div>
