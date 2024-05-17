@@ -5,12 +5,6 @@ Template Post Type: post
 */
 $post = get_post();
 $tmp_author = get_field('author');
-$show_content_navigation = get_field('show_content_navigation');
-$hide_class = $show_content_navigation ? 'lg:block' : '';
-$hide_alternate = $show_content_navigation ? '' : 'lg:block';
-$remove_mt_if_shown = $show_content_navigation ? 'mt-4' : 'mt-0';
-
-
 
 function render_text_content($component)
 {
@@ -88,6 +82,10 @@ function render_dynamic_content()
     );
 
     $post_components = get_field('post_content');
+    js_console(count($web_components));
+    if (count($post_components) == 0) {
+        return the_content();
+    }
 
     foreach ($post_components as $component) {
         $web_components[$component['acf_fc_layout']]($component);
