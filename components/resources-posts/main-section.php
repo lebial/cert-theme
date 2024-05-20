@@ -128,7 +128,7 @@ $tag_text = $post_type == 'video' ? 'Videos' : 'Case Studies';
     <div class="navigation__container lg:ml-20 my-12 flex justify-center lg:justify-start">
       <div>
         <a href="/">Home</a> / <a href="/resources">Resources</a> / <a
-          href="/resources/?tag=<?php echo $tag ?>#scrollaContent"><?php echo $tag_text ?></a>
+          href="/resources/?tag=<?php echo $tag ?>#scrollToTitle"><?php echo $tag_text ?></a>
       </div>
     </div>
     <div class="lg:pt-10 lg:pb-16">

@@ -116,7 +116,7 @@ $tag_text = $tag->name . 's';
             <div class="navigation__container mb-12 flex justify-center lg:justify-start">
                 <div>
                     <a href="/">Home</a> / <a href="/insights/newsroom">Newsroom</a> / <a
-                        href="/insights/newsroom/?tag=<?php echo $tag_slug ?>#scrollaContent"><?php echo $tag_text ?></a>
+                        href="/insights/newsroom/?tag=<?php echo $tag_slug ?>#scrollContent"><?php echo $tag_text ?></a>
                 </div>
             </div>
             <h1 class="text-dark-blue-background text-center lg:text-left font-bold text-2xl lg:text-3xl">
