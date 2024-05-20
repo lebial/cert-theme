@@ -12,7 +12,7 @@ $icon = '
 function render_filter_options()
 {
   $options = get_field('filter_tags', get_option('page_for_posts'));
-  $options_with_default = [['url' => '/resources/#scrollContent', 'tag_name' => 'All'], ...$options];
+  $options_with_default = [['url' => '/resources/#scrollToTitle', 'tag_name' => 'All'], ...$options];
 
   foreach ($options_with_default as $idx => $option) {
     $new_url = $idx == 0 ? '/resources/#scrollContent' : '/resources/?tag=' . $option['url'] . '#scrollContent';
@@ -104,11 +104,11 @@ function render_resources_cards()
 ?>
 
 <section class="resources__posts py-8 lg:py-14">
-  <div class="filter__options flex flex-col lg:flex-row justify-center flex-wrap" id="scrollContent">
+  <div class="filter__options flex flex-col lg:flex-row justify-center flex-wrap" id="scrollToTitle">
     <?php render_filter_options() ?>
   </div>
   <main class="mt-14">
-    <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto auto-rows-fr">
+    <div class="w-full max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto auto-rows-fr" id="scrollContent">
       <?php render_resources_cards() ?>
     </div>
     <div class="w-full flex justify-center mb-20"><?php render_resources_load_more('Resources'); ?></div>
