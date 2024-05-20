@@ -12,7 +12,7 @@ $icon = '
 function render_filter_options()
 {
   $options = get_field('filter_tags', get_option('page_for_posts'));
-  $options_with_default = [['url' => '/resources/#scrollContent', 'tag_name' => 'All'], ...$options];
+  $options_with_default = [['url' => '/resources/#scrollToTitle', 'tag_name' => 'All'], ...$options];
 
   foreach ($options_with_default as $idx => $option) {
     $new_url = $idx == 0 ? '/resources/#scrollContent' : '/resources/?tag=' . $option['url'] . '#scrollContent';
