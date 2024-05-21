@@ -6,6 +6,8 @@ function get_resource_content($post_id)
     $video = get_field('video_post', $post_id);
     $video_url = $video['video_url'];
     $video_thumbnail = $video['video_thumbnail'];
+    $content = substr($video['video_description'], 0, 130);
+    $content .= '...';
     $markup = '
       <div class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-xl z-20">
         <button class="second_video_play_button " style="background-color: transparent !important;">
@@ -18,18 +20,20 @@ function get_resource_content($post_id)
         <source src="' . $video_url . '" type="video/mp4">
       </video>
     ';
-    return ['html' => $markup, 'content' => $video['video_description']];
+    return ['html' => $markup, 'content' => $content];
   }
   if ($tag_name == 'case study') {
     $case_study = get_field('case_study_post', $post_id);
     $img_url = $case_study['case_study_card_thumbnail'];
     $markup = '<img src="' . $img_url . '" class="banner__image h-full rounded-xl shadow-lg w-full" alt="featured banner image" />';
-    return ['html' => $markup, 'content' => $case_study['description']];
+    $content = substr($case_study['description'], 0, 130);
+    $content .= '...';
+    return ['html' => $markup, 'content' => $content];
   } else {
     $img_url = get_field('post_hero_image', $post_id);
     $markup = '<img src="' . $img_url . '" class="banner__image h-full rounded-xl shadow-lg w-full" alt="featured banner image" />';
     $content = get_clean_content($post_id);
-    $content = substr($content, 0, 320);
+    $content = substr($content, 0, 130);
     $content .= '...';
     return ['html' => $markup, 'content' => $content];
   }
@@ -53,7 +57,7 @@ function render_highlighted_cards()
           </div>
           <div class="w-full lg:w-6/12 lg:pl-8 mt-4 lg:mt-0 flex flex-col">
             <p class="uppercase text-gray-400 text-xs mb-1 pr-8">Featured ' . $tag . '</p>
-            <p class="text-white text-lg leading-tight font-bold mb-1"> ' . $title . '</p>
+            <p class="text-white text-xl leading-tight font-bold mb-1"> ' . $title . '</p>
             <p class="text-white text-xs lg:text-sm pb-2">
             ' . $content['content'] . '
             </p>

@@ -111,7 +111,7 @@ $tag_text = $tag->name . 's';
 
 <?php get_header(); ?>
 <main class="post__page w-full ">
-    <div class="post__container px-10 lg:px-20 max-w-screen-xl">
+    <div class="post__container px-10 lg:px-20 max-w-screen-lg">
         <section class="post__description w-full pt-10 lg:pt-10 lg:mb-10">
             <div class="navigation__container mb-12 flex justify-center lg:justify-start">
                 <div>
@@ -122,7 +122,7 @@ $tag_text = $tag->name . 's';
             <h1 class="text-dark-blue-background text-center lg:text-left font-bold text-2xl lg:text-3xl">
                 <?php the_title() ?>
             </h1>
-            <p class="text-center text-dark-blue-background mx-auto lg:mx-0 lg:text-left mt-3">
+            <p class="text-center text-base text-gray-400 mx-auto lg:mx-0 lg:text-left mt-3">
                 <?php echo get_the_date('F j, Y') ?>
             </p>
             <div class="share-it__container flex items-center mt-3 ml-5 lg:ml-0 border-t border-gray-header mb-4">

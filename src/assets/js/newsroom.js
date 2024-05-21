@@ -1,4 +1,4 @@
-import { handleAjaxPosts } from "./utils/utils";
+import { handleAjaxPosts, getParams } from "./utils/utils";
 jQuery(document).ready(function ($) {
   function handleLoadMore() {
     $('.load__more__button').click(function () {
@@ -7,18 +7,17 @@ jQuery(document).ready(function ($) {
   }
 
   function handleCustomTitle() {
-    const currentHeder = document.querySelector('#dynamicHeader');
-    const { href } = window.location;
-    const currentUrlTag = href.split("=");
-
+    const params = getParams();
+    const tag = params.get('tag');
+    const title = document.getElementById('dynamicHeader');
+    debugger;
     const sections = {
       'product-news': 'Product News',
       'press-release': 'Press Releases',
       'in-the-news': 'In the News'
     };
 
-    const header = sections[currentUrlTag[1]] ?? 'Latest News';
-    currentHeder.innerHTML = header;
+    if (tag) title.innerHTML = sections[tag];
   }
 
   const { href } = window.location;

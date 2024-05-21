@@ -34,11 +34,12 @@ function render_resources_load_more($text = 'Resources', $tag = null)
 {
     global $wp;
     $tag = $wp->query_vars['tag'];
-    $tags = ['video', 'case-study', 'article', 'webinar'];
+    $tags = ['video', 'case-study', 'webinar', 'article'];
     $options = [
-        'post_per_page' => 6,
-        'tag_slug__in' => $tag ? [$tag] : $tags,
-        'orderby' => 'date',
+        'posts_per_page' => 6,
+        // 'paged' => $page,
+        'tag_slug__in' => $tags,
+        'orderby' => 'ID',
         'order' => 'desc',
     ];
     $posts = new WP_Query($options);
@@ -52,14 +53,15 @@ function render_resources_load_more($text = 'Resources', $tag = null)
 
 function get_resources_posts()
 {
-    $allowed_tags = ['video', 'case study', 'article', 'webinar'];
+    $allowed_tags = ['video', 'case-study', 'webinar', 'article'];
     $page = $_POST['page'] ? $_POST['page'] : 1;
     $tags = $_POST['tag'] ? [$_POST['tag']] : $allowed_tags;
     $options = [
         'posts_per_page' => 6,
         'paged' => $page,
         'tag_slug__in' => $tags,
-        'orderby' => 'date',
+        // 'orderby' => 'date',
+        'orderby' => 'ID',
         'order' => 'desc',
     ];
 
