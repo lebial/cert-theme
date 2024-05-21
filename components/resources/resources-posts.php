@@ -15,7 +15,7 @@ function render_filter_options()
   $options_with_default = [['url' => '/resources/#scrollToTitle', 'tag_name' => 'All'], ...$options];
 
   foreach ($options_with_default as $idx => $option) {
-    $new_url = $idx == 0 ? '/resources/#scrollContent' : '/resources/?tag=' . $option['url'] . '#scrollContent';
+    $new_url = $idx == 0 ? '/resources/#scrollToTitle' : '/resources/?tag=' . $option['url'] . '#scrollToTitle';
     echo '
       <a href="' . $new_url . '" class="tag__resource__option text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0" data-option="' . $option['url'] . '">
         ' . $option['tag_name'] . ' 
@@ -82,24 +82,27 @@ function render_dynamic_content($tag_name)
 function render_resources_cards()
 {
   global $wp;
+  global $wp_query;
   $req_tag = $wp->query_vars['tag'];
   $allowed_filter_tags = $req_tag ? [$req_tag] : ['video', 'case-study', 'webinar', 'article'];
-  $custom_posts = new WP_Query(
+  $wp_query = new WP_Query(
     [
-      'post_per_page' => 6,
+      'posts_per_page' => 6,
+      'paged' => 1,
       'tag_slug__in' => $allowed_filter_tags,
-      'orderby' => 'date',
+      'orderby' => 'ID',
       'order' => 'desc',
     ]
   );
-  if ($custom_posts->have_posts()):
-    while ($custom_posts->have_posts()):
-      $custom_posts->the_post();
+  if ($wp_query->have_posts()):
+    while ($wp_query->have_posts()):
+      $wp_query->the_post();
       $tags = get_the_tags();
       $tag_name = $tags[0]->name;
       render_dynamic_content($tag_name);
     endwhile;
   endif;
+  wp_reset_postdata();
 }
 ?>
 

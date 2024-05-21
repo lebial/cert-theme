@@ -6,7 +6,7 @@ function render_related_content()
   $keys = $post_type == 'video' ?
     ['post_type' => 'video_post', 'image_key' => 'video_thumbnail']
     : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail'];
-  $related_text = $post_type == 'video' ? 'Watch Video' : 'Read Article';
+  $related_text = $post_type == 'video' ? 'Watch Video' : 'Read Study';
 
   foreach ($posts as $post) {
     $post_fields = get_field($keys['post_type'], $post->ID);
@@ -14,7 +14,7 @@ function render_related_content()
     $tags = get_the_tags($post->ID);
     echo '
       <div class="resources_video_card rounded-lg mb-4 lg:mb-0 h-full p-4 !flex flex-col">
-        <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col transition-all duration-300 hover:scale-105">
+        <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col transition-all duration-300 hover:scale-105 bg-white">
           <p class="text-gray-400 text-xs mb-4 uppercase">' . $tags[0]->name . '</p>
           <img src="' . $img_url . '" alt="post thumbnail" class=" rounded-lg my-4"/>
           <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title($post->ID) . '</h3>
