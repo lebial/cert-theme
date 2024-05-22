@@ -37,7 +37,7 @@ function render_articles()
   echo '
     <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col">
       <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
-        <p class="text-gray-400 text-base mb-4 uppercase">' . $tags[0]->name . '</p>
+        <p class="text-gray-400 text-xs mb-4 uppercase">' . $tags[0]->name . '</p>
         <img src="' . $img . '" alt="post thumbnail" class=" rounded-lg my-4"/>
         <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
         <div class="flex-1 flex items-end">

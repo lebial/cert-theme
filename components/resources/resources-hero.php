@@ -61,7 +61,7 @@ function render_highlighted_cards()
             <p class="text-white text-xs lg:text-sm pb-2">
             ' . $content['content'] . '
             </p>
-            <div class="flex-1 flex items-end">
+            <div class="flex items-end">
               <a href="' . $url . '" class=" text-white text-xs rounded-3xl border border-solid border-primary px-2 py-1 hover:bg-primary transition-all duration-300">' . $button_text . '</a>
             </div>
           </div>
