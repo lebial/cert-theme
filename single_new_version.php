@@ -190,7 +190,8 @@ function render_extra_links($links, $color = 'white')
         </div>
     </section>
     <section class="post__description w-full pt-10 lg:pt-20 lg:mb-14">
-        <p class="text-center text-dark-blue-background mx-auto"><?php echo get_the_date('F j, Y') ?></p>
+        <p class="text-left lg:text-center text-dark-blue-background lg:mx-auto"><?php echo get_the_date('F j, Y') ?>
+        </p>
         <div class="lg:mt-10 flex pl-5 lg:pl-0">
             <div class="lg:w-[280px]"></div>
             <h2

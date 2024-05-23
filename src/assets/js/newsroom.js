@@ -10,7 +10,6 @@ jQuery(document).ready(function ($) {
     const params = getParams();
     const tag = params.get('tag');
     const title = document.getElementById('dynamicHeader');
-    debugger;
     const sections = {
       'product-news': 'Product News',
       'press-release': 'Press Releases',
