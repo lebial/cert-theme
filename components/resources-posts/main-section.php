@@ -32,7 +32,7 @@ function render_video_content()
   echo '
       <div class="resources__video__container flex flex-col lg:flex-row mx-auto max-w-screen-lg 2xl:max-w-screen-xl">
         <div class="w-full lg:w-1/2 px-4 lg:pl-0 lg:pr-10">
-          <h1 class="text-dark-blue-background text-2xl text-center lg:text-left">' . $video_post['title'] . '</h2>
+          <h1 class="text-dark-blue-background text-2xl lg:text-3xl text-center lg:text-left tracking-wide leading-tight">' . $video_post['title'] . '</h2>
           <p class="text-sm text-gray-400 mb-4 text-center lg:text-left">' . get_the_date() . '</p>
           <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
             <p class=" text-gray-400 mr-4 text-base">SHARE IT :</p>
@@ -71,7 +71,7 @@ function render_case_study_content()
 
   echo '<div class="case__study flex flex-col lg:flex-row mx-auto max-w-screen-lg px-4 lg:px-0">
           <div class="w-full lg:w-7/12">
-            <h1 class=" text-dark-blue-background font-bold mb-4 text-2xl text-center lg:text-left">' . $case_study_post['title'] . '</h1>
+            <h1 class=" text-dark-blue-background font-bold mb-4 text-2xl lg:text-3xl text-center lg:text-left tracking-wide leading-tight">' . $case_study_post['title'] . '</h1>
             <p class="text-sm text-gray-400 mb-4 text-center lg:text-left">' . get_the_date() . '</p>
               <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
                   <p class=" text-gray-400 mr-4 text-base">SHARE IT :</p>
