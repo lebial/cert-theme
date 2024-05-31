@@ -34,7 +34,7 @@ function render_resources_load_more($text = 'Resources', $tag = null)
 {
     global $wp;
     $tag = $wp->query_vars['tag'];
-    $tags = ['video', 'case-study', 'webinar', 'article'];
+    $tags = $tag ? [$tag] : ['video', 'case-study', 'webinar', 'article'];
     $options = [
         'posts_per_page' => 6,
         // 'paged' => $page,
@@ -46,6 +46,7 @@ function render_resources_load_more($text = 'Resources', $tag = null)
     $max_pages = $posts->max_num_pages;
     $paged = get_query_var('paged');
     $current_page = $paged ? absint($paged) : 1;
+    js_console($options);
     if ($max_pages <= 1 || $current_page == $max_pages)
         return;
     echo '<button data-last-page="' . $max_pages . '" data-current-page="' . $current_page . '" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More ' . $text . '</button>';
@@ -129,7 +130,7 @@ function resources_infinite_scroll()
             $response .= render_article_card();
         endwhile;
     } else {
-        $response = 'empty';
+        $response = '';
     }
     echo $response;
     exit;
@@ -169,7 +170,7 @@ function ai_insights_scroll()
             ';
         endwhile;
     } else {
-        $response = 'empty';
+        $response = '';
     }
     echo $response;
     exit;
@@ -207,7 +208,7 @@ function news_insights_scroll()
             ';
         endwhile;
     } else {
-        $response = 'empty';
+        $response = '';
     }
     echo $response;
     exit;
