@@ -99,6 +99,13 @@ function render_extra_links($links, $color = 'white')
     }
 }
 
+function get_tag_text($tag_name)
+{
+    if ($tag_name == 'Product News')
+        return $tag_name;
+    return $tag_name . 's';
+}
+
 $x_icon = get_template_directory_uri() . '/dist/assests/images/footer/twitter.svg';
 $x_url = 'https://twitter.com/share?url=' . get_the_permalink() . '&text=' . strip_tags(get_the_title());
 $linkedin_icon = get_template_directory_uri() . '/dist/assets/images/postsPage/Linkenin-Navy.jpg';
@@ -106,7 +113,8 @@ $linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&amp;url=' . get
 $tags = get_the_tags();
 $tag = $tags[0];
 $tag_slug = $tag->slug;
-$tag_text = $tag->name . 's';
+$tag_text = get_tag_text($tag->name);
+
 ?>
 
 <?php get_header(); ?>
