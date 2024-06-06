@@ -1,12 +1,29 @@
 <?php
+
+function get_related_resources($tag)
+{
+  $options = [
+    'posts_per_page' => 3,
+    // 'paged' => $page,
+    'tag_slug__in' => [$tag],
+    'post__not_in' => array(get_the_ID()),
+    'orderby' => 'date',
+    'order' => 'desc',
+  ];
+  $posts_query = new WP_Query($options);
+  return $posts_query->posts;
+}
+
 function render_related_content()
 {
   $posts = get_field('featured_content');
   $post_type = get_field('post_type');
   $keys = $post_type == 'video' ?
-    ['post_type' => 'video_post', 'image_key' => 'video_thumbnail']
-    : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail'];
+    ['post_type' => 'video_post', 'image_key' => 'video_thumbnail', 'tag' => 'video']
+    : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail', 'tag' => 'case-study'];
   $related_text = $post_type == 'video' ? 'Watch Video' : 'Read Study';
+  if (empty($posts))
+    $posts = get_related_resources($keys['tag']);
 
   foreach ($posts as $post) {
     $post_fields = get_field($keys['post_type'], $post->ID);
