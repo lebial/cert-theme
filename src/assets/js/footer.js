@@ -12,15 +12,11 @@ jQuery(document).ready(function ($) {
         $('.corp__info__clone').appendTo(lastGroup);
     }
 
-    function removeMobileArrows() {
-        $('[name = "News & Insights"]').hide();
-    }
 
     function addTargetBlankToCareers() {
         $('[name="footer-Careers"]').attr('target', '_blank');
     }
 
     // moveSocialIcons();
-    removeMobileArrows();
     addTargetBlankToCareers();
 });
