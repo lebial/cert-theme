@@ -17,7 +17,7 @@ function render_filter_options()
   foreach ($options_with_default as $idx => $option) {
     $new_url = $idx == 0 ? '/resources/#scrollToTitle' : '/resources/?tag=' . $option['url'] . '#scrollToTitle';
     echo '
-      <a href="' . $new_url . '" class="tag__resource__option text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0" data-option="' . $option['url'] . '">
+      <a href="' . $new_url . '" class="tag__resource__option text-dark-blue-background flex items-center group hover:text-primary mr-4 font-bold flex-[0_0_40%] lg:flex-none justify-center mt-2 lg:mt-0 hover:underline hover:underline-offset-[3px] hover:decoration-2" data-option="' . $option['url'] . '">
         ' . $option['tag_name'] . ' 
         <svg class="ml-1 w-2 h-2 fill-dark-blue-background group-hover:fill-primary" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185.343 185.343" xml:space="preserve">
           <g>
@@ -115,5 +115,6 @@ function render_resources_cards()
       <?php render_resources_cards() ?>
     </div>
     <div class="w-full flex justify-center mb-20"><?php render_resources_load_more('Resources'); ?></div>
+    <div class="underline underline-offset-[3px] decoration-2"></div>
   </main>
 </section>

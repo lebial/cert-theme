@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
     option.find('svg').removeClass('fill-dark-blue-background');
     option.find('svg').addClass('fill-primary');
     option.removeClass('text-dark-blue-background');
-    option.addClass('text-primary');
+    option.addClass('text-primary underline underline-offset-[3px] decoration-2');
   }
 
   const { href } = window.location;
