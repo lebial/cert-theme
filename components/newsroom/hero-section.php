@@ -13,8 +13,10 @@ function render_custom_menu_items()
 ?>
 
 <!-- class="new__home__page w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[calc(100vh-80px)] bg-cover" -->
-<section class="new__home__page w-full bg-dark-blue-background min-w-full relative h-fit bg-no-repeat bg-center "
-  style="background-image: url(<?php the_field('hero_background', 'options') ?>); background-size: 100% 100%;">
+<!-- <section class="new__home__page w-full bg-dark-blue-background min-w-full relative h-fit bg-no-repeat bg-center "
+  style="background-image: url(<?php //the_field('hero_background', 'options') ?>); background-size: 100% 100%;"> -->
+<section class="new__home__page w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[70vh] bg-cover"
+  style="background-image: url(<?php the_field('hero_background', 'options') ?>); background-position-y: -80px;">
   <!-- <video playsinline autoplay muted loop disablePictureInPicture id="HomeBackgroundVideo" class=" object-cover w-full h-full absolute top-0 left-0 z-10">
     <source src="<?php //the_field('hero_background_video') ?>" type="video/mp4">
   </video> -->
