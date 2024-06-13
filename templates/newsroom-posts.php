@@ -127,7 +127,8 @@ $tag_text = get_tag_text($tag->name);
                         href="/insights/newsroom/?tag=<?php echo $tag_slug ?>#scrollContent"><?php echo $tag_text ?></a>
                 </div>
             </div>
-            <h1 class="text-dark-blue-background text-center lg:text-left font-bold text-2xl lg:text-3xl">
+            <h1
+                class="!text-dark-blue-background min-w-fit tracking-normal font-bold mb-4 text-left mt-6 lg:mt-0 text-2xl lg:text-4xl ">
                 <?php the_title() ?>
             </h1>
             <p class="text-center text-base text-gray-400 mx-auto lg:mx-0 lg:text-left mt-3">
