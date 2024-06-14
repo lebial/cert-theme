@@ -128,8 +128,6 @@ jQuery(document).ready(function ($) {
   function handleMobileOptionClick(ev) {
     const currentSubMenu = $(this).find('.sub-menu');
     const currentLink = $(this).find('a');
-    const { href } = ev.target;
-    if (!href || href?.contains('news-insights')) ev.preventDefault();
     currentLink.toggleClass('active_item_arrow');
     currentSubMenu.toggle();
   }
