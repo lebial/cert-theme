@@ -122,7 +122,7 @@ function render_tags()
     if ($post_tags) {
         foreach ($post_tags as $tag) {
             echo '
-                <button class="px-5 py-1 border-solid border-primary border lg:border-[2px] rounded-3xl
+                <button class="px-5 py-1 border-solid border-primary border lg:border-[2px] rounded-3xl uppercase 
                 text-dark-blue-background mr-2 lg:mr-3 mb-3 font-medium cursor-default hover:cursor-default transition-all duration-300
                 text-xs lg:text-sm " type="button" name="Example">' . esc_html($tag->name) . '
                 </button>
