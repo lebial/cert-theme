@@ -2,10 +2,10 @@
 function render_new_cards()
 {
     $selected_posts = get_field('news_and_insights_posts');
-    $recent_posts = get_most_recent_posts(3);
+    $recent_posts = get_most_recent_posts(2);
     $related_posts = get_recent_or_selected_posts($recent_posts, $selected_posts);
     foreach ($related_posts as $tmp_post_id) {
-        $text = limit_post_text(strip_tags(get_field('post_content', $tmp_post_id)[0]['post_text']),85,'...');
+        $text = limit_post_text(strip_tags(get_field('post_content', $tmp_post_id)[0]['post_text']), 85, '...');
         echo '<div class="px-8 py-0 lg:py-4 sm:w-1/2 lg:w-1/3 lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-105 lg:duration-300">';
         echo '<div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg">';
         echo '<img class="rounded-t-lg md:h-30 lg:h-44 2xl:h-52 w-full object-cover object-center" src="' . get_field('post_hero_image', $tmp_post_id) . '" alt="insights-image-thumbnail" >';
@@ -32,8 +32,12 @@ function render_new_cards()
 <section class="home__insights__section w-full h-full flex items-center">
     <div class="container px-5 pb-20 lg:pb-28 2xl:pb-32 pt-16 mx-auto">
         <div class="text-center mb-4 md:mb-8 lg:mb-14">
-            <h3 class="hidden lg:block reveal-text text font-semibold text-2xl lg:text-4xl text-center text-dark-blue-background">Certilytics News & Expert Insights</h5>
-                <h3 class="lg:hidden reveal-text text font-semibold text-2xl md:text-3xl lg:text-4xl text-center text-dark-blue-background">Certilytics News & <br> Expert Insights</h5>
+            <h3
+                class="hidden lg:block reveal-text text font-semibold text-2xl lg:text-4xl text-center text-dark-blue-background">
+                Certilytics News & Expert Insights</h5>
+                <h3
+                    class="lg:hidden reveal-text text font-semibold text-2xl md:text-3xl lg:text-4xl text-center text-dark-blue-background">
+                    Certilytics News & <br> Expert Insights</h5>
         </div>
         <div class="hidden lg:flex flex-wrap -m-4 w-10/12 mx-auto">
             <?php render_new_cards() ?>
@@ -44,7 +48,8 @@ function render_new_cards()
             <div class="home__insights__slider mt-8 lg:mt-16 relative z-20">
                 <?php render_new_cards() ?>
             </div>
-            <div class="home__insights__slider__arrows w-[100vw] md:w-[65vw] absolute flex justify-between top-1/2 left-1/2 z-30" style="transform: translate(-50%, -50%)">
+            <div class="home__insights__slider__arrows w-[100vw] md:w-[65vw] absolute flex justify-between top-1/2 left-1/2 z-30"
+                style="transform: translate(-50%, -50%)">
                 <?php custom_slider_arrows('home__insights__slider') ?>
             </div>
         </div>
