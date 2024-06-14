@@ -1,5 +1,6 @@
 <?php
-function render_insights_slider() {
+function render_insights_slider()
+{
   // $selected_posts = get_field('ai_insights_posts');
   // $recent_posts = get_most_recent_posts(6);
   // $posts =  get_recent_or_selected_posts($recent_posts, $selected_posts);
@@ -7,9 +8,9 @@ function render_insights_slider() {
   foreach ($posts as $post) {
     echo '
       <div class="h-full">
-        <a href="'.get_permalink($post).'" target="_blank" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 py-2 px-6 mr-6 shadow-lg max-w-[340px]">
-          <div class="absolute top-0 h-full roudned-xl w-full before:content-['."''".'] before:block before:w-full before:h-full before:bg-blue-500 before:bg-opacity-80 before:absolute before:top-0 before:z-20 before:rounded-xl">
-            <img src="'.get_field('post_hero_image', $post).'" alt="ai insights card background" class="absolute top-0 left-0 w-full h-full object-cover z-10 rounded-xl"/>
+        <a href="' . get_permalink($post) . '" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 py-2 px-6 mr-6 shadow-lg max-w-[340px]">
+          <div class="absolute top-0 h-full roudned-xl w-full before:content-[' . "''" . '] before:block before:w-full before:h-full before:bg-blue-500 before:bg-opacity-80 before:absolute before:top-0 before:z-20 before:rounded-xl">
+            <img src="' . get_field('post_hero_image', $post) . '" alt="ai insights card background" class="absolute top-0 left-0 w-full h-full object-cover z-10 rounded-xl"/>
           </div>
           <div class="w-full h-full z-20 flex flex-col items-center">
             <svg class=" w-24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 3500 2500" style="enable-background:new 0 0 3500 2500;" xml:space="preserve">
@@ -41,7 +42,7 @@ function render_insights_slider() {
                 </g>
               </g>
             </svg>
-            <p class="text-white text-base text-center font-bold">'.get_the_title($post).'</p>
+            <p class="text-white text-base text-center font-bold">' . get_the_title($post) . '</p>
             <p class="text-white mt-auto text-base lg:text-lg">
               Read Article
               <svg class="w-4 h-3 inline-block transition-all duration-200 group-hover:translate-x-1" width="40" height="69" viewBox="0 0 40 69" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,9 +58,10 @@ function render_insights_slider() {
 ?>
 <section class="ai__insights w-full py-12 lg:py-24 ">
   <div class="w-full flex flex-col items-center">
-    <h3 class="mb-8 text-dark-blue-background text-2xl lg:text-4xl reveal-text font-bold reveal-text">AI Insights by Certilytics</h3>
+    <h3 class="mb-8 text-dark-blue-background text-2xl lg:text-4xl reveal-text font-bold reveal-text">AI Insights by
+      Certilytics</h3>
     <p class="text-dark-blue-background text-lg text-center px-4">
-      Our experts share how AI is changing healthcare and how Certilytics is committed 
+      Our experts share how AI is changing healthcare and how Certilytics is committed
       to using AI to lead the way in making people healthier and healthcare more affordable.
     </p>
   </div>
@@ -68,18 +70,23 @@ function render_insights_slider() {
     <div class="search__form__container mt-10 ">
       <label class="flex border border-solid border-gray-400 rounded-2xl px-2 py-1">
         <input type="text" placeholder="Search...">
-        <svg class="w-10" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294 246.25" style="enable-background:new 0 0 294 246.25;" xml:space="preserve">
+        <svg class="w-10" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294 246.25"
+          style="enable-background:new 0 0 294 246.25;" xml:space="preserve">
           <style type="text/css">
-            .st0{fill:#787878;}
+            .st0 {
+              fill: #787878;
+            }
           </style>
           <g>
-            <path class="st0" d="M125.22,66c-18,5-29,24-24,42c4,18,23,29,41,24s29-23,24-41C161.22,72,143.22,62,125.22,66z M176.22,127l31,30   c5,5-7,17-12,12l-30-30c-6,4-12,8-19,9c-27,7-55-8-62-36c-7-27,9-55,37-62c27-7,54,9,62,36C186.22,101,184.22,114,176.22,127z"/>
+            <path class="st0"
+              d="M125.22,66c-18,5-29,24-24,42c4,18,23,29,41,24s29-23,24-41C161.22,72,143.22,62,125.22,66z M176.22,127l31,30   c5,5-7,17-12,12l-30-30c-6,4-12,8-19,9c-27,7-55-8-62-36c-7-27,9-55,37-62c27-7,54,9,62,36C186.22,101,184.22,114,176.22,127z" />
           </g>
         </svg>
       </label>
     </div>
   </div>
   <div class="platform__insights__slider mt-14 max-w-5xl flex mx-auto">
-    <?php render_insights_slider()?>
+    <?php render_insights_slider() ?>
   </div>
 </section>
