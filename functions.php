@@ -178,6 +178,18 @@ function ai_insights_scroll()
 add_action('wp_ajax_ai_insights_scroll', 'ai_insights_scroll');
 add_action('wp_ajax_nopriv_ai_insights_scroll', 'ai_insights_scroll');
 
+function get_allowed_newsroom_tag($tgs)
+{
+    $allowed_tags = [
+        'Press Release',
+        'Product News'
+    ];
+
+    foreach ($tgs as $tag) {
+        if (in_array($tag->name, $allowed_tags))
+            return $tag->name;
+    }
+}
 function news_insights_scroll()
 {
     $ajax_posts = get_insights_posts('newsroom');
@@ -190,11 +202,11 @@ function news_insights_scroll()
             $content = substr($content, 0, 130);
             $content .= '...';
 
-            $tags = get_the_tags();
+            $tag = get_allowed_newsroom_tag(get_the_tags());
             $response .= '
             <div class="ai_insight_card rounded-lg mb-4 p-4 flex flex-col mx-10 lg:mx-0 transition-all duration-300 hover:scale-105">
                 <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col">
-                    <p class="text-gray-400 text-base mb-4 uppercase">' . $tags[0]->name . '</p>
+                    <p class="text-gray-400 text-base mb-4 uppercase">' . $tag . '</p>
                     <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title() . '</h3>
                     <p class="text-dark-blue-background text-xs mb-2">
                         ' . $content . '
