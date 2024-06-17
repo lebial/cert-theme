@@ -2,7 +2,7 @@
 function render_new_cards()
 {
     $selected_posts = get_field('news_and_insights_posts');
-    $recent_posts = get_most_recent_posts(2);
+    $recent_posts = get_most_recent_posts(3);
     $related_posts = get_recent_or_selected_posts($recent_posts, $selected_posts);
     foreach ($related_posts as $tmp_post_id) {
         $text = limit_post_text(strip_tags(get_field('post_content', $tmp_post_id)[0]['post_text']), 85, '...');
