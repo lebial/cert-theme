@@ -90,7 +90,7 @@ function render_resources_cards()
       'posts_per_page' => 6,
       'paged' => 1,
       'tag_slug__in' => $allowed_filter_tags,
-      'orderby' => 'ID',
+      'orderby' => 'date',
       'order' => 'desc',
     ]
   );
