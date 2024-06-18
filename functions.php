@@ -35,17 +35,17 @@ function render_resources_load_more($text = 'Resources', $tag = null)
     global $wp;
     $tag = $wp->query_vars['tag'];
     $tags = $tag ? [$tag] : ['video', 'case-study', 'webinar', 'article'];
+    $paged = get_query_var('paged');
+    $current_page = $paged ? absint($paged) : 1;
     $options = [
         'posts_per_page' => 6,
-        // 'paged' => $page,
+        'paged' => $current_page,
         'tag_slug__in' => $tags,
         'orderby' => 'date',
         'order' => 'desc',
     ];
     $posts = new WP_Query($options);
     $max_pages = $posts->max_num_pages;
-    $paged = get_query_var('paged');
-    $current_page = $paged ? absint($paged) : 1;
     if ($max_pages <= 1 || $current_page == $max_pages)
         return;
     echo '<button data-last-page="' . $max_pages . '" data-current-page="' . $current_page . '" type="button" class="load__more__button border border-solid rounded-3xl border-primary text-primary inline-block mt-4 transition-all duration-300 hover:bg-primary hover:text-white font-bold text-lg py-1 px-8">Load More ' . $text . '</button>';
