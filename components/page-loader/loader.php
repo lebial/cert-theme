@@ -1,4 +1,4 @@
-<div class="w-screen h-screen fixed flex justify-center items-center bg-white z-[999]" id="page-loader">
+<div class="w-screen h-screen fixed flex justify-center items-center bg-white z-[999] top-0" id="page-loader">
 
     <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <div class="w-32">
