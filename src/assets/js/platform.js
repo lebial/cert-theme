@@ -274,6 +274,14 @@ jQuery(document).ready(function ($) {
         video.appendChild(source);
     }
 
+    function hide_loader() {
+        $(document).ready(function () {
+            setTimeout(() => {
+                $('#page-loader').remove();
+            }, 500);
+        })
+    }
+
     if (window.location.href.includes("platform")) {
         // setHeroMarginTop();
         handleOptionColapse();
@@ -293,6 +301,7 @@ jQuery(document).ready(function ($) {
         // calculateOptionsGraphicHeight();
         // handlePlatformScrollObserver();
         startVideoAtSpecificTime();
+        hide_loader();
     }
     const { href } = window.location;
     (href.includes("platform") || href.includes("logistics") || href.includes('brainstorm')) && initPlatform($);
