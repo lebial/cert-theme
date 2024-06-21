@@ -6,8 +6,6 @@
 <?php //get_template_part('components/platform/hero-section')
 ?>
 
-<?php get_template_part('components/page-loader/loader')
-    ?>
 <?php get_template_part('components/new-platform/hero-platform')
     ?>
 <?php get_template_part('components/new-platform/highlight-video')
