@@ -69,6 +69,8 @@ function initPlatform($) {
   }
 
   function handleSlickOnInit() {
+    $(sliderSelector).removeClass('grid grid-cols-3 grid-rows-1 auto-rows-[0] overflow-y-hidden');
+    $(sliderSelector).addClass('flex');
     $(sliderSelector).on('init', function (event, slick) {
       const currentSlide = $(slick.$slides[slick.currentSlide]);
       const prevCardBody = $(currentSlide.prev()[0]).find(cardBodySelector);
