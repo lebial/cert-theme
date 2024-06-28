@@ -182,12 +182,13 @@ jQuery(document).ready(function ($) {
       }
       video.onseeked = function (ev) {
         const { target } = ev;
-        triggerGtagEvent(`${$(target).attr('name')}_video_seeked`, getVideoProgressPercentages(target))
+        const options = { ...getVideoProgressPercentages(target), 'video_name': target.dataset.videoname };
+        triggerGtagEvent(`${$(target).attr('name')}_video_seeked`, options);
       }
       video.onended = function (ev) {
         this.load();
         const { target } = ev;
-        triggerGtagEvent(`${$(target).attr('name')}_video_endend`);
+        triggerGtagEvent(`${$(target).attr('name')}_video_endend`, { 'video_name': target.dataset.videoname });
       }
     });
 
@@ -195,7 +196,7 @@ jQuery(document).ready(function ($) {
     button.click(function () {
       const currentVideo = $(this).parent().next()[0];
       currentVideo.play();
-      triggerGtagEvent(`${$(currentVideo).attr('name')}_video_started`);
+      triggerGtagEvent(`${$(currentVideo).attr('name')}_video_started`, { 'video_name': target.dataset.videoname });
       $(this).parent().hide();
       $(currentVideo).attr('controls', true);
       $(currentVideo).css('outline', 'none');
@@ -206,7 +207,8 @@ jQuery(document).ready(function ($) {
         $(button).parent().show();
         if (!this.seeking) {
           $(currentVideo).attr('controls', false);
-          triggerGtagEvent(`${$(target).attr('name')}_video_paused`, getVideoProgressPercentages(target))
+          const options = { ...getVideoProgressPercentages(target), 'video_name': target.dataset.videoname };
+          triggerGtagEvent(`${$(target).attr('name')}_video_paused`, options);
         }
       });
     });

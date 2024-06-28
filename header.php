@@ -4,6 +4,17 @@
 
 <head>
 
+    <!-- Google tag (gtag.js) quitar! -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VT2R6KPQC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7VT2R6KPQC', { 'debug_mode': true });
+    </script>
+
+
     <?php
     if (get_field('include_analytics', 'options')) {
         echo '<!-- Google Tag Manager -->';
@@ -108,18 +119,19 @@
     <!-- <meta name="google-site-verification" content="fo3XyJv5ZPhtGiMbLtPCaJzFclbCjKt3Cq23igaljVA" /> -->
 
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="<?php // echo get_template_directory_uri(); 
-                                                            ?>/favicons/apple-touch-icon.png">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="<?php // echo get_template_directory_uri(); 
-                                                                ?>/favicon-32x32.png">
-		
-		<link rel="icon" type="image/png" sizes="16x16" href="<?php // echo get_template_directory_uri(); 
-                                                                ?>/favicons/favicon-16x16.png"> -->
+    ?>/favicons/apple-touch-icon.png">
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php // echo get_template_directory_uri(); 
+        ?>/favicon-32x32.png">
+        
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php // echo get_template_directory_uri(); 
+        ?>/favicons/favicon-16x16.png"> -->
 
 
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/favicons/site.webmanifest">
 
-    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/favicons/safari-pinned-tab.svg"
+        color="#5bbad5">
 
     <meta name="msapplication-TileColor" content="#da532c">
 
@@ -137,13 +149,16 @@
 <body <?php body_class('clearfix'); ?>>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4R5S5Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-     <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4R5S5Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Google Tag Manager (noscript) -->
 
     <header class="header__section overflow-hidden z-50 sticky bg-dark-blue-background">
 
         <a class="logo" href="/">
-            <img class="text style-svg w-36 lg:w-44" src="<?php echo get_template_directory_uri(); ?>/assets/images/full-cert-logo.svg" alt="Certilytics Logo" />
+            <img class="text style-svg w-36 lg:w-44"
+                src="<?php echo get_template_directory_uri(); ?>/assets/images/full-cert-logo.svg"
+                alt="Certilytics Logo" />
         </a>
 
         <div class="flex-1 flex justify-end">
@@ -165,21 +180,27 @@
             </div>
 
             <button class="new__burger__menu text-white relative w-10 order-1 lg:-top-[6px] mr-3 lg:mr-7" type="button">
-                <svg class="w-7 lg:w-10 absolute top-[3px] lg:top-2 left-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
-                    <path class=" fill-white" d="M130.5,164.2h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9  s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,333.1h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2  c9.3,0,16.9-7.6,16.9-16.9s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,502h-0.2c-9.3,0-16.9,7.6-16.9,16.9c0,9.3,7.6,16.9,16.9,16.9  h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9c0-9.3-7.6-16.9-16.9-16.9h-0.3H130.5z" />
+                <svg class="w-7 lg:w-10 absolute top-[3px] lg:top-2 left-0" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                    viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
+                    <path class=" fill-white"
+                        d="M130.5,164.2h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9  s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,333.1h-0.2c-9.3,0-16.9,7.6-16.9,16.9s7.6,16.9,16.9,16.9h0.3h439h0.2  c9.3,0,16.9-7.6,16.9-16.9s-7.6-16.9-16.9-16.9h-0.3H130.5z M130.5,502h-0.2c-9.3,0-16.9,7.6-16.9,16.9c0,9.3,7.6,16.9,16.9,16.9  h0.3h439h0.2c9.3,0,16.9-7.6,16.9-16.9c0-9.3-7.6-16.9-16.9-16.9h-0.3H130.5z" />
                 </svg>
             </button>
             <button class="schedule__demo__button nav__schedule__demo__button px-3 py-2 border-solid border-primary border rounded-3xl
-			text-white mr-3 font-bold hover:cursor-pointer transition-all duration-300
-			hover:bg-primary text-xs lg:text-base " type="button" name="let's talk">Let's Talk
+            text-white mr-3 font-bold hover:cursor-pointer transition-all duration-300
+            hover:bg-primary text-xs lg:text-base " type="button" name="let's talk">Let's Talk
             </button>
         </div>
 
-        <div class=" main__menu__sidebar w-[80vw] absolute top-0 lg:top-[80px] -right-full flex flex-col shadow-xl items-start xl:items-center justify-between lg:justify-start bg-white">
+        <div
+            class=" main__menu__sidebar w-[80vw] absolute top-0 lg:top-[80px] -right-full flex flex-col shadow-xl items-start xl:items-center justify-between lg:justify-start bg-white">
             <div class="w-full lg:px-10">
                 <div class="w-full pt-4 lg:pt-8 flex pl-[30px] lg:pl-0 justify-start lg:justify-end mb-4">
                     <button class="menu__side__bar__close" type="button">
-                        <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
                             <line class=" stroke-gray-header" x1="18" x2="6" y1="6" y2="18" />
                             <line class=" stroke-gray-header" x1="6" x2="18" y1="6" y2="18" />
                         </svg>
@@ -188,14 +209,18 @@
             </div>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
             <div class="w-full flex justify-end items-center pr-10 mb-5 mt-0 lg:mt-16">
-                <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer" class="mr-3">
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-gray-header" alt="">
+                <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer"
+                    class="mr-3">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg"
+                        class="style-svg w-6 fill-gray-header" alt="">
                 </a>
                 <a class="w-5 mr-3" href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-5 fill-gray-header" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg"
+                        class="style-svg w-6 h-5 fill-gray-header" alt="">
                 </a>
                 <a class="w-5" href="https://www.youtube.com/@certilytics" target="_blank" rel="noopener noreferer">
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg" class="style-svg w-6 fill-gray-header" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg"
+                        class="style-svg w-6 fill-gray-header" alt="">
                 </a>
             </div>
         </div>

@@ -73,7 +73,7 @@ function render_video_content()
                 </svg>
               </button>
             </div>
-            <video class="home__secondary__video object-cover w-full h-fit rounded-xl shadow-lg" poster="' . $video_post['video_thumbnail'] . '" name="home">
+            <video class="home__secondary__video object-cover w-full h-fit rounded-xl shadow-lg" poster="' . $video_post['video_thumbnail'] . '" name="resources" data-videoname="' . $video_post['title'] . '">
               <source src="' . $video_post['video_url'] . '" type="video/mp4">
             </video>
           </div>

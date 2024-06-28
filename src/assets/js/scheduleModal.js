@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
     buttons.forEach((button) =>
       $(button).click(function () {
         const context = this;
-        handleGoogleTriggerOnClick('test Schedule Demo Clicked', context);
+        handleGoogleTriggerOnClick('Schedule Demo Clicked', context);
         const select = document.getElementById("field_meetingoptionsdrop");
         if (select) {
           const dropdownOptions = document.querySelectorAll(
