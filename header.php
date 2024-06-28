@@ -4,17 +4,6 @@
 
 <head>
 
-    <!-- Google tag (gtag.js) quitar! -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VT2R6KPQC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-7VT2R6KPQC', { 'debug_mode': true });
-    </script>
-
-
     <?php
     if (get_field('include_analytics', 'options')) {
         echo '<!-- Google Tag Manager -->';
