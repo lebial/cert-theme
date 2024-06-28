@@ -16,7 +16,7 @@ function get_resource_content($post_id)
           </svg>
         </button>
       </div>
-      <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg" poster="' . $video_thumbnail . '">
+      <video class="home__secondary__video object-cover w-full h-full rounded-xl shadow-lg" poster="' . $video_thumbnail . '" name="resources" data-videoname="' . $video['title'] . '">
         <source src="' . $video_url . '" type="video/mp4">
       </video>
     ';

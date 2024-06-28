@@ -2,12 +2,15 @@
 $base_url = get_site_url();
 function hide_button($count)
 {
-	if ($count > 0) return '';
+	if ($count > 0)
+		return '';
 	return 'hidden';
 }
 
-function get_open_new_tab($tab_text) {
-	if ($tab_text == 'Careers') return 'target="_blank"';
+function get_open_new_tab($tab_text)
+{
+	if ($tab_text == 'Careers')
+		return 'target="_blank"';
 	return '';
 }
 
@@ -57,16 +60,16 @@ function render_link_groups()
 
 	foreach ($link_groups as $idx => $link_group) {
 		$pr_class = $idx == 0 ? '' : 'pr-6';
-		$text_classes =  "text-xs 2xl:text-sm";
-		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start flex-1 lg:'.$pr_class.' ">';
+		$text_classes = "text-xs 2xl:text-sm";
+		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start flex-1 lg:' . $pr_class . ' ">';
 		echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 		if ($link_group['button_link']) {
-			echo '<a class="'.$text_classes.'" name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
+			echo '<a class="' . $text_classes . '" name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
 		} else {
-			echo '<a class="'.$text_classes.'" name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
+			echo '<a class="' . $text_classes . '" name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
 		}
 		if ($link_group["links"]) {
-			echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden '.$text_classes.'"></button>';
+			echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden ' . $text_classes . '"></button>';
 		}
 		echo '</div>';
 		echo '<div class="footer__dropdown__body footer__responsive__hidden">';
@@ -74,30 +77,35 @@ function render_link_groups()
 		if ($link_group["links"]) {
 			foreach ($link_group['links'] as $idx => $link) {
 				$open_tab = get_open_new_tab($link['text']);
-				echo '<a href="' . $link['href'] . '" '.$open_tab.' class="footer__link leading-tight mb-2 '.$text_classes.' " name="footer-' . $idx . '">' . $link['text'] . '</a>';
+				echo '<a href="' . $link['href'] . '" ' . $open_tab . ' class="footer__link leading-tight mb-2 ' . $text_classes . ' text-white transition-all duration-300 hover:text-primary " name="footer-' . $idx . '">' . $link['text'] . '</a>';
 			}
 		}
 		echo '</div>';
 		echo '</div>';
 		echo '</div>';
-	};
-};
+	}
+	;
+}
+;
 ?>
 
 <footer class="clearfix text-white mt-0 px-10 xl:py-8 pt-0 pb-4 xl:px-16 w-screen bg-dark-blue-background">
 	<div class="first-row w-full flex flex-col xl:flex-row xl:justify-between">
-		<div class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0 mt-10 xl:mt-0">
+		<div
+			class="lets-chat w-full xl:w-4/12 flex justify-center xl:justify-start text-white mb-6 xl:mb-0 mt-10 xl:mt-0">
 			<div class="flex flex-col items-center xl:items-start w-10/12">
 				<span class="text-white">
 					<p class="font-bold text-white text-sm">
 						<?php echo get_field('chat_title', 'options') ? get_field('chat_title', 'options') : "let's chat"; ?>
 					</p>
-					<img src="<?php echo get_field('chat_icon', 'options'); ?>" alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
+					<img src="<?php echo get_field('chat_icon', 'options'); ?>"
+						alt="<?php echo get_field('chat_icon_alt', 'options') ?>">
 				</span>
 				<p class="footer__chat__description text-white text-sm text-center lg:text-left">
 					<?php echo get_field('chat_description', 'options') ? get_field('chat_description', 'options') : 'Our team of experts are ready to talk about your challenges and how our AI-powered solutions can deliver real value for your <span>organization—today.</span>'; ?>
 				</p>
-				<a class="border border-white border-solid rounded-3xl p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]" rel="noopener noreferrer" href="<?php echo get_field('contact_link', 'options'); ?>">
+				<a class="border border-white border-solid rounded-3xl p-3 transition-all text-sm hover:bg-white hover:text-black mt-[1.75rem]"
+					rel="noopener noreferrer" href="<?php echo get_field('contact_link', 'options'); ?>">
 					<?php echo get_field('contact_text', 'options') ? get_field('contact_text', 'options') : 'Contact Us'; ?>
 				</a>
 			</div>
@@ -111,31 +119,38 @@ function render_link_groups()
 		<!-- <div class="flex social__icons mt-3  xl:hidden"> -->
 		<div class="flex social__icons mt-3  md:hidden">
 			<a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer">
-				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-white" alt="">
+				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg"
+					class="style-svg w-6 fill-white" alt="">
 			</a>
 			<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
-				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-5 fill-white" alt="">
+				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg"
+					class="style-svg w-6 h-5 fill-white" alt="">
 			</a>
 			<a href="https://www.youtube.com/@certilytics" target="_blank" rel="noopener noreferer">
-				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg" class="style-svg w-6 fill-white" alt="">
+				<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg"
+					class="style-svg w-6 fill-white" alt="">
 			</a>
 		</div>
 	</div>
 
-	<div class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
+	<div
+		class="third-row border-t-2 border-white border-solid flex flex-col md:flex-row justify-between w-full mt-[1.2rem] pt-[0.8rem]">
 		<div class="address__container">
 			<!-- <p class="text-white text-base"><?php echo get_field('address', 'options') ? get_field('address', 'options') : '9200 Shelbyville Road, Suite 700 <br> Louiseville, KY 40222' ?></p> -->
 		</div>
 		<div class="corp__info relative flex flex-col md:flex-row mt-4 md:mt-0">
 			<div class="absolute right-[6px] top-[-58px] social__icons tw-hidden md:flex">
 				<a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer">
-					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg" class="style-svg w-6 fill-white" alt="">
+					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/linkedin.svg"
+						class="style-svg w-6 fill-white" alt="">
 				</a>
 				<a href="https://twitter.com/Certilytics" target="_blank" rel="noopener noreferer">
-					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg" class="style-svg w-6 h-5 fill-white" alt="">
+					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg"
+						class="style-svg w-6 h-5 fill-white" alt="">
 				</a>
 				<a href="https://www.youtube.com/@certilytics" target="_blank" rel="noopener noreferer">
-					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg" class="style-svg w-6 fill-white" alt="">
+					<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/youtube.svg"
+						class="style-svg w-6 fill-white" alt="">
 				</a>
 			</div>
 			<div>
