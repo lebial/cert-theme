@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
             debugger;
             $('.option__content__container').hide();
             $(`.option__content__container[name="${this.name}"]`).show();
-            $('.our__approach__button').removeClass('opacity-100');
+            // $('.our__approach__button').removeClass('opacity-100 opacity-50');
             $(this).addClass('opacity-100');
         });
     }

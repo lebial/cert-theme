@@ -1,10 +1,22 @@
 <?php
-    function render_logos() {
-        $logos = get_field('standard_images');
-        foreach ($logos as $logo) {
-            echo '<img class="w-24 h-12 lg:w-28 lg:h-16" src="' . $logo['image'] . '" alt="card image">';
+// <img class="w-24 h-12 lg:w-28 lg:h-16" src="' . $logo['image'] . '" alt="card image">
+function render_logos()
+{
+    $logos = get_field('standard_images');
+    foreach ($logos as $logo) {
+        $url = $logo['logo_url'];
+        $width_class = str_contains($logo['logo_url'], 'aicpa') ? 'lg:w-auto' : 'lg:w-28';
+        if ($url) {
+            echo '
+                    <a href="' . $url . '">
+                        <img class="w-24 h-12 ' . $width_class . ' lg:h-16" src="' . $logo['image'] . '" alt="card image">
+                    </a>
+                ';
+        } else {
+            echo '<img class="w-24 h-12 ' . $width_class . ' lg:h-16" src="' . $logo['image'] . '" alt="card image">';
         }
     }
+}
 ?>
 <section class="w-full bg-gray-secondary bg-opacity-50 py-12" id="mobileDataSecurity">
     <div class="w-full px-4 lg:px-0 text-center">
