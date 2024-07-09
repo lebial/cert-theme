@@ -12,6 +12,7 @@ import './newHome';
 import './home';
 import './homeAnimation';
 import './platform';
+import './whoWeHelp';
 import './aboutUs';
 import './solutions';
 import './healthplans';
