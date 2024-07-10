@@ -1,16 +1,19 @@
+import { getParams } from "./utils/utils";
+
 jQuery(document).ready(function ($) {
 
     function handleOptionClick() {
         $('.our__approach__button').click(function () {
-            debugger;
             $('.option__content__container').hide();
-            $(`.option__content__container[name="${this.name}"]`).show();
-            $('.our__approach__button').removeClass('opacity-100');
-            $(this).addClass('opacity-100');
+            $(`.option__content__container[name="${this.name}"]`).fadeIn(400);
+            $('.our__approach__button').removeClass('opacity-100').addClass('opacity-50');
+            $(this).removeClass('opacity-50').addClass('opacity-100');
         });
     }
     function handleOptionsInit() {
-        const button = document.querySelectorAll('.our__approach__button')[0];
+        const params = getParams();
+        let btn = params.get('btn') ?? 0;
+        const button = document.querySelectorAll('.our__approach__button')[+btn];
         $(button).click();
     }
 
