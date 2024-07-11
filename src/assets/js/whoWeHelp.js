@@ -17,9 +17,14 @@ jQuery(document).ready(function ($) {
         $(button).click();
     }
 
+    function addSpaceOnContactUs() {
+        $('section').last().css('min-height: auto');
+    }
+
     const { location: { href } } = window;
     if (href.includes("who-we-help")) {
         handleOptionClick();
         handleOptionsInit();
+        addSpaceOnContactUs();
     }
 });
