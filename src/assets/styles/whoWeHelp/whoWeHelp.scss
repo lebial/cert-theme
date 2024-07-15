@@ -7,3 +7,33 @@
         margin-bottom: 20px;
     }
 }
+
+.dial__animation {
+    & #pointer {
+        transition: all 1s ease;
+        transform-origin: 50% 50%;
+        animation: gauge_animate 8s ease infinite;
+    }
+}
+
+@keyframes gauge_animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(250deg);
+    }
+
+    50% {
+        transform: rotate(250deg);
+    }
+
+    70% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
