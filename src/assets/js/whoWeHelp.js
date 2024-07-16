@@ -1,4 +1,4 @@
-import { getParams } from "./utils/utils";
+import { getParams, initNumberanimation } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
 
@@ -20,6 +20,10 @@ jQuery(document).ready(function ($) {
     function addSpaceOnContactUs() {
         $('section').last().css('min-height: auto');
     }
+
+    $('.who-we-help-slider').on('init', function (slick) {
+        debugger;
+    });
 
     function createHeroSlider() {
         $('.who-we-help-slider').slick({
