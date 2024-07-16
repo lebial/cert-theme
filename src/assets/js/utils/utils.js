@@ -145,6 +145,32 @@ function handleAjaxPosts(action, btn) {
   });
 }
 
+
+function animateCounter(number, target, elem) {
+  const $ = jQuery;
+  if (number < target) {
+    var interval = setInterval(function () {
+      $(elem).text(number);
+      if (number >= target) {
+        clearInterval(interval);
+        return;
+      }
+      number++;
+    }, 30);
+  }
+  if (target < number) {
+    var interval = setInterval(function () {
+      $(elem).text(number);
+      if (target >= number) {
+        clearInterval(interval);
+        return;
+      }
+      number--;
+    }, 30);
+  }
+}
+
+
 export {
   getNavHeight as default,
   waitForElement,
@@ -158,4 +184,5 @@ export {
   handleGoogleTriggerOnClick,
   handleAjaxPosts,
   getParams,
+  animateCounter
 };
