@@ -11,7 +11,7 @@ function render_slider_points()
         echo '
         <div>
             <div class="flex flex-col items-center">
-                <div class=" w-72">
+                <div class=" w-[400px] mb-4">
                 ' . $animation . '
                 </div>
                 <p class="text-white font-bold mb-2 text-center text-2xl">' . $slide['title'] . '</p>

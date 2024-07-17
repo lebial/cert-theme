@@ -12,7 +12,12 @@
     & #pointer {
         transition: all 1s ease;
         transform-origin: 50% 50%;
-        animation: gauge_animate 8s ease infinite;
+    }
+
+    &.dial__animation--animate {
+        & #pointer {
+            animation: gauge_animate 8s ease;
+        }
     }
 }
 
