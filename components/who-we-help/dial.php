@@ -2,7 +2,7 @@
 function get_dial_animation()
 {
     return '
-        <div id="dial__animation" class="relative">
+        <div name="dial__animation" class="hero__animation relative">
         <svg class="dial__animation w-full h-full" xmlns="http://www.w3.org/2000/svg" width="237" height="164" viewBox="0 0 237 164" fill="none">
             <g id="Group 1">
                 <g id="path">
@@ -38,7 +38,7 @@ function get_dial_animation()
                     fill="white" />
             </g>
         </svg>
-        <span class="text-white absolute text-2xl font-bold left-[48%] bottom-[29px]">0</span>
+        <span  class="counter__animation text-white absolute text-3xl font-bold left-1/2 -translate-x-[50%] bottom-[29px]">0</span>
         </div>
     ';
 }

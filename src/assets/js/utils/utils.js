@@ -149,15 +149,16 @@ function handleAjaxPosts(action, btn) {
 function animateCounter(number, target, elem) {
   const $ = jQuery;
   if (number < target) {
-    var interval = setInterval(function () {
+    const interval = setInterval(function () {
       $(elem).text(number);
       if (number >= target) {
         clearInterval(interval);
-        return;
+        setTimeout(() => animateCounter(84, 0, elem), 1300);
       }
       number++;
-    }, 30);
+    }, 20);
   }
+
   if (target < number) {
     var interval = setInterval(function () {
       $(elem).text(number);
@@ -166,7 +167,7 @@ function animateCounter(number, target, elem) {
         return;
       }
       number--;
-    }, 30);
+    }, 10);
   }
 }
 
