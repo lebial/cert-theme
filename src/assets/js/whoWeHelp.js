@@ -25,14 +25,14 @@ jQuery(document).ready(function ($) {
     function handleDialAnimationSync(currentSlide) {
         const counterAnimation = currentSlide.find('.counter__animation');
         const pointer = counterAnimation.siblings(['#pointer']);
-        animateCounter(0, 84, counterAnimation);
+        animateCounter(0, 100, counterAnimation);
         $(pointer).on('animationend', function (evt) {
             const animClass = 'dial__animation--animate';
             $(this).removeClass(animClass);
             const svg = this;
             setTimeout(() => {
                 $(svg).addClass(animClass);
-                animateCounter(0, 84, counterAnimation);
+                animateCounter(0, 100, counterAnimation);
             }, 500);
         });
     }
