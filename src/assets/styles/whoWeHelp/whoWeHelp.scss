@@ -10,7 +10,6 @@
 
 .dial__animation {
     & #pointer {
-        transition: all 1s ease;
         transform-origin: 50% 50%;
     }
 
@@ -21,17 +20,96 @@
     }
 }
 
+@mixin includeAnimate($number) {
+    & #circle_#{$number} {
+        animation: circle#{$number} 8s ease infinite;
+    }
+}
+
+.bars__animation {
+    & .bars {
+        transform: scaleY(0);
+        transform-origin: 0 91%;
+    }
+
+    & #line_animation {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+
+    &--animate {
+        & .bars {
+            animation: bars_animate 8s ease infinite;
+        }
+
+        @include includeAnimate(1);
+        @include includeAnimate(2);
+        @include includeAnimate(3);
+        @include includeAnimate(4);
+
+        & #line_animation {
+            animation: barsLineAnim 8s ease infinite;
+        }
+    }
+}
+
+.bars_2__animation {
+    & .bar {
+        transform: scaleY(0);
+        transform-origin: 0 73%;
+    }
+
+    &--animate {
+        & .bar {
+            animation-name: bars2_animate;
+            animation-duration: 8s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            animation-delay: calc(var(--animation-order) * 200ms);
+        }
+    }
+}
+
+@mixin generate_pie_anim($name, $from, $to) {
+    & .pie_line#{$name} {
+        animation: pie_anim_#{$name} 8s linear infinite;
+    }
+
+    @keyframes pie_anim_#{$name} {
+        #{$from} {
+            stroke-dashoffset: 1000;
+        }
+
+        #{$to} {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+
+.pie__animation {
+    & .pie_line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+
+    &--animate {
+        @include generate_pie_anim(8, 0%, 6.25%);
+        @include generate_pie_anim(7, 6.25%, 12.5%);
+        @include generate_pie_anim(6, 12.5%, 18.75%);
+    }
+}
+
 @keyframes gauge_animate {
     0% {
         transform: rotate(0deg);
     }
 
     30% {
-        transform: rotate(250deg);
+        transform: rotate(280deg);
     }
 
     50% {
-        transform: rotate(250deg);
+        transform: rotate(280deg);
     }
 
     70% {
@@ -40,5 +118,128 @@
 
     100% {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes bars_animate {
+    0% {
+        transform: scaleY(0);
+    }
+
+    30% {
+        transform: scaleY(1);
+    }
+
+    80% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+@mixin circleAnim($number, $toAnim) {
+    @keyframes circle#{$number} {
+        0% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+
+        10% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        30% {
+            // transform: translateY(-56.5%)
+            transform: translateY($toAnim)
+        }
+
+        80% {
+            transform: translateY($toAnim);
+            opacity: 1;
+        }
+
+        90% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+}
+
+@include circleAnim(1, -56.5%);
+@include circleAnim(2, -66.5%);
+@include circleAnim(3, -48%);
+@include circleAnim(4, -30%);
+
+@keyframes barsLineAnim {
+    0% {
+        stroke-dashoffset: 1000;
+        opacity: 1;
+    }
+
+    60% {
+        stroke-dashoffset: 0;
+    }
+
+    70% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        opacity: 0;
+        stroke-dashoffset: 0;
+    }
+
+}
+
+@keyframes bars2_animate {
+    0% {
+        transform: scaleY(0);
+    }
+
+    30% {
+        transform: scaleY(1);
+    }
+
+    60% {
+        transform: scaleY(1);
+    }
+
+    80% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+
+
+@keyframes pie_anim {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+
+    6.5% {}
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    60% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 1000;
     }
 }

@@ -153,10 +153,10 @@ function animateCounter(number, target, elem) {
       $(elem).text(number);
       if (number >= target) {
         clearInterval(interval);
-        setTimeout(() => animateCounter(84, 0, elem), 1300);
+        setTimeout(() => animateCounter(84, 0, elem), 2300);
       }
       number++;
-    }, 20);
+    }, 15);
   }
 
   if (target < number) {
@@ -167,7 +167,7 @@ function animateCounter(number, target, elem) {
         return;
       }
       number--;
-    }, 10);
+    }, 13);
   }
 }
 
