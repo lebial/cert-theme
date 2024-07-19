@@ -1,3 +1,12 @@
+.who-we-help-hero {
+    & .slick-slide {
+        &>div {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
 .our__approach__content__body {
     & * {
         color: white !important;
@@ -70,19 +79,33 @@
     }
 }
 
-@mixin generate_pie_anim($name, $from, $to) {
+@function getPercent($number) {
+    @return $number * 1%;
+}
+
+@mixin generate_pie_anim($name, $from, $to, $finishFrom, $finishTo) {
     & .pie_line#{$name} {
-        animation: pie_anim_#{$name} 8s linear infinite;
+        animation: pie_anim_#{$name} 8s ease infinite;
+        animation-delay: -300ms;
+
     }
 
     @keyframes pie_anim_#{$name} {
-        #{$from} {
+        #{getPercent($from)} {
             stroke-dashoffset: 1000;
         }
 
-        #{$to} {
+        #{getPercent($to)} {
             stroke-dashoffset: 0;
         }
+
+        // #{getPercent($finishFrom)} {
+        //     stroke-dashoffset: 0;
+        // }
+
+        // #{getPercent($finishTo)} {
+        //     stroke-dashoffset: 1000;
+        // }
     }
 }
 
@@ -93,9 +116,14 @@
     }
 
     &--animate {
-        @include generate_pie_anim(8, 0%, 6.25%);
-        @include generate_pie_anim(7, 6.25%, 12.5%);
-        @include generate_pie_anim(6, 12.5%, 18.75%);
+        @include generate_pie_anim(8, 0, 5, 95, 100);
+        @include generate_pie_anim(7, 1, 10, 90, 95);
+        @include generate_pie_anim(6, 2, 15, 85, 90);
+        @include generate_pie_anim(5, 3, 20, 80, 85);
+        @include generate_pie_anim(4, 4, 25, 75, 80);
+        @include generate_pie_anim(3, 5, 30, 70, 75);
+        @include generate_pie_anim(2, 6.5, 35, 65, 70);
+        @include generate_pie_anim(1, 8, 40, 60, 65);
     }
 }
 
