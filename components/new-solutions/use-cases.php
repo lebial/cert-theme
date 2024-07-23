@@ -10,7 +10,7 @@ function render_features()
                         <img class="w-8 h-8" src="' . $feature['icon'] . '" alt="feature icon">
                     </div>
                 </div>
-                <div class="content__container">
+                <div class="content__container max-w-96">
                     <p class="feature__title text-dark-blue-background font-bold text-lg mb-1">
                     ' . $feature['title'] . '
                     </p>
