@@ -1,3 +1,4 @@
+<!-- <div class=" h-[680px] w-[80%] mb-4"> -->
 <?php
 require __DIR__ . '/dial.php';
 require __DIR__ . '/bars.php';
@@ -17,11 +18,11 @@ function render_slider_points()
         echo '
         <div>
             <div class="flex flex-col items-center">
-                <div class="w-[80%] mb-4">
+                <div class=" h-[200px] mb-4">
                 ' . $animation . '
                 </div>
-                <p class="text-white font-bold mb-2 text-center text-2xl">' . $slide['title'] . '</p>
-                <p class="text-white text-center text-lg">' . $slide['content'] . '</p>
+                <p class="text-white font-bold mb-2 text-center lg:text-xl 2xl:text-2xl">' . $slide['title'] . '</p>
+                <p class="text-white text-center lg:text-base 2xl:text-lg">' . $slide['content'] . '</p>
             </div>
         </div>
         ';
@@ -31,10 +32,10 @@ function render_slider_points()
 
 <section class="who-we-help-hero w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[90vh] bg-cover flex"
     style="background-image: url(<?php the_field('hero_background_image') ?>); background-position-y: -40px;">
-    <div class="w-6/12 flex flex-col justify-center items-center pl-40">
+    <div class="w-6/12 flex flex-col justify-center items-center lg:pl-20 2xl:pl-40">
         <div class="w-fit">
-            <h2 class="text-primary uppercase text-2xl"><?php the_field('title') ?></h2>
-            <h1 class="text-white text-6xl"><?php the_field('sub_title') ?></h1>
+            <h2 class="text-primary uppercase tracking-wide text-2xl"><?php the_field('title') ?></h2>
+            <h1 class="text-white lg:text-5xl 2xl:text-6xl reveal-text"><?php the_field('sub_title') ?></h1>
         </div>
     </div>
     <div class="w-1/2 flex items-center justify-center">

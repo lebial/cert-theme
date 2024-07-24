@@ -35,10 +35,10 @@ function render_content($opts)
     }
 }
 ?>
-<section class="our__approach bg-dark-blue-background" id="our__approach__section">
-    <h3 class="text-white text-center py-20"><?php the_field('approach_title') ?></h3>
+<section class="our__approach bg-dark-blue-background py-20" id="our__approach__section">
+    <h3 class="text-white text-center pb-20 reveal-text"><?php the_field('approach_title') ?></h3>
     <div class="options__container flex px-20">
-        <div class="w-1/2 flex flex-col items-end pr-32">
+        <div class="w-1/2 flex flex-col items-end pr-28">
             <div class="flex flex-col">
                 <?php render_buttons($options); ?>
             </div>
