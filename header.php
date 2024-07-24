@@ -118,6 +118,7 @@
 
 
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/favicons/site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/favicons/safari-pinned-tab.svg"
         color="#5bbad5">

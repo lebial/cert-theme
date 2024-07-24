@@ -70,7 +70,7 @@ jQuery(document).ready(function ($) {
     }
 
     const { location: { href } } = window;
-    if (href.includes("who-we-help")) {
+    if (href.includes("solutions") || href.includes('who-we-help')) {
         createHeroSlider();
         handleOptionClick();
         handleOptionsInit();

@@ -80,4 +80,5 @@ jQuery(document).ready(function ($) {
     // handleVidModalClose();
     showSuperChargeText();
     makeButtonsSameWidth();
+    // AOS.init();
 });

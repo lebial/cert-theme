@@ -43,6 +43,7 @@
 
 @mixin includeAnimate($number) {
     & #circle_#{$number} {
+        opacity: 0;
         animation: circle#{$number} 8s ease infinite;
     }
 }
@@ -179,44 +180,59 @@
     }
 }
 
-@mixin circleAnim($number, $toAnim) {
+@mixin circleAnim($number, $fromAnim, $toAnim) {
     @keyframes circle#{$number} {
-        0% {
-            transform: translateY(0);
+        // 0% {
+        //     transform: translateY(0);
+        //     opacity: 0;
+        // }
+
+        // 10% {
+        //     transform: translateY(0);
+        //     opacity: 1;
+        // }
+
+        // 30% {
+        //     // transform: translateY(-56.5%)
+        //     transform: translateY($toAnim)
+        // }
+
+        // 80% {
+        //     transform: translateY($toAnim);
+        //     opacity: 1;
+        // }
+
+        // 90% {
+        //     transform: translateY(0);
+        //     opacity: 0;
+        // }
+
+        // 100% {
+        //     opacity: 0;
+        // }
+        #{$fromAnim} {
             opacity: 0;
         }
 
-        10% {
-            transform: translateY(0);
+        #{$toAnim} {
             opacity: 1;
         }
 
-        30% {
-            // transform: translateY(-56.5%)
-            transform: translateY($toAnim)
+        70% {
+            opacity: 1;
         }
 
         80% {
-            transform: translateY($toAnim);
-            opacity: 1;
-        }
-
-        90% {
-            transform: translateY(0);
-            opacity: 0;
-        }
-
-        100% {
             opacity: 0;
         }
     }
 
 }
 
-@include circleAnim(1, -56.5%);
-@include circleAnim(2, -66.5%);
-@include circleAnim(3, -48%);
-@include circleAnim(4, -30%);
+@include circleAnim(1, 0%, 10%);
+@include circleAnim(2, 5%, 20%);
+@include circleAnim(3, 10%, 23%);
+@include circleAnim(4, 15%, 25%);
 
 @keyframes barsLineAnim {
     0% {
