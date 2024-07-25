@@ -10,7 +10,7 @@ function render_features()
                         <img class="w-8 h-8" src="' . $feature['icon'] . '" alt="feature icon">
                     </div>
                 </div>
-                <div class="content__container max-w-72">
+                <div class="content__container ">
                     <p class="feature__title text-dark-blue-background font-bold text-base 2xl:text-lg mb-1">
                     ' . $feature['title'] . '
                     </p>
@@ -28,7 +28,7 @@ function render_features()
             <p class="text-2xl text-dark-blue-background mx-auto font-bold text-center">Use Cases</p>
         </div>
         <div class="table__body use__cases__copy text-dark-blue-background flex justify-center">
-            <div class="py-16">
+            <div class="py-16 px-14">
                 <?php the_field('use_cases_copy') ?>
             </div>
         </div>
@@ -38,7 +38,7 @@ function render_features()
             <p class="text-2xl text-dark-blue-background mx-auto font-bold text-center ">Features</p>
         </div>
         <div class="table__body flex justify-center">
-            <div class="py-16">
+            <div class="py-16 px-14">
                 <?php render_features() ?>
             </div>
         </div>
