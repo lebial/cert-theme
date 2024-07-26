@@ -34,8 +34,10 @@ function render_slider_points()
     style="background-image: url(<?php the_field('hero_background_image') ?>); background-position-y: -40px;">
     <div class="w-6/12 flex flex-col justify-center items-center lg:pl-20 2xl:pl-40">
         <div class="w-fit">
-            <h2 class="text-primary uppercase tracking-wide text-2xl"><?php the_field('title') ?></h2>
-            <h1 class="text-white lg:text-5xl 2xl:text-6xl reveal-text"><?php the_field('sub_title') ?></h1>
+            <h2 class="text-primary uppercase tracking-wide text-xl lg:text-2xl"><?php the_field('title') ?></h2>
+            <h1 class="text-white text-2xl lg:text-4xl 2xl:text-6xl reveal-text" data-reveal-direction="left">
+                <?php the_field('sub_title') ?>
+            </h1>
         </div>
     </div>
     <div class="w-1/2 flex items-center justify-center">

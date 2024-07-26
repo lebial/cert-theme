@@ -1,6 +1,5 @@
 import { makeElementsSameHeight } from "./utils/utils";
 
-//header logic
 jQuery(document).ready(function ($) {
     function makeInsightsSameHeight() {
         makeElementsSameHeight($, '.expand__body');
