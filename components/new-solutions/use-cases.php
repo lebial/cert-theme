@@ -7,7 +7,7 @@ function render_features()
             <div class="feature__body flex mb-8">
                 <div class="image__container mr-4">
                     <div class=" bg-dark-blue-background rounded-full p-3">
-                        <img class="!w-8 h-8" src="' . $feature['icon'] . '" alt="feature icon">
+                        <img class="!w-8 h-8 !max-w-none" src="' . $feature['icon'] . '" alt="feature icon">
                     </div>
                 </div>
                 <div class="content__container ">
