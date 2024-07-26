@@ -3,7 +3,7 @@ import { makeElementsSameHeight } from "./utils/utils";
 //header logic
 jQuery(document).ready(function ($) {
     function makeInsightsSameHeight() {
-        makeElementsSameHeight($, '.resources_video_card');
+        makeElementsSameHeight($, '.expand__body');
     }
 
     const { href } = window.location;
