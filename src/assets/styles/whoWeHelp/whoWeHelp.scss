@@ -229,10 +229,10 @@
 
 }
 
-@include circleAnim(1, 0%, 10%);
-@include circleAnim(2, 5%, 20%);
-@include circleAnim(3, 10%, 23%);
-@include circleAnim(4, 15%, 25%);
+@include circleAnim(1, 2%, 5%);
+@include circleAnim(2, 5%, 10%);
+@include circleAnim(3, 10%, 15%);
+@include circleAnim(4, 15%, 20%);
 
 @keyframes barsLineAnim {
     0% {

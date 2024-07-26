@@ -19,6 +19,7 @@ import './healthplans';
 import './thankYou';
 import './postPage';
 import './brainstorm.js';
-import './logisticsSuite.js'
+import './logisticsSuite.js';
+import './totalHealthManagement.js';
 import './utils/textReveal';
-import './contactUs'
+import './contactUs';

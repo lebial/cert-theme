@@ -20,7 +20,7 @@ function render_who_we_help_cards()
 
 ?>
 <section class="au__solutions w-full h-full py-16 lg:py-24 bg-indigo-50">
-    <h3 class="text-dark-blue-background text-2xl lg:text-3xl xl:text-4xl text-center">
+    <h3 class="text-dark-blue-background text-2xl lg:text-3xl text-center">
         <?php the_field('who_we_help_title') ?>
     </h3>
     <p class="text-dark-blue-background text-center mx-auto"><?php the_field('who_we_help_copy') ?></p>
