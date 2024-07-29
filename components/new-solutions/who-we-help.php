@@ -8,10 +8,9 @@ function render_who_we_help_cards()
             <div class="au__solutions__cards--card w-64 h-36 flex justify-center items-center m-4 relative overflow-hidden rounded-xl lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-105 lg:duration-300">
               <img class="w-full h-full absolute top-0 left-0" src="' . $card['image'] . '" alt="' . $card['title'] . ' image">
               <div class="relative flex items-center">
-                <p class="leading-snug">' . $card['title'] . '</p>
-                <div class="ml-1 w-8">
-                    <svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class=" fill-primary" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "></polyline></g></g></svg>
-                </div>
+                <p class="leading-snug">' . $card['title'] . '
+                        <svg class=" fill-primary w-8 inline relative -top-px" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline  id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "></polyline></g></g></svg>
+                </p>
               </div>
             </div>
           </a>';
