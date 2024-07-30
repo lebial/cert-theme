@@ -7,10 +7,12 @@ function render_video_or_case_study($post_id)
     : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail'];
   $post_fields = get_field($keys['post_type'], $post_id);
   $img_url = $post_fields[$keys['image_key']];
+  $tags = get_the_tags($post_id);
   $text = $post_type == 'video' ? 'Watch Video' : 'Read More';
   echo '
       <div class="resources_video_card rounded-lg mb-4 p-4 flex flex-col flex-1">
         <div class="ai_card_body shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-6 rounded-xl flex-1 flex flex-col transition-all duration-300 hover:scale-105">
+          <p class="text-gray-400 text-xs mb-4 uppercase">' . $tags[0]->name . '</p>
           <img src="' . $img_url . '" alt="post thumbnail" class=" rounded-lg my-4"/>
           <h3 class=" text-dark-blue-background text-sm font-bold mb-2">' . get_the_title($post_id) . '</h3>
           <div class="flex-1 flex items-end">
