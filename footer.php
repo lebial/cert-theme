@@ -64,9 +64,9 @@ function render_link_groups()
 		echo '<div class="footer__links lg:flex flex-col items-center lg:items-start flex-1 lg:' . $pr_class . ' ">';
 		echo '<div class="mb-4 flex justify-between w-auto whitespace-nowrap">';
 		if ($link_group['button_link']) {
-			echo '<a class="' . $text_classes . '" name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
+			echo '<a class="' . $text_classes . ' font-bold" name="footer-' . $link_group['button_text'] . '" href="' . $link_group['button_link'] . '">' . $link_group['button_text'] . '</a>';
 		} else {
-			echo '<a class="' . $text_classes . '" name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
+			echo '<a class="' . $text_classes . ' font-bold" name="footer-' . $link_group['button_text'] . '" class="text-white">' . $link_group['button_text'] . '</a>';
 		}
 		if ($link_group["links"]) {
 			echo '<button name="' . $link_group['button_text'] . '" class="footer__links__toggle block lg:hidden ' . $text_classes . '"></button>';
