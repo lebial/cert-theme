@@ -22,7 +22,10 @@ function render_who_we_help_cards()
     <h3 class="text-dark-blue-background text-2xl lg:text-3xl text-center">
         <?php the_field('who_we_help_title') ?>
     </h3>
-    <p class="text-dark-blue-background text-center mx-auto"><?php the_field('who_we_help_copy') ?></p>
+    <p class="hidden lg:block text-dark-blue-background text-center mx-auto"><?php the_field('who_we_help_copy') ?></p>
+    <div class="w-10/12 mx-auto md:w-full lg:hidden">
+        <p class="text-dark-blue-background text-center mx-auto"><?php the_field('who_we_help_copy_mobile') ?></p>
+    </div>
     <div class="w-full lg:w-11/12 flex flex-col items-center mx-auto">
         <h3 class="font-bold text-2xl xl:text-4xl text-center block pb-8 mx-6 text-dark-blue-background reveal-text">
             <?php the_field('solutions_title') ?>
