@@ -39,7 +39,17 @@ function render_related_content()
   <p class=" text-dark-blue-background text-2xl lg:text-3xl text-center font-bold mx-auto">
     <?php the_field('insights_title') ?>
   </p>
-  <div class="cards__container w-[84%] lg:w-auto mt-14 max-w-5xl flex mx-auto">
+  <div class="hidden cards__container w-[84%] lg:w-auto mt-14 max-w-5xl lg:flex mx-auto">
     <?php render_related_content() ?>
+  </div>
+
+  <!-- mobile section-->
+  <div class="lg:hidden w-full md:w-6/12 relative mx-auto">
+    <div class="news__insights__slider w-10/12 mx-auto mt-8 lg:mt-16 relative z-20">
+      <?php render_related_content() ?>
+    </div>
+    <div class="news__insights__slider--arrows w-[100vw] md:w-[65vw] absolute flex justify-between top-1/2 left-1/2 z-30" style="transform: translate(-50%, -50%)">
+      <?php custom_slider_arrows('news__insights__slider') ?>
+    </div>
   </div>
 </section>
