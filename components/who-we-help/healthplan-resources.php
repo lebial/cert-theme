@@ -30,8 +30,13 @@ function render_resources()
 }
 ?>
 <section class="health__plan__resources pb-16">
-  <h3 class=" text-dark-blue-background text-center py-16 mb-0 reveal-text"><?php the_field('resources_title') ?></h2>
-    <div class="resources__container mx-auto max-w-screen-lg flex">
-      <?php render_resources() ?>
-    </div>
+  <h3 class=" text-dark-blue-background text-center py-16 mb-0 reveal-text text-2xl lg:text-3xl hidden lg:block">
+    <?php the_field('resources_title') ?>
+  </h3>
+  <h3 class=" text-dark-blue-background text-center py-16 mb-0 text-2xl lg:text-3xl block lg:hidden" data-aos="fade-up">
+    <?php the_field('resources_title') ?>
+  </h3>
+  <div class="resources__container mx-auto max-w-screen-lg flex flex-col lg:flex-row">
+    <?php render_resources() ?>
+  </div>
 </section>
