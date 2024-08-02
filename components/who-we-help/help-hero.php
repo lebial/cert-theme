@@ -18,11 +18,11 @@ function render_slider_points()
         echo '
         <div>
             <div class="flex flex-col items-center">
-                <div class=" h-[200px] mb-4">
+                <div class=" h-[150px] lg:h-[200px] mb-4">
                 ' . $animation . '
                 </div>
-                <p class="text-white font-bold mb-2 text-center lg:text-xl 2xl:text-2xl">' . $slide['title'] . '</p>
-                <p class="text-white text-center lg:text-base 2xl:text-lg">' . $slide['content'] . '</p>
+                <p class="text-white font-bold mb-2 text-center text-lg lg:text-xl 2xl:text-2xl">' . $slide['title'] . '</p>
+                <p class="text-white text-center text-sm lg:text-base 2xl:text-lg">' . $slide['content'] . '</p>
             </div>
         </div>
         ';
@@ -30,19 +30,23 @@ function render_slider_points()
 }
 ?>
 
-<section class="who-we-help-hero w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[90vh] bg-cover flex"
+<section
+    class="who-we-help-hero w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[90vh] bg-cover flex flex-col lg:flex-row"
     style="background-image: url(<?php the_field('hero_background_image') ?>); background-position-y: -40px;">
-    <div class="w-6/12 flex flex-col justify-center items-center lg:pl-20 2xl:pl-40">
+    <div class="w-full lg:w-6/12 flex flex-col justify-center items-center lg:pl-20 2xl:pl-40">
         <div class="w-fit">
-            <h2 class="text-primary uppercase tracking-wide text-xl lg:text-2xl reveal-text"
+            <h2 class="text-primary uppercase tracking-wide lg:text-2xl reveal-text mt-4 lg:mt-0 hidden lg:block"
                 data-reveal-direction="left"><?php the_field('title') ?></h2>
-            <h1 class="text-white text-2xl lg:text-4xl 2xl:text-6xl ">
+            <h2 class="text-primary uppercase tracking-wide text-lg mt-4 lg:mt-0 block lg:hidden" data-aos="fade-up">
+                <?php echo strip_tags(get_field('title')) ?>
+            </h2>
+            <h1 class="text-white text-2xl lg:text-4xl 2xl:text-6xl text-center lg:text-left ">
                 <?php the_field('sub_title') ?>
             </h1>
         </div>
     </div>
-    <div class="w-1/2 flex items-center justify-center">
-        <div class="w-[60%]">
+    <div class="w-full lg:w-1/2 flex items-center justify-center">
+        <div class="w-[80%] lg:w-[60%]">
             <div class="who-we-help-slider">
                 <?php render_slider_points() ?>
             </div>
