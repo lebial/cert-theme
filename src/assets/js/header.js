@@ -128,8 +128,15 @@ jQuery(document).ready(function ($) {
   function handleMobileOptionClick(ev) {
     const currentSubMenu = $(this).find('.sub-menu');
     const currentLink = $(this).find('a');
-    currentLink.toggleClass('active_item_arrow');
-    currentSubMenu.toggle();
+    if (currentLink.hasClass('active_item_arrow')) {
+      currentLink.toggleClass('active_item_arrow');
+      currentSubMenu.toggle();
+    } else {
+      $('.sub-menu').hide();
+      $('.main-page-link a').removeClass('active_item_arrow');
+      currentLink.toggleClass('active_item_arrow');
+      currentSubMenu.toggle();
+    }
   }
 
   function handleMobileSiteMap() {

@@ -184,8 +184,8 @@
         </div>
 
         <div
-            class=" main__menu__sidebar w-[80vw] absolute top-0 lg:top-[80px] pt-4 -right-full flex flex-col shadow-xl items-start xl:items-center justify-between lg:justify-start bg-white">
-            <div class="w-full lg:px-10 absolute right-0 lg:-right-6 top-0">
+            class=" main__menu__sidebar w-[80vw] absolute top-[80px] lg:pt-4 -right-full flex flex-col shadow-xl items-start xl:items-center justify-between lg:justify-start bg-white">
+            <div class="w-full lg:px-10 lg:absolute right-0 lg:-right-6 top-0">
                 <div class="w-full pt-4 lg:pt-4 flex pl-[30px] lg:pl-0  justify-end mb-4 pr-2 lg:pr-0">
                     <button class="menu__side__bar__close" type="button">
                         <svg class="feather feather-x " height="24" stroke="currentColor" stroke-linecap="round"

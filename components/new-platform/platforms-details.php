@@ -74,12 +74,12 @@ function render_detail_cards()
   </div>
   <div class="platforms__main__container w-full flex flex-col lg:flex-row lg:py-14 min-h-screen px-4 lg:px-0"
     style="--section-bg-img: url('<?php the_field('background_image') ?>');">
-    <aside class="w-full lg:w-4/12 lg:max-w-md  flex justify-center lg:justify-end">
+    <aside class="w-full lg:w-4/12 lg:max-w-md  flex justify-center lg:justify-end order-2 lg:order-1 pb-4 lg:pb-0">
       <div class="flex flex-col items-start max-w-xs">
         <?php render_buttons() ?>
       </div>
     </aside>
-    <main class="w-full lg:w-8/12 pl-2 lg:pl-14 pt-5 pb-20 lg:pb-12 flex justify-center pr-2">
+    <main class="w-full lg:w-8/12 pl-2 lg:pl-14 pt-5 pb-12 lg:pb-12 flex justify-center pr-2 order-1 lg:order-2">
       <div class="max-w-4xl">
         <?php render_detail_cards() ?>
       </div>

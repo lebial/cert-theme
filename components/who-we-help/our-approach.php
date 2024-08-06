@@ -41,12 +41,12 @@ function render_content($opts)
         <?php echo strip_tags(get_field('approach_title')) ?>
     </h3>
     <div class="options__container flex flex-col lg:flex-row lg:px-20">
-        <div class="lg:w-1/2 flex flex-col lg:items-end lg:pr-28 mb-4 lg:mb-0">
+        <div class="lg:w-1/2 flex flex-col lg:items-end lg:pr-28 mb-4 lg:mb-0 order-2 lg:order-1">
             <div class="flex flex-col items-center lg:items-start">
                 <?php render_buttons($options); ?>
             </div>
         </div>
-        <div class="lg:w-1/2 px-8 lg:px-0 relative min-h-[80vh]">
+        <div class="lg:w-1/2 px-8 lg:px-0 relative min-h-[80vh] order-1 lg:order-2">
             <?php render_content($options); ?>
         </div>
     </div>
