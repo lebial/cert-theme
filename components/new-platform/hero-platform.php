@@ -47,7 +47,7 @@ function render_custom_menu_items()
         </p>
         <!-- <div class="button container min-w-full w-full flex flex-col lg:flex-row text-white justify-evenly mt-8 items-start lg:items-center"> -->
         <div class="button container min-w-full w-full text-white mt-14">
-          <div class="mx-auto block lg:hidden w-fit">
+          <div class="mx-auto flex flex-col lg:hidden w-fit">
             <?php render_custom_menu_items() ?>
           </div>
           <div class="hidden lg:flex w-full justify-evenly lg:items-center">
