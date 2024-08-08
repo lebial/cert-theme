@@ -36,7 +36,7 @@ function render_resources()
   <h3 class=" text-dark-blue-background text-center py-16 mb-0 text-2xl lg:text-3xl block lg:hidden" data-aos="fade-up">
     <?php the_field('resources_title') ?>
   </h3>
-  <div class="resources__container mx-auto max-w-screen-lg flex flex-col lg:flex-row">
+  <div class="resources__container mx-auto max-w-screen-lg w-10/12 lg:w-full flex flex-col lg:flex-row">
     <?php render_resources() ?>
   </div>
 </section>

@@ -489,11 +489,11 @@
     & li {
       & button {
         &::before {
-            height: 15px !important;
-            width: 15px !important;
-            background-color: $color-navy;
-            color: $color-navy;
-            border-radius: 100%;
+          height: 15px !important;
+          width: 15px !important;
+          background-color: $color-navy;
+          color: $color-navy;
+          border-radius: 100%;
         }
       }
     }
@@ -508,4 +508,6 @@
       }
     }
   }
+
+
 }
