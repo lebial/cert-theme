@@ -1,4 +1,4 @@
-import { makeElementsSameHeight } from "./utils/utils";
+import { makeElementsSameHeight, getCustomArrows } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
     function makeInsightsSameHeight() {
@@ -6,26 +6,30 @@ jQuery(document).ready(function ($) {
     }
 
     function createInsightsCarousel() {
+        const [prevArrow, nextArrow] = getCustomArrows();
         $(".news__insights__slider").slick({
-          slidesToShow: 1,
-          infinte: true,
-          dots: true,
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 4000,
+            slidesToShow: 3,
+            infinte: true,
+            dots: true,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow,
+            nextArrow,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ],
         });
-    }
-    
-    function handleInsightsArrowClick() {
-        const slider = ".news__insights__slider";
-        $(`${slider}-next`).click(() => $(slider).slick("slickNext"));
-        $(`${slider}-prev`).click(() => $(slider).slick("slickPrev"));
     }
 
     const { href } = window.location;
     if (href.includes('total-health-management')) {
         makeInsightsSameHeight();
         createInsightsCarousel();
-        handleInsightsArrowClick();
     }
 });

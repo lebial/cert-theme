@@ -1,4 +1,4 @@
-import { animateCounter, getParams, initNumberanimation } from "./utils/utils";
+import { animateCounter, getCustomArrows, getParams, initNumberanimation } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
 
@@ -71,11 +71,36 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    function createResourcesSlider() {
+        const [nextArrow, prevArrow] = getCustomArrows();
+        const options = {
+            slidesToShow: 3,
+            infinte: true,
+            dots: true,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow,
+            nextArrow,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ],
+        }
+
+        $('.resources__container').slick(options);
+    }
+
     const { location: { href } } = window;
     if (href.includes("solutions") || href.includes('who-we-help')) {
         createHeroSlider();
         handleOptionClick();
         handleOptionsInit();
         addSpaceOnContactUs();
+        createResourcesSlider();
     }
 });

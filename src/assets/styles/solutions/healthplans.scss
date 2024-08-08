@@ -328,3 +328,13 @@
         }
     }
 }
+
+.resources__container {
+    & .slick-dots {
+        & button {
+            &::before {
+                font-size: 60px;
+            }
+        }
+    }
+}
