@@ -131,6 +131,11 @@ $tag_text = get_tag_text($tag->name);
                 class="!text-dark-blue-background min-w-fit tracking-normal font-bold mb-4 text-left mt-6 lg:mt-0 text-2xl lg:text-4xl ">
                 <?php the_title() ?>
             </h1>
+            <h2
+                class="!text-dark-blue-background min-w-fit tracking-normal font-bold mb-4 text-left mt-6 lg:mt-0 text-xl lg:text-2xl ">
+                <?php the_field('post_h2', get_the_ID()) ?>
+            </h2>
+            </h2>
             <p class="text-center text-base text-gray-400 mx-auto lg:mx-0 lg:text-left mt-3">
                 <?php echo get_the_date('F j, Y') ?>
             </p>
