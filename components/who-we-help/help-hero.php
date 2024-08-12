@@ -3,6 +3,7 @@
 require __DIR__ . '/dial.php';
 require __DIR__ . '/bars.php';
 require __DIR__ . '/bars2.php';
+require __DIR__ . '/bars3.php';
 require __DIR__ . '/pie_chart.php';
 function render_slider_points()
 {
@@ -10,6 +11,7 @@ function render_slider_points()
         'dial_animation' => 'get_dial_animation',
         'bars_animation' => 'get_bars_animation',
         'bars2_animation' => 'get_bars2_animation',
+        'bars3_animation' => 'get_bars3_animation',
         'pie_animation' => 'get_pie_animation',
     ];
     $slides = get_field('animation_slider');
