@@ -92,6 +92,23 @@
     }
 }
 
+.bars3__animation {
+    & .bar {
+        transform: scaleY(0);
+        transform-origin: 0 90%;
+    }
+
+    &--animate {
+        & .bar {
+            animation-name: bars2_animate;
+            animation-duration: 8s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            animation-delay: calc(var(--animation-order) * 200ms);
+        }
+    }
+}
+
 @function getPercent($number) {
     @return $number * 1%;
 }

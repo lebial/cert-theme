@@ -16,13 +16,13 @@ function render_custom_content()
 {
     $options = [
         'Health Plans' => 'get_achievements',
-        'Employers' => 'get_resources_content',
-        'default' => 'get_achievements',
+        'default' => 'get_resources_content',
     ];
     $title = get_the_title();
-    if ($title != 'Employers' && $title != 'Health Plans')
-        return $options['default'];
-    return $options[$title];
+    if (array_key_exists($title, $options))
+        return $options[$title];
+    return $options['default'];
+
 
 }
 ?>
