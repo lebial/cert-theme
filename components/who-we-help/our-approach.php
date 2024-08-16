@@ -21,7 +21,7 @@ function render_content($opts)
         $content = $option['content'];
         echo '
           <div class="option__content__container w-full text-white" name="' . $option['button']['button_text'] . '">
-            <p class="text-primary font-bold text-xl lg:text-2xl uppercase mb-0 pb-4 text-center lg:text-left">
+            <p class="text-primary font-bold text-xl lg:text-2xl capitalize mb-0 pb-4 text-center lg:text-left">
             ' . $content['content_title'] . '
             </p>
             <p class="font-bold text-white text-lg lg:text-xl pb-4">

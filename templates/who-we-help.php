@@ -15,13 +15,12 @@ function get_resources_content()
 function render_custom_content()
 {
     $options = [
-        'Health Plans' => 'get_achievements',
-        'default' => 'get_resources_content',
+        'achievements' => 'get_achievements',
+        'resources' => 'get_resources_content',
     ];
-    $title = get_the_title();
-    if (array_key_exists($title, $options))
-        return $options[$title];
-    return $options['default'];
+    $option = get_field('content_type');
+    js_console($option);
+    return $options[$option];
 
 
 }
@@ -30,7 +29,6 @@ function render_custom_content()
 
 <?php get_header(); ?>
 <?php get_template_part('components/who-we-help/help-hero') ?>
-<?php //get_template_part('components/who-we-help/achievements') ?>
 <?php render_custom_content()(); ?>
 <?php get_template_part('components/who-we-help/our-approach') ?>
 <?php get_template_part('components/who-we-help/healthplan-resources') ?>
