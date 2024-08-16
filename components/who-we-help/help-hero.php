@@ -5,6 +5,7 @@ require __DIR__ . '/bars.php';
 require __DIR__ . '/bars2.php';
 require __DIR__ . '/bars3.php';
 require __DIR__ . '/pie_chart.php';
+require __DIR__ . '/donut_chart.php';
 function render_slider_points()
 {
     $animations = [
@@ -13,7 +14,9 @@ function render_slider_points()
         'bars2_animation' => 'get_bars2_animation',
         'bars3_animation' => 'get_bars3_animation',
         'pie_animation' => 'get_pie_animation',
+        'donut_animation' => 'get_donut_animation',
     ];
+
     $slides = get_field('animation_slider');
     foreach ($slides as $slide) {
         $animation = $animations[$slide['animation_name']]();

@@ -122,7 +122,7 @@
 
     @keyframes pie_anim_#{$name} {
         #{getPercent($from)} {
-            stroke-dashoffset: 1000;
+            stroke-dashoffset: 1300;
         }
 
         #{getPercent($to)} {
@@ -199,34 +199,6 @@
 
 @mixin circleAnim($number, $fromAnim, $toAnim) {
     @keyframes circle#{$number} {
-        // 0% {
-        //     transform: translateY(0);
-        //     opacity: 0;
-        // }
-
-        // 10% {
-        //     transform: translateY(0);
-        //     opacity: 1;
-        // }
-
-        // 30% {
-        //     // transform: translateY(-56.5%)
-        //     transform: translateY($toAnim)
-        // }
-
-        // 80% {
-        //     transform: translateY($toAnim);
-        //     opacity: 1;
-        // }
-
-        // 90% {
-        //     transform: translateY(0);
-        //     opacity: 0;
-        // }
-
-        // 100% {
-        //     opacity: 0;
-        // }
         #{$fromAnim} {
             opacity: 0;
         }
@@ -316,3 +288,72 @@
         stroke-dashoffset: 1000;
     }
 }
+
+@keyframes donut_reveal {
+    0% {
+        stroke-dasharray: 0 1800;
+        stroke-dashoffset: 220;
+    }
+
+    10% {
+        stroke-dasharray: 0 1800;
+        stroke-dashoffset: 220;
+    }
+
+    40% {
+        stroke-dasharray: 1800 0;
+        stroke-dashoffset: 220;
+    }
+
+    60% {
+        stroke-dasharray: 1800 0;
+        stroke-dashoffset: 220;
+    }
+
+    90% {
+        stroke-dasharray: 0 1800;
+        stroke-dashoffset: 220;
+    }
+
+    100% {
+        stroke-dasharray: 0 1800;
+        stroke-dashoffset: 220;
+    }
+}
+
+
+.donut__animation {
+    & .pie_line {
+        stroke-dasharray: 1300;
+        stroke-dashoffset: 1300;
+    }
+
+    &--animate {
+        @include generate_pie_anim(1, 0, 5, 95, 100);
+        @include generate_pie_anim(3, 7.5, 14, 85, 90);
+
+        & .pie_line2 {
+            animation: donut_reverse 8s ease infinite;
+            animation-delay: -300ms;
+        }
+    }
+}
+
+@keyframes donut_reverse {
+    0% {
+        stroke-dasharray: 0 1300;
+        stroke-dashoffset: 0;
+    }
+
+    9% {
+        stroke-dasharray: 1300 0;
+        stroke-dashoffset: 1300;
+    }
+
+    50% {
+        stroke-dasharray: 1300 0;
+        stroke-dashoffset: 1300;
+    }
+}
+
+@keyframes donut_line_2 {}
