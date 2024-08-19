@@ -356,4 +356,50 @@
     }
 }
 
-@keyframes donut_line_2 {}
+.provider_bars_animation {
+    & .bar {
+        transform: scaleY(0);
+        transform-origin: 0 90%;
+    }
+
+    &--animate {
+        & .bar {
+            animation-name: bars2_animate;
+            animation-duration: 8s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            animation-delay: calc(var(--animation-order) * 200ms);
+        }
+
+        & .provider_text {
+            animation: provider_text_reveal 8s ease infinite;
+        }
+    }
+}
+
+@keyframes provider_text_reveal {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+}
