@@ -1,5 +1,16 @@
 <?php
 
+//disable /users rest routes
+
+add_filter('rest_endpoints', function ($endpoints) {
+    if (isset($endpoints['/wp/v2/users'])) {
+        unset($endpoints['/wp/v2/users']);
+    }
+    if (isset($endpoints['/wp/v2/users/(?P<id>[/d]+)'])) {
+        unset($endpoints['/wp/v2/users/(?P<id>[/d]+)']);
+    }
+    return $endpoints;
+});
 function get_clean_content($id = null)
 {
     $acf_content = get_field('post_content', $id);
