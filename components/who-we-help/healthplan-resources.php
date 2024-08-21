@@ -7,7 +7,7 @@ function render_video_or_case_study($post_id)
     : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail'];
   $post_fields = get_field($keys['post_type'], $post_id);
   $img_url = $post_fields[$keys['image_key']];
-  if ($post_type)
+  if (!$post_type)
     $img_url = get_field('post_hero_image', $post_id);
   $tags = get_the_tags($post_id);
   $text = $post_type == 'video' ? 'Watch Video' : 'Read More';
