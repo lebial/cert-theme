@@ -1,0 +1,39 @@
+@import '../variables';
+
+.certHLM__in__action {
+    & .how__it__works__description {
+        & * {
+            color: $dark-blue-background;
+        }
+
+        & ul {
+            list-style: disc;
+        }
+    }
+}
+
+.certHLM__form__container {
+
+    & input[type=text],
+    input[type=email] {
+        border-color: #eaeaea !important;
+        padding-top: 0 !important;
+    }
+
+    & input {
+        font-weight: bold;
+
+        &[type=checkbox] {
+            border: none !important;
+            padding-bottom: none !important;
+        }
+    }
+
+    & [aria-hidden=true] {
+        display: none;
+    }
+
+    & button[type=submit] {
+        display: none !important;
+    }
+}
