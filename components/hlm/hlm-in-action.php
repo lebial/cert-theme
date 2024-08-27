@@ -1,8 +1,10 @@
-<section class="certHLM__in__action flex ">
-    <div class="w-1/2 border-r border-solid border-gray-400 flex flex-col items-center py-20">
-        <h2 class="text-center text-2xl font-bold text-dark-blue-background"><?php the_field('action_title') ?></h2>
+<section class="certHLM__in__action flex flex-col lg:flex-row py-10 lg:py-0">
+    <div class="lg:w-1/2 border-r border-solid border-gray-400 flex flex-col items-center py-10 lg:py-20">
+        <h2 class="text-center text-2xl font-bold text-dark-blue-background reveal-text">
+            <?php the_field('action_title') ?>
+        </h2>
         <div class="content__container px-10 h-full flex items-center">
-            <div class="w-[60%] flex justify-center items-center relative mx-auto mt-10">
+            <div class="lg:w-[60%] flex justify-center items-center relative mx-auto mt-4 lg:mt-10">
                 <div
                     class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-xl z-20">
                     <button class="second_video_play_button">
@@ -21,12 +23,12 @@
             </div>
         </div>
     </div>
-    <div class="w-1/2 border-r border-solid border-gray-400 flex flex-col items-center py-20">
+    <div class="lg:w-1/2 border-r border-solid border-gray-400 flex flex-col items-center py-4 lg:py-20">
         <div class="content__container px-10">
-            <p class="text-2xl text-center font-bold text-dark-blue-background !mb-8">
+            <p class="text-2xl text-center font-bold text-dark-blue-background !mb-8 reveal-text">
                 <?php the_field('how_it_works_title') ?>
             </p>
-            <div class="how__it__works__description text-dark-blue-background">
+            <div class="how__it__works__description text-dark-blue-background pb-4 lg:pb-0">
                 <?php the_field('how_it_works_description'); ?>
             </div>
         </div>
