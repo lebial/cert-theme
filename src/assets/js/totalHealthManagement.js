@@ -1,10 +1,6 @@
 import { makeElementsSameHeight, getCustomArrows } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
-    function makeInsightsSameHeight() {
-        makeElementsSameHeight($, '.expand__body');
-    }
-
     function createInsightsCarousel() {
         const [prevArrow, nextArrow] = getCustomArrows();
         $(".news__insights__slider").slick({
@@ -29,7 +25,6 @@ jQuery(document).ready(function ($) {
 
     const { href } = window.location;
     if (href.includes('total-health-management')) {
-        makeInsightsSameHeight();
         createInsightsCarousel();
     }
 });

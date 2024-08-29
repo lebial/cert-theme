@@ -15,6 +15,7 @@ import './platform';
 import './whoWeHelp';
 import './aboutUs';
 import './solutions';
+import './new-solutions';
 import './healthplans';
 import './thankYou';
 import './postPage';
