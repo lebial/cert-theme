@@ -38,8 +38,8 @@ function render_slider_points()
 ?>
 
 <section
-    class="who-we-help-hero w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[90vh] bg-cover flex flex-col lg:flex-row"
-    style="background-image: url(<?php the_field('hero_background_image') ?>); background-position-y: -40px;">
+    class="who-we-help-hero w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[90vh] bg-cover flex flex-col lg:flex-row lg:bg-[0_-40px]"
+    style="background-image: url(<?php the_field('hero_background_image') ?>); ">
     <div class="w-full lg:w-6/12 flex flex-col justify-center items-center lg:pl-20 2xl:pl-40">
         <div class="w-fit">
             <h2 class="text-primary uppercase tracking-wide lg:text-2xl reveal-text mt-4 lg:mt-0 hidden lg:block"

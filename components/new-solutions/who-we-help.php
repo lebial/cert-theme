@@ -9,7 +9,7 @@ function render_who_we_help_cards()
               <img class="w-full h-full absolute top-0 left-0" src="' . $card['image'] . '" alt="' . $card['title'] . ' image">
               <div class="relative flex items-center">
                 <p class="leading-snug">' . $card['title'] . '
-                        <svg class=" fill-primary w-8 inline relative -top-px" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline  id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "></polyline></g></g></svg>
+                        <svg class=" fill-primary w-8 inline relative -top-px -left-[10px]" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline  id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "></polyline></g></g></svg>
                 </p>
               </div>
             </div>
@@ -19,7 +19,7 @@ function render_who_we_help_cards()
 
 ?>
 <section class="au__solutions w-full h-full py-16 lg:py-24 bg-indigo-50">
-    <h3 class="text-dark-blue-background text-2xl lg:text-3xl text-center">
+    <h3 class="text-dark-blue-background text-2xl lg:text-4xl text-center">
         <?php the_field('who_we_help_title') ?>
     </h3>
     <p class="hidden lg:block text-dark-blue-background text-center mx-auto"><?php the_field('who_we_help_copy') ?></p>

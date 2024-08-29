@@ -38,10 +38,10 @@ function render_related_content()
 ?>
 
 <section class=" news__insights__section py-14">
-  <p class=" text-dark-blue-background text-2xl lg:text-3xl text-center font-bold mx-auto">
+  <p class=" text-dark-blue-background text-2xl lg:text-4xl text-center font-bold mx-auto">
     <?php the_field('insights_title') ?>
   </p>
-  <div class="hidden cards__container w-[84%] lg:w-auto mt-14 max-w-5xl lg:flex mx-auto">
+  <div class="hidden cards__container w-[84%] lg:w-auto mt-14 max-w-5xl lg:flex mx-auto ">
     <?php render_related_content() ?>
   </div>
 
