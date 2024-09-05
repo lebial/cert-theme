@@ -7,13 +7,13 @@ js_console($case_study_post);
 
 ?>
 <section class="resources__section py-14">
-    <p class="text-2xl lg:text-4xl text-dark-blue-background mx-auto font-bold pb-10">
+    <p class="text-2xl lg:text-4xl text-center lg:text-left text-dark-blue-background mx-auto font-bold pb-10">
         <?php the_field('resources_main_title') ?>
     </p>
     <div class="case__study flex flex-col lg:flex-row mx-auto max-w-screen-lg px-4 lg:px-0">
         <div class="w-full lg:w-7/12">
             <p
-                class=" text-dark-blue-background font-bold mb-4 text-2xl lg:text-3xl text-center lg:text-left tracking-wide leading-tight">
+                class=" text-dark-blue-background font-bold mb-4 text-xl lg:text-3xl text-center lg:text-left tracking-wide leading-tight">
                 <?php echo $case_study_post['title'] ?>
                 <p />
             <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
