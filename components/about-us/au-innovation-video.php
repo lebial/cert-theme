@@ -3,9 +3,11 @@
   <div class="flex justify-center flex-col items-center h-full py-16 mx-auto max-w-screen-5xl">
     <div class="w-10/12 lg:w-5/12 mb-28 md:40 lg:mb-64 2xl:mb-52">
       <h1 class="text-bold mb-6 text-4xl lg:text-6xl text-center text-white leading-6 lg:leading-10 reveal-text">
-        <?php the_field('innovation_heading_title') ?></h1>
+        <?php the_field('innovation_heading_title') ?>
+      </h1>
       <h2 class="text-white text-center mt-4 md:mt-8 text-lg font-normal tracking-normal">
-        <?php the_field("innovation_heading_description") ?></h2>
+        <?php the_field("innovation_heading_description") ?>
+      </h2>
     </div>
 
     <div name="desktop_innovation_video"
