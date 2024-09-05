@@ -16,23 +16,7 @@ js_console($case_study_post);
                 class=" text-dark-blue-background font-bold mb-4 text-2xl lg:text-3xl text-center lg:text-left tracking-wide leading-tight">
                 <?php echo $case_study_post['title'] ?>
                 <p />
-            <p class="text-sm text-gray-400 mb-4 text-center lg:text-left"><?php echo get_the_date('F j, Y', $id) ?></p>
             <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
-                <p class=" text-gray-400 mr-4 text-base">SHARE IT :</p>
-                <a
-                    href="https://www.linkedin.com/shareArticle?mini=true&amp;url='<?php echo $perma_link ?> &amp;isFramed=true&amp;lang=en_US&amp;xd_origin_host='<?php echo $perma_link ?>'">
-                    <img class="w-6 mr-2"
-                        src="<?php echo get_template_directory_uri() ?>/dist/assets/images/postsPage/Linkenin-Navy.jpg"
-                        alt="linkedin logo">
-                </a>
-                <a href="https://twitter.com/share?url='<?php echo $perma_link ?>'&text='<?php echo strip_tags(get_the_title($id)) ?>'"
-                    class="flex">
-                    <span class=" bg-dark-blue-background inline-block rounded-full"> <img
-                            class="w-4 h-4 m-1 style-svg fill-white"
-                            src="<?php echo get_template_directory_uri() ?>/dist/assets/images/footer/twitter.svg"
-                            alt="twitter logo"></span>
-                </a>
-
             </div>
             <p class="text-sm text-dark-blue-background my-4 lg:my-0">
                 <?php echo $case_study_post['description'] ?>

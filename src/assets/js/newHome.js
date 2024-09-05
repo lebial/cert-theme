@@ -195,8 +195,9 @@ jQuery(document).ready(function ($) {
 
     button.click(function () {
       const currentVideo = $(this).parent().next()[0];
+      const currentVideoName = $(currentVideo).attr('name');
       currentVideo.play();
-      triggerGtagEvent(`${$(currentVideo).attr('name')}_video_started`, { 'video_name': target.dataset.videoname });
+      triggerGtagEvent(`${currentVideoName}_video_started`, { 'video_name': currentVideoName });
       $(this).parent().hide();
       $(currentVideo).attr('controls', true);
       $(currentVideo).css('outline', 'none');
