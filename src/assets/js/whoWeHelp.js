@@ -95,8 +95,9 @@ jQuery(document).ready(function ($) {
         $('.resources__container').slick(options);
     }
 
-    const { location: { href } } = window;
-    if (href.includes("solutions") || href.includes('who-we-help')) {
+    const allowedPages = ['health-plans', 'health-systems', 'benefit-advisors', 'employers', 'government', 'solution-vendors'];
+    const { href } = window.location;
+    if (allowedPages.some(el => href.includes(el))) {
         createHeroSlider();
         handleOptionClick();
         handleOptionsInit();

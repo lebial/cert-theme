@@ -278,7 +278,8 @@ jQuery(document).ready(function ($) {
   }
 
   const { href } = window.location;
-  if (href.includes("solutions")) {
+  const allowedPages = ['health-plans', 'health-systems', 'benefit-advisors', 'employers', 'government', 'solution-vendors'];
+  if (allowedPages.some(page => href.includes(page))) {
     handleModalToggle();
     createBrochureCarousel();
     fixElementsHeight();
