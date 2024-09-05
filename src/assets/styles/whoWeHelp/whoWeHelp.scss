@@ -22,6 +22,12 @@
 .our__approach__content__body {
     & * {
         color: white !important;
+        font-size: calc(1.125rem + (1vw - 3.2px) * .125);
+        ;
+    }
+
+    & ul {
+        list-style: disc !important;
     }
 
     & p {
