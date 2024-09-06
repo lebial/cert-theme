@@ -1,6 +1,6 @@
 <section class="certHLM__in__action flex flex-col lg:flex-row py-10 lg:py-0">
     <div class="lg:w-1/2 border-r border-solid border-gray-400 flex flex-col items-center py-10 lg:py-20">
-        <h2 class="text-center text-2xl font-bold text-dark-blue-background reveal-text">
+        <h2 class="text-center text-2xl lg:text-4xl font-bold text-dark-blue-background reveal-text">
             <?php the_field('action_title') ?>
         </h2>
         <div class="content__container px-10 h-full flex items-center">
@@ -25,7 +25,7 @@
     </div>
     <div class="lg:w-1/2 border-r border-solid border-gray-400 flex flex-col items-center py-4 lg:py-20">
         <div class="content__container px-10">
-            <p class="text-2xl text-center font-bold text-dark-blue-background !mb-8 reveal-text">
+            <p class="text-2xl lg:text-4xl text-center font-bold text-dark-blue-background !mb-8 reveal-text">
                 <?php the_field('how_it_works_title') ?>
             </p>
             <div class="how__it__works__description text-dark-blue-background pb-4 lg:pb-0">
