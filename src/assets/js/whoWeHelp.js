@@ -95,6 +95,10 @@ jQuery(document).ready(function ($) {
         $('.resources__container').slick(options);
     }
 
+    function makeInsightsSameHeight() {
+        makeElementsSameHeight($, '.cards__container .resources_video_card .expand__body');
+    }
+
     const allowedPages = ['health-plans', 'health-systems', 'benefit-advisors', 'employers', 'government', 'solution-vendors'];
     const { href } = window.location;
     if (allowedPages.some(el => href.includes(el))) {
@@ -103,5 +107,6 @@ jQuery(document).ready(function ($) {
         handleOptionsInit();
         addSpaceOnContactUs();
         createResourcesSlider();
+        makeInsightsSameHeight();
     }
 });
