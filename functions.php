@@ -618,3 +618,11 @@ function limit_post_text($text, $limit, $after_content)
 {
     return mb_strimwidth($text, 0, $limit, $after_content);
 }
+
+function get_image_with_default($get_field)
+{
+    if ($get_field)
+        return $get_field;
+    $default = get_template_directory_uri() . '/dist/assets/images/default-resource.jpg';
+    return $default;
+}

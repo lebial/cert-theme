@@ -14,9 +14,9 @@ function render_related_content()
       $related_text = $post_type == 'video' ? 'Watch Video' : 'Read Study';
     }
     $post_fields = get_field($keys['post_type'], $post->ID);
-    $img_url = $post_fields[$keys['image_key']];
+    $img_url = get_image_with_default($post_fields[$keys['image_key']]);
     if (!$post_type)
-      $img_url = get_field('post_hero_image', $post->ID);
+      $img_url = get_image_with_default(get_field('post_hero_image', $post->ID));
     $tags = get_the_tags($post->ID);
     echo '
       <div class="resources_video_card rounded-lg mb-4 lg:mb-0 h-full p-4 !flex flex-col w-96 flex-1">

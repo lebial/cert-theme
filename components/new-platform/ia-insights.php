@@ -6,11 +6,12 @@ function render_insights_slider()
   // $posts =  get_recent_or_selected_posts($recent_posts, $selected_posts);
   $posts = get_field('ai_insights_posts');
   foreach ($posts as $post) {
+    $img_url = get_image_with_default(get_field('postr_hero_image', $post));
     echo '
       <div class="h-full">
         <a href="' . get_permalink($post) . '" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 py-2 px-6 mr-6 shadow-lg max-w-[340px]">
           <div class="absolute top-0 h-full roudned-xl w-full before:content-[' . "''" . '] before:block before:w-full before:h-full before:bg-blue-500 before:bg-opacity-80 before:absolute before:top-0 before:z-20 before:rounded-xl">
-            <img src="' . get_field('post_hero_image', $post) . '" alt="ai insights card background" class="absolute top-0 left-0 w-full h-full object-cover z-10 rounded-xl"/>
+            <img src="' . $img_url . '" alt="ai insights card background" class="absolute top-0 left-0 w-full h-full object-cover z-10 rounded-xl"/>
           </div>
           <div class="w-full h-full z-20 flex flex-col items-center">
             <svg class=" w-24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 3500 2500" style="enable-background:new 0 0 3500 2500;" xml:space="preserve">
