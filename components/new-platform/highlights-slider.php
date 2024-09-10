@@ -26,7 +26,7 @@ function render_hightlight_cards()
 }
 
 ?>
-<section class="w-full py-14 lg:py-28 border-t border-gray-500/25 border-solid relative">
+<section class="w-full pb-14 pt-6 lg:py-28 border-t border-gray-500/25 border-solid relative">
   <p
     class="text-dark-blue-background font-bold mx-auto !mb-16 text-center text-2xl lg:text-4xl reveal-text max-w-none block lg:hidden">
     <?php the_field('highlight_section_title_mobile') ?>

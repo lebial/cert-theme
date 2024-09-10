@@ -38,7 +38,7 @@ function render_subheader()
 {
   $phraseInput = get_field('ai_subheading');
   $phraseArray = explode('.', $phraseInput);
-  $duration =  2 / 3;
+  $duration = 2 / 3;
   foreach ($phraseArray as $idx => $phrase) {
     echo '<p data-animate-delay="' . get_delay($idx, $duration) . '" data-animate-duration="' . $duration . '" class="reveal-text ml-4 text-lg lg:text-2xl mb-0 text-dark-blue-background">' . $phrase . '.</p>';
   }
@@ -67,8 +67,13 @@ function render_report_mobile_buttons()
 
 ?>
 <section class="ai__driven__section w-full px-6 mt-14 mb-20">
-  <h3 class="mx-auto w-fit reveal-text text-dark-blue-background font-bold hidden lg:block"><?php the_field('ai_heading') ?></h3>
-  <h3 class="mx-auto w-fit reveal-text text-dark-blue-background font-bold block lg:hidden"><?php the_field('ai_heading_mobile') ?></h3>
+  <h3 class="mx-auto w-fit reveal-text text-dark-blue-background font-bold hidden lg:block text-2xl xl:text-4xl">
+    <?php the_field('ai_heading') ?>
+  </h3>
+  <h3 class="mx-auto w-fit text-dark-blue-background font-bold block lg:hidden text-2xl xl:text-4xl text-center"
+    data-aos="fade-in">
+    <?php strip_tags(the_field('ai_heading_mobile')) ?>
+  </h3>
   <div class="solutions__subheader flex flex-col lg:flex-row mx-auto justify-center">
     <?php render_subheader() ?>
   </div>

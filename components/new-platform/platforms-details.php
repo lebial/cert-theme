@@ -66,13 +66,13 @@ function render_detail_cards()
 }
 ?>
 
-<section class="w-full pt-14 pb-16 lg:pb-2">
+<section class="w-full pt-14  lg:pb-2">
   <div
     class="w-full flex flex-col items-center pt-14 lg:pb-14 border-t border-t-dark-blue-background border-solid bg-dark-blue-background">
     <h2 class=" text-white font-normal text-2xl lg:text-4xl reveal-text"><?php the_field('section_title') ?></h2>
     <h3 class="text-white font-normal text-lg px-4 text-center lg:text-left"><?php the_field('section_subtitle') ?></h3>
   </div>
-  <div class="platforms__main__container w-full flex flex-col lg:flex-row lg:py-14 min-h-screen px-4 lg:px-0"
+  <div class="platforms__main__container w-full flex flex-col lg:flex-row lg:py-14 min-h-screen px-4 lg:px-0 pb-8"
     style="--section-bg-img: url('<?php the_field('background_image') ?>');">
     <aside class="w-full lg:w-4/12 lg:max-w-md  flex justify-center lg:justify-end order-2 lg:order-1 pb-4 lg:pb-0">
       <div class="flex flex-col items-start max-w-xs">

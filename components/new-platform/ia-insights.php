@@ -57,9 +57,9 @@ function render_insights_slider()
   }
 }
 ?>
-<section class="ai__insights w-full py-12 lg:py-24 ">
+<section class="ai__insights w-full py-10 lg:py-24 ">
   <div class="w-full flex flex-col items-center">
-    <h3 class="mb-8 text-dark-blue-background text-2xl lg:text-4xl reveal-text font-bold reveal-text">AI Insights by
+    <h3 class="lg:mb-8 text-dark-blue-background text-2xl lg:text-4xl reveal-text font-bold reveal-text">AI Insights by
       Certilytics</h3>
     <p class="text-dark-blue-background text-lg text-center px-4">
       Our experts share how AI is changing healthcare and how Certilytics is committed
