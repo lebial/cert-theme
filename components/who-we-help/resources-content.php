@@ -13,12 +13,12 @@ js_console($case_study_post);
     <div class="case__study flex flex-col lg:flex-row mx-auto max-w-screen-lg px-4 lg:px-0">
         <div class="w-full lg:w-7/12">
             <p
-                class=" text-dark-blue-background font-bold mb-4 text-xl lg:text-3xl text-center lg:text-left tracking-wide leading-tight">
+                class=" text-dark-blue-background font-bold mb-4 text-lg lg:text-2xl text-center lg:text-left tracking-wide leading-tight">
                 <?php echo $case_study_post['title'] ?>
                 <p />
             <div class="flex items-center mt-5 ml-5 lg:ml-0 border-t border-gray-header mb-4">
             </div>
-            <p class="text-sm text-dark-blue-background my-4 lg:my-0">
+            <p class="text-sm lg:text-lg text-dark-blue-background my-4 lg:my-0">
                 <?php echo $case_study_post['description'] ?>
             </p>
         </div>
