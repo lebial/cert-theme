@@ -6,7 +6,7 @@ function render_insights_slider()
   // $posts =  get_recent_or_selected_posts($recent_posts, $selected_posts);
   $posts = get_field('ai_insights_posts');
   foreach ($posts as $post) {
-    $img_url = get_image_with_default(get_field('postr_hero_image', $post));
+    $img_url = get_image_with_default(get_field('post_hero_image', $post));
     echo '
       <div class="h-full">
         <a href="' . get_permalink($post) . '" class="ai__insights__card relative h-full rounded-xl flex flex-col items-center bg-blue-300 py-2 px-6 mr-6 shadow-lg max-w-[340px]">
