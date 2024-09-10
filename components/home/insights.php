@@ -20,13 +20,15 @@ function render_cards()
               </p>';
     echo '</a>';
     echo '</div>';
-  };
-};
+  }
+  ;
+}
+;
 
 ?>
 <div class="w-full h-full relative py-16 mt-14" id="<?php the_field('insights_section_id') ?>">
   <div class="flex justify-center w-full mb-12">
-    <h2 class="text-3xl 2xl:text-5xl font-bold" data-aos="fade-up"><?php echo get_field('insights_title') ?></h2>
+    <h2 class="text-2xl 2xl:text-4xl font-bold" data-aos="fade-up"><?php echo get_field('insights_title') ?></h2>
   </div>
   <div class="insights-carousel w-10/12 mx-auto my-4 relative z-30" data-aos="fade-up">
     <?php render_cards() ?>
