@@ -10,8 +10,14 @@
       <div class="action__quote__container w-full lg:w-7/12 opacity-100 z-20 ">
         <div class="w-full flex flex-col items-center px-4 md:px-32 lg:px-0 lg:pr-20 pt-4 lg:pt-0">
           <div class="w-full lg:w-full 2xl:w-7/12">
-            <h3 class="action__quote__container__text text-2xl lg:text-3xl font-bold text-white text-center mb-0 mt-8">
-              <?php the_field('contact_us_title') ?></h3>
+            <h3
+              class="action__quote__container__text text-2xl lg:text-3xl font-bold text-white text-center mb-0 mt-8 hidden lg:block">
+              <?php the_field('contact_us_title') ?>
+            </h3>
+            <h3
+              class="action__quote__container__text text-2xl lg:text-3xl font-bold text-white text-center mb-0 mt-8 block lg:hidden">
+              <?php echo strip_tags(get_field('contact_us_title'), '<span><p>') ?>
+            </h3>
           </div>
           <div class="action__quote__container__button w-full mx-auto mt-10 pb-10 flex lg:px-1 xl:px-2 justify-center">
             <button class="schedule__demo__button px-3 py-2  border-solid border-primary border rounded-3xl

@@ -14,7 +14,7 @@ function render_features()
                     <p class="feature__title text-dark-blue-background font-bold text-base 2xl:text-lg mb-1 text-center lg:text-left">
                     ' . $feature['title'] . '
                     </p>
-                    <p class=" text-dark-blue-background text-sm 2xl:text-base">' . $feature['content'] . '</p>
+                    <p class=" text-dark-blue-background text-sm 2xl:text-base text-center lg:text-left">' . $feature['content'] . '</p>
                 </div>
 
             </div>
@@ -23,8 +23,8 @@ function render_features()
 }
 ?>
 <section class="use__cases__section flex flex-col md:flex-row">
-    <div class="w-full md:w-1/2 lg:border-r border-gray-400 border-solid">
-        <div class="table__header lg:border-b border-gray-400 border-solid py-8 lg:py-12">
+    <div class="w-full md:w-1/2 lg:border-r border-gray-300 border-solid">
+        <div class="table__header lg:border-b border-gray-300 border-solid py-8 lg:py-12">
             <p class="text-2xl lg:text-3xl text-dark-blue-background mx-auto font-bold text-center">Use Cases</p>
         </div>
         <div class="table__body use__cases__copy text-dark-blue-background flex justify-center ">
@@ -34,7 +34,7 @@ function render_features()
         </div>
     </div>
     <div class="w-full md:w-1/2">
-        <div class="table__header lg:border-b border-gray-400 border-solid py-8 lg:py-12 ">
+        <div class="table__header lg:border-b border-gray-300 border-solid py-8 lg:py-12 ">
             <p class="text-2xl lg:text-3xl text-dark-blue-background mx-auto font-bold text-center ">Features</p>
         </div>
         <div class="table__body flex justify-center">

@@ -10,8 +10,6 @@ function get_resources_content()
     get_template_part('components/who-we-help/resources-content');
 }
 
-;
-
 function render_custom_content()
 {
     $options = [

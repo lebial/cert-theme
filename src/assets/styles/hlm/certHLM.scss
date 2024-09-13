@@ -6,8 +6,17 @@
             color: $dark-blue-background;
         }
 
+        & p {
+            margin-bottom: 0 !important;
+        }
+
         & ul {
             list-style: disc;
+
+            & li {
+                margin-bottom: 15px;
+                line-height: 1.4;
+            }
         }
     }
 }
@@ -35,5 +44,20 @@
 
     & button[type=submit] {
         border-radius: 40px !important;
+    }
+
+    & .frm_checkbox label {
+        line-height: 1 !important;
+
+        & input {
+            margin-right: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+    & .optin__description {
+        & p {
+            line-height: 1.5 !important;
+        }
     }
 }
