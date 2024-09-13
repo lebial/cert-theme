@@ -48,7 +48,7 @@ function render_slider_points()
                 <?php echo strip_tags(get_field('title')) ?>
             </h2>
             <h1
-                class="text-white text-2xl lg:text-4xl 2xl:text-5xl text-center lg:text-left max-w-64 lg:max-w-none mb-6 lg:mb-0">
+                class="text-white text-2xl lg:text-4xl 2xl:text-5xl text-center mx-auto mx-0 lg:text-left max-w-64 lg:max-w-none mb-6 lg:mb-0">
                 <?php the_field('sub_title') ?>
             </h1>
         </div>

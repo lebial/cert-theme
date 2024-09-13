@@ -410,3 +410,9 @@
         opacity: 0;
     }
 }
+
+.resources__section {
+    & p {
+        margin-bottom: 0 !important;
+    }
+}
