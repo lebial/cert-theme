@@ -28,8 +28,8 @@ jQuery(document).ready(function ($) {
         animateCounter(0, 100, counterAnimation);
         $(pointer).on('animationend', function (evt) {
             const animClass = 'dial__animation--animate';
-            $(this).removeClass(animClass);
-            const svg = this;
+            const svg = $(this).siblings()[0];
+            $(svg).removeClass(animClass);
             setTimeout(() => {
                 $(svg).addClass(animClass);
                 animateCounter(0, 100, counterAnimation);
@@ -66,7 +66,8 @@ jQuery(document).ready(function ($) {
         $('.who-we-help-slider').slick({
             infinite: true,
             dots: true,
-            autoplay: true,
+            // autoplay: true,
+            // autoplay: false,
             autoplaySpeed: 7300
         });
     }
