@@ -37,12 +37,12 @@
 }
 
 .dial__animation {
-    & #pointer {
+    &+#pointer {
         transform-origin: 50% 50%;
     }
 
     &.dial__animation--animate {
-        & #pointer {
+        &+#pointer {
             animation: gauge_animate 8s ease;
         }
     }
@@ -166,23 +166,23 @@
 
 @keyframes gauge_animate {
     0% {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     30% {
-        transform: rotate(280deg);
+        transform: translate(-50%, -50%) rotate(280deg);
     }
 
     50% {
-        transform: rotate(280deg);
+        transform: translate(-50%, -50%) rotate(280deg);
     }
 
     70% {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     100% {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 }
 
