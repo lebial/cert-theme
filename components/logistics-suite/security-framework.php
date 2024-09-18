@@ -8,7 +8,7 @@ function render_logos()
         $width_class = str_contains($logo['logo_url'], 'aicpa') ? 'w-auto h-auto lg:w-auto lg:h-16' : 'w-24 h-12 lg:w-28 lg:h-16';
         if ($url) {
             echo '
-                    <a href="' . $url . '">
+                    <a href="' . $url . '" target="_blank">
                         <img class="' . $width_class . '" src="' . $logo['image'] . '" alt="card image">
                     </a>
                 ';
