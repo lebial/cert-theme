@@ -44,7 +44,8 @@ function render_slider_points()
         <div class="w-fit">
             <h2 class="text-primary uppercase tracking-wide lg:text-2xl reveal-text mt-4 lg:mt-0 hidden lg:block"
                 data-reveal-direction="left"><?php the_field('title') ?></h2>
-            <h2 class="text-primary uppercase tracking-wide text-base mt-9 lg:mt-0 block lg:hidden text-center mb-2 ">
+            <h2
+                class="text-primary uppercase tracking-wide text-base mt-9 lg:mt-0 block lg:hidden text-center mb-2 max-w-[30ch] px-4">
                 <?php echo strip_tags(get_field('title')) ?>
             </h2>
             <h1

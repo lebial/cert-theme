@@ -3,15 +3,14 @@
 $id = get_field('resource_post');
 $perma_link = get_the_permalink($id);
 $case_study_post = get_field('case_study_post', $id);
-js_console($case_study_post);
 
 ?>
 <section class="resources__section py-14">
     <p
-        class="text-2xl lg:text-4xl text-center lg:text-left text-dark-blue-background mx-auto font-bold pb-5 lg:pb-10 px-4">
+        class="text-2xl lg:text-4xl text-center text-dark-blue-background mx-auto font-bold pb-5 lg:pb-10 px-4 max-w-none">
         <?php the_field('resources_main_title') ?>
     </p>
-    <div class="case__study flex flex-col lg:flex-row mx-auto max-w-screen-lg px-4 lg:px-0">
+    <div class="case__study flex flex-col lg:flex-row mx-auto max-w-[1200px] px-4 lg:px-0">
         <div class="w-full lg:w-7/12">
             <p
                 class=" text-dark-blue-background font-bold mb-2 text-lg lg:text-xl text-center lg:text-left tracking-wide leading-tight">

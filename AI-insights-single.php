@@ -20,7 +20,6 @@ function render_text_content($component)
 
 function get_image_or_url($comp)
 {
-    js_console($comp);
     $img_or_url = $comp['image_or_url'];
     if ($img_or_url == 'Image' || !$img_or_url)
         return $comp['post_image'];

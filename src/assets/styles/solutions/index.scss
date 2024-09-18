@@ -518,6 +518,11 @@
   }
 
   & ul {
-    padding-left: 13px !important;
+    padding-left: 20px !important;
+
+    @media #{$desktopBase} {
+      padding-left: 40px !important;
+    }
+
   }
 }

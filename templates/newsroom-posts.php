@@ -82,7 +82,6 @@ function render_dynamic_content()
     );
 
     $post_components = get_field('post_content');
-    js_console(count($web_components));
     if (count($post_components) == 0) {
         return the_content();
     }
