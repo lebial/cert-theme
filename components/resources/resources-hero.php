@@ -56,13 +56,13 @@ function render_highlighted_cards()
             </div>
           </div>
           <div class="w-full lg:w-6/12 lg:pl-8 mt-4 lg:mt-0 flex flex-col">
-            <p class="uppercase text-gray-400 text-xs mb-1 pr-8">Featured ' . $tag . '</p>
-            <p class="text-white text-xl leading-tight font-bold mb-1"> ' . $title . '</p>
-            <p class="text-white text-xs lg:text-sm pb-2">
+            <p class="uppercase text-gray-400 text-sm mb-1 pr-8">Featured ' . $tag . '</p>
+            <p class="text-white text-2xl leading-tight font-bold mb-1"> ' . $title . '</p>
+            <p class="text-white text-sm lg:text-base pb-2">
             ' . $content['content'] . '
             </p>
             <div class="flex items-end">
-              <a href="' . $url . '" class=" text-white text-xs rounded-3xl border border-solid border-primary px-2 py-1 hover:bg-primary transition-all duration-300">' . $button_text . '</a>
+              <a href="' . $url . '" class=" text-white text-sm rounded-3xl border border-solid border-primary px-2 py-1 hover:bg-primary transition-all duration-300">' . $button_text . '</a>
             </div>
           </div>
         </div>

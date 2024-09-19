@@ -11,7 +11,7 @@
         <div class="divider bg-primary h-px w-80 mx-auto my-4 lg:my-10"></div>
         <div class="w-9/12 mx-auto lg:w-full pb-10 lg:pb-0">
             <p class="text-white text-center mx-auto hidden lg:block"><?php the_field('hero_description') ?></p>
-            <p class="text-white text-center mx-auto block lg:hidden max-w-[20ch]">
+            <p class="text-white text-center mx-auto block lg:hidden max-w-[21ch]">
                 <?php strip_tags(the_field('hero_description')) ?>
             </p>
         </div>
