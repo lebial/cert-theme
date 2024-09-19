@@ -134,7 +134,7 @@
 
     @keyframes pie_anim_#{$name} {
         #{getPercent($from)} {
-            stroke-dashoffset: 1300;
+            stroke-dashoffset: 1000;
         }
 
         #{getPercent($to)} {
@@ -158,14 +158,15 @@
     }
 
     &--animate {
-        @include generate_pie_anim(8, 0, 5, 95, 100);
+        @include generate_pie_anim(8, 1, 5, 95, 100);
         @include generate_pie_anim(7, 1, 10, 90, 95);
         @include generate_pie_anim(6, 2, 15, 85, 90);
         @include generate_pie_anim(5, 3, 20, 80, 85);
         @include generate_pie_anim(4, 4, 25, 75, 80);
         @include generate_pie_anim(3, 5, 30, 70, 75);
         @include generate_pie_anim(2, 6.5, 35, 65, 70);
-        @include generate_pie_anim(1, 8, 40, 60, 65);
+        // @include generate_pie_anim(1, 10, 40, 60, 65);
+        @include generate_pie_anim(1, 10, 40, 60, 65);
     }
 }
 
