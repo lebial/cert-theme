@@ -108,10 +108,10 @@ function render_article_card()
             ['post_type' => 'video_post', 'image_key' => 'video_thumbnail']
             : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail'];
         $post_fields = get_field($keys['post_type'], $id);
-        $img = $post_fields[$keys['image_key']];
+        $img = get_image_with_default($post_fields[$keys['image_key']]);
         $btn_text = $post_type == 'video' ? 'Watch Video' : 'Read Study';
     } else {
-        $img = get_field('post_hero_image', $id);
+        $img = get_image_with_default(get_field('post_hero_image', $id));
         $btn_text = 'Read Article';
     }
 

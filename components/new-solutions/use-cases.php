@@ -4,8 +4,8 @@ function render_features()
     $features = get_field('features');
     foreach ($features as $feature) {
         echo '
-            <div class="feature__body flex flex-col lg:flex-row items-center mb-8">
-                <div class="image__container w-fit lg:mr-4 mb-4 lg:mb-0">
+            <div class="feature__body flex flex-col lg:flex-row mb-8">
+                <div class="image__container w-fit lg:mr-4 mb-4 lg:mb-0 pt-1 mx-auto lg:mx-0">
                     <div class=" bg-dark-blue-background rounded-full p-3">
                         <img class="!w-8 h-8 !max-w-none" src="' . $feature['icon'] . '" alt="feature icon">
                     </div>

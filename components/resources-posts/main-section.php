@@ -27,7 +27,7 @@ function render_related_content()
 
   foreach ($posts as $post) {
     $post_fields = get_field($keys['post_type'], $post->ID);
-    $img_url = $post_fields[$keys['image_key']];
+    $img_url = get_image_with_default($post_fields[$keys['image_key']]);
     $tags = get_the_tags($post->ID);
     echo '
       <div class="resources_video_card rounded-lg mb-4 lg:mb-0 h-full p-4 !flex flex-col">
@@ -105,7 +105,7 @@ function render_case_study_content()
               </p>
           </div>
           <div class="w-full lg:w-5/12 flex flex-col my-4 lg:my-0">
-            <img src="' . $case_study_post['case_study_thumbnail'] . '" alt="case study cover" class="w-10/12 mx-auto rounded-lg">
+            <img src="' . get_image_with_default($case_study_post['case_study_thumbnail']) . '" alt="case study cover" class="w-10/12 mx-auto rounded-lg">
             <div class="flex justify-center my-8 lg:mb-0 lg:mt-auto pt-4">
               <a href="' . $case_study_post['case_study_url'] . '" class="mx-auto rounded-3xl border border-solid border-primary text-primary py-1 px-2 transition-all duration-300 hover:text-white hover:bg-primary" download="" target="_blank">Download Case Study</a>
             </div>
