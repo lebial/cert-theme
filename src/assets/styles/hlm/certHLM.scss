@@ -60,4 +60,13 @@
             line-height: 1.5 !important;
         }
     }
+
+    & .frm_message {
+		background-color: white !important;
+		border: none !important;
+
+		& p {
+			color: #000f3a !important;
+		}
+	}
 }

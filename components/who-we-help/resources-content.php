@@ -13,7 +13,7 @@ $case_study_post = get_field('case_study_post', $id);
     <div class="case__study flex flex-col lg:flex-row mx-auto max-w-[1200px] px-4 lg:px-0">
         <div class="w-full lg:w-7/12">
             <p
-                class=" text-dark-blue-background font-bold mb-2 text-lg lg:text-xl text-center lg:text-left tracking-wide leading-tight">
+                class=" text-dark-blue-background font-bold mb-2 text-lg lg:text-xl text-left tracking-wide leading-tight">
                 <?php echo $case_study_post['title'] ?>
                 <p />
                 <!-- <div class="flex items-center my-5 lg:my-2 border-t border-gray-header border-solid mb-2"> -->
