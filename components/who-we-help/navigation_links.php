@@ -1,4 +1,7 @@
 <?php
+global $wp_query;
+$pagename = $wp_query->queried_object->post_name;
+$class = $pagename == 'government' ? 'hidden' : '';
 function render_nav_links()
 {
     $options = get_field('navigation_links');
@@ -17,7 +20,7 @@ function render_nav_links()
 }
 ?>
 
-<section class="navigation__links__who-we-help">
+<section class="navigation__links__who-we-help <?php echo $class ?>">
     <div class="navigation__bar flex flex-col lg:flex-row justify-center py-10 border-b-4 border-solid border-gray-200">
         <div class="flex flex-col lg:flex-row items-center lg:items-start">
             <?php render_nav_links() ?>

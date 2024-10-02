@@ -35,13 +35,13 @@ jQuery(document).ready(function ($) {
   const cardSelector = '.logistics__point__card';
 
   function handleOptionClick(ev) {
-    $(cardSelector).removeClass('is-card-active');
-    $(this).addClass('is-card-active');
-    $('.copy--active').removeClass('copy--active');
+    $(cardSelector).removeClass('is-card-active z-40');
+    $(this).addClass('is-card-active z-40');
+    $('.copy--active').removeClass('copy--active z-50');
     const nextPos = $(this).attr('data-dot-position');
     const nextCopy = $(`.copy__container[data-copy-position=${nextPos}]`);
     $('copy__container').removeClass('copy--active');
-    nextCopy.addClass('copy--active');
+    nextCopy.addClass('copy--active z-50');
     if (!ev.isTrigger) clearInterval(cycleTime);
   }
 
@@ -77,21 +77,6 @@ jQuery(document).ready(function ($) {
 
   };
 
-  // function startVideoAtSpecificTime() {
-  //   const video = document.getElementById("HomeBackgroundVideo");
-
-  //   video.oncanplaythrough = function () {
-  //     video.play();
-  //   };
-
-  //   video.currentTime = 49;
-
-  //   const source = document.createElement('source');
-  //   source.setAttribute('src', 'movie.mp4');
-  //   source.setAttribute('type', 'video/mp4');
-  //   video.appendChild(source);
-  // }
-
   function checkValidationButtonsCycle(btnName, activeCard) {
     if (activeCard.attr('name') === 'first' && btnName === 'prev') {
       $(cardSelector).last().click();
@@ -121,10 +106,10 @@ jQuery(document).ready(function ($) {
     const nextCard = activeCard[name]();
     const nextCopy = activeCopy[name]();
     if (checkValidationButtonsCycle(name, activeCard)) return null;
-    $(activeCard).removeClass('is-card-active');
-    $(activeCopy).removeClass('copy--active');
-    nextCard.addClass('is-card-active');
-    nextCopy.addClass('copy--active');
+    $(activeCard).removeClass('is-card-active z-40');
+    $(activeCopy).removeClass('copy--active z-50');
+    nextCard.addClass('is-card-active z-40');
+    nextCopy.addClass('copy--active z-50');
     if (ev != 'auto') {
       clearInterval(cycleTime);
       triggerGtagEvent('data_pipeline_click', {

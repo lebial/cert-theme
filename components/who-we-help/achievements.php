@@ -1,4 +1,8 @@
 <?php
+
+global $wp_query;
+$pagename = $wp_query->queried_object->post_name;
+$class = $pagename == 'government' ? 'hidden' : '';
 function render_achievements()
 {
     $achievements = get_field('achievements');
@@ -14,7 +18,7 @@ function render_achievements()
 }
 
 ?>
-<section class="achievements-section">
+<section class="achievements-section <?php echo $class ?>">
     <div class="flex justify-center py-10 lg:py-20 px-6 lg:px-0">
         <h3 class="text-4xl text-center text-dark-blue-background reveal-text hidden lg:block">
             <?php the_field('achievements_title') ?>
