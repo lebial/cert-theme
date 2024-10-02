@@ -2,7 +2,7 @@
 
 global $wp_query;
 $pagename = $wp_query->queried_object->post_name;
-$classes = $pagename == 'government' ? 'py-14 lg:pb-8 lg:pt-0' : 'py-14 lg:py-16';
+$classes = $pagename == 'government' ? 'py-14' : 'py-14 lg:py-16';
 
 $options = get_field('data_options');
 function render_buttons($opts)
