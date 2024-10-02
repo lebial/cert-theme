@@ -1,4 +1,9 @@
 <?php
+
+global $wp_query;
+$pagename = $wp_query->queried_object->post_name;
+$classes = $pagename == 'government' ? 'py-14 lg:pb-8 lg:pt-0' : 'py-14 lg:py-16';
+
 $options = get_field('data_options');
 function render_buttons($opts)
 {
@@ -35,7 +40,7 @@ function render_content($opts)
     }
 }
 ?>
-<section class="our__approach bg-dark-blue-background py-14 lg:py-16" id="our__approach__section">
+<section class="our__approach bg-dark-blue-background <?php echo $classes ?>" id="our__approach__section">
     <h3 class="text-white text-center pb-20 reveal-text hidden lg:block"><?php the_field('approach_title') ?></h3>
     <h3 class="text-white text-center pb-10 text-2xl block lg:hidden px-4" data-aos="fade-up">
         <?php echo strip_tags(get_field('approach_title')) ?>
