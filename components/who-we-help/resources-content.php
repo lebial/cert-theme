@@ -11,7 +11,7 @@ $case_study_post = get_field('case_study_post', $id);
         <?php the_field('resources_main_title') ?>
     </p>
     <div class="case__study flex flex-col lg:flex-row mx-auto max-w-[1200px] px-4 lg:px-0">
-        <div class="w-full lg:w-7/12">
+        <div class="w-full lg:w-7/12 pt-0 lg:pt-[50px]">
             <p
                 class=" text-dark-blue-background font-bold mb-2 text-lg lg:text-xl text-left tracking-wide leading-tight">
                 <?php echo $case_study_post['title'] ?>
