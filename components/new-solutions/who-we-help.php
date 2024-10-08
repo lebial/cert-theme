@@ -1,4 +1,8 @@
 <?php
+
+global $wp_query;
+$pagename = $wp_query->queried_object->post_name;
+$classes = $pagename == 'network-composition-care-delivery' ? 'max-w-[860px]' : 'max-w-[930px]';
 function render_who_we_help_cards()
 {
 
@@ -30,7 +34,7 @@ function render_who_we_help_cards()
         <h3 class="font-bold text-2xl xl:text-4xl text-center block pb-8 mx-6 text-dark-blue-background reveal-text">
             <?php the_field('solutions_title') ?>
         </h3>
-        <div class="au__solutions__cards w-full max-w-[930px] flex flex-wrap justify-center ">
+        <div class="au__solutions__cards w-full flex flex-wrap justify-center <?php echo $classes ?> ">
             <?php render_who_we_help_cards() ?>
         </div>
     </div>

@@ -23,8 +23,8 @@
     & * {
         color: white !important;
         font-size: calc(1.125rem + (1vw - 3.2px) * .125);
-        ;
         line-height: 1.75;
+        letter-spacing: -0.46px;
     }
 
     & ul {
@@ -125,29 +125,39 @@
     @return $number * 1%;
 }
 
-@mixin generate_pie_anim($name, $from, $to, $finishFrom, $finishTo) {
+// @mixin generate_pie_anim($name, $from, $to, $finishFrom, $finishTo) {
+@mixin generate_pie_anim($name) {
     & .pie_line#{$name} {
         animation: pie_anim_#{$name} 8s ease infinite;
-        animation-delay: -300ms;
+        animation-delay: calc(var(--anim-delay) * 250ms);
 
     }
 
     @keyframes pie_anim_#{$name} {
-        #{getPercent($from)} {
+        0% {
             stroke-dashoffset: 1000;
         }
 
-        #{getPercent($to)} {
+        40% {
             stroke-dashoffset: 0;
         }
+    }
+}
 
-        // #{getPercent($finishFrom)} {
-        //     stroke-dashoffset: 0;
-        // }
+@mixin generate_donut_anim($name) {
+    & .donut_line#{$name} {
+        animation: donut_anim_#{$name} 8s ease infinite;
+        animation-delay: calc(var(--anim-delay) * 200ms);
+    }
 
-        // #{getPercent($finishTo)} {
-        //     stroke-dashoffset: 1000;
-        // }
+    @keyframes donut_anim_#{$name} {
+        0% {
+            stroke-dashoffset: 1300;
+        }
+
+        40% {
+            stroke-dashoffset: 0;
+        }
     }
 }
 
@@ -158,15 +168,14 @@
     }
 
     &--animate {
-        @include generate_pie_anim(8, 1, 5, 95, 100);
-        @include generate_pie_anim(7, 1, 10, 90, 95);
-        @include generate_pie_anim(6, 2, 15, 85, 90);
-        @include generate_pie_anim(5, 3, 20, 80, 85);
-        @include generate_pie_anim(4, 4, 25, 75, 80);
-        @include generate_pie_anim(3, 5, 30, 70, 75);
-        @include generate_pie_anim(2, 6.5, 35, 65, 70);
-        // @include generate_pie_anim(1, 10, 40, 60, 65);
-        @include generate_pie_anim(1, 10, 40, 60, 65);
+        @include generate_pie_anim(8);
+        @include generate_pie_anim(7);
+        @include generate_pie_anim(6);
+        @include generate_pie_anim(5);
+        @include generate_pie_anim(4);
+        @include generate_pie_anim(3);
+        @include generate_pie_anim(2);
+        @include generate_pie_anim(1);
     }
 }
 
@@ -336,18 +345,20 @@
 
 
 .donut__animation {
-    & .pie_line {
+    & .donut_line {
         stroke-dasharray: 1300;
         stroke-dashoffset: 1300;
     }
 
     &--animate {
-        @include generate_pie_anim(1, 0, 5, 95, 100);
-        @include generate_pie_anim(3, 7.5, 14, 85, 90);
+        @include generate_donut_anim(1);
+        @include generate_donut_anim(3);
 
-        & .pie_line2 {
+        & .donut_line2 {
             animation: donut_reverse 8s ease infinite;
-            animation-delay: -300ms;
+            // animation-delay: 300ms;
+            // animation-delay: calc(var(--anim-delay) * 200ms);
+            animation-delay: 600ms;
         }
     }
 }
@@ -358,12 +369,12 @@
         stroke-dashoffset: 0;
     }
 
-    9% {
-        stroke-dasharray: 1300 0;
-        stroke-dashoffset: 1300;
-    }
+    // 9% {
+    //     stroke-dasharray: 1300 0;
+    //     stroke-dashoffset: 1300;
+    // }
 
-    50% {
+    40% {
         stroke-dasharray: 1300 0;
         stroke-dashoffset: 1300;
     }

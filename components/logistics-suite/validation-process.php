@@ -47,7 +47,7 @@ function render_data_copy($data)
 {
   $cards = $data;
   foreach ($cards as $idx => $card) {
-    $active = $idx == 0 ? 'copy--active z-50' : '';
+    $active = $idx == 0 ? 'copy--active z-40' : '';
     echo '
       <div class="copy__container group absolute left-1/2 -translate-x-1/2 ' . $active . '" data-copy-position="' . $idx . '">
         <div class="copy__body opacity-0 group-[.copy--active]:opacity-100 ">
