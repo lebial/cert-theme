@@ -626,3 +626,22 @@ function get_image_with_default($get_field)
     $default = get_template_directory_uri() . '/dist/assets/images/default-resource.jpg';
     return $default;
 }
+
+function get_resource_type_image($post_id)
+{
+    $post_type = get_field('post_type', $post_id);
+    $keys = $post_type == 'video' ?
+        ['post_type' => 'video_post', 'image_key' => 'video_thumbnail', 'tag' => 'video']
+        : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail', 'tag' => 'case-study'];
+    $post_fields = get_field($keys['post_type'], $post_id);
+    return ['keys' => $keys, 'post_hero_image' => $post_fields[$keys['image_key']]];
+}
+function get_img_url($post_id)
+{
+    $template = get_post_meta($post_id, '_wp_page_template', true);
+    if ($template == 'templates/resources-posts.php') {
+        $post_img = get_resource_type_image($post_id)['post_hero_image'];
+        return $post_img;
+    }
+    return get_field('post_hero_image', $post_id);
+}
