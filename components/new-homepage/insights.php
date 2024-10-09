@@ -5,7 +5,8 @@ function render_new_cards()
     $recent_posts = get_most_recent_posts(3);
     $related_posts = get_recent_or_selected_posts($recent_posts, $selected_posts);
     foreach ($related_posts as $tmp_post_id) {
-        $text = limit_post_text(strip_tags(get_field('post_content', $tmp_post_id)[0]['post_text']), 85, '...');
+        $post_text = get_post_text($tmp_post_id);
+        $text = limit_post_text(strip_tags($post_text), 85, '...');
         $img_url = get_image_with_default(get_img_url($tmp_post_id));
         echo '<div class="px-8 py-0 lg:py-4 sm:w-1/2 lg:w-1/3 lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-105 lg:duration-300">';
         echo '<div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg">';
