@@ -197,6 +197,7 @@
                     </button>
                 </div>
             </div>
+            <div class="!text-[9px] lg:!text-[11px]"></div>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
             <div class="w-full flex justify-end items-center pr-10 mb-5 mt-0 lg:mt-16">
                 <a href="https://www.linkedin.com/company/11752591/" target="_blank" rel="noopener noreferer"

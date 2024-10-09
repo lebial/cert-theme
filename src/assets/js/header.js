@@ -117,14 +117,6 @@ jQuery(document).ready(function ($) {
 
   };
 
-  function addTradeMarkToBrainstormLinks() {
-    const links = [...document.querySelectorAll('.menu-item a[href*=brainstorm-ai]'), ...document.querySelectorAll('.footer__link[href*="brainstorm"]')];
-    const trademark = '<span class="registeredSymbol" data-symbol="®"></span>'
-    links.forEach(link => {
-      $(link).append(trademark);
-    });
-  }
-
   function handleMobileOptionClick(ev) {
     const currentSubMenu = $(this).find('.sub-menu');
     const currentLink = $(this).find('a');
@@ -153,6 +145,5 @@ jQuery(document).ready(function ($) {
   handleNavigationToggle();
   handleMenuItemClickCloseNav();
   handleDemoOptions();
-  addTradeMarkToBrainstormLinks();
   handleMobileSiteMap();
 });
