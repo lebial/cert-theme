@@ -640,7 +640,9 @@ function get_resources_post_fields($post_id)
 function get_resource_type_image($post_id)
 {
     $resources_data = get_resources_post_fields($post_id);
-    return ['keys' => $resources_data['keys'], 'post_hero_image' => $resources_data['post_fields'][$keys['image_key']]];
+    $keys = $resources_data['keys'];
+    $img_url = $resources_data['post_fields'][$keys['image_key']];
+    return ['keys' => $keys, 'post_hero_image' => $img_url];
 }
 function get_img_url($post_id)
 {
