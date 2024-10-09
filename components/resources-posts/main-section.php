@@ -18,14 +18,16 @@ function render_related_content()
 {
   $posts = get_field('featured_content');
   $post_type = get_field('post_type');
-  $keys = $post_type == 'video' ?
-    ['post_type' => 'video_post', 'image_key' => 'video_thumbnail', 'tag' => 'video']
-    : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail', 'tag' => 'case-study'];
+  // $keys = $post_type == 'video' ?
+  //   ['post_type' => 'video_post', 'image_key' => 'video_thumbnail', 'tag' => 'video']
+  //   : ['post_type' => 'case_study_post', 'image_key' => 'case_study_card_thumbnail', 'tag' => 'case-study'];
   $related_text = $post_type == 'video' ? 'Watch Video' : 'Read Study';
   if (empty($posts))
-    $posts = get_related_resources($keys['tag']);
+    $posts = get_related_resources('case-study');
 
   foreach ($posts as $post) {
+    $options = get_resource_type_image($post->ID);
+    $keys = $options['keys'];
     $post_fields = get_field($keys['post_type'], $post->ID);
     $img_url = get_image_with_default($post_fields[$keys['image_key']]);
     $tags = get_the_tags($post->ID);
