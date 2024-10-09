@@ -5,9 +5,9 @@ $perma_link = get_the_permalink($id);
 $case_study_post = get_field('case_study_post', $id);
 
 ?>
-<section class="resources__section py-14">
+<section class="resources__section pt-14 lg:py-14">
     <p
-        class="text-2xl lg:text-4xl text-center text-dark-blue-background mx-auto font-bold pb-5 lg:pb-10 px-4 max-w-none">
+        class="text-2xl lg:text-4xl lg:text-center text-dark-blue-background mx-auto font-bold pb-5 lg:pb-10 px-4 max-w-none">
         <?php the_field('resources_main_title') ?>
     </p>
     <div class="case__study flex flex-col lg:flex-row mx-auto max-w-[1200px] px-4 lg:px-0">

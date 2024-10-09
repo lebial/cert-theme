@@ -28,7 +28,7 @@ function render_features()
             <p class="text-2xl lg:text-3xl text-dark-blue-background mx-auto font-bold text-center">Use Cases</p>
         </div>
         <div class="table__body use__cases__copy text-dark-blue-background flex justify-center ">
-            <div class="lg:py-14 px-16 2xl:px-36 ">
+            <div class="lg:py-14 px-14 2xl:px-36 ">
                 <?php the_field('use_cases_copy') ?>
             </div>
         </div>
@@ -38,7 +38,7 @@ function render_features()
             <p class="text-2xl lg:text-3xl text-dark-blue-background mx-auto font-bold text-center ">Features</p>
         </div>
         <div class="table__body flex justify-center">
-            <div class="lg:py-14 px-16 2xl:px-36 ">
+            <div class="lg:py-14 px-14 2xl:px-36 ">
                 <?php render_features() ?>
             </div>
         </div>
