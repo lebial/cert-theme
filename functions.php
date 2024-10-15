@@ -603,11 +603,7 @@ function get_recent_or_selected_posts($recent, $selected)
 {
     $posts_to_show = array();
     foreach ($recent as $idx => $post) {
-        // if ($selected && $selected[$idx] ) {
         array_push($posts_to_show, $selected[$idx] ?? $recent[$idx]);
-        // } else {
-        //     array_push($posts_to_show, $recent[$idx]);
-        // }
     }
 
     return $posts_to_show;
