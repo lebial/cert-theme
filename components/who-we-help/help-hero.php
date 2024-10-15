@@ -56,7 +56,7 @@ function render_slider_points()
     </div>
     <div class="w-full lg:w-1/2 flex items-center justify-center pb-10 lg:pb-0">
         <div class="w-[80%] lg:w-[60%]">
-            <div class="who-we-help-slider">
+            <div class="who-we-help-slider hidden">
                 <?php render_slider_points() ?>
             </div>
         </div>

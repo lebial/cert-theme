@@ -47,6 +47,7 @@ jQuery(document).ready(function ($) {
         currentSlide.find('svg').addClass(`${animation}--animate`);
         const extraStep = aniamtionExtraSteps[animation];
         if (extraStep) extraStep(currentSlide);
+        $(this).removeClass('hidden');
     });
 
     $('.who-we-help-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
