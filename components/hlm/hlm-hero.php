@@ -1,5 +1,11 @@
-<section class="hlm__hero bg-dark-blue-background flex justify-center items-center min-h-[80vh]">
-    <div class="flex flex-col items-center">
+<!-- <section class="hlm__hero bg-dark-blue-background flex justify-center items-center min-h-[80vh]"> -->
+<section class="hlm__hero w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[calc(100vh-80px)]">
+    <video playsinline autoplay muted loop id="HomeBackgroundVideo"
+        class=" object-cover w-full h-full absolute top-0 left-0 z-10">
+        <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
+    </video>
+    <div
+        class="w-full h-full flex flex-col items-center bg-dark-blue-background bg-opacity-70 py-14 opacity-100 z-20 relative flex flex-col justify-center px-6">
         <h2
             class=" text-xl lg:text-2xl text-primary uppercase font-medium tracking-normal mb-10 reveal-text hidden lg:block">
             <?php the_field('hero_eyebrow') ?>
