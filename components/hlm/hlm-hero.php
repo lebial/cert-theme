@@ -1,7 +1,7 @@
 <!-- <section class="hlm__hero bg-dark-blue-background flex justify-center items-center min-h-[80vh]"> -->
 <section class="hlm__hero w-full bg-dark-blue-background min-w-full relative h-fit lg:h-[calc(100vh-80px)]">
     <video playsinline autoplay muted loop id="HomeBackgroundVideo"
-        class=" object-cover w-full h-full absolute top-0 left-0 z-10">
+        class=" object-cover w-full h-full absolute top-0 left-0 z-10 hidden lg:block">
         <source src="<?php the_field('hero_background_video') ?>" type="video/mp4">
     </video>
     <div
