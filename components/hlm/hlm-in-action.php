@@ -4,7 +4,7 @@
             <?php the_field('action_title') ?>
         </h2>
         <div class="content__container px-10 h-full flex items-center">
-            <div class="lg:w-[60%] flex justify-center items-center relative mx-auto lg:mt-10">
+            <div class="lg:w-[75%] flex justify-center items-center relative mx-auto lg:mt-10">
                 <div
                     class="w-full h-full absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 rounded-xl z-20">
                     <button class="second_video_play_button">
