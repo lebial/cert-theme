@@ -1,27 +1,12 @@
 import { getVideoProgressPercentages, triggerGtagEvent } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
-  // let currentHeroButton = "Health Plans";
+
   const firstButton = "report-0";
   let currentReport = "report-0";
   const buttons = document.querySelectorAll(".ai__driven__report__option");
   const activeClass = "ai__active__button";
 
-  //check if this is no longer needed and remove
-  // function handleHeroButtonClick() {
-  //   const heroButtons = document.querySelectorAll(".hero__option__button");
-  //   const heroButtonActiveClass = "new_home__active__report";
-  //   heroButtons.forEach((button) =>
-  //     $(button).click(function () {
-  //       $(`button[name="${currentHeroButton}"]`).removeClass(
-  //         heroButtonActiveClass
-  //       );
-  //       $(this).addClass(heroButtonActiveClass);
-  //       currentHeroButton = this.name;
-  //     })
-  //   );
-  //   $(`button[name="${currentHeroButton}"]`).click();
-  // }
   function handleAiOptionClick() {
 
     //handle mobile
@@ -215,11 +200,25 @@ jQuery(document).ready(function ($) {
     });
   };
 
+  function handlePdfEvents() {
+    const pdfsLinks = document.querySelectorAll('a[href*=".pdf"]');
+    pdfsLinks.forEach(link => {
+      $(link).click(() => {
+        const pdfName = link.href.split('/').pop();
+        const options = {
+          pdfName,
+        }
+        triggerGtagEvent(`${pdfName}_download`, options);
+      });
+    });
+  };
+
   handleSecondVideo();
   createInsightsCarousel();
   handleInsightsArrowClick();
-  handleTypingEffect();
   AiOPtionsInit();
   createVerticalSlider();
   handleNextClick();
+  handlePdfEvents();
+  handleTypingEffect();
 });
