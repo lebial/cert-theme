@@ -1,4 +1,4 @@
-import { getVideoProgressPercentages, triggerGtagEvent } from "./utils/utils";
+import { getVideoProgressPercentages, triggerGtagEvent, triggerMatomoEvent } from "./utils/utils";
 
 jQuery(document).ready(function ($) {
 
@@ -167,13 +167,19 @@ jQuery(document).ready(function ($) {
       }
       video.onseeked = function (ev) {
         const { target } = ev;
-        const options = { ...getVideoProgressPercentages(target), 'video_name': target.dataset.videoname };
-        triggerGtagEvent(`${$(target).attr('name')}_video_seeked`, options);
+        const percentages = getVideoProgressPercentages(target);
+        const options = { ...percentages, 'video_name': target.dataset.videoname };
+        const targetName = $(target).attr('name');
+        triggerGtagEvent(`${targetName}_video_seeked`, options);
+        const calculatedPercent = `percent: ${percentages['played_percent']}`;
+        triggerMatomoEvent('video tracking', 'video seeked', targetName, calculatedPercent);
       }
       video.onended = function (ev) {
         this.load();
         const { target } = ev;
-        triggerGtagEvent(`${$(target).attr('name')}_video_endend`, { 'video_name': target.dataset.videoname });
+        const targetName = $(target).attr('name');
+        triggerGtagEvent(`${targetName}_video_endend`, { 'video_name': target.dataset.videoname });
+        triggerMatomoEvent('video tracking', 'video ended', targetName);
       }
     });
 
@@ -183,6 +189,7 @@ jQuery(document).ready(function ($) {
       const currentVideoName = $(currentVideo).attr('name');
       currentVideo.play();
       triggerGtagEvent(`${currentVideoName}_video_started`, { 'video_name': currentVideoName });
+      triggerMatomoEvent('video tracking', 'video started', currentVideoName);
       $(this).parent().hide();
       $(currentVideo).attr('controls', true);
       $(currentVideo).css('outline', 'none');
@@ -193,8 +200,12 @@ jQuery(document).ready(function ($) {
         $(button).parent().show();
         if (!this.seeking) {
           $(currentVideo).attr('controls', false);
-          const options = { ...getVideoProgressPercentages(target), 'video_name': target.dataset.videoname };
-          triggerGtagEvent(`${$(target).attr('name')}_video_paused`, options);
+          const percentages = getVideoProgressPercentages(target);
+          const options = { ...percentages, 'video_name': target.dataset.videoname };
+          const targetName = $(target).attr('name');
+          triggerGtagEvent(`${targetName}_video_paused`, options);
+          const pausedAt = `paused at: ${percentages['current_time']}`;
+          triggerMatomoEvent('video tracking', 'video paused', targetName, pausedAt);
         }
       });
     });

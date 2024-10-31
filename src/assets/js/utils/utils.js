@@ -79,6 +79,11 @@ function triggerGtagEvent(eventName, options = {}) {
     gtag('event', eventName, options);
   }
 }
+function triggerMatomoEvent(evCategory, evAction, evName, evVal = null) {
+  if (typeof _paq === 'object') {
+    _paq.push(['trackEvent', evCategory, evAction, evName, evVal]);
+  }
+}
 
 function handleGoogleTriggerOnClick(title, ctx) {
   triggerGtagEvent(title, {
@@ -180,6 +185,7 @@ export {
   makeElementsSameHeight,
   makeElementsSameWidth,
   triggerGtagEvent,
+  triggerMatomoEvent,
   getVideoProgressPercentages,
   getCustomArrows,
   handleGoogleTriggerOnClick,
