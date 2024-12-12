@@ -47,7 +47,7 @@ function render_detail_cards()
       $arrow_class = $card['href'] ? '' : 'hidden';
       $img_class = render_card_extra_icon($card['with_icon']);
       $element = $card['href'] ? 'a' : 'div';
-      echo '<' . $element . ' href="' . $card['href'] . '" target="_blank" class="platform__detail__card border border-white border-solid  rounded-lg py-5 px-4 lg:min-h-[250px] group transition-all duration-300 hover:scale-105 " style="--animation-order: ' . $card_order . ';">
+      echo '<' . $element . ' href="' . $card['href'] . '" class="platform__detail__card border border-white border-solid  rounded-lg py-5 px-4 lg:min-h-[250px] group transition-all duration-300 hover:scale-105 " style="--animation-order: ' . $card_order . ';">
               <p class="text-white font-bold mb-3 leading-snug">
               ' . $card['title'] . '
                 <svg class="w-[10px] ' . $arrow_class . ' h-3 inline-block transition-all duration-200 group-hover:translate-x-1 " width="40" height="69" viewBox="0 0 40 69" fill="none" xmlns="http://www.w3.org/2000/svg">
