@@ -204,8 +204,8 @@ jQuery(document).ready(function ($) {
           const options = { ...percentages, 'video_name': target.dataset.videoname };
           const targetName = $(target).attr('name');
           triggerGtagEvent(`${targetName}_video_paused`, options);
-          const pausedAt = `paused at: ${percentages['current_time']}`;
-          triggerMatomoEvent('video tracking', 'video paused', targetName, pausedAt);
+          const pausedAt = `${targetName} paused at: ${percentages['current_time']}`;
+          triggerMatomoEvent('video tracking', 'video paused', pausedAt);
         }
       });
     });

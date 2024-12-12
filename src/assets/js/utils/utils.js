@@ -81,6 +81,7 @@ function triggerGtagEvent(eventName, options = {}) {
 }
 function triggerMatomoEvent(evCategory, evAction, evName, evVal = null) {
   if (typeof _paq === 'object') {
+    debugger;
     _paq.push(['trackEvent', evCategory, evAction, evName, evVal]);
   }
 }
