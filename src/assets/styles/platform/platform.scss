@@ -5,6 +5,26 @@ $section_border: 20px solid black;
     $section_border: none !global;
 }
 
+@mixin rotated_styles() {
+    & .title {
+        transition: all .3s ease;
+        font-size: 1.2rem;
+        transform: scale(calc(1/0.8));
+    }
+
+    & .card__divider {}
+
+    & .subtitle {
+        font-size: 1rem;
+        transform: scale(calc(1/0.8));
+    }
+
+    &.content {
+        font-size: .8rem;
+        transform: scale(calc(1/0.8));
+    }
+}
+
 .platform__submenu__item {
     border-bottom: 2px solid gray;
 
@@ -862,11 +882,13 @@ $dot-color: #bdcff5;
         }
 
         & .left__card__rotated {
-            transform: rotate3d(0, 1, 0, 15deg) scaleY(.80);
+            transform: scaleY(.80);
+            @include rotated_styles();
         }
 
         & .right__card__rotated {
-            transform: rotate3d(0, 1, 0, -15deg) scaleY(.80);
+            transform: scaleY(.80);
+            @include rotated_styles();
         }
     }
 }
