@@ -12,7 +12,9 @@ $section_border: 20px solid black;
         transform: scaleY(calc(1/0.8));
     }
 
-    & .card__divider {}
+    & .card__content__container {
+        justify-content: center;
+    }
 
     & .subtitle {
         font-size: 1rem;
@@ -22,6 +24,7 @@ $section_border: 20px solid black;
     & .content {
         font-size: .8rem;
         transform: scaleY(calc(1/0.8));
+        display: none;
     }
 }
 
@@ -815,6 +818,11 @@ $dot-color: #bdcff5;
 .highlight__slider {
 
     //slick 3d slider styles
+    & .slick-slide {
+        &>div {
+            width: 100%;
+        }
+    }
 
     & .slick-arrow {
         display: inline-block !important;
