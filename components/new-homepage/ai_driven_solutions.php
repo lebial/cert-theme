@@ -52,7 +52,7 @@ function render_report_mobile_buttons()
             <button class="ai__driven__report__option py-4 border-gray-300  border-b text-dark-blue-background text-left relative line-reveal-animation w-full
               transition-all duration-300 hover:text-primary mobile__button" type="button" name="report-' . $idx . '">
                 ' . $button['button_text'] . '
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="absolute w-14 top-1 right-1 opacity-0 fill-primary transition-all duration-150">
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="absolute w-14 top-1 right-1 transition-all duration-150">
                 <g data-name="Layer 2" id="Layer_2">
                   <path d="M12,25a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42L18.59,16l-7.3-7.29a1,1,0,1,1,1.42-1.42l8,8a1,1,0,0,1,0,1.42l-8,8A1,1,0,0,1,12,25Z" />
                 </g>
