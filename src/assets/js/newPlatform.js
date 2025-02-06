@@ -45,7 +45,7 @@ function initPlatform($) {
             slidesToShow: 1,
             slidesToScroll: 1,
             centerMode: true,
-            arrows: true,
+            arrows: false,
             centerPadding: '60px',
           },
         }
