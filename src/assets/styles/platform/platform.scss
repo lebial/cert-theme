@@ -817,6 +817,10 @@ $dot-color: #bdcff5;
 //slider section
 .highlight__slider {
 
+    & .slick-list {
+        padding: 15px 0 !important;
+    }
+
     //slick 3d slider styles
     & .slick-slide {
         &>div {

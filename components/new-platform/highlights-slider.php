@@ -39,9 +39,11 @@ function render_hightlight_cards()
     <?php the_field('highlight_section_title') ?>
   </p>
   <!-- <div class="highlight__slider mx-auto max-w-5xl  lg:max-w-6xl max-h-[1237px] flex"> -->
-  <div
-    class="highlight__slider mx-auto max-w-5xl  lg:max-w-6xl max-h-[1237px] grid grid-cols-3 grid-rows-1 auto-rows-[0] overflow-y-hidden">
-    <?php render_hightlight_cards() ?>
-  </div>
+    <div class="slider__container__padding p-10 overflow-hidden">
+      <div
+        class="highlight__slider mx-auto max-w-5xl  lg:max-w-6xl max-h-[1237px] grid grid-cols-3 grid-rows-1 auto-rows-[0] overflow-y-hidden">
+        <?php render_hightlight_cards() ?>
+      </div>
+    </div>
   <div class="w-full absolute top-[1000px]" id="platformsDetails"></div>
 </section>

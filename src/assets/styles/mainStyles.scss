@@ -2708,7 +2708,6 @@ footer {
 .slick-list {
     position: relative;
     display: block;
-    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -2729,7 +2728,6 @@ footer {
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    overflow: visible;
 }
 
 .slick-track {
